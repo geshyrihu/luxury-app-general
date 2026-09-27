@@ -27,7 +27,6 @@ CREATE TABLE [EquipmentFireDetails] (
     [CabinetNumber] nvarchar(max) NULL,
     [DetectorType] int NULL,
     [StationType] int NULL,
-    [Id] uniqueidentifier NOT NULL,
     CONSTRAINT [PK_EquipmentFireDetails] PRIMARY KEY ([EquipmentId]),
     CONSTRAINT [CK_EquipmentFireDetails_Extinguisher] CHECK ([FireAssetKind] <> 1 OR ([ExtinguisherType] IS NOT NULL AND [ExpirationDate] IS NOT NULL)),
     CONSTRAINT [CK_EquipmentFireDetails_Hydrant] CHECK ([FireAssetKind] <> 2 OR [HydrantType] IS NOT NULL),
@@ -41,7 +40,7 @@ ALTER TABLE [Equipment] ADD CONSTRAINT [CK_Equipment_InstallationDateOrFire] CHE
 CREATE UNIQUE INDEX [UX_AssetMigrationLog_SourceTable_SourceId] ON [AssetMigrationLog] ([SourceTable], [SourceId]) WHERE [SourceTable] IS NOT NULL;
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20260927130112_AddFireDetailsToEquipment', N'10.0.10');
+VALUES (N'20260927145019_AddFireDetailsToEquipment', N'10.0.10');
 
 COMMIT;
 GO
