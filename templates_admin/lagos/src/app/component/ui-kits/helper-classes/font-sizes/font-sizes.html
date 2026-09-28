@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header card-no-border pb-0">
+        <h4>Font sizes</h4>
+        <p class="f-m-light mt-1">
+            Use the font-size for <code>.f-* [14/16/18/20/22/24/26/28/30/32/34/36/38/40]</code>.</p>
+    </div>
+    <div class="card-body">
+        <div class="gradient-border">
+            @for (data of fontSizeData; track data) {
+            <div class="font-wrapper border">
+                <div class="{{data.textClass}}">{{data.text}}</div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

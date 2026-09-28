@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Variations Of Left Ribbons</h4>
+    <p class="f-m-light mt-1">Use the class of
+      <code>.ribbon-*</code>[ribbon-space-bottom/ribbon-clip/ribbon-vertical-left/ribbon-bookmark/ribbon-clip-bottom/ribbon-vertical-left]
+      through create ribbons and all ribbon colors are available.<code>[.ribbon-*] </code>
+    </p>
+  </div>
+  <div class="card-body">
+    <div class="row g-3">
+      @for (data of leftRinnobsData; track data) {
+      <div class="col-sm-6 col-xl-4">
+        <div class="height-equal border border-1 {{data.class}}">
+          <div class="{{data.ribbonClass}}" [innerHTML]="data.ribbonText">
+          </div>
+          <p [innerHTML]="data.text"></p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

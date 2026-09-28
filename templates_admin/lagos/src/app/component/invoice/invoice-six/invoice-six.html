@@ -1,0 +1,83 @@
+<div class="container">
+  <div id="print-section">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="invoice">
+              <div>
+                <div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="d-flex">
+                        <div class="media-left">
+                          <img class="media-object img-60 for-light" src="assets/images/other-images/logo-login.png" alt="">
+                          <img class="media-object img-60 for-dark" src="assets/images/other-images/logo-light.png" alt="">
+                        </div>
+                        <div class="flex-grow-1 m-l-20 text-right">
+                          <h4 class="media-heading">Lagos </h4>
+                          <p>hello&#64;Lagos.in<br><span>289-335-6503</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="text-md-end text-xs-center">
+                        <h3>Invoice #<span class="counter">1069</span></h3>
+                        <p>Issued: May<span> 27, 2024</span><br> Payment Due: June <span>27, 2024</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="d-flex">
+                      <div class="media-left"><img class="media-object rounded-circle img-60"
+                          src="assets/images/user/1.jpg" alt=""></div>
+                      <div class="flex-grow-1 m-l-20">
+                        <h4 class="media-heading">Johan Deo</h4>
+                        <p>JohanDeo&#64;gmail.com<br><span>555-555-5555</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="text-md-end" id="project">
+                      <h6>Project Description</h6>
+                      <p>You're Only As Good As Your Last Collection, Which Is An Enormous Pressure. Jeans Represent
+                        Democracy In Fashion.Fashion Is About Dressing According To What's Fashionable.</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="table-responsive invoice-table theme-scrollbar" id="table">
+                    <app-invoice-table />
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div>
+                        <p class="legal"><strong>Thank you for your business!</strong>  Payment is expected within 31
+                          days; please process this invoice within that time. There will be a 5% interest charge per
+                          month on late invoices.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <form class="text-end">
+                        <input type="image" src="assets/images/other-images/paypal.png" name="submit"
+                          alt="PayPal - The safer, easier way to pay online!">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 text-center mt-3">
+                <button class="btn btn btn-primary me-2" type="button" printSectionId="print-section"
+                  ngxPrint>Print</button>
+                <button class="btn btn-secondary" type="button">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

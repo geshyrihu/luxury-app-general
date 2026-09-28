@@ -1,0 +1,118 @@
+❯ Building...
+✔ Building...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         |   2.43 MB | 
+chunk-KKMC5FTB.js   | -                            |   1.39 MB | 
+chunk-Z5CHFXZ7.js   | -                            | 947.95 kB | 
+styles.css          | styles                       | 882.82 kB | 
+chunk-RD4M5TFT.js   | -                            | 233.94 kB | 
+chunk-M7QT4K4L.js   | -                            | 212.43 kB | 
+chunk-RTEZFYST.js   | -                            | 169.28 kB | 
+chunk-QRIR5TQU.js   | -                            | 163.82 kB | 
+chunk-VCLZ2X3F.js   | -                            | 150.28 kB | 
+chunk-ZOBY4H23.js   | -                            | 149.43 kB | 
+chunk-LZIZHLX3.js   | -                            | 130.07 kB | 
+chunk-LGPBYSOR.js   | -                            | 122.90 kB | 
+chunk-O35FIKAI.js   | -                            | 120.59 kB | 
+chunk-RCLPW5AQ.js   | -                            | 113.61 kB | 
+chunk-ESJMF55I.js   | -                            | 110.67 kB | 
+chunk-SQR55TZ7.js   | -                            | 108.27 kB | 
+chunk-VEGVJQGU.js   | -                            | 107.63 kB | 
+chunk-BUE4AAK4.js   | -                            |  92.79 kB | 
+chunk-QAQPLGSI.js   | -                            |  86.13 kB | 
+chunk-4CWUKQGF.js   | -                            |  55.89 kB | 
+chunk-PJ6BF4CI.js   | -                            |  47.17 kB | 
+chunk-5HECRRLN.js   | -                            |  40.34 kB | 
+chunk-FSMF2V7J.js   | -                            |  35.19 kB | 
+chunk-AFLM3KXQ.js   | -                            |  29.03 kB | 
+chunk-XCO3QNES.js   | -                            |  26.73 kB | 
+chunk-TPIFZGP7.js   | -                            |  24.37 kB | 
+chunk-JY7YHBPT.js   | -                            |  23.72 kB | 
+chunk-UM3YJTCS.js   | -                            |  20.24 kB | 
+chunk-FVCZD7MX.js   | -                            |  19.34 kB | 
+chunk-67H7AM6U.js   | -                            |  17.48 kB | 
+chunk-UTBCKQNE.js   | -                            |  16.40 kB | 
+chunk-5UPBYZAO.js   | -                            |  14.49 kB | 
+chunk-JSUJ6AC2.js   | -                            |  13.48 kB | 
+chunk-4OZWJAJC.js   | -                            |  13.19 kB | 
+chunk-J2BBLEJZ.js   | -                            |  13.12 kB | 
+chunk-6NKDH7Z4.js   | -                            |  12.23 kB | 
+chunk-3CQLECJL.js   | -                            |  10.40 kB | 
+chunk-VQD4PKGF.js   | -                            |   9.64 kB | 
+chunk-MLUQZTOG.js   | -                            |   9.22 kB | 
+chunk-QSL67MXI.js   | -                            |   8.78 kB | 
+chunk-OYUV4JZ6.js   | -                            |   8.54 kB | 
+chunk-LSH2G4NA.js   | -                            |   7.79 kB | 
+chunk-6Y4NK2SE.js   | -                            |   7.30 kB | 
+chunk-Z7MPWOXO.js   | -                            |   6.58 kB | 
+chunk-J57JDWIK.js   | -                            |   5.77 kB | 
+chunk-BWYT2Y6W.js   | -                            |   5.65 kB | 
+chunk-AQP7CDQ5.js   | -                            |   5.54 kB | 
+chunk-ZGD4G7X2.js   | -                            |   5.40 kB | 
+chunk-H3JRGIBB.js   | -                            |   5.29 kB | 
+chunk-HMGJJ2JN.js   | -                            |   4.99 kB | 
+chunk-KLKZ2N2V.js   | -                            |   4.37 kB | 
+chunk-MHIVCXCH.js   | -                            |   4.30 kB | 
+chunk-FVODXB3Y.js   | -                            |   4.13 kB | 
+chunk-NPKUFTTK.js   | -                            |   4.07 kB | 
+chunk-D46T5ZSH.js   | -                            |   3.45 kB | 
+chunk-TPR2GK5E.js   | -                            |   3.43 kB | 
+chunk-4V5GAWVM.js   | -                            |   3.21 kB | 
+chunk-RS5TUOQG.js   | -                            |   2.60 kB | 
+chunk-ECTFLOMO.js   | -                            |   2.37 kB | 
+chunk-JBSBHP45.js   | -                            |   2.35 kB | 
+chunk-UGUZQALC.js   | -                            |   2.19 kB | 
+chunk-WC4IG6PL.js   | -                            |   2.18 kB | 
+chunk-5KMVOT74.js   | -                            |   2.14 kB | 
+chunk-FQZBNJEK.js   | -                            |   2.06 kB | 
+chunk-D4MHKU26.js   | -                            |   2.04 kB | 
+chunk-K477VHFC.js   | -                            |   2.02 kB | 
+chunk-Q55656VX.js   | -                            |   1.97 kB | 
+chunk-CCA2WZVU.js   | -                            |   1.89 kB | 
+chunk-FG66HGZG.js   | -                            |   1.86 kB | 
+chunk-MSKFJXIF.js   | -                            |   1.70 kB | 
+chunk-ZZK542PA.js   | -                            |   1.67 kB | 
+polyfills.js        | polyfills                    |   1.60 kB | 
+chunk-FUL4CNB6.js   | -                            |   1.52 kB | 
+chunk-L2FAQ75O.js   | -                            |   1.44 kB | 
+chunk-YJP2P26N.js   | -                            |   1.42 kB | 
+chunk-4UX5YYJM.js   | -                            |   1.33 kB | 
+chunk-HTNSBKTZ.js   | -                            |   1.28 kB | 
+chunk-NLAK5622.js   | -                            |   1.26 kB | 
+chunk-2UL4KJPD.js   | -                            |   1.17 kB | 
+chunk-V6KEVDJO.js   | -                            |   1.15 kB | 
+chunk-AIOHWISL.js   | -                            | 982 bytes | 
+chunk-MYU7CA7D.js   | -                            | 900 bytes | 
+chunk-6WYBVMBF.js   | -                            | 884 bytes | 
+chunk-LWIPMPX6.js   | -                            | 820 bytes | 
+chunk-EJ64ZEC3.js   | -                            | 812 bytes | 
+chunk-YE5ZPJGM.js   | -                            | 728 bytes | 
+chunk-4EZRRE64.js   | -                            | 337 bytes | 
+chunk-XEOOW4LE.js   | -                            | 307 bytes | 
+chunk-DI3VEDFV.js   | -                            | 295 bytes | 
+chunk-OXRN5JZV.js   | -                            |  43 bytes | 
+
+                    | Initial total                |   8.32 MB
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-FJIWO3YN.js   | heic-to                      |   3.00 MB | 
+chunk-55KAZMUT.js   | -                            |   2.89 MB | 
+chunk-LMHXZCRX.js   | -                            |   1.46 MB | 
+chunk-U6AT3MIU.js   | catalog-core-item            |   1.34 MB | 
+chunk-DKAIOFYT.js   | catalog-web-extras           |   1.28 MB | 
+chunk-WUKQU5QH.js   | -                            | 962.89 kB | 
+chunk-Q7FTA5L4.js   | -                            | 702.25 kB | 
+chunk-TSH4XDKP.js   | -                            | 647.79 kB | 
+chunk-C6TBP75A.js   | -                            | 477.15 kB | 
+chunk-ZQ2Y6BRV.js   | -                            | 447.85 kB | 
+chunk-2SJ4MNKJ.js   | quill                        | 423.64 kB | 
+chunk-VHVYLTUP.js   | financial-reports-wrapper    | 325.54 kB | 
+chunk-7WKX5WDZ.js   | announcement-admin-list      | 302.79 kB | 
+chunk-XZI7RJ34.js   | contabilidad-cliente-wrapper | 284.90 kB | 
+chunk-FUXMRF3P.js   | -                            | 264.70 kB | 
+...and 1399 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [75.382 seconds] - 2026-08-08T03:56:18.182Z
+
+Output location: D:\repos\luxuryapp-api\client\angular\dist\luxury-app
+

@@ -1,0 +1,56 @@
+root = true
+
+# Todos los archivos: UTF-8 sin BOM, LF line endings
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown: UTF-8, 2 espacios
+[*.md]
+charset = utf-8
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# C#: UTF-8, 4 espacios (estándar .NET)
+[*.cs]
+charset = utf-8
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# TypeScript/JavaScript: UTF-8, 2 espacios
+[*.ts]
+[*.js]
+charset = utf-8
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# JSON: UTF-8, 2 espacios
+[*.json]
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+# YAML: UTF-8, 2 espacios
+[*.yml]
+[*.yaml]
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+# HTML/Angular templates: UTF-8, 2 espacios
+[*.html]
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+# CSS/SCSS: UTF-8, 2 espacios
+[*.css]
+[*.scss]
+charset = utf-8
+indent_style = space
+indent_size = 2

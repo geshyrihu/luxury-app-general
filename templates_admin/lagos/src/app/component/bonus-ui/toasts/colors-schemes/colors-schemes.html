@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Colors Schemes</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.hide </code>class through hide toast and <code>.show </code>class through visible toast.</p>
+  </div>
+  <div class="card-body toast-rtl">
+    <div class="toast default-show-toast align-items-center text-light bg-warning border-0 fade"
+      [ngClass]="isShow ? 'hide' : 'show'">
+      <div class="d-flex justify-content-between">
+        <div class="toast-body">Your time over after 5 minute.</div>
+        <button class="btn-close btn-close-white me-2 m-auto" type="button" (click)="isShow = true"></button>
+      </div>
+    </div>
+  </div>
+</div>

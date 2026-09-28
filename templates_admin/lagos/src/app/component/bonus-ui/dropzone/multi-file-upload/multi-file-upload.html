@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Multi File Upload</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.dropzone </code> class through create upload files.<code
+        >[https://www.dropzone.dev/].</code
+      >
+    </p>
+  </div>
+  <div class="card-body">
+    <form class="dropzone dropzone-secondary" id="multiFileUpload" action="/upload.php">
+      <dropzone [config]="config" [message]="text" />
+    </form>
+  </div>
+</div>

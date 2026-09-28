@@ -1,0 +1,424 @@
+{
+  "module": {
+    "name": "Reclutamiento",
+    "description": "Sistema integral de gestión de reclutamiento y selección de personal",
+    "version": "2.0.0",
+    "backendPath": "src/Modules/Recruitment",
+    "frontendPath": "src/app/recruitment"
+  },
+  "flows": [
+    {
+      "id": "flow-request-position-create",
+      "name": "Solicitud de Vacante",
+      "description": "Admin Cliente crea una nueva solicitud de vacante que inicia el proceso de reclutamiento",
+      "trigger": "POST /api/request-positions (Admin Cliente click en 'Nueva Vacante')",
+      "actors": ["Admin Cliente", "Sistema", "Reclutador", "Email Service"],
+      "steps": [
+        {
+          "order": 1,
+          "actor": "Frontend",
+          "action": "Usuario completa formulario de solicitud de vacante",
+          "endpoint": "/recruitment/vacante-form",
+          "method": "INTERNAL",
+          "requestType": "RequestPositionFormModel",
+          "responseType": "void",
+          "sideEffects": ["Validación reactiva en cliente", "Cálculo de salario estimado"],
+          "validations": ["Required: title, department, quantity", "Salary range min <= max", "Start date >= today"],
+          "durationEstimateMs": 500
+        },
+        {
+          "order": 2,
+          "actor": "Frontend",
+          "action": "Envía solicitud al backend via HTTP POST",
+          "endpoint": "/api/request-positions",
+          "method": "POST",
+          "requestType": "CreateRequestPositionCommand",
+          "responseType": "RequestPositionDto",
+          "sideEffects": ["Loading spinner", "Optimistic UI update"],
+          "validations": ["HttpResource validation", "Token refresh si 401"],
+          "durationEstimateMs": 800
+        },
+        {
+          "order": 3,
+          "actor": "Backend",
+          "action": "Minimal API endpoint recibe y valida command",
+          "endpoint": "/api/request-positions",
+          "method": "POST",
+          "requestType": "CreateRequestPositionCommand",
+          "responseType": "Result<RequestPositionDto>",
+          "sideEffects": ["FluentValidation pipeline", "Authorization check"],
+          "validations": ["CreateRequestPositionValidator", "RequireAdminRole policy"],
+          "durationEstimateMs": 1200
+        },
+        {
+          "order": 4,
+          "actor": "Backend",
+          "action": "Handler procesa command y crea entidad",
+          "endpoint": "CreateRequestPositionHandler.Handle",
+          "method": "INTERNAL",
+          "requestType": "CreateRequestPositionCommand",
+          "responseType": "Result<RequestPositionDto>",
+          "sideEffects": ["Entity creation", "Domain event raised"],
+          "validations": ["Business rules in entity constructor", "Department exists check"],
+          "durationEstimateMs": 300
+        },
+        {
+          "order": 5,
+          "actor": "Backend",
+          "action": "Persiste entidad y publica Domain Event",
+          "endpoint": "DbContext.SaveChangesAsync",
+          "method": "INTERNAL",
+          "requestType": "RequestPosition",
+          "responseType": "int (rows affected)",
+          "sideEffects": ["RequestPositionCreatedEvent published", "Audit log entry"],
+          "validations": ["DB constraints", "Concurrency token"],
+          "durationEstimateMs": 200
+        },
+        {
+          "order": 6,
+          "actor": "Backend",
+          "action": "Event Handler envía notificación a reclutadores",
+          "endpoint": "RequestPositionCreatedHandler.Handle",
+          "method": "EVENT",
+          "requestType": "RequestPositionCreatedEvent",
+          "responseType": "Task",
+          "sideEffects": ["EmailService.SendSolicitudVacanteEmailAsync", "SignalR notification to recruiters"],
+          "validations": ["Recruiter assignment rules", "Email template exists"],
+          "durationEstimateMs": 1500
+        }
+      ],
+      "notifications": [
+        {
+          "channel": "Email",
+          "recipient": "Reclutador Asignado",
+          "trigger": "RequestPositionCreatedEvent",
+          "template": "SolicitudVacanteCreada"
+        },
+        {
+          "channel": "SignalR",
+          "recipient": "Grupo Reclutadores",
+          "trigger": "RequestPositionCreatedEvent",
+          "template": "NewVacancyAlert"
+        },
+        {
+          "channel": "InApp",
+          "recipient": "Admin Cliente",
+          "trigger": "RequestPositionCreatedEvent",
+          "template": "VacancyCreatedConfirmation"
+        }
+      ],
+      "stateChanges": [
+        {
+          "entity": "RequestPosition",
+          "from": "None",
+          "to": "Pendiente",
+          "trigger": "Creación exitosa"
+        },
+        {
+          "entity": "RecruitmentProcess",
+          "from": "None",
+          "to": "Iniciado",
+          "trigger": "RequestPositionCreatedEvent"
+        }
+      ]
+    },
+    {
+      "id": "flow-candidate-apply",
+      "name": "Postulación de Candidato",
+      "description": "Candidato externo postula a una vacante publicada",
+      "trigger": "POST /api/applications (Candidato click en 'Aplicar')",
+      "actors": ["Candidato", "Sistema", "Reclutador", "File Storage", "Email Service"],
+      "steps": [
+        {
+          "order": 1,
+          "actor": "Frontend",
+          "action": "Candidato completa formulario y sube CV",
+          "endpoint": "/recruitment/apply/{vacancyId}",
+          "method": "INTERNAL",
+          "requestType": "ApplicationFormModel",
+          "responseType": "void",
+          "sideEffects": ["File upload preview", "Validación de formato PDF/DOCX"],
+          "validations": ["Required: fullName, email, phone", "CV file max 5MB", "Email format valid"],
+          "durationEstimateMs": 1000
+        },
+        {
+          "order": 2,
+          "actor": "Frontend",
+          "action": "Envía multipart/form-data con CV",
+          "endpoint": "/api/applications",
+          "method": "POST",
+          "requestType": "CreateApplicationCommand (multipart)",
+          "responseType": "ApplicationDto",
+          "sideEffects": ["Progress bar upload", "Toast success/error"],
+          "validations": ["HttpResource multipart handling"],
+          "durationEstimateMs": 3000
+        },
+        {
+          "order": 3,
+          "actor": "Backend",
+          "action": "Endpoint recibe y valida aplicación",
+          "endpoint": "/api/applications",
+          "method": "POST",
+          "requestType": "CreateApplicationCommand",
+          "responseType": "Result<ApplicationDto>",
+          "sideEffects": ["File validation", "Vacancy status check"],
+          "validations": ["CreateApplicationValidator", "Vacancy must be Published"],
+          "durationEstimateMs": 1500
+        },
+        {
+          "order": 4,
+          "actor": "Backend",
+          "action": "Guarda CV en blob storage y crea aplicación",
+          "endpoint": "CreateApplicationHandler.Handle",
+          "method": "INTERNAL",
+          "requestType": "CreateApplicationCommand",
+          "responseType": "Result<ApplicationDto>",
+          "sideEffects": ["BlobStorage.UploadAsync", "ApplicationCreatedEvent"],
+          "validations": ["File type validation", "Storage quota check"],
+          "durationEstimateMs": 2000
+        },
+        {
+          "order": 5,
+          "actor": "Backend",
+          "action": "Notifica a reclutador de nueva postulación",
+          "endpoint": "ApplicationCreatedHandler.Handle",
+          "method": "EVENT",
+          "requestType": "ApplicationCreatedEvent",
+          "responseType": "Task",
+          "sideEffects": ["EmailService.SendNuevaPostulacionEmailAsync", "SignalR to recruiter"],
+          "validations": ["Recruiter assigned to vacancy"],
+          "durationEstimateMs": 1000
+        }
+      ],
+      "notifications": [
+        {
+          "channel": "Email",
+          "recipient": "Reclutador Asignado",
+          "trigger": "ApplicationCreatedEvent",
+          "template": "NuevaPostulacionRecibida"
+        },
+        {
+          "channel": "Email",
+          "recipient": "Candidato",
+          "trigger": "ApplicationCreatedEvent",
+          "template": "ConfirmacionPostulacion"
+        },
+        {
+          "channel": "SignalR",
+          "recipient": "Reclutador Asignado",
+          "trigger": "ApplicationCreatedEvent",
+          "template": "NewApplicationAlert"
+        }
+      ],
+      "stateChanges": [
+        {
+          "entity": "Application",
+          "from": "None",
+          "to": "Recibida",
+          "trigger": "Creación exitosa"
+        },
+        {
+          "entity": "RequestPosition",
+          "from": "Pendiente",
+          "to": "En Proceso",
+          "trigger": "Primera postulación recibida"
+        }
+      ]
+    }
+  ],
+  "endpoints": [
+    {
+      "method": "POST",
+      "path": "/api/request-positions",
+      "description": "Crear nueva solicitud de vacante",
+      "auth": "RequireAdminRole",
+      "requestType": "CreateRequestPositionCommand",
+      "responseType": "RequestPositionDto",
+      "group": "Recruitment",
+      "rateLimit": "10/min",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/request-positions",
+      "description": "Listar solicitudes de vacante con filtros",
+      "auth": "RequireRecruiterRole",
+      "requestType": "GetRequestPositionsQuery",
+      "responseType": "PagedResult<RequestPositionDto>",
+      "group": "Recruitment",
+      "rateLimit": "60/min",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/request-positions/{id}",
+      "description": "Obtener detalle de solicitud de vacante",
+      "auth": "RequireRecruiterRole",
+      "requestType": "GetRequestPositionByIdQuery",
+      "responseType": "RequestPositionDetailDto",
+      "group": "Recruitment",
+      "rateLimit": "120/min",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/request-positions/{id}",
+      "description": "Actualizar solicitud de vacante",
+      "auth": "RequireAdminRole",
+      "requestType": "UpdateRequestPositionCommand",
+      "responseType": "RequestPositionDto",
+      "group": "Recruitment",
+      "rateLimit": "10/min",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/request-positions/{id}/publish",
+      "description": "Publicar vacante en portales externos",
+      "auth": "RequireRecruiterRole",
+      "requestType": "PublishRequestPositionCommand",
+      "responseType": "PublishResultDto",
+      "group": "Recruitment",
+      "rateLimit": "5/min",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/applications",
+      "description": "Crear postulación de candidato",
+      "auth": "AllowAnonymous",
+      "requestType": "CreateApplicationCommand",
+      "responseType": "ApplicationDto",
+      "group": "Applications",
+      "rateLimit": "20/min",
+      "deprecated": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/applications",
+      "description": "Listar postulaciones con filtros",
+      "auth": "RequireRecruiterRole",
+      "requestType": "GetApplicationsQuery",
+      "responseType": "PagedResult<ApplicationDto>",
+      "group": "Applications",
+      "rateLimit": "60/min",
+      "deprecated": false
+    },
+    {
+      "method": "PUT",
+      "path": "/api/applications/{id}/status",
+      "description": "Cambiar estado de postulación",
+      "auth": "RequireRecruiterRole",
+      "requestType": "UpdateApplicationStatusCommand",
+      "responseType": "ApplicationDto",
+      "group": "Applications",
+      "rateLimit": "30/min",
+      "deprecated": false
+    }
+  ],
+  "components": [
+    {
+      "name": "VacanteFormComponent",
+      "path": "src/app/recruitment/vacante-form/vacante-form.component.ts",
+      "purpose": "Formulario de creación y edición de solicitudes de vacante",
+      "selector": "app-vacante-form",
+      "inputs": ["requestPositionId", "mode"],
+      "outputs": ["vacanteCreada", "vacanteActualizada", "cancelado"],
+      "services": ["RequestPositionService", "DepartmentService", "NotificationService"],
+      "signals": ["formModel", "isLoading", "departments", "salaryRange"],
+      "usesResource": false,
+      "usesHttpResource": true
+    },
+    {
+      "name": "VacanteListComponent",
+      "path": "src/app/recruitment/vacante-list/vacante-list.component.ts",
+      "purpose": "Lista paginada y filtrable de solicitudes de vacante",
+      "selector": "app-vacante-list",
+      "inputs": [],
+      "outputs": ["editar", "verDetalle", "publicar"],
+      "services": ["RequestPositionService", "DialogService"],
+      "signals": ["vacantes", "filters", "pagination", "selectedVacante"],
+      "usesResource": true,
+      "usesHttpResource": false
+    },
+    {
+      "name": "VacanteDetailComponent",
+      "path": "src/app/recruitment/vacante-detail/vacante-detail.component.ts",
+      "purpose": "Vista detallada de solicitud de vacante con postulaciones",
+      "selector": "app-vacante-detail",
+      "inputs": ["requestPositionId"],
+      "outputs": ["cerrar", "cambiarEstado"],
+      "services": ["RequestPositionService", "ApplicationService", "CandidateService"],
+      "signals": ["vacante", "postulaciones", "timeline", "isLoadingDetail"],
+      "usesResource": true,
+      "usesHttpResource": false
+    },
+    {
+      "name": "AplicarVacanteComponent",
+      "path": "src/app/recruitment/public/aplicar-vacante/aplicar-vacante.component.ts",
+      "purpose": "Formulario público para postulación de candidatos",
+      "selector": "app-aplicar-vacante",
+      "inputs": ["vacancyId", "vacancySlug"],
+      "outputs": ["aplicacionEnviada", "error"],
+      "services": ["ApplicationService", "FileUploadService", "RecaptchaService"],
+      "signals": ["formModel", "cvFile", "uploadProgress", "isSubmitting"],
+      "usesResource": false,
+      "usesHttpResource": true
+    },
+    {
+      "name": "PostulacionesListComponent",
+      "path": "src/app/recruitment/postulaciones-list/postulaciones-list.component.ts",
+      "purpose": "Gestión de postulaciones por reclutador (kanban/list)",
+      "selector": "app-postulaciones-list",
+      "inputs": ["vacancyId"],
+      "outputs": ["cambiarEstado", "verCandidato", "programarEntrevista"],
+      "services": ["ApplicationService", "InterviewService", "EmailService"],
+      "signals": ["postulaciones", "kanbanColumns", "filters", "selectedApplication"],
+      "usesResource": true,
+      "usesHttpResource": false
+    }
+  ],
+  "domainEvents": [
+    {
+      "name": "RequestPositionCreatedEvent",
+      "handler": "RequestPositionCreatedHandler",
+      "actions": ["SendSolicitudVacanteEmailAsync", "NotifyRecruitersViaSignalR", "CreateRecruitmentProcess"],
+      "publishedBy": ["CreateRequestPositionHandler"],
+      "subscribers": ["RequestPositionCreatedHandler", "RecruitmentProcessSaga"]
+    },
+    {
+      "name": "RequestPositionPublishedEvent",
+      "handler": "RequestPositionPublishedHandler",
+      "actions": ["PublishToJobBoardsAsync", "NotifyCandidatesMatchingProfile", "UpdateSearchIndex"],
+      "publishedBy": ["PublishRequestPositionHandler"],
+      "subscribers": ["RequestPositionPublishedHandler", "JobBoardIntegrationService"]
+    },
+    {
+      "name": "ApplicationCreatedEvent",
+      "handler": "ApplicationCreatedHandler",
+      "actions": ["SendNuevaPostulacionEmailAsync", "NotifyRecruiterViaSignalR", "SendConfirmationToCandidate"],
+      "publishedBy": ["CreateApplicationHandler"],
+      "subscribers": ["ApplicationCreatedHandler", "CandidateNotificationSaga"]
+    },
+    {
+      "name": "ApplicationStatusChangedEvent",
+      "handler": "ApplicationStatusChangedHandler",
+      "actions": ["SendStatusUpdateEmailAsync", "UpdateCandidatePortal", "TriggerNextStepIfNeeded"],
+      "publishedBy": ["UpdateApplicationStatusHandler"],
+      "subscribers": ["ApplicationStatusChangedHandler", "InterviewSchedulingSaga"]
+    },
+    {
+      "name": "InterviewScheduledEvent",
+      "handler": "InterviewScheduledHandler",
+      "actions": ["SendInterviewInvitationAsync", "CreateCalendarEvent", "SendReminders"],
+      "publishedBy": ["ScheduleInterviewHandler"],
+      "subscribers": ["InterviewScheduledHandler", "CalendarIntegrationService"]
+    }
+  ],
+  "metadata": {
+    "generatedAt": "2026-08-31T22:00:00.000Z",
+    "generatedBy": "flow-analyzer-skill",
+    "schemaVersion": "1.0.0",
+    "analysisDurationMs": 45000
+  }
+}

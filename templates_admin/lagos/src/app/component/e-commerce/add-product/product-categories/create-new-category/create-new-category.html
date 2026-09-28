@@ -1,0 +1,24 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title" id="category-pill-modalLabel">Create new category</h4>
+        <button class="btn-close" type="button" (click)="close()"></button>
+    </div>
+    <div class="modal-body custom-input">
+        <div class="create-category">
+            <form>
+                <label class="form-label" for="validationServer01">Category Name 
+                    <span class="txt-danger">*</span>
+                </label>
+                <input class="form-control m-0" id="validationServer01" type="text" required="">
+                <div class="toolbar-box">
+                    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent" />
+                </div>
+            </form>
+            <p class="f-light">Improve product visibility by adding a compelling description.</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-light" type="button" (click)="close()">Cancel</button>
+        <button class="btn btn-primary" type="button">Add</button>
+    </div>
+</div>

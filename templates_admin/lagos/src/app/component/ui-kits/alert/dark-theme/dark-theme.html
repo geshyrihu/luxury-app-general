@@ -1,0 +1,43 @@
+@for (allData of darkThemeAlertData; track allData) {
+<div class="card">
+  <div class="card-header">
+    <h4>Link color in dark theme</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.alert-link</code> utility class to quickly provide matching colored links
+      within any alert.
+    </p>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-xl-6">
+        @for (alertData of allData.data1; track alertData) {
+        <p class="mb-2 f-w-500">{{alertData.title}}</p>
+        <div class="alert alert-{{alertData.alertClass}} dark" role="alert">
+          <p>
+            This is a
+            <a class="alert-link {{alertData.textClass}}" href="javascript:void(0)"
+              >{{alertData.title | lowercase}}</a
+            >
+            with an example link. Check it out.
+          </p>
+        </div>
+        }
+      </div>
+      <div class="col-xl-6">
+        @for (alertData of allData.data2; track alertData) {
+        <p class="mb-2 f-w-500">{{alertData.title }}</p>
+        <div class="alert alert-{{alertData.alertClass}} dark" role="alert">
+          <p>
+            This is a
+            <a class="alert-link {{alertData.textClass}}" href="javascript:void(0)"
+              >{{alertData.title | lowercase}}
+            </a>
+            with an example link. Check it out.
+          </p>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+}

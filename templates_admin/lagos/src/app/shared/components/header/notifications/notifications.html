@@ -1,0 +1,55 @@
+<div class="notification-box" (click)="isShow =!isShow">
+  <app-common-svg-icon [icon]="'notification'" class="icon-vertical" />
+  <span class="badge rounded-pill badge-primary">4</span>
+</div>
+<div class="onhover-show-div notification-dropdown" [class.active]="isShow">
+  <h5 class="f-18 f-w-600 mb-0 dropdown-title">Notitications</h5>
+  <ul class="notification-box">
+    <li class="d-flex">
+      <div class="flex-shrink-0 bg-light-primary">
+        <img src="assets/images/dashboard/icon/wallet.png" alt="Wallet">
+      </div>
+      <div class="flex-grow-1">
+        <a [routerLink]="['/chat/private-chat']">
+          <h6>New daily offer added</h6>
+        </a>
+        <p>New user-only offer added</p>
+      </div>
+    </li>
+    <li class="d-flex">
+      <div class="flex-shrink-0 bg-light-secondary">
+        <img src="assets/images/dashboard/icon/ticket-star.png" alt="Ticket-star">
+      </div>
+      <div class="flex-grow-1">
+        <a [routerLink]="['/chat/private-chat']">
+          <h6>Recently Paid</h6>
+        </a>
+        <p>Mastercard payment of $343</p>
+      </div>
+    </li>
+    <li class="d-flex">
+      <div class="flex-shrink-0 bg-light-info">
+        <img src="assets/images/dashboard/icon/shield-dne.png" alt="Shield-dne">
+      </div>
+      <div class="flex-grow-1"> <a [routerLink]="['/chat/private-chat']">
+          <h6>Product Evaluation</h6>
+        </a>
+        <p>Changed to a new workflow</p>
+      </div>
+    </li>
+    <li class="d-flex">
+      <div class="flex-shrink-0 bg-light-warning">
+        <img src="assets/images/dashboard/icon/graph.png" alt="Graph">
+      </div>
+      <div class="flex-grow-1">
+        <a [routerLink]="['/chat/private-chat']">
+          <h6>Return of a Product</h6>
+        </a>
+        <p>452 items were returned</p>
+      </div>
+    </li>
+    <li>
+      <a class="f-w-700" [routerLink]="['/chat/private-chat']">Check all</a>
+    </li>
+  </ul>
+</div>

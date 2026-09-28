@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        <h4>With Indicators</h4>
+        <p class="f-m-light mt-1">Use the <code>.carousel-indicators</code> through carousel indicates.</p>
+    </div>
+    <div class="card-body">
+        <div class="carousel slide" id="carouselExampleIndicators" data-bs-ride="true">
+            <div class="carousel-inner">
+                <owl-carousel-o [options]="withIndicatorOptions">
+                    @for (slideData of withIndicatorData; track slideData) {
+                    <ng-template carouselSlide class="carousel-item">
+                        <img class="d-block w-100" [src]="slideData.img" alt="">
+                    </ng-template>
+                    }
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div>

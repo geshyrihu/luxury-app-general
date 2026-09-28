@@ -1,0 +1,54 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title fs-5" id="compose_mailLabel">Compose Message</h4>
+    <button class="btn-close" type="button" (click)="close()"></button>
+  </div>
+  <div class="modal-body compose-modal">
+    <form>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="composeFrom">From :</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="composeFrom" type="email" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="composeTo">To :</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="composeTo" type="email" />
+          <div class="add-bcc">
+            <div class="d-flex gap-2">
+              <a class="btn" data-bs-toggle="collapse" (click)="isCc =!isCc">Cc </a>
+              <a class="btn" data-bs-toggle="collapse" (click)="isBcc =!isBcc">Bcc</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse row mb-3" id="collapseCc" [class.show]="isCc">
+        <label class="col-sm-2 col-form-label" for="composeTo">Cc:</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="composeTo" type="email" />
+        </div>
+      </div>
+      <div class="collapse row mb-3" id="collapseBcc" [class.show]="isBcc">
+        <label class="col-sm-2 col-form-label" for="composeTo">Bcc:</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="composeTo" type="email" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="composeSubject">Subject :</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="composeSubject" type="email" />
+        </div>
+      </div>
+      <div class="toolbar-box">
+        <ngx-editor-menu [editor]="editor" />
+        <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'" />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-light" type="button">Save as draft</button>
+    <button class="btn btn-primary" type="button" (click)="close()">Send</button>
+  </div>
+</div>

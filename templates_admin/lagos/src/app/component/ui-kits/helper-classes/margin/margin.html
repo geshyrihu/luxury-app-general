@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header card-no-border pb-0">
+        <h4>Margin</h4>
+        <p class="f-m-light mt-1">
+            Use the margin classes like: <code>.m-* [10/15/20/25/30/35/40/45/50]</code></p>
+    </div>
+    <div class="card-body">
+        <div class="gradient-border">
+            @for (item of margin; track item) {
+            <div class="helper-common-box gap-0 mb-0">
+                <div class="helper-box {{item.text}} border bg-light"></div><span>.{{item.text}}</span>
+            </div>
+            }
+        </div>
+    </div>
+</div>

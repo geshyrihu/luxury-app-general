@@ -1,0 +1,96 @@
+Package flutter_secure_storage:windows references flutter_secure_storage_windows:windows as the default plugin, but the package does not exist, or is not a plugin package.
+Ask the maintainers of flutter_secure_storage to either avoid referencing a default implementation via `platforms: windows: default_package: flutter_secure_storage_windows`
+or create a plugin named flutter_secure_storage_windows.
+
+
+Launching lib\main.dart on M2004J19C in debug mode...
+WARNING: Your app uses the following plugins that apply Kotlin Gradle Plugin (KGP): flutter_image_compress_common
+Future versions of Flutter will fail to build if your app uses plugins that apply KGP.
+
+Please check the changelogs of these plugins and upgrade to a version that supports Built-in Kotlin.
+If no such version exists, report the issue to the plugin. If necessary, here is a guide on filing
+an issue against a plugin: https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers#report-incompatible-kotlin-gradle-plugin-usage-to-plugin-authors
+
+If you are a plugin author, please migrate your plugin to Built-in Kotlin using this guide: https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors
+lib/core/servicios/servicio_red.dart:1:8: Error: Error when reading '/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_plus-6.1.5/lib/connectivity_plus.dart': El sistema no puede encontrar la ruta especificada
+import 'package:connectivity_plus/connectivity_plus.dart';
+       ^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:7:8: Error: Error when reading '/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/device_info_plus-12.4.0/lib/device_info_plus.dart': El sistema no puede encontrar la ruta especificada
+import 'package:device_info_plus/device_info_plus.dart';
+       ^
+lib/core/servicios/servicio_red.dart:6:9: Error: Type 'Connectivity' not found.
+  final Connectivity _conectividad;
+        ^^^^^^^^^^^^
+lib/core/servicios/servicio_red.dart:8:16: Error: Type 'Connectivity' not found.
+  ServicioRed({Connectivity? conectividad})
+               ^^^^^^^^^^^^
+lib/core/servicios/servicio_red.dart:6:9: Error: 'Connectivity' isn't a type.
+  final Connectivity _conectividad;
+        ^^^^^^^^^^^^
+lib/core/servicios/servicio_red.dart:8:16: Error: 'Connectivity' isn't a type.
+  ServicioRed({Connectivity? conectividad})
+               ^^^^^^^^^^^^
+lib/core/servicios/servicio_red.dart:9:41: Error: Method not found: 'Connectivity'.
+      : _conectividad = conectividad ?? Connectivity();
+                                        ^^^^^^^^^^^^
+lib/core/servicios/servicio_red.dart:15:19: Error: The getter 'ConnectivityResult' isn't defined for the type 'ServicioRed'.
+ - 'ServicioRed' is from 'package:mobile_commite/core/servicios/servicio_red.dart' ('lib/core/servicios/servicio_red.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ConnectivityResult'.
+      (r) => r != ConnectivityResult.none,
+                  ^^^^^^^^^^^^^^^^^^
+lib/core/servicios/servicio_red.dart:21:52: Error: The getter 'ConnectivityResult' isn't defined for the type 'ServicioRed'.
+ - 'ServicioRed' is from 'package:mobile_commite/core/servicios/servicio_red.dart' ('lib/core/servicios/servicio_red.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ConnectivityResult'.
+        (resultados) => resultados.any((r) => r != ConnectivityResult.none),
+                                                   ^^^^^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3398:13: Error: 'DeviceInfoPlugin' isn't a type.
+      final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+            ^^^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3399:13: Error: 'AndroidDeviceInfo' isn't a type.
+      final AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+            ^^^^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3398:43: Error: The method 'DeviceInfoPlugin' isn't defined for the type 'SfPdfViewerState'.
+ - 'SfPdfViewerState' is from 'package:syncfusion_flutter_pdfviewer/src/pdfviewer.dart' ('/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'DeviceInfoPlugin'.
+      final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+                                          ^^^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3533:13: Error: 'DeviceInfoPlugin' isn't a type.
+      final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+            ^^^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3534:13: Error: 'AndroidDeviceInfo' isn't a type.
+      final AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+            ^^^^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3540:13: Error: 'DeviceInfoPlugin' isn't a type.
+      final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+            ^^^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3541:13: Error: 'WebBrowserInfo' isn't a type.
+      final WebBrowserInfo webBrowserInfo = await deviceInfo.webBrowserInfo;
+            ^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3533:43: Error: The method 'DeviceInfoPlugin' isn't defined for the type 'SfPdfViewerState'.
+ - 'SfPdfViewerState' is from 'package:syncfusion_flutter_pdfviewer/src/pdfviewer.dart' ('/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'DeviceInfoPlugin'.
+      final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+                                          ^^^^^^^^^^^^^^^^
+/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart:3540:43: Error: The method 'DeviceInfoPlugin' isn't defined for the type 'SfPdfViewerState'.
+ - 'SfPdfViewerState' is from 'package:syncfusion_flutter_pdfviewer/src/pdfviewer.dart' ('/C:/Users/geshyrihu/AppData/Local/Pub/Cache/hosted/pub.dev/syncfusion_flutter_pdfviewer-32.2.9/lib/src/pdfviewer.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'DeviceInfoPlugin'.
+      final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+                                          ^^^^^^^^^^^^^^^^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command 'C:\dev\flutter\bin\flutter.bat'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (Powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 19s
+Running Gradle task 'assembleDebug'...                             20.3s
+Error: Gradle task assembleDebug failed with exit code 1

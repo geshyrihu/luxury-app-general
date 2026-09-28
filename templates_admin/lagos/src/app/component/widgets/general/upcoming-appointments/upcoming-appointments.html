@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <div class="header-top">
+      <h4>Upcoming Appointments</h4>
+    </div>
+  </div>
+  <div class="card-body appointments relative">
+    <div class="row">
+      <div class="col-5">
+        <ul class="appointments-user">
+          @for (item of upcomingAppointments; track item) {
+          <li class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <img [src]="item.image" alt="">
+            </div>
+            <div class="flex-grow-1">
+              <a [routerLink]="['/chat/private-chat']">
+                <h5>{{item.name}}</h5>
+              </a>
+              <p>{{item.date}}<span>{{item.time}}</span></p>
+            </div>
+          </li>
+          }
+        </ul>
+      </div>
+      <div class="col-7">
+        <div class="datepicker-here mod cal-date-widget" id="datepicker">
+          <app-calendar-dashboard />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

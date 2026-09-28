@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+      <h4>Multiple collapse accordion</h4>
+      <p class="f-m-light mt-1">A <code> &lt;button&gt;</code>  or<code>  &lt;a&gt;</code> can show and hide multiple elements by referencing them with a selector in its href or data-bs-target attribute. </p>
+    </div>
+    <div class="card-body"> 
+      <div class="common-flex"><a class="btn btn-primary" (click)="isPrimary =!isPrimary">Toggle first element</a>
+        <button class="btn btn-warning" type="button" (click)="isWarning = !isWarning">Toggle second element</button>
+        <button class="btn btn-success" type="button" (click)="isWarning = !isWarning ;isPrimary =!isPrimary">Toggle both elements</button>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="collapse multi-collapse dark-accordion" id="multiCollapseExample1" [class.show]="isPrimary">
+            <div class="card card-body mt-3 mb-0 collapse-wrapper bg-primary text-white">The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements you toggle. Collapsing an element will animate the height from it's current value to 0. Given how CSS handles animations, you cannot use padding on a .collapse element. Instead, use the class as an independent wrapping element.</div>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="collapse multi-collapse dark-accordion" id="multiCollapseExample2"  [class.show]="isWarning">
+            <div class="card card-body mt-3 mb-0 collapse-wrapper bg-warning text-white">This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

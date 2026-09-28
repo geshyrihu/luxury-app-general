@@ -1,0 +1,9 @@
+[mcp_servers.code-review-graph]
+args = ["serve"]
+command = "C:/Users/geshy/AppData/Local/Python/pythoncore-3.14-64/Scripts/code-review-graph.exe"
+
+[shell_environment_policy]
+inherit = "core"
+
+[shell_environment_policy.set]
+CLAUDE_CODE_SUBAGENT_MODEL = "haiku"

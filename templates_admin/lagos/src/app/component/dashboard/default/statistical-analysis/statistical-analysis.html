@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header card-no-border pb-0">
+        <div class="header-top">
+            <h4>Statistical Analysis</h4>
+            <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+                <button class="btn dropdown-toggle" [class.show]="isShow"  (click)="isShow =!isShow"
+                ><i class="icon-more-alt"></i></button>
+                <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow" 
+                style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+                    <a class="dropdown-item" href="javascript:void(0)">Weekly</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Monthly</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Yearly</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body pe-0">
+        <div class="studay-statistics">
+            <ul class="d-flex align-item-center gap-2">
+                <li> <span class="bg-primary"> </span>Web Design</li>
+                <li> <span class="bg-secondary"> </span>Flutter App</li>
+            </ul>
+        </div>
+        <div id="study-statistics">
+            <apx-chart [series]="statisticalAnalysis.series" [chart]="statisticalAnalysis.chart"
+                [dataLabels]="statisticalAnalysis.dataLabels" [colors]="statisticalAnalysis.colors"
+                [stroke]="statisticalAnalysis.stroke" [grid]="statisticalAnalysis.grid"
+                [fill]="statisticalAnalysis.fill" [annotations]="statisticalAnalysis.annotations"
+                [yaxis]="statisticalAnalysis.yaxis" [xaxis]="statisticalAnalysis.xaxis"
+                [tooltip]="statisticalAnalysis.tooltip" [legend]="statisticalAnalysis.legend"
+                [responsive]="statisticalAnalysis.responsive" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row">
+    @for (item of data(); track item) {
+    <div class="col-sm-12 col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h4>{{item.header}}</h4>
+                <p class="f-m-light mt-1" [innerHTML]="item.desc"></p>
+            </div>
+            <div class="card-body">
+                <div class="badge-spacing">
+                    @for (textData of item.data; track textData) {
+                    <!-- For Number Of Badge -->
+                    @if (item.id === 3) {
+                        <a href="javascript:void(0)" class="{{ textData.class }}">{{ textData.text }}</a>
+                    } @else {
+                    <!-- For Other Badges -->
+                    @if (item.id !== 5 && item.id !== 6) {
+                    <span class="{{ textData.class }}">{{ textData.text }}</span>
+                    }
+                    }
+                    @if (item.id === 5 || item.id === 6) {
+                    <!-- For Icon With Badge -->
+                    <a class="{{ textData.class }}" href="javascript:void(0)">
+                        <app-feather-icons [icons]="textData.icon" />
+                    </a>
+                    }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>

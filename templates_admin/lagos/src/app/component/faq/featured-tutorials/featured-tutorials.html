@@ -1,0 +1,29 @@
+<div class="header-faq">
+  <h5 class="mb-0">Featured Tutorials</h5>
+</div>
+<div class="row">
+  @for (featuredData of data(); track featuredData) {
+  <div class="col-xxl-3 col-md-6 box-col-6">
+    <div class="card features-faq product-box">
+      <div class="faq-image product-img">
+        <img class="img-fluid" [src]="featuredData.img " alt="">
+        <div class="product-hover">
+          <ul>
+            <li><i class="icon-link"></i></li>
+            <li><i class="icon-import"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-body">
+        <h4>{{featuredData.post}}</h4>
+        <p>{{featuredData.desc}}</p>
+      </div>
+      <div class="card-footer"><span>{{featuredData.date}}</span>
+        <span class="pull-right">
+          <ngb-rating class="font-primary" [rate]="featuredData.rating" />
+        </span>
+      </div>
+    </div>
+  </div>
+  }
+</div>

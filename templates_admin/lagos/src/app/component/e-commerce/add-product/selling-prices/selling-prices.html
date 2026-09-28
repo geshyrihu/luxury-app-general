@@ -1,0 +1,97 @@
+<form class="price-wrapper" novalidate [formGroup]="sellingForm">
+  <div class="row g-3 custom-input">
+    <div class="col-sm-6">
+      <label class="form-label" for="exampleFormControlInput1">Initial cost <span class="txt-danger">*</span></label>
+      <input class="form-control" id="exampleFormControlInput1" type="number" formControlName="initial_Cost"
+        [class]="{ 'is-invalid' : (initialCost?.touched || validate) && initialCost?.errors, 'is-valid' : !initialCost?.errors}">
+      @if (initialCost?.errors) {
+        <div class="invalid-feedback">Initial cost Required</div>
+      } @else {
+        <div class="valid-feedback">Looks good!</div>
+      }
+    </div>
+    <div class="col-sm-6">
+      <label class="form-label" for="exampleFormControlInput1">Selling price <span class="txt-danger">*</span></label>
+      <input class="form-control" id="exampleFormControlInput1" type="number" formControlName="selling_Price"
+        [class]="{ 'is-invalid' : (sellingPrice?.touched || validate) && sellingPrice?.errors, 'is-valid' : !sellingPrice?.errors}">
+        @if (sellingPrice?.errors) {
+          <div class="invalid-feedback">Selling price Required</div>
+        } @else {
+          <div class="valid-feedback">Looks good!</div>
+        }
+    </div>
+    <div class="col-sm-6">
+      <label class="form-label" for="validationServer01">Choose your currency</label>
+      <select class="form-select" aria-label="Default select example" formControlName="choose_Your_Currency"
+        [class]="{ 'is-invalid' : (chooseYourCurrency?.touched || validate) && chooseYourCurrency?.errors, 'is-valid' : !chooseYourCurrency?.errors}">
+        <option selected="" value="">--plese select--</option>
+        <option value="1">Dollar $</option>
+        <option value="2">Euro €</option>
+        <option value="3">Rupees ₹</option>
+        <option value="4">British pounds £</option>
+        <option value="5">Russian Ruble ₽</option>
+        <option value="6">Japanese Yen ¥</option>
+        <option value="7">Singapore Dollar S$</option>
+      </select>
+      @if (chooseYourCurrency?.errors) {
+        <div class="invalid-feedback">Choose your currency</div>
+      } @else {
+        <div class="valid-feedback">Looks good!</div>
+      }
+    </div>
+    <div class="col-sm-6">
+      <label class="form-label" for="exampleFormControlInput1">Product stocks<span class="txt-danger">*</span></label>
+      <input class="form-control" id="exampleFormControlInput1" type="number" formControlName="product_Stocks"
+        [class]="{ 'is-invalid' : (productStocks?.touched || validate) && productStocks?.errors, 'is-valid' : !productStocks?.errors}">
+        @if (productStocks?.errors) {
+          <div class="invalid-feedback">ChooseProduct stocks currency</div>
+        } @else {
+          <div class="valid-feedback">Looks good!</div>
+        }
+    </div>
+    <div class="col-12">
+      <label class="form-label" for="exampleFormControlInput1">Types of product discount<i class="icon-help-alt ms-1"
+          data-bs-toggle="tooltip" data-bs-placement="top"
+          data-bs-title="Choose the kind of discount that will be used on that particular item."></i></label>
+      <ul class="radio-wrapper">
+        <li>
+          <input class="form-check-input" id="radio-icon" type="radio" name="radio5" value="option5">
+          <label class="form-check-label" for="radio-icon"><span>Fixed Price</span></label>
+        </li>
+        <li>
+          <input class="form-check-input" id="radio-icon4" type="radio" name="radio5" value="option5" checked="">
+          <label class="form-check-label" for="radio-icon4"><span>BOGO(Buy one, Get
+              one)</span></label>
+        </li>
+        <li>
+          <input class="form-check-input" id="radio-icon5" type="radio" name="radio5" value="option5">
+          <label class="form-check-label" for="radio-icon5"><span>Seasonal or holiday
+              discount</span></label>
+        </li>
+        <li>
+          <input class="form-check-input" id="radio-icon6" type="radio" name="radio5" value="option5">
+          <label class="form-check-label" for="radio-icon6"><span>Percentage-based
+              discount(%)</span></label>
+        </li>
+        <li>
+          <input class="form-check-input" id="radio-icon7" type="radio" name="radio5" value="option5">
+          <label class="form-check-label" for="radio-icon7"><span>Volume or bulk
+              discount</span></label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="product-buttons">
+    <button class="btn me-2" (click)="previous()">
+      <div class="d-flex align-items-center gap-sm-2 gap-1">
+        <app-common-svg-icon [icon]="'back-arrow'" />
+        Previous
+      </div>
+    </button>
+    <button class="btn" (click)="next()">
+      <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+        <app-common-svg-icon [icon]="'front-arrow'" />
+      </div>
+    </button>
+  </div>
+</form>

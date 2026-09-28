@@ -1,0 +1,32 @@
+<div class="card sellview-sec">
+    <div class="card-header pb-0 card-no-border">
+      <div class="header-top">
+        <h4>Monthly Overview</h4>
+        <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+          <button class="btn dropdown-toggle" type="button"  [class.show]="isShow"  (click)="isShow =!isShow">
+            <i class="icon-more-alt"></i></button>
+          <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow"
+          style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+            <a class="dropdown-item" href="javascript:Void(0)">Weekly</a>
+            <a class="dropdown-item" href="javascript:Void(0)">Monthly</a>
+            <a class="dropdown-item" href="javascript:Void(0)">Yearly</a>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body py-0">
+      <div id="sell-view">  
+        <apx-chart [series]="monthlyOverview.series" 
+        [chart]="monthlyOverview.chart"
+        [colors]="monthlyOverview.colors" 
+        [plotOptions]="monthlyOverview.plotOptions"
+        [dataLabels]="monthlyOverview.dataLabels" 
+        [legend]="monthlyOverview.legend"
+        [stroke]="monthlyOverview.stroke" 
+        [grid]="monthlyOverview.grid"
+        [yaxis]="monthlyOverview.yaxis"
+        [xaxis]="monthlyOverview.xaxis" 
+        [responsive]="monthlyOverview.responsive"  />
+      </div>
+    </div>
+  </div>

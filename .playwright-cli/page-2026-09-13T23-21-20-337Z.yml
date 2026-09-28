@@ -1,0 +1,40 @@
+- generic [active] [ref=f14e1]:
+  - link "Saltar al contenido principal" [ref=f14e2] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+  - generic "Aplicación LuxuryApp" [ref=f14e3]:
+    - generic:
+      - alertdialog
+    - main [ref=f14e7]:
+      - generic [ref=f14e11]:
+        - generic [ref=f14e12]:
+          - img "Logo Luxury Building Group" [ref=f14e14]
+          - main [ref=f14e15]:
+            - generic [ref=f14e16]:
+              - heading "Bienvenido de nuevo" [level=1] [ref=f14e18]
+              - paragraph [ref=f14e19]: Inicia sesión para continuar
+              - generic [ref=f14e20]:
+                - generic [ref=f14e25]:
+                  - generic [ref=f14e26]: Usuario *
+                  - textbox [ref=f14e28]:
+                    - /placeholder: " "
+                    - text: admin
+                - generic [ref=f14e33]:
+                  - generic [ref=f14e34]: Contraseña *
+                  - textbox [ref=f14e37]:
+                    - /placeholder: " "
+                    - text: Hwtc00--
+                - generic [ref=f14e40]:
+                  - generic [ref=f14e45]:
+                    - generic [ref=f14e46]: Recordarme
+                    - generic [ref=f14e48]:
+                      - checkbox [checked] [ref=f14e50] [cursor=pointer]
+                      - generic [ref=f14e55] [cursor=pointer]: Recordarme
+                  - link "¿Olvidaste tu contraseña?" [ref=f14e56] [cursor=pointer]:
+                    - /url: /auth/recovery-code
+                - button "INICIAR SESIÓN" [ref=f14e59] [cursor=pointer]
+                - generic [ref=f14e76]: No fue posible conectar con el servidor. Verifica tu conexión e inténtalo de nuevo.
+          - generic [ref=f14e65]: © 2026 Luxury Building Group. Todos los derechos reservados.
+        - generic [ref=f14e67]:
+          - img "LuxuryApp" [ref=f14e69]
+          - heading "Excelencia Inmobiliaria" [level=2] [ref=f14e70]
+          - paragraph [ref=f14e71]: Gestiona recursos, proyectos y operaciones con la suite tecnológica definitiva diseñada para líderes de la industria.

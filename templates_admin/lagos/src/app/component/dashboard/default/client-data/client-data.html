@@ -1,0 +1,29 @@
+<div class="card since">
+  <div class="card-body" [class.money]="data()?.name === 'Earnings'">
+    <div class="customer-card d-flex b-l-{{data()?.class}} border-2">
+      <div class="ms-3">
+        <h3 class="mt-1">{{data()?.name}}</h3>
+        <h5 class="mt-1">{{data()?.point}}</h5>
+      </div>
+      <div class="dashboard-user bg-light-{{data()?.class}}">
+        <span></span>
+        <app-common-svg-icon [icon]="data()?.icons" />
+      </div>
+    </div>
+    @if(data()?.image){
+    <div class="customers text-center social-group">
+      <ul class="d-flex">
+        @for (items of data()?.image; track items) {
+        <li class="d-inline-block">
+          <img class="img-30 rounded-circle" [src]="items.url" alt="" />
+        </li>
+        }
+      </ul>
+    </div>
+    }
+    <div class="customer mt-2">
+      <span class="me-1"> <app-common-svg-icon [icon]="'arrow-up'" /> </span
+      ><span class="font-success me-2">+ {{data()?.rate}}%</span><span>Since last Week</span>
+    </div>
+  </div>
+</div>

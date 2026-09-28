@@ -1,0 +1,40 @@
+<div class="card total-sales">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-8 box-col-12 ecommerce-chart-data">
+        <div class="d-flex {{data()?.class}}">
+          <span>
+            <app-common-svg-icon [icon]="data()?.icon" />
+          </span>
+          <div class="flex-shrink-0">
+            <h4>{{data()?.title}}</h4>
+            <h6>{{data()?.subTitle}}</h6>
+            <div class="arrow-chart">
+              <app-common-svg-icon [icon]="data()?.chipIcon" />
+              <h5 class="font-{{data()?.profitClass}}">{{data()?.profit}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 p-0 ecommerce-chart">
+        <div class="{{data()?.chartClass}}" id="{{data()?.chartId}}">
+          <apx-chart
+            [series]="data()?.chartData!.series"
+            [chart]="data()?.chartData!.chart"
+            [states]="data()?.chartData!.states || {}"
+            [plotOptions]="data()?.chartData!.plotOptions || {}"
+            [dataLabels]="data()?.chartData!.dataLabels || {}"
+            [grid]="data()?.chartData!.grid || {}"
+            [xaxis]="data()?.chartData!.xaxis || {}"
+            [yaxis]="data()?.chartData!.yaxis || []"
+            [fill]="data()?.chartData!.fill || {}"
+            [legend]="data()?.chartData!.legend || {}"
+            [responsive]="data()?.chartData!.responsive || []"
+            [colors]="data()?.chartData!.colors || []"
+            [stroke]="data()?.chartData!.stroke || {}"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

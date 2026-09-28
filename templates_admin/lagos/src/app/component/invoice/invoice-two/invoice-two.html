@@ -1,0 +1,100 @@
+<div class="container invoice-2">
+    <div id="print-section">
+    <div class="card"> 
+      <div class="card-body">
+        <table class="table-wrapper table-responsive theme-scrollbar">
+          <tbody>
+            <tr>
+              <td>
+                <table class="table-responsive" style="width: 100%;">
+                  <tbody>
+                    <tr>
+                      <td style="min-width: 347px; width: 30%;"><img class="img-fluid for-light" src="assets/images/logo/logo.png" alt="">
+                        <img class="img-fluid for-dark" src="assets/images/logo/logo_light.png" alt="">
+                        <address style="opacity: 0.8; width: 80%; margin-top: 10px; font-style:normal;"><span style="font-size: 16px; line-height: 1.5; font-weight: 500;">
+                            1982 Harvest Lane New York, NY12210
+                             United State</span></address>
+                      </td>
+                      <td style="opacity: 0.8; text-align:end;"><span style="display:block; line-height: 1.5; font-size:16px; font-weight:500;">Email : Lagos&#64;themesforest.com</span><span style="display:block; line-height: 1.5; font-size:16px; font-weight:500;">Website: www.Lagosthemes.com</span><span style="display:block; line-height: 1.5; font-size:16px; font-weight:500;">Contact No : (316) 555-0116</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr> 
+              <td> 
+                 <app-invoice-two-top />
+              </td>
+            </tr>
+            <tr> 
+              <td> 
+                <table class="table-responsive" style="width: 100%;">
+                  <tbody> 
+                    <tr style="padding: 28px 0; display:block;"> 
+                      <td Style="width:70%; min-width: 304px;"><span style="opacity: 0.8; font-size: 16px; font-weight: 500;">BILLING ADDRESS</span>
+                        <h4 style="font-weight:400; margin: 12px 0 6px 0; font-size: 16px;">Brooklyn Simmons</h4><span style="width: 54%; display:block; line-height: 1.5; opacity: 0.8; font-size: 16px; font-weight: 400;">2118 Thornridge Cir. Syracuse, Connecticut 35624, United State</span><span style="line-height:2.6; opacity: 0.8; font-size: 16px; font-weight: 400;">Phone : (239) 555-0108</span>
+                      </td>
+                      <td Style="min-width: 280px;"><span style="opacity: 0.8;font-size: 16px; font-weight: 500;">SHIPPING ADDRESS</span>
+                        <h4 style="font-weight:400; margin: 12px 0 6px 0; font-size: 16px;">Cameron Williamson</h4><span style="width: 95%; display:block; line-height: 1.5; opacity: 0.8; font-size: 16px; font-weight: 400;">2972 Westheimer Rd. Santa Ana, Illinois 85486 </span><span style="line-height:2.6; opacity: 0.8; font-size: 16px; font-weight: 400;">Phone : (219) 555-0114</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr> 
+              <td> 
+                <table class="table-responsive" style="width: 100%;border-collapse: separate;border-spacing: 0;border: 1px dashed rgba(82, 82, 108, 0.1)">
+                  <thead> 
+                    <tr style="background: #6f5a99;border-radius: 8px;overflow: hidden;box-shadow: 0px 10.9412px 10.9412px rgba(82, 77, 141, 0.04), 0px 9.51387px 7.6111px rgba(82, 77, 141, 0.06), 0px 5.05275px 4.0422px rgba(82, 77, 141, 0.0484671);border-radius: 5.47059px;"> 
+                      <th style="padding: 18px 15px;text-align: left"><span style="color: #fff; font-size: 16px;">Products</span></th>
+                      <th style="padding: 18px 15px;text-align: left"><span style="color: #fff; font-size: 16px;">Quantity</span></th>
+                      <th style="padding: 18px 15px;text-align: left"><span style="color: #fff; font-size: 16px;">Price</span></th>
+                      <th style="padding: 18px 15px;text-align: left"><span style="color: #fff; font-size: 16px;">Unit</span></th>
+                      <th style="padding: 18px 15px;text-align: left"><span style="color: #fff; font-size: 16px;">Vat %</span></th>
+                      <th style="padding: 18px 15px;text-align: left"><span style="color: #fff; font-size: 16px;">Total</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (item of invoice2; track item) {
+                      <tr class="invoice-dark" style="background-color: rgba(123, 111, 183, 0.1);box-shadow: 0px 1px 0px 0px rgba(82, 82, 108, 0.15);"> 
+                        <td style="padding: 18px 15px;display:flex;align-items: center;gap: 10px;">
+                          <span style="width: 54px; height: 51px; background-color:#F5F6F9; display: flex; justify-content: center;align-items: center; border-radius: 5px;">
+                              <img [src]="item.image" alt="laptop" style="height:29px;"></span>
+                          <ul style="padding: 0;margin: 0;list-style: none;">
+                            <li> 
+                              <h4 style="font-weight:400; margin:4px 0px; font-size: 16px;">{{item.productName}}</h4>
+                              <span style="opacity: 0.8; font-size: 14px;">#{{item.subName}}</span>
+                            </li>
+                          </ul>
+                        </td>
+                        <td style="padding: 18px 15px;"><span>{{item.qty}}</span></td>
+                        <td style="padding: 18px 15px; width: 12%;"> <span>${{item.price}}</span></td>
+                        <td style="padding: 18px 15px; width: 12%;"> <span>{{item.unit}}</span></td>
+                        <td style="padding: 18px 15px; width: 10%;"> <span>{{item.vat}}</span></td>
+                        <td style="padding: 18px 15px;"><span>${{item.total}}</span></td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr> 
+              <td> 
+                 <app-invoice-two-bottom />
+              </td>
+            </tr>
+            <tr> 
+              <td> <span style="display:block;background: rgba(82, 82, 108, 0.3);height: 1px;width: 100%;margin-bottom:30px;"></span></td>
+            </tr>
+            <tr> 
+              <td> <span style="display: flex; justify-content: end; gap: 15px;">
+                <button class="btn btn btn-primary me-2" type="button" printSectionId="print-section" ngxPrint>Print Invoice<i class="icon-arrow-right" style="font-size:13px;font-weight:bold; margin-left: 10px;"></i></button>
+                    <a style="background: rgba(122, 112, 186, 0.1);color: rgba(122, 112, 186, 1);border-radius: 10px;padding: 18px 27px;font-size: 16px;font-weight: 600;outline: 0;border: 0; text-decoration: none;" href="javascript:void(0)" download="">Download<i class="icon-arrow-right" style="font-size:13px;font-weight:bold; margin-left: 10px;"></i></a></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

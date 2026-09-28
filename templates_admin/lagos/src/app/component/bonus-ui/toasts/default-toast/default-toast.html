@@ -1,0 +1,17 @@
+<div class="card height-equal">
+  <div class="card-header">
+    <h4>Default Toast</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.hide </code>class through hide toast and <code>.show </code>class through visible toast.</p>
+  </div>
+  <div class="card-body toast-rtl">
+    <div class="toast default-show-toast toast" [ngClass]="isShow ? 'show' : 'hide'">
+      <div class="toast-header toast-img">
+        <img class="rounded me-2" src="assets/images/other-images/profile.png" alt="profile">
+        <strong class="me-auto">Lagos Theme</strong><small class="d-sm-block d-none">10 min ago</small>
+        <button class="btn-close" type="button" (click)="close()"></button>
+      </div>
+      <div class="toast-body toast-dark"><strong class="txt-success">Well done!</strong> You successfully read this important message.</div>
+    </div>
+  </div>
+</div>

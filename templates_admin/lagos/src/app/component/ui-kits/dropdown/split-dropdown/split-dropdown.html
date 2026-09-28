@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <h4> Split dropdown</h4>
+    <p class="f-m-light mt-1">When the<code>.show </code>class starts, dropdown appears. And
+      split the dropdown <code>.dropdown-toggle-split</code>.
+    </p>
+  </div>
+  <div class="card-body dropdown-basic m-0">
+    <div class="common-flex">
+      @for (allData of splitDropdownData; track allData) {
+      <div class="btn-group" ngbDropdown>
+        <button class="btn btn-outline-{{allData.colorClass}}" type="button">{{allData.title }}</button>
+        <div class="dropdown separated-btn" ngbDropdown>
+          <button class="btn dropdown-arrow btn-{{allData.colorClass}}" type="button" ngbDropdownToggle>
+            <i class="icofont icofont-arrow-down"></i></button>
+          <div class="dropdown-content" ngbDropdownMenu>
+            @for (items of allData.dropdownItem; track items) {
+            <a href="javascript:void(0)" ngbDropdownItem>{{ items.item }}</a>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="user-profile">
+        <div class="row">
+            <div class="col-xl-4 col-md-6">
+                @for (data of sizingData; track data) {
+                <app-common-avatars [data]="data" />
+                }
+            </div>
+            <div class="col-xl-4 col-md-6">
+                @for (data of statusIndicatorData; track data) {
+                <app-common-avatars [data]="data" />
+                }
+            </div>
+            <div class="col-xl-4 col-md-6">
+                @for (data of shapeData; track data) {
+                <app-common-avatars [data]="data" />
+                }
+            </div>
+            <div class="col-md-6">
+                @for (data of ratioData; track data) {
+                <app-common-avatars [data]="data" />
+                }
+            </div>
+            <div class="col-xl-6">
+                <app-grouping />
+            </div>
+        </div>
+    </div>
+</div>

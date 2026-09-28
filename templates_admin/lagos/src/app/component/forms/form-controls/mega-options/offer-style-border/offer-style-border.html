@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Offer style border</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.offer-style </code>class to<code> .mega-inline</code> you can archive this style.</p>
+  </div>
+  <div class="card-body megaoptions-border-space-sm">
+    <form class="mega-inline offer-style">
+      <div class="row flex-column">
+        @for (item of OfferStyleBorder; track item) {
+          <div class="col-12">
+            <div class="card">
+              <div class="d-flex p-20">
+                <div class="form-check ps-0 checkbox checkbox-{{item.boarder}}">
+                  <input class="form-check-input" id="{{item.id}}" type="checkbox" [checked]="item.checked">
+                  <label class="form-check-label my-0" for="{{item.id}}">
+                    <span class="flex-grow-1">
+                      <span class="d-flex list-behavior-1">
+                        <span class="flex-shrink-0">
+                          <img class="tab-img img-fluid" [src]="item.image" alt="fruits"></span>
+                        <span class="flex-grow-1">
+                          <span class="mb-0">{{item.desc}}</span>
+                        </span>
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </form>
+  </div>
+  <div class="card-footer text-end">
+    <button class="btn btn-success m-r-15" type="submit">Submit</button>
+    <button class="btn list-light-success text-dark" type="submit">Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">
+      <div class="header-top">
+        <h4>Order Status</h4>
+        <div class="card-header-right-icon">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" (click)="isShow = !isShow">Today</button>
+            <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow">
+                <a class="dropdown-item" href="javascript:void(0)">Today</a>
+                <a class="dropdown-item" href="javascript:void(0)">Tomorrow</a>
+                <a class="dropdown-item" href="javascript:void(0)">Yesterday</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="chart-container progress-chart">
+        <div id="progress1">
+          <app-progress [data]="progress1" />
+        </div>
+        <div id="progress2">
+          <app-progress [data]="progress2" />
+        </div>
+        <div id="progress3">
+          <app-progress [data]="progress3" />
+        </div>
+        <div id="progress4">
+          <app-progress [data]="progress4" />
+        </div>
+        <div id="progress5">
+          <app-progress [data]="progress5" />
+        </div>
+      </div>
+    </div>
+  </div>

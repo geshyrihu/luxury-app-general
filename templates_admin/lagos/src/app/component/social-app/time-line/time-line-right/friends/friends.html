@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="mb-0">
+      <button class="btn btn-link" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">Friends</button>
+    </h5>
+  </div>
+  <div class="collapse show" id="collapseicon13" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="card-body avatar-showcase filter-cards-view">
+      @for (item of Friends; track item) {
+      <div class="d-inline-block friend-pic">
+        <img class="img-50 rounded-circle" [src]="item.image" alt="#">
+      </div>
+      }
+    </div>
+  </div>
+</div>

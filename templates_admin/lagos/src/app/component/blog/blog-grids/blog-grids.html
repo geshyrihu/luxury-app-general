@@ -1,0 +1,65 @@
+<div class="container-fluid blog-grid-page">
+  <div class="row">
+    <div class="col-xxl-9 col-xl-8 box-col-12">
+      <div class="row">
+        @for (item of blogGrids; track item) {
+        <div class="col-xxl-4 col-xl-6 col-lg-4 col-sm-6">
+          <div class="card grid-cards">
+            <div class="card-header p-0 border-0">
+              <img class="img-fluid" [src]="item.image" alt="avatar">
+            </div>
+            <div class="card-body">
+              <div class="d-flex gap-2 align-items-center">
+                <div class="flex-shrink-0">
+                  <img class="img-fluid" [src]="item.profileImage" alt="avatar">
+                </div>
+                <div class="flex-grow-1">
+                  <h6>{{item.userName}}</h6>
+                  <p class="mb-0">{{item.date}}</p>
+                </div><i class="fa fa-ellipsis-v"></i>
+              </div>
+              <h5>{{item.title}}</h5>
+              <p>{{item.desc}}<a class="font-danger mx-1" [routerLink]="['/blog/blog-details']">Read more...</a></p>
+              <ul class="d-flex gap-3 justify-content-between">
+                <li>{{item.view}}k views</li>
+                <li class="blog-like" [class.clicked-color]="item.like">
+                  <app-common-svg-icon [icon]="'blog-heart'" (click)="liked(item)" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        }
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header pb-0 border-0">
+              <h4>Latest News and Trends</h4>
+            </div>
+            <div class="card-body">
+              <div class="row gy-3">
+                @for (item of latestNewsAndTrends; track item) {
+                  <div class="col-xxl-6 col-xl-12 col-md-6">
+                    <div class="blog-card">
+                      <h5>{{item.title}}</h5>
+                      <p>{{item.desc}}</p>
+                      <div class="post-social">
+                        <ul class="d-flex align-items-center">
+                          <li class="bg-light-primary txt-primary">{{item.date}}</li>
+                          <li class="bg-light-secondary txt-secondary"><i class="fa fa-user mx-1"></i>Admin</li>
+                          <li class="bg-light-info txt-info"><i class="fa fa-comments mx-1"></i>{{item.comment}} Comments</li>
+                        </ul>
+                      </div><a class="btn" [routerLink]="['/blog/blog-details']">View more<i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xxl-3 col-xl-4 blog-filter">
+        <app-blog-filter />
+    </div>
+  </div>
+</div>

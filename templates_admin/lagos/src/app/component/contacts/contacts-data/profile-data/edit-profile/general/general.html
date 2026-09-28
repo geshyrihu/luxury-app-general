@@ -1,0 +1,80 @@
+<div class="mt-0 mb-3 col-md-12">
+  <label>Name</label>
+  <div class="row gy-2">
+    <div class="col-sm-6">
+      <input
+        class="form-control"
+        id="first_name"
+        type="text"
+        required=""
+        placeholder="First Name"
+        value="{{profileData()?.fname}}"
+      />
+    </div>
+    <div class="col-sm-6">
+      <input
+        class="form-control"
+        id="last_name"
+        type="text"
+        required=""
+        placeholder="Last Name"
+        value="{{profileData()?.lname}}"
+      />
+    </div>
+  </div>
+</div>
+<div class="mt-0 mb-3 col-md-12">
+  <label>Email Address</label>
+  <input
+    class="form-control"
+    id="email_add"
+    type="text"
+    required=""
+    autocomplete="off"
+    value="{{profileData()?.email}}"
+  />
+</div>
+<div class="mt-0 mb-3 col-md-12">
+  <label>Phone</label>
+  <div class="row gy-2">
+    <div class="col-sm-6">
+      <input
+        class="form-control"
+        id="mobile_num"
+        type="text"
+        required=""
+        autocomplete="off"
+        value="{{profileData()?.mobileNo}}"
+      />
+    </div>
+    <div class="col-sm-6">
+      <select class="form-control">
+        <option>Mobile</option>
+        <option>Work</option>
+        <option>Others</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="mt-0 mb-3 col-md-12">
+  <label>URLS</label>
+  <div class="row gy-2">
+    <div class="col-lg-6 col-sm-6">
+      <input
+        class="form-control"
+        id="url_add"
+        type="text"
+        required=""
+        value="{{profileData()?.website}}"
+      />
+    </div>
+    <div class="col-lg-4 col-sm-6">
+      <select class="js-example-basic-single form-control">
+        <option value="pw">Personal web address</option>
+        <option value="cw">Company web address</option>
+        <option value="fb">Fabebook URL</option>
+        <option value="tw">Twitter URL</option>
+      </select>
+    </div>
+  </div>
+</div>

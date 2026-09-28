@@ -1,0 +1,31 @@
+<div class="beyo-line row">
+    <div class="beyoline-header bg-light-primary">
+        <div id="beyo-line">
+            <apx-chart [series]="exploringBoundaries.series" [chart]="exploringBoundaries.chart"
+                [plotOptions]="exploringBoundaries.plotOptions" [dataLabels]="exploringBoundaries.dataLabels"
+                [stroke]="exploringBoundaries.stroke" [grid]="exploringBoundaries.grid"
+                [yaxis]="exploringBoundaries.yaxis" [xaxis]="exploringBoundaries.xaxis"
+                [states]="exploringBoundaries.states" [tooltip]="exploringBoundaries.tooltip"
+                [fill]="exploringBoundaries.fill" [legend]="exploringBoundaries.legend"
+                [responsive]="exploringBoundaries.responsive" [colors]="exploringBoundaries.colors" />
+        </div>
+    </div>
+    <div class="beyo-detail">
+        <h4>Exploring Boundaries <span class="badge badge-primary">4 hours ago</span></h4>
+        <p>One of the world's most finest, young surf srars, Kanoa lgarashi.</p>
+        <div class="date-history">
+            <ul>
+                @for (item of user; track item) {
+                <li><img class="img-fluid" [src]="item.src" alt=""></li>
+                }
+                <li>
+                    <h2>+ 255</h2>
+                </li>
+            </ul>
+            <div class="date-lable">
+                <h3 class="float-end">15</h3>
+                <p class="float-end">January</p>
+            </div>
+        </div>
+    </div>
+</div>

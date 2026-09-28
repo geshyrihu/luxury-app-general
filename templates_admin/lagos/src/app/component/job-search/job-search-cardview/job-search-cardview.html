@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 xl-40 box-col-12">
+      <app-job-filter />
+    </div>
+    <div class="col-xl-9 xl-60 box-col-12">
+      <div class="row">
+        @for (cardData of jobCardsData; track cardData) {
+        <div class="col-xl-6 xl-100">
+          <div class="card" [class.ribbon-vertical-left-wrapper]="cardData.ribbion === true">
+            @if (cardData.ribbion === true) {
+            <div class="ribbon ribbon-bookmark ribbon-vertical-left ribbon-secondary">
+              <i class="icofont icofont-love"></i>
+            </div>
+            }
+            <div class="job-search">
+              <div class="card-body">
+                <div class="d-flex">
+                  <img class="img-40 img-fluid m-r-20" [src]="cardData.image" alt="" />
+                  <div class="flex-grow-1">
+                    <h6 class="f-w-600">
+                      <a href="javascript:void(0)">{{cardData.title}}</a>
+                      @if (cardData.tag === true) {
+                      <span class="badge badge-{{cardData.tagColor}} pull-right"
+                        >{{cardData.tagTitle}}</span
+                      >
+                      } @if (cardData.time === true) {
+                      <span class="pull-right">{{cardData.timeText}}</span>
+                      }
+                    </h6>
+                    <p>
+                      {{cardData.subTitle}}<span>
+                        <ngb-rating class="font-warning mx-1" [rate]="cardData.rating" />
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <p>{{cardData.desc}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+        <div class="col-sm-12">
+          <div class="job-pagination">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination pagination-primary">
+                <li class="page-item disabled">
+                  <a class="page-link" href="javascript:void(0)">Previous</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="javascript:void(0)">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

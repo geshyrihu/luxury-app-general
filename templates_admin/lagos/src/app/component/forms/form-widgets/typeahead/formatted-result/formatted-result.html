@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Formatted results</h4>
+        <p class="f-m-light mt-1">A typeahead example that uses a formatter function for string results </p>
+    </div>
+    <div class="card-body">
+        <div id="formatted">
+            <form class="theme-form">
+                <div>
+                    <input id="typeahead-format" type="text" class="form-control" placeholder="Countries" [(ngModel)]="model"
+      [ngbTypeahead]="search" [resultFormatter]="formatter" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

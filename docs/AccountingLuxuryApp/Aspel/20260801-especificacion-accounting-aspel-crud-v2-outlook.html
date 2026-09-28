@@ -1,0 +1,283 @@
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;">
+
+<h1 style="color: #003152; border-bottom: 2px solid #003152; padding-bottom: 8px; font-size: 18pt;">Propuesta Tecnica: Ampliacion de API REST Aspel COI</h1>
+
+<table style="border-collapse: collapse; width: 100%; margin-bottom: 20px;">
+<tr><td style="padding: 4px 10px; font-weight: bold; width: 120px;">De</td><td style="padding: 4px 10px;">Equipo de Desarrollo - LuxuryApp</td></tr>
+<tr><td style="padding: 4px 10px; font-weight: bold;">Para</td><td style="padding: 4px 10px;">Equipo de Desarrollo Aspel COI</td></tr>
+<tr><td style="padding: 4px 10px; font-weight: bold;">Fecha</td><td style="padding: 4px 10px;">15 de septiembre de 2026</td></tr>
+<tr><td style="padding: 4px 10px; font-weight: bold;">Version</td><td style="padding: 4px 10px;">2.0 (Ultra-Lean - 7 endpoints)</td></tr>
+<tr><td style="padding: 4px 10px; font-weight: bold;">Autor</td><td style="padding: 4px 10px;">Ricardo - Arquitecto de Software, LuxuryApp</td></tr>
+</table>
+
+<hr style="border: 1px solid #ccc;">
+
+<h2 style="color: #003152; font-size: 14pt;">1. Contexto</h2>
+<p>LuxuryApp se integra con Aspel COI via una API REST expuesta en <code>shem.dyndns.ws</code>. Actualmente existen <b>5 endpoints GET de solo lectura</b> que devuelven el 100% de los registros sin filtros.</p>
+<p><b>Problema:</b></p>
+<ul>
+<li>Full Table Scans en Firebird, tiempos &gt;10s en condominios con alto volumen.</li>
+<li>Filtrado del lado de LuxuryApp (descarga MBs para filtrar en C#).</li>
+<li>Imposibilidad de crear asientos contables automaticamente desde LuxuryApp.</li>
+</ul>
+<p><b>Objetivo:</b></p>
+<ol>
+<li>Endpoints <b>GET</b> con parametros de filtro por rangos de cuentas, periodos y fechas.</li>
+<li>Capacidad de <b>crear polizas contables</b> de forma atomica desde LuxuryApp.</li>
+</ol>
+
+<hr style="border: 1px solid #ccc;">
+
+<h2 style="color: #003152; font-size: 14pt;">2. Endpoints Existentes (sin cambios)</h2>
+<table style="border-collapse: collapse; width: 100%; font-family: Consolas, monospace; font-size: 10pt; background: #f5f5f5;">
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd;">GET /api/AspelCOI/GetCuentas?intEmpresa={id}&amp;intYear={year}</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd;">GET /api/AspelCOI/GetSaldos?intEmpresa={id}&amp;intYear={year}</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd;">GET /api/AspelCOI/GetPresupuestos?intEmpresa={id}&amp;intYear={year}</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd;">GET /api/AspelCOI/GetPolizas?intEmpresa={id}&amp;intYear={year}</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd;">GET /api/AspelCOI/GetAuxiliares?intEmpresa={id}&amp;intYear={year}</td></tr>
+</table>
+<p>Los nuevos son <b>adicionales</b>, no reemplazan estos.</p>
+
+<hr style="border: 1px solid #ccc;">
+
+<h2 style="color: #003152; font-size: 14pt;">3. Estructura de Tablas Firebird (Validada)</h2>
+<table style="border-collapse: collapse; width: 100%; font-size: 10pt;">
+<tr style="background: #003152; color: white;">
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: left;">Tabla</th>
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: left;">Entidad</th>
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: left;">PK</th>
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: left;">Campos clave</th>
+</tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">CUENTASxx</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Catalogo de cuentas</td><td style="padding: 6px 10px; border: 1px solid #ddd;">NUM_CTA</td><td style="padding: 6px 10px; border: 1px solid #ddd;">NIVEL (1-4), TIPO (A,P,C,I,E), NATURALEZA (1/2), STATUS, CTA_PAPA</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">SALDOSxx</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Balanza de comprobacion</td><td style="padding: 6px 10px; border: 1px solid #ddd;">NUM_CTA, EJERCICIO</td><td style="padding: 6px 10px; border: 1px solid #ddd;">INICIAL, CARGO01..14, ABONO01..14</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">PRESUPxx</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Presupuesto global</td><td style="padding: 6px 10px; border: 1px solid #ddd;">EJERCICIO, NUM_CTA</td><td style="padding: 6px 10px; border: 1px solid #ddd;">PRESUP01..14</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">PRESUPDPxx</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Presupuesto por depto</td><td style="padding: 6px 10px; border: 1px solid #ddd;">EJERCICIO, NUM_CTA, DEPTO</td><td style="padding: 6px 10px; border: 1px solid #ddd;">PRESUP01..14</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">POLIZASxx</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Cabecera de poliza</td><td style="padding: 6px 10px; border: 1px solid #ddd;">TIPO_POLI, NUM_POLIZ, PERIODO</td><td style="padding: 6px 10px; border: 1px solid #ddd;">FECHA_POL, CONCEP_PO</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">AUXILIARxx</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Partidas de poliza</td><td style="padding: 6px 10px; border: 1px solid #ddd;">TIPO_POLI, NUM_POLIZ, NUM_PART, PERIODO</td><td style="padding: 6px 10px; border: 1px solid #ddd;">NUM_CTA, DEBE_HABER (D/A), MONTOMOV</td></tr>
+</table>
+<p><i>Sufijo <code>xx</code> = ejercicio fiscal (ej: <code>26</code> para 2026).</i></p>
+
+<hr style="border: 1px solid #ccc;">
+
+<h2 style="color: #003152; font-size: 14pt;">4. Convenciones</h2>
+<table style="border-collapse: collapse; width: 100%; font-size: 10pt;">
+<tr><td style="padding: 4px 10px; font-weight: bold; width: 160px;">Base URL</td><td style="padding: 4px 10px;">/api/AspelCOI</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 4px 10px; font-weight: bold;">Formato</td><td style="padding: 4px 10px;">JSON</td></tr>
+<tr><td style="padding: 4px 10px; font-weight: bold;">Autenticacion</td><td style="padding: 4px 10px;">Headers <code>username</code> + <code>password</code> (mismos que endpoints actuales, via Vault)</td></tr>
+<tr><td style="padding: 4px 10px; font-weight: bold;">Errores</td><td style="padding: 4px 10px;">{ "error": { "code": "...", "message": "...", "details": [...] } }</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 4px 10px; font-weight: bold;">Codigos HTTP</td><td style="padding: 4px 10px;">200 (OK), 201 (Created), 400 (Bad Request), 404 (Not Found), 500 (Error)</td></tr>
+</table>
+
+<hr style="border: 1px solid #ccc;">
+
+<h2 style="color: #003152; font-size: 14pt;">5. Los 7 Endpoints</h2>
+
+<!-- === CUENTAS === -->
+<h3 style="color: #003152; font-size: 12pt;">5.1 Cuentas (Solo lectura)</h3>
+
+<p style="background: #e8f4f8; padding: 8px 12px; border-left: 4px solid #003152;"><b>GET /api/AspelCOI/cuentas</b> (Lista o individual)</p>
+<table style="border-collapse: collapse; width: 100%; font-size: 10pt;">
+<tr style="background: #003152; color: white;">
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Parametro</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Tipo</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Req</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Descripcion</th>
+</tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">intEmpresa</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Si</td><td style="padding: 5px 10px; border: 1px solid #ddd;">ID de empresa</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">intYear</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Si</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Ejercicio fiscal</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCta</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Si se envia, devuelve 1 cuenta exacta</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCtaInicio</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Rango inicial</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCtaFin</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Rango final</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">nivel</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Nivel (1-4)</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">tipo</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">A, P, C, I, E</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">status</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">A (activa), B (baja)</td></tr>
+</table>
+<p style="font-family: Consolas, monospace; font-size: 9pt; background: #f5f5f5; padding: 6px 10px; border: 1px solid #ddd;">
+GET /api/AspelCOI/cuentas?intEmpresa=12&amp;intYear=26&amp;nivel=4&amp;tipo=E&amp;status=A<br>
+GET /api/AspelCOI/cuentas?intEmpresa=12&amp;intYear=26&amp;numCta=601-005-000
+</p>
+
+<!-- === SALDOS === -->
+<h3 style="color: #003152; font-size: 12pt;">5.2 Saldos (Solo lectura)</h3>
+
+<p style="background: #e8f4f8; padding: 8px 12px; border-left: 4px solid #003152;"><b>GET /api/AspelCOI/saldos</b></p>
+<table style="border-collapse: collapse; width: 100%; font-size: 10pt;">
+<tr style="background: #003152; color: white;">
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Parametro</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Tipo</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Req</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Descripcion</th>
+</tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">intEmpresa</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Si</td><td style="padding: 5px 10px; border: 1px solid #ddd;">ID de empresa</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">intYear</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Si</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Ejercicio fiscal</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCta</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Cuenta exacta</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCtaInicio</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Rango inicial</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCtaFin</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Rango final</td></tr>
+</table>
+<p style="font-family: Consolas, monospace; font-size: 9pt; background: #f5f5f5; padding: 6px 10px; border: 1px solid #ddd;">
+GET /api/AspelCOI/saldos?intEmpresa=12&amp;intYear=26&amp;numCtaInicio=600-000&amp;numCtaFin=699-999
+</p>
+
+<!-- === PRESUPUESTOS === -->
+<h3 style="color: #003152; font-size: 12pt;">5.3 Presupuestos (Global y por Departamento)</h3>
+<p>Un solo endpoint que cubre ambas tablas (<code>PRESUPxx</code> y <code>PRESUPDPxx</code>) usando el parametro <code>depto</code>.</p>
+
+<p style="background: #e8f4f8; padding: 8px 12px; border-left: 4px solid #003152;"><b>GET /api/AspelCOI/presupuestos</b></p>
+<table style="border-collapse: collapse; width: 100%; font-size: 10pt;">
+<tr style="background: #003152; color: white;">
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Parametro</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Tipo</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Req</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Descripcion</th>
+</tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">intEmpresa</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Si</td><td style="padding: 5px 10px; border: 1px solid #ddd;">ID de empresa</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">intYear</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Si</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Ejercicio fiscal</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCta</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Cuenta exacta</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCtaInicio</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Rango inicial</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">numCtaFin</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Rango final</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">depto</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Si se envia, consulta PRESUPDPxx. Si no, PRESUPxx</td></tr>
+</table>
+<p style="font-family: Consolas, monospace; font-size: 9pt; background: #f5f5f5; padding: 6px 10px; border: 1px solid #ddd;">
+GET /api/AspelCOI/presupuestos?intEmpresa=12&amp;intYear=26&amp;numCtaInicio=601-000&amp;numCtaFin=601-999<br>
+GET /api/AspelCOI/presupuestos?intEmpresa=12&amp;intYear=26&amp;numCta=601-001-000&amp;depto=1
+</p>
+
+<p style="background: #e8f4f8; padding: 8px 12px; border-left: 4px solid #003152;"><b>PUT /api/AspelCOI/presupuestos/{numCta}</b> (Crear o actualizar)</p>
+<p>Si <code>depto</code> viene en el payload, opera sobre <code>PRESUPDPxx</code>. Si no, sobre <code>PRESUPxx</code>.</p>
+<p><b>Payload:</b></p>
+<table style="border-collapse: collapse; width: 100%; font-family: Consolas, monospace; font-size: 9pt; background: #f5f5f5;">
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">{</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"intEmpresa": 12,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"intYear": 26,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"depto": 1,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"presupuestos": {</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;"01": 15000.00, "02": 15000.00, "03": 18000.00,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;"04": 15000.00, "05": 15000.00, "06": 15000.00,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;"07": 15000.00, "08": 15000.00, "09": 15000.00,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;"10": 15000.00, "11": 15000.00, "12": 15000.00,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;"13": 0.00, "14": 0.00</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;}</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">}</td></tr>
+</table>
+<p><b>Validaciones:</b></p>
+<ul>
+<li><code>NUM_CTA</code> debe existir en <code>CUENTASxx</code>.</li>
+<li>Recomendado: cuentas de clase 4 (Ingresos) o 6 (Gastos).</li>
+</ul>
+
+<!-- === POLIZAS === -->
+<h3 style="color: #003152; font-size: 12pt;">5.4 Polizas y Partidas</h3>
+<p style="background: #fff3cd; padding: 8px 12px; border-left: 4px solid #ffc107;"><b>Critico:</b> Cabecera (POLIZASxx) + partidas (AUXILIARxx) deben ser atomicas en toda operacion de escritura.</p>
+
+<p style="background: #e8f4f8; padding: 8px 12px; border-left: 4px solid #003152;"><b>GET /api/AspelCOI/polizas</b> (Lista con filtros)</p>
+<table style="border-collapse: collapse; width: 100%; font-size: 10pt;">
+<tr style="background: #003152; color: white;">
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Parametro</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Tipo</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Req</th>
+<th style="padding: 5px 10px; border: 1px solid #ddd; text-align: left;">Descripcion</th>
+</tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">intEmpresa</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Si</td><td style="padding: 5px 10px; border: 1px solid #ddd;">ID de empresa</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">intYear</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">Si</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Ejercicio fiscal</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">tipoPoli</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">DI, IG, EG</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">periodo</td><td style="padding: 5px 10px; border: 1px solid #ddd;">int</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Periodo (1-14)</td></tr>
+<tr><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">fechaInicio</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Fecha inicio (ISO 8601)</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 5px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">fechaFin</td><td style="padding: 5px 10px; border: 1px solid #ddd;">string</td><td style="padding: 5px 10px; border: 1px solid #ddd; text-align: center;">No</td><td style="padding: 5px 10px; border: 1px solid #ddd;">Fecha fin (ISO 8601)</td></tr>
+</table>
+<p style="font-family: Consolas, monospace; font-size: 9pt; background: #f5f5f5; padding: 6px 10px; border: 1px solid #ddd;">
+GET /api/AspelCOI/polizas?intEmpresa=12&amp;intYear=26&amp;tipoPoli=EG&amp;periodo=9
+</p>
+
+<p style="background: #e8f4f8; padding: 8px 12px; border-left: 4px solid #003152;"><b>GET /api/AspelCOI/polizas/{tipoPoli}/{numPoliz}</b> (Detalle completo)</p>
+<p>Retorna cabecera + partidas de la poliza.</p>
+<p style="font-family: Consolas, monospace; font-size: 9pt; background: #f5f5f5; padding: 6px 10px; border: 1px solid #ddd;">
+GET /api/AspelCOI/polizas/DI/105?intEmpresa=12&amp;intYear=26&amp;periodo=9
+</p>
+
+<p style="background: #e8f4f8; padding: 8px 12px; border-left: 4px solid #003152;"><b>POST /api/AspelCOI/polizas</b> (Crear poliza atomica)</p>
+<p><b>Payload:</b></p>
+<table style="border-collapse: collapse; width: 100%; font-family: Consolas, monospace; font-size: 9pt; background: #f5f5f5;">
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">{</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"intEmpresa": 12,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"intYear": 26,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"tipoPoli": "DI",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"numPoliz": "105",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"periodo": 9,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"fechaPol": "2026-09-15T10:30:00",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"concepPo": "Ajuste por diferencia cambiaria",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;"partidas": [</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"numPart": 1,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"numCta": "205-001-000",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"debeHaber": "D",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"montoMov": 1500.50,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"concepPo": "Diferencia cambiaria",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"numDepto": 1,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ccostos": 0,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tipCambio": 1.00</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;},</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;{</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"numPart": 2,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"numCta": "503-001-000",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"debeHaber": "A",</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"montoMov": 1500.50,</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"concepPo": "Diferencia cambiaria"</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">&nbsp;&nbsp;]</td></tr>
+<tr><td style="padding: 4px 10px; border: 1px solid #ddd;">}</td></tr>
+</table>
+
+<p><b>Validaciones en escritura:</b></p>
+<ul>
+<li><b>Partida doble:</b> Suma Debe = Suma Haber. Rechazar HTTP 400 si no cuadra.</li>
+<li><b>Existencia de cuenta:</b> Cada NUM_CTA debe existir en CUENTASxx y no estar dado de baja.</li>
+<li><b>Folio unico:</b> TIPO_POLI + NUM_POLIZ no duplicado en el mismo periodo.</li>
+<li><b>Secuencia:</b> NUM_PART correlativo (1, 2, 3...).</li>
+<li><b>Transaccionalidad:</b> Si falla una partida, rollback completo.</li>
+</ul>
+
+<hr style="border: 1px solid #ccc;">
+
+<h2 style="color: #003152; font-size: 14pt;">6. Resumen</h2>
+<table style="border-collapse: collapse; width: 100%; font-size: 10pt;">
+<tr style="background: #003152; color: white;">
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: center;">#</th>
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: left;">Metodo</th>
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: left;">Endpoint</th>
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: left;">Descripcion</th>
+<th style="padding: 6px 10px; border: 1px solid #ddd; text-align: left;">Impacto</th>
+</tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd; text-align: center;">1</td><td style="padding: 6px 10px; border: 1px solid #ddd;"><b>GET</b></td><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">/cuentas</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Lista/individual con filtros</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Alto</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 6px 10px; border: 1px solid #ddd; text-align: center;">2</td><td style="padding: 6px 10px; border: 1px solid #ddd;"><b>GET</b></td><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">/saldos</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Solo lectura con filtros</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Alto</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd; text-align: center;">3</td><td style="padding: 6px 10px; border: 1px solid #ddd;"><b>GET</b></td><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">/presupuestos</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Global/depto con filtros</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Medio</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 6px 10px; border: 1px solid #ddd; text-align: center;">4</td><td style="padding: 6px 10px; border: 1px solid #ddd;"><b>PUT</b></td><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">/presupuestos/{numCta}</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Crear o actualizar</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Medio</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd; text-align: center;">5</td><td style="padding: 6px 10px; border: 1px solid #ddd;"><b>GET</b></td><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">/polizas</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Lista con filtros</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Alto</td></tr>
+<tr style="background: #f9f9f9;"><td style="padding: 6px 10px; border: 1px solid #ddd; text-align: center;">6</td><td style="padding: 6px 10px; border: 1px solid #ddd;"><b>GET</b></td><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">/polizas/{tipo}/{num}</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Detalle completo</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Alto</td></tr>
+<tr><td style="padding: 6px 10px; border: 1px solid #ddd; text-align: center;">7</td><td style="padding: 6px 10px; border: 1px solid #ddd;"><b>POST</b></td><td style="padding: 6px 10px; border: 1px solid #ddd; font-family: Consolas, monospace;">/polizas</td><td style="padding: 6px 10px; border: 1px solid #ddd;">Crear poliza atomica</td><td style="padding: 6px 10px; border: 1px solid #ddd; font-weight: bold;">Critico</td></tr>
+<tr style="background: #003152; color: white; font-weight: bold;">
+<td style="padding: 6px 10px; border: 1px solid #ddd;"></td>
+<td style="padding: 6px 10px; border: 1px solid #ddd;"></td>
+<td style="padding: 6px 10px; border: 1px solid #ddd;">TOTAL</td>
+<td style="padding: 6px 10px; border: 1px solid #ddd;">7 endpoints</td>
+<td style="padding: 6px 10px; border: 1px solid #ddd;"></td>
+</tr>
+</table>
+<p><i>El CRUD de cuentas (CUENTASxx) se omite en esta fase: es una operacion anual que se gestiona desde el escritorio de Aspel COI.</i></p>
+
+<hr style="border: 1px solid #ccc;">
+
+<h2 style="color: #003152; font-size: 14pt;">7. Siguientes Pasos</h2>
+<ol>
+<li>Validar viabilidad de filtros en endpoints GET.</li>
+<li>Confirmar compatibilidad de payloads con reglas de negocio internas.</li>
+<li>Estimar timeline para despliegue en entorno de pruebas (<code>shem.dyndns.ws</code>).</li>
+<li>Agendar sesion de 30 minutos para resolver dudas tecnicas.</li>
+</ol>
+
+<hr style="border: 1px solid #ccc;">
+<p style="font-style: italic; color: #666; text-align: center;">Equipo de Desarrollo - LuxuryApp</p>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Simple accordion</h4>
+    <p class="f-m-light mt-1">
+      Click the accordions below to expand/collapse the accordion content.
+      Use the <code>.accordion </code>.
+    </p>
+  </div>
+  <div class="card-body">
+    <div class="accordion dark-accordion" id="simpleaccordion" ngbAccordion [closeOthers]="true">
+      @for (allData of simpleAccordionData; track allData) {
+      <div class="accordion-item accordion-item-border" ngbAccordionItem [collapsed]="allData.panel !== 'First'">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed bg-light-primary txt-primary active" type="button"
+            ngbAccordionButton>{{allData.title}}
+            <app-feather-icons [class]="'svg-color'" [icons]="'chevron-down'" />
+          </button>
+        </h2>
+        <div class="accordion-collapse collapse show" id="collapseOne" ngbAccordionCollapse>
+          <div class="accordion-body" ngbAccordionBody>
+            <p [innerHTML]="allData.desc"></p>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

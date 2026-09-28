@@ -1,0 +1,107 @@
+<div>
+  <div class="logo-wrapper">
+    <a [routerLink]="['/dashboard/default']">
+      <img class="img-fluid" src="assets/images/logo/logo_light.png" alt="" />
+    </a>
+    <div class="back-btn" (click)="sidebarToggle()">
+      <i class="fa fa-angle-left"></i>
+    </div>
+    <div class="toggle-sidebar" (click)="sidebarToggle()">
+      <app-common-svg-icon
+        [class]="'stroke-icon sidebar-toggle status_toggle middle'"
+        [icon]="'toggle-icon'"
+      />
+      <app-common-svg-icon
+        [class]="'fill-icon sidebar-toggle status_toggle middle'"
+        [icon]="'fill-toggle-icon'"
+      />
+    </div>
+  </div>
+  <div class="logo-icon-wrapper">
+    <a href="javascript:void(0)">
+      <img class="img-fluid" src="assets/images/logo/logo-icon.png" alt=""
+    /></a>
+  </div>
+  <nav class="sidebar-main">
+    @if(leftArrow){
+    <div class="left-arrow" (click)="scrollToLeft()">
+      <app-feather-icons [icons]="'arrow-left'" />
+    </div>
+    }
+    <div
+      id="sidebar-menu"
+      class="sidebar-custom-scroll"
+      [style.margin-left]="layoutService.margin + 'px'"
+    >
+      <ul class="sidebar-links theme-scrollbar" id="simple-bar">
+        <li class="back-btn">
+          <a href="javascript:void(0)">
+            <img class="img-fluid" src="assets/images/logo/logo-icon.png" alt="" />
+          </a>
+          <div class="mobile-back text-end" (click)="sidebarToggle()">
+            <span>Back</span>
+            <i class="fa fa-angle-right ps-2" aria-hidden="true"></i>
+          </div>
+        </li>
+        <li class="pin-title sidebar-main-title" [class.show]="pinnedData">
+          <div>
+            <h6>Pinned</h6>
+          </div>
+        </li>
+        <ng-container *ngTemplateOutlet="recursiveMenu; context: { $implicit: menuItemsList }" />
+        <ng-template #recursiveMenu let-menuItemsList>
+          @for (item of menuItemsList; track item) {
+          <li
+            [class.pined]="isPined(item.title)"
+            [ngClass]="{'sidebar-list':item.level === 1 ,'sidebar-main-title': item.headTitle1}"
+          >
+            @if (item.headTitle1) {
+            <div>
+              <h6>{{item.headTitle1 | translate}}</h6>
+            </div>
+            } @if (item.level === 1) {
+            <i class="fa fa-thumb-tack" (click)="pinned(item.title)"></i>
+            } @if (item.type === 'extTabLink') {
+            <a href="{{ !item.type ? null : item.path }}"> {{ item.title | translate }} </a>
+            } @else { @if (!item.headTitle1) {
+            <a
+              [ngClass]="{ 'sidebar-link sidebar-title' : item.level === 1, 'submenu-title' : item.level === 2 , 'active' : item.active && (item.level === 1 || item.level === 2) }"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [class.link-nav]="!item.children &&  item.level === 1"
+              [routerLink]="item.path"
+              (click)="toggleNavActive(item)"
+            >
+              @if (item.icon && item.level === 1) {
+              <app-svg-icon [icon]="item.icon" />
+              } @if (item.level === 1) {
+              <span>{{item.title| translate}}</span>
+              } @else { {{item.title | translate}} }
+              <div class="according-menu">
+                @if (item.children || item.level === 2) {
+                <i class="fa fa-angle-{{ item.active ? 'down' : 'right' }} pull-right"></i>
+                }
+              </div>
+            </a>
+            } } @if (item.children) {
+            <ul
+              [class]="{ 'sidebar-submenu': item.level === 1, 'nav-sub-childmenu submenu-content' : item.level === 2}"
+              [style.display]=" item.active ? 'block' : 'none'"
+            >
+              <ng-container
+                *ngTemplateOutlet="recursiveMenu; context: { $implicit: item.children }"
+              />
+            </ul>
+            }
+          </li>
+          }
+        </ng-template>
+      </ul>
+    </div>
+    @if(rightArrow){
+    <div class="right-arrow" (click)="scrollToRight()">
+      <app-feather-icons [icons]="'arrow-right'" />
+    </div>
+    }
+  </nav>
+</div>

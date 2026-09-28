@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Line Chart</h4>
+  </div>
+  <div class="card-body chart-block">
+    <canvas
+      baseChart
+      class="chart"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [legend]="lineChartLegend"
+      [type]="'line'"
+    >
+    </canvas>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row">
+    @for (item of commanListData; track item) {
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>{{item.title}} </h4>
+          <p class="f-m-light mt-1 " [innerHTML]="item.subTitle"></p>
+        </div>
+        <div class="card-body">
+          <ul class="list-group {{item.class}}">
+            @for (items of item.data; track items) {
+            <li class="list-group-item {{items.class}}">
+              <i class="icofont icofont-arrow-right"></i>{{items.name}}
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    }
+    <div class="col-xxl-6 col-sm-12 box-col-12">
+      <app-contextual-classes />
+    </div>
+    <div class="col-xxl-6 col-12 box-col-12">
+      <app-horizontal-lists />
+    </div>
+    <div class="col-md-12">
+      <app-custom-content-lists />
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <app-checkbox-list />
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <app-radios />
+    </div>
+    <div class="col-xl-4 col-12">
+      <app-lists-with-numbers />
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <app-java-script-behavior />
+    </div>
+    <div class="col-xxl-4 col-md-6">
+      <app-numbered-badge-lists />
+    </div>
+    <div class="col-xxl-4 col-md-6">
+      <app-disabled-lists />
+    </div>
+    <div class="col-xxl-4">
+      <app-scrollable-lists />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="card-body filter-cards-view animate-chk" (clickOutside)="Outside(show())">
+  @for (item of filterData; track item) {
+  <div class="product-filter">
+    <h4 class="f-w-600">{{item.title}}</h4>
+    <div class="checkbox-animated mt-3">
+      @for (datas of item.data; track datas) {
+      <label class="d-block" for="{{datas.id}}">
+        <input
+          class="{{datas.type}}_animated"
+          id="{{datas.id}}"
+          type="{{datas.type}}"
+        />{{datas.name}}
+      </label>
+      }
+    </div>
+  </div>
+  }
+  <div class="product-filter slider-product">
+    <h4 class="f-w-600">Colors</h4>
+    <div class="color-selector">
+      <ul>
+        <li class="white"></li>
+        <li class="gray"></li>
+        <li class="black"></li>
+        <li class="orange"></li>
+        <li class="green"></li>
+        <li class="pink"></li>
+        <li class="yellow"></li>
+        <li class="blue"></li>
+        <li class="red"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="product-filter pb-0">
+    <h4 class="f-w-600">Price</h4>
+    <ngx-slider [(value)]="value2" [(highValue)]="maxvalue" [options]="options" />
+    <h4 class="f-w-600">New Products</h4>
+  </div>
+  <div class="product-filter pb-0 new-products">
+    <owl-carousel-o [options]="customOptions">
+      @for (data of productFilter; track data) {
+      <ng-template carouselSlide class="item">
+        <div class="owl-item">
+          <div class="item">
+            @for (items of data.item; track items) {
+            <div class="product-box row">
+              <div class="product-img col-md-5">
+                <img class="img-fluid img-100" [src]="items.img" alt="images" />
+              </div>
+              <div class="product-details col-md-7 text-start">
+                <span>
+                  <bar-rating class="star" [(rate)]="rating" [max]="5" />
+                </span>
+                <p class="mb-0">{{items.name}}</p>
+                <div class="product-price">${{items.price}}</div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+  </div>
+  <div class="product-filter text-center">
+    <img
+      class="img-fluid banner-product"
+      src="assets/images/ecommerce/banner.jpg"
+      alt=""
+      data-original-title=""
+      title=""
+    />
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="card height-equal">
+    <div class="card-header">
+        <h4>Vertical tabs</h4>
+        <p class="mt-1 f-m-light">Use the <code>#var-pills-tab</code> id thorough change vertical tabs.</p>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div ngbNav #nav="ngbNav" [(activeId)]="active"
+                class="nav flex-column nav-pills nav-success col-md-4 col-xs-12" orientation="vertical">
+                <ng-container ngbNavItem="home">
+                    <button ngbNavLink class="f-w-600 nav-link" style="text-align: start">Home</button>
+                    <ng-template ngbNavContent>
+                        <p>
+                            It was an easy decision.an affordable expense! Absolutely! we got peace of mind. Now, my
+                            time is spent on the <em class="txt-danger">“Sale”</em> and not on technology. Create
+                            product Builder tool is also
+                            pre-bundled in this template so that you can let the audience configure the product by
+                            themselves before placing the order.We are a small yet highly-skilled group of creative
+                            brains with a vast experience. Our team of web designers, online marketing experts,
+                            content writers, graphic professionals have completed numerous projects.
+                        </p>
+                    </ng-template>
+                </ng-container>
+                <ng-container ngbNavItem="component">
+                    <button ngbNavLink class="f-w-600 nav-link" style="text-align: start">Component</button>
+                    <ng-template ngbNavContent>
+                        <p>If you are a business owner, your website is absolutely one of the most important tools
+                            you have in your arsenal to get more - and better - clients and customers or a good one
+                            from a great one? Here are 10 qualities that a great website will need. Whether or not
+                            you end up retaining makespace based web designers, you should find them helpful:<br>-->
+                            Navigation<br>--> Visual Design<br>--> Web Friendly<br>--> Conversion</p>
+                    </ng-template>
+                </ng-container>
+                <ng-container ngbNavItem="pages">
+                    <button ngbNavLink class="f-w-600 nav-link" style="text-align: start">Pages</button>
+                    <ng-template ngbNavContent>
+                        <p>Available pages in Theme: <br><strong> Typography: </strong><br>Typography is the art of
+                            arranging letters and text in a way that makes the copy legible, clear, and visually
+                            appealing to the reader.<br><strong> Tooltip: </strong><br> A tooltip is a brief,
+                            informative message that appears when a user interacts with an element in a graphical
+                            user interface (GUI).</p>
+                    </ng-template>
+                </ng-container>
+                <ng-container ngbNavItem="settings">
+                    <button ngbNavLink class="f-w-600 nav-link" style="text-align: start">Settings</button>
+                    <ng-template ngbNavContent>
+                        <p class="p-sm-0 pt-2"><strong> Site purpose</strong><br>Like a mission statement, a
+                            website's purpose gives the primary reason for the site's existence in the world.
+                            Whether for education, advocacy, service provision, community organizing,
+                            etc.<br><strong> Features</strong><br>It's important to figure out as many of these in
+                            advance as you can for the sake of a more coherent design. </p>
+                    </ng-template>
+                </ng-container>
+            </div>
+            <div [ngbNavOutlet]="nav" class="col-md-8 col-xs-12"></div>
+        </div>
+    </div>
+</div>

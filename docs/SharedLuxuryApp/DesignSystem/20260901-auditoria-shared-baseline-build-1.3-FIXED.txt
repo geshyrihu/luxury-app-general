@@ -1,0 +1,31 @@
+ÔØ» Building...
+Ô£ö Building...
+Initial chunk files   | Names                     |  Raw size | Estimated transfer size
+main-24MBHOKQ.js      | main                      |   3.18 MB |               583.79 kB
+styles-2I345AU3.css   | styles                    | 882.84 kB |                60.80 kB
+polyfills-PZSJNBYU.js | polyfills                 | 494 bytes |               494 bytes
+
+                      | Initial total             |   4.06 MB |               645.08 kB
+
+Lazy chunk files      | Names                     |  Raw size | Estimated transfer size
+chunk-PCwLifr5.js     | heic-to                   |   3.00 MB |               489.83 kB
+chunk-BBqonUZn.js     | index                     |   1.15 MB |               312.74 kB
+chunk-wUeKfVQs.js     | -                         | 948.33 kB |               218.00 kB
+chunk-YfR1RL8_.js     | pdf-viewer-modal          | 501.48 kB |               123.83 kB
+chunk-B-_5bT22.js     | catalog-core-item         | 471.96 kB |                85.54 kB
+chunk-BOSTIHbG.js     | catalog-web-extras        | 453.79 kB |                72.63 kB
+chunk-BIB0LxGx.js     | -                         | 295.89 kB |                79.47 kB
+chunk-36QBQ0kO.js     | -                         | 233.67 kB |                59.07 kB
+chunk-DQLOPouh.js     | -                         | 220.73 kB |                39.87 kB
+chunk-BBtRRt8I.js     | quill                     | 206.36 kB |                52.03 kB
+chunk-C5AvZmh2.js     | -                         | 172.02 kB |                27.88 kB
+chunk-DLPxY09t.js     | financial-reports-wrapper | 104.59 kB |                18.70 kB
+chunk-CnfvgI9O.js     | -                         | 101.06 kB |                18.51 kB
+chunk-6USXIBUV.js     | -                         | 100.88 kB |                19.78 kB
+chunk-Ch1xC_uC.js     | funding-detail            |  92.73 kB |                20.30 kB
+...and 1296 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [131.497 seconds] - 2026-08-08T04:36:15.982Z
+
+Output location: D:\repos\luxuryapp-api\client\luxuryapp\dist\luxury-app
+

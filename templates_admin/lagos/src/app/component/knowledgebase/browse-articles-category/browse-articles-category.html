@@ -1,0 +1,52 @@
+<div class="col-sm-12">
+    <div class="header-faq">
+        <h4 class="mb-0">Browse articles by category</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header card-no-border pb-0">
+                    <h4>Browse Articles</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row browse g-sm-4 g-3">
+                        @for (allData of browseArticlesData; track allData) {
+                        <div class="{{ allData.colClass }}">
+                            <div class="browse-articles">
+                                <h5>
+                                    <span>
+                                        <app-feather-icons [icons]="allData.titleIcon" />
+                                    </span>{{allData.title}}
+                                </h5>
+                                <ul>
+                                    @for (points of allData.data; track points) {
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <span>
+                                                <app-feather-icons [icons]="'file-text'" />
+                                            </span>
+                                            <span>{{points.listData}}</span>
+                                            @if (points.tag === true) {
+                                            <span class="badge badge-primary pull-right">{{points.tagTitle}}</span>
+                                            }
+                                        </a>
+                                    </li>
+                                    }
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <span>
+                                                <app-feather-icons [icons]="'arrow-right'" />
+                                            </span>
+                                            <span>See More ({{allData.seeMore}})</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

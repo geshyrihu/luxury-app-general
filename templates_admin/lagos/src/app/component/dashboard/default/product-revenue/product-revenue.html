@@ -1,0 +1,69 @@
+<div class="card">
+    <div class="card-header card-no-border pb-0">
+        <div class="header-top">
+            <h4>Product Revenue</h4>
+            <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+                <button class="btn dropdown-toggle" type="button" [class.show]="isShow" (click)="isShow =!isShow">
+                    <i class="icon-more-alt"></i></button>
+                <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow"
+                    style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+                    <a class="dropdown-item" href="javascript:Void(0)">Weekly</a>
+                    <a class="dropdown-item" href="javascript:Void(0)">Monthly</a>
+                    <a class="dropdown-item" href="javascript:Void(0)">Yearly</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body sales-product pt-0">
+        <div class="table-responsive theme-scrollbar">
+            <div class="dataTables_wrapper no-footer">
+                <table class="table display dataTable no-footer" id="selling-product" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                </div>
+                            </th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>% Sold</th>
+                            <th>Progressbar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of productRevenue; track item) {
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0"><img [src]="item.image" alt=""></div>
+                                    <div class="flex-grow-1"><a [routerLink]="['/ecommerce/product-list']">
+                                            <h5>{{item.name}}</h5>
+                                        </a></div>
+                                </div>
+                            </td>
+                            <td>{{item.date}}</td>
+                            <td> {{item.amount}}</td>
+                            <td> {{item.sold}}</td>
+                            <td>
+                                <div class="progress progress-striped-{{item.progressBarClass}} b-r-2">
+                                    <div class="progress-bar" role="progressbar" [style.width]="item.progressBar">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

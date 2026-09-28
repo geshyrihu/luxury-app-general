@@ -1,0 +1,78 @@
+<div class="tab-pane fade active show">
+    <h5>Layout Type</h5>
+    <ul class="main-layout layout-grid">
+        <li data-attr="ltr" [class.active]="layoutType === 'ltr'" (click)="customizeLayoutType('ltr')">
+            <div class="header bg-light">
+                <ul><li></li><li></li><li></li></ul>
+            </div>
+            <div class="body">
+                <ul>
+                    <li class="bg-light sidebar"></li>
+                    <li class="bg-light body"><span class="badge badge-primary">LTR</span></li>
+                </ul>
+            </div>
+        </li>
+        <li data-attr="rtl" [class.active]="layoutType === 'rtl'" (click)="customizeLayoutType('rtl')">
+            <div class="header bg-light">
+                <ul><li></li><li></li><li></li></ul>
+            </div>
+            <div class="body">
+                <ul>
+                    <li class="bg-light body me-1"><span class="badge badge-primary">RTL</span></li>
+                    <li class="bg-light sidebar"></li>
+                </ul>
+            </div>
+        </li>
+        <li data-attr="ltr" class="box-layout px-3" [class.active]="layoutType === 'box-layout'"  (click)="customizeLayoutType('box-layout')">
+            <div class="header bg-light">
+                <ul><li></li><li></li><li></li></ul>
+            </div>
+            <div class="body">
+                <ul>
+                    <li class="bg-light sidebar"></li>
+                    <li class="bg-light body"><span class="badge badge-primary">Box</span></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <h5>Sidebar Type</h5>
+    <ul class="sidebar-type layout-grid">
+        <li data-attr="normal-sidebar" [class.active]="sidebarType === 'horizontal-wrapper'" (click)="customizeSidebarType('horizontal-wrapper')">
+            <div class="header bg-light">
+                <ul><li></li><li></li><li></li></ul>
+            </div>
+            <div class="body">
+                <ul>
+                    <li class="bg-dark sidebar"></li>
+                    <li class="bg-light body"></li>
+                </ul>
+            </div>
+        </li>
+        <li data-attr="compact-sidebar" [class.active]="sidebarType === 'compact-wrapper'" (click)="customizeSidebarType('compact-wrapper')">
+            <div class="header bg-light">
+                <ul><li></li><li></li><li></li></ul>
+            </div>
+            <div class="body">
+                <ul>
+                    <li class="bg-dark sidebar compact"></li>
+                    <li class="bg-light body"></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <h5>Sidebar Icon</h5>
+    <ul class="sidebar-setting layout-grid">
+        <li class="active" data-attr="stroke-svg" [class.active]="icon === 'stroke-svg'" (click)="svgIcon('stroke-svg')">
+            <div class="header bg-light">
+                <ul><li></li><li></li><li></li></ul>
+            </div>
+            <div class="body bg-light"><span class="badge badge-primary">Stroke</span></div>
+        </li>
+        <li data-attr="fill-svg" [class.active]="icon === 'fill-svg'" (click)="svgIcon('fill-svg')">
+            <div class="header bg-light">
+                <ul><li></li><li></li><li></li></ul>
+            </div>
+            <div class="body bg-light"><span class="badge badge-primary">Fill</span></div>
+        </li>
+    </ul>
+</div>

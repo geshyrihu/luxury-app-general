@@ -1,0 +1,110 @@
+<div class="container-fluid calendar-basic">
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Basic Calender</h4>
+            </div>
+            <div class="card-body">
+              <div class="calendar-default" id="calendar-container">
+                <div class="row text-center mb-3">
+                  <div class="col-lg-4">
+                    <div class="btn-group">
+                      <div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+                        (viewDateChange)="closeOpenMonthViewDay()"><i class="fa fa-angle-left"></i>
+                      </div>
+                      <div class="btn btn-secondary mx-1" mwlCalendarToday [(viewDate)]="viewDate"> Today</div>
+                      <div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()">
+                        <i class="fa fa-angle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <h3 class="my-1">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="btn-group">
+                      <div class="btn btn-primary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month"> Month</div>
+                      <div class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week"> Week</div>
+                      <div class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day"> Day</div>
+                    </div>
+                  </div>
+                </div>
+
+                @switch (view) {
+                  @case (CalendarView.Month) { <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)" /> }
+                  @case (CalendarView.Week) { <mwl-calendar-week-view [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)" />}
+                  @case (CalendarView.Day) { <mwl-calendar-day-view [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)" />
+                }
+                }
+                
+                <ng-template #modalContent let-close="close">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Event action occurred</h4>
+                    <button type="button" class="btn-close" (click)="close()"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>Action:<pre class="px-2">{{ modalData.action }}</pre></div>
+                    <div>Event:<pre class="px-2">{{ modalData.event | json }}</pre></div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="close()">OK</button>
+                  </div>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+              <h4>Edit events<div class="clearfix"></div></h4>
+              <button class="btn btn-primary float-end" (click)="addEvent()">Add new</button>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive theme-scrollbar">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Primary color</th>
+                      <th>Secondary color</th>
+                      <th>Starts at</th>
+                      <th>Ends at</th>
+                      <th>Remove</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (event of events; track event) {
+                      <tr >
+                        <td>
+                          <input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()" />
+                        </td>
+                        @if (event.color) {
+                          <td>
+                            <input type="color" [(ngModel)]="event.color.primary" (change)="refresh.next()" />
+                          </td>
+                        }
+                        @if (event.color) {
+                        <td>
+                          <input type="color" [(ngModel)]="event.color.secondary" (change)="refresh.next()" />
+                        </td>
+                        }
+                        <td>
+                          <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start" (ngModelChange)="refresh.next()" [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set" />
+                        </td>
+                        <td>
+                          <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.end" (ngModelChange)="refresh.next()" [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set" />
+                        </td>
+                        <td>
+                          <button class="btn btn-danger" (click)="deleteEvent(event)">Delete</button>
+                        </td>
+                      </tr>
+                    }
+                 
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>

@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="mb-0">Text color</h4>
+    <p class="f-m-light mt-1">You can Give text color by using <code>txt-*</code> class</p>
+  </div>
+  <div class="card-body">
+    <div class="d-flex flex-column gap-2">
+      @for (data of textColorData; track data) {
+      <p class="{{data.addClass}} mb-0">{{data.desc}}<code>.{{data.addClass}}</code> class</p>
+      }
+    </div>
+  </div>
+</div>

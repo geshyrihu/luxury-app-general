@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Custom content lists</h4>
+    <p class="f-m-light mt-1">Use the <code>.list-group-item</code> through make custom design of all lists.</p>
+  </div>
+  <div class="card-body">
+    <div class="list-group main-lists-content">
+      @for (data of customContentData; track data) {
+      <a class="list-group-item list-group-item-action {{data.class}}">
+        <div class="d-flex w-100 justify-content-between align-items-center">
+          <div class="list-wrapper"><img class="list-img" [src]="data.img" alt="profile">
+            <div class="list-content">
+              <h6>{{data.name}}</h6>
+              <p>{{data.email}}</p>
+            </div>
+          </div><small>{{data.time}}</small>
+        </div>
+        <p class="mb-1"> {{data.desc}}</p><small class="">{{data.followers}}</small>
+      </a>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3694 @@
+{
+  "intEstatus": 1,
+  "strMensaje": "OK",
+  "data": [
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-01T00:00:00",
+      "Concep_Po": "PENA MORATORIA DIC 25"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-01T00:00:00",
+      "Concep_Po": "PENA MORATORIA ENE 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-01T00:00:00",
+      "Concep_Po": "PENA MORATORIA FEB 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-01T00:00:00",
+      "Concep_Po": "PENA MORATORIA MARZO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-01T00:00:00",
+      "Concep_Po": "PENA MORATORIA ABR 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "PENA MORATORIA MAYO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "PENA MORATORIA DE JUNIO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "PENA MORATORIA JULIO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-01T00:00:00",
+      "Concep_Po": "CUOTA MTTO ENE 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-01T00:00:00",
+      "Concep_Po": "CUOTA MTTO FEB 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-01T00:00:00",
+      "Concep_Po": "CUOTA MTTO MZO 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-01T00:00:00",
+      "Concep_Po": "CUOTA MTTO ABR 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-01T00:00:00",
+      "Concep_Po": "CUOTA MTTO MAY 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "CUOTA DE MANTENIMIENTO JUNIO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "CUOTA DE MANTENIMIENTO JULIO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "CUOTA DE MANTENIMIENTO AGOSTO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-01T00:00:00",
+      "Concep_Po": "COMPL CUOTA MTTO ENE 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-11T00:00:00",
+      "Concep_Po": "COMPL CUOTA MTTO FEB 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-11T00:00:00",
+      "Concep_Po": "COMPL CUOTA MTTO MZO 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-11T00:00:00",
+      "Concep_Po": "COMPL CUOTA MTTO ABR 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-11T00:00:00",
+      "Concep_Po": "COMPL CUOTA MTTO MAY 26"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "DESCUENTO PRONTO PAGO JUNIO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "DESCUENTO PRONTO PAGO JULIO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "DESCUENTO PRONTO PAGO AGOSTO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-01T00:00:00",
+      "Concep_Po": "01 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-01T00:00:00",
+      "Concep_Po": "01 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-01T00:00:00",
+      "Concep_Po": "01 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-01T00:00:00",
+      "Concep_Po": "01 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-01T00:00:00",
+      "Concep_Po": "01 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "01 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "01 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "01 AGO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-02T00:00:00",
+      "Concep_Po": "02 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-02T00:00:00",
+      "Concep_Po": "02 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-02T00:00:00",
+      "Concep_Po": "02 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-02T00:00:00",
+      "Concep_Po": "02 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-02T00:00:00",
+      "Concep_Po": "02 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-02T00:00:00",
+      "Concep_Po": "02 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-02T00:00:00",
+      "Concep_Po": "02 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-02T00:00:00",
+      "Concep_Po": "02 AGO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-03T00:00:00",
+      "Concep_Po": "03 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-03T00:00:00",
+      "Concep_Po": "03 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-03T00:00:00",
+      "Concep_Po": "03 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-03T00:00:00",
+      "Concep_Po": "03 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-03T00:00:00",
+      "Concep_Po": "03 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-03T00:00:00",
+      "Concep_Po": "03 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-03T00:00:00",
+      "Concep_Po": "03 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-03T00:00:00",
+      "Concep_Po": "03 AGO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-04T00:00:00",
+      "Concep_Po": "04 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-04T00:00:00",
+      "Concep_Po": "04 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-04T00:00:00",
+      "Concep_Po": "04 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-04T00:00:00",
+      "Concep_Po": "04 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-04T00:00:00",
+      "Concep_Po": "04 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-04T00:00:00",
+      "Concep_Po": "04 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-04T00:00:00",
+      "Concep_Po": "04 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-04T00:00:00",
+      "Concep_Po": "04 AGO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-05T00:00:00",
+      "Concep_Po": "05 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-05T00:00:00",
+      "Concep_Po": "05 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-05T00:00:00",
+      "Concep_Po": "05 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-05T00:00:00",
+      "Concep_Po": "05 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-05T00:00:00",
+      "Concep_Po": "05 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-05T00:00:00",
+      "Concep_Po": "05 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-05T00:00:00",
+      "Concep_Po": "05 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-06T00:00:00",
+      "Concep_Po": "06 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-06T00:00:00",
+      "Concep_Po": "06 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-06T00:00:00",
+      "Concep_Po": "06 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-06T00:00:00",
+      "Concep_Po": "06 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-06T00:00:00",
+      "Concep_Po": "06 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-06T00:00:00",
+      "Concep_Po": "06 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-06T00:00:00",
+      "Concep_Po": "06 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   10",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-07T00:00:00",
+      "Concep_Po": "07 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   10",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-07T00:00:00",
+      "Concep_Po": "07 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   10",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-07T00:00:00",
+      "Concep_Po": "07 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   10",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-07T00:00:00",
+      "Concep_Po": "07 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   10",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-07T00:00:00",
+      "Concep_Po": "07 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   10",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-07T00:00:00",
+      "Concep_Po": "07 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   10",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-07T00:00:00",
+      "Concep_Po": "07 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-08T00:00:00",
+      "Concep_Po": "08 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-08T00:00:00",
+      "Concep_Po": "08 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-08T00:00:00",
+      "Concep_Po": "08 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-08T00:00:00",
+      "Concep_Po": "08 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-08T00:00:00",
+      "Concep_Po": "08 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-08T00:00:00",
+      "Concep_Po": "08 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-08T00:00:00",
+      "Concep_Po": "08 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-09T00:00:00",
+      "Concep_Po": "09 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-09T00:00:00",
+      "Concep_Po": "09 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-09T00:00:00",
+      "Concep_Po": "09 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-09T00:00:00",
+      "Concep_Po": "09 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-09T00:00:00",
+      "Concep_Po": "09 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-09T00:00:00",
+      "Concep_Po": "09 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-09T00:00:00",
+      "Concep_Po": "09 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-10T00:00:00",
+      "Concep_Po": "10 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-10T00:00:00",
+      "Concep_Po": "10 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-10T00:00:00",
+      "Concep_Po": "10 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-10T00:00:00",
+      "Concep_Po": "10 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-10T00:00:00",
+      "Concep_Po": "10 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-10T00:00:00",
+      "Concep_Po": "10 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-10T00:00:00",
+      "Concep_Po": "10 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   14",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-11T00:00:00",
+      "Concep_Po": "11 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   14",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-11T00:00:00",
+      "Concep_Po": "11 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   14",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-11T00:00:00",
+      "Concep_Po": "11 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   14",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-11T00:00:00",
+      "Concep_Po": "11 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   14",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-11T00:00:00",
+      "Concep_Po": "11 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   14",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-11T00:00:00",
+      "Concep_Po": "11 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   14",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-11T00:00:00",
+      "Concep_Po": "11 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   15",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-12T00:00:00",
+      "Concep_Po": "12 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   15",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-12T00:00:00",
+      "Concep_Po": "12 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   15",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-12T00:00:00",
+      "Concep_Po": "12 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   15",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-12T00:00:00",
+      "Concep_Po": "12 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   15",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-12T00:00:00",
+      "Concep_Po": "12 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   15",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-12T00:00:00",
+      "Concep_Po": "12 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   15",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-12T00:00:00",
+      "Concep_Po": "12 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   16",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-13T00:00:00",
+      "Concep_Po": "13 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   16",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-13T00:00:00",
+      "Concep_Po": "13 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   16",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-13T00:00:00",
+      "Concep_Po": "13 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   16",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-13T00:00:00",
+      "Concep_Po": "13 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   16",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-13T00:00:00",
+      "Concep_Po": "13 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   16",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-13T00:00:00",
+      "Concep_Po": "13 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   16",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-13T00:00:00",
+      "Concep_Po": "13 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   17",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-14T00:00:00",
+      "Concep_Po": "14 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   17",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-14T00:00:00",
+      "Concep_Po": "14 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   17",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-14T00:00:00",
+      "Concep_Po": "14 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   17",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-14T00:00:00",
+      "Concep_Po": "14 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   17",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-14T00:00:00",
+      "Concep_Po": "14 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   17",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-14T00:00:00",
+      "Concep_Po": "14 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   17",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-14T00:00:00",
+      "Concep_Po": "14 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   18",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-15T00:00:00",
+      "Concep_Po": "15 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   18",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-15T00:00:00",
+      "Concep_Po": "15 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   18",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-15T00:00:00",
+      "Concep_Po": "15 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   18",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-15T00:00:00",
+      "Concep_Po": "15 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   18",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-15T00:00:00",
+      "Concep_Po": "15 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   18",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-15T00:00:00",
+      "Concep_Po": "15 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   18",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-15T00:00:00",
+      "Concep_Po": "15 JUL 26 PRIVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   19",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-16T00:00:00",
+      "Concep_Po": "16 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   19",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-16T00:00:00",
+      "Concep_Po": "16 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   19",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-16T00:00:00",
+      "Concep_Po": "16 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   19",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-16T00:00:00",
+      "Concep_Po": "16 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   19",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-16T00:00:00",
+      "Concep_Po": "16 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   19",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-16T00:00:00",
+      "Concep_Po": "16 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   19",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-16T00:00:00",
+      "Concep_Po": "16 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   20",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-17T00:00:00",
+      "Concep_Po": "17 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   20",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-17T00:00:00",
+      "Concep_Po": "17 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   20",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-17T00:00:00",
+      "Concep_Po": "17 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   20",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-17T00:00:00",
+      "Concep_Po": "17 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   20",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-17T00:00:00",
+      "Concep_Po": "17 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   20",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-17T00:00:00",
+      "Concep_Po": "17 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   20",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-17T00:00:00",
+      "Concep_Po": "17 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   21",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-18T00:00:00",
+      "Concep_Po": "18 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   21",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-18T00:00:00",
+      "Concep_Po": "18 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   21",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-18T00:00:00",
+      "Concep_Po": "18 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   21",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-18T00:00:00",
+      "Concep_Po": "18 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   21",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-18T00:00:00",
+      "Concep_Po": "18 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   21",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-18T00:00:00",
+      "Concep_Po": "18 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   21",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-18T00:00:00",
+      "Concep_Po": "18 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   22",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-19T00:00:00",
+      "Concep_Po": "19 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   22",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-19T00:00:00",
+      "Concep_Po": "19 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   22",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-19T00:00:00",
+      "Concep_Po": "19 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   22",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-19T00:00:00",
+      "Concep_Po": "19 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   22",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-19T00:00:00",
+      "Concep_Po": "19 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   22",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-19T00:00:00",
+      "Concep_Po": "19 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   22",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-19T00:00:00",
+      "Concep_Po": "19 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   23",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-20T00:00:00",
+      "Concep_Po": "20 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   23",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-20T00:00:00",
+      "Concep_Po": "20 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   23",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-20T00:00:00",
+      "Concep_Po": "20 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   23",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-20T00:00:00",
+      "Concep_Po": "20 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   23",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-20T00:00:00",
+      "Concep_Po": "20 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   23",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-20T00:00:00",
+      "Concep_Po": "20 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   23",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-20T00:00:00",
+      "Concep_Po": "20 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   24",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-21T00:00:00",
+      "Concep_Po": "21 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   24",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-21T00:00:00",
+      "Concep_Po": "21 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   24",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-21T00:00:00",
+      "Concep_Po": "21 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   24",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-21T00:00:00",
+      "Concep_Po": "21 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   24",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-21T00:00:00",
+      "Concep_Po": "21 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   24",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-21T00:00:00",
+      "Concep_Po": "21 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   24",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-21T00:00:00",
+      "Concep_Po": "21 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   25",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-22T00:00:00",
+      "Concep_Po": "22 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   25",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-22T00:00:00",
+      "Concep_Po": "22 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   25",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-22T00:00:00",
+      "Concep_Po": "22 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   25",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-22T00:00:00",
+      "Concep_Po": "22 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   25",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-22T00:00:00",
+      "Concep_Po": "22 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   25",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-22T00:00:00",
+      "Concep_Po": "22 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   25",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-22T00:00:00",
+      "Concep_Po": "22 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   26",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-23T00:00:00",
+      "Concep_Po": "23 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   26",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-23T00:00:00",
+      "Concep_Po": "23 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   26",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-23T00:00:00",
+      "Concep_Po": "23 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   26",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-23T00:00:00",
+      "Concep_Po": "23 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   26",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-23T00:00:00",
+      "Concep_Po": "23 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   26",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-23T00:00:00",
+      "Concep_Po": "23 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   26",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-23T00:00:00",
+      "Concep_Po": "23 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   27",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-24T00:00:00",
+      "Concep_Po": "24 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   27",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-24T00:00:00",
+      "Concep_Po": "24 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   27",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-24T00:00:00",
+      "Concep_Po": "24 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   27",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-24T00:00:00",
+      "Concep_Po": "24 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   27",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-24T00:00:00",
+      "Concep_Po": "24 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   27",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-24T00:00:00",
+      "Concep_Po": "24 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   28",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-25T00:00:00",
+      "Concep_Po": "25 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   28",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-25T00:00:00",
+      "Concep_Po": "25 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   28",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-25T00:00:00",
+      "Concep_Po": "25 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   28",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-25T00:00:00",
+      "Concep_Po": "25 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   28",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-25T00:00:00",
+      "Concep_Po": "25 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   28",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-25T00:00:00",
+      "Concep_Po": "25 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   29",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-26T00:00:00",
+      "Concep_Po": "26 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   29",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-26T00:00:00",
+      "Concep_Po": "26 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   29",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-26T00:00:00",
+      "Concep_Po": "26 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   29",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-26T00:00:00",
+      "Concep_Po": "26 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   29",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-24T00:00:00",
+      "Concep_Po": "24 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   29",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-26T00:00:00",
+      "Concep_Po": "26 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   29",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-26T00:00:00",
+      "Concep_Po": "26 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   30",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-27T00:00:00",
+      "Concep_Po": "27 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   30",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-27T00:00:00",
+      "Concep_Po": "27 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   30",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-27T00:00:00",
+      "Concep_Po": "27 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   30",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-27T00:00:00",
+      "Concep_Po": "27 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   30",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-25T00:00:00",
+      "Concep_Po": "25 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   30",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-27T00:00:00",
+      "Concep_Po": "27 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   30",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-27T00:00:00",
+      "Concep_Po": "27 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   31",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-28T00:00:00",
+      "Concep_Po": "28 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   31",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "28 FEB 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   31",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-28T00:00:00",
+      "Concep_Po": "28 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   31",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-26T00:00:00",
+      "Concep_Po": "26 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   31",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-28T00:00:00",
+      "Concep_Po": "28 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   31",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-28T00:00:00",
+      "Concep_Po": "28 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   32",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-29T00:00:00",
+      "Concep_Po": "29 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   32",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-29T00:00:00",
+      "Concep_Po": "29 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   32",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-27T00:00:00",
+      "Concep_Po": "27 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   32",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-29T00:00:00",
+      "Concep_Po": "29 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   32",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-29T00:00:00",
+      "Concep_Po": "29 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   33",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-30T00:00:00",
+      "Concep_Po": "30 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   33",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-30T00:00:00",
+      "Concep_Po": "30 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   33",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-28T00:00:00",
+      "Concep_Po": "28 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   33",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-28T00:00:00",
+      "Concep_Po": "28 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   33",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "30 JUN 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   33",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "30 JUL 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   34",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-31T00:00:00",
+      "Concep_Po": "31 ENE 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   34",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-31T00:00:00",
+      "Concep_Po": "31 MZO 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   34",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-29T00:00:00",
+      "Concep_Po": "29 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   34",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-29T00:00:00",
+      "Concep_Po": "29 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   35",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "30 ABR 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   35",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-30T00:00:00",
+      "Concep_Po": "30 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   36",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "CAR001MTTO ORDINARIO test"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   36",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "31 MAY 26 PROVISION DE AMENIDADES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   37",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "CAR006RENTA AREAS COMUNES test"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   38",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "CAR005TARJETAS test"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-01T00:00:00",
+      "Concep_Po": "01 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-01T00:00:00",
+      "Concep_Po": "01 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-01T00:00:00",
+      "Concep_Po": "01 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-01T00:00:00",
+      "Concep_Po": "01 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-01T00:00:00",
+      "Concep_Po": "01 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "01 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "01 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "01 AGO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-02T00:00:00",
+      "Concep_Po": "02 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-02T00:00:00",
+      "Concep_Po": "02 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-02T00:00:00",
+      "Concep_Po": "02 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-02T00:00:00",
+      "Concep_Po": "02 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-02T00:00:00",
+      "Concep_Po": "02 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-02T00:00:00",
+      "Concep_Po": "02 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-02T00:00:00",
+      "Concep_Po": "02 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-02T00:00:00",
+      "Concep_Po": "02 AGO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-03T00:00:00",
+      "Concep_Po": "03 ENE 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-03T00:00:00",
+      "Concep_Po": "03 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-03T00:00:00",
+      "Concep_Po": "03 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-03T00:00:00",
+      "Concep_Po": "03 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-03T00:00:00",
+      "Concep_Po": "03 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-03T00:00:00",
+      "Concep_Po": "03 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-03T00:00:00",
+      "Concep_Po": "03 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-03T00:00:00",
+      "Concep_Po": "03 AGO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-04T00:00:00",
+      "Concep_Po": "04 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-04T00:00:00",
+      "Concep_Po": "04 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-04T00:00:00",
+      "Concep_Po": "04 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-04T00:00:00",
+      "Concep_Po": "04 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-04T00:00:00",
+      "Concep_Po": "04 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-04T00:00:00",
+      "Concep_Po": "04 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-04T00:00:00",
+      "Concep_Po": "04 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-04T00:00:00",
+      "Concep_Po": "04 AGO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-05T00:00:00",
+      "Concep_Po": "05 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-05T00:00:00",
+      "Concep_Po": "05 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-05T00:00:00",
+      "Concep_Po": "05 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-05T00:00:00",
+      "Concep_Po": "05 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-05T00:00:00",
+      "Concep_Po": "05 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-05T00:00:00",
+      "Concep_Po": "05 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-05T00:00:00",
+      "Concep_Po": "05 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-05T00:00:00",
+      "Concep_Po": "05 AGO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-06T00:00:00",
+      "Concep_Po": "06 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-06T00:00:00",
+      "Concep_Po": "06 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-06T00:00:00",
+      "Concep_Po": "06 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-06T00:00:00",
+      "Concep_Po": "06 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-06T00:00:00",
+      "Concep_Po": "06 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-06T00:00:00",
+      "Concep_Po": "06 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-06T00:00:00",
+      "Concep_Po": "06 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-06T00:00:00",
+      "Concep_Po": "PAGO CUOTA MANTENIMIENTO AGOSTO 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-07T00:00:00",
+      "Concep_Po": "07 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-07T00:00:00",
+      "Concep_Po": "07 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-07T00:00:00",
+      "Concep_Po": "07 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-07T00:00:00",
+      "Concep_Po": "07 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-07T00:00:00",
+      "Concep_Po": "07 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-07T00:00:00",
+      "Concep_Po": "07 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-07T00:00:00",
+      "Concep_Po": "07 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-07T00:00:00",
+      "Concep_Po": "PAGO CUOTA MANTENIMIENTO AGOSTO 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-08T00:00:00",
+      "Concep_Po": "08 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-08T00:00:00",
+      "Concep_Po": "08 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-08T00:00:00",
+      "Concep_Po": "08 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-08T00:00:00",
+      "Concep_Po": "08 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-08T00:00:00",
+      "Concep_Po": "08 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-08T00:00:00",
+      "Concep_Po": "08 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-08T00:00:00",
+      "Concep_Po": "08 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-09T00:00:00",
+      "Concep_Po": "09 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-09T00:00:00",
+      "Concep_Po": "09 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-09T00:00:00",
+      "Concep_Po": "09 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-09T00:00:00",
+      "Concep_Po": "09 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-09T00:00:00",
+      "Concep_Po": "09 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-09T00:00:00",
+      "Concep_Po": "09 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-09T00:00:00",
+      "Concep_Po": "09 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-10T00:00:00",
+      "Concep_Po": "10 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-10T00:00:00",
+      "Concep_Po": "10 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-10T00:00:00",
+      "Concep_Po": "10 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-10T00:00:00",
+      "Concep_Po": "10 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-10T00:00:00",
+      "Concep_Po": "10 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-10T00:00:00",
+      "Concep_Po": "10 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-10T00:00:00",
+      "Concep_Po": "10 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-11T00:00:00",
+      "Concep_Po": "11 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-11T00:00:00",
+      "Concep_Po": "11 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-11T00:00:00",
+      "Concep_Po": "11 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-11T00:00:00",
+      "Concep_Po": "11 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-11T00:00:00",
+      "Concep_Po": "11 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-11T00:00:00",
+      "Concep_Po": "11 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-11T00:00:00",
+      "Concep_Po": "11 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-12T00:00:00",
+      "Concep_Po": "12 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-12T00:00:00",
+      "Concep_Po": "12 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-12T00:00:00",
+      "Concep_Po": "12 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-12T00:00:00",
+      "Concep_Po": "12 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-12T00:00:00",
+      "Concep_Po": "12 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-12T00:00:00",
+      "Concep_Po": "12 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-12T00:00:00",
+      "Concep_Po": "12 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-13T00:00:00",
+      "Concep_Po": "13 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-13T00:00:00",
+      "Concep_Po": "13 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-13T00:00:00",
+      "Concep_Po": "13 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-13T00:00:00",
+      "Concep_Po": "13 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-13T00:00:00",
+      "Concep_Po": "13 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-13T00:00:00",
+      "Concep_Po": "13 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-13T00:00:00",
+      "Concep_Po": "13 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-14T00:00:00",
+      "Concep_Po": "14 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-14T00:00:00",
+      "Concep_Po": "14 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-14T00:00:00",
+      "Concep_Po": "14 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-14T00:00:00",
+      "Concep_Po": "14 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-14T00:00:00",
+      "Concep_Po": "14 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-14T00:00:00",
+      "Concep_Po": "14 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-14T00:00:00",
+      "Concep_Po": "14 JUL 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-15T00:00:00",
+      "Concep_Po": "15 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-15T00:00:00",
+      "Concep_Po": "15 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-15T00:00:00",
+      "Concep_Po": "15 MZO 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-15T00:00:00",
+      "Concep_Po": "15 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-15T00:00:00",
+      "Concep_Po": "15 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-15T00:00:00",
+      "Concep_Po": "15 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-15T00:00:00",
+      "Concep_Po": "15 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-16T00:00:00",
+      "Concep_Po": "16 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-16T00:00:00",
+      "Concep_Po": "16 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-16T00:00:00",
+      "Concep_Po": "16 MZO 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-16T00:00:00",
+      "Concep_Po": "16 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-16T00:00:00",
+      "Concep_Po": "16 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-16T00:00:00",
+      "Concep_Po": "16 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-16T00:00:00",
+      "Concep_Po": "16 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-17T00:00:00",
+      "Concep_Po": "17 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-17T00:00:00",
+      "Concep_Po": "17 FEB 25 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-17T00:00:00",
+      "Concep_Po": "17 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-17T00:00:00",
+      "Concep_Po": "17 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-17T00:00:00",
+      "Concep_Po": "17 MAY 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-17T00:00:00",
+      "Concep_Po": "17 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-17T00:00:00",
+      "Concep_Po": "17 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-18T00:00:00",
+      "Concep_Po": "18 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-18T00:00:00",
+      "Concep_Po": "18 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-18T00:00:00",
+      "Concep_Po": "18 MZO 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-18T00:00:00",
+      "Concep_Po": "18 ABR 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-18T00:00:00",
+      "Concep_Po": "18 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-18T00:00:00",
+      "Concep_Po": "18 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-18T00:00:00",
+      "Concep_Po": "18 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   19",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-19T00:00:00",
+      "Concep_Po": "19 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   19",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-19T00:00:00",
+      "Concep_Po": "19 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   19",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-19T00:00:00",
+      "Concep_Po": "19 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   19",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-19T00:00:00",
+      "Concep_Po": "19 ABR 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   19",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-19T00:00:00",
+      "Concep_Po": "19 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   19",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-19T00:00:00",
+      "Concep_Po": "19 JUN 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   19",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-19T00:00:00",
+      "Concep_Po": "19 JUL 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   20",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-20T00:00:00",
+      "Concep_Po": "20 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   20",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-20T00:00:00",
+      "Concep_Po": "20 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   20",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-20T00:00:00",
+      "Concep_Po": "20 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   20",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-20T00:00:00",
+      "Concep_Po": "20 ABR 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   20",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-20T00:00:00",
+      "Concep_Po": "20 MAY 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   20",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-20T00:00:00",
+      "Concep_Po": "20 JUN 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   20",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-20T00:00:00",
+      "Concep_Po": "20 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   21",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-21T00:00:00",
+      "Concep_Po": "21 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   21",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-21T00:00:00",
+      "Concep_Po": "21 FEB 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   21",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-21T00:00:00",
+      "Concep_Po": "21 MZO 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   21",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-21T00:00:00",
+      "Concep_Po": "21 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   21",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-21T00:00:00",
+      "Concep_Po": "21 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   21",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-21T00:00:00",
+      "Concep_Po": "21 JUN 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   21",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-21T00:00:00",
+      "Concep_Po": "21 JUL 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   22",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-22T00:00:00",
+      "Concep_Po": "22 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   22",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-22T00:00:00",
+      "Concep_Po": "22 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   22",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-22T00:00:00",
+      "Concep_Po": "22 MZO 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   22",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-22T00:00:00",
+      "Concep_Po": "22 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   22",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-22T00:00:00",
+      "Concep_Po": "22 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   22",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-22T00:00:00",
+      "Concep_Po": "22 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   22",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-22T00:00:00",
+      "Concep_Po": "22 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   23",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-23T00:00:00",
+      "Concep_Po": "23 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   23",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-23T00:00:00",
+      "Concep_Po": "23 FEB 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   23",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-23T00:00:00",
+      "Concep_Po": "23 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   23",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-23T00:00:00",
+      "Concep_Po": "23 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   23",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-23T00:00:00",
+      "Concep_Po": "23 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   23",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-23T00:00:00",
+      "Concep_Po": "23 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   23",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-23T00:00:00",
+      "Concep_Po": "23 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   24",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-24T00:00:00",
+      "Concep_Po": "24 ENE 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   24",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-24T00:00:00",
+      "Concep_Po": "24 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   24",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-24T00:00:00",
+      "Concep_Po": "24 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   24",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-24T00:00:00",
+      "Concep_Po": "24 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   24",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-24T00:00:00",
+      "Concep_Po": "24 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   24",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-24T00:00:00",
+      "Concep_Po": "24 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   24",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-24T00:00:00",
+      "Concep_Po": "24 JUL 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   25",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-25T00:00:00",
+      "Concep_Po": "25 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   25",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-25T00:00:00",
+      "Concep_Po": "25 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   25",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-25T00:00:00",
+      "Concep_Po": "25 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   25",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-25T00:00:00",
+      "Concep_Po": "25 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   25",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-25T00:00:00",
+      "Concep_Po": "25 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   25",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-25T00:00:00",
+      "Concep_Po": "25 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   25",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-25T00:00:00",
+      "Concep_Po": "25 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   26",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-26T00:00:00",
+      "Concep_Po": "26 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   26",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-26T00:00:00",
+      "Concep_Po": "26 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   26",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-26T00:00:00",
+      "Concep_Po": "26 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   26",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-26T00:00:00",
+      "Concep_Po": "26 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   26",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-26T00:00:00",
+      "Concep_Po": "26 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   26",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-26T00:00:00",
+      "Concep_Po": "26 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   26",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-26T00:00:00",
+      "Concep_Po": "26 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   27",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-27T00:00:00",
+      "Concep_Po": "27 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   27",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-27T00:00:00",
+      "Concep_Po": "27 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   27",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-27T00:00:00",
+      "Concep_Po": "27 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   27",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-27T00:00:00",
+      "Concep_Po": "27 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   27",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-27T00:00:00",
+      "Concep_Po": "27 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   27",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-27T00:00:00",
+      "Concep_Po": "27 JUN 26 SIN INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   27",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-27T00:00:00",
+      "Concep_Po": "27 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   28",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-28T00:00:00",
+      "Concep_Po": "28 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   28",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "28 FEB 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   28",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-28T00:00:00",
+      "Concep_Po": "28 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   28",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-28T00:00:00",
+      "Concep_Po": "28 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   28",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-28T00:00:00",
+      "Concep_Po": "28 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   28",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-28T00:00:00",
+      "Concep_Po": "28 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   28",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-28T00:00:00",
+      "Concep_Po": "28 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   29",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-29T00:00:00",
+      "Concep_Po": "29 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   29",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-29T00:00:00",
+      "Concep_Po": "29 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   29",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-29T00:00:00",
+      "Concep_Po": "29 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   29",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-29T00:00:00",
+      "Concep_Po": "29 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   29",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-29T00:00:00",
+      "Concep_Po": "29 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   29",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-29T00:00:00",
+      "Concep_Po": "29 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   30",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-30T00:00:00",
+      "Concep_Po": "30 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   30",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-30T00:00:00",
+      "Concep_Po": "30 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   30",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "30 ABR 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   30",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-30T00:00:00",
+      "Concep_Po": "30 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   30",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "30 JUN 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   30",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "30 JUL 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   31",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-31T00:00:00",
+      "Concep_Po": "31 ENE 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   31",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-31T00:00:00",
+      "Concep_Po": "31 MZO 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   31",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "31 MAY 26 INGRESOS DEL DIA"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   31",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-31T00:00:00",
+      "Concep_Po": "31 JUL 26 INGRESOS DEL DIA"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+- generic [active] [ref=f7e1]:
+  - link "Saltar al contenido principal" [ref=f7e2] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+  - generic "Aplicación LuxuryApp" [ref=f7e3]:
+    - generic:
+      - alertdialog
+    - main [ref=f7e7]:
+      - generic [ref=f7e11]:
+        - generic [ref=f7e12]:
+          - img "Logo Luxury Building Group" [ref=f7e14]
+          - main [ref=f7e15]:
+            - generic [ref=f7e16]:
+              - heading "Bienvenido de nuevo" [level=1] [ref=f7e18]
+              - paragraph [ref=f7e19]: Inicia sesión para continuar
+              - generic [ref=f7e20]:
+                - generic [ref=f7e25]:
+                  - generic [ref=f7e26]: Usuario *
+                  - textbox [ref=f7e28]:
+                    - /placeholder: " "
+                    - text: admin
+                - generic [ref=f7e33]:
+                  - generic [ref=f7e34]: Contraseña *
+                  - textbox [ref=f7e37]:
+                    - /placeholder: " "
+                    - text: Hwtc00--
+                - generic [ref=f7e40]:
+                  - generic [ref=f7e45]:
+                    - generic [ref=f7e46]: Recordarme
+                    - generic [ref=f7e48]:
+                      - checkbox [checked] [ref=f7e50] [cursor=pointer]
+                      - generic [ref=f7e55] [cursor=pointer]: Recordarme
+                  - link "¿Olvidaste tu contraseña?" [ref=f7e56] [cursor=pointer]:
+                    - /url: /auth/recovery-code
+                - button "INICIAR SESIÓN" [ref=f7e59] [cursor=pointer]
+                - generic [ref=f7e76]: No fue posible conectar con el servidor. Verifica tu conexión e inténtalo de nuevo.
+          - generic [ref=f7e65]: © 2026 Luxury Building Group. Todos los derechos reservados.
+        - generic [ref=f7e67]:
+          - img "LuxuryApp" [ref=f7e69]
+          - heading "Excelencia Inmobiliaria" [level=2] [ref=f7e70]
+          - paragraph [ref=f7e71]: Gestiona recursos, proyectos y operaciones con la suite tecnológica definitiva diseñada para líderes de la industria.

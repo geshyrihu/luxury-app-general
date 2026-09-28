@@ -1,0 +1,40 @@
+<div class="container-fluid default-dashboard">
+    <div class="row">
+        <div class="col-xxl-4 col-xl-6 col-md-7 box-col-6">
+            <app-profile-greeting />
+        </div>
+        <div class="col-xxl-2 col-xl-4 col-md-5 order-item-1 box-col-5">
+            <div class="row">
+                @for (item of data; track item) {
+                <div class="col-md-12 col-sm-6">
+                    <app-client-data [data]="item" />
+                </div>
+                }
+            </div>
+        </div>
+        <div class="col-md-6">
+            <app-sell-overview />
+        </div>
+        <div class="col-xl-5 col-md-6 xl-60 box-col-7">
+            <app-statistical-analysis />
+        </div>
+        <div class="col-xl-7 xl-100 xl-order-1 box-col-12">
+            <app-order-history />
+        </div>
+        <div class="col-xl-4 col-md-7 xl-40 box-col-5">
+            <app-overall-appointment />
+        </div>
+        <div class="col-xl-4 col-md-5 xl-50 box-col-6">
+            <app-overview-monthly />
+        </div>
+        <div class="col-xl-4 col-md-6 xl-50 lg-order-1 md-order-1 box-col-6">
+            <app-activity-timeline />
+        </div>
+        <div class="col-xxl-7 box-col-12">
+            <app-product-revenue />
+        </div>
+        <div class="col-xxl-5 col-xl-8 col-md-6 box-col-7">
+            <app-exploring-boundaries />
+        </div>
+    </div>
+</div>

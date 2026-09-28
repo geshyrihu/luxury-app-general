@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Radio button group</h4><span>Add <code>.active</code> for active state and<code>.disabled</code> class or
+      <code>disabled="disabled"</code> attribute</span>
+  </div>
+  <div class="card-body btn-group-showcase">
+    <div class="row">
+      @for (item of buttonData; track item) {
+      <div class="col-xxl-4 col-md-6 col-sm-12">
+        <div class="btn-radio">
+          <div class="btn-group" data-bs-toggle="buttons">
+            @for (data of item.child; track data) {
+            <div class="btn btn-{{item.color}}">
+              <div class="radio radio-{{item.color}}">
+                <input id="{{data.id}}" type="radio" name="{{data.name}}" value="option1" [checked]="data.checked">
+                <label for="{{data.id}}">{{data.title}}</label>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

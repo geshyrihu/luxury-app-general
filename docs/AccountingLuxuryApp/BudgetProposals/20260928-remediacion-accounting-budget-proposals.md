@@ -84,3 +84,8 @@ Este documento registra todas las correcciones, ajustes y refactorizaciones real
 
 
 
+
+### 2.10 Sincronización Real-Time SignalR (Listo / Eliminar)
+- **Problema:** Los cambios de estado de 'Listo' y la eliminación de cuentas no se reflejaban en tiempo real para otros usuarios conectados al mismo grupo (cliente/ejercicio), o, si lo hacían, sobreescribían y borraban la data enriquecida (Aspel) local.
+- **Solución UI:** Se actualizó handleBudgetProposalItemUpdate para utilizar patchItemInState y se añadió suscripción y método handleBudgetProposalItemDelete en presupuesto-propuesta.ts.
+- **Solución Backend:** Se añadió el evento SignalR ReceiveBudgetProposalItemDelete mediante SendBudgetProposalItemDeleteAsync e IBudgetProposalRealTimeService, inyectándolo en el endpoint DELETE y recogiendo el excludedConnectionId por *query parameter*.

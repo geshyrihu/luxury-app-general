@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="mb-0">
+      <button class="btn btn-link" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed">Upcoming
+        Courses</button>
+    </h5>
+  </div>
+  <div class="collapse show" id="collapseicon2" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="upcoming-course card-body">
+      @for (data of upcomingCourse; track data) {
+      <div class="d-flex">
+        <div class="flex-grow-1">
+          <span class="f-w-600">{{data.title}}</span>
+          <span class="d-block">Course By <a href="javascript:void(0)">{{data.courseBy}}</a></span>
+          <span class="d-block">
+            <ngb-rating class="font-warning" [rate]="data.rating" />
+          </span>
+        </div>
+        <div>
+          <h5 class="mb-0 font-primary">{{data.day}}</h5><span class="d-block">{{data.month}}</span>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

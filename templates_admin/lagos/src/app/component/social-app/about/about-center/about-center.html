@@ -1,0 +1,125 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h5>Pepole You May Know</h5>
+      </div>
+      <div class="card-body avatar-showcase">
+        <div class="pepole-knows">
+          <ul>
+            @for (item of peopleKnowYouData; track item) {
+            <li>
+              <div class="add-friend text-center">
+                <img class="img-60 img-fluid rounded-circle" alt="" [src]="item.profile" />
+                <span class="d-block">{{item.name}}</span>
+                <button class="btn btn-primary btn-xs">Add Friend</button>
+              </div>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    @for (item of hobbiedAndInterestData; track item) {
+    <div class="card">
+      <div class="card-header social-header">
+        <h5>
+          <span>{{item.heading}}</span
+          ><span class="pull-right">
+            <app-feather-icons [icons]="'more-vertical'" />
+          </span>
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="row details-about">
+          @for (data of item.data; track data) {
+          <div
+            class="col-sm-6"
+            [style.margin-top]="data.id === 1 ? '' : data.id === 2 ? '' : '30px'"
+          >
+            <div class="your-details your-details-xs">
+              <span class="f-w-600 mb-2 d-block"> {{data.title}}</span>
+              <p>{{data.desc}}</p>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="col-sm-12">
+    @for (item of eductionData; track item) {
+    <div class="card">
+      <div class="card-header social-header">
+        <h5>
+          <span>{{item.heading}}</span
+          ><span class="pull-right"> <app-feather-icons [icons]="'more-vertical'" /></span>
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="row details-about">
+          @for (data of item.data; track data) {
+          <div
+            class="col-sm-6"
+            [style.margin-top]="data.id === 1 ? '' : data.id === 2 ? '' : '30px'"
+          >
+            <div class="your-details">
+              <span class="f-w-600">{{data.title}}</span>
+              <p>{{data.year}}</p>
+              <p>{{data.desc}}</p>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h5>Viewed Your Profile</h5>
+      </div>
+      <div class="card-body avatar-showcase">
+        <div class="pepole-knows">
+          <ul>
+            @for (item of peopleKnowYouData; track item) {
+            <li>
+              <div class="add-friend text-center">
+                <img class="img-60 img-fluid rounded-circle" alt="" [src]="item.profile" />
+                <span class="d-block">{{item.name}}</span>
+                <button class="btn btn-primary btn-xs">Add Friend</button>
+              </div>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h5>Activity Log</h5>
+      </div>
+      <div class="card-body">
+        <div class="activity-log">
+          @for (item of activityLog; track item) {
+          <div class="my-activity">
+            <h6 class="f-w-600 mb-3">{{item.title}}</h6>
+            @for (alldata of item.data; track alldata) {
+            <p>
+              <span> <app-feather-icons [class]="'m-r-20'" [icons]="alldata.icon" /> </span
+              >{{alldata.data }}
+            </p>
+            }
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

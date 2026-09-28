@@ -1,0 +1,26 @@
+<form class="row g-2" novalidate [formGroup]="productForm">
+  <label class="form-label col-12 m-0" for="validationServer01">Product Title <span class="txt-danger"> *</span></label>
+  <div class="col-12 custom-input">
+    <input type="text" class="form-control" id="validationServer01" type="text" formControlName="product_Title"
+      [class]="{ 'is-invalid' : (productTitle?.touched || validate) && productTitle?.errors, 'is-valid' : !productTitle?.errors}">
+    @if (productTitle?.errors) {
+    <div class="invalid-feedback">A product name is required and recommended to be unique.</div>
+    } @else {
+    <div class="valid-feedback">Looks good!</div>
+    }
+  </div>
+  <div class="col-12">
+    <div class="toolbar-box">
+      <div id="editor2">
+        <angular-editor [placeholder]="'Enter text here...'" [ngModelOptions]="{standalone: true}" [(ngModel)]="htmlContent" />
+      </div>
+    </div>
+  </div>
+  <div class="product-buttons">
+    <button class="btn" type="submit" [disabled]="!productForm.valid">
+      <div class="d-flex align-items-center gap-sm-2 gap-1" (click)="next()">Next
+        <app-common-svg-icon [icon]="'front-arrow'" />
+      </div>
+    </button>
+  </div>
+</form>

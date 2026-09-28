@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Default radio</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.form-check-input </code>and <code>.form-check-label </code>for radios.</p>
+  </div>
+  <div class="card-body">
+    <div class="row g-3">
+      @for (item of defaultRedio; track item) {
+      <div class="col-sm-6 col-xl-4">
+        <div class="card-wrapper border rounded-3 checkbox-checked">
+          <h6 class="sub-title">{{item.title}} </h6>
+          @for (datas of item.data; track datas) {
+          <div class="form-check" [class.form-check-reverse]="item.id === 3">
+            <input class="form-check-input" id="{{datas.id}}" type="radio" name="data.name" [checked]="datas.active"
+              [disabled]="datas.disable">
+            <label class="form-check-label" for="{{datas.id}}">{{datas.text}}</label>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

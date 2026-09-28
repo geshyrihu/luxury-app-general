@@ -1,0 +1,31 @@
+<div class="card social-widget">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-2">
+        <div class="social-icons">
+          <img [src]="item()!.image" alt="facebook icon" />
+        </div>
+        <span class="f-w-600">{{item()!.name}}</span>
+      </div>
+      <span class="font-success f-12 d-xxl-block d-xl-none">+{{item()!.pr}}%</span>
+    </div>
+    <div class="social-content">
+      <div>
+        <h5 class="mb-1">{{item()!.followers}}</h5>
+        <span class="f-light">Followers</span>
+      </div>
+      <div class="social-chart">
+        <div id="soical">
+          <apx-chart
+            [series]="item()!.series"
+            [chart]="item()!.chart"
+            [responsive]="item()!.responsive"
+            [plotOptions]="item()!.plotOptions"
+            [colors]="item()!.colors"
+            [stroke]="item()!.stroke"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

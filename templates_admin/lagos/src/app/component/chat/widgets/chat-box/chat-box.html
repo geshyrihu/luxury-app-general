@@ -1,0 +1,38 @@
+<div class="right-sidebar-Chats">
+  <div class="msger">
+    <div class="msger-chat custom-scrollbar">
+      @for (item of chatData; track item) {
+      <div class="msg {{item.side}}-msg">
+        <div class="msg-img"></div>
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name">{{item.name}}</div>
+            <div class="msg-info-time">{{item.time}}</div>
+          </div>
+          <div class="msg-text">{{item.text}}</div>
+        </div>
+      </div>
+      }
+    </div>
+    <form class="msger-inputarea">
+      <div class="dropdown-form dropdown-toggle" role="main" (click)="isShow =!isShow">
+        <i class="icon-plus"></i>
+        <div class="chat-icon dropdown-menu dropdown-menu-start" [class.show]="isShow"
+          [style]="{'position': 'absolute','inset': 'auto auto 0px 0px','margin': '0px','transform': 'translate(0px, -43px)'}">
+          <div class="dropdown-item mb-2">
+            <app-common-svg-icon [icon]="'camera'" />
+          </div>
+          <div class="dropdown-item">
+            <app-common-svg-icon [icon]="'attchment'" />
+          </div>
+        </div>
+      </div>
+      <input class="msger-input two uk-textarea" type="text" placeholder="Type Message here..">
+      <div class="open-emoji">
+        <div class="second-btn uk-button">
+        </div>
+      </div>
+      <button class="msger-send-btn" type="submit"><i class="fa fa-location-arrow"></i></button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header">
+    <h4>With Controls</h4>
+    <p class="f-m-light mt-1">Use the <code>.carousel-control-prev</code> & <code>.carousel-control-next</code> through
+      previous and next controls. We recommend using <code>&lt;button&gt;</code> elements, but you can also use
+      <code>&lt;a&gt;</code> elements with <code>role="button".</code>
+    </p>
+  </div>
+  <div class="card-body">
+    <div class="carousel slide" id="carouselExampleControls" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <owl-carousel-o [options]="withControlOptions">
+          @for (slideData of withControlData; track slideData) {
+          <ng-template carouselSlide class="carousel-item">
+            <img class="d-block w-100" [src]="slideData.img" alt="">
+          </ng-template>
+        }
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>

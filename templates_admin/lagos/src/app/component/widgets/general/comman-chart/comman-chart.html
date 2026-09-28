@@ -1,0 +1,57 @@
+@for (items of item(); track item()) {
+<div class="card">
+  <div class="card-header card-no-border pb-0">
+    <div class="header-top daily-revenue-card">
+      <h4>{{items.title}}</h4>
+      <div class="dropdown icon-dropdown" (clickOutside)="clickoutSide()">
+        <button
+          class="btn dropdown-toggle"
+          id="userdropdown"
+          type="button"
+          (click)="isShow = !isShow"
+        >
+          <i class="icon-more-alt"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow">
+          <a class="dropdown-item" href="javascript:void(0)">Weekly</a>
+          <a class="dropdown-item" href="javascript:void(0)">Monthly</a>
+          <a class="dropdown-item" href="javascript:void(0)">Yearly</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pb-0 {{items.class}}">
+    <div class="d-flex align-items-center gap-2">
+      <div class="flex-shrink-0">
+        <img [src]="items.image" alt="icon" />
+      </div>
+      <div class="flex-grow-1">
+        <div class="d-flex align-items-center gap-2">
+          <h2>{{items.price}}</h2>
+          <div class="d-flex total-icon gap-1">
+            <p class="mb-0 up-arrow bg-light-{{items.color}}">
+              <i class="fa fa-arrow-{{items.arrow}} text-{{items.color}}"></i>
+            </p>
+            <span class="f-w-500 font-{{items.color}}">{{items.percentage}}</span>
+          </div>
+        </div>
+        <p class="text-truncate">Compared to {{items.completedTo}}</p>
+      </div>
+    </div>
+    <div id="admissionRatio">
+      <apx-chart
+        [series]="chatData()!.series"
+        [chart]="chatData()!.chart"
+        [stroke]="chatData()!.stroke"
+        [grid]="chatData()!.grid"
+        [fill]="chatData()!.fill"
+        [dataLabels]="chatData()!.dataLabels"
+        [colors]="chatData()!.colors"
+        [xaxis]="chatData()!.xaxis"
+        [yaxis]="chatData()!.yaxis"
+        [legend]="chatData()!.legend"
+      />
+    </div>
+  </div>
+</div>
+}

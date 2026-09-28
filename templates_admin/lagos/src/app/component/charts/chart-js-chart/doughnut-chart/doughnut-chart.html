@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Doughnut Chart</h4>
+  </div>
+  <div class="card-body chart-block chart-vertical-center">
+    <canvas
+      baseChart
+      class="chart"
+      [datasets]="doughnutChartData"
+      [labels]="doughnutChartLabels"
+      [options]="doughnutChartOptions"
+      [legend]="doughnutChartLegend"
+      [type]="'doughnut'"
+    >
+    </canvas>
+  </div>
+</div>

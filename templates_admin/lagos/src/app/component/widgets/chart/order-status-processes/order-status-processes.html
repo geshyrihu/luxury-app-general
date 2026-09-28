@@ -1,0 +1,24 @@
+ <div class="card">
+    <div class="card-header">
+      <h4>Order Status </h4>
+    </div>
+    <div class="card-body">
+      <div class="chart-container">
+        <div id="linechart">
+            <apx-chart [chart]="orderStatusProcesses.chart"
+            [dataLabels]="orderStatusProcesses.dataLabels" 
+            [stroke]="orderStatusProcesses.stroke"
+            [grid]="orderStatusProcesses.grid"
+            [fill]="orderStatusProcesses.fill"
+            [colors]="orderStatusProcesses.colors"
+            [markers]="orderStatusProcesses.markers"
+            [series]="orderStatusProcesses.series"
+            [xaxis]="orderStatusProcesses.xaxis"
+            [yaxis]="orderStatusProcesses.yaxis" 
+            [title]="orderStatusProcesses.title"
+            [legend]="orderStatusProcesses.legend"
+            [responsive]="orderStatusProcesses.responsive" />
+        </div>
+      </div>
+    </div>
+  </div>

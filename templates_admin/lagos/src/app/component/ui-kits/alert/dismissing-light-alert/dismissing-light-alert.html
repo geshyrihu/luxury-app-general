@@ -1,0 +1,14 @@
+<div class="card height-equal">
+    <div class="card-header">
+        <h4>Dismissing light alert</h4>
+        <p class="f-m-light mt-1">Use the <code>.alert-dismissible</code> utility class to quickly remove the alerts.
+        </p>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning alert-dismissible fade" role="alert" [class.show]="isShow">
+            <app-feather-icons [icons]="'bell'" />
+            <p>Hidden content You should check in on some of those fields below.</p>
+            <button class="btn-close" type="button" data-bs-dismiss="alert" (click)="isShow = false"></button>
+        </div>
+    </div>
+</div>

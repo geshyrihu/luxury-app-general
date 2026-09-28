@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Icons with tabs</h4>
+    <p class="mt-1 f-m-light">Use the <code>.nav-link </code>with feather icons. And <code>.show</code> class to tabs
+      change.</p>
+  </div>
+  <div class="card-body">
+    <ul class="nav nav-tabs" id="icon-tab" ngbNav #nav="ngbNav" [(activeId)]="active">
+      <li class="nav-item" [ngbNavItem]="1">
+        <a class="nav-link txt-secondary" id="icon-home-tab" ngbNavLink>
+          <i class="icofont icofont-ui-home"></i>Home</a>
+        <ng-template ngbNavContent>
+          <p class="pt-3"> Not limited to any states, boundaries. All over India providing cutting-edge design and
+            website development services for over 12 years. We provide end to end digital solutions, right from
+            designing your website/application development: Domain, Web Hosting, Email Hosting Registration, Search
+            Engine Optimization and other Internet Marketing, Renewal of Services timely and effectively.</p>
+        </ng-template>
+      </li>
+      <li class="nav-item" [ngbNavItem]="2">
+        <a class="nav-link txt-secondary" id="profile-icon-tabs" ngbNavLink>
+          <i class="icofont icofont-man-in-glasses"></i>Profile</a>
+        <ng-template ngbNavContent>
+          <div class="pt-3 mb-0">
+            <div class="flex-space flex-wrap align-items-center">
+              <img class="tab-img" src="assets/images/avtar/7.jpg" alt="profile">
+              <ul class="d-flex flex-column gap-1">
+                <li><strong>Visit Us: </strong> 278 Green Avenue Oakland, CA 94612</li>
+                <li><strong>Mail Us:</strong> MichaelMMcGowan&#64;teleworm.us</li>
+                <li><strong>Contact Number: </strong> 510-767-0025</li>
+              </ul>
+            </div>
+          </div>
+        </ng-template>
+      </li>
+      <li class="nav-item" [ngbNavItem]="3">
+        <a class="nav-link txt-secondary" id="contact-icon-tab" ngbNavLink>
+          <i class="icofont icofont-contacts"></i>Contact</a>
+        <ng-template ngbNavContent>
+          <p class="pt-3">Us Technology offers web & mobile development solutions for all industry verticals.Include a
+            short form using fields that'll help your business understand who's contacting them. </p>
+          <label class="form-label" for="exampleFormControlone">Email address</label>
+          <input class="form-control" id="exampleFormControlone" type="email" placeholder="youremail@gmail.com">
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  </div>
+</div>

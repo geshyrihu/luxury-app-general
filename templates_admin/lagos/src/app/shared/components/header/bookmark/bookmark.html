@@ -1,0 +1,71 @@
+<app-common-svg-icon [icon]="'star'" class="icon-vertical" />
+<div class="onhover-show-div bookmark-flip" [class.active]="item()">
+  <div class="flip-card">
+    <div class="flip-card-inner" [class.flipped]="isFlip">
+      <div class="front">
+        <h5 class="f-18 f-w-600 mb-0 dropdown-title">Bookmark</h5>
+        <ul class="bookmark-dropdown">
+          <li class="custom-scrollbar">
+            <div class="row g-1">
+              @for (item of bookmarkItems; track item) {
+                <div class="col-4 text-center">
+                  <a [routerLink]="item.path">
+                    <div class="bookmark-content">
+                      <div class="bookmark-icon">
+                        <app-svg-icon [class]="'stroke-primary'" [icon]="item.icon" />
+                      </div>
+                      <span>{{item.title}}</span>
+                    </div>
+                  </a>
+                </div>
+              }
+            </div>
+          </li>
+          <li class="text-center m-0">
+            <a class="flip-btn f-w-700" id="flip-btn" (click)="isFlip = !isFlip">Add New Bookmark</a>
+          </li>
+        </ul>
+      </div>
+      <div class="back">
+        <ul>
+          <li>
+            <div class="bookmark-dropdown flip-back-content position-relative">
+              <input type="text" placeholder="search..." [(ngModel)]="text" [ngModelOptions]="{ standalone: true }"
+                (keyup)="searchTerm(text)">
+                @if (menuItems.length) {
+                  <div class="Typeahead-menu custom-scrollbar" [class.is-open]="searchResult" id="boomark-search-outer">
+                    @for (item of menuItems | slice : 0 : 8; track item) {
+                      <div class="ProfileCard u-cf">
+                        <div class="ProfileCard-avatar">
+                          <app-svg-icon [icon]="item.icon" />
+                        </div>
+                        <div class="ProfileCard-details">
+                          <div class="ProfileCard-realName d-flex">
+                            <a [routerLink]="item.path" (click)="removeFix()">{{ item?.title }}</a>
+                            <span (click)="addToBookmark(item)">
+                              <a>
+                                <i class="fa fa-star-o f-18 " [class.starred]="item.bookmark"></i>
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                }
+              <div class="Typeahead-menu is-open" [class.is-open]="searchResultEmpty">
+                <div class="tt-dataset tt-dataset-0">
+                  <div class="EmptyMessage">Opps!! There are no result found.</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a class="f-w-700 d-block flip-back" id="flip-back" href="javascript:void(0)"
+              (click)="isFlip = !isFlip">Back</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

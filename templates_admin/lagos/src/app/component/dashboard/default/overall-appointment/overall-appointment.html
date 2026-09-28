@@ -1,0 +1,51 @@
+<div class="card appointment-detail">
+    <div class="card-header pb-0 card-no-border">
+        <div class="header-top">
+            <h4>Overall Appointment</h4>
+            <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+                <button class="btn dropdown-toggle" type="button" [class.show]="isShow" (click)="isShow =!isShow">
+                    <i class="icon-more-alt"></i></button>
+                <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow"
+                    style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+                    <a class="dropdown-item" href="javascript:Void(0)">Weekly</a>
+                    <a class="dropdown-item" href="javascript:Void(0)">Monthly</a>
+                    <a class="dropdown-item" href="javascript:Void(0)">Yearly</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive theme-scrollbar">
+            <div class="no-footer">
+                <table class="table display no-footer" id="selling-product" style="width:100%">
+                    <tbody>
+                        @for (item of appointmentTable; track item) {
+                        <tr>
+                            <td>
+                                <div class="d-flex">
+                                    <img class="img-fluid align-top circle" [src]="item.image" alt="">
+                                    <div class="flex-grow-1">
+                                        <a [routerLink]="['/user/users-profile']">
+                                            <span>{{item.name}}</span>
+                                        </a>
+                                        <p class="mb-0">{{item.time}}</p>
+                                    </div>
+                                    <div class="active-status active-{{item.statusClass}}"></div>
+                                </div>
+                            </td>
+                            <td>{{item.date}} </td>
+                            <td class="text-end">
+                                <button class="btn background-light-{{item.color}}" type="button" [routerLink]="['/user/users-cards']">{{item.buttonText}}
+                                    @if(item.buttonText === 'Done'){
+                                    <div class="fa fa-check-circle ms-1"></div>
+                                    }
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

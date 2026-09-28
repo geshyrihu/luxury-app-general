@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "776691429232",
+    "project_id": "luxuryapp-notifications",
+    "storage_bucket": "luxuryapp-notifications.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776691429232:android:f1a6328192b5434695e9b5",
+        "android_client_info": {
+          "package_name": "com.example.mobile_commite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdR-0jC0wDA3Wtr3aD8qU9-63VwWa4MHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

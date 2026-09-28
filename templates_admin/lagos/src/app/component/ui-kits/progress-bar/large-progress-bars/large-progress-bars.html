@@ -1,0 +1,20 @@
+@for (allData of largeProgressBarData; track allData) {
+<div class="card height-equal">
+    <div class="card-header">
+        <h4>{{allData.header}}</h4>
+        <p class="f-m-light mt-1" [innerHTML]="allData.desc"></p>
+    </div>
+    <div class="card-body progress-showcase">
+        <div class="row">
+            <div class="col">
+                @for (data of allData.data; track data) {
+                <div class="progress lg-progress-bar">
+                    <div class="progress-bar bg-{{data.colorClass}}" role="progressbar"
+                        [style.width]="data.width">{{data.width}}</div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+}

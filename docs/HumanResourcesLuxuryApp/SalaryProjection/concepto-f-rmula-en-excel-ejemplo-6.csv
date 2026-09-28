@@ -1,0 +1,7 @@
+﻿Concepto,Fórmula en Excel (ejemplo),Aportación Patrón,Aportación Trabajador
+Retiro (SAR),"'=SBC*0.02",2%,0%
+Cesantía y Vejez (Patrón),"'=SBC*0.045 (ejemplo 4.5%)",3.15–7.51%,—
+Cesantía y Vejez (Trabajador),"'=SBC*0.01125",—,1.125%
+INFONAVIT,"'=SBC*0.05",5%,0%
+IMSS Cuotas (aprox.),"'=SBC*0.20 (depende de prima RT y UMA)",20–30%,2–3%
+ISN Edo. Méx.,"'=SBC*0.03",3%,0%

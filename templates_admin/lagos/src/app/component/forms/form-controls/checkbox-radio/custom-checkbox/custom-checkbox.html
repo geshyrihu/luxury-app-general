@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Custom checkbox</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.form-check-input </code>and <code>.form-check-label </code>for checkbox. And filled checkbox used
+      <code>.checkbox-dashed-*</code> and bordered checkbox used <code>.checkbox-*</code>.
+    </p>
+  </div>
+  <div class="card-body">
+    <div class="row g-3">
+      <div class="col-xl-4 col-sm-6">
+        <div class="card-wrapper border rounded-3 h-100 checkbox-checked">
+          <h6 class="sub-title">Bordered Checkbox </h6>
+          @for (data of borderedCheckBox; track data) {
+          <div class="form-check checkbox checkbox-{{data.color}} mb-0">
+            <input class="form-check-input" id="checkbox-{{data.id}}" type="checkbox" [(ngModel)]="data.checked">
+            <label class="form-check-label" for="checkbox-{{data.id}}">{{data.title}}</label>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="col-xl-4 col-sm-12 order-xl-0 order-sm-1">
+        <div class="card-wrapper border rounded-3 h-100 checkbox-checked">
+          <h6 class="sub-title">Icon Checkbox </h6>
+          <div class="form-check checkbox checkbox-primary ps-0 main-icon-checkbox">
+            <ul class="checkbox-wrapper">
+              @for (data of iconCheckBox; track data) {
+              <li>
+                <input class="form-check-input checkbox-shadow" id="{{data.id}}" type="checkbox"
+                  [(ngModel)]="data.checked">
+                <label class="form-check-label" for="{{data.id}}"><i
+                    class="fa fa-{{data.icon}}"></i><span>{{data.title}}</span></label>
+              </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-sm-6">
+        <div class="card-wrapper border rounded-3 h-100 checkbox-checked">
+          <h6 class="sub-title">Filled Checkbox </h6>
+          @for (data of filledCheckBox; track data) {
+          <div class="form-check checkbox checkbox-dashed-{{data.color}}">
+            <input class="form-check-input" id="{{data.id}}" type="checkbox" [(ngModel)]="data.checked">
+            <label class="form-check-label" for="{{data.id}}">{{data.title}} </label>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

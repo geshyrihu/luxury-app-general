@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Radio toggle buttons</h4>
+    <p class="f-m-light mt-1">
+      The choice between these two approaches will depend on the type of toggle you are creating, and whether or not the
+      toggle will make sense to users when announced as a checkbox or as an actual button.
+      <code>[any one selected]</code>.
+    </p>
+  </div>
+  <div class="card-body common-flex main-radio-toggle">
+    @for (item of RadioToggleButtons; track item) {
+    <input class="btn-check radio-light-secondary" id="{{item.id}}" type="radio" name="options" [checked]="item.active"
+      [disabled]="item.disable">
+    <label class="btn list-light-secondary" for="{{item.id}}">{{item.text}}</label>
+    }
+  </div>
+</div>

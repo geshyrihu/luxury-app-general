@@ -1,0 +1,19 @@
+Analiza el módulo de inventario de maquinarias de nuestro proyecto (aunque posiblemente deba tener otro nombre más apropiado; al finalizar tu análisis agradeceré que propongas una alternativa).
+
+Del lado del API, desarrollado en .NET 9, las clases de entidad se encuentran en:
+
+D:\repos\luxuryapp-api\LuxuryApp.Infrastructure\Entities\Activos\
+
+
+La implementación del módulo —incluyendo DTOs, servicios, vistas, controladores, y lógica de aplicación— se ubica en:
+
+D:\repos\luxuryapp-api\LuxuryApp.Application\Features\Machinery\
+
+
+Como primera fase, el objetivo es analizar detalladamente la funcionalidad actual, identificar áreas de mejora y oportunidades de optimización, tanto en la arquitectura como en la organización del código y la experiencia de uso.
+
+Este módulo tiene como propósito centralizar el inventario de equipos pertenecientes a áreas comunes y otras zonas de un residencial.
+
+Por su parte, el frontend está desarrollado en Angular 20 y se localiza en:
+
+D:\repos\luxuryapp-api\ClientAngular\src\app\features\inventarios\machineries

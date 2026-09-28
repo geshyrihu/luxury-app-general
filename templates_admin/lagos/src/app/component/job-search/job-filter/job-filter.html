@@ -1,0 +1,65 @@
+<div class="md-sidebar" (clickOutside)="outSide()">
+  <a class="btn btn-primary email-aside-toggle md-sidebar-toggle" (click)="isOpen=!isOpen">Job filter</a>
+  <div class="md-sidebar-aside job-sidebar" [class.open]="isOpen">
+    <div class="default-according style-1 faq-accordion job-accordion">
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-start" type="button" (click)="collapse.toggle()"
+                [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                Filter</button>
+            </h2>
+          </div>
+          <div class="collapse show" id="collapseOne" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <div class="card-body filter-cards-view animate-chk">
+              <div class="job-filter mb-2">
+                <div class="faq-form">
+                  <input class="form-control" type="text" placeholder="Search.."> <app-feather-icons [class]="'search-icon'" [icons]="'search'" />
+                </div>
+              </div>
+              <div class="job-filter">
+                <div class="faq-form">
+                  <input class="form-control" type="text" placeholder="location..">
+                  <app-feather-icons [class]="'search-icon'" [icons]="'map-pin'" />
+                </div>
+              </div>
+              <div class="checkbox-animated">
+                @for (allData of filterChackBox; track allData) {
+                <label class="d-block" for="{{ allData.id }}">
+                  <input class="checkbox_animated" id="{{ allData.id }}" type="checkbox"> {{ allData.label }} ({{
+                  allData.vacancy }})
+                </label>
+                }
+              </div>
+              <button class="btn btn-primary text-center" type="button">Find jobs</button>
+            </div>
+          </div>
+        </div>
+        @for (allData of filterData; track allData) {
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-start collapsed" type="button" (click)="collapse.toggle()"
+                  [attr.aria-expanded]="!allData.isCollapsed">{{ allData.title }}</button>
+              </h2>
+            </div>
+            <div class="collapse show" id="collapseTwo" #collapse="ngbCollapse" [(ngbCollapse)]="allData.isCollapsed">
+              <div class="card-body animate-chk">
+                <div class="location-checkbox">
+                  @for (data of allData.checkBoxs; track data) {
+                    <label class="d-block" for="{{data.id}}">
+                      <input class="checkbox_animated" id="{{data.id}}" type="checkbox">{{data.checkTitle}}<span
+                      class="d-block">{{data.subTitle }}</span>
+                    </label>
+                  }
+                </div>
+              </div>
+              <button class="btn btn-block btn-primary text-center" type="button">All Locations</button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

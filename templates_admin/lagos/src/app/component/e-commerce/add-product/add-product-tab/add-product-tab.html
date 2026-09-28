@@ -1,0 +1,17 @@
+<ul class="sidebar-left-icons nav nav-pills" id="add-product-pills-tab">
+  @for (item of data(); track item) {
+  <li class="nav-item">
+    <a class="nav-link" id="{{item.id}}" [class.active]="activeSteps() === item.steps">
+      <div class="nav-rounded">
+        <div class="product-icons">
+          <app-common-svg-icon [class]="'stroke-icon'" [icon]="item.svg" />
+        </div>
+      </div>
+      <div class="product-tab-content">
+        <h5>{{item.title}}</h5>
+        <p>{{item.subTitle}}</p>
+      </div>
+    </a>
+  </li>
+  }
+</ul>

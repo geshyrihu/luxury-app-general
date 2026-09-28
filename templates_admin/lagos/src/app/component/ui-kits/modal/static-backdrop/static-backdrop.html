@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Static Backdrop Modal</h4>
+    <p class="f-m-light mt-1">
+      When backdrop is set to static, the modal will not close when clicking outside of it. Click the button below to
+      try it.</p>
+  </div>
+  <div class="card-body">
+    <button class="btn btn-primary" type="button" (click)="openStaticModal(staticContent)">Static backdrop modal</button>
+    <ng-template #staticContent let-modal>
+      <div class="modal-body social-profile text-start">
+        <div class="modal-toggle-wrapper">
+          <h4>Lagos Login</h4>
+          <p>
+            Fill in your information below to continue.</p>
+          <form class="row g-3">
+            <div class="col-md-12">
+              <label class="form-label" for="inputEmail4">Email</label>
+              <input class="form-control" id="inputEmail4" type="email" placeholder="Enter Your Email">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label" for="inputPassword4">Password</label>
+              <input class="form-control" id="inputPassword4" type="password" placeholder="Enter Your Password">
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" id="gridCheck" type="checkbox">
+                <label class="form-check-label d-block mb-0" for="gridCheck">Check me out</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit" (click)="close()">Sign in </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

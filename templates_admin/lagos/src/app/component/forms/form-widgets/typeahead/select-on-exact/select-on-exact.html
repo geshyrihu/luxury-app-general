@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Select on exact</h4>
+    <p class="f-m-light mt-1">A typeahead with <code>[selectOnExact]</code> example that selects the item when it is the
+      only one that matches the
+      user input</p>
+  </div>
+  <div class="card-body">
+    <div id="prefetch">
+      <form class="theme-form">
+        <div>
+          <input id="typeahead-template" type="text" class="form-control col" placeholder="Countries" [(ngModel)]="model"
+          [ngbTypeahead]="search" [inputFormatter]="formatter" [resultFormatter]="formatter" [selectOnExact]="true" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

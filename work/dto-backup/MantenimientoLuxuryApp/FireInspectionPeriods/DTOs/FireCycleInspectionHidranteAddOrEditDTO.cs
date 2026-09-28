@@ -1,0 +1,29 @@
+namespace MantenimientoLuxuryApp.FireInspectionPeriods.DTOs;
+/// <summary>Servicio o componente relacionado con agregar o edición DTO.</summary>
+public record FireCycleInspectionHidranteAddOrEditDTO
+{
+    // Obtiene o establece identificador.
+    public Guid FireInspectionCycleId { get; set; }
+    // Obtiene o establece identificador.
+    public Guid HydrantId { get; set; }
+    // Obtiene o establece .
+    public bool LabelPresent { get; set; }
+    // Obtiene o establece .
+    public bool GlassIntact { get; set; }
+    // Obtiene o establece .
+    public bool WrenchPresent { get; set; }
+    // Obtiene o establece .
+    public bool HoseOk { get; set; }
+    // Obtiene o establece .
+    public bool NozzlePresent { get; set; }
+    // Obtiene o establece .
+    public bool ValveOperational { get; set; }
+    // Obtiene o establece .
+    public bool LockOk { get; set; }
+    // Obtiene o establece estado.
+    public CabinetState CabinetState { get; set; }
+    // Obtiene o establece .
+    public string Observations { get; set; }
+    // Obtiene o establece usuario identificador.
+    public string ApplicationUserId { get; set; }
+}

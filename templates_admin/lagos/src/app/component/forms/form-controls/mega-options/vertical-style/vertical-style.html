@@ -1,0 +1,68 @@
+<div class="card height-equal" [style.min-height.px]="651.172">
+    <div class="card-header">
+      <h4>Vertical style</h4>
+      <p class="f-m-light mt-1">vertical style in mega-options. Use the <code>.mega-vertical </code>class through created vertical alignments.</p>
+    </div>
+    <div class="card-body">
+      <form class="mega-vertical">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="mega-title m-b-5">Delivery Option</p>
+          </div>
+          @for (data of verticalStyle; track data) {
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="d-flex p-20">
+                  <div class="form-check ps-0 radio radio-{{data.tagColor}} m-0 w-100">
+                    <input class="form-check-input" id="{{data.id}}" type="radio" name="radio5" value="option1" [checked]="data.checked">
+                    <label class="form-check-label mb-0 w-100" for="{{data.id}}">
+                      <span class="flex-grow-1 megaoption-space">
+                        <span class="mt-0 mega-title-badge">
+                          {{data.title}}
+                          <span class="badge badge-{{data.tagColor}} pull-right digits">
+                            {{data.tag}}
+                          </span>
+                        </span>
+                        <span>{{ data.text }}</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+          <div class="col-sm-12">
+            <p class="mega-title m-b-5">Buying Option</p>
+          </div>
+          @for (item of buyingOptionVertical; track item) {
+            <div class="col-sm-6">
+              <div class="card mb-0">
+                <div class="d-flex p-20">
+                  <div class="form-check ps-0 radio radio-{{item.background}} m-0 w-100">
+                    <input class="form-check-input" id="{{item.inputId}}" type="radio" name="radio7" value="option1" [checked]="item.active">
+                    <label class="form-check-label mb-0 w-100" for="{{item.inputId}}">
+                      <span class="flex-grow-1">
+                        <span class="mt-0 mega-title-badge">
+                          {{item.title}}
+                          <span class="badge badge-{{item.background}} pull-right digits">
+                            {{item.inr}} INR
+                          </span>
+                        </span>
+                        <span class="rating-star-wrapper">
+                          <ngb-rating class="font-warning" [rate]="item.ratingPoint" />{{item.rating}}
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </form>
+    </div>
+    <div class="card-footer text-end">
+      <button class="btn btn-primary m-r-15" type="submit">Submit</button>
+      <button class="btn btn-light" type="submit">Cancel</button>
+    </div>
+  </div>

@@ -1,0 +1,135 @@
+<div id="print">
+  <div class="mail-header-wrapper header-wrapper1">
+    <div class="mail-header1">
+      <div class="light-square" (click)="clickValue(open())">
+        <app-common-svg-icon [class]="'btn-email'" [icon]="'back-arrow'" />
+      </div>
+      <span>Interview Mail</span>
+    </div>
+    <div class="mail-body1">
+      <div class="light-square bg-light-primary" placement="top" ngbTooltip="Achieve">
+        <app-common-svg-icon [icon]="'sms'" />
+      </div>
+      <div class="light-square bg-light-success" placement="top" ngbTooltip="Bookmark">
+        <app-common-svg-icon [class]="'bookmark-box'" [icon]="'bookmark'" />
+      </div>
+      <div class="light-square bg-light-info" placement="top" ngbTooltip="Spam">
+        <app-common-svg-icon [icon]="'spam'" />
+      </div>
+      <div class="light-square bg-light-danger" placement="top" ngbTooltip="Trash">
+        <app-common-svg-icon [class]="'stroke-danger'" [icon]="'mail-trash'" />
+      </div>
+      <div class="light-square bg-light-primary" placement="top" ngbTooltip="Settings">
+        <app-common-svg-icon [class]="'stroke-danger'" [icon]="'setting'" />
+      </div>
+    </div>
+  </div>
+  <div class="mail-body-wrapper">
+    <div class="user-mail-wrapper">
+      <div class="user-title">
+        <div>
+          <div class="rounded-border">
+            <img class="img-fluid" src="assets/images/user/12.png" alt="user" />
+          </div>
+          <div class="dropdown-subtitle">
+            <p>Ronald Richards</p>
+            <div class="onhover-dropdown">
+              <button class="btn p-0 dropdown-button">
+                To me
+                <app-feather-icons [icons]="'chevron-down'" />
+              </button>
+              <div class="inbox-security onhover-show-div">
+                <p>From: <span>pixelstrap &lt;pixelstrap3&#64;gmail.com&gt;</span></p>
+                <p>to: <span>donut.horry&#64;gmail.com</span></p>
+                <p>reply-to:<span>&lt;pixelstrap3&#64;gmail.com&gt;</span></p>
+                <p>date: <span>Jun 13, 2024, 7:10 AM</span></p>
+                <p>subject: <span>Important Account Security Update</span></p>
+                <p>security: <span>standard encryption (TLS)</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inbox-options">
+          <span>Friday 07 Apr (4 hours ago)</span>
+          <div class="light-square">
+            <app-common-svg-icon
+              [icon]="'mail-star'"
+              [ngClass]="isBookmark ? 'important-mail active' :'important-mail'"
+              (click)="isBookmark = ! isBookmark"
+            />
+          </div>
+          <button class="light-square border-0" printSectionId="print" ngxPrint>
+            <app-common-svg-icon [icon]="'print'" />
+          </button>
+          <div class="light-square btn-group">
+            <app-common-svg-icon
+              [icon]="'menubar'"
+              [class]="'dropdown-toggle'"
+              (click)="isReply= !isReply"
+            />
+            <div class="dropdown-menu dropdown-block openMenu" [class.show]="isReply">
+              <a class="dropdown-item"><i class="fa fa-mail-reply"></i>Reply</a>
+              <a class="dropdown-item"><i class="fa fa-mail-forward"> </i>Forward</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="user-body">
+        <p>Dear Customer,</p>
+        <p>
+          We regret to notify you that an unauthorized attempt was made to access your account. Our
+          system discovered suspicious activity, and we acted right away to safeguard your personal
+          data.
+        </p>
+        <p>
+          Please change your login information by clicking the following link in order to safeguard
+          your account:
+        </p>
+        <p>
+          Please be aware that your account may be temporarily suspended if no action is taken
+          within 24 hours. We urge you to take immediate action to prevent any inconvenience.
+        </p>
+        <p>
+          We sincerely apologize for any inconvenience this may cause and thank you for your
+          immediate attention to this matter.
+        </p>
+        <div class="mail-subcontent">
+          <p>Yours faithfully,</p>
+          <p>Account Security Team</p>
+        </div>
+      </div>
+      <div class="user-footer">
+        <div>
+          <app-common-svg-icon [icon]="'attchment'" />
+          <span class="f-light">Attachments</span>
+        </div>
+        <div class="d-inline-block">
+          <div class="attchment-file common-flex">
+            <div class="common-flex align-items-center">
+              <img src="assets/images/email-template/pdfs.png" alt="pdf" />
+              <div class="d-block">
+                <p>Offer_Letter.pdf</p>
+                <p>200KB</p>
+              </div>
+            </div>
+            <a href="assets/pug/pages/theme/text_file.txt" download="download">
+              <i class="fa fa-download f-light"></i>
+            </a>
+          </div>
+        </div>
+        <div class="toolbar-box">
+          <ngx-editor-menu [editor]="editor" />
+          <ngx-editor
+            [editor]="editor"
+            [ngModel]="html"
+            [disabled]="false"
+            [placeholder]="'Type here...'"
+          />
+        </div>
+      </div>
+      <div class="send-btn">
+        <button class="btn btn-primary">Send<i class="fa fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

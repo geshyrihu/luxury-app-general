@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 box-col-30">
+      <div class="md-sidebar" (clickOutside)="outSide()">
+        <a class="btn btn-primary md-sidebar-toggle" href="javascript:void(0)" (click)="isShow = !isShow">file
+          filter</a>
+        <div class="md-sidebar-aside custom-scrollbar" [class.open]="isShow">
+          <div class="file-sidebar">
+            <div class="card">
+              <div class="card-body">
+                <ul>
+                  @for (item of sidebar; track item){
+                  <li>
+                    <div [ngClass]="item.name === 'Home' ? 'btn btn-primary' :'btn btn-light'">
+                      <app-feather-icons [icons]="item.icon" />
+                      {{item.name}}
+                    </div>
+                  </li>
+                  }
+                </ul>
+                <hr>
+                <ul>
+                  <li>
+                    <div class="btn btn-outline-primary">
+                      <app-feather-icons [icons]="'database'" />
+                      Storage
+                    </div>
+                    <div class="m-t-15">
+                      <div class="progress sm-progress-bar mb-3">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 25%"></div>
+                      </div>
+                      <h6 class="f-w-500">25 GB of 100 GB used</h6>
+                    </div>
+                  </li>
+                </ul>
+                <hr>
+                <ul>
+                  <li>
+                    <div class="btn btn-outline-primary">
+                      <app-feather-icons [icons]="'grid'" />
+                      Pricing plan
+                    </div>
+                  </li>
+                  <li> </li>
+                  <div class="pricing-plan">
+                    <h6>Trial Version </h6>
+                    <h5>FREE</h5>
+                    <p>100 GB Space</p>
+                    <div class="btn btn-outline-primary btn-xs">Selected</div>
+                    <img class="bg-img" src="assets/images/dashboard/folder.png" alt>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-9 col-md-12 box-col-12">
+      <app-right-content />
+    </div>
+  </div>
+</div>

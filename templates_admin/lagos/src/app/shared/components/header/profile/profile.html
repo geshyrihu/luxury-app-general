@@ -1,0 +1,32 @@
+<div class="d-flex profile-media align-items-center" (click)="isShow =!isShow">
+  <img class="img-30" src="assets/images/dashboard/profile.png" alt="">
+  <div class="flex-grow-1"><span>Alen Miller</span>
+    <p class="mb-0 font-outfit">UI Designer<i class="fa fa-angle-down"></i></p>
+  </div>
+  <ul class="profile-dropdown onhover-show-div" [class.active]="isShow">
+    <li>
+      <a [routerLink]="['/chat/private-chat']"> <app-feather-icons [icons]="'user'" />
+        <span>Account </span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/letter-box']"> <app-feather-icons [icons]="'mail'" />
+        <span>Inbox</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/tasks']"> <app-feather-icons [icons]="'file-text'" />
+        <span>Taskboard</span></a>
+    </li>
+    <li>
+      <a [routerLink]="['/user/edit-profile']">
+        <app-feather-icons [icons]="'settings'" /> <span>Settings</span>
+      </a>
+    </li>
+    <li (click)="logOut()">
+      <a>
+        <app-feather-icons [icons]="'log-in'" /><span>Log out</span>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,99 @@
+<div class="page-header row" [class.close_icon]="navService.collapseSidebar"
+  [style.display]="hideScroolNavService.headerFixed ? 'none' : 'flex'">
+  <div class="header-logo-wrapper col-auto">
+    <div class="logo-wrapper">
+      <a [routerLink]="['/dashboard/default']">
+        <img class="img-fluid for-light" src="assets/images/logo/logo.png" alt="" />
+        <img class="img-fluid for-dark" src="assets/images/logo/logo_light.png" alt="" /></a>
+    </div>
+  </div>
+  <div class="header-welcome"> 
+    <div class="welcome-title">
+      <h4>Welcome!!</h4><img class="img-fluid" src="assets/images/giftools.gif" alt=""/>
+    </div>
+    <p class="mb-0">Here’s what’s happening with your store today.</p>
+  </div>
+  <div class="col-4 col-xl-4 page-title">
+    <app-breadcrumb />
+  </div>
+  <div class="header-wrapper col m-0">
+    <div class="row">
+      <form class="form-inline search-full col" [class.open]="isSearchOpen" (clickOutside)="searchService.clickOutSide()">
+        <div class="form-group w-100">
+          <div class="Typeahead Typeahead--twitterUsers responsive-search header-search-input">
+            <div class="u-posRelative">
+              <input class="demo-input Typeahead-input form-control-plaintext w-100" [(ngModel)]="searchService.text"
+               name="search" (keyup)="searchService.searchTerm(searchService.text)"
+                type="text" placeholder="Search here ..">
+              <span (click)="isSearchOpen = !isSearchOpen">
+                <app-feather-icons [class]="'close-search'" [icons]="'x'" />
+              </span>
+            </div>
+            <div class="Typeahead-menu custom-scrollbar" [class.is-open]="searchService.searchResult" id="search-outer">
+              @for (menuItem of searchService.menuItems | slice : 0 : 8; track menuItem) {
+                <div class="ProfileCard u-cf">
+                  <div class="ProfileCard-avatar">
+                  </div>
+                  <div class="ProfileCard-details">
+                    <div class="ProfileCard-realName">
+                      <app-svg-icon [icon]="menuItem?.icon" />
+                      <a [routerLink]="menuItem?.path" class="realname" (click)="searchService.removeFix()">{{menuItem?.title }}</a>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+            <div class="Typeahead-menu" [class.is-open]="searchService.searchResultEmpty" (clickOutSide)="searchService.clickOutSide()">
+              <div class="tt-dataset tt-dataset-0">
+                <div class="EmptyMessage">Opps!! There are no result found.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="header-logo-wrapper col-auto p-0">
+        <div class="logo-wrapper">
+          <a [routerLink]="['/dashboard/default']">
+            <img class="img-fluid" src="assets/images/logo/logo.png" alt=""></a>
+        </div>
+        <div class="toggle-sidebar" (click)="sidebarToggle()">
+          <app-common-svg-icon [class]="'stroke-icon sidebar-toggle status_toggle middle'"
+            [icon]="'toggle-icon'" />
+        </div>
+      </div>
+      <div class="nav-right col-xxl-8 col-xl-6 col-md-7 col-8 pull-right right-header p-0 ms-auto">
+        <ul class="nav-menus">
+          <li class="position-relative">
+            <span class="header-search" (click)="isSearchOpen = !isSearchOpen">
+              <app-common-svg-icon [icon]="'search'" />
+            </span>
+          </li>
+          <li>
+            <app-search />
+          </li>
+          <li (click)="!navService.language = ! navService.language">
+            <app-language />
+          </li>
+          <li class="onhover-dropdown" (click)="isFlip = !isFlip">
+            <app-bookmark [item]="isFlip" />
+          </li>
+          <li class="onhover-dropdown">
+            <app-notifications />
+          </li>
+          <li>
+            <app-theme-mode />
+          </li>
+          <li class="onhover-dropdown">
+            <app-messages />
+          </li>
+          <li class="cart-nav onhover-dropdown">
+            <app-cart />
+          </li>
+          <li class="profile-nav onhover-dropdown px-0 py-0 m-0">
+            <app-profile />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

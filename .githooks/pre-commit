@@ -1,0 +1,127 @@
+#!/bin/sh
+# Pre-commit hook: auditoría por rol + mojibake + design system + reglas de agentes
+# Uso: git config core.hooksPath .githooks  (una vez por clon)
+#
+# Flujo:
+# 1. Auditoría por rol (detecta rama, ejecuta verificaciones)
+# 2. Mojibake scan en client/angular/src staged
+# 3. Design System governance
+# 4. Reglas de agentes
+
+# 0. AUDITORÍA POR ROL
+# ==================
+echo "🎯 Detectando rol por rama..."
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+case "$BRANCH" in
+  feature/frontend*)
+    echo "👨‍💻 Branch: Frontend Senior"
+    cd client/angular || exit 1
+    if ! npm run audit:frontend 2>&1; then
+      echo ""
+      echo "❌ AUDITORÍA FRONTEND FALLIDA"
+      echo "   Consulta docs/AUDITORIA_POR_ROL.md para detalles"
+      exit 1
+    fi
+    cd - > /dev/null || exit 1
+    ;;
+  feature/mobile*)
+    echo "📱 Branch: Mobile Developer"
+    cd client/angular || exit 1
+    if ! npm run audit:mobile 2>&1; then
+      echo ""
+      echo "❌ AUDITORÍA MOBILE FALLIDA"
+      echo "   Consulta docs/AUDITORIA_POR_ROL.md para detalles"
+      exit 1
+    fi
+    cd - > /dev/null || exit 1
+    ;;
+  feature/backend*)
+    echo "🔧 Branch: Backend Developer"
+    echo "   (Backend audits próximamente - dotnet run audit:backend)"
+    ;;
+  feature/full-stack*)
+    echo "🎯 Branch: Full Stack Developer"
+    cd client/angular || exit 1
+    if ! npm run audit:full-stack 2>&1; then
+      echo ""
+      echo "❌ AUDITORÍA FULL-STACK FALLIDA"
+      echo "   Consulta docs/AUDITORIA_POR_ROL.md para detalles"
+      exit 1
+    fi
+    cd - > /dev/null || exit 1
+    ;;
+  *)
+    echo "   Branch: $BRANCH (auditoría genérica saltada)"
+    ;;
+esac
+
+echo "✅ Auditoría por rol pasada"
+
+# 1. Mojibake en client/angular/src staged
+STAGED=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^client/angular/src/.*\.(ts|html|scss|json)$' || true)
+
+if [ -n "$STAGED" ]; then
+  echo "🔍 Escaneando mojibake en archivos staged..."
+  TMPDIR=$(mktemp -d)
+  trap "rm -rf $TMPDIR" EXIT
+
+  for f in $STAGED; do
+    mkdir -p "$TMPDIR/$(dirname "$f")"
+    cp "$f" "$TMPDIR/$f"
+  done
+
+  cd "$(git rev-parse --show-toplevel)" || exit 1
+
+  RESULT=$(node scripts/scan-mojibake.mjs "$TMPDIR" 2>&1)
+
+  if ! echo "$RESULT" | grep -q "CERO mojibake"; then
+    echo "❌ MOJIBAKE DETECTADO en archivos staged:"
+    echo "$RESULT" | grep -E '^\[' || true
+    echo ""
+    echo "Para corregir: node scripts/fix-mojibake.mjs client/angular/src"
+    echo "Luego: git add -u && git commit"
+    exit 1
+  fi
+  echo "✅ Sin mojibake"
+fi
+
+# 2. Design System governance
+echo "🎨 Escaneando gobernanza del Design System en archivos staged..."
+cd client/angular || exit 1
+node scripts/audit-design-system.mjs --staged
+DESIGN_EXIT=$?
+
+if [ $DESIGN_EXIT -ne 0 ]; then
+  echo "❌ FALLA EN DESIGN SYSTEM. Corrige las violaciones antes de hacer commit."
+  exit 1
+fi
+
+# 2.5 Aislamiento de Dominios (Apps Boundaries)
+echo "🧱 Verificando fronteras de dominios (Recursos Humanos ↔ Reclutamiento)..."
+cd client/angular || exit 1
+node scripts/audit-apps-boundaries.mjs
+APPS_EXIT=$?
+
+if [ $APPS_EXIT -ne 0 ]; then
+  echo "❌ FALLA EN AISLAMIENTO DE DOMINIOS. Reclutamiento y Recursos Humanos no pueden mezclarse."
+  exit 1
+fi
+cd - > /dev/null || exit 1
+
+# 3. Reglas de agentes (no hardcodear reglas fuera de CONVENTIONS.md/skills/)
+echo "🤖 Verificando reglas de agentes..."
+cd "$(git rev-parse --show-toplevel)" || exit 1
+node scripts/check-agent-rules.mjs
+AGENT_EXIT=$?
+
+if [ $AGENT_EXIT -ne 0 ]; then
+  echo "❌ REGLAS HARDCODEADAS EN ARCHIVOS DE AGENTES."
+  echo "   Los archivos de agentes (AGENTS.md, CLAUDE.md, .cursor/rules.md, .codex/AGENTS.md, .antigravity/AGENTS.md)"
+  echo "   deben SOLO referenciar CONVENTIONS.md y skills/."
+  echo "   Mueva cualquier regla a CONVENTIONS.md o skills/ correspondiente."
+  exit 1
+fi
+
+echo "✅ Reglas de agentes limpias"
+exit 0

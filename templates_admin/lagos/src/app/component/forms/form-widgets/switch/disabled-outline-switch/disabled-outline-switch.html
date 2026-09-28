@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Disabled outline switch</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.switch-outline </code> class through created outline. </p>
+  </div>
+  <div class="card-body common-flex">
+    @for (item of defaultSwitch; track item) {
+    <div class="d-flex">
+      <div class="flex-grow-1 text-end icon-state switch-outline">
+        <label class="switch mb-0">
+          <input type="checkbox">
+          <span class="switch-state bg-{{item.color}}"></span>
+        </label>
+      </div>
+    </div>
+    }
+  </div>
+</div>

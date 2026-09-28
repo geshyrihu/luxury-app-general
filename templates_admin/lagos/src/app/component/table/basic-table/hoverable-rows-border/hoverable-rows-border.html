@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Hoverable Rows With Horizontal Border</h4><span>Hoverable row use a class <code>table-hover</code> and for
+      Horizontal border use a class <code>.table-border-horizontal</code> , dashed border Use a
+      class<code>.border-dashed .table</code>class.</span>
+  </div>
+  <div class="table-responsive theme-scrollbar signal-table">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Status</th>
+          <th scope="col">Signal Name </th>
+          <th scope="col">Security</th>
+          <th scope="col">Stage</th>
+          <th scope="col">Schedule</th>
+          <th scope="col">Team Lead</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of hoverableRowsBorder; track item) {
+        <tr>
+          <th scope="row">{{item.id}}</th>
+          <td class="d-flex align-items-center">
+            <app-feather-icons class="bg-light-{{item.class}} font-{{item.class}}"
+              [icons]="item.icon" />
+            <span class="font-{{item.class}}">{{item.status}}</span>
+          </td>
+          <td>{{item.signalname}}</td>
+          <td>{{item.security}}</td>
+          <td>{{item.stage}}</td>
+          <td>{{item.Schedule}} </td>
+          <td>{{item.teamlead}}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

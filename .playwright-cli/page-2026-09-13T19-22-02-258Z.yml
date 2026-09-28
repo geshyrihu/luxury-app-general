@@ -1,0 +1,591 @@
+- generic [active] [ref=f1e2]:
+  - link "Saltar al contenido principal" [ref=f1e1] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+  - generic "Aplicación LuxuryApp" [ref=f1e3]:
+    - generic:
+      - alertdialog
+    - main [ref=f1e4]:
+      - generic [ref=f1e71]:
+        - toolbar [ref=f1e75]:
+          - generic [ref=f1e77]:
+            - button "Abrir o cerrar el menú lateral" [ref=f1e78] [cursor=pointer]
+            - button "LUXURY" [ref=f1e83] [cursor=pointer]
+            - navigation [ref=f1e92]:
+              - list [ref=f1e93]:
+                - listitem [ref=f1e94]:
+                  - link "Inicio" [ref=f1e95] [cursor=pointer]:
+                    - /url: /dashboard
+          - generic [ref=f1e101]:
+            - button "Inicio" [ref=f1e102] [cursor=pointer]
+            - button "Pagina anterior" [ref=f1e107] [cursor=pointer]
+            - button "Pagina siguiente" [ref=f1e112] [cursor=pointer]
+            - button "Actualizar" [ref=f1e117] [cursor=pointer]
+            - button "Mi edificio" [ref=f1e122] [cursor=pointer]
+            - button "Anuncios" [ref=f1e127] [cursor=pointer]
+            - button "Comunicado IA" [ref=f1e132] [cursor=pointer]
+            - button "Telefonos de Emergencia" [ref=f1e137] [cursor=pointer]
+            - button "Configuración" [ref=f1e142] [cursor=pointer]
+            - button "Novedades" [ref=f1e147] [cursor=pointer]
+            - button "Cambiar tema claro u oscuro" [ref=f1e152] [cursor=pointer]
+            - 'button "Alerta de pónico: mantón presionado para activar" [ref=f1e158] [cursor=pointer]'
+            - button "Notificaciones" [ref=f1e165] [cursor=pointer]:
+              - generic [ref=f1e166]: "2"
+            - button "Abrir menú de usuario" [ref=f1e174] [cursor=pointer]
+        - navigation [ref=f1e184]:
+          - generic [ref=f1e185]:
+            - generic [ref=f1e186]: LuxuryApp
+            - generic [ref=f1e187]: Gestión Inteligente
+          - generic [ref=f1e195]:
+            - heading "Administrador LBG" [level=2] [ref=f1e196]
+            - paragraph [ref=f1e197]: Desconocido
+            - heading "LUXURY" [level=3] [ref=f1e199]
+          - generic [ref=f1e200]:
+            - generic [ref=f1e201]: Design System
+            - list [ref=f1e203]:
+              - listitem [ref=f1e204]:
+                - button "Luxury Design System" [ref=f1e205] [cursor=pointer]
+            - separator
+            - list [ref=f1e216]:
+              - listitem [ref=f1e217]:
+                - button "Legal" [ref=f1e218] [cursor=pointer]
+              - listitem [ref=f1e229]:
+                - link "Contabilidad" [ref=f1e230] [cursor=pointer]:
+                  - /url: /contabilidad
+              - listitem [ref=f1e236]:
+                - link "Cobranza Panel" [ref=f1e237] [cursor=pointer]:
+                  - /url: /cobranza-nativa
+              - listitem [ref=f1e243]:
+                - button "Tickets" [ref=f1e244] [cursor=pointer]
+              - listitem [ref=f1e255]:
+                - button "Inspecciones" [ref=f1e256] [cursor=pointer]
+              - listitem [ref=f1e267]:
+                - button "Juntas de comite" [ref=f1e268] [cursor=pointer]
+              - listitem [ref=f1e279]:
+                - button "Compras" [ref=f1e280] [cursor=pointer]
+              - listitem [ref=f1e291]:
+                - button "Bitacoras" [ref=f1e292] [cursor=pointer]
+              - listitem [ref=f1e303]:
+                - button "Almacen" [ref=f1e304] [cursor=pointer]
+              - listitem [ref=f1e315]:
+                - button "Inventarios" [ref=f1e316] [cursor=pointer]
+              - listitem [ref=f1e327]:
+                - button "Biblioteca" [ref=f1e328] [cursor=pointer]
+              - listitem [ref=f1e339]:
+                - button "Calendarios" [ref=f1e340] [cursor=pointer]
+              - listitem [ref=f1e351]:
+                - button "Directorios" [ref=f1e352] [cursor=pointer]
+              - listitem [ref=f1e363]:
+                - link "Supervisión" [ref=f1e364] [cursor=pointer]:
+                  - /url: /supervision
+              - listitem [ref=f1e370]:
+                - button "Reportes" [ref=f1e371] [cursor=pointer]
+              - listitem [ref=f1e382]:
+                - button "Entrega recepción" [ref=f1e383] [cursor=pointer]
+              - listitem [ref=f1e394]:
+                - button "Reclutamiento" [ref=f1e395] [cursor=pointer]
+              - listitem [ref=f1e406]:
+                - generic [ref=f1e407]: Sistemas
+              - listitem [ref=f1e413]:
+                - generic [ref=f1e414]: Reservaciones
+              - listitem [ref=f1e420]:
+                - generic [ref=f1e421]: Pases QR
+              - listitem [ref=f1e427]:
+                - generic [ref=f1e428]: Paqueteria
+              - listitem [ref=f1e434]:
+                - button "Recursos Humanos" [ref=f1e435] [cursor=pointer]
+              - listitem [ref=f1e446]:
+                - link "Anuncios" [ref=f1e447] [cursor=pointer]:
+                  - /url: /announcements/manage
+              - listitem [ref=f1e453]:
+                - button "Utilidades" [ref=f1e454] [cursor=pointer]
+        - generic [ref=f1e474]:
+          - generic [ref=f1e477]:
+            - generic [ref=f1e478]:
+              - generic [ref=f1e479]:
+                - generic [ref=f1e480] [cursor=pointer]:
+                  - generic [ref=f1e485]: Todos
+                  - generic [ref=f1e486]: "21"
+                - generic [ref=f1e489] [cursor=pointer]:
+                  - generic [ref=f1e490]: 🎫
+                  - generic [ref=f1e491]: Tickets
+                  - generic [ref=f1e492]: "11"
+                - generic [ref=f1e493] [cursor=pointer]:
+                  - generic [ref=f1e494]: 🔧
+                  - generic [ref=f1e495]: Mantenimiento
+                  - generic [ref=f1e496]: "4"
+                - generic [ref=f1e497] [cursor=pointer]:
+                  - generic [ref=f1e498]: 📌
+                  - generic [ref=f1e499]: Mis Tickets
+                  - generic [ref=f1e500]: "1"
+                - generic [ref=f1e501] [cursor=pointer]:
+                  - generic [ref=f1e502]: 📄
+                  - generic [ref=f1e503]: Polizas
+                  - generic [ref=f1e504]: "1"
+                - generic [ref=f1e505] [cursor=pointer]:
+                  - generic [ref=f1e506]: ⚖️
+                  - generic [ref=f1e507]: Legal
+                  - generic [ref=f1e508]: "4"
+              - generic [ref=f1e510]:
+                - button [ref=f1e512] [cursor=pointer]
+                - button [ref=f1e518] [cursor=pointer]
+                - button [ref=f1e525] [cursor=pointer]
+              - textbox "Buscar aquí..." [ref=f1e542]
+            - generic [ref=f1e543]:
+              - generic [ref=f1e548]: Critico (>8d)
+              - generic [ref=f1e550]: Alerta (7-8d)
+          - table [ref=f1e553]:
+            - rowgroup [ref=f1e554]:
+              - row [ref=f1e555]:
+                - columnheader [ref=f1e556] [cursor=pointer]
+                - columnheader [ref=f1e560] [cursor=pointer]
+                - columnheader [ref=f1e564] [cursor=pointer]
+                - columnheader [ref=f1e568] [cursor=pointer]
+                - columnheader "último Seguimiento" [ref=f1e572]
+                - columnheader [ref=f1e573] [cursor=pointer]
+                - columnheader [ref=f1e577] [cursor=pointer]
+            - rowgroup [ref=f1e581]:
+              - row [ref=f1e582] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e583]
+                - cell "08 abr 10:32" [ref=f1e587]:
+                  - generic [ref=f1e588]:
+                    - generic [ref=f1e589]: 08 abr
+                    - generic [ref=f1e590]: 10:32
+                - cell "LEGAL | Protocolización de actas de asamblea" [ref=f1e595]
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e598]:
+                  - generic [ref=f1e599]:
+                    - generic [ref=f1e600]: J
+                    - generic [ref=f1e603]:
+                      - generic [ref=f1e604]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e605]: Asignado
+                - cell "23-jun-26 | se envia reglamento 2026 para aprobación de comite y envio de acta y reglamento junto a protocolización" [ref=f1e606]
+                - cell "En Proceso" [ref=f1e613]
+                - cell "159 días" [ref=f1e617]:
+                  - generic [ref=f1e618]:
+                    - generic [ref=f1e619]: "159"
+                    - generic [ref=f1e620]: días
+              - row [ref=f1e621] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e622]
+                - cell "14 may 12:50" [ref=f1e626]:
+                  - generic [ref=f1e627]:
+                    - generic [ref=f1e628]: 14 may
+                    - generic [ref=f1e629]: 12:50
+                - cell "LEGAL | Otra consulta Donación de alberca a la A.C." [ref=f1e634]:
+                  - generic [ref=f1e635]:
+                    - generic [ref=f1e636]: LEGAL | Otra consulta
+                    - generic [ref=f1e637]: Donación de alberca a la A.C.
+                - cell "T Teresa Sayegh Asignado" [ref=f1e638]:
+                  - generic [ref=f1e639]:
+                    - generic [ref=f1e640]: T
+                    - generic [ref=f1e643]:
+                      - generic [ref=f1e644]: Teresa Sayegh
+                      - generic [ref=f1e645]: Asignado
+                - cell "23-jun-26 | se envia mail de seguimiento y se le indica a la administradora que por favor ponga el tema en cada junta de comite hasta obtener una respuesta por parte de ellos" [ref=f1e646]
+                - cell "No Iniciada" [ref=f1e653]
+                - cell "123 días" [ref=f1e657]:
+                  - generic [ref=f1e658]:
+                    - generic [ref=f1e659]: "123"
+                    - generic [ref=f1e660]: días
+              - row [ref=f1e661] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e662]
+                - cell "14 may 13:54" [ref=f1e666]:
+                  - generic [ref=f1e667]:
+                    - generic [ref=f1e668]: 14 may
+                    - generic [ref=f1e669]: 13:54
+                - cell "LEGAL | Otra consulta Seguimiento a trámite de SEGUIAGUA y juicio contra SACMEX." [ref=f1e674]:
+                  - generic [ref=f1e675]:
+                    - generic [ref=f1e676]: LEGAL | Otra consulta
+                    - generic [ref=f1e677]: Seguimiento a trámite de SEGUIAGUA y juicio contra SACMEX.
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e678]:
+                  - generic [ref=f1e679]:
+                    - generic [ref=f1e680]: J
+                    - generic [ref=f1e683]:
+                      - generic [ref=f1e684]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e685]: Asignado
+                - cell "15-may-26 | Se enviaron todos los documentos solicitados para realizar el tramite, seguimos al pendiente por si se requiere información adicional" [ref=f1e686]
+                - cell "No Iniciada" [ref=f1e693]
+                - cell "122 días" [ref=f1e697]:
+                  - generic [ref=f1e698]:
+                    - generic [ref=f1e699]: "122"
+                    - generic [ref=f1e700]: días
+              - row [ref=f1e701] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e702]
+                - cell "29 jun 08:30" [ref=f1e706]:
+                  - generic [ref=f1e707]:
+                    - generic [ref=f1e708]: 29 jun
+                    - generic [ref=f1e709]: 08:30
+                - cell "LEGAL | Revisión de contrato Gestión de contrato por servicio de sellado de vidrios en deptos" [ref=f1e714]:
+                  - generic [ref=f1e715]:
+                    - generic [ref=f1e716]: LEGAL | Revisión de contrato
+                    - generic [ref=f1e717]: Gestión de contrato por servicio de sellado de vidrios en deptos
+                - cell "R Raquel Cohen Avayou Asignado" [ref=f1e718]:
+                  - generic [ref=f1e719]:
+                    - generic [ref=f1e720]: R
+                    - generic [ref=f1e723]:
+                      - generic [ref=f1e724]: Raquel Cohen Avayou
+                      - generic [ref=f1e725]: Asignado
+                - cell "-- Sin info --" [ref=f1e726]
+                - cell "Cancelada" [ref=f1e727]
+                - cell "77 días" [ref=f1e731]:
+                  - generic [ref=f1e732]:
+                    - generic [ref=f1e733]: "77"
+                    - generic [ref=f1e734]: días
+              - row [ref=f1e735] [cursor=pointer]:
+                - cell "Mantenimiento" [ref=f1e736]
+                - cell "01 ago 00:00" [ref=f1e740]:
+                  - generic [ref=f1e741]:
+                    - generic [ref=f1e742]: 01 ago
+                    - generic [ref=f1e743]: 00:00
+                - cell "Preventivo - MIrage G4 Mitsubishi Vefificación" [ref=f1e748]:
+                  - generic [ref=f1e749]:
+                    - generic [ref=f1e750]: Preventivo - MIrage G4 Mitsubishi
+                    - generic [ref=f1e751]: Vefificación
+                - cell "M MANTENIMIENTO INTERNO Asignado" [ref=f1e752]:
+                  - generic [ref=f1e753]:
+                    - generic [ref=f1e754]: M
+                    - generic [ref=f1e757]:
+                      - generic [ref=f1e758]: MANTENIMIENTO INTERNO
+                      - generic [ref=f1e759]: Asignado
+                - cell "-- Sin info --" [ref=f1e760]
+                - cell "Pendiente" [ref=f1e761]
+                - cell "44 días" [ref=f1e765]:
+                  - generic [ref=f1e766]:
+                    - generic [ref=f1e767]: "44"
+                    - generic [ref=f1e768]: días
+              - row [ref=f1e769] [cursor=pointer]:
+                - cell "Mantenimiento" [ref=f1e770]
+                - cell "01 ago 00:00" [ref=f1e774]:
+                  - generic [ref=f1e775]:
+                    - generic [ref=f1e776]: 01 ago
+                    - generic [ref=f1e777]: 00:00
+                - cell "Preventivo - MIrage G4 Mitsubishi Vefificación" [ref=f1e782]:
+                  - generic [ref=f1e783]:
+                    - generic [ref=f1e784]: Preventivo - MIrage G4 Mitsubishi
+                    - generic [ref=f1e785]: Vefificación
+                - cell "M MANTENIMIENTO INTERNO Asignado" [ref=f1e786]:
+                  - generic [ref=f1e787]:
+                    - generic [ref=f1e788]: M
+                    - generic [ref=f1e791]:
+                      - generic [ref=f1e792]: MANTENIMIENTO INTERNO
+                      - generic [ref=f1e793]: Asignado
+                - cell "-- Sin info --" [ref=f1e794]
+                - cell "Pendiente" [ref=f1e795]
+                - cell "44 días" [ref=f1e799]:
+                  - generic [ref=f1e800]:
+                    - generic [ref=f1e801]: "44"
+                    - generic [ref=f1e802]: días
+              - row [ref=f1e803] [cursor=pointer]:
+                - cell "Mantenimiento" [ref=f1e804]
+                - cell "01 ago 00:00" [ref=f1e808]:
+                  - generic [ref=f1e809]:
+                    - generic [ref=f1e810]: 01 ago
+                    - generic [ref=f1e811]: 00:00
+                - cell "Preventivo - GL 150 CARGO 2 (Activa) Póliza de seguro." [ref=f1e816]:
+                  - generic [ref=f1e817]:
+                    - generic [ref=f1e818]: Preventivo - GL 150 CARGO 2 (Activa)
+                    - generic [ref=f1e819]: Póliza de seguro.
+                - cell "S SEGUROS QUÁLITAS Asignado" [ref=f1e820]:
+                  - generic [ref=f1e821]:
+                    - generic [ref=f1e822]: S
+                    - generic [ref=f1e825]:
+                      - generic [ref=f1e826]: SEGUROS QUÁLITAS
+                      - generic [ref=f1e827]: Asignado
+                - cell "-- Sin info --" [ref=f1e828]
+                - cell "Pendiente" [ref=f1e829]
+                - cell "44 días" [ref=f1e833]:
+                  - generic [ref=f1e834]:
+                    - generic [ref=f1e835]: "44"
+                    - generic [ref=f1e836]: días
+              - row [ref=f1e837] [cursor=pointer]:
+                - cell "Mantenimiento" [ref=f1e838]
+                - cell "01 ago 00:00" [ref=f1e842]:
+                  - generic [ref=f1e843]:
+                    - generic [ref=f1e844]: 01 ago
+                    - generic [ref=f1e845]: 00:00
+                - cell "Preventivo - GL 150 CARGO 2 (Activa) Póliza de seguro." [ref=f1e850]:
+                  - generic [ref=f1e851]:
+                    - generic [ref=f1e852]: Preventivo - GL 150 CARGO 2 (Activa)
+                    - generic [ref=f1e853]: Póliza de seguro.
+                - cell "S SEGUROS QUÁLITAS Asignado" [ref=f1e854]:
+                  - generic [ref=f1e855]:
+                    - generic [ref=f1e856]: S
+                    - generic [ref=f1e859]:
+                      - generic [ref=f1e860]: SEGUROS QUÁLITAS
+                      - generic [ref=f1e861]: Asignado
+                - cell "-- Sin info --" [ref=f1e862]
+                - cell "Pendiente" [ref=f1e863]
+                - cell "44 días" [ref=f1e867]:
+                  - generic [ref=f1e868]:
+                    - generic [ref=f1e869]: "44"
+                    - generic [ref=f1e870]: días
+              - row [ref=f1e871] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e872]
+                - cell "04 ago 00:10" [ref=f1e876]:
+                  - generic [ref=f1e877]:
+                    - generic [ref=f1e878]: 04 ago
+                    - generic [ref=f1e879]: 00:10
+                - cell "SUP. OPERACIONES | cghhb vbvhj" [ref=f1e884]:
+                  - generic [ref=f1e885]:
+                    - generic [ref=f1e886]: SUP. OPERACIONES | cghhb
+                    - generic [ref=f1e887]: vbvhj
+                - cell "A Administrador LBG Asignado" [ref=f1e888]:
+                  - generic [ref=f1e889]:
+                    - generic [ref=f1e890]: A
+                    - generic [ref=f1e893]:
+                      - generic [ref=f1e894]: Administrador LBG
+                      - generic [ref=f1e895]: Asignado
+                - cell "-- Sin info --" [ref=f1e896]
+                - cell "No Iniciada" [ref=f1e897]
+                - cell "41 días" [ref=f1e901]:
+                  - generic [ref=f1e902]:
+                    - generic [ref=f1e903]: "41"
+                    - generic [ref=f1e904]: días
+              - row [ref=f1e905] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e906]
+                - cell "04 ago 09:52" [ref=f1e910]:
+                  - generic [ref=f1e911]:
+                    - generic [ref=f1e912]: 04 ago
+                    - generic [ref=f1e913]: 09:52
+                - cell "DESARROLLO APP | aaaaa ndndjdddbd" [ref=f1e918]:
+                  - generic [ref=f1e919]:
+                    - generic [ref=f1e920]: DESARROLLO APP | aaaaa
+                    - generic [ref=f1e921]: ndndjdddbd
+                - cell "R Ricardo Márquez Escobedo Asignado" [ref=f1e922]:
+                  - generic [ref=f1e923]:
+                    - generic [ref=f1e924]: R
+                    - generic [ref=f1e927]:
+                      - generic [ref=f1e928]: Ricardo Márquez Escobedo
+                      - generic [ref=f1e929]: Asignado
+                - cell "-- Sin info --" [ref=f1e930]
+                - cell "No Iniciada" [ref=f1e931]
+                - cell "41 días" [ref=f1e935]:
+                  - generic [ref=f1e936]:
+                    - generic [ref=f1e937]: "41"
+                    - generic [ref=f1e938]: días
+              - row [ref=f1e939] [cursor=pointer]:
+                - cell "Polizas" [ref=f1e940]
+                - cell "19 ago 00:00" [ref=f1e944]:
+                  - generic [ref=f1e945]:
+                    - generic [ref=f1e946]: 19 ago
+                    - generic [ref=f1e947]: 00:00
+                - cell "QUÁLITAS COMPAÑÍA DE SEGUROS, S.A. DE C.V. Póliza de seguro GL 150 CARGO" [ref=f1e952]:
+                  - generic [ref=f1e953]:
+                    - generic [ref=f1e954]: QUÁLITAS COMPAÑÍA DE SEGUROS, S.A. DE C.V.
+                    - generic [ref=f1e955]: Póliza de seguro GL 150 CARGO
+                - cell "L Legal Asignado" [ref=f1e956]:
+                  - generic [ref=f1e957]:
+                    - generic [ref=f1e958]: L
+                    - generic [ref=f1e961]:
+                      - generic [ref=f1e962]: Legal
+                      - generic [ref=f1e963]: Asignado
+                - cell "Póliza de seguro GL 150 CARGO" [ref=f1e964]
+                - cell "Por vencer" [ref=f1e971]
+                - cell "-" [ref=f1e975]
+              - row [ref=f1e976] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e977]
+                - cell "27 ago 16:38" [ref=f1e981]:
+                  - generic [ref=f1e982]:
+                    - generic [ref=f1e983]: 27 ago
+                    - generic [ref=f1e984]: 16:38
+                - cell "LEGAL | Revisión de contrato Instalación de tierras para transformadores" [ref=f1e989]:
+                  - generic [ref=f1e990]:
+                    - generic [ref=f1e991]: LEGAL | Revisión de contrato
+                    - generic [ref=f1e992]: Instalación de tierras para transformadores
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e993]:
+                  - generic [ref=f1e994]:
+                    - generic [ref=f1e995]: J
+                    - generic [ref=f1e998]:
+                      - generic [ref=f1e999]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e1000]: Asignado
+                - cell "03-sept-26 | Se envió contrato solicitado por mail, unicamente en espera de visto bueno de Administracion para pasarlo a firmas en FAD" [ref=f1e1001]
+                - cell "No Iniciada" [ref=f1e1008]
+                - cell "17 días" [ref=f1e1012]:
+                  - generic [ref=f1e1013]:
+                    - generic [ref=f1e1014]: "17"
+                    - generic [ref=f1e1015]: días
+              - row [ref=f1e1016] [cursor=pointer]:
+                - cell "Legal" [ref=f1e1017]
+                - cell "27 ago 16:38" [ref=f1e1021]:
+                  - generic [ref=f1e1022]:
+                    - generic [ref=f1e1023]: 27 ago
+                    - generic [ref=f1e1024]: 16:38
+                - cell "Revisión de contrato Instalación de tierras para transformadores" [ref=f1e1029]:
+                  - generic [ref=f1e1030]:
+                    - generic [ref=f1e1031]: Revisión de contrato
+                    - generic [ref=f1e1032]: Instalación de tierras para transformadores
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e1033]:
+                  - generic [ref=f1e1034]:
+                    - generic [ref=f1e1035]: J
+                    - generic [ref=f1e1038]:
+                      - generic [ref=f1e1039]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e1040]: Asignado
+                - cell "Instalación de tierras para transformadores" [ref=f1e1041]
+                - cell "NotStarted" [ref=f1e1048]
+                - cell "17 días" [ref=f1e1052]:
+                  - generic [ref=f1e1053]:
+                    - generic [ref=f1e1054]: "17"
+                    - generic [ref=f1e1055]: días
+              - row [ref=f1e1056] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e1057]
+                - cell "01 sep 20:07" [ref=f1e1061]:
+                  - generic [ref=f1e1062]:
+                    - generic [ref=f1e1063]: 01 sep
+                    - generic [ref=f1e1064]: 20:07
+                - 'cell "LEGAL | Otra consulta Asunto: Validación de D-U-N-S para LUXURY BUILDING GROUP Estamos registrando a LUXURY BUILDING GROUP como organización desarrolladora en Google Play y Apple Developer. Para continuar, Google Play solicita el número D-U-N-S de la empresa. ¿Podrían confirmar si ya contamos con este número y proporcionarlo, por favor? Datos de la empresa: Razón social: LUXURY BUILDING GROUP RFC: LBG211011SXA Sociedad: S.A. de C.V." [ref=f1e1069]':
+                  - generic [ref=f1e1070]:
+                    - generic [ref=f1e1071]: LEGAL | Otra consulta
+                    - generic [ref=f1e1072]: "Asunto: Validación de D-U-N-S para LUXURY BUILDING GROUP Estamos registrando a LUXURY BUILDING GROUP como organización desarrolladora en Google Play y Apple Developer. Para continuar, Google Play solicita el número D-U-N-S de la empresa. ¿Podrían confirmar si ya contamos con este número y proporcionarlo, por favor? Datos de la empresa: Razón social: LUXURY BUILDING GROUP RFC: LBG211011SXA Sociedad: S.A. de C.V."
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e1073]:
+                  - generic [ref=f1e1074]:
+                    - generic [ref=f1e1075]: J
+                    - generic [ref=f1e1078]:
+                      - generic [ref=f1e1079]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e1080]: Asignado
+                - cell "03-sept-26 | Se solicitó obtención del número, con fecha estimada de entrega 30 días hábiles." [ref=f1e1081]
+                - cell "No Iniciada" [ref=f1e1088]
+                - cell "12 días" [ref=f1e1092]:
+                  - generic [ref=f1e1093]:
+                    - generic [ref=f1e1094]: "12"
+                    - generic [ref=f1e1095]: días
+              - row [ref=f1e1096] [cursor=pointer]:
+                - cell "Legal" [ref=f1e1097]
+                - cell "01 sep 20:07" [ref=f1e1101]:
+                  - generic [ref=f1e1102]:
+                    - generic [ref=f1e1103]: 01 sep
+                    - generic [ref=f1e1104]: 20:07
+                - 'cell "Otra consulta Asunto: Validación de D-U-N-S para LUXURY BUILDING GROUP Estamos registrando a LUXURY BUILDING GROUP como organización desarrolladora en Google Play y Apple Developer. Para continuar, Google Play solicita el número D-U-N-S de la empresa. ¿Podrían confirmar si ya contamos con este número y proporcionarlo, por favor? Datos de la empresa: Razón social: LUXURY BUILDING GROUP RFC: LBG211011SXA Sociedad: S.A. de C.V." [ref=f1e1109]':
+                  - generic [ref=f1e1110]:
+                    - generic [ref=f1e1111]: Otra consulta
+                    - generic [ref=f1e1112]: "Asunto: Validación de D-U-N-S para LUXURY BUILDING GROUP Estamos registrando a LUXURY BUILDING GROUP como organización desarrolladora en Google Play y Apple Developer. Para continuar, Google Play solicita el número D-U-N-S de la empresa. ¿Podrían confirmar si ya contamos con este número y proporcionarlo, por favor? Datos de la empresa: Razón social: LUXURY BUILDING GROUP RFC: LBG211011SXA Sociedad: S.A. de C.V."
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e1113]:
+                  - generic [ref=f1e1114]:
+                    - generic [ref=f1e1115]: J
+                    - generic [ref=f1e1118]:
+                      - generic [ref=f1e1119]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e1120]: Asignado
+                - 'cell "Asunto: Validación de D-U-N-S para LUXURY BUILDING GROUP Estamos registrando a LUXURY BUILDING GROUP como organización desarrolladora en Google Play y Apple Developer. Para continuar, Google Play solicita el número D-U-N-S de la empresa. ¿Podrían confirmar si ya contamos con este número y proporcionarlo, por favor? Datos de la empresa: Razón social: LUXURY BUILDING GROUP RFC: LBG211011SXA Sociedad: S.A. de C.V." [ref=f1e1121]'
+                - cell "NotStarted" [ref=f1e1128]
+                - cell "12 días" [ref=f1e1132]:
+                  - generic [ref=f1e1133]:
+                    - generic [ref=f1e1134]: "12"
+                    - generic [ref=f1e1135]: días
+              - row [ref=f1e1136] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e1137]
+                - cell "03 sep 17:02" [ref=f1e1141]:
+                  - generic [ref=f1e1142]:
+                    - generic [ref=f1e1143]: 03 sep
+                    - generic [ref=f1e1144]: 17:02
+                - cell "LEGAL | Revisión de contrato Mantenimiento a 8 transformadores" [ref=f1e1149]:
+                  - generic [ref=f1e1150]:
+                    - generic [ref=f1e1151]: LEGAL | Revisión de contrato
+                    - generic [ref=f1e1152]: Mantenimiento a 8 transformadores
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e1153]:
+                  - generic [ref=f1e1154]:
+                    - generic [ref=f1e1155]: J
+                    - generic [ref=f1e1158]:
+                      - generic [ref=f1e1159]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e1160]: Asignado
+                - cell "11-sept-26 | Se envia contrato para revisión de proveedor, si no hay cambios se pasa a firmas." [ref=f1e1161]
+                - cell "No Iniciada" [ref=f1e1168]
+                - cell "10 días" [ref=f1e1172]:
+                  - generic [ref=f1e1173]:
+                    - generic [ref=f1e1174]: "10"
+                    - generic [ref=f1e1175]: días
+              - row [ref=f1e1176] [cursor=pointer]:
+                - cell "Legal" [ref=f1e1177]
+                - cell "03 sep 17:02" [ref=f1e1181]:
+                  - generic [ref=f1e1182]:
+                    - generic [ref=f1e1183]: 03 sep
+                    - generic [ref=f1e1184]: 17:02
+                - cell "Revisión de contrato Mantenimiento a 8 transformadores" [ref=f1e1189]:
+                  - generic [ref=f1e1190]:
+                    - generic [ref=f1e1191]: Revisión de contrato
+                    - generic [ref=f1e1192]: Mantenimiento a 8 transformadores
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e1193]:
+                  - generic [ref=f1e1194]:
+                    - generic [ref=f1e1195]: J
+                    - generic [ref=f1e1198]:
+                      - generic [ref=f1e1199]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e1200]: Asignado
+                - cell "Mantenimiento a 8 transformadores" [ref=f1e1201]
+                - cell "NotStarted" [ref=f1e1208]
+                - cell "10 días" [ref=f1e1212]:
+                  - generic [ref=f1e1213]:
+                    - generic [ref=f1e1214]: "10"
+                    - generic [ref=f1e1215]: días
+              - row [ref=f1e1216] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e1217]
+                - cell "03 sep 17:17" [ref=f1e1221]:
+                  - generic [ref=f1e1222]:
+                    - generic [ref=f1e1223]: 03 sep
+                    - generic [ref=f1e1224]: 17:17
+                - cell "LEGAL | Revisión de contrato Compra de 12 reguladores de voltaje para equipos de gimnasio" [ref=f1e1229]:
+                  - generic [ref=f1e1230]:
+                    - generic [ref=f1e1231]: LEGAL | Revisión de contrato
+                    - generic [ref=f1e1232]: Compra de 12 reguladores de voltaje para equipos de gimnasio
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e1233]:
+                  - generic [ref=f1e1234]:
+                    - generic [ref=f1e1235]: J
+                    - generic [ref=f1e1238]:
+                      - generic [ref=f1e1239]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e1240]: Asignado
+                - cell "11-sept-26 | Se envia contrato para revisión de proveedor, si no hay cambios se pasa a firmas." [ref=f1e1241]
+                - cell "No Iniciada" [ref=f1e1248]
+                - cell "10 días" [ref=f1e1252]:
+                  - generic [ref=f1e1253]:
+                    - generic [ref=f1e1254]: "10"
+                    - generic [ref=f1e1255]: días
+              - row [ref=f1e1256] [cursor=pointer]:
+                - cell "Legal" [ref=f1e1257]
+                - cell "03 sep 17:17" [ref=f1e1261]:
+                  - generic [ref=f1e1262]:
+                    - generic [ref=f1e1263]: 03 sep
+                    - generic [ref=f1e1264]: 17:17
+                - cell "Revisión de contrato Compra de 12 reguladores de voltaje para equipos de gimnasio" [ref=f1e1269]:
+                  - generic [ref=f1e1270]:
+                    - generic [ref=f1e1271]: Revisión de contrato
+                    - generic [ref=f1e1272]: Compra de 12 reguladores de voltaje para equipos de gimnasio
+                - cell "J Jose Carlos Rodríguez Miranda Asignado" [ref=f1e1273]:
+                  - generic [ref=f1e1274]:
+                    - generic [ref=f1e1275]: J
+                    - generic [ref=f1e1278]:
+                      - generic [ref=f1e1279]: Jose Carlos Rodríguez Miranda
+                      - generic [ref=f1e1280]: Asignado
+                - cell "Compra de 12 reguladores de voltaje para equipos de gimnasio" [ref=f1e1281]
+                - cell "NotStarted" [ref=f1e1288]
+                - cell "10 días" [ref=f1e1292]:
+                  - generic [ref=f1e1293]:
+                    - generic [ref=f1e1294]: "10"
+                    - generic [ref=f1e1295]: días
+              - row [ref=f1e1296] [cursor=pointer]:
+                - cell "Tickets" [ref=f1e1297]
+                - cell "13 sep 13:13" [ref=f1e1301]:
+                  - generic [ref=f1e1302]:
+                    - generic [ref=f1e1303]: 13 sep
+                    - generic [ref=f1e1304]: 13:13
+                - cell "GTE MATENIMIENTO OP | sacd sadfasdf" [ref=f1e1309]:
+                  - generic [ref=f1e1310]:
+                    - generic [ref=f1e1311]: GTE MATENIMIENTO OP | sacd
+                    - generic [ref=f1e1312]: sadfasdf
+                - cell "R Ricardo Márquez Escobedo Asignado" [ref=f1e1313]:
+                  - generic [ref=f1e1314]:
+                    - generic [ref=f1e1315]: R
+                    - generic [ref=f1e1318]:
+                      - generic [ref=f1e1319]: Ricardo Márquez Escobedo
+                      - generic [ref=f1e1320]: Asignado
+                - cell "-- Sin info --" [ref=f1e1321]
+                - cell "No Iniciada" [ref=f1e1322]
+                - cell "1 días" [ref=f1e1326]:
+                  - generic [ref=f1e1327]:
+                    - generic [ref=f1e1328]: "1"
+                    - generic [ref=f1e1329]: días
+          - generic [ref=f1e1330]:
+            - generic [ref=f1e1331]: En total hay 20 registros.
+            - generic [ref=f1e1334]: 1-20 de 20
+            - button "First Page"
+            - button "Previous Page" [disabled]
+            - button "1" [ref=f1e1336] [cursor=pointer]
+            - button "Next Page" [disabled]
+            - button "Last Page" [disabled]
+            - generic [ref=f1e1337] [cursor=pointer]:
+              - combobox "Rows per page" [ref=f1e1338]: "30"
+              - button "dropdown trigger" [ref=f1e1339]

@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header card-no-border pb-0">
+        <h4>Padding</h4>
+        <p class="f-m-light mt-1">
+            Use the padding classes like: <code>.p-* [10/15/20/25/30/35/40/45/50]</code></p>
+    </div>
+    <div class="card-body">
+        <div class="border-wrapper h-100 alert-light-light dark-helper">
+            <h5 class="f-w-600 mb-3">Padding</h5>
+            <div class="helper-common-box helper-p-wrapper">
+                @for (item of padding; track item) {
+                <div class="helper-p-box {{item.pClass}} bg-light border"><span>.{{item.pClass}}</span></div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

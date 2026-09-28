@@ -1,0 +1,40 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title" id="exampleModalLabel">Add Bookmark</h4>
+    <button class="btn-close" type="button" (click)="activeModal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <form class="form-bookmark needs-validation" id="bookmark-form" novalidate="">
+      <div class="row g-2">
+        <div class="mb-3 mt-0 col-md-12">
+          <label for="bm-weburl">Web Url</label>
+          <input class="form-control" id="bm-weburl" type="text" required="" autocomplete="off">
+        </div>
+        <div class="mb-3 mt-0 col-md-12">
+          <label for="bm-title">Title</label>
+          <input class="form-control" id="bm-title" type="text" required="" autocomplete="off">
+        </div>
+        <div class="mb-3 mt-0 col-md-12">
+          <label>Description</label>
+          <textarea class="form-control" id="bm-desc" required="" autocomplete="off"></textarea>
+        </div>
+        <div class="mb-3 mt-0 col-md-6">
+          <label>Group</label>
+          <select class="js-example-basic-single form-control" id="bm-group">
+            <option value="bookmark">My Bookmarks</option>
+          </select>
+        </div>
+        <div class="mb-3 mt-0 col-md-6">
+          <label>Collection</label>
+          <select class="js-example-disabled-results form-control" id="bm-collection">
+            <option value="general">General</option>
+            <option value="fs">fs</option>
+          </select>
+        </div>
+      </div>
+      <input id="index_var" type="hidden" value="6">
+      <button class="btn btn-secondary me-2" id="Bookmark" type="submit">Save</button>
+      <button class="btn btn-primary" type="button" (click)="activeModal.dismiss()">Cancel</button>
+    </form>
+  </div>
+</div>

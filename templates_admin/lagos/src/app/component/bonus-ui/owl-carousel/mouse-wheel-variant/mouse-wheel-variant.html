@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Mouse Wheel Variant</h4>
+    <p class="f-m-light mt-1">Use the <code>.owl-carousel </code>through slides.</p>
+  </div>
+  <div class="card-body">
+    <div class="owl-carousel owl-theme mouse-wheel owl-loaded owl-drag" id="owl-carousel-15">
+      <owl-carousel-o [options]="autoPlayOptions">
+        @for (slideData of autoPlayData; track slideData) {
+        <ng-template carouselSlide class="item">
+          <img [src]="slideData.img" alt="">
+        </ng-template>
+        }
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>

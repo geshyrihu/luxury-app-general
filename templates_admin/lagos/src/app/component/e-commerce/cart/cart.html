@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Cart</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="order-history table-responsive wishlist theme-scrollbar">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Prdouct</th>
+                    <th>Prdouct Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of cartItem; track item) {
+                    <tr>
+                      <td class="text-center">
+                        <img class="img-fluid img-40" [src]="item.productImg" alt="#">
+                      </td>
+                      <td>
+                        <div class="product-name">
+                          <a href="javascript:void(0)">{{item.productName}}</a>
+                        </div>
+                      </td>
+                      <td>${{item.price}}</td>
+                      <td>
+                        <fieldset class="qty-box">
+                          <div class="input-group bootstrap-touchspin">
+                            <button class="btn btn-primary btn-square bootstrap-touchspin-down" type="button" (click)="decrement(item.id)">
+                              <i class="fa fa-minus"></i>
+                            </button>
+                            <span class="input-group-text bootstrap-touchspin-prefix"style="display: none;"></span>
+                              <input class="touchspin text-center form-control" type="text" value="{{item.counter}}" style="display: block;">
+                              <span class="input-group-text bootstrap-touchspin-postfix" style="display: none;"></span>
+                              <button class="btn btn-primary btn-square bootstrap-touchspin-up" type="button " (click)="increment(item.id)">
+                                <i class="fa fa-plus"></i>
+                              </button>
+                          </div>
+                        </fieldset>
+                      </td>
+                      <td>
+                        <app-feather-icons [icons]="'x-circle'" />
+                      </td>
+                      <td>${{item.total}}</td>
+                    </tr>
+                  }
+                  <tr>
+                    <td colspan="4">
+                      <div class="input-group">
+                        <input class="form-control me-2" type="text" placeholder="Enter coupan code"><a
+                          class="btn btn-primary" href="javascript:void(0)">Apply</a>
+                      </div>
+                    </td>
+                    <td class="total-amount">
+                      <h6 class="m-0 text-end"></h6><span class="f-w-600">Total Price :</span>
+                    </td>
+                    <td><span>$6935.00 </span></td>
+                  </tr>
+                  <tr class="border-0">
+                    <td class="text-end" colspan="5">
+                      <a class="btn btn-secondary cart-btn-transform"
+                        [routerLink]="['/ecommerce/product-page']">continue shopping</a>
+                    </td>
+                    <td>
+                      <a class="btn btn-success cart-btn-transform" [routerLink]="['/ecommerce/checkout']">check out</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

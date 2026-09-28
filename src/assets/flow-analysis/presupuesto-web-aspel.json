@@ -1,0 +1,303 @@
+{
+  "module": {
+    "name": "Presupuesto Web Aspel",
+    "description": "Sistema web de gestión y análisis de presupuestos basado en datos de Aspel COI. Permite visualizar, analizar y exportar datos presupuestales por ejercicio fiscal con funcionalidades avanzadas de IA para generar resúmenes, identificar patrones y recomendar acciones.",
+    "version": "2.0.0",
+    "backendPath": "src/api/LuxuryApp.Application/Moduls/ContabilidadLuxuryApp/PresupuestoWebAspel",
+    "frontendPath": "src/app/apps/contabilidad.luxuryapp/general-ledger/presupuesto-web-aspel"
+  },
+  "flows": [
+    {
+      "id": "flow-presupuesto-web-aspel-main",
+      "name": "Visualización y Análisis de Presupuesto Web Aspel",
+      "description": "Usuario accede al módulo, selecciona año fiscal, visualiza datos presupuestales en diferentes vistas (meses, ejecución, categorías), utiliza análisis IA para generar resúmenes ejecutivos y exporta datos a Excel.",
+      "trigger": "GET /api/presupuesto/aspel-full?customerId={Guid}&intYear={int} (carga inicial), cambio de año fiscal en selector, clic en botones de acción (IA, Excel, categorías)",
+      "actors": [
+        "Usuario (Contador, Gerente Presupuestal)",
+        "Frontend (Angular)",
+        "Backend (.NET 10)",
+        "Servicio AspelQuotation",
+        "Servicio IA (AI Assistant)",
+        "Servicio Excel (PresupuestoAspelExcelService)"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "actor": "Frontend",
+          "action": "Usuario accede a la ruta /app/presupuesto-web-aspel, año fiscal cargado desde servicio shared",
+          "endpoint": "/api/presupuesto/aspel-full",
+          "method": "GET",
+          "requestType": "Query: customerId (Guid), intYear (int)",
+          "responseType": "ApiResponseDTO<PresupuestoWebAspelResponseDTO>",
+          "sideEffects": [
+            "Llamada al endpoint backend",
+            "Carga de datos compartidos (servicio raíz)",
+            "Inicialización de gráficos y tablas"
+          ],
+          "validations": [
+            "customerId válido de AuthService",
+            "intYear dentro de rango válido"
+          ],
+          "durationEstimateMs": 300
+        },
+        {
+          "order": 2,
+          "actor": "Backend",
+          "action": "Endpoint GET /api/presupuesto/aspel-full recibe request, valida auth",
+          "endpoint": "/api/presupuesto/aspel-full",
+          "method": "GET",
+          "requestType": "Query: customerId, intYear",
+          "responseType": "IResult<PresupuestoWebAspelResponseDTO>",
+          "sideEffects": [
+            "Llamado a IAspelQuotationService.GetAspelFullQuotation",
+            "Log de actividad"
+          ],
+          "validations": [
+            "RequireAuthorization",
+            "LogUserActivityEndPointsFilter"
+          ],
+          "durationEstimateMs": 200
+        },
+        {
+          "order": 3,
+          "actor": "Backend",
+          "action": "Servicio AspelQuotation obtiene datos consolidados de presupuesto desde Aspel COI",
+          "endpoint": "/internal/IAspelQuotationService.GetAspelFullQuotation",
+          "method": "GET",
+          "requestType": "(Guid customerId, int intYear)",
+          "responseType": "AspelFullQuotationDTO (BalanceSheetDTO, BudgetExecutionItemDTO[], FinancialAnalysisDTO[])",
+          "sideEffects": [
+            "3 llamadas paralelas a servicios Aspel: GetCuentas, GetSaldos, GetPresupuestos",
+            "Mapeo de datos a BudgetExecutionItemDTO y FinancialAnalysisDTO"
+          ],
+          "validations": [
+            "Empresa válida en Aspel",
+            "Año con datos disponibles"
+          ],
+          "durationEstimateMs": 1000
+        },
+        {
+          "order": 4,
+          "actor": "Backend",
+          "action": "Servicio raíz (PresupuestoWebAspelService) procesa datos recibidos y los estructura para la UI",
+          "endpoint": "/internal/PresupuestoWebAspelService.ProcessAspelData",
+          "method": "INTERNAL",
+          "requestType": "AspelFullQuotationDTO",
+          "responseType": "PresupuestoWebAspelResponseDTO",
+          "sideEffects": [
+            "Detección automática de meses con datos",
+            "Cálculo de saldos iniciales por cuenta",
+            "Generación de totales acumulados por categoría",
+            "Identificación de cuentas especiales (605/606)"
+          ],
+          "validations": [
+            "Validación de consistencia de datos",
+            "Llenado de arrays vacíos si no hay datos"
+          ],
+          "durationEstimateMs": 300
+        },
+        {
+          "order": 5,
+          "actor": "Frontend",
+          "action": "Servicio raíz setea estados reactivos, componentes child reciben props actualizadas",
+          "endpoint": "/internal/PresupuestoWebAspelService.OnDataLoaded",
+          "method": "INTERNAL",
+          "requestType": "PresupuestoWebAspelResponseDTO",
+          "responseType": "void",
+          "sideEffects": [
+            "Procesamiento IA para generateFinancialAnalysis()",
+            "Inicialización de estadísticas de UI",
+            "Configuración de controles de filtro"
+          ],
+          "validations": [
+            "Reactividad con Signals",
+            "Error handling con toast messages"
+          ],
+          "durationEstimateMs": 200
+        },
+        {
+          "order": 6,
+          "actor": "Backend",
+          "action": "Servicio IA genera resumen ejecutivo usando LLM o reglas predefinidas",
+          "endpoint": "/internal/IAiAssistantService.GenerateFinancialSummary",
+          "method": "POST",
+          "requestType": "FinancialAnalysisDTO (Context, Tone)",
+          "responseType": "string (resumen ejecutivo)",
+          "sideEffects": [
+            "Llamado a IA externa o servicios internos de negocio"
+          ],
+          "validations": [
+            "RequireAuthorization con roles específicos",
+            "Longitud del contexto dentro de límites"
+          ],
+          "durationEstimateMs": 500
+        },
+        {
+          "order": 7,
+          "actor": "Frontend",
+          "action": "UI muestra resultados de análisis IA en panel dedicado",
+          "endpoint": "/internal/UI.AnalysisPanel.setResults",
+          "method": "INTERNAL",
+          "requestType": "string (resumen IA)",
+          "responseType": "void",
+          "sideEffects": [
+            "Seteo de textContent de componente de análisis",
+            "Toggle de visibilidad del panel de IA",
+            "Log de análisis en sistema"
+          ],
+          "validations": [
+            "Sanitización de HTML si contenido incluye markdown"
+          ],
+          "durationEstimateMs": 100
+        },
+        {
+          "order": 8,
+          "actor": "Frontend",
+          "action": "Usuario exporta datos a Excel usando servicio Excel",
+          "endpoint": "/internal/PresupuestoAspelExcelService.ExportExcel",
+          "method": "INTERNAL",
+          "requestType": "Datos del presupuesto (BalanceSheetDTO, BudgetExecutionItemDTO[])",
+          "responseType": "Blob (Archivo Excel)",
+          "sideEffects": [
+            "Generación de archivo Excel con múltiples hojas",
+            "Descarga automática del archivo"
+          ],
+          "validations": [
+            "Validación de datos antes de exportar",
+            "Fallback a CSV si Excel no disponible"
+          ],
+          "durationEstimateMs": 800
+        }
+      ],
+      "notifications": [],
+      "stateChanges": [
+        {
+          "entity": "PresupuestoWebAspelService.shared.intYear",
+          "from": "previous year",
+          "to": "new year selected",
+          "trigger": "User changes year selector"
+        },
+        {
+          "entity": "PresupuestoWebAspelService.shared.searchTerm",
+          "from": "empty",
+          "to": "search query entered",
+          "trigger": "User types in search input"
+        },
+        {
+          "entity": "PresupuestoWebAspelService.shared.budgetData",
+          "from": "null",
+          "to": "BudgetExecutionItemDTO array",
+          "trigger": "Successful API response"
+        },
+        {
+          "entity": "PresupuestoWebAspelService.shared.analysisResult",
+          "from": "null",
+          "to": "string (executive summary)",
+          "trigger": "IA generateFinancialAnalysis() completes"
+        },
+        {
+          "entity": "UI.activeTabValue",
+          "from": "'presupuesto'",
+          "to": "'especiales'",
+          "trigger": "User clicks tab switch button"
+        },
+        {
+          "entity": "UI.loadingStates",
+          "from": "false",
+          "to": "true → false",
+          "trigger": "Multiple data operations (search, export, analysis)"
+        }
+      ]
+    }
+  ],
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/presupuesto/aspel-full",
+      "description": "Obtiene datos completos de presupuesto desde Aspel COI para un cliente y año específico, incluyendo balance general, ejecución presupuestal y análisis financiero.",
+      "auth": "RequireAuthorization",
+      "requestType": "Query: customerId (Guid), intYear (int)",
+      "responseType": "ApiResponseDTO<PresupuestoWebAspelResponseDTO>",
+      "group": "Presupuesto",
+      "rateLimit": "30/min",
+      "deprecated": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/presupuesto/analyze",
+      "description": "Genera resumen ejecutivo de datos financieros usando IA o reglas de negocio predefinidas.",
+      "auth": "RequireAuthorization + Roles: Administrador,Asistente,RecursosHumanos,JefeMantenimiento,Reclutamiento,SuperUsuario,Legal,SupervisionOperativa,Contador",
+      "requestType": "Body: FinancialAnalysisDTO (Context, Tone)",
+      "responseType": "ApiResponseDTO<string>",
+      "group": "Presupuesto",
+      "rateLimit": "10/min",
+      "deprecated": false
+    }
+  ],
+  "components": [
+    {
+      "name": "PresupuestoWebAspelWrapper",
+      "path": "client/angular/src/app/apps/contabilidad.luxuryapp/general-ledger/presupuesto-web-aspel/wrapper.ts",
+      "purpose": "Componente contenedor que gestiona la navegación entre vistas de presupuesto y extraordinarios, conecta servicios compartidos y expone acciones del wrapper a componentes hijos.",
+      "selector": "app-presupuesto-web-aspel-wrapper",
+      "inputs": [],
+      "outputs": [],
+      "services": [
+        "PresupuestoWebAspelService",
+        "PresupuestoAspelExcelService"
+      ],
+      "signals": [
+        "activeTabValue",
+        "budgetTabs"
+      ],
+      "usesResource": false,
+      "usesHttpResource": false
+    },
+    {
+      "name": "PresupuestoAspelEjercicioFiscal",
+      "path": "client/angular/src/app/apps/contabilidad.luxuryapp/general-ledger/presupuesto-web-aspel/espejo-aspel-presupuesto.ts",
+      "purpose": "Componente principal que visualiza datos presupuestales mensuales en tabla con formato condicional, incluye controles de gestión de reglas y acciones rápidas.",
+      "selector": "app-presupuesto-aspel-ejercicio-fiscal",
+      "inputs": [],
+      "outputs": [],
+      "services": [
+        "PresupuestoWebAspelService",
+        "PresupuestoAspelExcelService"
+      ],
+      "signals": [
+        "sharedS",
+        "allMonths",
+        "availableYears",
+        "budgetData",
+        "analysisResult",
+        "loading",
+        "errorMensaje"
+      ],
+      "usesResource": false,
+      "usesHttpResource": false
+    },
+    {
+      "name": "EspejoAspelExtraordinarios",
+      "path": "client/angular/src/app/apps/contabilidad.luxuryapp/general-ledger/presupuesto-web-aspel/espejo-aspel-extraordinarios.ts",
+      "purpose": "Componente que visualiza partidas extraordinarias (cuentas 605/606) con detalles de categorías y montos.",
+      "selector": "app-espejo-aspel-extraordinarios",
+      "inputs": [],
+      "outputs": [],
+      "services": [
+        "PresupuestoWebAspelService"
+      ],
+      "signals": [
+        "sharedS"
+      ],
+      "usesResource": false,
+      "usesHttpResource": false
+    }
+  ],
+  "domainEvents": [],
+  "metadata": {
+    "generatedAt": "2026-09-01T13:30:00.000Z",
+    "generatedBy": "flow-analyzer-skill",
+    "schemaVersion": "1.0.0",
+    "analysisDurationMs": 150000
+  }
+}

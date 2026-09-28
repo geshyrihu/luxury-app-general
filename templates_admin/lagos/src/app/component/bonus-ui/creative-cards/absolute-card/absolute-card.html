@@ -1,0 +1,21 @@
+<div class="row">
+  @for (data of commonAbsoluteCardData; track data) {
+  <div class="col-sm-12 col-xl-6">
+    <div class="card card-absolute">
+      <div class="card-header p-2 bg-{{data.bgColor}}">
+        <h5 class="txt-light">{{data.heading}}</h5>
+      </div>
+      <div class="card-body">
+        <div class="d-flex list-behavior-1 align-items-center">
+          <div class="flex-shrink-0">
+            <img class="tab-img img-fluid" [src]="data.img" alt="home">
+          </div>
+          <div class="flex-grow-1">
+            <p class="mb-xl-0 mb-sm-4">{{data.text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

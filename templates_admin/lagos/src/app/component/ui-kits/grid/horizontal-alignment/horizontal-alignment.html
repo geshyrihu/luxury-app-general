@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Horizontal alignment</h4>
+    <p class="mt-1 f-m-light">You can use the <code>justify-content-*</code> class
+      to set the horizontal alignment.
+    </p>
+  </div>
+  <div class="card-body grid-showcase grid-align">
+    @for (allData of horizontialAlinmentData; track allData) {
+    <div class="row justify-content-{{allData.class}} bg-light">
+      @for (data of allData.data; track data) {
+      <div class="col-5">
+        <span class="bg-white text-dark">{{data.text}}</span>
+      </div>
+      }
+    </div>
+    }
+  </div>
+  <div class="card-footer">
+    <div class="table-responsive theme-scrollbar">
+      <table class="w-100">
+        <tbody>
+          <tr>
+            <th> Class</th>
+            <th>Value of the class</th>
+          </tr>
+          <tr>
+            <td><code>.justify-content-*</code></td>
+            <td> start / center / end / around / between</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

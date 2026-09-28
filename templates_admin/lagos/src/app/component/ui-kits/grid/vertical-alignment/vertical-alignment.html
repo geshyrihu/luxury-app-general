@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Vertical alignment</h4>
+    <p class="mt-1 f-m-light">You can use the <code>align-items-*</code> class
+      to set the vertical alignment.
+    </p>
+  </div>
+  <div class="card-body grid-showcase mb-0">
+    <div class="row">
+      @for (allData of verticalAlignmentData; track allData) {
+      <div class="col-lg-4">
+        <div class="row grid-vertical align-items-{{allData.class}} m-1 g-2 bg-light">
+          @for (data of allData.data; track data) {
+          <div class="col-6">
+            <span class="bg-white">{{data.text}}</span>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="table-responsive theme-scrollbar">
+      <table class="w-100">
+        <tbody>
+          <tr>
+            <th> Class</th>
+            <th>Value of the class</th>
+          </tr>
+          <tr>
+            <td><code>.align-items-*</code></td>
+            <td> start / center / end / baseline / stretch</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

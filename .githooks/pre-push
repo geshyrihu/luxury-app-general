@@ -1,0 +1,19 @@
+#!/bin/sh
+# Pre-push hook: bloquea el push si hay mojibake en las carpetas monitoreadas
+# Uso: git config core.hooksPath .githooks  (una vez por clon)
+cd "$(git rev-parse --show-toplevel)" || exit 1
+
+SCAN_PATHS="client/angular client/flutter api client/luxuryapp-nx .githooks scripts"
+
+echo "🔍 Escaneando mojibake antes de push ($SCAN_PATHS)..."
+
+if node scripts/scan-mojibake.mjs $SCAN_PATHS >/dev/null 2>&1; then
+  echo "✅ Sin mojibake — push permitido."
+  exit 0
+else
+  echo "❌ MOJIBAKE DETECTADO. El push fue bloqueado."
+  echo "Corrige con: node scripts/fix-mojibake.mjs <ruta>"
+  echo "Detalle:"
+  node scripts/scan-mojibake.mjs $SCAN_PATHS
+  exit 1
+fi

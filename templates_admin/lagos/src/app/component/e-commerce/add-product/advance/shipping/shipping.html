@@ -1,0 +1,93 @@
+<div class="meta-body">
+  <form>
+    <div class="row g-3 custom-input">
+      <div class="col-12">
+        <div class="row gx-xl-3 gx-md-2 gy-md-0 g-2">
+          <div class="col-12">
+            <label class="form-label" for="exampleFormControlInput1">Where can I pick up my
+              order?</label>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <input class="form-control" id="inputZip" type="number" placeholder="Zip code (10001)">
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <input class="form-control" id="inputCity" type="text" placeholder="City">
+          </div>
+          <div class="col-md-4">
+            <select class="form-select" id="inputState">
+              <option selected="">State</option>
+              <option>Gujarat</option>
+              <option>Punjab</option>
+              <option>Himachal pradesh</option>
+              <option>Goa </option>
+              <option>Sikkim </option>
+              <option>Telangana</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <label class="form-label" for="exampleFormControlInput1">Weight (kg)</label><i class="icon-help-alt ms-1"
+              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="set proper weight for product items."></i>
+          </div>
+          <div class="col-12">
+            <input class="form-control" id="inputCity" type="number">
+            <p class="f-light">Decide if the product is a digital or physical item. Shipping may
+              be necessary for real-world items.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row gx-xl-3 gx-md-2 gy-md-0 g-2">
+          <div class="col-12">
+            <label class="form-label" for="exampleFormControlInput1">Dimensions </label><i class="icon-help-alt ms-1"
+              data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-title="set proper length/width and height for product items."></i>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <input class="form-control" id="inputCity" type="number" placeholder="Length[l]">
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <input class="form-control" id="inputCity" type="number" placeholder="Width[w]">
+          </div>
+          <div class="col-md-4">
+            <input class="form-control" id="inputCity" type="number" placeholder="Height[h]">
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <label class="form-label" for="exampleFormControlInput1">Shipping Class</label>
+          </div>
+          <div class="col-md-12">
+            <select class="form-select" id="inputState">
+              <option selected="">Basic Shipping</option>
+              <option>Expedited Shipping</option>
+              <option>International Shipping</option>
+              <option>Free Shipping</option>
+              <option>Same-Day or Next-Day Shipping</option>
+              <option>Flat Rate Shipping</option>
+              <option>Local Pickup</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-buttons">
+      <button class="btn me-2">
+        <div class="d-flex align-items-center gap-sm-2 gap-1">
+          <app-common-svg-icon [icon]="'back-arrow'" />
+          Previous
+        </div>
+      </button>
+      <button class="btn">
+        <div class="d-flex align-items-center gap-sm-2 gap-1">Submit
+          <app-common-svg-icon [icon]="'front-arrow'" />
+        </div>
+      </button>
+    </div>
+  </form>
+</div>

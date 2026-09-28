@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <app-basic-progress-bars />
+      <div class="row">
+        <div class="col-xl-6">
+          <app-comman-progress-bar [data]="stripedData" />
+        </div>
+        <div class="col-xl-6">
+          <app-comman-progress-bar [data]="stripedAnimatedData" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <app-multiple-bars />
+        </div>
+        <div class="col-xl-6">
+          <app-progress-with-number-steps />
+        </div>
+      </div>
+      <app-custom-progress-bars />
+      <div class="row">
+        <div class="col-xl-6">
+          <app-small-progress-bars />
+        </div>
+        <div class="col-xl-6">
+          <app-large-progress-bars />
+        </div>
+      </div>
+      <app-custom-height-progress />
+    </div>
+  </div>
+</div>

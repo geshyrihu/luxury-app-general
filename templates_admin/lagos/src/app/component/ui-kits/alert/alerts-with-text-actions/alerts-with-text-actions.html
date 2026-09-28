@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Alerts with icons and text actions</h4>
+        <p class="f-m-light mt-1">Use the <code>.dismiss-text</code> class to add dismiss text instead of icon</p>
+    </div>
+    <div class="card-body dark-txt">
+        @for (alertData of alertIconTextAlertData; track alertData) {
+        <div class="alert border-{{alertData.textColor}} alert-dismissible fade show p-0 {{alertData.class}}"
+            role="alert">
+            <div class="alert-arrow bg-{{alertData.textColor}}">
+                <i class="{{alertData.icon}}"></i>
+            </div>
+            <p [innerHTML]="alertData.text"></p>
+            <button class="p-0 border-0 me-2 ms-auto" type="button" (click)="closed(alertData)">
+                <span class="bg-{{alertData.textColor}} px-3 py-1" aria-hidden="true">{{alertData.buttonText}}</span>
+            </button>
+        </div>
+        }
+    </div>
+</div>

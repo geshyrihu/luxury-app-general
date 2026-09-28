@@ -1,0 +1,112 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Material style tabs</h4>
+        <p class="mt-1 f-m-light">Use the <code>.nav-link </code>with <code>.active </code>class through access new
+            tabs. And icons of design for attractive webpage.</p>
+    </div>
+    <div class="card-body">
+        <ul class="nav nav-tabs border-tab border-0 mb-0 nav-danger" id="topline-tab" role="tablist" ngbNav
+            #nav="ngbNav" [(activeId)]="active">
+            <li class="nav-item" [ngbNavItem]="1">
+                <a class="nav-link nav-border pt-0 txt-danger nav-danger" id="topline-top-user-tab" ngbNavLink>
+                    <i class="icofont icofont-man-in-glasses"></i>User</a>
+                <ng-template ngbNavContent>
+                    <div class="card-body px-0 pb-0">
+                        <div class="user-header pb-2">
+                            <h6 class="fw-bold">User Details:</h6>
+                        </div>
+                        <div class="user-content">
+                            <div class="table-responsive theme-scrollbar">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Country</th>
+                                            <th scope="col">Contact No</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (data of userDetailsData; track data) {
+                                        <tr>
+                                            <th scope="row">{{data.id}}</th>
+                                            <td>{{data.name}}</td>
+                                            <td>{{data.country}} </td>
+                                            <td>{{data.contact}}</td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li class="nav-item" [ngbNavItem]="2">
+                <a class="nav-link nav-border txt-danger nav-danger" id="topline-top-description-tab" ngbNavLink>
+                    <i class="icofont icofont-file-document"></i>Description</a>
+                <ng-template ngbNavContent>
+                    <div class="user-content">
+                        <div class="user-header pb-2">
+                            <h6 class="fw-bold">Description:</h6>
+                        </div>
+                        <div class="table-responsive theme-scrollbar">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Technology</th>
+                                        <th scope="col">Interest </th>
+                                        <th scope="col">Salary Expected </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (data of descriptionData; track data) {
+                                    <tr>
+                                        <td>{{ data.technology }}</td>
+                                        <td>{{ data.interest }}</td>
+                                        <td>{{ data.salary }}</td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li class="nav-item" [ngbNavItem]="3">
+                <a ngbNavLink class="nav-link nav-border txt-danger nav-danger" id="topline-top-review-tab">
+                    <i class="icofont icofont-star"></i>Review</a>
+                <ng-template ngbNavContent>
+                    <div class="user-header pb-2">
+                        <h6 class="fw-bold">Review:</h6>
+                    </div>
+                    <div class="user-content">
+                        <div class="table-responsive theme-scrollbar">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Country</th>
+                                        <th scope="col">Rating </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (data of reviewData; track data) {
+                                    <tr>
+                                        <th scope="row">{{ data.id }}</th>
+                                        <td>{{ data.name }}</td>
+                                        <td>{{ data.country }} </td>
+                                        <td [innerHTML]="data.rating"> </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="card height-equal">
+    <div class="card-header">
+        <h4>Rounded dropdown</h4>
+        <p class="f-m-light mt-1">When the<code>.show </code>class starts, dropdown appears. And
+            <code>.rounded-pill</code> to change rounded dropdowns.
+        </p>
+    </div>
+    <div class="card-body rtl-dropdown">
+        <div class="common-flex">
+            @for (allData of roundedDropdownData; track allData) {
+            <div class="btn-group" ngbDropdown>
+                <button class="btn btn-{{allData.colorClass}} rounded-pill dropdown-toggle" type="button"
+                    ngbDropdownToggle>{{allData.title}}</button>
+                <ul class="dropdown-menu dropdown-block" ngbDropdownMenu>
+                    @for (items of allData.dropdownItem; track items) {
+                    <li>
+                        <a class="dropdown-item" href="javascript:void(0)" ngbDropdownItem>{{items.item}}</a>
+                    </li>
+                    }
+                </ul>
+            </div>
+            }
+        </div>
+    </div>
+</div>

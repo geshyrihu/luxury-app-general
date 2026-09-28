@@ -1,0 +1,15 @@
+<div class="card height-equal">
+    <div class="card-header card-no-border pb-0">
+        <h4>Font weight </h4>
+        <p class="f-m-light mt-1">
+            Use the font-weight classes like: <code>.f-w-* [100/300/400/600/700/900]</code></p>
+    </div>
+    <div class="card-body">
+        @for (item of FontWeight; track item) {
+        <div class="helper-common-box">
+            <div class="f-w-{{item.width}}">
+                You can set light font weight heading .f-w-{{item.width}}</div>
+        </div>
+        }
+    </div>
+</div>

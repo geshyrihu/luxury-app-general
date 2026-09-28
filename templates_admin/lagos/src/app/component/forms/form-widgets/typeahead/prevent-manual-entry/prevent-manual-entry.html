@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Prevent manual entry</h4>
+    <p class="f-m-light mt-1">Prevents manual text entry and updates the model only when an item from suggestions is
+      selected</p>
+  </div>
+  <div class="card-body">
+    <div id="typeahead-prevent-manual-entry">
+      <form class="theme-form">
+        <div>
+          <input class="typeahead form-control" type="text" placeholder="Countries" [ngbTypeahead]="search"
+            [inputFormatter]="formatter" [resultFormatter]="formatter" [editable]="false">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

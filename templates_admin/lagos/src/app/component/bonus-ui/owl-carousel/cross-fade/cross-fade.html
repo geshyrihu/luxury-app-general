@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Cross-Fade</h4>
+        <p class="f-m-light mt-1">Add <code>.carousel-fade</code> to your carousel to animate slides with a fade
+            transition instead of a slide. Depending on your carousel content, you may want to add<code> .bg-body</code>
+            or some custom CSS to the .carousel-items for proper cross-fading.</p>
+    </div>
+    <div class="card-body">
+        <div class="carousel slide carousel-fade" id="carouselExampleFade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <owl-carousel-o [options]="crossFadeOptions ">
+                    @for (slideData of crossFadeData; track slideData) {
+                    <ng-template carouselSlide class="carousel-item">
+                        <img class="d-block w-100" src="{{ slideData.img }}" alt="">
+                    </ng-template>
+                    }
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div>

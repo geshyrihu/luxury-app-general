@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Outline accordion </h4>
+        <p class="f-m-light mt-1">
+            make custom <code>.accordion-wrapper</code> class use to bring border-left side.</p>
+        <div class="card-header-right">
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="accordion dark-accordion" id="outlineaccordion" ngbAccordion [closeOthers]="true">
+            @for (allData of simpleAccordionData; track allData) {
+            <div class="accordion-item accordion-wrapper accordion-item-border" ngbAccordionItem>
+                <h2 class="accordion-header" id="outlineaccordionone">
+                    <button class="accordion-button collapsed bg-light-warning txt-warning" type="button"
+                        ngbAccordionButton>{{allData.title}}
+                        <app-feather-icons [class]="'svg-color'" [icons]="'chevron-down'" />
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" id="left-collapseOne" ngbAccordionCollapse>
+                    <div class="accordion-body" ngbAccordionBody>
+                        <p [innerHTML]="allData.desc">
+                            <em class="txt-danger"></em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

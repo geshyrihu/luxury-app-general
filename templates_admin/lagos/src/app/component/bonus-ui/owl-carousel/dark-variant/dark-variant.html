@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Dark Variant</h4>
+    <p class="f-m-light mt-1">Add <code>.carousel-dark</code> to the <code>.carousel</code> for darker controls, indicators, and captions. </p>
+  </div>
+  <div class="card-body">
+    <div class="carousel carousel-dark slide" id="carouselExampleDark" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <owl-carousel-o [options]="withIndicatorOptions">
+          @for (slideData of darkVariantData; track slideData) {
+          <ng-template carouselSlide class="carousel-item">
+            <img class="d-block w-100" [src]="slideData.img" alt="">
+            <div class="carousel-caption d-none d-md-block carousel-opacity">
+              <h5>{{ slideData.title }}</h5>
+              <p>{{ slideData.desc }}</p>
+            </div>
+          </ng-template>
+        }
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>

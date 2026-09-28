@@ -1,0 +1,29 @@
+<div class="card sales-summary">
+    <div class="card-header pb-0 card-no-border">
+        <div class="header-top">
+            <h4>Order Activity </h4>
+            <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+                <button class="btn dropdown-toggle" type="button" [class.show]="isShow" (click)="isShow =!isShow">
+                    <i class="icon-more-alt"></i></button>
+                <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow"
+                    style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+                    <a class="dropdown-item" href="javascript:Void(0)">Weekly</a>
+                    <a class="dropdown-item" href="javascript:Void(0)">Monthly</a>
+                    <a class="dropdown-item" href="javascript:Void(0)">Yearly</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-2 pb-0">
+        <div class="medium-chart">  
+            <div class="recent-chart" id="recent-chart">
+                <apx-chart [series]="orderActivity.series" [chart]="orderActivity.chart"
+                    [dataLabels]="orderActivity.dataLabels" [stroke]="orderActivity.stroke"
+                    [grid]="orderActivity.grid" [fill]="orderActivity.fill"
+                    [tooltip]="orderActivity.tooltip" [xaxis]="orderActivity.xaxis" [legend]="orderActivity.legend"
+                    [responsive]="orderActivity.responsive"
+                    [colors]="orderActivity.colors" />
+            </div>
+        </div>
+    </div>
+</div>

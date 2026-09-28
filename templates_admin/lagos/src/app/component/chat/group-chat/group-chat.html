@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row g-0">
+      <div class="col-xxl-3 col-xl-4 col-md-5 box-col-5">
+        <app-chat-filter />
+      </div>
+      <div class="col-xxl-9 col-xl-8 col-md-7 box-col-7">
+        <div class="card right-sidebar-chat">
+          <div class="right-sidebar-title">
+            <div class="common-space"> 
+              <div class="chat-time group-chat">
+                <ul> 
+                  @for (item of imageData; track item) {
+                    <li>
+                      <img class="img-fluid rounded-circle" [src]="item.image" alt="user">
+                    </li>
+                  }
+                  <li> 
+                    <div class="custom-name profile-count light-background">
+                      <p class="f-w-500">9+</p>
+                    </div>
+                  </li>
+                </ul>
+                <div> <span>Meeting Department</span>
+                  <p>35 Members</p>
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <div class="contact-edit chat-alert bg-light-secondary"><i class="icon-info-alt txt-secondary"></i></div>
+                <div class="contact-edit chat-alert bg-light-primary">
+                  <app-common-svg-icon [class]="'dropdown-toggle stroke-primary'" [icon]="'menubar'" (click)="isShow =!isShow" />
+                  <div class="dropdown-menu dropdown-menu-end chatMenu" [class.show]="isShow">
+                    <a class="dropdown-item" href="javascript:void(0)">View details</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Send messages</a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                       Add to favorites</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-sidebar-Chats"> 
+            <app-chat-box />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

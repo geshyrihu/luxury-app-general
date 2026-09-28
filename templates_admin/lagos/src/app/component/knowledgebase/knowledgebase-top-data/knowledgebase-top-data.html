@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-12">
+        <div class="knowledgebase-bg" [style]="{'background-image': 'url(assets/images/knowledgebase/bg_1.jpg)','background-size': 'cover','background-position': 'center center','display': 'block'}">
+            <img class="bg-img-cover bg-center" style="display: none;" src="assets/images/knowledgebase/bg_1.jpg" alt="looginpage" >
+        </div>
+        <div class="knowledgebase-search">
+            <div>
+                <h3 class="f-w-500">How Can I help you?</h3>
+                <form class="form-inline" action="#" method="get">
+                    <div class="form-group w-100">
+                  <app-feather-icons [icons]="'search'" />
+                        <input class="form-control-plaintext w-100" type="text" placeholder="Type question here" title="">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <app-comman-data [data]="knowledgebaseData" />
+</div>

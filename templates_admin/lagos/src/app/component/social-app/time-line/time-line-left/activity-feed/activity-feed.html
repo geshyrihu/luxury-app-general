@@ -1,0 +1,22 @@
+<div class="card-header" id="headingThree">
+  <h2 class="mb-0">
+    <button class="btn btn-link btn-block text-start collapsed" type="button" (click)="collapse.toggle()"
+      [attr.aria-expanded]="!isCollapsed">Activity Feed</button>
+  </h2>
+</div>
+<div class="collapse show" id="collapseThree" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+  <div class="card-body social-status filter-cards-view">
+    @for (item of activityFeedData; track item) {
+    <div class="d-flex">
+      <img class="img-50 rounded-circle m-r-15" [src]="item.img" alt="">
+      <div class="flex-grow-1">
+        <span class="f-w-600 d-block">{{item.name}}</span>
+        <p>Commented on Shaun Park's
+          <a href="javascript:void(0)">Photo</a>
+        </p>
+        <span class="light-span">{{item.time}}</span>
+      </div>
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,63 @@
+
+// bootstrap
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+@import "chartist/chartist-settings";
+@import "chartist/chartist";
+
+// Rating Theme
+@import"../../../node_modules/ngx-bar-rating/themes/br-default-theme.scss";
+@import"../../../node_modules/ngx-bar-rating/themes/br-horizontal-theme.scss";
+@import"../../../node_modules/ngx-bar-rating/themes/br-movie-theme.scss";
+@import"../../../node_modules/ngx-bar-rating/themes/br-square-theme.scss";
+@import"../../../node_modules/ngx-bar-rating/themes/br-stars-theme.scss";
+@import"../../../node_modules/ngx-bar-rating/themes/br-vertical-theme.scss";
+
+
+/* Ngx-owl-carousel-o */
+
+@import"../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default.scss";
+@import "../../../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel.scss";
+
+
+@import "leaflet/dist/leaflet.css";
+
+// Select2
+@import "@ng-select/ng-select/themes/default.theme.css";
+
+//  Light Box 
+@import '@angular/cdk/overlay-prebuilt.css';
+
+// Toast
+@import 'ngx-toastr/toastr';
+
+
+// calendar
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "../node_modules/flatpickr/dist/flatpickr.css";
+
+// todo 
+@import './vendors/todo.scss';
+
+// Hover Effect
+@import './photoswipe.scss';
+//data table support tickit
+@import './datatable';
+
+// dropzone scss
+@import "./dropzone";
+@import "./pages/chart";
+
+// icons
+@import "./icofont.scss";
+@import "./themify.scss";
+@import "./feather-icon.scss";
+@import "./fontawasome.scss";
+@import "./whether-icon";
+
+@import "./general";
+@import  "./style.scss";
+@import "./responsive.scss";
+
+

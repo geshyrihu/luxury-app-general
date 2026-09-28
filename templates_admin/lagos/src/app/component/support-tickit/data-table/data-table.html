@@ -1,0 +1,118 @@
+<div class="table-responsive theme-scrollbar">
+  <form>
+    <div class="d-flex justify-content-between mt-3 mb-3">
+      <select
+        class="form-select"
+        style="width: auto"
+        name="pageSize"
+        [(ngModel)]="service.pageSize"
+      >
+        <option [ngValue]="10">10</option>
+        <option [ngValue]="25">25</option>
+        <option [ngValue]="50">50</option>
+        <option [ngValue]="100">100</option>
+      </select>
+      <div class="mb-3 row justify-content-end">
+        @if (service.loading$ | async) {
+        <span class="col col-form-label text-end">Loading...</span>
+        }
+        <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label"
+          >Search:</label
+        >
+        <div class="col-xs-3 col-sm-auto">
+          <input
+            id="table-complete-search"
+            type="text"
+            class="form-control"
+            name="searchTerm"
+            [(ngModel)]="service.searchTerm"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+  <table class="display dataTable" id="basic-6">
+    <thead>
+      <tr role="row">
+        <th
+          rowspan="2"
+          sortable="name"
+          (sort)="onSort($event)"
+          class="sorting_asc"
+          style="width: 255px"
+        >
+          Name
+        </th>
+        <th colspan="2" rowspan="1">HR Information</th>
+        <th colspan="4" rowspan="1">Contact</th>
+      </tr>
+      <tr role="row">
+        <th class="sorting" style="width: 288px" sortable="position" (sort)="onSort($event)">
+          Position
+        </th>
+        <th class="sorting" style="width: 90px" sortable="salary" (sort)="onSort($event)">
+          Salary
+        </th>
+        <th class="sorting" style="width: 139px" sortable="office" (sort)="onSort($event)">
+          Office
+        </th>
+        <th class="sorting" style="width: 69px" sortable="skill" (sort)="onSort($event)">Skill</th>
+        <th class="sorting" style="width: 77px" sortable="extn" (sort)="onSort($event)">Extn.</th>
+        <th class="sorting" style="width: 270px" sortable="email" (sort)="onSort($event)">
+          E-mail
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (data of countries$ | async; track data) {
+      <tr role="row" class="odd">
+        <td>
+          <div class="d-flex">
+            <img class="rounded-1 img-30 me-3" [src]="data.img" alt="Generic placeholder image" />
+            <div class="flex-grow-1 align-self-center">
+              <div>{{data.name}}</div>
+            </div>
+          </div>
+        </td>
+        <td>{{data.position}}</td>
+        <td>${{data.salary | number}}</td>
+        <td>{{data.office}}</td>
+        <td>
+          <div class="progress-showcase">
+            <div class="progress sm-progress-bar">
+              <div
+                class="progress-bar bg-{{data.skill}}"
+                role="progressbar"
+                [style.width]="data.progress"
+              ></div>
+            </div>
+          </div>
+        </td>
+        <td>{{data.extn}}</td>
+        <td>{{data.email}}</td>
+      </tr>
+      } @if (supportData.length === 0) {
+      <tr>
+        <td>No matching records found</td>
+      </tr>
+      }
+    </tbody>
+    <tfoot>
+      <tr>
+        <th rowspan="1" colspan="1">Name</th>
+        <th rowspan="1" colspan="1">Position</th>
+        <th rowspan="1" colspan="1">Salary</th>
+        <th rowspan="1" colspan="1">Office</th>
+        <th rowspan="1" colspan="1">Skill</th>
+        <th rowspan="1" colspan="1">Extn.</th>
+        <th rowspan="1" colspan="1">E-mail</th>
+      </tr>
+    </tfoot>
+  </table>
+  <ngb-pagination
+    class="ms-3 pagination-primary"
+    [collectionSize]="(total$ | async)!"
+    [(page)]="service.page"
+    [pageSize]="service.pageSize"
+  />
+</div>

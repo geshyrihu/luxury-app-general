@@ -1,0 +1,56 @@
+<ng-template #productModal let-modal>
+    <div class="modal-content product-box">
+        <div class="modal-header">
+            <div class="product-box row">
+                <div class="product-img col-lg-6">
+                    <img class="img-fluid" [src]="productDetail.img" alt="">
+                </div>
+                <div class="product-details col-lg-6 text-start">
+                    <h4>{{productDetail.name}}</h4>
+                    <div class="product-price">${{productDetail.price}}
+                        <del>${{productDetail.discountPrice}}</del>
+                    </div>
+                    <div class="product-view">
+                        <h4 class="f-w-600">Product Details</h4>
+                        <p class="mb-0">{{productDetail.discription}}</p>
+                    </div>
+                    <div class="product-size">
+                        <ul>
+                            <li>
+                                <button class="btn btn-outline-light" type="button">M</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-outline-light" type="button">L</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-outline-light" type="button">Xl</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="product-qnty">
+                        <h4 class="f-w-600">Quantity</h4>
+                        <fieldset>
+                            <div class="input-group bootstrap-touchspin">
+                                <button class="btn btn-primary btn-square bootstrap-touchspin-down" type="button" (click)="decrement()">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <span class="input-group-text bootstrap-touchspin-prefix" style="display: none;"></span>
+                                <input class="touchspin text-center form-control" #qty type="text" value="{{counter}}"
+                                    style="display: block;">
+                                <span class="input-group-text bootstrap-touchspin-postfix" style="display: none;"></span>
+                                <button class="btn btn-primary btn-square bootstrap-touchspin-up" type="button" (click)="increment()">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </fieldset>
+                        <div class="addcart-btn">
+                            <a class="btn btn-primary" [routerLink]="['/ecommerce/cart']" (click)="modal.close()">Add to Cart</a>
+                            <a class="btn btn-primary ms-2" [routerLink]="['/ecommerce/product-page']" (click)="modal.close()">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-close" type="button" (click)="modal.close()"></button>
+        </div>
+    </div>
+</ng-template>

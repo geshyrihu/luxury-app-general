@@ -1,0 +1,73 @@
+<div class="customizer-links" [class.open]="layoutService.customize !== ''">
+    <div class="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link" id="c-pills-layouts-tab" href="javascript:void(0)"
+            [class.active]="layoutService.customize === 'layout'" (click)="customize('layout')">
+            <div>
+                <img src="assets/images/customizer/setting.png" alt="">
+            </div>
+            <span>SideBar Layout</span>
+        </a>
+        <a class="nav-link" id="c-pills-layouts-tab" href="javascript:void(0)"
+            [class.active]="layoutService.customize === 'colorPicker'" (click)="customize('colorPicker')">
+            <div class="settings">
+                <img src="assets/images/customizer/color.png" alt="">
+            </div>
+            <span>Color Picker</span>
+        </a>
+    </div>
+</div>
+<div class="customizer-contain" [class.open]="layoutService.customize !== ''">
+    <div class="tab-content" id="c-pills-tabContent">
+        <div class="customizer-header">
+            <i class="icofont-close icon-close" (click)="customize('')"></i>
+            <h5 class="f-w-700">Preview Settings</h5>
+            <p class="mb-0">Try It Real Time <i class="fa fa-thumbs-o-up txt-primary"></i></p>
+            <button class="btn btn-primary plus-popup mt-2" (click)="openModal(popup)">Configuration</button>
+            <ng-template #popup let-modal>
+                <div class="modal-header modal-copy-header">
+                    <h4 class="headerTitle mb-0">Customizer configuration</h4>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body config-popup p-0">
+                        <div class="row">
+                            <p>To replace our design with your desired theme. Please do configuration as mention </p>
+                            <p> <b> Path : src > app > shared > services > layoutService.service.ts </b> </p>
+                            <div>
+                                <pre>
+<code>
+   public config = &#123;  
+      settings&#58; &#123;
+         layout_type&#58; '{{layoutService.config.settings.layout_type}}',
+         layout_version&#58; '{{layoutService.config.settings.layout_version}}',
+         sidebar_type&#58; '{{layoutService.config.settings.sidebar_type}}',
+         icon&#58; '{{layoutService.config.settings.icon}}',
+      &#125;,
+      color&#58; &#123;
+         primary_color&#58; '{{layoutService.config.color.primary_color}}',
+         secondary_color&#58; '{{layoutService.config.color.secondary_color}}'
+      &#125;
+   &#125;
+</code>
+                     </pre>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-2 me-2" (click)="copyText(this.layoutService.config)">Copy Json</button>
+                    <button class="btn btn-primary mt-2" aria-label="Close" (click)="modal.dismiss('Cross click')">Close</button>
+                </div>
+            </ng-template>
+        </div>
+        <div class="customizer-body custom-scrollbar">
+            <div class="tab-pane fade" id="c-pills-home"
+                [ngClass]="{'active show': layoutService.customize === 'layout' }">
+                <app-quick-option />
+            </div>
+            <div class="tab-pane fade" id="c-pills-layouts"
+                [ngClass]="{'active show': layoutService.customize === 'colorPicker' }">
+                <app-color-picker />
+            </div>
+        </div>
+    </div>
+</div>

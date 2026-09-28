@@ -1,0 +1,73 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Variation radio</h4>
+        <p class="f-m-light mt-1">
+            Use the <code>radio </code>attribute through create variation of radio designs.</p>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            @for (allData of variationRadioPayment; track allData) {
+            <div class="col-xl-4 col-md-6">
+                <div class="card-wrapper border rounded-3 h-100 checkbox-checked">
+                    <h6 class="sub-title">{{allData.title}}</h6>
+                    @for (data of allData.data; track data) {
+                    <div class="payment-wrapper">
+                        <div class="payment-first">
+                            <div class="form-check ps-0 ps-0 radio radio-primary">
+                                <input class="form-check-input" id="{{ data.id }}" type="radio" name="{{ data.name }}"
+                                    value="option1" [checked]="data.checked">
+                                <label class="form-check-label mb-0" for="{{ data.id }}">{{ data.text }}</label>
+                            </div>
+                        </div>
+                        <div class="payment-second">
+                            <img class="img-fluid" [src]="data.image" alt="card">
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            }
+            @for (allData of variationRadioDesign; track allData) {
+            <div class="col-xl-4 col-md-6">
+                <div class="card-wrapper border rounded-3 h-100 checkbox-checked">
+                    <h6 class="sub-title">{{allData.title}}</h6>
+                    @for (data of allData.data; track data) {
+                    <div class="payment-wrapper">
+                        <div class="payment-first">
+                            <div class="form-check ps-0 radio radio-primary">
+                                <input class="form-check-input" id="{{ data.id }}" type="radio" name="{{ data.name }}"
+                                    value="option1" [checked]="data.checked">
+                                <label class="form-check-label mb-0" for="{{ data.id }}">{{ data.text }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            }
+            @for (allData of variationRadioIcon; track allData) {
+            <div class="col-xl-4">
+                <div class="card-wrapper border rounded-3 h-100 checkbox-checked">
+                    <h6 class="sub-title">{{allData.title}}</h6>
+                    @for (data of allData.data; track data) {
+                    <div class="payment-wrapper">
+                        <div class="payment-first">
+                            <div class="form-check ps-0 radio radio-primary">
+                                <input class="form-check-input" id="{{ data.id }}" type="radio" name="{{ data.name }}"
+                                    value="option1" [checked]="data.checked">
+                                <label class="form-check-label mb-0" for="{{ data.id }}">{{ data.text }}</label>
+                            </div>
+                        </div>
+                        <div class="payment-second">
+                            <svg class="mega-icons stroke-{{ data.class}}">
+                                <use attr.xlink:href="assets/svg/icon-sprite.svg#{{data.icon}}"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

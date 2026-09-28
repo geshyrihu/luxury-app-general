@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Grid options</h4>
+        <p class="mt-1 f-m-light"></p>Bootstrap grid system allow all six breakpoints, and any breakpoints
+        you can customize.
+    </div>
+    <div class="card-body">
+        <div class="table-responsive theme-scrollbar">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        @for (data of gridOptionData; track data) {
+                        <th class="text-center">
+                            <p>{{data.title}}</p><small>{{data.size}}</small>
+                        </th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="text-nowrap" scope="row">Grid behavior</th>
+                        <td>Horizontal at all times</td>
+                        <td colspan="5">Collapsed to start, horizontal above breakpoints</td>
+                    </tr>
+                    @for (allData of gridOptionData2; track allData) {
+                    <tr>
+                        <th class="text-nowrap" scope="row">{{allData.title}}</th>
+                        @for (data of allData.data; track data) {
+                        <td [innerHTML]="data.text"></td>
+                        }
+                    </tr>
+                    }
+                    @for (data of gridOptionData3; track data) {
+                    <tr>
+                        <th class="text-nowrap" scope="row">{{ data.title }}</th>
+                        <td colspan="6">{{ data.text }}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

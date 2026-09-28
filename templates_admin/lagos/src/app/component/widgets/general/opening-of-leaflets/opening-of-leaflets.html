@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-header card-no-border pb-0">
+      <div class="header-top">
+        <h4>Opening of leaflets</h4>
+        <div class="dropdown icon-dropdown" (clickOutside)="clickoutSide()">
+          <button class="btn dropdown-toggle" id="userdropdown17" type="button" type="button" (click)="isShow = !isShow">
+            <i class="icon-more-alt"></i>
+        </button>
+          <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow">
+            <a class="dropdown-item" href="javascript:void(0)">Weekly</a>
+            <a class="dropdown-item" href="javascript:void(0)">Monthly</a>
+            <a class="dropdown-item" href="javascript:void(0)">Yearly</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body pb-0 opening-box">
+      <div class="d-flex align-items-center gap-2"> 
+        <h2>$ 12,463</h2>
+        <div class="d-flex gap-1">
+          <p class="mb-0 up-arrow">
+            <i class="fa fa-arrow-up"></i>
+          </p>
+            <span class="f-w-500 font-success">+ 20.08%</span>
+        </div>
+      </div>
+      <div id="growthchart">
+        <apx-chart [series]="openingOfLeaflet.series" 
+        [chart]="openingOfLeaflet.chart" 
+        [grid]="openingOfLeaflet.grid" 
+        [colors]="openingOfLeaflet.colors"
+        [stroke]="openingOfLeaflet.stroke"
+        [xaxis]="openingOfLeaflet.xaxis" 
+        [fill]="openingOfLeaflet.fill" 
+        [yaxis]="openingOfLeaflet.yaxis"
+        [responsive]="openingOfLeaflet.responsive" />
+      </div>
+    </div>
+ </div>

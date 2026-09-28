@@ -1,0 +1,19 @@
+@for (item of data(); track item) {
+<div class="card">
+  <div class="card-header">
+    <h4>{{item.header}}</h4>
+    <p class="f-m-light mt-1" [innerHTML]="item.desc"></p>
+  </div>
+  <div class="card-body progress-showcase">
+    <div class="row">
+      <div class="col">
+        @for (items of item.data; track items) {
+          <div class="progress">
+            <div class="{{item.class}} bg-{{items.colorClass}} " [style.width]="items.width"></div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+}

@@ -1,0 +1,16 @@
+<h4>{{title}}</h4>
+<nav>
+    <ol class="breadcrumb justify-content-sm-start align-items-center mb-0">
+        <li class="breadcrumb-item">
+            <a [routerLink]="['/dashboard/default']">
+                <app-feather-icons [icons]="'home'" />
+            </a>
+        </li>
+        @if (breadcrumbs.parentBreadcrumb) {
+        <li class="breadcrumb-item f-w-400">{{breadcrumbs.parentBreadcrumb}}</li>
+        }
+        @if (breadcrumbs.childBreadcrumb) {
+        <li class="breadcrumb-item f-w-400 active">{{breadcrumbs.childBreadcrumb}}</li>
+        }
+    </ol>
+</nav>

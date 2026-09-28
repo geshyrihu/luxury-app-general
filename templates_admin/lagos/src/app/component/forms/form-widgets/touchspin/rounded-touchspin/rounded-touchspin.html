@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+      <h4>Rounded touchspin</h4>
+      <p class="f-m-light mt-1">
+         Use the <code>.decrement-touchspin </code>and <code>.increment-touchspin </code>class.</p>
+    </div>
+    <div class="card-body common-flex rounded-touchspin">
+      @for (data of roundedTouchspin; track data) {
+        <div class="touchspin-wrapper"> 
+          <button class="decrement-touchspin btn-touchspin touchspin-{{data.color}}" (click)="decrement(data.id)"><i class="fa fa-angle-left"> </i></button>
+          <input class="input-touchspin spin-outline-{{data.color}}" type="number" value="{{ data.value }}">
+          <button class="increment-touchspin btn-touchspin touchspin-{{data.color}}" (click)="increment(data.id)"><i class="fa fa-angle-right"></i></button>
+        </div>
+      }
+    </div>
+  </div>    

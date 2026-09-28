@@ -1,0 +1,78 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      @for (allData of edgeButtonData; track allData) {
+      <div class="card">
+        <div class="card-header">
+          <h4>{{allData.title}}</h4>
+          <span [innerHTML]="allData.subTitle"></span>
+        </div>
+        <div class="card-body common-flex">
+          @if (allData.buttonText) {
+          @for (buttonData of allData.colors; track buttonData) {
+          <button class="btn btn-pill btn-{{ buttonData }} {{ allData.buttonClass }}" type="button">{{
+            allData.buttonText
+            }}</button>
+          }
+          } @else {
+          @for (buttonData of allData.colors; track buttonData) {
+          <button class="btn btn-pill btn-{{ buttonData }} {{ allData.buttonClass }}" type="button">{{ buttonData |
+            titlecase }} Button</button>
+          }
+          }
+        </div>
+      </div>
+      }
+      <div class="card">
+        <div class="card-header">
+          <h4>Custom state buttons</h4>
+          <span>The <code>.btn</code> class used with <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code> and
+            <code>&lt;input&gt;</code> elements.</span>
+        </div>
+        <div class="card-body common-flex"><a class="btn btn-pill btn-primary" href="javascript:void(0)"
+            data-toggle="tooltip" title="btn btn-primary" role="button">Link</a>
+          <input class="btn btn-pill btn-secondary" type="button" value="Input" data-toggle="tooltip"
+            title="btn btn-secondary">
+          <input class="btn btn-pill btn-success" type="submit" value="Submit" data-toggle="tooltip"
+            title="btn btn-success">
+          <button class="btn btn-pill btn-info" type="submit" title="btn btn-info">Button</button>
+        </div>
+      </div>
+      @for (allData of edgeOutlinedButtonsData; track allData) {
+      <div class="card">
+        <div class="card-header">
+          <h4>{{allData.title}}</h4>
+          <span [innerHTML]="allData.subTitle"></span>
+        </div>
+        <div class="card-body common-flex">
+          @if (allData.buttonText) {
+          @for (buttonData of allData.colors; track buttonData) {
+          <button class="btn btn-pill btn-outline-{{ buttonData }} {{ allData.buttonClass }}"
+            [class.text-dark]="buttonData === 'light'">{{ allData.buttonText }}</button>
+          }
+          } @else {
+          @for (buttonData of allData.colors; track buttonData) {
+          <button class="btn btn-pill btn-outline-{{ buttonData }} {{ allData.buttonClass }}"
+            [class.text-dark]="buttonData === 'light'">{{ buttonData | titlecase }} Button</button>
+          }
+          }
+        </div>
+      </div>
+      }
+      @for (allData of edgeGradienButtonData; track allData) {
+      <div class="card">
+        <div class="card-header">
+          <h4>{{allData.title}}</h4>
+          <span [innerHTML]="allData.subTitle"></span>
+        </div>
+        <div class="card-body common-flex">
+          @for (buttonData of allData.colors; track buttonData) {
+          <button class="btn btn-pill btn-{{ buttonData }}-gradien" type="button"
+            [class.text-dark]="buttonData === 'light'">{{ buttonData | titlecase }} Button</button>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

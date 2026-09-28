@@ -1,0 +1,20 @@
+
+=== http://localhost:4201 — 18 problema(s) ===
+  CONSOLA     Access to fetch at 'http://localhost:7070/api/auth/refresh' from origin 'http://localhost:4201' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+  CONSOLA     Failed to load resource: net::ERR_FAILED
+  CONSOLA     Failed to load resource: the server responded with a status of 404 ()
+  CONSOLA     Failed to load resource: the server responded with a status of 404 ()
+  CONSOLA     Failed to load resource: the server responded with a status of 404 ()
+  CONSOLA     Failed to load resource: the server responded with a status of 404 ()
+  CONSOLA     Failed to load resource: the server responded with a status of 404 ()
+  CONSOLA     Failed to load resource: the server responded with a status of 404 ()
+  CONSOLA     Failed to load resource: the server responded with a status of 404 ()
+  CONSOLA     Failed to load resource: the server responded with a status of 404 ()
+  HTTP 404  https://api.iconify.design/fluent-color:add-circle-16.json
+  HTTP 404  https://api.iconify.design/fluent-color:alert-16.json
+  HTTP 404  https://api.iconify.design/fluent-color:alert-24.json
+  HTTP 404  https://api.iconify.design/fluent-color:checkmark-circle-16.json
+  HTTP 404  https://api.iconify.design/fluent-color:document-16.json
+  HTTP 404  https://api.iconify.design/fluent-color:lock-closed-16.json
+  HTTP 404  https://api.iconify.design/fluent-color:mail-16.json
+  HTTP 404  https://api.iconify.design/fluent:lock-open-16-regular.json

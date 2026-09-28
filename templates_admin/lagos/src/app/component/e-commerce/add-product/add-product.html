@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Product Form</h4>
+        </div>
+        <div class="card-body">
+          <div class="row g-xl-5 g-3">
+            <div class="col-xxl-3 col-xl-4 box-col-4e sidebar-left-wrapper">
+              <app-add-product-tab [data]="addProductTabData" [activeSteps]="activeSteps" />
+            </div>
+            <div class="col-xxl-9 col-xl-8 box-col-8 position-relative">
+              <div class="tab-content" id="add-product-pills-tabContent">
+                <div
+                  class="tab-pane"
+                  id="detail-product"
+                  [ngClass]="activeSteps === 1 ? 'd-block' : 'd-none'"
+                >
+                  <div class="sidebar-body">
+                    <app-add-product-details (activeSteps)="receiveChildData($event)" />
+                  </div>
+                </div>
+                <div
+                  class="tab-pane"
+                  id="gallery-product"
+                  [ngClass]="activeSteps === 2 ? 'd-block' : 'd-none'"
+                >
+                  <div class="sidebar-body">
+                    <app-product-gallery (activeSteps)="receiveChildData($event)" />
+                  </div>
+                </div>
+                <div
+                  class="tab-pane"
+                  id="category-product"
+                  [ngClass]="activeSteps === 3 ? 'd-block' : 'd-none'"
+                >
+                  <div class="sidebar-body">
+                    <app-product-categories (activeSteps)="receiveChildData($event)" />
+                  </div>
+                </div>
+                <div
+                  class="tab-pane"
+                  id="pricings"
+                  [ngClass]="activeSteps === 4 ? 'd-block' : 'd-none'"
+                >
+                  <div class="sidebar-body">
+                    <app-selling-prices (activeSteps)="receiveChildData($event)" />
+                  </div>
+                </div>
+                <div
+                  class="tab-pane"
+                  id="advance-product"
+                  [ngClass]="activeSteps === 5 ? 'd-block' : 'd-none'"
+                >
+                  <div class="sidebar-body advance-options">
+                    <app-advance (activeSteps)="receiveChildData($event)" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

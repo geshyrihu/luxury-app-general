@@ -1,0 +1,77 @@
+<div class="card">
+    <div class="card-header pb-0 card-no-border">
+        <div class="header-top">
+            <h4>Order History </h4>
+            <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+                <button class="btn dropdown-toggle" type="button" [class.show]="isShow"  (click)="isShow =!isShow">
+                    <i class="icon-more-alt"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow"
+                style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+                    <a class="dropdown-item" href="javascript:void(0)">Weekly</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Monthly</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Yearly</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body pt-0 recent">
+        <div class="table-responsive theme-scrollbar">
+            <div class="dataTables_wrapper no-footer">
+              <table class="table display dataTable no-footer" id="selling-product" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                </div>
+                            </th>
+                            <th>No.</th>
+                            <th>Customer Name</th>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>City</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tbody>
+                        @for (item of orderHistory; track item) {
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <label class="form-check-label"></label>
+                                </div>
+                            </td>
+                            <td>{{item.id}}</td>
+                            <td>
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <img [src]="item.image" alt="">
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <a [routerLink]="['/user/users-profile']">
+                                            <h5>{{item.uname}} </h5>
+                                        </a>
+                                        <p>{{item.role}}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{{item.orderNumber}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.location}}</td>
+                            <td>
+                                <button class="btn btn-{{item.color}} text-white">{{item.status}}</button>
+                            </td>
+                            <td>{{item.amount}}</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

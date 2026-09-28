@@ -1,0 +1,21 @@
+<div class="card">
+  @for (allData of customeProgressData; track allData) {
+  <div class="card-header">
+    <h4>{{allData.header}}</h4>
+    <p class="f-m-light mt-1" [innerHTML]="allData.desc"></p>
+  </div>
+  <div class="card-body progress-showcase">
+    <div class="row">
+      <div class="col">
+        @for (data of allData.data; track data) {
+        <h6 class="mb-2">{{data.label}}</h6>
+        <div class="progress mb-4">
+          <div class="progress-bar-animated progress-bar-striped bg-{{data.colorClass}} text-center"
+            [style.width]="data.width">{{data.width}}</div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  }
+</div>

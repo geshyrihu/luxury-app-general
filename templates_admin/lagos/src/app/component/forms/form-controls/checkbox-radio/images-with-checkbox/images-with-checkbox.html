@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Images with checkbox</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.form-check-input </code>and <code>.form-check-label </code>for image checkbox.</p>
+  </div>
+  <div class="card-body">
+    <div class="main-img-checkbox">
+      <div class="row g-3">
+      @for (item of imagesWithCheckbox; track item) {
+        <div class="col-xxl-3 col-sm-6">
+          <div class="card-wrapper border rounded-3 checkbox-checked">
+            <h6 class="sub-title">{{item.title}}</h6>
+            <div class="img-checkbox">
+              <input class="main-img-cover form-check-input" id="{{item.id}}" type="checkbox" [disabled]="item.disable"[checked]="item.active">
+              <label class="form-check-label mb-0" for="{{item.id}}">
+                <img [src]="item.image" alt="coffee-beans">
+              </label>
+            </div>
+          </div>
+        </div>
+      }
+      </div>
+    </div>
+  </div>
+</div>

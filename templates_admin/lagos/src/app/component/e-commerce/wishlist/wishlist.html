@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Wishlist</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row g-sm-4 g-3">
+                        @for (item of wishList; track item) {
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="prooduct-details-box">
+                                <div class="d-flex">
+                                    <img class="align-self-center img-fluid img-60" [src]="item.img" alt="#">
+                                    <div class="flex-grow-1 ms-3">
+                                        <div class="product-name">
+                                            <h6><a href="javascript:void(0)">{{item.title}}</a></h6>
+                                        </div>
+                                        <div class="rating">
+                                            <bar-rating class="star" [(rate)]="item.rating" [max]="5" />
+                                        </div>
+                                        <div class="price d-flex border-0 p-0">
+                                            <div class="text-muted me-2">Price</div>: {{item.price}}$
+                                        </div>
+                                        <div class="avaiabilty">
+                                            <div class="text-success">{{item.stoke}}</div>
+                                        </div><a class="btn btn-primary btn-xs" href="javascript:void(0)">Move to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 xl-40 box-col-12">
+      <app-job-filter />
+    </div>
+    <div class="col-xl-9 xl-60 box-col-12">
+      <div class="card">
+        <div class="job-search">
+          <div class="card-body">
+            <div class="d-flex">
+              <img class="img-40 img-fluid m-r-20" src="assets/images/job-search/1.jpg" alt="">
+              <div class="flex-grow-1">
+                <h6 class="f-w-600">
+                  <a href="javascript:void(0)">Product Designer (UI/UX Designer)</a>
+                  <span class="pull-right">
+                    <button class="btn btn-primary" type="button">Apply</button>
+                  </span>
+                </h6>
+                <p>Endless - United States<span class="mx-1">
+                    <i class="fa fa-star font-warning"></i>
+                    <i class="fa fa-star font-warning"></i>
+                    <i class="fa fa-star font-warning"></i>
+                    <i class="fa fa-star font-warning"></i>
+                    <i class="fa fa-star font-warning"></i>
+                  </span>
+                </p>
+              </div>
+            </div>
+            @for (allData of jobDetail; track allData) {
+            <div class="job-description">
+              <h5>{{allData.title}}</h5>
+              @if (allData.liClass === true) {
+              @for (data of allData.data; track data) {
+              <li> {{ data.desctiption }}</li>
+              }
+              } @else {
+              @for (data of allData.data; track data) {
+              <p>{{ data.desctiption }}</p>
+              }
+              }
+            </div>
+            }
+            <div class="job-description">
+              <button class="btn btn-primary me-2" type="button"><span><i class="fa fa-check"></i></span> Save this
+                job</button>
+              <button class="btn btn-primary" type="button"><span><i class="fa fa-share-alt"></i></span> Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-faq">
+        <h4 class="mb-0 f-w-600">Similar jobs</h4>
+      </div>
+      <div class="row">
+        @for (data of jobCardsData | slice:0:5; track data) {
+        <div class="col-xl-6 xl-100" [class.col-xl-12]="data.id === 5">
+          <div class="card">
+            <div class="job-search">
+              <div class="card-body">
+                <div class="d-flex">
+                  <img class="img-40 img-fluid m-r-20" [src]="data.image" alt="">
+                  <div class="flex-grow-1">
+                    <h6 class="f-w-600">
+                      <a href="javascript:void(0)">{{data.title}}</a>
+                      @if (data.tag === true) {
+                      <span class="badge badge-{{data.tagColor}} pull-right">{{data.tagTitle}}</span>
+                      }
+                      @if (data.time === true) {
+                      <span class="pull-right">{{data.timeText}}</span>
+                      }
+                    </h6>
+                    <p>{{data.subTitle}}
+                      <span>
+                        <ngb-rating class="font-warning" [rate]="data.rating" />
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <p>{{ data.desc}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

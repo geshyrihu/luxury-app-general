@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Map at a specified location</h4>
+        </div>
+        <div class="card-body map-z-index">
+          <div class="map-js-height">
+            <google-map width="100%" height="100%" [options]="asiaMapOptions">
+              @for (marker of markers; track marker) {
+              <map-marker [position]="marker.position" [label]="marker.label" />
+              }
+            </google-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Vector world map</h4>
+        </div>
+        <div class="card-body map-z-index">
+          <div class="map-js-height" id="map2">
+            <google-map width="100%" height="100%" [options]="worldMapOption" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Vector USA map</h4>
+        </div>
+        <div class="card-body map-z-index">
+          <div class="map-js-height" id="map2">
+            <google-map width="100%" height="100%" [options]="usaMapOptions" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Vector India map</h4>
+        </div>
+        <div class="card-body map-z-index">
+          <div class="map-js-height" id="map2">
+            <google-map width="100%" height="100%" [options]="indiaMapOptions" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

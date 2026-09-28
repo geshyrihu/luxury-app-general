@@ -1,0 +1,4 @@
+$root='api/LuxuryApp.Application/Modules/MantenimientoLuxuryApp/MaintenanceCalendars'; $dto="$root/DTOs"
+$map=@{'CalendarioMantenimientoDTO'='MaintenanceCalendarScheduleDTO';'CalendarioMantenimientoItemsDTO'='MaintenanceCalendarScheduleItemDTO';'CronogramaAnualPdfStatusDTO'='AnnualMaintenanceSchedulePdfStatusDTO';'CronogramaAnualPdfStatusItemDTO'='AnnualMaintenanceSchedulePdfStatusItemDTO';'ResumenGastosDTO'='ExpenseSummaryDTO'}
+foreach($k in $map.Keys){$old=Get-Content "$dto/$k.cs" -Raw; $c=$old; foreach($x in $map.Keys){$c=$c.Replace($x,$map[$x])}; Set-Content "$dto/$($map[$k]).cs" $c -NoNewline; Remove-Item "$dto/$k.cs"}
+Get-ChildItem $root -Recurse -File -Filter *.cs | ForEach-Object{$c=Get-Content $_.FullName -Raw; foreach($k in $map.Keys){$c=$c.Replace($k,$map[$k])}; Set-Content $_.FullName $c -NoNewline}

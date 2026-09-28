@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Simple tabs</h4>
+        <p class="mt-1 f-m-light">Use the <code>.nav-link</code> with <code>.show </code>class to jump particular tabs.
+        </p>
+    </div>
+    <div class="card-body">
+        <ul class="simple-wrapper nav nav-tabs" id="myTab" ngbNav #nav="ngbNav" [(activeId)]="active">
+            <li class="nav-item" [ngbNavItem]="1">
+                <a class="nav-link txt-primary" id="home-tab" ngbNavLink>Home</a>
+                <ng-template ngbNavContent>
+                    <p class="pt-3">Tabs have long been used to show alternative views of the same group of information
+                        tabs in software. Known as<em class="txt-danger"> “module tabs”</em>, these are still used today
+                        in web sites. For instance, airline companies such as Ryanair, easyJet and AirMalta use module
+                        tabs to enable the user to switch between bookings for flights, hotels and car hire.</p>
+                </ng-template>
+            </li>
+            <li class="nav-item" [ngbNavItem]="2">
+                <a class="nav-link active txt-primary" id="profile-tabs" ngbNavLink class="nav-link txt-primary">Profile</a>
+                <ng-template ngbNavContent>
+                    <div class="pt-3 mb-0">
+                        <div class="flex-space flex-wrap align-items-center">
+                            <img class="tab-img" src="assets/images/avtar/3.jpg" alt="profile">
+                            <ul class="d-flex flex-column gap-1">
+                                <li> <strong>Visit Us:</strong> 2600 Hollywood Blvd,Florida, United States-33020</li>
+                                <li> <strong>Mail Us:</strong> contact&#64;us&#64;gmail.com</li>
+                                <li><strong>Contact Number: </strong> (954) 357-7760</li>
+                            </ul>
+                        </div>
+                    </div>
+                </ng-template>
+            </li>
+            <li class="nav-item" [ngbNavItem]="3">
+                <a class="nav-link txt-primary" id="contact-tab" ngbNavLink class="nav-link txt-primary">Contact</a>
+                <ng-template ngbNavContent>
+                    <ul class="pt-3 d-flex flex-column gap-1">
+                        <li>Us Technology offers web & mobile development solutions for all industry verticals.Include a
+                            short form using fields that'll help your business understand who's contacting them.</li>
+                        <li> <strong>Visit Us: </strong> 2600 Hollywood Blvd,Florida, United States- 33020</li>
+                        <li> <strong>Mail Us:</strong> contact&#64;us&#64;gmail.com</li>
+                        <li> <strong>Contact Number: </strong> (954) 357-7760</li>
+                    </ul>
+                </ng-template>
+            </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+</div>

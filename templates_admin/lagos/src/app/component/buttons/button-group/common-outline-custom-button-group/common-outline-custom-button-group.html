@@ -1,0 +1,44 @@
+@for (allData of commonCustomOutlinedButtonData; track allData) {
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4>{{allData.title}}</h4>
+        </div>
+        <div class="card-body btn-group-showcase">
+            <div class="row">
+                @for (buttonData of allData.colors; track buttonData) {
+                <div class="col-xxl-4 col-md-6 col-sm-12">
+                    <div class="btn-group {{allData.buttonClass}}" role="group" aria-label="Basic example">
+                        <button class="btn btn-outline-{{buttonData}}" type="button">Left</button>
+                        <button class="btn btn-{{buttonData}}" type="button">Middle</button>
+                        <button class="btn btn-outline-{{buttonData}}" type="button">Right</button>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+}
+@for (allData of commonCustomOutlinedButtonData; track allData) {
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4>{{allData.title}}</h4>
+        </div>
+        <div class="card-body btn-group-showcase">
+            <div class="row">
+                @for (buttonData of allData.colors; track buttonData) {
+                <div class="col-xxl-4 col-md-6 col-sm-12">
+                    <div class="btn-group {{allData.buttonClass}}" role="group" aria-label="Basic example">
+                        <button class="btn btn-{{buttonData}}" type="button">Left</button>
+                        <button class="btn btn-outline-{{buttonData}}" type="button">Middle</button>
+                        <button class="btn btn-{{buttonData}}" type="button">Right</button>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+}

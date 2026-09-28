@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Line Graph</h4>
+  </div>
+  <div class="card-body chart-block">
+    <canvas
+      baseChart
+      class="chart"
+      id="myGraph"
+      [datasets]="lineGraphData"
+      [labels]="lineGraphLabels"
+      [legend]="lineGraphLegend"
+      [type]="lineGraphType"
+    ></canvas>
+  </div>
+</div>

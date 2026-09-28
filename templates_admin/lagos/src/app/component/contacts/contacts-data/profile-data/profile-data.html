@@ -1,0 +1,123 @@
+<div
+  class="tab-content"
+  id="v-pills-tabContent"
+  [style.display]="editContact ? 'none' : ''"
+>
+  <div
+    class="tab-pane contact-tab-0 tab-content-child fade show active"
+    id="v-pills-user"
+    role="tabpanel"
+    aria-labelledby="v-pills-user-tab"
+  >
+    <div class="profile-mail">
+      <div class="d-flex">
+        <img
+          class="img-100 img-fluid m-r-20 rounded-circle update_img_0"
+          [src]="profileData.profileImage"
+          alt=""
+        />
+        <input class="updateimg" type="file" />
+        <div class="flex-grow-1 mt-0">
+          <h4>
+            <span class="first_name_0">{{profileData.fname}} </span>
+            <span class="last_name_0">{{profileData.lname}}</span>
+          </h4>
+          <p class="email_add_0">{{profileData.email}}</p>
+          @if (getTaskData()?.title_id === 1) {
+          <ul>
+            <li><a href="javascript:void(0)" (click)="editContact = true">Edit</a></li>
+            <li><a href="javascript:void(0)" (click)="deleteContact()">Delete</a></li>
+            <li><a href="javascript:void(0)" (click)="openHistory()">History</a></li>
+            <li>
+              <a href="javascript:void(0)" (click)="PrintModal()?.openModal(profileData)">Print</a>
+            </li>
+          </ul>
+          } @else {
+          <ul>
+            <li>
+              <a href="javascript:void(0)" (click)="PrintModal()?.openModal(profileData)">Print</a>
+            </li>
+          </ul>
+          }
+        </div>
+      </div>
+      @if (getTaskData()?.title_id === 1) {
+      <div class="email-general">
+        <h6 class="mb-3">General</h6>
+        <ul>
+          <li>Name <span class="font-primary first_name_0">{{profileData.fname}}</span></li>
+          <li>Gender <span class="font-primary">{{profileData.gender}}</span></li>
+          <li>
+            Birthday<span class="font-primary">
+              <span class="birth_day_0">{{profileData.dd }}</span>
+              <span class="birth_month_0 ms-1">{{profileData.mm}}</span
+              ><span class="birth_year_0 ms-1">{{profileData.yyyy}}</span></span
+            >
+          </li>
+          <li>
+            Personality<span class="font-primary personality_0">{{profileData.personality}}</span>
+          </li>
+          <li>City<span class="font-primary city_0">{{profileData.city}}</span></li>
+          <li>Mobile No<span class="font-primary mobile_num_0">{{profileData.mobileNo}}</span></li>
+          <li>
+            Email Address <span class="font-primary email_add_0">{{profileData.email}} </span>
+          </li>
+          <li>Website<span class="font-primary url_add_0">{{profileData.website}}</span></li>
+          <li>Interest<span class="font-primary interest_0">{{profileData.interest}}</span></li>
+        </ul>
+      </div>
+      }@else {
+      <div class="email-general">
+        <h6>General</h6>
+        <p>Email Address: <span class="font-primary email_add_5">{{profileData.email}}</span></p>
+        <div class="gender">
+          <h6>Personal</h6>
+          <p>Gender: <span>{{profileData.gender}}</span></p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+<div class="contact-editform ps-0" [style.display]="!editContact ? 'none' : ''">
+  <form>
+    <div class="row g-2">
+      <app-general [profileData]="profileData" />
+    </div>
+    <div class="row g-2 more-data">
+      <div class="mt-0 mb-3 col-md-12">
+        <app-persnol [profileData]="profileData" />
+      </div>
+      <div class="mb-3 col-md-12">
+        <app-address [profileData]="profileData" />
+      </div>
+    </div>
+    <a class="ps-0 edit-information" href="javascript:void(0)">Edit more information</a>
+    <button class="btn btn-secondary update-contact me-2" type="button">Save</button>
+    <button class="btn btn-primary" type="button" (click)="editContact = false">Cancel</button>
+  </form>
+</div>
+<div id="right-history" [class.show]="open">
+  <div class="modal-header p-l-20 p-r-20">
+    <h4 class="modal-title w-100">
+      Contact History<span class="pull-right">
+        <a class="closehistory" (click)="open =!open"> <i class="icofont icofont-close"></i></a
+      ></span>
+    </h4>
+  </div>
+  <div class="history-details">
+    <div class="text-center">
+      <i class="icofont icofont-ui-edit"></i>
+      <p>Contact has not been modified yet.</p>
+    </div>
+    <div class="d-flex">
+      <i class="icofont icofont-star me-3"></i>
+      <div class="flex-grow-1 mt-0">
+        <h6 class="mt-0">Contact Created</h6>
+        <p class="mb-0">Contact is created via mail</p>
+        <span class="f-12">Sep 10, 2019 4:00</span>
+      </div>
+    </div>
+  </div>
+</div>
+<app-print #printModal />

@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-xxl-3 col-xl-4 box-col-12">
+        <div class="md-sidebar" (clickOutside)="outSide()">
+            <a class="btn btn-primary md-sidebar-toggle" href="javascript:void(0)" (click)="isOpen =!isOpen">email
+                filter</a>
+            <div class="md-sidebar-aside job-left-aside custom-scrollbar" [class.open]="isOpen">
+                <div class="email-left-aside">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="email-app-sidebar">
+                                <button class="btn btn-primary emailbox" type="button" (click)="openEmail()">
+                                    <i class="fa fa-plus"></i>
+                                    Compose Email</button>
+                                <ul class="nav nav-pills main-menu email-category" id="email-pills-tab" role="tablist">
+                                    @for (item of emailFilter; track item;let ind = $index) {
+                                    <li class="nav-item">
+                                        <a class="nav-link" [class.active]="item.status">
+                                            <app-common-svg-icon [class]="item.color"
+                                                [icon]="item.icon" />
+                                            <div (click)="changeData(item)">
+                                                {{item.title}}
+                                                @if (item.badge) {
+                                                    <span class="badge">{{item.badge}}</span>
+                                                }
+                                            </div>
+                                        </a>
+                                    </li>
+                                    }
+                                    <li class="nav-item">
+                                        <a class="nav-link" type="button" (click)="addLabel()">
+                                            <i class="fa fa-plus"></i>Add Label</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-9 col-xl-8 box-col-12">
+        <app-email-content [selectedId]="selectedId" />
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div>
+  <h6 class="mb-2">About 12,120 results (0.50 seconds)</h6>
+  <div class="my-gallery row gallery-with-description" id="aniimated-thumbnials" gallerize>
+    @for (img of photosData; track img) {
+      <figure class="col-xl-3 col-sm-6 mx-0" itemprop="associatedMedia" itemscope="">
+        <a href="javascript:void(0)" itemprop="contentUrl" data-size="1600x950">
+          <img [src]="img.srcUrl" itemprop="thumbnail" alt="Image description" class="mb-0">
+          <div class="caption">
+            <h4>Portfolio Title</h4>
+            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy.</p>
+          </div>
+        </a>
+      </figure>
+    }
+  </div>
+</div>
+<div class="m-t-30">
+  <nav aria-label="...">
+    <ul class="pagination pagination-primary">
+      <li class="page-item disabled"><a class="page-link" href="javascript:void(0)" tabindex="-1">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
+      <li class="page-item active"><a class="page-link" href="javascript:void(0)">2 <span
+            class="sr-only">(current)</span></a></li>
+      <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+      <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,25 @@
+<div class="card height-equal">
+  <div class="card-header">
+    <h4>Animated buttons</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.radio_animated </code>through animated checkbox and radios.</p>
+  </div>
+  <div class="card-body">
+    <div class="row g-3">
+      @for (item of animatedButtons; track item) {
+      <div class="col-sm-6">
+        <div class="card-wrapper border rounded-3 checkbox-checked">
+          <h6 class="sub-title">{{item.title}}</h6>
+          @for (data of item.data; track data) {
+          <ng-container>
+            <label class="d-block" for="{{data.id}}"></label>
+            <input [ngClass]="item.id === 1 ?'radio_animated' :'checkbox_animated'" id="{{data.id}}"
+              type="{{data.type}}" name="rdo-ani" [checked]="data.active">{{data.text}}
+          </ng-container>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

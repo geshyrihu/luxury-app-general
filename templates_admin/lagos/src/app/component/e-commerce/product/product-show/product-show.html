@@ -1,0 +1,61 @@
+<div class="row">
+  @for (product of getProductData; track product) {
+  <div [class.col-xl-3]="col_xl_3" [class.col-xl-4]="xl_4" [class.col-sm-3]="col_sm_3" [class.col-xl-4]="col_xl_4"
+    [class.col-sm-4]="col_sm_4" [class.col-xl-6]="col_xl_6" [class.col-sm-6]="col_sm_6" [class.col-xl-12]="col_xl_12"
+    [class.col-xl-2]="col_xl_2">
+    <div class="card">
+      <div class="product-box">
+        <div class="product-img">
+          @if (product.status === 'Sale') {
+            <div class="ribbon ribbon-danger">{{product.status}}</div>
+          }
+          @if (product.status === '50%') {
+            <div class="ribbon ribbon-success ribbon-right">{{product.status}}</div>
+          }
+          @if (product.status === 'gift') {
+            <div class="ribbon ribbon-secondary ribbon-vertical-left">
+              <i class="icon-gift"></i>
+            </div>
+          }
+          @if (product.status === 'love') {
+            <div class="ribbon ribbon-bookmark ribbon-vertical-right ribbon-info">
+              <i class="icofont icofont-love"></i>
+            </div>
+          }
+          @if (product.status === 'Hot') {
+            <div class="ribbon ribbon-clip ribbon-warning">{{product.status}}</div>
+          }
+          <img class="img-fluid" [src]="product.img" alt="">
+          <div class="product-hover">
+            <ul>
+              <li>
+                <a [routerLink]="['/ecommerce/cart']">
+                  <i class="icon-shopping-cart"></i>
+                </a>
+              </li>
+              <li>
+                <a (click)="viewModel.openModal(product)">
+                  <i class="icon-eye"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="product-details">
+          <div class="rating">
+            <bar-rating [(rate)]="product.rating" [max]="5" />
+          </div>
+          <a [routerLink]="['/ecommerce/product-page']">
+            <h4>{{product.name}}</h4>
+          </a>
+          <p>{{product.note}}</p>
+          <div class="product-price">${{product.price}}
+            <del>${{product.discountPrice}}</del>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+
+</div>
+<app-quick-view #viewModel />

@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Outline dark and light alerts</h4>
+    <p class="f-m-light mt-1">Use the <code>.border-* </code>utility class to quickly provide matching border and
+      border-width within any alert.</p>
+  </div>
+  <div class="card-body">
+    @for (alertData of outLinedAlert; track alertData) {
+    <div
+      class="alert txt-{{alertData.textColor}} border-{{alertData.textColor}} alert-dismissible fade show {{alertData.class}}"
+      role="alert">
+      <app-feather-icons [icons]="alertData.icon" />
+      <p [innerHTML]="alertData.text"></p>
+      <button class="btn-close" type="button" (click)="closed(alertData)"></button>
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@for (allData of smallProgressBarData; track allData) {
+<div class="card height-equal">
+  <div class="card-header">
+    <h4>{{allData.header}}</h4>
+    <p class="f-m-light mt-1" [innerHTML]="allData.desc"></p>
+  </div>
+  <div class="card-body progress-showcase progress-b-space">
+    <div class="row">
+      <div class="col">
+        @for (data of allData.data; track data) {
+        <div class="progress sm-progress-bar overflow-visible mt-4">
+          <div class="progress-bar-animated small-progressbar bg-primary rounded-pill progress-bar-striped"
+            [style.width]="data.width">
+            <span class="txt-primary progress-label">{{data.text}} MB Data</span><span class="animate-circle"></span>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+}

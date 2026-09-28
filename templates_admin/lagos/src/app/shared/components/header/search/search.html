@@ -1,0 +1,29 @@
+<div class="form-group w-100" (clickOutside)="searchService.clickOutSide()">
+  <div class="Typeahead Typeahead--twitterUsers header-search-input">
+    <div class="u-posRelative d-flex align-items-center">
+      <app-common-svg-icon [icon]="'search'" />
+      <input class="demo-input py-0 Typeahead-input form-control-plaintext w-100" type="text"
+        placeholder="Search here .." [(ngModel)]="searchService.text" [ngModelOptions]="{ standalone: true }"
+        (keyup)="searchService.searchTerm(searchService.text)">
+    </div>
+    @if (searchService.menuItems.length) {
+      <div class="Typeahead-menu custom-scrollbar" [class.is-open]="searchService.searchResult" id="search-outer">
+        @for (menuItem of searchService.menuItems | slice : 0 : 8; track menuItem) {
+          <div class="ProfileCard u-cf" [routerLink]="menuItem?.path" (click)="searchService.removeFix()">
+            <div class="ProfileCard-details">
+              <div class="ProfileCard-realName">
+                <app-svg-icon [icon]="menuItem?.icon" />
+                <a class="realname">{{ menuItem?.title }}</a>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>
+<div class="Typeahead-menu is-open" [class.is-open]="searchService.searchResultEmpty" (clickOutside)="searchService.clickOutSide()">
+  <div class="tt-dataset tt-dataset-0">
+    <div class="EmptyMessage">Opps!! There are no result found.</div>
+  </div>
+</div>

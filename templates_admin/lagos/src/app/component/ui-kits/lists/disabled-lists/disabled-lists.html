@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Disabled lists </h4>
+    <p class="f-m-light mt-1">
+      Use<code> .disabled </code>to a <code>.list-group-item</code> to make it appear disabled.</p>
+  </div>
+  <div class="card-body">
+    <div class="list-group">
+      @for (item of disableData; track item) {
+      <a class="list-group-item list-group-item-action {{item.class}}" href="javascript:void(0)">
+        <img class="rounded-circle" [src]="item.image" alt="user">{{item.name}}</a>
+      }
+    </div>
+  </div>
+</div>

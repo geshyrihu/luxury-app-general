@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="mb-0">
+      <button
+        class="btn btn-link"
+        data-bs-toggle="collapse"
+        (click)="collapse.toggle()"
+        [attr.aria-expanded]="!isCollapsed"
+      >
+        Categories
+      </button>
+    </h5>
+  </div>
+  <div
+    class="collapse card-body px-0 show padding-top"
+    #collapse="ngbCollapse"
+    [(ngbCollapse)]="isCollapsed"
+  >
+    @for (allData of Categories; track allData) {
+    <div class="categories" [class.pt-0]="allData.padding === true">
+      <div class="learning-header"><span class="f-w-600">{{allData.title}}</span></div>
+      <ul>
+        @for (data of allData.designer; track data) {
+        <li>
+          <a href="javascript:void(0)">{{data.designerTitle}} </a
+          ><span class="badge badge-primary pull-right">{{data.count}}</span>
+        </li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="card height-equal">
+  <div class="card-header">
+    <h4>Horizontal style</h4>
+    <p class="f-m-light mt-1">horizontal style in mega-options. Use the <code>.mega-horizontal</code> class through
+      created horizontal alignments.</p>
+  </div>
+  <div class="card-body">
+    <form class="mega-horizontal">
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mega-title">Delivery Option</p>
+        </div>
+        @for (item of deliveryOption; track item) {
+        <div class="col-sm-9" [class.offset-sm-3]="item.id === 2">
+          <div class="card">
+            <div class="d-flex p-20">
+              <div class="form-check ps-0 radio {{item.subTitlebg}} m-0 w-100">
+                <input class="form-check-input" id="{{item.inputId}}" type="radio" name="radio22" value="option1"
+                  [checked]="item.active">
+                <label class="form-check-label mb-0 w-100" for="{{item.inputId}}">
+                  <span class="flex-grow-1 megaoption-space">
+                    <span class="mt-0 mega-title-badge">
+                      {{item.title}}
+                      <span class="badge {{item.backColor}} pull-right digits">
+                        {{item.INR}} INR
+                      </span>
+                    </span>
+                    <span>
+                      {{item.description}}
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+        <div class="col-sm-3">
+          <p class="mega-title">Buying Option</p>
+        </div>
+        @for (item of buyingOption; track item) {
+        <div class="col-sm-9" [class.offset-sm-3]="item.id === 2">
+          <div class="card" [class.mb-0]="item.id === 2">
+            <div class="d-flex p-20">
+              <div class="form-check ps-0 radio radio-{{item.background}} m-0 w-100">
+                <input class="form-check-input" id="{{item.inputId}}" type="radio" name="radio23" value="option1"
+                  [checked]="item.active">
+                <label class="form-check-label mb-0 w-100" for="{{item.inputId}}">
+                  <span class="flex-grow-1">
+                    <span class="mt-0 mega-title-badge">
+                      {{item.title}}
+                      <span class="badge badge-{{item.background}} pull-right digits">
+                        {{item.inr}} INR
+                      </span>
+                    </span>
+                    <span class="rating-star-wrapper">
+                      <ngb-rating class="font-warning" [rate]="item.ratingPoint" />
+                      {{item.rating}}
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </form>
+  </div>
+  <div class="card-footer text-end">
+    <button class="btn btn-primary m-r-15" type="submit">Submit</button>
+    <button class="btn btn-light" type="submit">Cancel</button>
+  </div>
+</div>

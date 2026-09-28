@@ -1,0 +1,26 @@
+<div class="product-upload">
+  <p>Product Image</p>
+  <form class="dropzone dropzone-light bg-light-primary" id="multiFileUpload">
+    <dropzone class="no-preview" [config]="config" [message]="text" (change)="onFileDrop($event)" />
+  </form>
+</div>
+<div class="product-upload">
+  <p>Product Gallery</p>
+  <form class="dropzone dropzone-light bg-light-primary" id="multiFileUpload">
+    <dropzone class="no-preview" [config]="config2" [message]="text" />
+  </form>
+</div>
+<div class="product-buttons">
+  <button class="btn me-2" (click)="previous()">
+    <div class="d-flex align-items-center gap-sm-2 gap-1">
+      <app-common-svg-icon [icon]="'back-arrow'" />
+      Previous
+    </div>
+  </button>
+  <button class="btn" (click)="next()">
+    <div class="d-flex align-items-center gap-sm-2 gap-1">
+      Next
+      <app-common-svg-icon [icon]="'front-arrow'" />
+    </div>
+  </button>
+</div>

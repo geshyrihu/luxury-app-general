@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Centered modal </h4>
+        <p class="f-m-light mt-1">
+            Use the <code>.modal-dialog-centered </code>through centered modal. and set <code>data-bs-target </code>.
+        </p>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-success" type="button" (click)="centeredModal(centeredModalContent)">Vertically
+            centered</button>
+        <ng-template #centeredModalContent let-modal>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-toggle-wrapper">
+                        <ul class="modal-img">
+                            <li> <img src="assets/images/gif/danger.gif" alt="error"></li>
+                        </ul>
+                        <h4 class="text-center pb-2">Ohh! Something went wrong!</h4>
+                        <p class="text-center">Attackers on malicious activity may trick you into doing something
+                            dangrous
+                            like installing software or revealing your personal informations.</p>
+                        <button class="btn btn-secondary d-flex m-auto" type="button"
+                            (click)="close()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

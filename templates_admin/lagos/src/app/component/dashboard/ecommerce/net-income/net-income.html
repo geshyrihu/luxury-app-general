@@ -1,0 +1,38 @@
+<div class="card total-profit-chart overflow-hidden">
+    <div class="card-header pb-0 card-no-border">
+        <div class="header-top">
+            <h4>Net Income</h4>
+            <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+                <button class="btn dropdown-toggle" type="button" [class.show]="isShow" (click)="isShow =!isShow">
+                    <i class="icon-more-alt"></i></button>
+                <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow"
+                    style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+                    <a class="dropdown-item" href="javascript:Void(0)">Weekly</a>
+                    <a class="dropdown-item" href="javascript:Void(0)">Monthly</a>
+                    <a class="dropdown-item" href="javascript:Void(0)">Yearly</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <div class="profit-goal">
+            <h4>$56,365.65 <span class="badge badge-secondary ms-3">New</span></h4>
+            <p>Net Income </p>
+        </div>
+        <div id="total-profit">
+            <apx-chart [series]="netIncome.series"
+            [chart]="netIncome.chart"
+            [plotOptions]="netIncome.plotOptions"
+            [fill]="netIncome.fill"
+            [stroke]="netIncome.stroke"
+            [legend]="netIncome.legend"
+            [grid]="netIncome.grid"
+            [dataLabels]="netIncome.dataLabels"
+            [xaxis]="netIncome.xaxis"
+            [yaxis]="netIncome.yaxis"
+            [colors]="netIncome.colors"
+            [responsive]="netIncome.responsive"
+             />
+        </div>
+    </div>
+</div>

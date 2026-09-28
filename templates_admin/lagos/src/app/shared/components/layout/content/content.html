@@ -1,0 +1,24 @@
+<div class="page-wrapper" id="pageWrapper" [ngClass]="layoutClass">
+  <app-header />
+  <div class="page-body-wrapper" [class.scorlled]="hideScroolNavService.headerFixed === true">
+    <div
+      class="sidebar-wrapper"
+      [class.close_icon]="navService.collapseSidebar"
+      [attr.data-layout]="layout.config.settings.icon"
+    >
+      <app-sidebar />
+    </div>
+    <div class="page-body">
+      <router-outlet />
+    </div>
+    <footer
+      class="footer"
+      [class.footer-dark]="footerDark"
+      [class.footer-light]="footerLight"
+      [class.footer-fix]="footerFix"
+    >
+      <app-footer />
+    </footer>
+  </div>
+</div>
+<app-customizer />

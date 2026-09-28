@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h4>
+      Global configuration of typeaheads</h4>
+    <p class="f-m-light mt-1">This typeahead shows a hint when the input matches because the default values have been customized./p>
+  </div>
+  <div class="card-body">
+    <div id="typeahead-prevent-manual-entry">
+      <form class="theme-form">
+        <div>
+          <input id="typeahead-config" type="text" class="form-control" placeholder="Search for a stete"
+            [(ngModel)]="model" [ngbTypeahead]="search" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

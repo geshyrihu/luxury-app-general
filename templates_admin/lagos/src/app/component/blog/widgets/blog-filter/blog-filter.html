@@ -1,0 +1,105 @@
+<div class="md-sidebar" (clickOutside)="outSide()">
+  <a class="btn btn-primary email-aside-toggle md-sidebar-toggle" (click)="isOpen = !isOpen">Blog Filter</a>
+  <div class="md-sidebar-aside job-sidebar custom-scrollbar" [class.open]="isOpen"> 
+    <div class="row blog-sidebar">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0 border-0">
+            <h4>Search</h4>
+          </div>
+          <div class="card-body">
+            <div class="blog-search">
+              <input class="form-control" type="text" placeholder="Search here..."><i class="fa fa-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0 border-0">
+            <h4>Trending Posts</h4>
+          </div>
+          <div class="card-body">
+            <ul class="recent-blog trending-blog">
+              @for (item of trendingPosts; track item) {
+              <li>
+                  <div class="d-flex gap-2 align-items-start">
+                    <h5>{{item.id}}.</h5>
+                    <div class="flex-grow-1">
+                      <h6>{{item.title}}</h6>
+                      <p>{{item.date}}</p>
+                    </div>
+                  </div>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0 border-0">
+            <h4>Follow Us</h4>
+          </div>
+          <div class="card-body">
+            <ul class="blog-follow">
+              <li><a href="https://en-gb.facebook.com/login/" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+              <li><a href="https://twitter.com/LOGIN" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.skype.com/en/" target="_blank"><i class="fa fa-skype"></i></a></li>
+              <li><a href="https://www.linkedin.com/login" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0 border-0">
+            <h4>Recent Posts</h4>
+          </div>
+          <div class="card-body">
+            <ul class="recent-blog">
+              @for (item of recentPosts; track item) {
+                <li>
+                  <div class="d-flex gap-2 align-items-start">
+                    <img class="img-fluid rounded" [src]="item.image" alt="Generic placeholder image">
+                    <div class="flex-grow-1">
+                      <h6>{{item.title}}</h6>
+                      <p>{{item.time}} months ago</p>
+                    </div>
+                  </div>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0 border-0">
+            <h4>Popular Tags</h4>
+          </div>
+          <div class="card-body">
+            <ul class="tags">
+              @for (item of popularTags; track item) {
+                <li><a href="javascript:void(0)">{{item.title}}</a></li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header pb-0 border-0">
+            <h4>Subscriber</h4>
+          </div>
+          <div class="card-body">
+            <p class="mb-2">To get more detail for new types of blogs.</p>
+            <input class="form-control" type="email" placeholder="Enter your email">
+            <div class="btn btn-primary w-100 mt-3">Get Started</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

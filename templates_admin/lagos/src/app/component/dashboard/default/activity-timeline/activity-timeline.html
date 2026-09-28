@@ -1,0 +1,43 @@
+<div class="card our-todolist">
+    <div class="card-header pb-0 card-no-border">
+        <div class="header-top">
+            <h4>Activity Timeline</h4>
+            <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+                <button class="btn dropdown-toggle" type="button"  [class.show]="isShow"  (click)="isShow =!isShow">
+                  <i class="icon-more-alt"></i></button>
+                <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow"
+                style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+                  <a class="dropdown-item" href="javascript:Void(0)">Weekly</a>
+                  <a class="dropdown-item" href="javascript:Void(0)">Monthly</a>
+                  <a class="dropdown-item" href="javascript:Void(0)">Yearly</a>
+              </div>
+        </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="activity-timeline todo-timeline">
+            @for (item of activityTimeline; track item) {
+            <div class="d-flex">
+                <div class="activity-line"></div>
+                <div class="activity-dot-{{item.class}}"></div>
+                <div class="flex-grow-1">
+                    <p class="mt-0 todo-font"><span class="font-{{item.tabClass}}">{{item.date}} </span>Today
+                        @if(item.tab){
+                        <span class="badge badge-primary ms-2">New</span>
+                        }
+                    </p>
+                    <div class="d-flex mt-0">
+                        @if(item.image) {
+                        <img class="img-fluid img-30 me-3" [src]="item.image" alt="">
+                        }
+                        <div class="flex-grow-1 m-0">
+                            <h5>{{item.title}}</h5>
+                            <p class="mb-0">{{item.subTitle}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

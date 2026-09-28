@@ -1,0 +1,24 @@
+<div class="row">
+  @for (allData of commonLargeButtonGroupData; track allData) {
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{allData.title}}</h4>
+      </div>
+      <div class="card-body btn-group-showcase">
+        <div class="row">
+          @for (buttonData of allData.colors; track buttonData) {
+          <div class="col-md-6 col-sm-12 col-xxl-4">
+            <div class="btn-group {{allData.buttonClass}}" role="group" aria-label="Basic example">
+              <button class="btn btn-{{buttonData}} btn-lg" type="button">Left</button>
+              <button class="btn btn-{{buttonData}} btn-lg" type="button">Middle</button>
+              <button class="btn btn-{{buttonData}} btn-lg" type="button">Right</button>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

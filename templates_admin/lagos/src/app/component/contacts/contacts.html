@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="email-wrap bookmark-wrap">
+    <div class="row">
+      <div class="col-xl-3 box-col-6">
+        <div class="md-sidebar" (clickOutside)="outSide()">
+          <a class="btn btn-primary md-sidebar-toggle" href="javascript:void(0)" (click)="isOpen =!isOpen">contact
+            filter</a>
+          <div class="md-sidebar-aside job-left-aside custom-scrollbar" [class.open]="isOpen">
+            <div class="email-left-aside">
+              <div class="card">
+                <div class="card-body">
+                  <div class="email-app-sidebar left-bookmark">
+                    <div class="d-flex">
+                      <div class="media-size-email"><img class="me-3 rounded-circle" src="assets/images/user/user.png"
+                          alt=""></div>
+                      <div class="flex-grow-1">
+                        <h4>MARK JENCO</h4>
+                        <p>Markjecno&#64;gmail.com</p>
+                      </div>
+                    </div>
+                    <ul class="nav main-menu contact-options custom-scrollbar" role="tablist">
+                      <li class="nav-item">
+                        <button class="badge-light-primary btn-block btn-mail w-100" type="button"
+                          (click)="newContact()">New Contacts
+                          <app-feather-icons [icons]="'users'" />
+                        </button>
+                      </li>
+                      <li class="nav-item"><span class="main-title"> Views</span></li>
+                      @for (item of contact; track item;let i = $index) {
+                      <li>
+                        <a (click)="changeData(item.title_id)">
+                          <span class="title">{{item.title}}</span></a>
+                      </li>
+                      @if(i === 0){
+                      <li>
+                        <button class="btn btn-category" type="button" (click)="viewCategory()">
+                          <span class="title"> + Add Category</span></button>
+                      </li>
+                      }
+                      }
+                      @for (item of viewList; track item) {
+                      <li>
+                        <a class="show">
+                          <span class="title">
+                            {{item.title}}
+                          </span>
+                        </a>
+                      </li>
+                      }
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-9 col-md-12 box-col-12">
+        <app-contacts-data [selectedId]="selectedId" [activeStatus]="activeStatus" [data]="contact" />
+      </div>
+    </div>
+  </div>
+</div>

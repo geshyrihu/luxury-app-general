@@ -1,0 +1,49 @@
+<div class="card visitor-card">
+  <div class="card-header card-no-border pb-0">
+    <div class="header-top">
+      <h5>
+        Visitors<span class="f-14 font-primary f-w-500 ms-1">
+          <app-common-svg-icon [class]="'f-w-600 m-0'" [icon]="'user-visitor'" />
+          (+2.8)</span
+        >
+      </h5>
+      <div class="card-header-right-icon">
+        <div class="dropdown icon-dropdown" (clickOutside)="clickoutSide()">
+          <button
+            class="btn dropdown-toggle"
+            id="visitorButton"
+            type="button"
+            (click)="isShow = !isShow"
+          >
+            <i class="icon-more-alt"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow">
+            <a class="dropdown-item" href="javascript:void(0)">Today</a>
+            <a class="dropdown-item" href="javascript:void(0)">Tomorrow</a>
+            <a class="dropdown-item" href="javascript:void(0)">Yesterday</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body pt-0">
+    <div class="visitors-container">
+      <div id="visitor-chart">
+        <apx-chart
+          [series]="visitors.series"
+          [chart]="visitors.chart"
+          [plotOptions]="visitors.plotOptions"
+          [dataLabels]="visitors.dataLabels"
+          [stroke]="visitors.stroke"
+          [grid]="visitors.grid"
+          [colors]="visitors.colors"
+          [xaxis]="visitors.xaxis"
+          [yaxis]="visitors.yaxis"
+          [fill]="visitors.fill"
+          [legend]="visitors.legend"
+          [responsive]="visitors.responsive"
+        />
+      </div>
+    </div>
+  </div>
+</div>

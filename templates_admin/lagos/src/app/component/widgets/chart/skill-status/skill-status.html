@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Skill Status</h4>
+  </div>
+  <div class="card-body">
+    <div class="chart-container skill-chart">
+      <div id="circlechart">
+        <apx-chart [chart]="cricleChart.chart" [plotOptions]="cricleChart.plotOptions" [series]="cricleChart.series"
+          [labels]="cricleChart.labels" [legend]="cricleChart.legend" [colors]="cricleChart.colors"
+          [responsive]="cricleChart.responsive" />
+      </div>
+    </div>
+  </div>
+</div>

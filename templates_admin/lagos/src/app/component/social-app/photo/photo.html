@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="my-gallery card-body row gallery-with-description" itemscope="" gallerize>
+        @for (img of photosData; track img) {
+          <figure class="col-xl-3 col-sm-6 mx-0" itemprop="associatedMedia">
+            <a href="javascript:void(0)" itemprop="contentUrl">
+              <img [src]="img.srcUrl" itemprop="thumbnail" alt="Image description">
+              <div class="caption">
+                <h4>{{img.name}}</h4>
+                <p>{{img.text}}</p>
+              </div>
+            </a>
+          </figure>
+        }
+      </div>
+    </div>
+  </div>
+</div>

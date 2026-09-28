@@ -1,0 +1,171 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="list-product-header ">
+                        <div>
+                            <div class="light-box" (click)="isShow =!isShow">
+                                <a>
+                                    <app-feather-icons [class]="'filter-icon'" [ngClass]="!isShow ?'show' : 'hide'"
+                                        [icons]="'filter'" />
+                                    <i class="icon-close filter-close show" [ngClass]="isShow ?'show' : 'hide'"></i>
+                                </a>
+                            </div>
+                            <a class="btn btn-primary" [routerLink]="['/ecommerce/add-products']">
+                                <i class="fa fa-plus"></i>Add Product</a>
+                        </div>
+                        <div class="collapse" id="collapseProduct" [class.show]="isShow">
+                            <div class="card card-body list-product-body">
+                                <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-3">
+                                    <div class="col">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">Choose Product</option>
+                                            <option value="1">Apple iphone 13 Pro</option>
+                                            <option value="2">Wood Chair</option>
+                                            <option value="3">M185 Compact Wireless Mouse</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">Choose Category</option>
+                                            <option value="1">Furniture</option>
+                                            <option value="2">Smart Gadgets</option>
+                                            <option value="3">Electrics</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">Choose Sub Category</option>
+                                            <option value="1">Smart Phones</option>
+                                            <option value="2">Smart Watches</option>
+                                            <option value="3">Wireless headphone</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">Status</option>
+                                            <option value="1">Sold Out </option>
+                                            <option value="2">In Stock</option>
+                                            <option value="3">Pre Order</option>
+                                            <option value="4">Limited Stock </option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected="">Price</option>
+                                            <option value="1">56000.00</option>
+                                            <option value="2">19000.00</option>
+                                            <option value="3">10000.00</option>
+                                            <option value="3">15000.00</option>
+                                            <option value="3">99000.00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-product table-responsive theme-scrollbar">
+                        <div class="mb-3 row">
+                            <label for="table-complete-search"
+                                class="col-xs-3 col-sm-auto col-form-label">Search</label>
+                            <div class="col-xs-3 col-sm-auto">
+                                <input id="table-complete-search" type="text" class="form-control" name="searchTerm"
+                                    [(ngModel)]="service.searchTerm">
+                            </div>
+                            @if (service.loading$ | async) {
+                            <span class="col col-form-label">Loading...</span>
+                            }
+                        </div>
+                        <table class="table table-striped" id="project-status">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="form-check">
+                                            <input class="form-check-input checkbox-primary" type="checkbox">
+                                        </div>
+                                    </th>
+                                    <th sortable="name" (sort)="onSort($event)"> <span class="f-light f-w-600">Product
+                                            Name</span></th>
+                                    <th sortable="sku" (sort)="onSort($event)"> <span class="f-light f-w-600">SKU</span>
+                                    </th>
+                                    <th sortable="category" (sort)="onSort($event)"> <span
+                                            class="f-light f-w-600">Category</span></th>
+                                    <th sortable="price" (sort)="onSort($event)"> <span
+                                            class="f-light f-w-600">Price</span></th>
+                                    <th sortable="qty" (sort)="onSort($event)"> <span class="f-light f-w-600">Qty</span>
+                                    </th>
+                                    <th sortable="status" (sort)="onSort($event)"> <span
+                                            class="f-light f-w-600">Status</span></th>
+                                    <th> <span class="f-light f-w-600">Rating</span></th>
+                                    <th> <span class="f-light f-w-600">Action</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (item of productList$ | async; track item) {
+                                <tr class="product-removes">
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input checkbox-primary" type="checkbox">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-names">
+                                            <div class="light-product-box">
+                                                <img class="img-fluid" [src]="item.img" alt="laptop">
+                                            </div>
+                                            <p>{{item.name}}</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="f-light">{{item.sku}}</p>
+                                    </td>
+                                    <td>
+                                        <p class="f-light">{{item.category}}</p>
+                                    </td>
+                                    <td>
+                                        <p class="f-light">{{item.price}}</p>
+                                    </td>
+                                    <td>
+                                        <p class="f-light">{{item.qty}}</p>
+                                    </td>
+                                    <td> <span class="badge"
+                                            [ngClass]="item.status === 'Sold Out' ?'badge-secondary' :'badge-primary'">{{item.status}}</span>
+                                    </td>
+                                    <td>
+                                        <div class="rating">
+                                            <bar-rating [(rate)]="item.rating" [max]="5" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-action">
+                                            <a [routerLink]="['/ecommerce/add-products']">
+                                                <app-common-svg-icon [icon]="'stroke-editors'" />
+                                            </a>
+                                            <app-common-svg-icon [icon]="'trash'" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                }
+                                @if (productList.length === 0) {
+                                <td class="datatable-empty" colspan="9">No entries found</td>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-between p-2">
+                            <select class="form-select" style="width: auto" name="pageSize"
+                                [(ngModel)]="service.pageSize">
+                                <option [ngValue]="10">10 items per page</option>
+                                <option [ngValue]="25">25 items per page</option>
+                                <option [ngValue]="50">50 items per page</option>
+                                <option [ngValue]="100">100 items per page</option>
+                            </select>
+                            <ngb-pagination class="pagination-primary" [collectionSize]="(total$ | async)!" [(page)]="service.page"
+                                [pageSize]="service.pageSize" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

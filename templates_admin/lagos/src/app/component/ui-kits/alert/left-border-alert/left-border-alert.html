@@ -1,0 +1,15 @@
+<div class="card height-equal">
+  <div class="card-header">
+    <h4>Left border alert</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.border-left-wrapper </code>to change border-left radius.</p>
+  </div>
+  <div class="card-body live-dark">
+    <div class="alert alert-light-dark light alert-dismissible fade text-dark border-left-wrapper" role="alert"
+      [class.show]="isShow">
+      <app-feather-icons [icons]="'help-circle'" />
+      <p>You can check in on some of those fields below.</p>
+      <button class="btn-close" type="button" (click)="isShow = false"></button>
+    </div>
+  </div>
+</div>

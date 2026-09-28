@@ -1,0 +1,305 @@
+ÔØ» Building...
+Ô£ö Building...
+Application bundle generation failed. [63.228 seconds] - 2026-08-08T04:23:52.802Z
+
+node.exe : [31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/mantenimiento-presupuesto/gastos-mantenimiento' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+En línea: 1 Carácter: 1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([31mX [41;31m...r-compiler][0m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+    src/app/routing/compras.routing.ts:196:13:
+[37m      196 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/mantenimi[37m...
+          ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/mantenimiento-presupuesto/gastos-mantenimiento' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/inventories.routing.ts:108:13:
+[37m      108 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/mantenimi[37m...
+          ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/contracts-policies/contracts-policies' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/library.routing.ts:120:13:
+[37m      120 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/contracts[37m...
+          ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/report-client/report-client' or its corresponding type declarations.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/public.routing.ts:8:13:
+[37m      8 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/report-clie[37m...
+        ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/operation-report-client/operation-report-client' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/public.routing.ts:19:13:
+[37m      19 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/operation-[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/report-meeting/report-meeting' or its corresponding type declarations.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/public.routing.ts:32:13:
+[37m      32 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/report-mee[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/reporte-ticket-pendientes-proveedor/reporte-ticket-pendientes-proveedor' or 
+its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/public.routing.ts:44:13:
+[37m      44 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/reporte-ti[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/pending-minutes/pending-minutes' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/reports.routing.ts:59:13:
+[37m      59 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/pending-mi[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/reports/estados-financieros/estados-financieros' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/reports.routing.ts:71:13:
+[37m      71 Ôöé       import([32m"src/app/apps/operations.luxuryapp/reports/estados-fi[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-resumen' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/tickets.routing.ts:91:13:
+[37m      91 Ôöé       import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks/[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-work-plan' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/tickets.routing.ts:103:13:
+[37m      103 Ôöé       import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks[37m...
+          ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-work-plan-preview' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/tickets.routing.ts:115:13:
+[37m      115 Ôöé       import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks[37m...
+          ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-operation-report' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/tickets.routing.ts:127:13:
+[37m      127 Ôöé       import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks[37m...
+          ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module 
+'src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-weekly-report-preview' or its corresponding type 
+declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/routing/tickets.routing.ts:139:13:
+[37m      139 Ôöé       import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks[37m...
+          ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/mantenimiento-presupuesto/gastos-mantenimiento"[0m
+
+    src/app/routing/compras.routing.ts:142:30:
+[37m      142 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/reports/mantenimi[37m...
+          ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/reports/mantenimiento-presupuesto/gastos-mantenimiento" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/mantenimiento-presupuesto/gastos-mantenimiento"[0m
+
+    src/app/routing/inventories.routing.ts:77:30:
+[37m      77 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/reports/mantenimie[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/reports/mantenimiento-presupuesto/gastos-mantenimiento" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/contracts-policies/contracts-policies"[0m
+
+    src/app/routing/library.routing.ts:80:30:
+[37m      80 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/reports/contracts-[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/reports/contracts-policies/contracts-policies" as external 
+to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also 
+add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/report-client/report-client"[0m
+
+    src/app/routing/public.routing.ts:5:30:
+[37m      5 Ôöé ... => import([32m"src/app/apps/operations.luxuryapp/reports/report-cli[37m...
+        ÔòÁ               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/reports/report-client/report-client" as external to exclude 
+it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also add 
+".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/operation-report-client/operation-report-client"[0m
+
+    src/app/routing/public.routing.ts:13:30:
+[37m      13 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/reports/operation-[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/reports/operation-report-client/operation-report-client" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/report-meeting/report-meeting"[0m
+
+    src/app/routing/public.routing.ts:23:30:
+[37m      23 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/reports/report-mee[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/reports/report-meeting/report-meeting" as external to 
+exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also add 
+".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/reporte-ticket-pendientes-proveedor/reporte-ticket-pendientes-proveedor"[0m
+
+    src/app/routing/public.routing.ts:31:30:
+[37m      31 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/reports/reporte-ti[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path 
+"src/app/apps/operations.luxuryapp/reports/reporte-ticket-pendientes-proveedor/reporte-ticket-pendientes-proveedor" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/pending-minutes/pending-minutes"[0m
+
+    src/app/routing/reports.routing.ts:45:30:
+[37m      45 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/reports/pending-mi[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/reports/pending-minutes/pending-minutes" as external to 
+exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also add 
+".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/reports/estados-financieros/estados-financieros"[0m
+
+    src/app/routing/reports.routing.ts:55:30:
+[37m      55 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/reports/estados-fi[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/reports/estados-financieros/estados-financieros" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-resumen"[0m
+
+    src/app/routing/tickets.routing.ts:67:30:
+[37m      67 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks/[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-resumen" as external 
+to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also 
+add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-work-plan"[0m
+
+    src/app/routing/tickets.routing.ts:75:30:
+[37m      75 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks/[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-work-plan" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-work-plan-preview"[0m
+
+    src/app/routing/tickets.routing.ts:83:30:
+[37m      83 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks/[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-report-work-plan-preview" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-operation-report"[0m
+
+    src/app/routing/tickets.routing.ts:91:30:
+[37m      91 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks/[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-operation-report" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve 
+"src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-weekly-report-preview"[0m
+
+    src/app/routing/tickets.routing.ts:99:30:
+[37m      99 Ôöé ...=> import([32m"src/app/apps/operations.luxuryapp/task-engine/tasks/[37m...
+         ÔòÁ              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  You can mark the path "src/app/apps/operations.luxuryapp/task-engine/tasks/reports/task-weekly-report-preview" as 
+external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You 
+can also add ".catch()" here to handle this failure at run-time instead of bundle-time.
+
+

@@ -1,0 +1,15 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myLargeModalLabel">Extra large modal</h4>
+        <button class="btn-close py-0" type="button" (click)="close()"></button>
+    </div>
+    <div class="modal-body dark-modal">
+        @for (data of modalData; track data) {
+        <div class="large-modal-header">
+            <app-feather-icons [icons]="'chevrons-right'" />
+            <h5 class="f-w-600">{{data.title}} </h5>
+        </div>
+        <p class="modal-padding-space">{{data.desc}}</p>
+        }
+    </div>
+</div>

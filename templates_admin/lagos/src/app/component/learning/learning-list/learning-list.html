@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-9 xl-60 order-xl-0 order-1 box-col-12">
+      <div class="row">
+        @for (data of learningTopData; track data) {
+        <div class="col-xl-12">
+          <div class="card">
+            <div class="blog-box blog-list row">
+              <div class="col-sm-5" [class.order-sm-1]="data.title === 'Web Development'"><img class="img-fluid sm-100-w" [src]="data.img" alt=""></div>
+              <div class="col-sm-7" >
+                <div class="blog-details">
+                  <div class="blog-date"><span>{{data.date}}</span> {{data.month}}</div>
+                  <h4>{{data.title}} </h4>
+                  <div class="blog-bottom-content">
+                    <ul class="blog-social">
+                      <li>by: {{data.by}}</li>
+                      <li>{{data.hits}} Hits</li>
+                    </ul>
+                    <hr>
+                    <p class="mt-0">{{data.desc}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+        @for (data of learningData; track data) {
+        <div class="col-xl-4 xl-50 col-sm-6 box-col-6">
+          <div class="card">
+            <div class="blog-box blog-grid text-center product-box">
+              <div class="product-img"><img class="img-fluid top-radius-blog" [src]="data.img" alt="">
+                <div class="product-hover">
+                  <ul>
+                    <li><i class="icon-link"></i></li>
+                    <li><i class="icon-import"></i></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="blog-details-main">
+                <ul class="blog-social">
+                  <li>9 April 2024</li>
+                  <li>by: Admin</li>
+                  <li>0 Hits</li>
+                </ul>
+                <hr>
+                <h5 class="f-w-600">{{data.title}}</h5>
+                <p class="blog-bottom-details">{{data.desc}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="col-xl-3 xl-40 box-col-12 learning-filter">
+      <app-learning-filter />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header">
+        <h4> Justify contents</h4>
+        <p class="f-m-light mt-1">Use the <code>(text-start/text-center/text-end)</code> to change dropdown texts.</p>
+    </div>
+    <div class="card-body dropdown-basic m-0">
+        <div class="common-flex">
+            @for (allData of justifyDropdownData; track allData) {
+            <div class="btn-group" ngbDropdown>
+                <button class="btn btn-{{allData.colorClass}} dropdown-toggle" type="button"
+                    ngbDropdownToggle>{{allData.title}}</button>
+                <ul class="dropdown-menu dropdown-block text-{{allData.class}}" ngbDropdownMenu>
+                    @for (items of allData.dropdownItem; track items) {
+                    <li>
+                        <a class="dropdown-item" href="javascript:void(0)" ngbDropdownItem>{{items.item}}</a>
+                    </li>
+                    }
+                </ul>
+            </div>
+            }
+        </div>
+    </div>
+</div>

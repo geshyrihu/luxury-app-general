@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Responsive Tables With Light Background</h4>
+    <span>A <code>.table-responsive ,.light-card</code> inside table element.</span>
+  </div>
+  <div class="card-block row">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+      <div class="table-responsive theme-scrollbar">
+        <table class="table light-card">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Task</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Assign</th>
+              <th scope="col">Date</th>
+              <th scope="col">Price</th>
+              <th scope="col">Status</th>
+              <th scope="col">Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of responsiveTablesBackground; track item) {
+            <tr>
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.task}}</td>
+              <td>{{item.email}}</td>
+              <td>+91 {{item.phone}}</td>
+              <td>{{item.assign}}</td>
+              <td>{{item.date}}</td>
+              <td>${{item.price}}</td>
+              <td [ngClass]="item.id === 3 ? 'font-success' : 'font-danger'">{{item.status}}</td>
+              <td>{{item.progress}}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

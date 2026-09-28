@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>MASONRY GALLERY WITH DESCRIPTION</h4>
+                </div>
+                <div class="card-body">
+                    <div class="my-gallery row grid gallery-with-description" id="aniimated-thumbnials" gallerize>
+                        <ngx-masonry [options]="masonryOptions" style="width: 100%;" [ordered]="true">
+                            @for (image of masonryGalleryGridWithDesc; track image) {
+                            <div class="grid-item col-xl-3 col-sm-6 mb-4" ngxMasonryItem itemprop="associatedMedia"
+                                itemscope="">
+                                <a href="javascript:void(0)" itemprop="contentUrl" data-size="1600x950">
+                                    <img class="img-thumbnail" [src]="image.srcUrl" itemprop="thumbnail"
+                                        alt="Image description">
+                                    <div class="caption">
+                                        <h4>{{image.title}}</h4>
+                                        <p>{{image.text}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                            }
+                        </ngx-masonry>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

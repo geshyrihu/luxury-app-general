@@ -1,0 +1,42 @@
+<div class="container-fluid p-0">
+    <div class="authentication-main mt-0">
+        <div class="row">
+            <div class="col-12">
+                <div class="login-card login-dark">
+                    <div>
+                        <div>
+                            <a class="logo" [routerLink]="['/dashboard/default']">
+                                <img class="img-fluid for-light" src="assets/images/logo/logo.png" alt="looginpage">
+                                <img class="img-fluid for-dark" src="assets/images/logo/logo_dark.png" alt="looginpage">
+                            </a>
+                        </div>
+                        <div class="login-main">
+                            <form class="theme-form" ngNativeValidate>
+                                <h4>Unlock</h4>
+                                <div class="form-group">
+                                    <label class="col-form-label">Enter your Password</label>
+                                    <div class="form-input position-relative">
+                                        <input class="form-control" type="password" name="login[password]" required=""
+                                            [type]="show ? 'text' : 'password'" placeholder="*********">
+                                        <div class="show-hide"><span (click)="show = !show" [class.show]="show"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="checkbox p-0">
+                                        <input id="checkbox1" type="checkbox">
+                                        <label class="text-muted" for="checkbox1">Remember password</label>
+                                    </div>
+                                    <button class="btn btn-primary btn-block w-100" type="submit">Unlock</button>
+                                </div>
+                                <p class="mt-4 mb-0">Already Have an account?
+                                    <a class="ms-2" [routerLink]="['/authentication/simple']">Sign in</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

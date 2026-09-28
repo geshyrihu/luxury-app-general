@@ -1,0 +1,40 @@
+[    2196ms] [LOG] %c📦 [StorageService] Inicializando servicio de almacenamiento local... color: #3F51B5; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2198ms] [LOG] %c [AuthService] Verificando ruta inicial: /purchases/solicitud-compra-presentacion | Es publica: false color: #9C27B0; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2199ms] [LOG] %c [AuthService] Ruta no publica. Intentando login silencioso... color: #009688; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2204ms] [LOG] %c🚀 [Initializer] Starting application state initialization... color: purple; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2524ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://localhost:7070/api/auth/refresh:0
+[    2525ms] [LOG] %c🚫 Error en refreshToken, forzando logout local. color: red;font-style: italic HttpErrorResponse @ http://localhost:4200/chunk-UK35WVNJ.js:72
+[    2527ms] [LOG] %c [AuthTrace] clearSession.before color: #03A9F4; font-style: italic; {at: 2026-09-20T22:31:11.984Z, applicationUserId: null, tokenCustomerId: null, roles: Array(0), customerAccessCount: 0} @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2528ms] [LOG] %c🔍 [StorageService] Recuperando valor para clave: 'customerId' color: #2196F3; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2530ms] [LOG] %c🟡 [StorageService] No se encontró valor para clave 'customerId' o es undefined. color: #FF9800; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2530ms] [LOG] %c [CustomerTrace] clearCustomerData.before color: #FF9800; font-style: italic; {at: 2026-09-20T22:31:11.986Z, state: Object, storedCustomerId: undefined} @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2531ms] [LOG] %c🧹 [StorageService] Limpiando clave específica: 'customerId' color: #FF5722; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2531ms] [LOG] %c✅ [StorageService] Clave 'customerId' ha sido limpiada. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2532ms] [LOG] %c🔍 [StorageService] Recuperando valor para clave: 'customerId' color: #2196F3; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2532ms] [LOG] %c🟡 [StorageService] No se encontró valor para clave 'customerId' o es undefined. color: #FF9800; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2533ms] [LOG] %c [CustomerTrace] clearCustomerData.after color: #FF9800; font-style: italic; {at: 2026-09-20T22:31:11.990Z, state: Object, storedCustomerId: undefined} @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2542ms] [LOG] %c [AuthTrace] trySilentLogin.finalize color: #8BC34A; font-style: italic; {at: 2026-09-20T22:31:12.000Z, isAuthenticated: false} @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2543ms] [LOG] %c🤷 [Initializer] No user session. Skipping customer state initialization. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2545ms] [LOG] %c✅ [Initializer] State initialization complete. color: green; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2574ms] [LOG] %c🔄 UpdateService: Inicializando servicio de actualizaciones color: blue; font-weight: bold; @ http://localhost:4200/chunk-VEHVAQA7.js:14
+[    2575ms] [LOG] %c🔄 UpdateService: ❌ Service Worker NO habilitado color: red; font-weight: bold; @ http://localhost:4200/chunk-VEHVAQA7.js:26
+[    2606ms] [LOG] %c🚀 [App] ¡Aplicación iniciada! Soy más ligero y rápido que nunca. color: #673AB7; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    2619ms] [LOG] Angular is running in development mode. @ http://localhost:4200/@fs/D:/repos/luxuryapp-api/appsweb/angular/.angular/cache/22.1.8/luxury-app/vite/deps/core-gRj2gSiC.js?v=fc679455:9175
+[    3079ms] [LOG] %c🔐 [SecurityService] Servicio de seguridad inicializado. color: #3F51B5; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3157ms] [LOG] %c [Login] Iniciando.. color: #607D8B; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3157ms] [LOG] %c [Login] Usando / como redireccion por defecto. color: #607D8B; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3158ms] [LOG] %c [Login] URL final de redireccion: / color: #2196F3; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3158ms] [LOG] %c🚪 [SecurityService] Limpiando datos de autenticación... color: #F44336; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3158ms] [LOG] %c🗑️ [StorageService] Eliminando clave: 'userAuthData' color: #F44336; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3159ms] [LOG] %c✅ [StorageService] Clave 'userAuthData' eliminada. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3159ms] [LOG] %c🗑️ [StorageService] Eliminando clave: 'accessToken' color: #F44336; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3159ms] [LOG] %c✅ [StorageService] Clave 'accessToken' eliminada. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3160ms] [LOG] %c🧹 [SecurityService] Datos de sesión eliminados: userAuthData y accessToken. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3160ms] [LOG] %c [Login] Datos de sesion previa eliminados. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3161ms] [LOG] %c🚪 [SecurityService] Limpiando datos de autenticación... color: #F44336; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3162ms] [LOG] %c🗑️ [StorageService] Eliminando clave: 'userAuthData' color: #F44336; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3162ms] [LOG] %c✅ [StorageService] Clave 'userAuthData' eliminada. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3163ms] [LOG] %c🗑️ [StorageService] Eliminando clave: 'accessToken' color: #F44336; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3163ms] [LOG] %c✅ [StorageService] Clave 'accessToken' eliminada. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3163ms] [LOG] %c🧹 [SecurityService] Datos de sesión eliminados: userAuthData y accessToken. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-UK35WVNJ.js:59
+[    3302ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:4200/auth/login:0

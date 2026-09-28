@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Default switches</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.form-switch</code> and <code>.form-check-label </code>for switches.</p>
+  </div>
+  <div class="card-body">
+    <div class="row g-3">
+      @for (item of defaultSwitch; track item) {
+      <div class="col-md-6 col-xl-4">
+        <div class="card-wrapper border rounded-3 rtl-input checkbox-checked">
+          <h6 class="sub-title">{{item.title}} </h6>
+          @for (data of item.data; track data) {
+          <div class="form-check form-switch" [class.form-check-reverse]="item.id === 3">
+            <input class="form-check-input" id="{{data.id}}" type="checkbox" role="switch"
+              [checked]="data.active" [disabled]="data.disable">
+            <label class="form-check-label" for="{{data.id}}">{{data.text}}</label>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

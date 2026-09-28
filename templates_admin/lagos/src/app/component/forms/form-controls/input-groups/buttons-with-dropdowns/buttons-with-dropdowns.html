@@ -1,0 +1,65 @@
+<div class="card height-equal">
+  <div class="card-header">
+    <h4>Buttons with dropdowns </h4>
+    <p class="f-m-light mt-1">
+      Use the<code>.input-group </code>and <code>[aria-label='']</code> through buttons with dropdowns.</p>
+  </div>
+  <div class="card-body main-custom-form card-wrapper input-group-wrapper">
+    <div class="input-group">
+      <button class="btn btn-outline-info dropdown-toggle" type="button" (click)="isShow = !isShow">Dropdown</button>
+      <ul class="dropdown-menu dropdown-block" [class.show]="isShow">
+        <li><a class="dropdown-item" href="javascript:void(0)">Ecommerce</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Email</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Users</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Bookmarks</a></li>
+      </ul>
+      <input class="form-control" type="text" aria-label="Text input with dropdown button">
+    </div>
+    <div class="input-group">
+      <input class="form-control" type="text" aria-label="Text input with dropdown button">
+      <button class="btn btn-outline-danger dropdown-toggle" type="button"
+        (click)="isShow1 = !isShow1">Dropdown</button>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-block" [class.show]="isShow1" style="position: absolute;
+        inset: 0px 0px auto auto;
+        margin: 0px;
+        transform: translate(0px, 40px);">
+        <li><a class="dropdown-item" href="javascript:void(0)">Starter kit</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Gallery</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Blog</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Maps</a></li>
+      </ul>
+    </div>
+    <div class="input-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" (click)="isShow2 = !isShow2">Dropdown</button>
+      <ul class="dropdown-menu dropdown-block" [class.show]="isShow2">
+        <li><a class="dropdown-item" href="javascript:void(0)">Widgets</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Project</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Contacts</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Tasks</a></li>
+      </ul>
+      <input class="form-control" type="text" aria-label="Text input with 2 dropdown buttons">
+      <button class="btn btn-primary dropdown-toggle" type="button" (click)="isShow3 = !isShow3">Dropdown</button>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-block" [class.show]="isShow3" style="position: absolute;
+        inset: auto 0px 0px auto;
+        margin: 0px;
+        transform: translate(0px, -40px);">
+        <li><a class="dropdown-item" href="javascript:void(0)">To-Do</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)">FAQ</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Knowledgebase</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="javascript:void(0)">Support Ticket</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

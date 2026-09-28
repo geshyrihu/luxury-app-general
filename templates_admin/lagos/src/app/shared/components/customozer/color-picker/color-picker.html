@@ -1,0 +1,42 @@
+<div class="tab-pane fade active show">
+    <h5>Unlimited Color</h5>
+    <ul class="layout-grid unlimited-color-layout">
+        <input id="ColorPicker1" [(ngModel)]="primary_color" type="color" value="#6f5a99" name="Background">
+        <input id="ColorPicker2" [(ngModel)]="secondary_color" type="color" value="#e24175" name="Background">
+        <button type="button" class="color-apply-btn btn btn-primary color-apply-btn mx-2" (click)="applyColor()">Apply</button>
+        <button type="button" class="color-apply-btn btn btn-primary color-apply-btn" (click)="resetColor()">Reset</button>
+    </ul>
+    <h5>Mix Layout</h5>
+    <ul class="layout-grid customizer-mix">
+        <li class="color-layout" data-attr="dark-sidebar" [class.active]="maxLayout === 'dark-sidebar'" (click)="customizeMixLayout('dark-sidebar')">
+            <div class="header bg-light">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="body">
+                <ul>
+                    <li class="bg-dark sidebar"></li>
+                    <li class="bg-light body"></li>
+                </ul>
+            </div>
+        </li>
+        <li class="color-layout" data-attr="dark-only" [class.active]="maxLayout === 'dark-only'" (click)="customizeMixLayout('dark-only')">
+            <div class="header bg-dark">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="body">
+                <ul>
+                    <li class="bg-dark sidebar"></li>
+                    <li class="bg-dark body"></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

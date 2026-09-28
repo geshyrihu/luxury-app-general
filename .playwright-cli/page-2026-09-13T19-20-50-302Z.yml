@@ -1,0 +1,74 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+  - generic "Aplicación LuxuryApp" [ref=e3]:
+    - generic:
+      - alertdialog
+    - main [ref=e7]:
+      - generic [ref=e68]:
+        - toolbar [ref=e72]:
+          - generic [ref=e74]:
+            - button "Abrir o cerrar el menú lateral" [ref=e75] [cursor=pointer]
+            - button "LUXURY" [ref=e78] [cursor=pointer]
+            - navigation [ref=e85]:
+              - list [ref=e86]:
+                - listitem [ref=e87]:
+                  - link "Inicio" [ref=e88] [cursor=pointer]:
+                    - /url: /dashboard
+          - generic [ref=e92]:
+            - button "Inicio" [ref=e93] [cursor=pointer]
+            - button "Pagina anterior" [ref=e96] [cursor=pointer]
+            - button "Pagina siguiente" [ref=e99] [cursor=pointer]
+            - button "Actualizar" [ref=e102] [cursor=pointer]
+            - button "Mi edificio" [ref=e105] [cursor=pointer]
+            - button "Anuncios" [ref=e108] [cursor=pointer]
+            - button "Comunicado IA" [ref=e111] [cursor=pointer]
+            - button "Telefonos de Emergencia" [ref=e114] [cursor=pointer]
+            - button "Configuración" [ref=e117] [cursor=pointer]
+            - button "Novedades" [ref=e120] [cursor=pointer]
+            - button "Cambiar tema claro u oscuro" [ref=e123] [cursor=pointer]
+            - 'button "Alerta de pónico: mantón presionado para activar" [ref=e127] [cursor=pointer]'
+            - button "Notificaciones" [ref=e132] [cursor=pointer]
+            - button "Abrir menú de usuario" [ref=e138] [cursor=pointer]
+        - navigation [ref=e146]:
+          - generic [ref=e147]:
+            - generic [ref=e148]: LuxuryApp
+            - generic [ref=e149]: Gestión Inteligente
+          - generic [ref=e157]:
+            - heading "Administrador LBG" [level=2] [ref=e158]
+            - paragraph [ref=e159]: Desconocido
+            - heading "LUXURY" [level=3] [ref=e161]
+        - generic [ref=e165]:
+          - generic [ref=e174]:
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - generic [ref=e183]:
+                  - button [ref=e185] [cursor=pointer]
+                  - button [ref=e189] [cursor=pointer]
+                  - button [ref=e194] [cursor=pointer]
+                - textbox "Buscar aquí..." [ref=e207]
+              - generic [ref=e208]:
+                - generic [ref=e211]: Critico (>8d)
+                - generic [ref=e213]: Alerta (7-8d)
+            - table [ref=e216]:
+              - rowgroup [ref=e217]:
+                - row [ref=e218]:
+                  - columnheader [ref=e219] [cursor=pointer]
+                  - columnheader [ref=e223] [cursor=pointer]
+                  - columnheader [ref=e227] [cursor=pointer]
+                  - columnheader [ref=e231] [cursor=pointer]
+                  - columnheader "último Seguimiento" [ref=e235]
+                  - columnheader [ref=e236] [cursor=pointer]
+                  - columnheader [ref=e240] [cursor=pointer]
+              - rowgroup
+            - generic [ref=e244]:
+              - generic [ref=e245]: En total hay 0 registros.
+              - generic [ref=e248]: 0-0 de 0
+              - button "First Page"
+              - button "Previous Page" [disabled]
+              - button "Next Page" [disabled]
+              - button "Last Page" [disabled]
+              - generic:
+                - combobox "Rows per page" [disabled]: "30"
+                - button "dropdown trigger"
+          - generic: Cargando...

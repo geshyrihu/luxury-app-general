@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Polar Chart</h4>
+  </div>
+  <div class="card-body chart-block chart-vertical-center polar-chart">
+    <canvas
+      id="myPolarGraph"
+      baseChart
+      class="chart"
+      [datasets]="polarChartData"
+      [labels]="polarChartLabels"
+      [options]="polarChartOptions"
+      [legend]="polarChartLegend"
+      [type]="'polarArea'"
+    >
+    </canvas>
+  </div>
+</div>

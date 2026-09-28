@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+      <h4>Buttons with prefix and postfix</h4>
+      <p class="f-m-light mt-1">
+         Use the <code>.decrement-touchspin </code>and <code>.increment-touchspin </code>class.</p>
+    </div>
+    <div class="card-body common-flex pre-post-touchspin bg-touchspin">
+      <div class="input-group">
+        <button class="decrement-touchspin btn-touchspin touchspin-warning" (click)="decrement(0)"><i class="fa fa-minus"></i></button>
+        <button class="btn-outline-warning" id="button-addon1" type="button">Pre</button>
+        <input class="input-touchspin spin-outline-primary" type="number" value="{{ value[0] }}">
+        <button class="increment-touchspin btn-touchspin touchspin-warning" (click)="Increment(0)"><i class="fa fa-plus"> </i></button>
+      </div>
+      <div class="input-group">
+        <button class="decrement-touchspin btn-touchspin touchspin-warning" (click)="decrement(1)"><i class="fa fa-minus"></i></button>
+        <input class="input-touchspin spin-outline-primary" type="number" value="{{ value[1] }}">
+        <button class="btn-outline-warning" id="button-addon2" type="button">Post</button>
+        <button class="increment-touchspin btn-touchspin touchspin-warning" (click)="Increment(1)"><i class="fa fa-plus"></i></button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "agents": {
+    "arquitecto": {
+      "description": "Análisis, planificación, auditoría - NO escribe código",
+      "entryPoint": "conventions/CONVENTIONS.md",
+      "skills": ["luxuryapp-core", "planeacion-modulos", "qa-punta-a-punta", "delegacion-estrategica"]
+    },
+    "backend-dev": {
+      "description": "Implementación backend .NET 10",
+      "entryPoint": "conventions/CONVENTIONS.md",
+      "skills": ["luxuryapp-core", "delegacion-estrategica"]
+    },
+    "frontend-dev": {
+      "description": "Implementación Angular 22",
+      "entryPoint": "conventions/CONVENTIONS.md",
+      "skills": ["angular-developer", "luxuryapp-core", "delegacion-estrategica"]
+    },
+    "auditor": {
+      "description": "Auditoría punta a punta módulo",
+      "entryPoint": "conventions/CONVENTIONS.md",
+      "skills": ["qa-punta-a-punta", "luxuryapp-core", "investigate-first"]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+﻿Concepto,Fórmula (Excel),% Patrón,% Trabajador
+Retiro (SAR),"'=B1*0.02",2%,0%
+Cesantía y Vejez Patrón,"'=B1*0.045",3.15–7.51%,—
+Cesantía y Vejez Trabajador,"'=B1*0.01125",—,1.125%
+INFONAVIT,"'=B1*0.05",5%,0%
+Cuotas IMSS (aprox.),"'=B1*0.20",20–30%,2–3%
+ISN Edo. Méx.,"'=B1*0.03",3%,0%

@@ -1,0 +1,110 @@
+<form novalidate [formGroup]="categoryForm">
+  <div class="row g-lg-4 g-3">
+    <div class="col-12">
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <div class="row g-2">
+            <div class="col-12">
+              <label class="form-label m-0" for="validationServer01">Add Category</label>
+            </div>
+            <div class="col-12">
+              <select class="form-select" id="validationDefault04" required="" formControlName="add_Category"
+                [class]="{ 'is-invalid' : (addCategory?.touched || validate) && addCategory?.errors, 'is-valid' : !addCategory?.errors}">
+                <option selected="" value="">--plese select--</option>
+                <option>Toys & games</option>
+                <option>Sportswear </option>
+                <option>Jewellery </option>
+                <option>Furniture and Decor</option>
+                <option>Health, Personal Care, and Beauty</option>
+                <option>Auto and Parts </option>
+                <option>Baby Care Products</option>
+              </select>
+              @if (addCategory?.errors) {
+                <div class="invalid-feedback">Add Category Required</div>
+              } @else {
+                <div class="valid-feedback">Looks good!</div>
+              }
+              <p class="f-light">A product can be added to a category</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row g-2 product-tag">
+            <div class="col-12">
+              <label class="form-label d-block m-0" for="validationServer01">Add Tag</label>
+            </div>
+            <div class="col-12">
+              <tag-input [(ngModel)]="items" [editable]="true" formControlName="add_Tag" class="form-control"
+                [class]="{ 'is-invalid' : (addTag?.touched || validate) && addTag?.errors, 'is-valid' : !addTag?.errors}" />
+              @if (addTag?.errors) {
+                <div class="invalid-feedback">Add Tag Required</div>
+              } @else {
+                <div class="valid-feedback">Looks good!</div>
+              }
+              <p class="f-light">Products can be tagged</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="category-buton">
+            <a class="btn button-primary bg-light-primary font-primary" (click)="category()">
+              <i class="me-2 fa fa-plus"></i>Create New Category </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-12">
+              <label class="form-label" for="validationServer01">Publish Status</label>
+              <select class="form-select" id="validationDefault04" required="" formControlName="publish_Status"
+                [class]="{ 'is-invalid' : (publishStatus?.touched || validate) && publishStatus?.errors, 'is-valid' : !publishStatus?.errors}">
+                <option selected="" value="">--plese select--</option>
+                <option>Publish</option>
+                <option>Drafts</option>
+                <option>Unpublish</option>
+              </select>
+              @if (publishStatus?.errors) {
+                <div class="invalid-feedback">Publish Status Required</div>
+              } @else{
+                <div class="valid-feedback">Looks good!</div>
+              }
+              <p class="f-light">Choose the status</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-12">
+              <label class="form-label" for="validationServer01">Publish Date & Time</label>
+              <div class="input-group flatpicker-calender product-date">
+                <input class="form-control" id="datetime-local1" type="date" formControlName="publish_Date_Tile"
+                  [class]="{ 'is-invalid' : (publishDateTile?.touched || validate) && publishDateTile?.errors, 'is-valid' : !publishDateTile?.errors}">
+                    @if (publishDateTile?.errors) {
+                      <div class="invalid-feedback">Publish Date & Time Required</div>
+                    } @else {
+                      <div class="valid-feedback">Looks good!</div>
+                    }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-buttons">
+    <button class="btn me-2" (click)="previous()">
+      <div class="d-flex align-items-center gap-sm-2 gap-1">
+        <app-common-svg-icon [icon]="'back-arrow'" />
+        Previous
+      </div>
+    </button>
+    <button class="btn" (click)="next()">
+      <div class="d-flex align-items-center gap-sm-2 gap-1">Next
+        <app-common-svg-icon [icon]="'front-arrow'" />
+      </div>
+    </button>
+  </div>
+</form>

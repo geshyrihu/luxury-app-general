@@ -1,0 +1,355 @@
+/**=====================
+    3.41 User-profile CSS start
+==========================**/
+.user-profile {
+  .ttl-info {
+    h6 {
+      font-size: 12px;
+      color: $semi-dark;
+    }
+  }
+
+  .border-right {
+    border-right: 1px dashed $light-gray;
+  }
+
+  hr {
+    margin: 16px 0;
+  }
+
+  .hovercard {
+    .cardheader {
+      background: url(../../images/other-images/bg-profile.png);
+      background-size: cover;
+      background-position: 10%;
+      height: 470px;
+    }
+
+    .user-image {
+      position: relative;
+      height: 0;
+
+      .avatar {
+        margin-top: -80px;
+
+        img {
+          width: 100px;
+          height: 100px;
+          max-width: 155px;
+          max-height: 155px;
+          border-radius: 50%;
+          border: 7px solid $white;
+        }
+      }
+
+      .icon-wrapper {
+        position: absolute;
+        bottom: -20px;
+        left: 51%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: $white;
+        cursor: pointer;
+        overflow: hidden;
+        margin: 0 auto;
+        font-size: 17px;
+        box-shadow: 0 0 6px 3px rgba(68, 102, 242, 0.1);
+      }
+    }
+
+    .info {
+      padding: 30px;
+
+      .title {
+        margin-bottom: 4px;
+        font-size: 24px;
+        line-height: 1;
+        color: $dark-color;
+        vertical-align: middle;
+
+        a {
+          color: $theme-body-font-color;
+          font-size: 20px;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+      }
+
+      .desc {
+        overflow: hidden;
+        font-size: 14px;
+        line-height: 20px;
+        color: $semi-dark;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .follow {
+    .col-6 {
+      &:last-child {
+
+        border-left: 1px solid $light-color;
+
+        [dir="rtl"] & {
+          border-left: unset;
+          border-right: 1px solid $light-color;
+        }
+      }
+    }
+
+    margin-top: 20px;
+
+    .follow-num {
+      font-size: 20px;
+      color: $theme-font-color;
+      font-family: $font-jost, $font-serif;
+      font-weight: 500;
+    }
+
+    span {
+      color: $semi-dark;
+    }
+  }
+
+  .profile-img-style {
+    padding: 30px;
+
+    .img-container {
+      margin-top: 30px;
+    }
+
+    .user-name {
+      font-size: 14px;
+      color: $theme-font-color;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    p {
+      line-height: 30px;
+      font-size: 14px;
+      color: $dark-gray;
+      margin-bottom: 0;
+    }
+
+    #aniimated-thumbnials-3{
+      figure{
+          margin: 0;
+      }
+    }
+
+    .d-flex {
+      img {
+        width: 50px;
+      }
+    }
+  }
+
+  .like-comment {
+    li {
+      a {
+        color: $dark-gray;
+      }
+
+      &:first-child {
+        a {
+
+          &:hover,
+          &:active {
+            color: $danger-color;
+          }
+        }
+      }
+    }
+
+    span {
+      font-family: $font-jost, $font-serif;
+    }
+  }
+
+  .social-media {
+    a {
+      padding: 0 15px;
+      color: $semi-dark;
+      font-size: 24px;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--theme-default);
+      }
+    }
+  }
+  &.only-users {
+    .user-profile-card {
+      position: relative;
+      margin-bottom: 90px;
+      @media (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+      &.hovercard {
+        .info {
+          position: absolute;
+          bottom: -60px;
+          background-color: $white;
+          transform: translate(-50%);
+          left: 50%;
+          width: calc(100% - 70px);
+          @media (max-width: 767px) {
+            position: unset;
+            width: unset;
+            transform: unset;
+          }
+          .ttl-info {
+            span {
+              width: 100%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+        .user-image {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%);
+          z-index: 1;
+          @media (max-width: 1199px) {
+            top: 58%;
+          }
+          @media (max-width: 991px) {
+            top: 47%;
+          }
+          @media (max-width: 767px) {
+            position: relative;
+          }
+          .icon-wrapper {
+            background-color: $primary-color;
+            i {
+              color: $white;
+            }
+          }
+          .avatar {
+            img {
+              border-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+    .social-media {
+      li {
+        background-color: rgba($primary-color, 0.1);
+        border: 1px dashed $primary-color;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        a {
+          padding: 0;
+          font-size: 24px;
+          cursor: pointer;
+          color: var(--theme-default);
+          i {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .profile-img-style {
+      small {
+        padding: 2px 4px;
+        background-color: rgba($primary-color, 0.1);
+        border: 1px dashed $primary-color;
+        border-radius: 10px;
+        color: $primary-color;
+      }
+      .user-name {
+        color: $primary-color;
+      }
+      .rounded-circle {
+        border-radius: 5px !important;
+        @media (max-width: 575px) {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+//Edit profile //
+.edit-profile {
+  .user-edit-form {
+    background-color: rgba($primary-color, 0.1);
+    border: 1px dashed $primary-color;
+    padding: 20px;
+    margin-top: 30px;
+    @media (max-width: 1399px) {
+      margin-top: 0;
+    }
+    .profile-title {
+      .d-flex {
+        margin-bottom: 15px;
+        img {
+          position: absolute;
+          bottom: 15px;
+          border: 4px solid $white;
+          border-radius: 5px !important;
+          width: 100px !important;
+          @media (max-width: 1399px) {
+            position: unset;
+            width: 68px !important;
+          }
+        }
+        .flex-grow-1 {
+          margin-left: 110px;
+          @media (max-width: 1399px) {
+            margin-left: 7px;
+          }
+          [dir="rtl"] & {
+            margin-right: 110px;
+            @media (max-width: 1399px) {
+              margin-right: 7px;
+            }
+          }
+          h4 {
+            color: $primary-color;
+            @media (max-width: 1399px) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .add-project {
+    .btn {
+      padding: 0.375rem 1rem;
+      margin-left: 4px;
+    }
+  }
+  .profile-title {
+    .d-flex {
+      align-items: center;
+      margin-bottom: 30px;
+
+      .flex-grow-1 {
+        margin-left: 14px;
+
+        [dir="rtl"] & {
+          margin-left: unset;
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+    3.41 User-profile CSS Ends
+==========================**/

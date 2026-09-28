@@ -1,0 +1,5 @@
+D:\repos\luxuryapp-api\FixProj\obj\Debug\net10.0\FixProj.csproj.AssemblyReference.cache
+D:\repos\luxuryapp-api\FixProj\obj\Debug\net10.0\FixProj.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\luxuryapp-api\FixProj\obj\Debug\net10.0\FixProj.AssemblyInfoInputs.cache
+D:\repos\luxuryapp-api\FixProj\obj\Debug\net10.0\FixProj.AssemblyInfo.cs
+D:\repos\luxuryapp-api\FixProj\obj\Debug\net10.0\FixProj.csproj.CoreCompileInputs.cache

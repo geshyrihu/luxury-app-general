@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+        <h4>With Captions</h4>
+        <p class="f-m-light mt-1">Add captions to your slides easily with the<code> .carousel-caption</code> element
+            within any <code>.carousel-item</code>.</p>
+    </div>
+    <div class="card-body">
+        <div class="carousel slide" id="carouselExampleCaptions" data-bs-ride="false">
+            <div class="carousel-inner">
+                <owl-carousel-o [options]="withIndicatorOptions ">
+                    @for (slideData of withCaptionData; track slideData) {
+                    <ng-template carouselSlide class="carousel-item">
+                        <img class="d-block w-100" [src]="slideData.img" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ slideData.title }}</h5>
+                            <p>{{ slideData.desc }}</p>
+                        </div>
+                    </ng-template>
+                    }
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div>

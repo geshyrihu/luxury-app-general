@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header">
+      <h4>Default style</h4>
+      <p class="f-m-light mt-1">
+         This option is show by default you don't need to add any extra class.</p>
+    </div>
+    <div class="card-body megaoptions-border-space-sm">
+      <form class="mega-inline">
+        <div class="row">
+        @for (data of defaultStyle; track data) {
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="d-flex p-20">
+                <div class="form-check ps-0 radio radio-{{ data.color }} m-0">
+                  <input class="form-check-input" id="{{ data.id }}" type="radio" name="radio1" value="option1">
+                  <label class="form-check-label" for="{{ data.id }}">
+                    <span class="flex-grow-1 megaoption-space">
+                      <span class="mt-0 mega-title-badge">{{data.title}}
+                        <span class="badge badge-{{data.color}} pull-right digits">{{data.price}} INR
+                        </span>
+                      </span>
+                      <span>{{ data.text }}</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+        </div>
+      </form>
+    </div>
+    <div class="card-footer text-end">
+      <button class="btn btn-primary m-r-15" type="submit">Submit</button>
+      <button class="btn btn-light" type="submit">Cancel</button>
+    </div>
+  </div>

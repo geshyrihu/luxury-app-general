@@ -1,0 +1,27 @@
+<div class="card height-equal">
+  <div class="card-header">
+    <h4>Basic radio and checkbox</h4>
+    <p class="f-m-light mt-1">
+      Use the <code>.form-check-inline </code>through display inline.</p>
+  </div>
+  <div class="card-body">
+    <div class="row g-3">
+      @for (item of basicRadioAndCheckbox; track item) {
+      <div class="col-md-12">
+        <div class="card-wrapper border rounded-3 checkbox-checked">
+          <h6 class="sub-title">{{item.title}}</h6>
+          <div class="form-check-size">
+            @for (data of item.data; track data) {
+            <div class="form-check form-check-inline {{data.class}}">
+              <input class="form-check-input" id="{{data.id}}" type="{{data.type}}" [checked]="data.active"
+                name="radio5">
+              <label class="form-check-label" for="{{data.id}}">{{data.text}}</label>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

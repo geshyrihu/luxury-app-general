@@ -1,0 +1,40 @@
+{
+  "source": "reconstruido desde el reporte de ejecución del 2026-08-09; sin detalle de nodos",
+  "generatedAt": "2026-08-09T23:51:56.338Z",
+  "mode": "REPORTE (no bloqueante) — reconstruido",
+  "tool": "axe-core / @axe-core/playwright",
+  "config": "a11y-targets.json",
+  "baseUrl": "http://localhost:4200",
+  "axeTags": ["wcag2a", "wcag2aa"],
+  "summary": {
+    "targetsTotal": 6,
+    "authenticated": true,
+    "routesEvaluated": 6,
+    "routesBlockedByAuth": 0,
+    "routesUnreachable": 0,
+    "totalViolations": 25,
+    "distinctRules": 5
+  },
+  "routesEvaluated": [
+    { "path": "/login", "label": "login (auth)", "url": "http://localhost:4200/login", "violations": 4, "passes": 23, "incomplete": 2 },
+    { "path": "/dashboard", "label": "dashboard", "url": "http://localhost:4200/dashboard", "violations": 4, "passes": 30, "incomplete": 2 },
+    { "path": "/home", "label": "home", "url": "http://localhost:4200/home", "violations": 4, "passes": 24, "incomplete": 2 },
+    { "path": "/operations", "label": "listado con tabla (operations)", "url": "http://localhost:4200/operations", "violations": 4, "passes": 23, "incomplete": 2 },
+    { "path": "/admin", "label": "panel admin", "url": "http://localhost:4200/admin", "violations": 5, "passes": 23, "incomplete": 2 },
+    { "path": "/cobranza", "label": "cobranza", "url": "http://localhost:4200/cobranza", "violations": 4, "passes": 23, "incomplete": 2 }
+  ],
+  "routesBlockedByAuth": [],
+  "routesUnreachable": [],
+  "violationsByRule": [
+    { "id": "button-name", "description": "Buttons must have discernible text", "impact": "critical", "count": 6, "nodes": 75 },
+    { "id": "color-contrast", "description": "Elements must meet minimum color contrast ratio thresholds", "impact": "serious", "count": 6, "nodes": 26 },
+    { "id": "image-alt", "description": "Images must have alternative text", "impact": "critical", "count": 6, "nodes": 18 },
+    { "id": "link-name", "description": "Links must have discernible text", "impact": "serious", "count": 6, "nodes": 6 },
+    { "id": "scrollable-region-focusable", "description": "Scrollable region must have keyboard access", "impact": "serious", "count": 1, "nodes": 1 }
+  ],
+  "coverage": {
+    "declared": true,
+    "note": "Reconstruido desde el reporte de ejecución autenticada del 2026-08-09 (Fase A-bis). Sin detalle de nodos (el baseline con detalle no se pudo regenerar porque el backend .NET no arranca por PendingModelChangesWarning). Esta es la línea base de no-regresión; no se sobrescribe automáticamente (ver scripts/audit-a11y.mjs: solo con --seed y 100% de cobertura).",
+    "routesUnreachableReasons": []
+  }
+}

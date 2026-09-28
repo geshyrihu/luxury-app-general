@@ -1,0 +1,1446 @@
+{
+  "intEstatus": 1,
+  "strMensaje": "OK",
+  "data": [
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-01T00:00:00",
+      "Concep_Po": "Provisión cuota mantenimiento Enero 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-01T00:00:00",
+      "Concep_Po": "Provisión cuota mantenimiento Febrero  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-01T00:00:00",
+      "Concep_Po": "Provisión cuota mantenimiento Marzo 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Provisión cuota mantenimiento Abril  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-01T00:00:00",
+      "Concep_Po": "Provisión cuota mantenimiento Mayo  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "Traspaso saldos condominos 103 a nuevo catálogo 104 - cierre Mayo 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Provisión cuota mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    1",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "Provisión cuota mantenimiento agosto  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-31T00:00:00",
+      "Concep_Po": "Deptos. Entregados en enero de la constructora 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-01T00:00:00",
+      "Concep_Po": "Provisión cuota consumo agua caliente Febrero 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-31T00:00:00",
+      "Concep_Po": "DEPOSITOS IDENTIFICADOS MESES ANTERIORES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Provisión cuota extraordinaria de energia electrica Abril 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "Provisión EXTRAS Mayo  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Provisión cuota extraordinaria de agua enero a mayo  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    2",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS AGOSTO  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-01T00:00:00",
+      "Concep_Po": "Provisión cuota extraordinaria de energia electrica Enero 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Reconocimientos de multas al mes de febrero"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-31T00:00:00",
+      "Concep_Po": "Deptos. Entregados en marzo de la constructora 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Provisión cuota extraordinaria de agua Abril  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "DEPOSITOS IDENTIFICADOS MESES ANTERIORES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    3",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "DEPOSITOS IDENTIFICADOS MESES ANTERIORES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Reconocimientos de tarjetas  al mes de febrero"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-01T00:00:00",
+      "Concep_Po": "Provisión cuota extraordinaria de energia electrica Marzo 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    4",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS JUNIO  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones al 28 de febrerro"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-30T00:00:00",
+      "Concep_Po": "Provision de extras"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Provisión cuota extraordinaria de energia electrica Abril 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a mayo"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-26T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a MULTAS"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    5",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS JULIO 04  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones al 28 de febrerro"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Provisión cuota extraordinaria de agua Abril  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-27T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a Junio"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    6",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones TARJETA VIRTUAL"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Reconocimientos de otros ingresos (tarjetas, salon) al mes de febrero 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Provision amenidades abril 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS JUNIO  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    7",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS JULIO 07  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Provision Multa"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    8",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS JULIO 07  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Deptos. Entregados en abril de la constructora 2026 y correcciones entregas constructora"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS JUNIO  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "    9",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS JULIO 14  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   10",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-14T00:00:00",
+      "Concep_Po": "Deptos. Entregados en Julio de la constructora 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30 7"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   11",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Provisión EXTRAS JULIO 20  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones ABRIL ENERGIA  30 7"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   12",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "DEPOSITOS IDENTIFICADOS MESES ANTERIORES"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones ABRIL AGUA 30 8"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   13",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-01T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones JULIO 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   14",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30 7"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   15",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30 15"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   17",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30 16"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   19",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30 905"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   20",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-01T00:00:00",
+      "Concep_Po": "Provisión cuota mantenimiento Junio  2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   21",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   22",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   23",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   24",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   25",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   26",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Deptos. Entregados en Junio de la constructora 2026"
+    },
+    {
+      "Tipo_Poli": "Dr",
+      "Num_Poliz": "   27",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Reclasificaciones y correciones a junio 30"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-31T00:00:00",
+      "Concep_Po": "Ingresos no identificados Enero 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Ingresos no identificados Febrero 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-31T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento 31 Marzo 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Abril  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Mayo  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-25T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Junio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    1",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Agosto  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-31T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento 31 Enero 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz 31 Marzo 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Abril 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-25T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Junio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-04T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    2",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-01T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz 31 Enero 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente 31 Marzo 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente Abril 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente Abril 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-25T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente Junio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-04T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz JuLio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    3",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-03T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Agosto"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente 31 Enero 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-27T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Junio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-04T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Junio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    4",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-03T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Agosto  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 1,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-01-31T00:00:00",
+      "Concep_Po": "Ingresos amenidades 31 de Enero 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 3,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-03-31T00:00:00",
+      "Concep_Po": "Ingresos amenidades 31 de Marzo 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-27T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Junio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-06T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    5",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-03T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento 28 de Febrero  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-27T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente Junio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-06T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz JuLio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    6",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-04T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Agosto"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-01T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente 28 de Febrero  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 5,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-05-31T00:00:00",
+      "Concep_Po": "Deptos. Entregados en Mayo de la constructora 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-27T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-06T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Junio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    7",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-04T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Agosto  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Ingresos extras 28 de Febrero  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-27T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Junio  2026 2"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-07T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    8",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-04T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 2,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-02-28T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz 28 Febrero 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-29T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Junio  2026 2"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-07T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "    9",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-04T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Abril 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-29T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Junio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-07T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   10",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-05T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Agosto  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Abril  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-29T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente Junio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-07T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   11",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-05T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Abril 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-29T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades 29 jun"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-09T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   12",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-05T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente Abril 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Junio  2026 3"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-09T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   13",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-05T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Agosto"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Junio 2026 4"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-09T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   14",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-06T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Agosto  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de Agua Caliente Junio 2026 4"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-11T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   15",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-06T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 6,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-06-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades 30 JUNIO"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-11T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   16",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-06T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Abril  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-11T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   17",
+      "Periodo": 8,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-08-06T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Agosto 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 4,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-04-30T00:00:00",
+      "Concep_Po": "Ingresos multa y no identificados"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   18",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-11T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   19",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-14T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   20",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-14T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   21",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-14T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   22",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-16T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   23",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-16T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   24",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-17T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   25",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-17T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   26",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-20T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   27",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-20T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   28",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-20T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   29",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-22T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   30",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-22T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz JuLio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   31",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-22T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   32",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-24T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   33",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-24T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   34",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-24T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   35",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-24T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz JuLio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   36",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-27T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   37",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-27T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz JuLio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   38",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-27T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   39",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-28T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz JuLio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   40",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-27T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   41",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-28T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   42",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-28T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   43",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-28T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   44",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-29T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   45",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-29T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   47",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-29T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   48",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   49",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   50",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   51",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz JuLio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   52",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   53",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Amenidades Julio"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   54",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   55",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-30T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   56",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-31T00:00:00",
+      "Concep_Po": "Ingresos Mantenimiento Julio  2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   57",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota de Agua Caliente Julio 2026"
+    },
+    {
+      "Tipo_Poli": "Ig",
+      "Num_Poliz": "   58",
+      "Periodo": 7,
+      "Ejercicio": 2026,
+      "Fecha_Pol": "2026-07-31T00:00:00",
+      "Concep_Po": "Ingresos Cuota Extraordinaria de luz JuLio 2026"
+    }
+  ]
+}

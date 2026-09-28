@@ -1,0 +1,130 @@
+<div class="email-right-aside">
+  <div class="card email-body email-list" [class.hide]="isOpne">
+    <div class="mail-header-wrapper">
+      <div class="mail-header">
+        <div class="form-check form-check-inline m-0">
+          <input
+            class="form-check-input checkbox-primary"
+            id="emailCheckbox1"
+            type="checkbox"
+            value="option1"
+          />
+          <label class="form-check-label" for="emailCheckbox1"></label>
+          <ul class="email-tabs nav" id="email-content-tab">
+            @for (item of tabData; track item) {
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                [ngClass]="{'active show' : openTab === item.value}"
+                (click)="tabActive(item.value)"
+              >
+                <app-common-svg-icon [class]="'stroke-icon {{item.color}}'" [icon]="item.icon" />
+                <span>{{item.title}} </span>
+              </a>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="mail-body" (clickOutside)="clickoutSide()">
+        <div class="mail-search d-flex-align-items-center">
+          <input class="form-control" type="text" placeholder="Search..." /><i
+            class="fa fa-search"
+          ></i>
+        </div>
+        <div class="bg-light-info light-square txt-info"><i class="fa fa-refresh"></i></div>
+        <div class="light-square bg-light-danger txt-danger"><i class="fa fa-trash"></i></div>
+        <div
+          class="light-square dropdown-toggle bg-light-primary txt-primary"
+          role="main"
+          (click)="isShow =!isShow"
+        >
+          <i class="fa fa-ellipsis-v"></i>
+        </div>
+        <ul
+          class="dropdown-menu dropdown-block dropdown-menu-end"
+          [style]="{ 'position': 'absolute', 'inset': '0px 0px auto auto', 'margin': '0px', 'transform': 'translate(-16px, 57px)'}"
+          [class.show]="isShow"
+        >
+          <li><a class="dropdown-item" href="javascript:void(0)">All</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0)">None</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0)">Read</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0)">Unread</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0)">Starred</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0)">Unstarred</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-content" id="email-pills-tabContent">
+      <div class="tab-pane fade show active" id="inbox-pill">
+        <div class="mail-body-wrapper">
+          <ul id="paginated-list">
+            @for (item of getEmailData.data| slice: (currentPage - 1) * pageSize: currentPage *
+            pageSize; track item;let i = $index) {
+            <li class="inbox-data">
+              <div class="inbox-user">
+                <div class="form-check form-check-inline m-0">
+                  <input
+                    class="form-check-input checkbox-primary"
+                    id="emailCheckbox1"
+                    type="checkbox"
+                    value="option1"
+                    (change)="item.isOpens =! item.isOpens"
+                  />
+                  <label class="form-check-label" for="emailCheckbox1"></label>
+                </div>
+                <svg
+                  [ngClass]="item.active ? 'important-mail active' :'important-mail'"
+                  (click)="bookMark(item.id)"
+                >
+                  <use href="assets/svg/icon-sprite.svg#fill-star"></use>
+                </svg>
+                <div class="rounded-border">
+                  @if (item.image) {
+                  <img class="img-fluid" [src]="item.image" alt="user" />
+                  } @else {
+                  <div [class.circle-success]="item.profileclass === 'success'">
+                    <p class="txt-{{item.profileclass}}">{{item.imgName}}</p>
+                  </div>
+                  }
+                </div>
+                <p>{{item.name}}</p>
+              </div>
+              <div class="inbox-message">
+                <div class="email-data" (click)="isOpne = !isOpne">
+                  <span>{{item.title}} - <span> {{item.subTitle}}</span> </span>
+                  <div class="badge badge-light-{{item.statusColor}}">{{item.status}}</div>
+                  @if (item.status2) {
+                  <div class="badge badge-light-{{item.statusColor}}">{{item.status2}}</div>
+                  }
+                </div>
+                <div class="email-timing"><span>{{item.time}}</span></div>
+                <div class="email-options">
+                  <i
+                    [ngClass]="item.isOpens ? 'fa fa-envelope-o envelope-1 show' : 'fa fa-envelope-open-o envelope-2 show'"
+                  ></i>
+                  <i class="fa fa-trash-o trash-3" (click)="deleteEmail(i, item.name)"></i>
+                  <i class="fa fa-print" (click)="item.isOpens = ! item.isOpens"></i>
+                </div>
+              </div>
+            </li>
+            }
+          </ul>
+        </div>
+        <div class="mail-pagination">
+          <div class="d-flex justify-content-center">
+            <ngb-pagination
+              class="pagination-primary"
+              [collectionSize]="getEmailData.data.length"
+              [(page)]="currentPage"
+              [pageSize]="pageSize"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card email-body email-read" [class.show]="isOpne">
+    <app-interview-mail [open]="isOpne" (childEvent)="isFalse($event)" />
+  </div>
+</div>

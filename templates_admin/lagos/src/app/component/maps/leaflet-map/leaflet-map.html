@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row leaflet-custom">
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header card-no-border pb-0">
+          <h3>Simple Map</h3>
+        </div>
+        <div class="card-body">
+          <div class="map-height" leaflet [leafletOptions]="options1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h3>Map with specify layer</h3>
+        </div>
+        <div class="card-body">
+          <div
+            class="map-height"
+            leaflet
+            [leafletOptions]="options2"
+            [leafletLayersControl]="layersControl"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h3>Map with polygon</h3>
+        </div>
+        <div class="card-body">
+          <div
+            class="map-height"
+            leaflet
+            [leafletOptions]="options3"
+            (leafletMapReady)="onMapReady($event)"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h3>Map with Marker</h3>
+        </div>
+        <div class="card-body">
+          <div
+            class="map-height"
+            leaflet
+            [leafletOptions]="options4"
+            (leafletMapReady)="onMapReady4($event)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

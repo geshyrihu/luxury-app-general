@@ -1,0 +1,23 @@
+<div class="row">
+    @for (item of commonEducationData; track item) {
+    <div class="col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body {{item.class}}">
+          <div class="d-flex gap-2 align-items-end">
+            <div class="flex-grow-1">
+              <h2>{{item.count}}</h2>
+              <p class="mb-0 text-truncate"> {{item.title}}</p>
+              <div class="d-flex student-arrow text-truncate">
+                <p class="mb-0 up-arrow bg-light-{{item.color}}">
+                  <i class="icon-arrow-{{item.iconArrow}} font-{{item.color}}"></i>
+                </p><span class="f-w-500 font-{{item.color}}">{{item.percentage}}</span>than last {{item.month}} Month
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <img [src]="item.image" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+  </div>

@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Bar Chart</h4>
+  </div>
+  <div class="card-body chart-block">
+    <canvas
+      baseChart
+      class="chart"
+      [data]="barChart"
+      [datasets]="barChart.datasets"
+      [options]="barChart.barOptions"
+    ></canvas>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="card categories-card">
+    <div class="card-header pb-0 card-no-border">
+      <div class="header-top">
+        <h4>Core Categories </h4>
+        <div class="dropdown icon-dropdown" (clickOutside)="outSide()">
+            <button class="btn dropdown-toggle" type="button" [class.show]="isShow" (click)="isShow =!isShow">
+              <i class="icon-more-alt"></i></button>
+            <div class="dropdown-menu dropdown-menu-end" [class.show]="isShow"
+              style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate(0px, 23px);">
+              <a class="dropdown-item" href="javascript:Void(0)">Weekly</a>
+              <a class="dropdown-item" href="javascript:Void(0)">Monthly</a>
+              <a class="dropdown-item" href="javascript:Void(0)">Yearly</a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="card-body"> 
+      <div class="categories-chart">
+        <div id="categories">
+             <apx-chart [series]="codeCategory.series"
+             [chart]="codeCategory.chart"
+             [plotOptions]="codeCategory.plotOptions"
+             [grid]="codeCategory.grid"
+             [colors]="codeCategory.colors"
+             [responsive]="codeCategory.responsive"
+             [legend]="codeCategory.legend"
+             [dataLabels]="codeCategory.dataLabels"
+              />
+        </div>
+        <ul> 
+          <li>
+            <div class="d-flex"> 
+              <div class="flex-shrink-0 me-2"><span class="bg-primary"></span></div>
+              <div class="flex-grow-1"> 
+                <h4>50%</h4>
+                <h6>Groceries</h6>
+              </div>
+            </div>
+          </li>
+          <li> 
+            <div class="d-flex"> 
+              <div class="flex-shrink-0 me-2"><span class="bg-secondary"></span></div>
+              <div class="flex-grow-1"> 
+                <h4>30%</h4>
+                <h6>Cloths Trends</h6>
+              </div>
+            </div>
+          </li>
+          <li> 
+            <div class="d-flex"> 
+              <div class="flex-shrink-0 me-2"><span class="bg-warning"></span></div>
+              <div class="flex-grow-1"> 
+                <h4>20%</h4>
+                <h6>Crockery</h6>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

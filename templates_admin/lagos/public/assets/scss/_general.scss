@@ -1,0 +1,56 @@
+ngx-dropzone {
+    border: 2px dashed var(--theme-default) !important;
+    // background-color: rgba($primary-color, 0.1) !important;
+    height: auto !important;
+    padding: 50px;
+    border-radius: 15px !important;
+    i {
+        font-size: 48px !important;
+        color: var(--theme-default);
+    }
+}
+
+ngx-dropzone-label {
+    z-index: 4 !important;
+}
+
+.dz-message {
+    h6 {
+        font-weight: 600;
+        font-size: 16px;
+        color: $dark;
+    }
+    span {
+        color: $dark;
+        font-size: 14px;
+    }
+}
+
+.dz-message {
+    h4 {
+        font-weight: 200;
+        margin-top: 20px;
+    }
+}
+
+
+.openMenu {
+    position: absolute;
+    inset: 0px 0px auto auto;
+    margin: 0px;
+    transform: translate(-11px, 31px);
+}
+
+.chatMenu {
+    position: absolute;
+    inset: 0px 0px auto auto;
+    margin: 0px;
+    transform: translate(-36px, 44px);
+}
+
+.chatFilter {
+    position: absolute;
+    inset: 0px 0px auto auto;
+    margin: 0px;
+    transform: translate(-26px, 287px);
+}

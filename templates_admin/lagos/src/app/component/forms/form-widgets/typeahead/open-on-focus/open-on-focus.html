@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Open on focus</h4>
+        <p class="f-m-light mt-1">It is possible to get the focus events with the current input value to emit results on
+            focus with a great flexibility. In this simple example, a search is done no matter the content of the input:
+        </p>
+    </div>  
+    <div class="card-body">
+        <div id="prefetch">
+            <form class="theme-form">
+                <div>
+                    <input id="typeahead-focus" type="text" class="form-control" placeholder="Search For a state" [(ngModel)]="model"
+                    [ngbTypeahead]="search" (focus)="focus$.next($any($event).target.value)"
+                    (click)="click$.next($any($event).target.value)" #instance="ngbTypeahead" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="email-right-aside bookmark-tabcontent">
+  <div class="card email-body radius-left">
+    <div class="ps-0">
+      <div class="tab-content">
+        <div
+          class="tab-pane fade active show"
+          id="pills-created"
+          role="tabpanel"
+          aria-labelledby="pills-created-tab"
+        >
+          <div class="card mb-0">
+            <div class="card-header d-flex">
+              @if (getBookmarkData.title === 'Created By Me') {
+              <h4 class="mb-0">{{getBookmarkData.title}}</h4>
+              } @else {
+              <h4 class="mb-0">{{getBookmarkData.title}}</h4>
+              }
+              <ul>
+                <li>
+                  <a class="grid-bookmark-view" href="javascript:void(0)" (click)="changeGrid()">
+                    <app-feather-icons [icons]="'grid'" />
+                  </a>
+                </li>
+                <li>
+                  <a class="list-layout-view" href="javascript:void(0)" (click)="changeList()">
+                    <app-feather-icons [icons]="'list'" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            @if (getBookmarkData.data.length === 0) {
+            <div class="card-body">
+              <div class="details-bookmark text-center">
+                <div class="row" id="favouriteData"></div>
+                <div class="no-favourite"><span>No Bookmarks Found.</span></div>
+              </div>
+            </div>
+            } @else{
+            <div class="card-body pb-0">
+              <div class="details-bookmark text-center" [class.list-bookmark]="listGrid">
+                <div class="row" id="bookmarkData">
+                  @for (item of getBookmarkData.data; track item) {
+                  <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-4 col-sm-6 box-col-4">
+                    <div class="card card-with-border bookmark-card o-hidden">
+                      <div class="details-website">
+                        <img class="img-fluid" [src]="item.img" alt="" />
+                        <div class="favourite-icon favourite_0" [class.favourite]="item.favorite">
+                          <a href="javascript:void(0);" (click)="bookMarkItem(item)">
+                            <i class="fa fa-star"></i>
+                          </a>
+                        </div>
+                        <div class="desciption-data">
+                          <div class="title-bookmark">
+                            <h5 class="title_0">{{item.title}}</h5>
+                            <p class="weburl_0">{{item.url}}</p>
+                            <div class="hover-block">
+                              <ul>
+                                <li>
+                                  <a (click)="editBookmarkModel(item.id)">
+                                    <app-feather-icons [icons]="'edit-2'" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="javascript:void(0);">
+                                    <app-feather-icons [icons]="'link'" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="javascript:void(0);">
+                                    <app-feather-icons [icons]="'share-2'" />
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="javascript:void(0);">
+                                    <app-feather-icons [icons]="'trash-2'" />
+                                  </a>
+                                </li>
+                                <li class="pull-right text-end">
+                                  <a href="javascript:void(0);">
+                                    <app-feather-icons [icons]="'tag'" />
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="content-general">
+                              <p class="desc_0">{{item.desc}}</p>
+                              <span class="collection_0">{{item.collection}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-edit-bookmark #editBookmarkModal />

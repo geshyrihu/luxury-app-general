@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Custom Table Color With Hover And Stripped</h4><span>Use class
+            <code>table-hover, table-striped table-*table-info,table-success,table-success,table-info,table-danger,table-primary,table-secondary,table-light,table-active</code>
+            inside table element.</span>
+    </div>
+    <div class="table-responsive theme-scrollbar">
+        <table class="table table-striped bg-primary hover">
+            <thead class="tbl-strip-thad-bdr">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Film Title</th>
+                    <th scope="col">Released</th>
+                    <th scope="col">Studio</th>
+                    <th scope="col">Budget </th>
+                    <th scope="col">Domestic Gross</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of customTableColorStripped; track item) {
+                <tr>
+                    <td scope="col">{{item.id}}</td>
+                    <td scope="col">{{item.filmtitle}}</td>
+                    <td scope="col">{{item.released}}</td>
+                    <td scope="col">{{item.studio}}</td>
+                    <td scope="col">${{item.budget}} </td>
+                    <td scope="col">${{item.domesticgross}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

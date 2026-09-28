@@ -1,0 +1,39 @@
+<div class="card height-equal">
+  <div class="card-header">
+    <h4>Nesting</h4><span>Make nesting buttons</span>
+  </div>
+  <div class="card-body btn-group-wrapper">
+    <div class="m-b-30">
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button class="btn btn-primary"><i class="fa fa-bold"></i></button>
+        <button class="btn btn-secondary"><i class="fa fa fa-italic"></i></button>
+        <div class="btn-group" role="group">
+          <button class="btn btn-light dropdown-toggle" id="btnGroupDrop1" type="button"
+            (click)="isShow =!isShow">Dropdown</button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" [class.show]="isShow" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 37px);">
+            <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+            <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+            <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+            <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-b-30">
+      <div class="btn-group">
+        <button class="btn btn-primary"><i class="fa fa-bold"></i></button>
+        <button class="btn btn-secondary"><i class="fa fa fa-italic"></i></button>
+        <button class="btn btn-success"><i class="fa fa-file-image-o"></i></button>
+        <button class="btn btn-info"><i class="fa fa-paperclip"></i></button>
+      </div>
+    </div>
+    <div class="m-b-30">
+      <div class="btn-group">
+        <button class="btn btn-primary btn-lg"><i class="fa fa-bold"></i></button>
+        <button class="btn btn-secondary btn-lg"><i class="fa fa fa-italic"></i></button>
+        <button class="btn btn-success btn-lg"><i class="fa fa-file-image-o"></i></button>
+        <button class="btn btn-info btn-lg"><i class="fa fa-paperclip"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

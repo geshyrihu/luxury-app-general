@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+        <h4>Check Box button group</h4><span>Add <code>.active</code> for active state and <code>.disabled</code>
+            class or <code>disabled="disabled"</code> attribute</span>
+    </div>
+    <div class="card-body btn-group-showcase">
+        <div class="row">
+            @for (item of buttonData; track item) {
+            <div class="col-xl-6 col-sm-12">
+                <div class="btn-group btn-option" data-bs-toggle="buttons">
+                    @for (data of item.child; track data) {
+                    <div class="btn btn-{{item.color}}">
+                        <div class="checkbox checkbox-{{item.color}}">
+                            <input id="{{data.id}}" type="checkbox">
+                            <label for="{{data.id}}">{{data.title}}</label>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
