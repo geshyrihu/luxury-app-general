@@ -22,7 +22,7 @@ flowchart LR
         direction TB
         A1["🧭 OperationsLuxuryApp/Inspections<br/><b>Recorridos</b><br/><i>agrupa equipos, pero roto</i>"]
         A2["🔥 FireInspectionPeriods<br/><b>Solo contra-incendio</b><br/><i>4 tablas paralelas por tipo</i>"]
-        A3["⚙️ EquipmentInspections<br/><b>1 equipo por definición</b><br/><i>QR, Status, ServiceOrders</i>"]
+        A3["⚙️ EquipmentInspections<br/><b>1 equipo por definición</b><br/><i>QR, Status, Severidad</i>"]
     end
     subgraph MAÑANA["✅ MAÑANA — 1 solo motor"]
         direction TB
@@ -70,9 +70,8 @@ Consolidar los 3 motores existentes en **uno solo**, viviendo en `OperationsLuxu
 4. Tenga estados tipo ticket (`NotStarted`/`InProgress`/`Completed`/`Reopened`) y severidad por hallazgo.
 5. Genere ejecuciones automáticamente cada día (job, patrón de `FireInspectionCycleGenerationJob`).
 6. Soporte inicio por QR (patrón de `EquipmentQrLabel`/`StartFromQrAsync`).
-7. Mantenga el vínculo opcional a `ServiceOrder` (ya existe como FK nullable, se preserva la forma).
-8. Notifique hallazgos críticos por email + push a `JefeMantenimiento`/`Administrador`.
-9. Retire por completo `FireInspectionPeriods` y `EquipmentInspections` (backend + frontend), sin dejar código muerto.
+7. Marque con un indicador claro (`IsCritical`) cuando un hallazgo de una revisión requiere atención, y notifique por email + push a `JefeMantenimiento`/`Administrador` — **sin ninguna relación con `ServiceOrders`**, ese módulo queda totalmente fuera de este plan.
+8. Retire por completo `FireInspectionPeriods` y `EquipmentInspections` (backend + frontend), sin dejar código muerto.
 
 ## 4. 🗺️ Alcance
 
@@ -86,7 +85,7 @@ Consolidar los 3 motores existentes en **uno solo**, viviendo en `OperationsLuxu
 - Renombrar `InspectionCondominiumAsset` → nombre que refleje la realidad (ya no es "condominio", es "equipo dentro de un recorrido") — a definir en Fase 1, mismo archivo/tabla física reutilizada.
 
 **Fuera de alcance (confirmado):**
-- Generación automática de `ServiceOrder` desde un hallazgo crítico (se preserva el FK/relación, no se automatiza el disparo en este ciclo).
+- `ServiceOrders` — **sin relación alguna** con Inspections en este plan (ni FK, ni generación automática, ni preservar nada del vínculo que tenía Machinery). Son módulos completamente independientes.
 - Migración de datos reales (no existen en ninguno de los 3 motores).
 
 ## 5. 🚧 Restricciones
@@ -96,7 +95,7 @@ Consolidar los 3 motores existentes en **uno solo**, viviendo en `OperationsLuxu
 - AutoMapper prohibido en `ProjectTo`; usar `.Select()` manual.
 - Roles desde `ApplicationRoleEnum` (`JefeMantenimiento=17`, `Administrador=10`, `GerenteMantenimiento=6`, `TecnicoMantenimiento=18`).
 - Notificaciones vía primitivas ya existentes (`ISendEmailService`, `ISendOneSignalWebService`, `ISendOneSignalService`, `ISendSignalRService`), wrapper propio en Inspections (no importar namespace de HumanResources).
-- El FK nullable `ServiceOrder.EquipmentInspectionExecutionId` debe preservarse en forma (renombrado a la nueva tabla de ejecución) — no romper la relación existente aunque no se use activamente todavía.
+- `ServiceOrders` no se toca ni se referencia: al retirar `EquipmentInspectionExecution`, su columna `ServiceOrder.EquipmentInspectionExecutionId` (FK nullable) se elimina por completo, no se renombra ni se preserva.
 - Migraciones reversibles en `Down()`. Como no hay datos reales, los `DROP TABLE` de los motores retirados no requieren backfill previo.
 
 ## 6. 🏛️ Arquitectura & Diseño Técnico — Modelo Unificado
@@ -129,7 +128,7 @@ Consolidar los 3 motores existentes en **uno solo**, viviendo en `OperationsLuxu
 | 📝 **Resultado por Equipo** | `InspectionExecutionItem` *(renombrado)* | El hallazgo de un criterio en una ejecución (marca si es crítico) |
 | 📷 **Evidencia Fotográfica** | `InspectionResultImage` | Foto asociada a un resultado |
 | 📲 **Etiqueta QR del Equipo** | `EquipmentQrLabel` | Código QR físico pegado en un equipo para iniciar su revisión |
-| 🛠️ **Orden de Servicio** | `ServiceOrder` *(externo)* | Trabajo correctivo, opcionalmente ligado a la ejecución que lo originó |
+| 🚨 **Indicador de Hallazgo Crítico** | `InspectionExecutionItem.IsCritical` | Marca que una revisión encontró algo que requiere atención de `JefeMantenimiento`/`Administrador` — **no genera ni se relaciona con ninguna `ServiceOrder`** |
 
 ### 🧭 Diagrama de Relaciones (cómo se conectan entre sí)
 
@@ -145,7 +144,6 @@ flowchart TD
     RES["📝 Resultado por Equipo<br/><i>InspectionExecutionItem</i>"]
     IMG["📷 Evidencia<br/><i>InspectionResultImage</i>"]
     QR["📲 Etiqueta QR<br/><i>EquipmentQrLabel</i>"]
-    SO["🛠️ Orden de Servicio<br/><i>ServiceOrder</i>"]
 
     REC -->|"tiene N"| RESP
     REC -->|"agrupa N, con orden"| EQR
@@ -158,7 +156,6 @@ flowchart TD
     RES -->|"puede tener"| IMG
     EQ -->|"puede tener"| QR
     QR -.->|"inicia / reanuda"| EJEC
-    EJEC -.->|"puede originar (opcional)"| SO
 
     classDef recorrido fill:#dbeafe,stroke:#2563eb,color:#1e3a8a,stroke-width:2px
     classDef ejecucion fill:#fef3c7,stroke:#d97706,color:#78350f,stroke-width:2px
@@ -166,8 +163,10 @@ flowchart TD
 
     class REC,RESP,EQR,CAT,CRIT recorrido
     class EJEC,RES,IMG,QR ejecucion
-    class EQ,SO externo
+    class EQ externo
 ```
+
+> 🚫 **`ServiceOrders` no aparece en este diagrama a propósito** — no tiene ninguna relación con Inspections en este plan.
 
 > 🔵 **Azul = el "diseño" del recorrido** (se configura una vez) · 🟠 **Naranja = la "ejecución" del día a día** (se genera y se trabaja) · ⚪ **Gris = entidades externas** que ya existían antes de este plan.
 
@@ -208,7 +207,7 @@ flowchart TD
 | RN-INS-030 | `InspectionAssetItem.EquipmentId` requerido, mismo tenant que el recorrido |
 | RN-INS-031 | `InspectionExecutionItem.IsCritical` default `false` |
 | RN-INS-032 | Un solo endpoint de creación de punto de revisión (se elimina la ruta rota del frontend viejo) |
-| RN-INS-033 | `ServiceOrder.InspectionExecutionId` (renombrado del actual `EquipmentInspectionExecutionId`) permanece nullable, sin lógica automática de creación |
+| RN-INS-033 | `ServiceOrders` no tiene ninguna columna, FK ni referencia hacia Inspections — al eliminar `EquipmentInspectionExecution` se elimina también su columna `ServiceOrder.EquipmentInspectionExecutionId` |
 
 ## 7. 🛤️ Fases
 
@@ -223,7 +222,7 @@ flowchart TD
 - Migración EF: agregar a `Inspection` los campos de recurrencia flexible + `Assignees`; renombrar `InspectionCondominiumAsset` → `InspectionAssetItem` con `EquipmentId`; renombrar `CustomerInspection` → `InspectionExecution` con `Status`/`AssignedToUserId`/`ExecutedByUserId`/auditoría; renombrar `InspectionResult` → `InspectionExecutionItem` con `IsCritical`.
 - Migración EF: `DROP` de las 20 tablas de `FireInspectionPeriods`/`EquipmentInspections` (incluye `EquipmentQrLabels`, que se recrea en Inspections).
 - Recrear `EquipmentQrLabel` bajo `OperationsLuxuryApp/Inspections`.
-- Renombrar `ServiceOrder.EquipmentInspectionExecutionId` → `ServiceOrder.InspectionExecutionId` (mismo shape, nullable).
+- Eliminar la columna `ServiceOrder.EquipmentInspectionExecutionId` (FK nullable) al retirar `EquipmentInspectionExecution` — no se reemplaza, no se preserva.
 - Descomentar/reescribir las referencias rotas a `CondominiumAsset`.
 
 **Checklist:**
@@ -331,7 +330,6 @@ flowchart LR
 
 | Supuesto fallido | Impacto | Probabilidad | Mitigación | Owner |
 |---|---|---|---|---|
-| Se pierde el vínculo `ServiceOrder`↔ejecución al renombrar la tabla | Órdenes de servicio huérfanas (aunque no hay datos reales hoy) | Baja | Migración explícita `RENAME COLUMN`, no `DROP`+`ADD`, para preservar cualquier fila futura entre el diseño y el despliegue | Backend |
 | El job unificado no cubre un caso de recurrencia que sí cubría Fire (`Eventual`) | Recorridos "eventuales" nunca se generan | Media | Portar explícitamente el caso `Eventual` de `FireInspectionCycleGenerationJob` al job nuevo | Backend |
 | Frontend legado deja rutas colgantes en el menú tras el retiro | Usuario hace clic y ve 404 | Media | Checklist explícito de `grep` de rutas antes de cerrar Fase 6 | Frontend |
 | El re-scope del QR (1 equipo → 1 recorrido con N equipos) rompe la semántica esperada por quien imprimió QR viejos | N/A — no hay QR reales impresos (confirmado) | N/A | — |
@@ -342,10 +340,10 @@ flowchart LR
 - Depende de: `Equipment`/`InventoryCategory` (ya estable, T-203).
 - Depende de: primitivas de notificación ya en producción (PanicAlerts, HR).
 - Impacta: `HangfireJobCatalog.cs` (retiro de 1 job, alta de 1 job nuevo).
-- Impacta: `ServiceOrder` (rename de FK nullable, sin cambio de comportamiento).
+- Impacta: `ServiceOrder` (se elimina su columna `EquipmentInspectionExecutionId`; queda sin ninguna relación con Inspections).
 - Impacta: `logbook.routing.ts`, `maintenance.routing.ts` (retiro de ~10 rutas legado).
 - No impacta: `ApplicationDbContext` de otros módulos no relacionados.
 
 ## 11. 🏁 Cierre Esperado
 
-Un solo motor de inspecciones periódicas (`OperationsLuxuryApp/Inspections`) cubre: recorridos multi-equipo con orden, sobre cualquier `InventoryCategory`; asignación con respaldo y reasignación diaria; generación automática; estados tipo ticket; hallazgos críticos con notificación; inicio por QR; vínculo preservado a `ServiceOrders`. `FireInspectionPeriods` y `EquipmentInspections` quedan completamente retirados (backend, frontend, job, rutas), sin dejar código muerto ni motores redundantes — exactamente la misma lógica de centralización que T-203 aplicó a los activos, aplicada ahora a su programación de revisión.
+Un solo motor de inspecciones periódicas (`OperationsLuxuryApp/Inspections`) cubre: recorridos multi-equipo con orden, sobre cualquier `InventoryCategory`; asignación con respaldo y reasignación diaria; generación automática; estados tipo ticket; hallazgos críticos con indicador (`IsCritical`) y notificación a `JefeMantenimiento`/`Administrador`; inicio por QR — **sin ninguna relación con `ServiceOrders`**. `FireInspectionPeriods` y `EquipmentInspections` quedan completamente retirados (backend, frontend, job, rutas), sin dejar código muerto ni motores redundantes — exactamente la misma lógica de centralización que T-203 aplicó a los activos, aplicada ahora a su programación de revisión.

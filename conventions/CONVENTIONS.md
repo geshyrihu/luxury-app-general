@@ -683,6 +683,31 @@ Los agentes deben apoyarse en estos recursos en lugar de usar guías obsoletas:
 
 Documento oficial: [GOVERNANCE-ANTI-SPANGLISH-RULES.md](./GOVERNANCE-ANTI-SPANGLISH-RULES.md)
 
+## 5.13 Estándar de Diseño para Documentos MD
+
+**Objetivo:** Uniformidad visual, operacional y de gobernanza en todos los documentos (planes, reportes, auditorías).
+
+**Documentos oficiales:**
+- [DOCUMENT-DESIGN-STANDARD.md](./DOCUMENT-DESIGN-STANDARD.md) — 11 secciones canónicas, emojis estratégicos, paleta Mermaid, checklists
+- [DOCUMENT-RULES-MANDATORY.md](./DOCUMENT-RULES-MANDATORY.md) — 🔴 6 reglas obligatorias (tablas de inventario, ADR, metadata, automatización, riesgos)
+
+**6 Reglas Obligatorias (en orden de aplicación):**
+
+| Regla | Requisito | Ubicación | Verificación PR |
+|---|---|---|---|
+| **REGLA 1** | Tabla inventario (Componente \| Cambio \| Esfuerzo S/M/L) | §5 Alcance | Buscar patrón `\| S/M/L \|` |
+| **REGLA 2** | Tabla matriz Dependencias (Sistema \| Relación \| Versión \| Impacto) | §10 Dependencias | Buscar tabla con 4 cols (no bullets) |
+| **REGLA 3** | ADR mini (Decisión \| Alternativa rechazada \| Razón) | §6 Arquitectura | Buscar sección "Decisiones de Diseño" |
+| **REGLA 4** | Metadata en fases (Owner \| Esfuerzo \| Dependencias \| Criterio éxito) | §7 Fases | Cada fase tiene tabla 4 cols |
+| **REGLA 5** | Especificar Automatización (E2E/Unit/Manual) | §8 Criterios de Paso | Buscar palabra "Automatización" |
+| **REGLA 6** | Marcar 🔴 riesgos críticos (Impacto/Probabilidad Alta) | §9 Riesgos | Riesgos críticos tienen emoji 🔴 |
+
+**Aplicación:**
+- ✅ Todos los **nuevos planes** (obligatorio 100%)
+- ✅ Todos los **reportes de auditoría** (obligatorio REGLA 6, recomendado 1)
+- ✅ Todos los **análisis de coherencia** (obligatorio REGLA 1, 6)
+- ⏳ Documentos existentes: agregar por prioridad (ver DOCUMENT-RULES-MANDATORY.md "Cómo Aplicar")
+
 **Reglas minimales (extracto):**
 
 | Capa | Idioma | Enforcement |
