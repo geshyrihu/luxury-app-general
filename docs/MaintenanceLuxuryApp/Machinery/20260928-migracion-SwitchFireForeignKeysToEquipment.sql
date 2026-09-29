@@ -1,21 +1,21 @@
 ﻿BEGIN TRANSACTION;
-ALTER TABLE [FireCycleInspectionDetectors] DROP CONSTRAINT [FK_FireCycleInspectionDetectors_SmokeDetectors_DetectorId];
+ALTER TABLE [FireCycleInspectionDetectors] DROP CONSTRAINT [FK_FireCycleInspectionDetectores_SmokeDetectors_DetectorId];
 
-ALTER TABLE [FireCycleInspectionExtinguishers] DROP CONSTRAINT [FK_FireCycleInspectionExtinguishers_FireExtinguishers_ExtinguisherId];
+ALTER TABLE [FireCycleInspectionExtinguishers] DROP CONSTRAINT [FK_FireCycleInspectionExtintores_FireExtinguishers_ExtinguisherId];
 
-ALTER TABLE [FireCycleInspectionHydrants] DROP CONSTRAINT [FK_FireCycleInspectionHydrants_Hydrants_HydrantId];
+ALTER TABLE [FireCycleInspectionHydrants] DROP CONSTRAINT [FK_FireCycleInspectionHidrantes_Hydrants_HydrantId];
 
-ALTER TABLE [FireCycleInspectionStations] DROP CONSTRAINT [FK_FireCycleInspectionStations_ManualCallPoints_StationId];
+ALTER TABLE [FireCycleInspectionStations] DROP CONSTRAINT [FK_FireCycleInspectionEstaciones_ManualCallPoints_StationId];
 
 ALTER TABLE [FireExtinguisherLogs] DROP CONSTRAINT [FK_FireExtinguisherLogs_FireExtinguishers_ExtinguisherId];
 
-ALTER TABLE [FireInspectionPeriodDetectors] DROP CONSTRAINT [FK_FireInspectionPeriodDetectors_SmokeDetectors_DetectorId];
+ALTER TABLE [FireInspectionPeriodDetectors] DROP CONSTRAINT [FK_FireInspectionPeriodDetectores_SmokeDetectors_DetectorId];
 
-ALTER TABLE [FireInspectionPeriodExtinguishers] DROP CONSTRAINT [FK_FireInspectionPeriodExtinguishers_FireExtinguishers_ExtinguisherId];
+ALTER TABLE [FireInspectionPeriodExtinguishers] DROP CONSTRAINT [FK_FireInspectionPeriodExtintores_FireExtinguishers_ExtinguisherId];
 
-ALTER TABLE [FireInspectionPeriodHydrants] DROP CONSTRAINT [FK_FireInspectionPeriodHydrants_Hydrants_HydrantId];
+ALTER TABLE [FireInspectionPeriodHydrants] DROP CONSTRAINT [FK_FireInspectionPeriodHidrantes_Hydrants_HydrantId];
 
-ALTER TABLE [FireInspectionPeriodStations] DROP CONSTRAINT [FK_FireInspectionPeriodStations_ManualCallPoints_StationId];
+ALTER TABLE [FireInspectionPeriodStations] DROP CONSTRAINT [FK_FireInspectionPeriodEstaciones_ManualCallPoints_StationId];
 
 ALTER TABLE [HydrantLogs] DROP CONSTRAINT [FK_HydrantLogs_Hydrants_HydrantId];
 

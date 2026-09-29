@@ -899,3 +899,63 @@ producción otra vez.
 
 Esto cubre en la práctica **T-207** (pruebas de extremo a extremo) en el entorno de ensayo, tal como exige
 el plan antes de repetir esto en producción.
+
+### 21.6 Punto 1 del checklist — confirmado también en desarrollo
+
+**Reportado por el Tech Lead (2026-09-28):** la query de pre-vuelo, corrida contra `LuxuryBuildingGroup`
+en el entorno de desarrollo, da el mismo resultado que en producción: **0 en las 12 tablas**. Consistente
+con lo esperado (D1 ya se corrió y verificó en ese mismo entorno).
+
+**Siguiente paso del checklist (punto 2): desplegar el backend con el código de T-201+T-203 en ese mismo
+entorno de desarrollo**, y luego seguir con los puntos 3-6 (verificación post-arranque, pruebas
+funcionales de los 4 módulos, prueba de purga).
+
+### 21.7 Hallazgo en el primer intento de despliegue — nombres de FK heredados del refactor a inglés
+
+**Lo que pasó (log de arranque, `logs.txt`, 2026-09-28 19:17):**
+
+```
+[19:17:00 ERR] Failed executing DbCommand...
+ALTER TABLE [FireCycleInspectionDetectors] DROP CONSTRAINT [FK_FireCycleInspectionDetectors_SmokeDetectors_DetectorId];
+[STARTUP WARNING] ... Error: 'FK_FireCycleInspectionDetectors_SmokeDetectors_DetectorId' is not a constraint.
+```
+
+La migración `SwitchFireForeignKeysToEquipment` asumía el nombre de constraint por la convención actual de
+EF Core. **Sin daño:** el `Up()` completo va dentro de una sola transacción (confirmado en §21.1); al
+fallar el primer `DROP CONSTRAINT`, todo se revirtió solo y la app siguió arrancando con el esquema
+anterior intacto. Exactamente el escenario para el que se diseñó el ensayo en entorno de prueba antes de
+producción (§21.5) — si esto se hubiera intentado directo en producción, habría fallado igual, pero sin
+riesgo real gracias a la transacción.
+
+**Diagnóstico:** se corrió una consulta de solo lectura contra `sys.foreign_keys`
+([20260928-diagnostico-nombres-reales-fk.sql](20260928-diagnostico-nombres-reales-fk.sql)) en el mismo
+entorno. Resultado: **8 de las 12 FK conservan el nombre físico de antes del `MassiveEnglishRefactor`**
+(commit `20260911220131`) — las clases/tablas se renombraron a inglés en ese refactor, pero las
+constraints de BD nunca se renombraron físicamente. Las 4 tablas de bitácora (`*Logs`) sí coincidían con
+el nombre asumido.
+
+| Relación | Nombre asumido (incorrecto) | Nombre real |
+| :--- | :--- | :--- |
+| FireCycleInspectionDetectors.DetectorId | `FK_FireCycleInspectionDetectors_SmokeDetectors_DetectorId` | `FK_FireCycleInspectionDetectores_SmokeDetectors_DetectorId` |
+| FireCycleInspectionExtinguishers.ExtinguisherId | `FK_FireCycleInspectionExtinguishers_FireExtinguishers_ExtinguisherId` | `FK_FireCycleInspectionExtintores_FireExtinguishers_ExtinguisherId` |
+| FireCycleInspectionHydrants.HydrantId | `FK_FireCycleInspectionHydrants_Hydrants_HydrantId` | `FK_FireCycleInspectionHidrantes_Hydrants_HydrantId` |
+| FireCycleInspectionStations.StationId | `FK_FireCycleInspectionStations_ManualCallPoints_StationId` | `FK_FireCycleInspectionEstaciones_ManualCallPoints_StationId` |
+| FireInspectionPeriodDetectors.DetectorId | `FK_FireInspectionPeriodDetectors_SmokeDetectors_DetectorId` | `FK_FireInspectionPeriodDetectores_SmokeDetectors_DetectorId` |
+| FireInspectionPeriodExtinguishers.ExtinguisherId | `FK_FireInspectionPeriodExtinguishers_FireExtinguishers_ExtinguisherId` | `FK_FireInspectionPeriodExtintores_FireExtinguishers_ExtinguisherId` |
+| FireInspectionPeriodHydrants.HydrantId | `FK_FireInspectionPeriodHydrants_Hydrants_HydrantId` | `FK_FireInspectionPeriodHidrantes_Hydrants_HydrantId` |
+| FireInspectionPeriodStations.StationId | `FK_FireInspectionPeriodStations_ManualCallPoints_StationId` | `FK_FireInspectionPeriodEstaciones_ManualCallPoints_StationId` |
+| Las 4 `*Logs` | — | Coincidían, sin cambio |
+
+**Corrección aplicada por el arquitecto (commit `api/ 6555437a9`):** 16 líneas corregidas en
+`20260928162110_SwitchFireForeignKeysToEquipment.cs` — los 8 `DropForeignKey` de `Up()` y los 8
+`AddForeignKey` correspondientes de `Down()` (para que `Down()` restaure el nombre físico real, no el
+asumido). Los 4 `AddForeignKey` de `Up()` hacia `Equipment` **no cambian** — son constraints nuevas, sin
+nombre previo que preservar. Build verificado: 0 errores. SQL de referencia
+([20260928-migracion-SwitchFireForeignKeysToEquipment.sql](20260928-migracion-SwitchFireForeignKeysToEquipment.sql))
+actualizado a mano en los mismos 8 puntos (sin `dotnet ef` disponible en este entorno para regenerarlo).
+
+**Nota fuera de alcance:** este drift de nombres (constraint física en español, clase/tabla en inglés)
+probablemente existe en más lugares del sistema, no solo en estas 8. No se investiga ni se corrige aquí —
+solo se resuelve lo que bloquea esta migración puntual.
+
+**Siguiente paso:** reintentar el despliegue en el mismo entorno de desarrollo con el código corregido.
