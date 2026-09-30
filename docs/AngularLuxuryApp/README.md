@@ -1,14 +1,14 @@
 # LuxuryApp — Angular Design System
 
-**v5.0.1** · Angular 22 · Standalone components · PrimeNG + Ionic
+**v5.0.1** · Angular 22 · Standalone components · Bootstrap + Ionic
 
 ## Stack
 
 | Capa | Tecnología |
 |------|------------|
 | Framework | Angular 22.0.5 |
-| UI Web | PrimeNG 22 |
-| UI Mobile | Ionic 8 |
+| UI Web | Bootstrap 5 (via ng-bootstrap) |
+| UI Mobile | Ionic 9 |
 | Design Tokens | SCSS vars → CSS custom properties (`--ds-*`) |
 | Charts | ECharts + ngx-echarts 22 |
 | State | Signals |
@@ -42,7 +42,7 @@ Excepciones documentadas: `_auth.scss` (glassmorphism), `_print.scss`, `_utiliti
 
 ## Convenciones clave
 
-- Iconos: `<app-icon icon="mdi:xxx">` o `pi pi-xxx` — prohibido `icon-pi-*`
+- Iconos: `<app-icon icon="mdi:xxx">` — prohibido `icon-pi-*`
 - Botones de acción: `iw-*`/`il-*`/`<app-action-menu>` fuera de mobile; `ii-*`/`ili-*`/`<ili-action-menu>` dentro de `<app-data-view-mobile>`
 - Sombras de foco: `var(--ds-shadow-focus)`
 - Overlays: `var(--ds-bg-overlay)`

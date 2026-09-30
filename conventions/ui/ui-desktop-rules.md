@@ -4,7 +4,7 @@
 
 ## Regla de Oro del Contexto
 
-**Desktop Web (PrimeNG):**
+# [REMOVED] **Desktop Web (PrimeNG):**
 - Optimizado para **productividad y densidad de datos**
 - Pensado para **mouse y teclado**
 - Favorece: tablas, hover, edición inline, layouts compactos
@@ -40,9 +40,9 @@ La UI desktop debe consumirse desde:
 
 - En desktop se privilegia productividad, densidad de datos, mouse y teclado.
 - `p-table` y su ecosistema directo necesario para construir la tabla son la
-  única excepción vigente de uso directo de PrimeNG en features desktop/web.
+# [REMOVED]   única excepción vigente de uso directo de PrimeNG en features desktop/web.
 - La excepción de `p-table` aplica solo a la tabla y sus piezas directas de
-  composición. No habilita el uso directo de otros componentes PrimeNG por
+# [REMOVED]   composición. No habilita el uso directo de otros componentes PrimeNG por
   comodidad.
 - Cuando se use `p-table` directo, se deben seguir los helpers y patrones
   oficiales de tabla del proyecto para caption, empty message, footer,
@@ -52,7 +52,7 @@ La UI desktop debe consumirse desde:
 ### Caption de tablas — tamaño `sm` obligatorio (2026-09-16)
 
 Todo `<ng-template #caption>` de tabla debe contener el wrapper oficial
-`<primeng-custom-caption>` (o los componentes que este renderiza), y **todos los
+# [REMOVED] `<primeng-custom-caption>` (o los componentes que este renderiza), y **todos los
 controles dentro del caption son tamaño `sm`**:
 
 - **Botón de agregar:** `<il-button-add customClass="btn-sm" ... />` (o `size="sm"`
@@ -62,7 +62,7 @@ controles dentro del caption son tamaño `sm`**:
 - ❌ PROHIBIDO: inputs/botones con tamaño default (`md`) o `lg` dentro del
   caption — rompen la densidad de la tabla y desalinean la barra.
 
-Referencia implementación: `appsweb/angular/src/app/shared/ui/web/primeng-custom-caption/`.
+# [REMOVED] Referencia implementación: `appsweb/angular/src/app/shared/ui/web/primeng-custom-caption/`.
 
 ### Wrappers gigantes — Advertencia Crítica
 
@@ -115,7 +115,7 @@ Referencia implementación: `appsweb/angular/src/app/shared/ui/web/primeng-custo
 ## Riesgos Históricos Preservados
 
 ### 1. Frankenstein visual
-- ❌ Intentar que PrimeNG e Ionic se vean iguales rompe la naturalidad del stack
+# [REMOVED] - ❌ Intentar que PrimeNG e Ionic se vean iguales rompe la naturalidad del stack
 
 ### 2. Sobre-abstracción del wrapper
 - ❌ Demasiados `@Input` o demasiadas variantes reducen claridad y mantenibilidad
@@ -130,7 +130,7 @@ Referencia implementación: `appsweb/angular/src/app/shared/ui/web/primeng-custo
 - ❌ No modelar desktop y mobile como si dispararan exactamente los mismos gestos
 
 ### 6. Ilusión de "código una sola vez"
-- ❌ No mezclar PrimeNG e Ionic en el mismo template como regla general
+# [REMOVED] - ❌ No mezclar PrimeNG e Ionic en el mismo template como regla general
 
 ---
 
@@ -153,7 +153,7 @@ Cuando se audita un módulo desktop, verificar:
 
 - Importar o renderizar componentes visuales directos de librería en features cuando el catálogo ya cubre el caso.
 - Usar la excepción de `p-table` como pretexto para meter otros componentes
-  PrimeNG directos en la misma feature.
+# [REMOVED]   PrimeNG directos en la misma feature.
 - Mezclar criterios móviles dentro de una vista desktop sin seguir el patrón adaptativo aprobado.
 - Forzar paridad visual exacta entre web y mobile.
 

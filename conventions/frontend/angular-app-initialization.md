@@ -34,7 +34,6 @@ import { provideHttpClient, withInterceptors, withFetch, HTTP_INTERCEPTORS } fro
 import { provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
-import { providePrimeng } from 'primeng/config';
 import { provideEchartsCore } from 'ngx-echarts/core';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideServiceWorker } from '@angular/service-worker';
@@ -90,10 +89,6 @@ export const appConfig: ApplicationConfig = {
       preventDuplicates: true,
       progressBar: true,
     }),
-    
-    // PrimeNG (componentes web)
-    providePrimeng(createPrimeNgConfig()),
-    
     // ECharts (gráficos)
     provideEchartsCore({
       echarts: () => import('echarts'),
@@ -394,7 +389,7 @@ grep -A 5 "withInterceptors" appsweb/angular/src/app/app.config.ts
 
 ```
 Tamaño por librería (aproximado):
-- PrimeNG: ~500KB
+- ng-bootstrap: ~??KB
 - ECharts: ~1.2MB
 - Firebase: ~300KB
 - ngx-translate: ~50KB
@@ -418,3 +413,6 @@ Recomendación: Comentar librerías no usadas en tu features actuales
 **Última actualización:** 2026-08-06  
 **Vigencia:** Angular 17+ (zoneless, ApplicationConfig)  
 **Aplicable a:** Toda la aplicación
+
+
+
