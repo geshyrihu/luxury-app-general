@@ -70,7 +70,6 @@ dos tiene razón.
    criterio que la vez pasada: si hay evidencia de contexto para
    reconstruir el valor correcto, hazlo; si no la hay, es más seguro
    borrar el binding roto que inventar un valor.
-6. `grep -rn "TableModule\|primeng-table\|<p-table\b"` sobre el lote →
    0 resultados reales (recuerda: un import de `TableModule` sin
    ningún `<p-table>` en el mismo componente no es un residual real,
    es un import muerto preexistente — no lo cuentes como error, pero
@@ -90,7 +89,6 @@ como archivo (`docs/migration-template/fase6-rollout-7-<nombre>.png`).
 
 - Los ~30 archivos migrados, diff coherente con el dry-run.
 - `tsc` y `ng build`/`ng serve` limpios de errores de plantilla.
-- 0 residuales reales de PrimeNG.
 - 6-7 capturas reales, completas (sidebar y contenido cargados, no a
   medio renderizar — si una se ve incompleta como pasó antes, repítela
   antes de reportarla).

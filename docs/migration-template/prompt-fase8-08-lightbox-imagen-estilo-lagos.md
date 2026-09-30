@@ -81,7 +81,6 @@ prompt**; afecta ~25 archivos consumidores.
 - **No** tocar los ~25 consumidores de `<app-image` ni los 4 de
   `<lx-image` en Fase A.
 - **No** modificar `ImageBase` ni `app-image`.
-- **No** reintroducir PrimeNG.
 - **No** instalar `photoswipe` ni `@ngx-gallery/*` / `@ks89/*` (Lagos
   los tiene por versiones viejas, no hacen falta aquí).
 - La dependencia entra por decisión explícita del usuario; queda

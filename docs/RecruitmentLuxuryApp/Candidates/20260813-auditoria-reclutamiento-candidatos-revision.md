@@ -10,7 +10,6 @@
 > **Nota de trazabilidad:** Esta revisión complementa `20260813-auditoria-reclutamiento-candidatos.md`.
 > Confirma el estado de los hallazgos previos (authorization sin policy, archivar sin
 > validación, empalmes de agenda) y agrega hallazgos de convención no cubiertos
-> (DTOs por archivo, ChangeDetection, PrimeNG directo, tokens, iconos, magic numbers).
 
 ---
 
@@ -21,7 +20,6 @@ nombres `AppService`, SelectItems centralizados, enums con `DisplayName`, file h
 seguro, `[FromForm]` en multipart, notificaciones centralizadas). Sin embargo, presenta:
 
 - **6 hallazgos críticos**: 2 de organización de DTOs (violación de regla sin excepciones),
-  1 de herencia de DTO, 1 de ChangeDetection, 1 de icono `mdi:` retirado, 1 de PrimeNG
   directo fuera de la excepción `p-table`.
 - **7 hallazgos altos**: autorización fragmentada (3 patrones en 8 EndPoints), transición
   de etapa sin validar en el modelo canónico, rutas front sin guard por rol, `confirm()`
@@ -59,7 +57,6 @@ de verificación manual según `audit-module-conventions.md`.
 | C2 | DTO con `Id` sin heredar `GuidIdEntityDTO` | `CandidateApplication/DTOs/CandidateInterviewResponseDto.cs:30` (`CandidateInterviewTimelineItem` → `public Guid Id`) | `backend-rules.md:97` |
 | C3 | `ChangeDetectionStrategy.Eager` en componente del feature | `candidate/candidate-detail.ts:29` (único; resto del feature usa `OnPush`) | `frontend/angular-components-api.md` (OnPush siempre) |
 | C4 | Icono `mdi mdi-close` en plantilla | `candidate-interview/candidate-interview-response.html:177` | `ui/icon-usage-rule.md` (`mdi:` retirado; usar `<app-icon>`) |
-| C5 | PrimeNG directo fuera de la excepción `p-table` | `candidate-application/candidate-application-kpis.ts:15,35` (`import { ProgressBarModule } from "primeng/progressbar"`) | `frontend/frontend-prohibitions.md` |
 | C6 | `[(ngModel)]` sobre señal (mezcla reactividades) | `candidate-interview/candidate-interview-response.html:188` | `frontend/angular-signals-and-state.md` |
 
 ### 3.2 Incumplimientos altos
@@ -171,7 +168,6 @@ candidates (list, authGuard)
 | T2 | Heredar `GuidIdEntityDTO` en `CandidateInterviewTimelineItem` (C2) | `CandidateInterviewResponseDto.cs` | Sin `Id` desnudo |
 | T3 | Cambiar `ChangeDetectionStrategy.Eager` → `OnPush` (C3) | `candidate-detail.ts:29` | `OnPush` en todo el feature |
 | T4 | Sustituir `mdi-close` por `<app-icon>` del catálogo (C4) | `candidate-interview-response.html:177` | 0 clases `mdi:`; icono visible |
-| T5 | Quitar `p-progressBar` de PrimeNG; usar wrapper shared (C5) | `candidate-application-kpis.ts:15,35` | Sin PrimeNG fuera de `p-table` |
 | T6 | Reemplazar `[(ngModel)]` sobre señal (C6) | `candidate-interview-response.html:188` | Signals como única fuente |
 
 ### Fase 2 — Corto plazo (altos; 3-6 semanas)
@@ -227,7 +223,6 @@ candidates (list, authGuard)
 | `[FromForm]` en multipart | `backend-rules.md` | ✅ |
 | Standalone + OnPush | `frontend/angular-components-api.md` | ❌ C3 |
 | Signals / @if-@for | `frontend/angular-signals-and-state.md` | ❌ C6, M5 |
-| Sin PrimeNG fuera de `p-table` | `frontend/frontend-prohibitions.md` | ❌ C5 |
 | Iconos `<app-icon>` | `ui/icon-usage-rule.md` | ❌ C4 |
 | Tokens CSS sin hex/px | `ui/design-tokens-rule.md` | ❌ M3, M4 |
 | Diálogos vía `DialogHandlerService` | `frontend/angular-dialog-modal-pattern.md` | ❌ A4 |

@@ -1,6 +1,5 @@
 # Prompt 1/2 — Fase 6: construir `app-table` (sin tocar features todavía)
 
-Contexto: migración PrimeNG→Bootstrap de `appsweb/angular`. Toda la
 bitácora vive en `docs/migration-template/`. Este prompt es la base del
 lote piloto de Fase 6 (tabla). **No migres ninguna de las 341 plantillas
 que usan `<p-table>` en este paso** — solo construye el componente nuevo
@@ -63,7 +62,6 @@ en el decorador — esto hace que la clase `app-table` se combine con
 cualquier `class="custom-table card"` que ponga el consumidor en el
 mismo elemento host (`<app-table class="custom-table card">` termina
 generando `class="app-table custom-table card"` en el DOM real), igual
-que hace PrimeNG hoy con `.p-datatable` + `styleClass`. Esto es clave
 para que el CSS renombrado (§3) enganche.
 
 **Inputs** (todos `input()`, con estos nombres y defaults exactos —
@@ -211,10 +209,8 @@ avisa antes de seguir en vez de improvisar un workaround silencioso.
 
 ## 2. Reusar tal cual (no tocar su lógica, solo el tipo si hiciera falta)
 
-- `primeng-custom-caption.ts` — su input `dt` ya es `input<any>()`, no
   hace falta cambiar nada, `table.filterGlobal(term, "contains")` va a
   llamar al método nuevo de `AppTable` sin saber que cambió de clase.
-- `primeng-custom-table-emptymessage.ts` y `primeng-custom-table-footer.ts`
   — cero cambios, ya son 100% propios.
 
 ## 3. Renombrar selectores en 2 hojas SCSS (mismos valores, ni un color cambia)
@@ -266,9 +262,7 @@ Verifica en `ng serve`:
 
 1. La tabla renderiza filas, ordena al hacer clic en un encabezado,
    pagina, y el botón "agregar" del caption sigue funcionando
-   (`primeng-custom-caption` sin cambios).
 2. Visualmente: encabezado azul de marca, bordes redondeados, sombra,
-   hover de fila, paginador con el mismo aspecto que tenía con PrimeNG
    — si algo de esto falta, revisa el renombrado del §3 antes de seguir.
 3. `npx tsc --noEmit` limpio.
 4. **No dejes ese archivo de prueba como cambio final** si lo hiciste

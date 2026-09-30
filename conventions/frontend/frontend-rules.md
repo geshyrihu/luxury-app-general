@@ -13,7 +13,6 @@ testing, performance y design system.
 - Aunque exista una via rapida, se prohibe si rompe el estandar.
 - Toda feature consume primero desde `appsweb/angular/src/app/shared/ui`.
 - En features Angular, `p-table` y su ecosistema directo necesario para armar
-  la tabla son la unica excepcion vigente de uso directo de PrimeNG.
 - Fuera de esa excepcion, la feature debe consumir wrappers, catalogo UI o
   componentes oficiales de `shared/ui`.
 - UI y styles forman parte obligatoria de la auditoria.
@@ -56,11 +55,9 @@ testing, performance y design system.
 - Cuando se use `p-table` directo en desktop/web, debe respetarse el patron
   oficial vigente del proyecto para caption, empty state, footer, acciones y
   estilos de tabla.
-- En `MenuItem[]` consumidos por PrimeNG desde standalone components o shells de
   feature, no se permite usar `routerLink` dentro del objeto.
 - En esos casos, la navegacion debe vivir en `command` +
   `Router.navigate()`/`navigateByUrl()` desde el componente owner.
-- Motivo: PrimeNG puede instanciar `RouterLink` en un contexto interno sin
   `ActivatedRoute` y disparar `NG0201` solo en runtime.
 
 ## Referencias

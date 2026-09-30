@@ -8,7 +8,6 @@
 ## 1. Clases Críticas Omitidas en la Auditoría Original
 
 ### 1.1 Colores Semánticos (Texto y Fondo)
-El reporte original menciona `surface-*` (colores) y `text-500`, pero omite las variables semánticas inyectadas por el tema de PrimeNG. Al retirar PrimeNG, estas clases perderán sus variables CSS subyacentes (`var(--text-color)`, `var(--surface-ground)`), rompiendo el esquema de colores de la aplicación.
 
 | PrimeFlex | Usos medidos | Alternativa BS5 / DS | Notas |
 |-----------|--------------|----------------------|-------|
@@ -52,7 +51,6 @@ El reporte original cubrió bordes y márgenes direccionales, pero omitió las b
 
 El reporte `../../../docs/SharedLuxuryApp/DesignSystem/20260812-auditoria-shared-primeflex-migracion.md` propone fases internas (Fase 1 - Archivos críticos, Fase 2 - Módulo por módulo). Sin embargo, estas **chocan nominalmente** con las fases de `02-plan-migracion.md` (que van de Fase 0 a 7, enfocadas en componentes UI, no en utilidades CSS). 
 
-El plan maestro `02-plan-migracion.md` asume en su Fase 7: *"Eliminar primeng, primeicons, primeflex de package.json"*. Si se elimina PrimeFlex sin haber ejecutado su propio plan de reemplazo, la UI colapsará.
 
 ### Solución Estratégica Propuesta:
 PrimeFlex no debe bloquear la migración de componentes (Fases 0 a 6). Las clases CSS coexisten pacíficamente.

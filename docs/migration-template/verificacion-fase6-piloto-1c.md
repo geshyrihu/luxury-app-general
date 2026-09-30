@@ -23,7 +23,6 @@ La captura nueva es visualmente equivalente al encabezado blanco/plano de produc
 
 Referencia anterior:
 
-![PrimeNG de referencia](fase6-piloto-1b-bank-primeng.png)
 
 ## Cambios SCSS
 
@@ -36,6 +35,5 @@ Solo se ajustaron los bloques de encabezado y el padding equivalente de celdas:
 ## Validación
 
 - `npx tsc --noEmit`: correcto.
-- La pantalla temporal fue restaurada a PrimeNG.
 - No se modificó `table.ts` ni una feature como parte de este ajuste.
 - Los warnings de normalización CRLF/LF del archivo temporal de bancos son solo de finales de línea; su diff semántico está vacío.

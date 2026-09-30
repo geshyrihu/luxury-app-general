@@ -1,6 +1,5 @@
 # ROL
 
-Actúa como un **Senior UI/UX Designer y Design System Specialist** con más de 10 años de experiencia en la creación y auditoría de sistemas de diseño para aplicaciones empresariales de lujo. Tu expertise incluye accesibilidad (WCAG 2.2), diseño responsivo, arquitectura de design tokens, performance web, y creación de sistemas escalables para stacks modernos (Angular 22, PrimeNG 22, Ionic 8, Signals, Zoneless, SSR/Hydration, View Transitions API).
 
 # CONTEXTO
 
@@ -10,7 +9,6 @@ Se te proporcionará el documento **"Luxury Design System & Guide"** que contien
 - **luxurybuildingapp.com** (aplicación funcional, portal de residentes/admin/guardias)
 
 Stack técnico objetivo:
-- **Frontend Web**: Angular 22 (Standalone, Signals, New Control Flow, OnPush por defecto, Zoneless experimental), PrimeNG 22 (Preset theming, Unstyled mode), PrimeFlex 4
 - **Frontend Móvil**: Ionic 8 (Standalone, Capacitor 6, CSS Custom Properties theming), Angular 22
 - **Backend**: .NET 10, EF Core 10, Minimal APIs
 - **SSR/Hydration**: Angular Universal con hydration activada
@@ -100,18 +98,14 @@ Realizar un **análisis exhaustivo, técnico y accionable (FASE 1)** de la propu
 - **Formato de exportación**: JSON (Style Dictionary / Figma Tokens), CSS Custom Properties, TypeScript types.
 - **Estructura**: `color`, `spacing`, `typography`, `borderRadius`, `shadow`, `motion`, `zIndex`, `breakpoints`, `opacity`, `fontFamily`, `fontWeight`, `lineHeight`, `letterSpacing`, `sizing`, `transition`.
 - **Nombrado**: CTI (Category-Type-Item) o BEM-like: `color-primary-500`, `spacing-md`, `fontSize-heading-1`, `shadow-elevation-2`.
-- **Compatibilidad PrimeNG 22**: Mapeo directo a variables `--p-*` (ej. `--p-primary-500`, `--p-surface-0`, `--p-text-color`).
 - **Compatibilidad Ionic 8**: Mapeo directo a `--ion-color-*` (ej. `--ion-color-primary`, `--ion-background-color`).
 - **TypeScript types**: Generación automática de `DesignToken` types para type-safety en componentes.
 - **Agnósticos al contexto**: Tokens NO hardcodeados a componentes específicos.
 
-### 3.2 Arquitectura de Componentes (Angular 22 + PrimeNG 22 + Ionic 8)
-- **Patrón**: Compound components / Renderless / Headless UI / Unstyled mode (PrimeNG 22).
 - **Angular 22 Signals API**: `input()`, `output()`, `model()`, `signal()`, `computed()`, `linkedSignal()`, `resource()`, `effect()`.
 - **Change Detection**: `OnPush` por defecto + Signals (compatibilidad con `provideExperimentalZonelessChangeDetection()`).
 - **Host bindings para theming**: `host: { "[class.dark]": "isDark()", "[attr.data-theme]": "theme()" }`.
 - **Content projection**: Typed `NgContent` selectores + `NgTemplateOutlet` + `*ngTemplateOutlet`.
-- **PrimeNG integration**: Wrapper components vs. direct usage vs. **Unstyled mode** (headless) para control total.
 - **Ionic integration**: Standalone components + CSS Custom Properties override + `AnimationController`.
 - **Lazy loading**: `@defer (on viewport) { LargeComponent }` para componentes pesados (charts, editors, maps).
 
@@ -129,7 +123,6 @@ Realizar un **análisis exhaustivo, técnico y accionable (FASE 1)** de la propu
 - **Duration scale**: `instant (0ms) | fast (100ms) | normal (200ms) | slow (300ms) | slower (500ms)`.
 - **Motion tokens**: `motion-easing-standard`, `motion-easing-emphasized`, `motion-duration-fast`, etc.
 - **Reduced motion**: `prefers-reduced-motion: reduce` -> `0ms` durations automático via token.
-- **PrimeNG/Ionic integration**: Override de animaciones nativas con tokens DS (no `!important`).
 - **View Transitions API**: Integración con `::view-transition-old/new`, `::view-transition-group`, `view-transition-name` para navegación SPA.
 - **Scroll-driven animations**: `animation-timeline: scroll()` para parallax/reveal.
 
@@ -140,23 +133,14 @@ Realizar un **análisis exhaustivo, técnico y accionable (FASE 1)** de la propu
 - **Accesibilidad**: `aria-hidden="true"` en decorativos + `role="img" aria-label="..."` en semánticos.
 - **Tree-shaking**: Import individual (`import { HomeIcon } from "@luxury/icons/home"`).
 
-### 3.6 Form Factor Patterns (Angular 22 + PrimeNG 22)
-- **FloatLabel**: Wrapper nativo PrimeNG 22 + DS styling (`p-float-label` + tokens).
 - **Validation states**: `ng-invalid.ng-dirty` + DS tokens (`--ds-input-border-error`, `--ds-input-focus-ring-error`).
 - **Density**: `compact | standard | comfortable` via spacing tokens (`--ds-density-compact: 0.5`).
 - **Autofill styles**: Override `-webkit-autofill` con tokens DS.
 
 ---
 
-## 4. ANÁLISIS TÉCNICO DE IMPLEMENTACIÓN (ANGULAR 22 / PRIMENG 22 / IONIC 8)
 
-### 4.1 PrimeNG 22 Theming System (OBLIGATORIO)
-- **Preset system**: El DS define un preset compatible con `providePrimeNG({ theme: { preset: LuxuryPreset, options: { darkModeSelector: ".dark" } }})`?
 - **CSS Variables mapping**: Tokens mapeados a `--p-primary-500`, `--p-surface-0`, `--p-content-border-radius`, `--p-focus-ring`, etc.
-- **Unstyled mode**: Componentes headless para control total (PrimeNG 22+).
-- **Theming migration**: Guía de migración desde PrimeNG 17/18 theming legacy (SASS) a CSS Variables.
-- **Component coverage**: Todos los 80+ componentes PrimeNG cubiertos? (Ver sección 7).
-- **Bundle optimization**: Tree-shaking de componentes no usados (`import { ButtonModule } from "primeng/button"`).
 
 ### 4.2 Ionic 8 + Angular 22 Integration
 - **CSS Custom Properties mapping**: `--ion-color-primary` <-> DS tokens (`--ds-color-primary-500`).
@@ -241,9 +225,7 @@ Realizar un **análisis exhaustivo, técnico y accionable (FASE 1)** de la propu
 
 ---
 
-## 7. COBERTURA Y CALIDAD DE COMPONENTES PRIMENG 22
 
-### 7.1 Inventario Obligatorio (80+ componentes PrimeNG 22)
 
 | Categoría | Componentes | Estado DS | Notas Críticas |
 |-----------|-------------|-----------|----------------|
@@ -264,7 +246,6 @@ Realizar un **análisis exhaustivo, técnico y accionable (FASE 1)** de la propu
 ### 7.3 Variantes por Componente
 `primary | secondary | success | warning | danger | info | contrast | plain | text | outlined | rounded | raised | unelevated | tonal | soft`
 
-### 7.4 PrimeNG 22 Unstyled Mode Coverage
 - Cada componente tiene versión unstyled/headless documentada?
 - Hooks de comportamiento expuestos (`useButton`, `useDialog`, `useTable`, etc.)?
 
@@ -327,13 +308,11 @@ El análisis debe generar un reporte estructurado en **Markdown** con:
    | # | Categoría | Hallazgo | Severidad (Crítico/Alto/Medio/Bajo) | Esfuerzo (S/M/L) | Recomendación | Referencia |
 3. **Auditoría de Contraste Completa**: Tabla con TODAS las combinaciones evaluadas y ratio.
 4. **Inventario de Tokens**: Catálogo completo con valor light/dark, uso semántico, componentes afectados.
-5. **Cobertura PrimeNG 22**: Tabla 7.1 completada con estado real.
 6. **Recomendaciones Priorizadas**: Lista ordenada por **Impacto x Esfuerzo** (matriz ICE/RICE).
 7. **Checklist de Cumplimiento**: Atomic design, tokenización, documentación, testing, a11y, performance.
 8. **Análisis FODA**: Fortalezas, Oportunidades, Debilidades, Amenazas.
 9. **Especificación de Design Tokens** (JSON + CSS + Figma sync ready).
 10. **Component API Reference** (Auto-generable: inputs, outputs, slots, CSS vars, methods, harness).
-11. **Guía de Migración** (PrimeNG 17->22, Ionic 7->8, Angular 17->22, theming legacy->CSS vars).
 12. **Performance Budget Report** (Bundle size, LCP <2.5s, CLS <0.1, INP <200ms, TBT <150ms).
 13. **Accessibility Conformance Report** (WCAG 2.2 AA + AAA targeting, VPAT-ready).
 14. **Browser Support Matrix** (Evergreen + Safari 17+ + iOS Safari 17+ + Chrome 120+ + Firefox 120+ + Edge 120+).
@@ -359,7 +338,6 @@ El análisis debe generar un reporte estructurado en **Markdown** con:
 - **Contexto "luxury"**: Cada evaluación debe considerar la promesa de marca (exclusividad, atención al detalle, calidad percibida).
 - **Si falta información**: Indícalo claramente como hallazgo "Información faltante" con severidad según impacto.
 - **No asumas**: Solo evalúa lo explícito en el documento + mejores prácticas del stack declarado.
-- **Stack-aware**: Cada recomendación técnica debe ser implementable en **Angular 22 + PrimeNG 22 + Ionic 8** hoy.
 
 --- 
 

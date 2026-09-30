@@ -23,7 +23,6 @@ importa `TableModule` directamente) — el cambio va en el archivo
 `-moduls.ts`:
 
 ```diff
-- import { TableModule } from "@ui/web/primeng-table/primeng-table";
 + import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 ```
 
@@ -57,7 +56,6 @@ LxTag`) **nunca incluyó `TableModule`** — ni antes de esta migración.
 Con `strictTemplates: false` (confirmado, ya lo verificamos en la
 ronda de `collections.luxuryapp`), Angular no marca error por elemento
 desconocido, así que esto compilaba pero **el `<p-table>` de esta
-pantalla probablemente nunca funcionó de verdad** (PrimeNG nunca
 registró su directiva ahí). Al agregar `AppTable`/`AppSortableColumn`/
 `AppSorticon` de verdad, es posible que la tabla **empiece a
 renderizar por primera vez** — no es una regresión, es destapar algo

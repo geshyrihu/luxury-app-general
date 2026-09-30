@@ -26,7 +26,6 @@ consúmela.
 -} from "@angular/core";
 -import { FormsModule } from "@angular/forms";
 -import { ListboxBase } from "@ui/base/listbox.base";
--import { ListboxModule } from "primeng/listbox";
 +import {
 +  ChangeDetectionStrategy,
 +  Component,
@@ -212,7 +211,6 @@ por cerrado.
 
 ## Verificación
 
-- `grep -n "primeng" listbox.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -233,9 +231,7 @@ por cerrado.
 
 ## Listo cuando
 
-- `listbox.ts` sin PrimeNG.
 - Capturas de los 3 consumidores, incluyendo el caso agrupado.
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `shared/ui` baja de 6
   a 5 (quedan: `timeline`, `tree`, `image-analysis-dialog`,
   `custom-input-upload-pdf-signal`, `editor`).

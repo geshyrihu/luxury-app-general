@@ -1,7 +1,6 @@
 # Prompt 23 — Fase 6: 10 archivos más con `TableModule` importado pero nunca usado
 
 Barrido final tras cerrar Grupo 1: quedaban 11 archivos importando
-`@ui/web/primeng-table/primeng-table`. Investigados todos — 10 tienen
 `TableModule` importado y registrado en `imports:`, pero **ningún
 `<p-table>` en su plantilla** (ni `.html` separado, ni inline) —
 import 100% muerto, nunca migrado porque nunca se usó de verdad. El
@@ -24,7 +23,6 @@ src/app/modules/supplier.luxuryapp/po/purchase-order/forms/orden-compra-status.t
 ```
 
 En cada uno: quita la línea
-`import { TableModule } from "@ui/web/primeng-table/primeng-table";`
 y quita `TableModule` del arreglo `imports:`.
 
 **3 tienen el arreglo `imports:` en una sola línea** — cuidado al
@@ -74,7 +72,6 @@ Solo importa el tipo `TableLazyLoadEvent` (sí se usa), no
 - 10 archivos con el import muerto retirado.
 - 1 archivo sin tocar (`warehouse-stock-add.ts`).
 - `tsc`/build limpios (log completo, no `tail`).
-- Con esto, `@ui/web/primeng-table/primeng-table` solo queda
   referenciado por el tipo `TableLazyLoadEvent`, no por ningún
   `TableModule` activo en todo el repo — cierre total de la limpieza
   de imports huérfanos de Fase 6.

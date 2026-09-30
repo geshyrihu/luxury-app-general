@@ -31,7 +31,6 @@ búsqueda): sigue abierto.
 ## Contexto
 
 `app-table` (entregable de Fase 6) reemplazó a `p-table`. Los consumidores
-server-side se escribieron contra el contrato lazy de PrimeNG: un único
 evento `onLazyLoad` con `{ first, rows, globalFilter, sortField,
 sortOrder }`.
 
@@ -115,7 +114,6 @@ como pendiente; no incluirlo en este cambio salvo indicación.
 
 ## Restricciones
 
-- **No** reintroducir PrimeNG.
 - **No** cambiar el comportamiento de `app-table` en modo no-lazy.
 - **No** agregar dependencias.
 - Cambio en `shared/ui`: registrar el análisis de impacto (1 componente,

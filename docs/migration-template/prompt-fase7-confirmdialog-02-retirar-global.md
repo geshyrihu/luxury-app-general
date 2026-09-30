@@ -17,7 +17,6 @@ retirar el `ConfirmDialog` global antes de eso rompería esos flujos.
 ## 2. `src/app/app.ts`
 
 ```diff
--import { ConfirmDialogModule } from "primeng/confirmdialog";
 ```
 Quita también `ConfirmDialogModule` del arreglo `imports:` del
 `@Component`.
@@ -28,8 +27,6 @@ Quita también `ConfirmDialogModule` del arreglo `imports:` del
 -import {
 -  ConfirmationService,
 -  MessageService as PrimeMessageService,
--} from "primeng/api";
-+import { MessageService as PrimeMessageService } from "primeng/api";
 ```
 (deja el import de `PrimeMessageService` intacto — sigue en uso para
 el alias `{ provide: PrimeMessageService, useExisting: MessageService }`,
@@ -53,7 +50,6 @@ no es parte de este retiro)
   confirmación migrados en la Parte 1 (ej. eliminar un contrato en
   `work-contract-list`) — debe abrir SweetAlert2 y funcionar
   normalmente, sin ningún rastro visual o de consola del
-  `ConfirmDialog` de PrimeNG.
 
 ## Listo cuando
 
@@ -62,10 +58,8 @@ no es parte de este retiro)
 - `ConfirmationService` fuera de `app.config.ts`.
 - `tsc`/build limpios, prueba real confirmada.
 - **Con esto se cierra el último bloqueo estructural de Fase 7** —
-  queda pendiente solo el retiro final del paquete `primeng` en sí
   (ver `04-bitacora-cambios.md` para el checklist completo: `package.json`,
   `angular.json` presupuesto de bundle, `conventions/CONVENTIONS.md`
   resto de reglas, `conventions/ui/*`/`conventions/styles/*`,
-  `_prime-*.scss`, y los ~35 wrappers `primeng-*` que seguían
   envolviendo componentes reales — verificar de nuevo su conteo de
   consumidores en ese momento, puede haber bajado con esta limpieza).

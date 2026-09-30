@@ -2,17 +2,12 @@
 
 **Esto NO es un prompt de ejecución.** No se toca ni una línea de código.
 Es un análisis para que el usuario decida qué librería estandarizar por
-categoría de componente, ahora que Fase 8 cerró el retiro de PrimeNG de
 `shared/ui`. No hagas cambios, no hagas commit, no corras `ng generate`
 nada. Solo lectura + reporte.
 
 ## Contexto
 
 `src/app/shared/ui` y el catálogo (`herramientas-dev/catalog-component-ui`)
-ya están en **0 archivos con PrimeNG real** (verificado por el maestro vía
-grep — los 2 hallazgos residuales, `primeng-radar-chart` y
-`primeng-custom-*`, son nombres heredados de archivos que ya son
-100% ECharts/Bootstrap por dentro, no PrimeNG real).
 
 Existen dos plantillas Angular 21 + Bootstrap 5 compradas, vendoreadas en:
 - `D:\repos\luxuryapp-api\templates_admin\lagos`
@@ -101,7 +96,6 @@ explícitas:
 - Para cada categoría, abre el/los componente(s) de ejemplo reales
   señalados arriba (no solo el nombre del paquete — confirma que
   la plantilla realmente lo usa en un `.ts`/`.html`, no que esté
-  en `package.json` sin uso real, igual que hicimos con PrimeNG).
 - Para el catálogo actual, usa
   `appsweb/angular/src/app/shared/ui/web/*` y
   `appsweb/angular/src/app/modules/admin.luxuryapp/herramientas-dev/catalog-component-ui/*`

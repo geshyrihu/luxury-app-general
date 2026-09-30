@@ -9,7 +9,6 @@ src/app/shared/ui/web/rango-calendario-yyyymmdd/rango-calendario-yyyymmdd.ts
 src/app/shared/ui/web/rango-calendario-yyyymmdd/rango-calendario-yyyymmdd.html
 ```
 ```diff
--import { InputTextModule } from "primeng/inputtext";
 ```
 ```diff
 -  imports: [FormsModule, FlatpickrDirective, InputTextModule],
@@ -38,7 +37,6 @@ src/app/shared/ui/web/mesanio/mesanio.ts
 ```
 ```diff
 -import { NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
--import { InputTextModule } from "primeng/inputtext";
 +import { LxTooltipDirective } from "@ui/adaptive/tooltip";
  import { FiltroCalendarService } from "@core/services/filtro-calendar.service";
 ```
@@ -65,9 +63,6 @@ src/app/shared/ui/web/rango-calendario-mes-anio/calendar-range.ts
 src/app/shared/ui/web/rango-calendario-mes-anio/calendar-range.html
 ```
 ```diff
--import { InputGroupModule } from "primeng/inputgroup";
--import { InputGroupAddonModule } from "primeng/inputgroupaddon";
--import { InputTextModule } from "primeng/inputtext";
  import { DateService } from "@core/services/date.service";
 ```
 ```diff
@@ -138,10 +133,6 @@ En el `.html`:
 src/app/shared/ui/web/touchspin/touchspin.ts
 ```
 ```diff
--import { ButtonModule } from "primeng/button";
--import { InputGroupModule } from "primeng/inputgroup";
--import { InputGroupAddonModule } from "primeng/inputgroupaddon";
--import { InputTextModule } from "primeng/inputtext";
  import { LxTooltipDirective } from "@ui/adaptive/tooltip";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
 ```
@@ -242,7 +233,6 @@ detalle de estilo, no de lógica)
 
 ## Verificación
 
-- `grep -n "primeng" <los 4 archivos>` → 0 resultados en todos.
 - `grep -n "ngbTooltip\|NgbTooltip" mesanio.ts` → 0 resultados (debe
   quedar solo `lxTooltip`).
 - `npx tsc --noEmit`: 0 errores nuevos.
@@ -258,9 +248,7 @@ detalle de estilo, no de lógica)
 
 ## Listo cuando
 
-- Los 4 archivos sin PrimeNG.
 - `mesanio.ts` usando `lxTooltip` en vez de `ngbTooltip` directo.
 - Capturas de los 4 en al menos 1 consumidor real cada uno.
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `shared/ui` baja de 18
   a 14.

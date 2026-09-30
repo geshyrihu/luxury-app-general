@@ -9,8 +9,6 @@
 - No duplicar componentes shared.
 - No bypass al design system.
 - No reubicar features existentes por iniciativa propia.
-- No usar componentes PrimeNG directos en features. **Sin excepciones** desde
-  2026-09-16 (Fase 6 de la migración PrimeNG→Bootstrap: 0 `<p-table>` en el repo).
   Para tablas usar `<app-table>` (`appsweb/angular/src/app/shared/ui/web/table/table.ts`): soporta orden, agrupación, reordenar filas/columnas, selección múltiple y columnas congeladas. Detalle de la migración y decisiones de diseño: `docs/migration-template/04-bitacora-cambios.md`.
 - No usar `any` productivo en flujos principales del modulo cuando corresponde
   tipado explicito.

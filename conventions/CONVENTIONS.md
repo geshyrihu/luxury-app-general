@@ -9,7 +9,6 @@
 >
 > **Fecha de corte del sistema rector:** 2026-09-16 (referencia única para decidir si un documento es legacy; ver §2 y §8.1)
 >
-> **Ultima revision:** 2026-09-30 (Framework de Auditoría: nuevo `security-audit-checklist.md` — clases de ataque, veredicto confirmado/necesita validación/rechazado y verificación adversarial, adaptado de `cloudflare/security-audit-skill`; `audit-severity-model.md` ampliado con la misma distinción). Anterior 2026-09-24 (§6.1: nueva columna "Gate hoy" con el estado real de verificación automática de cada regla crítica). Anterior 2026-09-21 (Fases 1-3 de mejora: enlaces, mojibake y fecha de corte unificados; §6.1 pasa a tabla de reglas críticas que enlaza a los documentos especializados; §5.5, §5.9.1, §5.9.2 y §4.7 compactadas con enlace a su documento. Anterior 2026-09-19: Añadido §3bis Guía Rápida por Tarea — índice orientado a acción; PrimeNG Fase 6 completada §5.5; §5.2 limpieza docs eliminados; §9 índices unificados; skill delegacion-estrategica instalada)
 > **Estado:** Vigente
 
 ---
@@ -189,7 +188,6 @@ Ver detalle en:
 - **Responsive**: Desktop/Mobile separados
 - **Documentos clave**:
   - [Design Tokens Rule](./ui/design-tokens-rule.md) — tokens obligatorios, prefijos permitidos
-  - [Icon Usage Rule](./ui/icon-usage-rule.md) — catálogo, `<app-icon>`, PrimeNG prohibition
   - [UI Desktop Rules](./ui/ui-desktop-rules.md) / [UI Mobile Rules](./ui/ui-mobile-rules.md)
   - [Styles Rules](./styles/styles-rules.md) — estructura global
 
@@ -222,7 +220,13 @@ Ver detalle en:
   - [Data Migration Protocol](./operations/data-migration-protocol.md)
   - [Anti-Spanglish Rules](./GOVERNANCE-ANTI-SPANGLISH-RULES.md)
   - [Encoding Rules](./operations/encoding-rules.md) + [Encoding Strict](./encoding-stricto.md)
-  - [Scripts scanner](../scripts/scan-mojibake.mjs) + [fix-mojibake.mjs](../scripts/fix-mojibake.mjs)
+   - [Scripts scanner](../scripts/scan-mojibake.mjs) + [fix-mojibake.mjs](../scripts/fix-mojibake.mjs)
+
+### 1️⃣1️⃣ COMMIT / PUSH DE CAMBIOS DE AGENTES
+- **Regla:** solo incluir cambios atribuibles a la sesión actual del agente; nunca mezclar cambios del usuario u otros agentes.
+- **Formato:** Conventional Commits en español, con scope `web`, `api` o `mobile`.
+- **Flujo obligatorio:** revisar diff, stagear rutas exactas, validar staging, crear un commit por repositorio y hacer push al upstream.
+- **Documento rector:** [Agent Commit and Push Protocol](./operations/agent-commit-push.md)
 
 ---
 
@@ -242,6 +246,7 @@ Ver detalle en:
 | "Reglas de precedencia documental" | [Precedencia Documental](./core/precedencia-documental.md) + [Governance](./core/governance.md) |
 | "Workflow por tipo de tarea (detalle)" | [Workflow por Tipo de Tarea](./core/workflow-por-tipo-de-tarea.md) — **§4 es fuente normativa** |
 | "Servicios existentes y dónde crearlos" | [Angular Services Catalog](./frontend/angular-services-catalog.md) + [Backend Generic Services](./backend/backend-generic-services-catalog.md) + **CONVENTIONS.md §3 regla 11** |
+| "Cómo committear y hacer push como agente" | [Agent Commit and Push Protocol](./operations/agent-commit-push.md) |
 
 ---
 
@@ -482,9 +487,7 @@ docs/[ModuleLuxuryApp]/[Submodulo]/
 - [Conventions Viewer Governance](./ui/conventions-viewer-governance.md)
 - [Decision Tree Components](./decision-tree-components.md) — Árbol de decisión para crear/ubicar componentes UI
 
-### PrimeNG e iconografía (resumen)
 
-- **PrimeNG está prohibido en features Angular, sin excepciones** (Fase 6 completada 2026-09-16). Para tablas se usa `<app-table>`. Detalle: [Frontend Prohibitions](./frontend/frontend-prohibitions.md).
 - **Iconos:** `<app-icon>` es el estándar web; `<ili-icon>` el de móvil (solo en `shared/ui/mobile/**`); `<lx-icon>` es el wrapper adaptativo. Los valores salen del catálogo `AppIcon` y `pi pi-` directo está prohibido. Regla completa: [Icon Usage Rule](./ui/icon-usage-rule.md) y [app-icon Usage](./ui/app-icon-usage.md); severidad en la tabla de §6.1 (fila 9).
 
 
@@ -760,7 +763,6 @@ Este apartado **no repite** el detalle de las reglas: cada una vive completa (co
 | 7 | Textos sin mojibake | 🔴 CRÍTICA | `node scripts/scan-mojibake.mjs <ruta>` debe dar 0 antes de mergear (`npm run audit:encoding`). | ✅ CI, solo `appsweb/angular` (api, docs y conventions sin gate) | [Encoding Rules](./operations/encoding-rules.md) |
 | 8 | Tokens CSS, nunca hardcoding | 🔴 CRÍTICA | Todo valor visual vía `var(--ds-*)`, `var(--primary-*)`, `var(--surface-*)`. | ✅ CI `audit:tokens`, alcance `src/styles` + `shared/ui`; `modules/**` solo se reporta | [Design Tokens Rule](./ui/design-tokens-rule.md) |
 | 9 | Iconos vía catálogo | 🔴 CRÍTICA | `<app-icon [icon]="AppIcon.X" />`; un nombre inexistente no falla, no dibuja. Gate: `npm run audit:icon-names`. | ✅ CI `audit:icon-names` | [Icon Usage Rule](./ui/icon-usage-rule.md) |
-| 10 | `MenuItem[]` de PrimeNG sin `routerLink` | 🟠 ALTA (CRÍTICA si rompe runtime) | Navegar con `command` + `Router.navigate()`; `routerLink` dentro de `MenuItem` produce `NG0201`. | ⬜ sin gate (ningún `audit:*` lo cubre) | [Frontend Rules](./frontend/frontend-rules.md) · [Routing & Guards](./frontend/angular-routing-guards.md) |
 | 11 | Fechas y horas | 🔴 CRÍTICA | Backend: `DateOnly`/`DateTime`/`TimeOnly` según semántica, sin `DateTime.Now`. Frontend: lectura con pipe `apiDate`, escritura con `DateService.getDateFormat()`. | ✅ ratchet en `api/` para `DateTime.Now/Today` (`dateTimeNow`); frontend 🔶 greps manuales | [Backend Rules](./backend/backend-rules.md) · [Frontend Prohibitions](./frontend/frontend-prohibitions.md) |
 | 12 | Documentos (carga, lectura, visualización) | 🔴 CRÍTICA | Nunca exponer rutas físicas; mostrar `Name`, no el UUID; usar `<iw-button-view-pdf>`; borrar el archivo al borrar la entidad. | ⬜ sin gate | [Document Read/Write](./backend/document-read-write-pattern.md) · [Document Display](./frontend/document-display-pattern.md) |
 | 13 | `[FromForm]` en multipart | 🔴 CRÍTICA | Todo endpoint con `IFormFile` lleva `[FromForm]` (sin él, HTTP 415); `.DisableAntiforgery()` solo con Bearer stateless y análisis documentado. | ✅ ratchet en `api/` (`formFileWithoutFromForm`, heurística por archivo de endpoints) | [Multipart/Antiforgery](./backend/multipart-antiforgery.md) |

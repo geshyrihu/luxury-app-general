@@ -1,14 +1,10 @@
-# 06 — Preflight Fase 4+6: verificación PrimeNG/PrimeIcons/PrimeFlex
 
 📅 Creado: 2026-09-15
-🎯 Motivo: el usuario pidió escanear consumos de PrimeNG/PrimeIcons/PrimeFlex
 **antes** de arrancar Fase 4 (Modales) + Fase 6 (Tabla) — el último bloque
 del plan — para confirmar que no queda ningún hallazgo suelto que los
 bloquee. Se generaron dos reportes automáticos en la raíz de
 `appsweb/angular/`:
 
-- `reporte-primeng-analisis-2026-09-14.md`
-- `reporte-primeng-analisis-2026-09-15.md`
 
 **Este documento es solo análisis — no se tocó ningún archivo de código.**
 El plan de ejecución real de Tabla/Modales sigue siendo
@@ -145,13 +141,10 @@ Se reverificaron también los números centrales de
 |---|---:|---:|
 | Archivos con `<p-table` | ~341 plantillas | 334 archivos / 399 aperturas de tag |
 | Archivos con `pSortableColumn` | 178 | 178 |
-| Archivos que importan el wrapper `primeng-table` | — | 350 |
-| Archivos que importan `table-primeng-option` (helper central) | — | 258 |
 | Archivos con `<p-dialog` directo | 2 | 2 (`header-employee-desktop.html`, `catalog-guia.html`) |
 | Archivos con `<p-confirmdialog` | — | 1 (`app.html`) |
 | Consumidores reales (no-spec) de `DialogService` | ~72 (con specs) | 6 reales de producción |
 | Consumidores reales (no-spec) de `ConfirmationService` | 9 | 11 |
-| Archivos de producción con import directo de `primeng/dynamicdialog` (fuga a reconciliar en Fase 4, punto 4) | 9→16 (corregido en sesión anterior) | 16, mismos archivos, sin cambios |
 
 **No hay ítems nuevos que agregar a `05-tablas-y-modales.md` §A o §B.**
 El diseño de `app-table` (§A.4) y la técnica de stub-vía-`Injector` para
@@ -185,7 +178,6 @@ uso residual de 6-8 archivos con clase `pi`/`pi-spin` — no bloquea Fase
 
 ## 6. Nota metodológica para futuras auditorías automáticas
 
-Los tres documentos de origen (`reporte-primeng-analisis-2026-09-14.md`,
 `-15.md`, `primeflex-migration-audit.md`) fueron generados por
 herramientas/agentes que hacen conteo de subcadena sin límite de
 palabra sobre el atributo `class`. Esto es válido como **primera señal

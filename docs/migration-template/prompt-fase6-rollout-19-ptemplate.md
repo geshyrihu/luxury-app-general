@@ -1,7 +1,5 @@
-# Prompt 19 — Fase 6: rollout de `pTemplate=` (sintaxis vieja de PrimeNG), 6 archivos
 
 `pTemplate="header"`/`pTemplate="body"` es solo la sintaxis **vieja**
-de PrimeNG para nombrar templates — funcionalmente idéntica a
 `#header`/`#body`, que `AppTable` ya soporta desde el piloto. No hace
 falta ninguna función nueva para estos 6 archivos.
 
@@ -52,7 +50,6 @@ node scripts/migrate-p-table-standard.mjs --write \
 Espera **5 archivos transformados, 0 exclusiones, 0 advertencias**
 (ya que quitaste `pTemplate=` primero). Nota:
 `aspel-cobranza-reglas-negocio.ts` importa `TableModule` desde
-`"primeng/table"` directo (no desde nuestro wrapper) — el script ya
 sabe manejar ese patrón exacto también.
 
 ## 2. Manual completo — `cuadro-comparativo-list.html`
@@ -76,7 +73,6 @@ bloques `<p-table>`:
 Y en `cuadro-comparativo-list.ts`:
 
 ```diff
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 ```
 

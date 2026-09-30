@@ -46,12 +46,10 @@ equivalente:
    `<th>` herede el color de texto normal y el fondo transparente (el
    blanco de `.table` de Bootstrap).
 2. **El padding no lo pongas en `0` literal** — la medición de `0px`
-   en producción es sobre el `<th>` mismo, pero PrimeNG probablemente
    consigue el espaciado visual con un elemento interno (un wrapper de
    título de columna) que nuestro `<th>` no tiene. Poner `padding: 0`
    a secas casi seguro se va a ver amontonado, no igual al "before".
    En vez de eso: **compara visualmente contra
-   `appsweb/angular/docs/migration-template/fase6-piloto-1b-bank-primeng.png`**
    (la captura real del "antes") ajustando el padding hasta que el
    espaciado se vea equivalente a simple vista — no persigas el
    número `0px` a ciegas.
@@ -65,7 +63,6 @@ equivalente:
    (`bank-list-desktop.html` apuntando a `<app-table>`, sin dejarlo en
    el diff final).
 2. Captura nueva del resultado y compárala lado a lado con
-   `fase6-piloto-1b-bank-primeng.png` — deben verse equivalentes:
    mismo color de fondo de encabezado, mismo caso de texto (no
    mayúsculas), espaciado de fila comparable.
 3. `npx tsc --noEmit` limpio.
@@ -77,7 +74,6 @@ equivalente:
 ## Listo cuando
 
 - Captura nueva del header de `app-table` visualmente indistinguible
-  de `fase6-piloto-1b-bank-primeng.png` (adjunta ambas para comparar).
 - Las reglas neutralizadas quedan comentadas en el SCSS (no borradas),
   con la nota de por qué.
 - `git diff --stat` mostrando solo cambios en los 2 SCSS (nada de

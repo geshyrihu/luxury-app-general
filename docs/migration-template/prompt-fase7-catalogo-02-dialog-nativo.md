@@ -1,8 +1,6 @@
 # Prompt Fase 7 — Catálogo: `catalog-guia.ts` — dialog con markup Bootstrap nativo
 
 `app-dialog` (`@ui/web/dialog/dialog`) sigue envolviendo
-`primeng/dialog` por dentro (confirmado leyendo su fuente,
-2026-09-16) — usarlo NO elimina PrimeNG, solo lo esconde detrás de
 otro selector. Este archivo no tiene ninguna razón para depender de
 un componente compartido con ese problema, así que construimos el
 dialog con markup Bootstrap 5 nativo directo (sin JS plugin, solo
@@ -18,7 +16,6 @@ src/app/modules/admin.luxuryapp/herramientas-dev/catalog-component-ui/foundation
 ## Cambio en el `.ts`
 
 ```diff
--import { DialogModule } from "@ui/web/primeng-dialog/primeng-dialog";
 ```
 Quita del arreglo `imports:` también. La propiedad `dialogVisible`
 (boolean plano, no signal) y el método `openDialog()` **no cambian**.
@@ -80,7 +77,6 @@ removido — no la repliques, ya no aplica.)
 
 ## Verificación
 
-- `grep -n "primeng" catalog-guia.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), revisa el
   log entero con `grep -c ERROR`, no uses `tail`**.
@@ -91,6 +87,5 @@ removido — no la repliques, ya no aplica.)
 
 ## Listo cuando
 
-- `catalog-guia.ts` sin ningún import de PrimeNG.
 - Captura confirmando que el dialog se ve y se comporta igual.
 - `tsc`/build limpios.

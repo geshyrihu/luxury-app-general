@@ -577,7 +577,6 @@ find {frontend_path} -name "*.component.html" | wc -l
 find {frontend_path} -name "*.component.scss" | wc -l
 find {frontend_path} -path "*/shared/styles/*" -name "*.scss"
 
-# PrimeNG o componentes externos (PROHIBIDOS si no están aprobados)
 grep -r "p-button\|p-input\|p-table\|p-dialog" {frontend_path}
 ```
 

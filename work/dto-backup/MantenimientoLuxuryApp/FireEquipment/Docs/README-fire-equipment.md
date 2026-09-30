@@ -123,7 +123,6 @@ graph LR
 | AutoMapper    | Legacy en `Mapping/` (deuda técnica) — bitácoras usan `.Select()` manual por `GetDisplayName()` no traducible a SQL |
 | Respuestas    | `ApiResponseDTO<T>` (nunca `ProblemDetails`)                                                                        |
 | Mapeo         | Explícito `ToDTO()` (nuevo código) / AutoMapper (legacy)                                                            |
-| Frontend      | Angular 22 (standalone, signals, OnPush), PrimeNG, catálogo `@ui/*`                                                 |
 
 ---
 
@@ -346,7 +345,6 @@ Workspace: **`client/angular`** (standalone, signals, OnPush, catálogo `@ui/*`,
 | `QrScanner`                   | `app-qr-scanner`               | web/mobile | `scanning`, `result`, `manualInput`   | `BarcodeDetector` API, `ApiResponseService`           | Web: `video` + `BarcodeDetector`; Móvil: `BarcodeDetector` nativo + fallback `ion-input` manual; navega a checklist según `FireEquipment/resolve`                               |
 | `InventarioHidrante` (import) | —                              | web        | `importing`, `templateUrl`            | `ApiResponseService`, `AccountingCatalogExcelService` | Botón **Plantilla** → `AccountingCatalogExcelService.generateTemplate()` + `file-saver`; Botón **Importar** → `input type=file` oculto → `FormData` POST `/import/{customerId}` |
 
-**Estilos**: PrimeNG + PrimeFlex (`card`, `grid`, `text-*`); botones/inputs catálogo `@ui/*` (`il-button`, `il-button-save`, `custom-input-*-signal`, `ili-button-*` mobile). **Testing**: `.spec.ts` por componente (Vitest) — cobertura básica inicialización.
 
 **Interfaces** (`core/interfaces/fire-equipment.dto.ts`): `inventario-hidrante`, `bitacora-hidrante`, `inventario-estacion-manual`, `bitacora-estacion-manual`, `inventario-detector-humo`, `bitacora-detector-humo`, `fire-equipment-resolve`, `qr-label`, `paged-result`.
 

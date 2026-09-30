@@ -78,7 +78,6 @@ Reglas **nuevas** marcadas con ✦.
 | RN-DS-011 | Dark mode mantiene mapeo 1:1 de tokens semánticos | `theme/_variables.scss:509-731` |
 | RN-DS-012 | `prefers-reduced-motion: reduce` → duraciones 0ms | `styles/styles.scss:165` ✓ implementado |
 | RN-DS-013 | `prefers-contrast: more` → set `--ds-contrast-*` completo | `theme/_variables.scss:476,703` |
-| ✦ RN-DS-014 | **`$surface-dark-*` debe ser estrictamente monótona en luminancia y sin escalones duplicados: PrimeNG deriva hover de 700→800 y campos de 900→950.** | `core/_colors.scss:252-263` |
 | ✦ RN-DS-015 | **Todo valor visual debe responder al cambio de tema. Un color que no cambia entre light y dark es un defecto, no una decisión, salvo token explícitamente marcado como invariante.** | `shared/ui/**` |
 
 **Nivel 3 — Seguridad / compliance / gobernanza**
@@ -159,7 +158,6 @@ Reglas **nuevas** marcadas con ✦.
 **Constraints**
 - El ancla `#003152` es inamovible (RN-DS-005). Todo lo demás se deriva.
 - Los otros 4 anclas de `DESIGN.md` (`#1E9B6D`, `#D4A74A`, `#D34B4B`, `#4A90E2`) **ya están sanos** y no se tocan: la divergencia es exclusiva del ramp primario.
-- PrimeNG `22.0.0-rc.1` con `@primeuix/themes@2.0.3`. Contrato Aura verificado: `light.primary.color = {primary.500}`, `hover = {primary.600}`, `active = {primary.700}`; `dark.primary.color = {primary.400}`.
 - Sin cambios de API, DTOs ni backend.
 
 ---
@@ -200,7 +198,6 @@ Estado actual (RN-DS-014 incumplida):
 400 #c5d0db  lum 0.6210   ← rompe la monotonía (es $secondary-300, "muted text")
 500 #00429c  lum 0.0630
 700 #00151f  ┐
-800 #00151f  ┘ idénticos  → PrimeNG no puede pintar hover
 900 #000a10  ┐
 950 #000a10  ┘ idénticos  → campos de formulario = fondo
 ```
@@ -490,7 +487,6 @@ Tabla de §0.3 con responsable asignado. Riesgos residuales:
 
 | Dependencia | Versión | Nota |
 |:---|:---|:---|
-| `primeng` | `22.0.0-rc.1` | Release candidate; verificar que el contrato de `colorScheme.*.primary` se mantenga en el RC final |
 | `@primeuix/themes` | `2.0.3` | Contrato Aura verificado directamente en `dist/aura/base/index.mjs` |
 | `sass` | según `package.json` | Requerido por el nuevo `audit-contrast.mjs` para compilar `_variables.scss` |
 | `glob` | ya presente | Usado por `audit-ds-tokens.mjs` |

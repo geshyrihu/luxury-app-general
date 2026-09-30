@@ -18,10 +18,8 @@ El módulo **CobranzaOnline** es el visor en vivo (lectura stateless) integrado 
 - ✅ Endpoints frontend alineados con backend (verificado ruta por ruta)
 - ✅ `authGuard` en ruta padre (cubre los 10 children)
 - ✅ Lazy loading + standalone + signals/effect
-- ✅ `p-table` solo vía barril `@ui/web/primeng-table`; caption/empty/footer via wrappers `primeng-custom-*`
 - ✅ Cero SCSS locales (estilos globales/catálogo); zero mojibake; tsc limpio en el módulo
 - ⚠️ **Incumplimientos altos:** hardcoding de colores hex en TS (resumen y analysis), `any` productivo en contrato (`departmentCharges`/`departmentPayments`), `ChangeDetectionStrategy.Eager` en 12 componentes, bypass a catálogo UI en input de fecha nativo
-- ⚠️ **Deuda técnica:** lógica de clasificación y catálogo duplicados, fuente de verdad del filtro fragmentada, imports directos `primeng/api` y `primeng/dynamicdialog`, cobertura mobile incompleta
 
 **Impacto:** Los colores hardcodeados rompen la regla crítica de Design Tokens y el tema no responde a cambios globales; el `any` productivo oculta drift de contrato real con el backend (el DTO no declara `departmentCharges`/`departmentPayments`); `Eager` fuerza re-renders innecesarios.
 
@@ -82,7 +80,6 @@ El módulo **CobranzaOnline** es el visor en vivo (lectura stateless) integrado 
 | H4 | Incumplimiento alto | Bypass al catálogo UI en input de fecha nativo + `$any()` |
 | H5 | Deuda técnica | Duplicación de clasificación y `CONCEPTS_CATALOG` |
 | H6 | Deuda técnica | Fuente de verdad del filtro fragmentada (incl. `month = 4` fijo) |
-| H7 | Mejora recomendada | Imports directos `primeng/api` y `primeng/dynamicdialog` (barriles `@ui/*` disponibles) |
 | H8 | Deuda técnica | Cobertura mobile incompleta en 6 vistas |
 | H9 | Mejora recomendada | Clases de color no-semánticas (`text-red-600`, `bg-red-50`, etc.) |
 | H10 | Mejora recomendada | `requerimientos.md` vacío y `response-json/` sin referenciar |
@@ -173,7 +170,6 @@ if (res && (res as any).departmentCharges) {
 />
 ```
 
-**Impacto:** Usa `<input>` nativo con clases PrimeNG directas en vez del wrapper oficial `custom-input-date-signal` (que el propio `cobranza-online-wrapper.html:9` ya usa). Además `$any($event.target)` es un casteo a `any` en template.
 
 **Recomendación:** Sustituir por `custom-input-date-signal` con `[control]`/`[noMargin]`; tipar el handler del evento sin `$any`.
 
@@ -205,16 +201,12 @@ if (res && (res as any).departmentCharges) {
 
 ---
 
-### 🟡 H7 — Imports directos de `primeng/api` y `primeng/dynamicdialog`
 **Severidad:** MEJORA RECOMENDADA (frontend-rules: consumir desde `@ui/*`)
 
 **Evidencia:**
-- `SharedModule` de `primeng/api` directo en `resumen.ts:16`, `advances.ts:17`, `debtors.ts:17`, `department-charges.ts:16`, `department-payments.ts:16` — existe barril oficial `@ui/web/primeng-api`.
-- `DynamicDialogConfig` de `primeng/dynamicdialog` en `clasificacion-detail.ts:9` — el propio módulo ya usa `DynamicDialogConfig, DynamicDialogRef` desde `src/app/core/services/dialog-handler.service` en `inspection-history-modal.ts:11`, y existe barril `@ui/web/primeng-dynamicdialog`.
 
 **Impacto:** Inconsistencia con el patrón de barriles `@ui/*`; riesgo de que un análisis automatizado de "no imports directos de librerías UI" marque el módulo.
 
-**Recomendación:** Importar desde `@ui/web/primeng-api` (SharedModule) y desde el core service o `@ui/web/primeng-dynamicdialog`.
 
 ---
 
@@ -274,8 +266,6 @@ if (res && (res as any).departmentCharges) {
 | §4.2 Endpoints centralizados (`core/constants`) | ✅ | `Endpoints.CobranzaOnline.*` alineado con backend |
 | §4.2 `ApiResponseService` (sin `HttpClient` directo) | ✅ | 100% de componentes |
 | §4.2 AuthGuard + lazy loading + standalone | ✅ | Ruta padre `canActivate: [authGuard]` |
-| §4.2 Catálogo UI (`@ui/*`) | ⚠️ | Barriles OK, pero `primeng/api` y `primeng/dynamicdialog` directos; input de fecha nativo |
-| §4.2 P-table solo vía `@ui/web/primeng-table` + wrappers | ✅ | Excepción vigente respetada |
 | §4.2 No `any` productivo | ❌ | H2 (`departmentCharges`/`departmentPayments`) |
 | §6.1 Design Tokens CSS | ❌ | H1 (hex en resumen/analysis) |
 | §2 / §13 ChangeDetectionStrategy.OnPush | ❌ | 12 componentes `Eager` (H3) |
@@ -325,8 +315,6 @@ tsc -p tsconfig.json --noEmit 2>&1 | grep -c "cobranza-online"  → 0 errores
 scan-mojibake.mjs client/angular/src/app/apps/cobranza.luxuryapp/cobranza-online → CERO mojibake
 # any productivo
 grep -rn " as any" → department-charges.ts:167-168, department-payments.ts:177-178
-# imports directos primeng
-grep -rn "from ['\"]primeng/" → 5× primeng/api (SharedModule), 1× primeng/dynamicdialog
 # hex en TS
 grep "#[0-9a-fA-F]" resumen.ts analysis.ts → 11 colores hardcodeados
 # ChangeDetectionStrategy
@@ -380,7 +368,6 @@ grep -rln "cobranzaOnlineFilterState" → wrapper, resumen (solo 2 de 12)
 | H4 | Input de fecha nativo + `$any` | Pendiente (Fase 1) |
 | H5 | Duplicación clasificación/catálogo | Pendiente (Fase 2) |
 | H6 | Filtro fragmentado + `month=4` | Pendiente (Fase 2) |
-| H7 | Imports directos primeng | Pendiente (Fase 2) |
 | H8 | Mobile incompleto | Pendiente (Fase 3) |
 | H9 | Clases de color no-semánticas | Pendiente (Fase 3) |
 | H10 | `requerimientos.md` vacío / fixtures | Pendiente (Fase 3) |

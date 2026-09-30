@@ -3,7 +3,6 @@
 Investigado a fondo antes de escribir esto: ambos componentes exponen
 una API pública estable (`ModalBase`/`ConfirmDialogBase`) que **no
 cambia** — solo se reescribe el `template` interno de cada uno, de
-PrimeNG (`p-dialog`+`p-button`) a markup Bootstrap 5 nativo (mismo
 patrón ya usado y probado en Fase 7:
 `prompt-fase7-catalogo-02-dialog-nativo.md` y
 `prompt-fase8-04-core-layout-shell.md` punto 4). **No toques ningún
@@ -24,7 +23,6 @@ archivo de `src/app/modules`** — los 7 consumidores reales de
 -} from "@angular/core";
 +import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
  import { ModalBase } from "@ui/base/modal.base";
--import { DialogModule } from "primeng/dialog";
 
  @Component({
    selector: "app-dialog",
@@ -84,7 +82,6 @@ archivo de `src/app/modules`** — los 7 consumidores reales de
  export class Dialog extends ModalBase {}
 ```
 
-(`[modal]="true"` de PrimeNG siempre lo era, así que el backdrop
 condicional a `visible()` ya cubre ese comportamiento;
 `[draggable]`/`[resizable]` no tienen equivalente Bootstrap nativo,
 se pierden a propósito, son detalles menores)
@@ -99,8 +96,6 @@ se pierden a propósito, son detalles menores)
 -} from "@angular/core";
 +import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
  import { ConfirmDialogBase } from "@ui/base/confirm-dialog.base";
--import { ButtonModule } from "primeng/button";
--import { DialogModule } from "primeng/dialog";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
  import { AppIcon } from "@ui/shared/app-icon/app-icon";
 
@@ -186,7 +181,6 @@ verifica que no truene con el mapeo de estilos).
 
 ## Verificación
 
-- `grep -n "primeng" dialog.ts confirm-dialog.ts` → 0 resultados en
   ambos.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
@@ -204,7 +198,6 @@ verifica que no truene con el mapeo de estilos).
 
 ## Listo cuando
 
-- `Dialog` y `ConfirmDialog` sin ningún import de PrimeNG.
 - 0 archivos de `src/app/modules` tocados (la API no cambió).
 - Capturas de al menos 2 consumidores reales de cada uno.
 - `tsc`/build limpios.

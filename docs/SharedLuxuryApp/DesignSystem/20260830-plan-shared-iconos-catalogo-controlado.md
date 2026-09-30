@@ -77,7 +77,6 @@ Dividir `src/app` en lotes de ~20–50 archivos (por app o subcarpeta). Por **ca
 ### Fase 3 — Casos especiales (aparte, no forzar)
 
 - **Fragmentos sin host:** asignar host manual o dejarlos fuera del script y resolver su padre.
-- **`p-button` con `pi pi-*` / `material-symbols-light`:** bugs aparte (PrimeNG no renderiza
   Iconify) → convertir a `<ng-template #icon><app-icon …/></ng-template>`.
 - **`class="…material-symbols-light…"`, `<code>` ejemplos, strings con texto extra**
   (`icon="…:add mr-2"`): excluir del script; no son bindings de icono.

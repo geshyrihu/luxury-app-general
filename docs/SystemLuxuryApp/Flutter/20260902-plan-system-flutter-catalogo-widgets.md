@@ -27,7 +27,6 @@ Antes de escribir este plan se inspeccionó el estado real del repo. Resumen de 
 
 ## 1. Objetivo
 
-Crear un paquete Flutter local (`material_ui_widgets`) que envuelva los widgets Material 3 de Flutter con los colores y la tipografía de marca de LuxuryApp, para que `commitee` y `checador` (y futuras apps Flutter) dejen de definir temas y paletas por su cuenta y consuman una sola fuente de verdad — igual que las features Angular consumen `shared/ui` en vez de PrimeNG/Ionic directo.
 
 **Fuera de alcance de este plan:**
 - No migra la lógica de negocio de `commitee` ni `checador`.
@@ -73,7 +72,6 @@ Revisa `appsweb/angular/src/styles/core/_spacing.scss` y `_borders.scss` antes d
 
 ### 3.1 Por qué no se copia literal la estructura de `shared/ui` de Angular
 
-`shared/ui` en Angular está partida en `web/` (PrimeNG) y `mobile/` (Ionic) porque Angular sirve **dos runtimes de UI distintos** (escritorio vs. app híbrida). Flutter no tiene ese problema: un mismo widget Dart compila a Android/iOS/web/desktop. Así que **no crear carpetas `web/`/`mobile/`/`adaptive/`** — no hay nada que adaptar en runtime. Lo que sí se imita es la filosofía: una capa de componentes de marca, organizada por categoría, que las apps consumen en vez de tocar el framework base (`MaterialApp`/widgets Material) directamente.
 
 ### 3.2 Pureza de dependencias (equivalente a la regla `base/` de Angular)
 

@@ -10,7 +10,6 @@ antes de aprobar este paso: una es un hueco real que hay que corregir
 
 ## 1. Corregir: falta el selector de registros por página y los botones de primera/última página
 
-El paginador actual de PrimeNG (ver captura "before") tiene, en este
 orden: `«` (primera página) `‹` (anterior) `1 2 3 4` `›` (siguiente)
 `»` (última página) `[30 ▾]` (dropdown de registros por página). El
 paginador que construiste en `AppTable` solo tiene `‹ 1 2 3 4 ›` — el
@@ -38,7 +37,6 @@ original.
      this.onPage.emit({ first: 0, rows: newRows });
    }
    ```
-   (Esto reproduce el comportamiento real de PrimeNG: cuando cambia el
    tamaño de página, `(onPage)` se dispara con el `rows` nuevo — así
    los consumidores lazy como `log-api-report.ts` (`onPageChange` hace
    `this.rows.set(event.rows)`) siguen funcionando sin tocarlos.)
@@ -73,7 +71,6 @@ original.
    </select>
    ```
 
-No hace falta replicar el estilo visual exacto del dropdown de PrimeNG,
 solo que la función exista y sea usable — el afinado visual se hace
 cuando se apruebe el aspecto general (§2).
 
@@ -83,7 +80,6 @@ Comparando las capturas: el header pasó de blanco/plano a azul marino
 en mayúsculas, y las filas se ven visiblemente más altas (más padding).
 Hipótesis a confirmar, no a asumir: `_custom-table.scss`/
 `_prime-table.scss` siempre pidieron `background-color: var(--ds-primary)`
-y un padding de celda mayor, pero el preset activo de PrimeNG
 (`src/app/mypreset.ts:211-216`, bloque `datatable.header.background:
 "{primary.500}"`) compite por las mismas propiedades — puede que su CSS
 se inyecte en runtime después del bundle compilado y gane por orden de
@@ -96,7 +92,6 @@ real, no con una captura).
 
 1. Con la app en su estado ANTES de este prompt (revertir
    temporalmente `bank-list-desktop.html` a `<p-table>`, o usar
-   cualquier otra pantalla real que siga en PrimeNG sin tocar), abrir
    DevTools → pestaña Elements → seleccionar un `<th>` del encabezado
    → panel "Computed" con la casilla "Show all" activada. Anota:
    - `background-color` computado.

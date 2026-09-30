@@ -2,7 +2,6 @@
 
 El componente `app-table` (`shared/ui/web/table/table.ts`) ya está
 construido, verificado y auditado (paginador completo, orden con ícono
-neutro/activo, paridad visual con PrimeNG confirmada — ver
 `04-bitacora-cambios.md`, ronda "Prompt 1d cerrado"). Este prompt migra
 las 4 pantallas reales del lote piloto, elegidas por complejidad
 distinta (ver `04-bitacora-cambios.md`, ronda "Arranque real de
@@ -24,7 +23,6 @@ aprobar el rollout masivo, esto es esa verificación.
 En cada `.ts`/`.html`:
 
 1. Import: reemplaza `import { TableModule } from
-   "@ui/web/primeng-table/primeng-table";` por
    `import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";`
    y agrega los 3 al array `imports` del componente (reemplazando
    `TableModule`).
@@ -44,10 +42,7 @@ En cada `.ts`/`.html`:
    `#emptymessage`, `#paginatorleft` **no cambian** — mismo nombre de
    referencia, mismo contenido interno, salvo los puntos 3-4 de arriba
    dentro de `#header`.
-7. `primeng-custom-caption`, `primeng-custom-table-emptymessage`,
-   `primeng-custom-table-footer` **no cambian** — siguen recibiendo
    `[dt]="dt"` igual que antes (su input ya es `any`, no le importa que
-   `dt` ahora sea `AppTable` en vez de `Table` de PrimeNG).
 
 ## Por archivo
 
@@ -119,7 +114,6 @@ parche silencioso.
    columnas dinámicas se ven con sus encabezados correctos y ordenan.
 6. Captura de cada una de las 4 pantallas en su estado normal, más una
    captura de `audit-entries` con una fila expandida.
-7. `grep -rn "primeng-table\|TableModule" ` sobre los 4 archivos
    `.ts`/`.html` tocados → debe dar 0 resultados.
 
 ## Listo cuando

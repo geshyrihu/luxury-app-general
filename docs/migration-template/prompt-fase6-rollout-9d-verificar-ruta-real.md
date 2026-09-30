@@ -29,7 +29,6 @@ una captura nueva.
   el último commit sobre ese archivo es de antes de esta sesión, la
   plantilla ya estaba incompleta. No lo toques, no es tu
   responsabilidad completarlo.
-- **`pFrozenColumn`/`frozenWidth` (columnas congeladas de PrimeNG) no
   tiene equivalente en `AppTable` todavía** — se encontró en 7
   archivos de todo el repo (2 ya migrados: `presupuesto-propuesta.html`
   de este mismo lote, `cobranza-online-movimientos.html` de

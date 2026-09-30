@@ -20,7 +20,6 @@
 2. Exposicion de variables CSS
    - `theme/_variables.scss`
 3. Uso por tema o preset
-   - `mypreset.ts`, `ds-entry.scss`, `primeng-overrides.css`, `styles.scss`
 4. Capas especializadas
    - `core/`, `web/`, `mobile/`, `base/`, `shared/`, `custom/`, `theme/`
 

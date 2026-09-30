@@ -129,7 +129,6 @@ menciono el archivo por si te suena familiar.
 5. `npx tsc --noEmit` → limpio.
 6. `ng build` sin errores de plantilla (recuerda: `tsc` solo no
    alcanza, ya lo confirmamos 2 veces esta migración).
-7. `grep -rn "TableModule\|primeng-table\|<p-table\b"` sobre el lote →
    0 resultados reales (ignora imports muertos de `TableModule` sin
    ningún `<p-table>` real en el mismo archivo, eso no cuenta).
 
@@ -151,7 +150,6 @@ contenido totalmente cargados), guardadas como archivo
 - Los 42 archivos migrados, diff coherente con el dry-run.
 - Fix manual de `task-group-category-list.html` aplicado.
 - `tsc` y `ng build` limpios de errores de plantilla.
-- 0 residuales reales de PrimeNG.
 - 7-8 capturas reales completas.
 - `git diff --stat` completo del lote.
 - Hallazgos ajenos documentados con precisión, no arreglados salvo que

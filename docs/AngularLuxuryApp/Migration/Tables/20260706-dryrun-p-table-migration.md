@@ -32,7 +32,6 @@ Archivos transformados: **7**
 -  class="custom-table card d-none d-md-block"
 ->
 -  <ng-template #caption>
--    <primeng-custom-caption (add)="onModalForm()" [dt]="dt" />
 -  </ng-template>
 -  <ng-template #header>
 -    <tr>
@@ -91,10 +90,8 @@ Archivos transformados: **7**
 -    </tr>
 -  </ng-template>
 -  <ng-template #emptymessage>
--    <primeng-custom-table-emptymessage [colspan]="5" />
 -  </ng-template>
 -  <ng-template #paginatorleft>
--    <primeng-custom-table-footer [data]="data()" />
 -  </ng-template>
 -</p-table>
 +<app-table
@@ -115,7 +112,6 @@ Archivos transformados: **7**
 +  class="custom-table card d-none d-md-block"
 +>
 +  <ng-template #caption>
-+    <primeng-custom-caption (add)="onModalForm()" [dt]="dt" />
 +  </ng-template>
 +  <ng-template #header>
 +    <tr>
@@ -174,10 +170,8 @@ Archivos transformados: **7**
 +    </tr>
 +  </ng-template>
 +  <ng-template #emptymessage>
-+    <primeng-custom-table-emptymessage [colspan]="5" />
 +  </ng-template>
 +  <ng-template #paginatorleft>
-+    <primeng-custom-table-footer [data]="data()" />
 +  </ng-template>
 +</app-table>
  
@@ -190,17 +184,12 @@ Archivos transformados: **7**
 --- a/src/app/modules/auth.luxuryapp/password-manager/password-list.ts
 +++ b/src/app/modules/auth.luxuryapp/password-manager/password-list.ts
 @@ -18,29 +18,29 @@
- import { PrimeNgCustomTableEmptyMessage } from "@ui/web/primeng-custom-table-emptymessage/primeng-custom-table-emptymessage";
- import { PrimeNgCustomTableFooter } from "@ui/web/primeng-custom-table-footer/primeng-custom-table-footer";
 -import {
 -  TableLazyLoadEvent,
 -  TableModule,
--} from "@ui/web/primeng-table/primeng-table";
 -import { Endpoints } from "@core/constants/endpoints/endpoints";
 -import {
 -  rowsPerPageOptions,
--  tablePrimeNgRows,
--} from "@core/helpers/table-primeng-option";
 -import { ApiResponseService } from "@core/http/services/api-response.service";
 -import { PagedResultDto } from "@core/interfaces/paged-result.dto";
 -import { DialogHandlerService } from "@core/services/dialog-handler.service";
@@ -215,15 +204,11 @@ Archivos transformados: **7**
 -  templateUrl: "./password-list.html",
 -  changeDetection: ChangeDetectionStrategy.OnPush,
 -  imports: [
--    PrimeNgCustomTableEmptyMessage,
 -    TableModule,
-+import { TableLazyLoadEvent } from "@ui/web/primeng-table/primeng-table";
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 +import { Endpoints } from "@core/constants/endpoints/endpoints";
 +import {
 +  rowsPerPageOptions,
-+  tablePrimeNgRows,
-+} from "@core/helpers/table-primeng-option";
 +import { ApiResponseService } from "@core/http/services/api-response.service";
 +import { PagedResultDto } from "@core/interfaces/paged-result.dto";
 +import { DialogHandlerService } from "@core/services/dialog-handler.service";
@@ -238,12 +223,9 @@ Archivos transformados: **7**
 +  templateUrl: "./password-list.html",
 +  changeDetection: ChangeDetectionStrategy.OnPush,
 +  imports: [
-+    PrimeNgCustomTableEmptyMessage,
 +    AppTable,
 +    AppSortableColumn,
 +    AppSorticon,
-     PrimeNgCustomCaption,
-     PrimeNgCustomTableFooter,
 ```
 
 ## src/app/modules/resident.luxuryapp/owner/owner-list.html
@@ -263,7 +245,6 @@ Archivos transformados: **7**
 ->
 -  <ng-template #caption>
 -    <div class="d-flex align-items-center justify-content-between w-full">
--      <primeng-custom-caption
 -        (add)="onModalForm({ id: '', title: 'Nuevo Registro' })"
 -        [dt]="dt"
 -        [rolAuth]="
@@ -361,10 +342,8 @@ Archivos transformados: **7**
 -    </tr>
 -  </ng-template>
 -  <ng-template #emptymessage>
--    <primeng-custom-table-emptymessage [colspan]="9" />
 -  </ng-template>
 -  <ng-template #paginatorleft>
--    <primeng-custom-table-footer [data]="dataSignal()" />
 -  </ng-template>
 -</p-table>
 +<app-table
@@ -376,7 +355,6 @@ Archivos transformados: **7**
 +>
 +  <ng-template #caption>
 +    <div class="d-flex align-items-center justify-content-between w-full">
-+      <primeng-custom-caption
 +        (add)="onModalForm({ id: '', title: 'Nuevo Registro' })"
 +        [dt]="dt"
 +        [rolAuth]="
@@ -474,10 +452,8 @@ Archivos transformados: **7**
 +    </tr>
 +  </ng-template>
 +  <ng-template #emptymessage>
-+    <primeng-custom-table-emptymessage [colspan]="9" />
 +  </ng-template>
 +  <ng-template #paginatorleft>
-+    <primeng-custom-table-footer [data]="dataSignal()" />
 +  </ng-template>
 +</app-table>
  <app-data-view-mobile
@@ -490,9 +466,6 @@ Archivos transformados: **7**
 --- a/src/app/modules/resident.luxuryapp/owner/owner-list.ts
 +++ b/src/app/modules/resident.luxuryapp/owner/owner-list.ts
 @@ -15,42 +15,46 @@
- import { PrimeNgCustomTableEmptyMessage } from "@ui/web/primeng-custom-table-emptymessage/primeng-custom-table-emptymessage";
- import { PrimeNgCustomTableFooter } from "@ui/web/primeng-custom-table-footer/primeng-custom-table-footer";
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 -import { AspRoleService } from "@core/auth/services/asp-role.service";
 -import { AuthService } from "@core/auth/services/auth.service";
 -import { CustomerIdService } from "@core/auth/services/customer-id.service";
@@ -501,8 +474,6 @@ Archivos transformados: **7**
 -import {
 -  globalFilterFields,
 -  rowsPerPageOptions,
--  tablePrimeNgRows,
--} from "@core/helpers/table-primeng-option";
 -import { ApiResponseService } from "@core/http/services/api-response.service";
 -import { Owner } from "@core/interfaces/list-condomino.interface";
 -import {
@@ -528,7 +499,6 @@ Archivos transformados: **7**
 -    MobileActionMenu,
 -    MobileButtonLabelEdit,
 -    MobileButtonLabelDelete,
--    PrimeNgCustomTableEmptyMessage,
 -    TableModule,
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 +import { AspRoleService } from "@core/auth/services/asp-role.service";
@@ -539,8 +509,6 @@ Archivos transformados: **7**
 +import {
 +  globalFilterFields,
 +  rowsPerPageOptions,
-+  tablePrimeNgRows,
-+} from "@core/helpers/table-primeng-option";
 +import { ApiResponseService } from "@core/http/services/api-response.service";
 +import { Owner } from "@core/interfaces/list-condomino.interface";
 +import {
@@ -566,14 +534,12 @@ Archivos transformados: **7**
 +    MobileActionMenu,
 +    MobileButtonLabelEdit,
 +    MobileButtonLabelDelete,
-+    PrimeNgCustomTableEmptyMessage,
 +    AppTable,
 +
 +    AppSortableColumn,
 +
 +    AppSorticon,
      WebButtonLabel,
-     PrimeNgCustomCaption,
 ```
 
 ## src/app/modules/resident.luxuryapp/property/property-occupant-manager.html
@@ -686,7 +652,6 @@ Archivos transformados: **7**
 @@ -19,18 +19,20 @@
  import { CustomInputCheckSignal } from "@ui/inputs/web/custom-input-check-signal";
  import { CustomInputTextSignal } from "@ui/inputs/web/custom-input-text-signal";
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 -import { Endpoints } from "@core/constants/endpoints/endpoints";
 -import { ApiResponseService } from "@core/http/services/api-response.service";
 -import { PropertyOccupant } from "@core/interfaces/property-occupant.interface";
@@ -731,7 +696,6 @@ Archivos transformados: **7**
 -<p-table
 -  [globalFilterFields]="globalFilterFields()"
 -  [paginator]="true"
--  [rows]="tablePrimeNgRows"
 -  [rowsPerPageOptions]="rowsPerPageOptions"
 -  [showCurrentPageReport]="true"
 -  [value]="dataSignal()"
@@ -741,7 +705,6 @@ Archivos transformados: **7**
 ->
 -  <ng-template #caption>
 -    <div class="d-flex justify-content-between align-items-center">
--      <primeng-custom-caption
 -        [title]="'Propiedades'"
 -        (add)="onModalForm({ id: '', title: 'Nuevo Registro' })"
 -        [dt]="dt"
@@ -865,16 +828,13 @@ Archivos transformados: **7**
 -    </tr>
 -  </ng-template>
 -  <ng-template #emptymessage>
--    <primeng-custom-table-emptymessage [colspan]="11" />
 -  </ng-template>
 -  <ng-template #paginatorleft>
--    <primeng-custom-table-footer [data]="dataSignal()" />
 -  </ng-template>
 -</p-table>
 +<app-table
 +  [globalFilterFields]="globalFilterFields()"
 +  [paginator]="true"
-+  [rows]="tablePrimeNgRows"
 +  [rowsPerPageOptions]="rowsPerPageOptions"
 +  [showCurrentPageReport]="true"
 +  [value]="dataSignal()"
@@ -884,7 +844,6 @@ Archivos transformados: **7**
 +>
 +  <ng-template #caption>
 +    <div class="d-flex justify-content-between align-items-center">
-+      <primeng-custom-caption
 +        [title]="'Propiedades'"
 +        (add)="onModalForm({ id: '', title: 'Nuevo Registro' })"
 +        [dt]="dt"
@@ -1008,10 +967,8 @@ Archivos transformados: **7**
 +    </tr>
 +  </ng-template>
 +  <ng-template #emptymessage>
-+    <primeng-custom-table-emptymessage [colspan]="11" />
 +  </ng-template>
 +  <ng-template #paginatorleft>
-+    <primeng-custom-table-footer [data]="dataSignal()" />
 +  </ng-template>
 +</app-table>
  
@@ -1024,9 +981,6 @@ Archivos transformados: **7**
 --- a/src/app/modules/resident.luxuryapp/property/propiedades-list.ts
 +++ b/src/app/modules/resident.luxuryapp/property/propiedades-list.ts
 @@ -21,33 +21,35 @@
- import { PrimeNgCustomTableEmptyMessage } from "@ui/web/primeng-custom-table-emptymessage/primeng-custom-table-emptymessage";
- import { PrimeNgCustomTableFooter } from "@ui/web/primeng-custom-table-footer/primeng-custom-table-footer";
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 -import { AspRoleService } from "@core/auth/services/asp-role.service";
 -import { AuthService } from "@core/auth/services/auth.service";
 -import { CustomerIdService } from "@core/auth/services/customer-id.service";
@@ -1035,8 +989,6 @@ Archivos transformados: **7**
 -import {
 -  globalFilterFields,
 -  rowsPerPageOptions,
--  tablePrimeNgRows,
--} from "@core/helpers/table-primeng-option";
 -import { ApiResponseService } from "@core/http/services/api-response.service";
 -import { Property } from "@core/interfaces/property.interface";
 -import {
@@ -1064,8 +1016,6 @@ Archivos transformados: **7**
 +import {
 +  globalFilterFields,
 +  rowsPerPageOptions,
-+  tablePrimeNgRows,
-+} from "@core/helpers/table-primeng-option";
 +import { ApiResponseService } from "@core/http/services/api-response.service";
 +import { Property } from "@core/interfaces/property.interface";
 +import {
@@ -1105,7 +1055,6 @@ Archivos transformados: **7**
 -  [globalFilterFields]="globalFilterFields()"
 -  [loading]="loading()"
 -  [paginator]="true"
--  [rows]="tablePrimeNgRows"
 -  [rowsPerPageOptions]="rowsPerPageOptions"
 -  [scrollable]="true"
 -  [scrollHeight]="scrollHeight()"
@@ -1114,7 +1063,6 @@ Archivos transformados: **7**
 -  class="custom-table card d-none d-md-block"
 ->
 -  <ng-template #caption>
--    <primeng-custom-caption
 -      [showAdd]="true"
 -      [dt]="dt"
 -      label="Nueva configuracion"
@@ -1207,11 +1155,9 @@ Archivos transformados: **7**
 -    </tr>
 -  </ng-template>
 -  <ng-template #emptymessage>
--    <primeng-custom-table-emptymessage [colspan]="8" />
 -  </ng-template>
 -
 -  <ng-template #paginatorleft>
--    <primeng-custom-table-footer [data]="dataSignal()" />
 -  </ng-template>
 -</p-table>
 +<app-table
@@ -1219,7 +1165,6 @@ Archivos transformados: **7**
 +  [globalFilterFields]="globalFilterFields()"
 +  [loading]="loading()"
 +  [paginator]="true"
-+  [rows]="tablePrimeNgRows"
 +  [rowsPerPageOptions]="rowsPerPageOptions"
 +  [scrollable]="true"
 +  [scrollHeight]="scrollHeight()"
@@ -1228,7 +1173,6 @@ Archivos transformados: **7**
 +  class="custom-table card d-none d-md-block"
 +>
 +  <ng-template #caption>
-+    <primeng-custom-caption
 +      [showAdd]="true"
 +      [dt]="dt"
 +      label="Nueva configuracion"
@@ -1321,11 +1265,9 @@ Archivos transformados: **7**
 +    </tr>
 +  </ng-template>
 +  <ng-template #emptymessage>
-+    <primeng-custom-table-emptymessage [colspan]="8" />
 +  </ng-template>
 +
 +  <ng-template #paginatorleft>
-+    <primeng-custom-table-footer [data]="dataSignal()" />
 +  </ng-template>
 +</app-table>
  
@@ -1338,17 +1280,12 @@ Archivos transformados: **7**
 --- a/src/app/modules/system.luxuryapp/configuracion-sistema/database-backup/database-backup-list.ts
 +++ b/src/app/modules/system.luxuryapp/configuracion-sistema/database-backup/database-backup-list.ts
 @@ -18,33 +18,35 @@
- import { PrimeNgCustomTableEmptyMessage } from "@ui/web/primeng-custom-table-emptymessage/primeng-custom-table-emptymessage";
- import { PrimeNgCustomTableFooter } from "@ui/web/primeng-custom-table-footer/primeng-custom-table-footer";
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 -import { AspRoleService } from "@core/auth/services/asp-role.service";
 -import { Endpoints } from "@core/constants/endpoints/endpoints";
 -import { ApplicationRole } from "@core/enums/asp-net-roles.enum";
 -import {
 -  globalFilterFields,
 -  rowsPerPageOptions,
--  tablePrimeNgRows,
--} from "@core/helpers/table-primeng-option";
 -import { ApiResponseService } from "@core/http/services/api-response.service";
 -import { DialogHandlerService } from "@core/services/dialog-handler.service";
 -import { TableScrollHeightService } from "@core/services/table-scroll-height.service";
@@ -1366,7 +1303,6 @@ Archivos transformados: **7**
 -    WebButtonIcon,
 -    AppIcon,
 -    MobileListItem,
--    PrimeNgCustomTableEmptyMessage,
 -    ApiDatePipe,
 -    TableModule,
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
@@ -1376,8 +1312,6 @@ Archivos transformados: **7**
 +import {
 +  globalFilterFields,
 +  rowsPerPageOptions,
-+  tablePrimeNgRows,
-+} from "@core/helpers/table-primeng-option";
 +import { ApiResponseService } from "@core/http/services/api-response.service";
 +import { DialogHandlerService } from "@core/services/dialog-handler.service";
 +import { TableScrollHeightService } from "@core/services/table-scroll-height.service";
@@ -1395,7 +1329,6 @@ Archivos transformados: **7**
 +    WebButtonIcon,
 +    AppIcon,
 +    MobileListItem,
-+    PrimeNgCustomTableEmptyMessage,
 +    ApiDatePipe,
 +    AppTable,
 +    AppSortableColumn,
@@ -1417,7 +1350,6 @@ Archivos transformados: **7**
 -<p-table
 -  [globalFilterFields]="globalFilterFields()"
 -  [paginator]="true"
--  [rows]="tablePrimeNgRows"
 -  [rowsPerPageOptions]="rowsPerPageOptions"
 -  [showCurrentPageReport]="true"
 -  [value]="dataSignal()"
@@ -1427,11 +1359,9 @@ Archivos transformados: **7**
 -  size="small"
 -  [scrollable]="true"
 -  scrollHeight="750px"
--  [virtualScrollItemSize]="tablePrimeNgRows"
 -  [loading]="loading()"
 ->
 -  <ng-template #caption>
--    <primeng-custom-caption
 -      (add)="onModalForm({ id: 0, title: 'Nuevo Conocimiento' })"
 -      [dt]="dt"
 -    />
@@ -1483,16 +1413,13 @@ Archivos transformados: **7**
 -    </tr>
 -  </ng-template>
 -  <ng-template #emptymessage>
--    <primeng-custom-table-emptymessage [colspan]="6" />
 -  </ng-template>
 -  <ng-template #paginatorleft>
--    <primeng-custom-table-footer [data]="dataSignal()" />
 -  </ng-template>
 -</p-table>
 +<app-table
 +  [globalFilterFields]="globalFilterFields()"
 +  [paginator]="true"
-+  [rows]="tablePrimeNgRows"
 +  [rowsPerPageOptions]="rowsPerPageOptions"
 +  [showCurrentPageReport]="true"
 +  [value]="dataSignal()"
@@ -1502,11 +1429,9 @@ Archivos transformados: **7**
 +  size="small"
 +  [scrollable]="true"
 +  scrollHeight="750px"
-+  [virtualScrollItemSize]="tablePrimeNgRows"
 +  [loading]="loading()"
 +>
 +  <ng-template #caption>
-+    <primeng-custom-caption
 +      (add)="onModalForm({ id: 0, title: 'Nuevo Conocimiento' })"
 +      [dt]="dt"
 +    />
@@ -1558,10 +1483,8 @@ Archivos transformados: **7**
 +    </tr>
 +  </ng-template>
 +  <ng-template #emptymessage>
-+    <primeng-custom-table-emptymessage [colspan]="6" />
 +  </ng-template>
 +  <ng-template #paginatorleft>
-+    <primeng-custom-table-footer [data]="dataSignal()" />
 +  </ng-template>
 +</app-table>
  
@@ -1574,15 +1497,10 @@ Archivos transformados: **7**
 --- a/src/app/modules/system.luxuryapp/configuracion-sistema/knowledge-base/ai-knowledge-base-list.ts
 +++ b/src/app/modules/system.luxuryapp/configuracion-sistema/knowledge-base/ai-knowledge-base-list.ts
 @@ -19,27 +19,29 @@
- import { PrimeNgCustomTableEmptyMessage } from "@ui/web/primeng-custom-table-emptymessage/primeng-custom-table-emptymessage";
- import { PrimeNgCustomTableFooter } from "@ui/web/primeng-custom-table-footer/primeng-custom-table-footer";
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 -import { Endpoints } from "@core/constants/endpoints/endpoints";
 -import {
 -  globalFilterFields,
 -  rowsPerPageOptions,
--  tablePrimeNgRows,
--} from "@core/helpers/table-primeng-option";
 -import { ApiResponseService } from "@core/http/services/api-response.service";
 -import { AiKnowledgeBaseDto } from "@core/interfaces/ai-knowledge-base.dto";
 -import {
@@ -1596,7 +1514,6 @@ Archivos transformados: **7**
 -  selector: "app-ai-knowledge-base-list",
 -  templateUrl: "./ai-knowledge-base-list.html",
 -  imports: [
--    PrimeNgCustomTableEmptyMessage,
 -    CommonModule,
 -    TableModule,
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
@@ -1604,8 +1521,6 @@ Archivos transformados: **7**
 +import {
 +  globalFilterFields,
 +  rowsPerPageOptions,
-+  tablePrimeNgRows,
-+} from "@core/helpers/table-primeng-option";
 +import { ApiResponseService } from "@core/http/services/api-response.service";
 +import { AiKnowledgeBaseDto } from "@core/interfaces/ai-knowledge-base.dto";
 +import {
@@ -1619,13 +1534,10 @@ Archivos transformados: **7**
 +  selector: "app-ai-knowledge-base-list",
 +  templateUrl: "./ai-knowledge-base-list.html",
 +  imports: [
-+    PrimeNgCustomTableEmptyMessage,
 +    CommonModule,
 +    AppTable,
 +    AppSortableColumn,
 +    AppSorticon,
-     PrimeNgCustomCaption,
-     PrimeNgCustomTableFooter,
 ```
 
 ## src/app/modules/system.luxuryapp/configuracion-sistema/vault-secrets/vault-secrets-list.html
@@ -1643,7 +1555,6 @@ Archivos transformados: **7**
 -  [globalFilterFields]="globalFilterFields()"
 -  [loading]="loading()"
 -  [paginator]="true"
--  [rows]="tablePrimeNgRows"
 -  [rowsPerPageOptions]="rowsPerPageOptions"
 -  [scrollable]="true"
 -  [scrollHeight]="scrollHeight()"
@@ -1652,7 +1563,6 @@ Archivos transformados: **7**
 -  class="custom-table card d-none d-md-block"
 ->
 -  <ng-template #caption>
--    <primeng-custom-caption
 -      [showAdd]="true"
 -      [dt]="dt"
 -      label="Nuevo secreto"
@@ -1721,11 +1631,9 @@ Archivos transformados: **7**
 -    </tr>
 -  </ng-template>
 -  <ng-template #emptymessage>
--    <primeng-custom-table-emptymessage [colspan]="7" />
 -  </ng-template>
 -
 -  <ng-template #paginatorleft>
--    <primeng-custom-table-footer [data]="dataSignal()" />
 -  </ng-template>
 -</p-table>
 +<app-table
@@ -1733,7 +1641,6 @@ Archivos transformados: **7**
 +  [globalFilterFields]="globalFilterFields()"
 +  [loading]="loading()"
 +  [paginator]="true"
-+  [rows]="tablePrimeNgRows"
 +  [rowsPerPageOptions]="rowsPerPageOptions"
 +  [scrollable]="true"
 +  [scrollHeight]="scrollHeight()"
@@ -1742,7 +1649,6 @@ Archivos transformados: **7**
 +  class="custom-table card d-none d-md-block"
 +>
 +  <ng-template #caption>
-+    <primeng-custom-caption
 +      [showAdd]="true"
 +      [dt]="dt"
 +      label="Nuevo secreto"
@@ -1811,11 +1717,9 @@ Archivos transformados: **7**
 +    </tr>
 +  </ng-template>
 +  <ng-template #emptymessage>
-+    <primeng-custom-table-emptymessage [colspan]="7" />
 +  </ng-template>
 +
 +  <ng-template #paginatorleft>
-+    <primeng-custom-table-footer [data]="dataSignal()" />
 +  </ng-template>
 +</app-table>
  
@@ -1828,17 +1732,12 @@ Archivos transformados: **7**
 --- a/src/app/modules/system.luxuryapp/configuracion-sistema/vault-secrets/vault-secrets-list.ts
 +++ b/src/app/modules/system.luxuryapp/configuracion-sistema/vault-secrets/vault-secrets-list.ts
 @@ -18,32 +18,34 @@
- import { PrimeNgCustomTableEmptyMessage } from "@ui/web/primeng-custom-table-emptymessage/primeng-custom-table-emptymessage";
- import { PrimeNgCustomTableFooter } from "@ui/web/primeng-custom-table-footer/primeng-custom-table-footer";
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 -import { AspRoleService } from "@core/auth/services/asp-role.service";
 -import { Endpoints } from "@core/constants/endpoints/endpoints";
 -import { ApplicationRole } from "@core/enums/asp-net-roles.enum";
 -import {
 -  globalFilterFields,
 -  rowsPerPageOptions,
--  tablePrimeNgRows,
--} from "@core/helpers/table-primeng-option";
 -import { ApiResponseService } from "@core/http/services/api-response.service";
 -import { DialogHandlerService } from "@core/services/dialog-handler.service";
 -import { TableScrollHeightService } from "@core/services/table-scroll-height.service";
@@ -1855,7 +1754,6 @@ Archivos transformados: **7**
 -    WebButtonLabel,
 -    AppIcon,
 -    MobileListItem,
--    PrimeNgCustomTableEmptyMessage,
 -    ApiDatePipe,
 -    TableModule,
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
@@ -1865,8 +1763,6 @@ Archivos transformados: **7**
 +import {
 +  globalFilterFields,
 +  rowsPerPageOptions,
-+  tablePrimeNgRows,
-+} from "@core/helpers/table-primeng-option";
 +import { ApiResponseService } from "@core/http/services/api-response.service";
 +import { DialogHandlerService } from "@core/services/dialog-handler.service";
 +import { TableScrollHeightService } from "@core/services/table-scroll-height.service";
@@ -1883,7 +1779,6 @@ Archivos transformados: **7**
 +    WebButtonLabel,
 +    AppIcon,
 +    MobileListItem,
-+    PrimeNgCustomTableEmptyMessage,
 +    ApiDatePipe,
 +    AppTable,
 +    AppSortableColumn,

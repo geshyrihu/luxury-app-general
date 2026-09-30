@@ -1,8 +1,6 @@
-# Migración PrimeNG → Bootstrap — Índice
 
 📅 Creado: 2026-09-12 — última actualización 2026-09-18
 🛡️ Estado histórico: ✅ Fases 0-8 ejecutadas. Actual: Fase 9 — retiro total
-de referencias, nombres legacy y CSS de compatibilidad PrimeNG/PrimeFlex/
 PrimeIcons/PrimeUIX, más remediación Design System derivada de auditoría FASE 1.
 El plan vigente es el addendum Fase 9 de `02-plan-migracion.md` (§9.0–§9.7).
 Decisiones #4/#5 del checklist de Fase 0 resueltas 2026-09-15
@@ -10,11 +8,9 @@ Decisiones #4/#5 del checklist de Fase 0 resueltas 2026-09-15
 Antes de escribir el prompt del lote
 piloto se encontró que `_custom-table.scss`/`_prime-table.scss` (piel
 visual base de todas las tablas) dependen casi por completo de clases
-internas de PrimeNG, contra lo que decía el análisis previo — ver
 `05-tablas-y-modales.md` §A.2bis y `04-bitacora-cambios.md` (entrada
 "Arranque real de Fase 6"). El 2026-09-14 se había auditado Fase 2/3
 completa contra código real y se encontraron y cerraron 33 archivos con
-fugas residuales a PrimeNG que el inventario daba por resueltas sin
 estarlo (`toolbar`, `breadcrumb`, `divider`, `checkbox`, `skeleton`,
 `badge`, más 9 tipos de fuga nunca documentados: `p-button`, `pTooltip`,
 `pInputTextarea`, `p-scrollpanel`, `p-drawer`, `p-panel`, `p-timeline`,
@@ -27,7 +23,6 @@ rompió ~350 archivos (corregido el mismo día) y el renombrado
 ## Propósito de esta carpeta
 
 Bitácora ordenada del proceso de migración del stack visual de escritorio de
-`appsweb/angular` desde **PrimeNG** hacia **Bootstrap 5**, tomando como
 referencia las plantillas `templates_admin/lagos` y `templates_admin/minia`.
 
 Esta carpeta es la fuente única de verdad del proceso de migración. Se
@@ -37,13 +32,11 @@ actualiza en cada sesión de trabajo, no se reescribe desde cero.
 
 1. [01-analisis-estado-actual.md](./01-analisis-estado-actual.md) — Diagnóstico
    completo del sistema actual: arquitectura de `shared/ui`, sistema de
-   tokens, hojas de estilo, huella real de PrimeNG (cuantificada), hallazgos
    de deuda técnica y comparación `lagos` vs `minia`.
 2. [02-plan-migracion.md](./02-plan-migracion.md) — Estrategia, fases,
    secuencia de migración por componente, mapeo de tokens y criterios de
    aceptación.
 3. [03-inventario-componentes.md](./03-inventario-componentes.md) — Registro
-   vivo componente por componente (PrimeNG → wrapper actual → reemplazo
    Bootstrap → estado). Se actualiza en cada componente migrado.
 4. [04-bitacora-cambios.md](./04-bitacora-cambios.md) — Changelog cronológico
    de decisiones y cambios reales aplicados. Se añade una entrada por sesión
@@ -52,7 +45,6 @@ actualiza en cada sesión de trabajo, no se reescribe desde cero.
    código real de los dos ítems más grandes: el ecosistema de tabla
    (`p-table`, Fase 6) y los modales (`DynamicDialog`, Fase 4).
 6. [06-preflight-fase4-6-primeflex-iconos.md](./06-preflight-fase4-6-primeflex-iconos.md) —
-    Verificación pre-vuelo de PrimeNG/PrimeIcons/PrimeFlex antes de arrancar
     Fase 4+6. Corrige el alcance de la Fase 6.5 (Track Flex) con números
     reverificados palabra por palabra: la estimación previa de ~650
     archivos/~15,000 ocurrencias era ~2x inflada por falsos positivos de

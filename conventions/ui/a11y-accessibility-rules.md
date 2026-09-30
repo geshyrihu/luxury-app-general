@@ -8,7 +8,6 @@
 
 ## Propósito
 
-Documentar reglas de accesibilidad WCAG 2.1 AA para Web (PrimeNG) y Mobile (Ionic). Define `aria-*` attributes, keyboard navigation, focus management, y contraste.
 
 ---
 

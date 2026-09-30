@@ -42,7 +42,6 @@
 | Lenguaje | TypeScript | Dart 3.x |
 | Componentes | ~480 standalone | ~480 widgets |
 | Servicios | ~70 en core/services | ~70 servicios Dart |
-| UI Library | PrimeNG 22 + PrimeFlex 4 | Flutter Material + paquetes propios |
 | Mobile | Ionic 8 (WebView) | Nativo (Skia/Impeller) |
 | Híbrido | Capacitor 8 | Flutter Web + Mobile (mismo código) |
 | Estado | Angular Signals | Riverpod / BLoC |
@@ -60,7 +59,6 @@
 | **UI declarativa**: HTML templates → Widget tree | No hay HTML, CSS ni JSX. Todo es código Dart en árbol de widgets. |
 | **Layout**: CSS (flexbox/grid) → Widgets composicionales | No hay CSS. `Row`, `Column`, `Stack`, `Flex` reemplazan flexbox. |
 | **Responsive**: Media queries CSS → LayoutBuilder/OrientationBuilder | Misma capacidad, distinta implementación. |
-| **UI Library**: PrimeNG → Flutter packages | No hay PrimeNG/PrimeReact para Flutter. Usar paquetes como `syncfusion_flutter_datagrid`, `flutter_datatable`, o widgets custom. |
 | **Navegación**: React Router → GoRouter/ Navigator 2.0 | Declarativa con GoRouter, similar a React Router. |
 | **Web**: PWA Angular → Flutter Web | Flutter Web compila a Canvas/DOM. No es PWA tradicional. |
 | **Mobile**: Ionic (WebView) → Nativo Flutter | Flutter pinta todo con Skia. Sin WebView. |
@@ -71,7 +69,6 @@
 
 1. **Dart vs TypeScript**: Migrar ~480 archivos TS a Dart. Dart tiene null safety, `sealed class`, `extension methods`, sin `any`/`unknown`.
 2. **Widget tree vs HTML**: Reemplazar todo template HTML + CSS por widgets Dart. El cambio más grande.
-3. **PrimeNG → equivalente Flutter**: No existe PrimeNG/PrimeReact para Flutter. Usar `syncfusion_flutter_datagrid` para tablas, `flutter_form_builder` para formularios, o construir widgets custom.
 4. **Ionic → Flutter nativo**: Ionic (WebView con componentes nativos) → Flutter (todo nativo). Cambio radical en la experiencia mobile.
 5. **Design System SCSS → Flutter Theme**: Migrar 500+ líneas de variables CSS a `ThemeData` + `ThemeExtension`.
 6. **SignalR → signalr_netrcore**: El paquete `signalr_core` para Dart funciona, pero con limitaciones vs JS.
@@ -212,9 +209,6 @@ luxuryapp-api/client/flutter-migration/
 | `action-menu` | `PopupMenuButton` / `AppActionMenu` |
 | `data-view-mobile` | `ListView.builder` wrapper |
 | `buttons` (15 vars) | `AppButton` (ElevatedButton/OutlinedButton wrapper) |
-| `primeng-custom-caption` | `TableCaption` widget |
-| `primeng-custom-table-footer` | `TableFooter` widget |
-| `primeng-custom-toast` | `AppToast` (SnackBar/overlay wrapper) |
 | `status-badge` | `StatusBadge` (colored chip con icono) |
 | `app-icon` | `AppIcon` (Iconify para Flutter) |
 
@@ -322,12 +316,9 @@ luxuryapp-api/client/flutter-migration/
 | `@angular/service-worker` | Flutter Web (no requiere) |
 | `RouterModule.forChild()` | GoRouter `GoRoute` nesting |
 | ReactiveForms | `flutter_form_builder` / `reactive_forms` |
-| PrimeNG | Syncfusion / widgets custom |
 | Ionic | Flutter Material (nativo) |
 
-### 4.2 Mapeo PrimeNG → Flutter
 
-| PrimeNG | Flutter Package | Notas |
 |---------|----------------|-------|
 | `p-table` | `syncfusion_flutter_datagrid` / `DataTable2` | SfDataGrid es el más completo |
 | `p-button` | `ElevatedButton` / `OutlinedButton` / `TextButton` | Nativos de Material |
@@ -2358,7 +2349,6 @@ class HeavyTableWidget extends StatelessWidget {
 
 | Riesgo | Impacto | Probabilidad | Mitigación |
 |--------|---------|--------------|------------|
-| **No existe PrimeNG para Flutter** | Alto | Alta | Usar Syncfusion + widgets custom. Syncfusion DataGrid es el reemplazo más completo para p-table. |
 | **Flutter Web no es buena experiencia para escritorio pesado** | Alto | Alta | Mantener Angular para web desktop. Flutter solo para mobile native + mobile web. |
 | **Dart learning curve para el equipo** | Alto | Alta | Capacitación 2-3 semanas. Dart es más fácil que TypeScript (sin sobrecarga de tipos). |
 | **SignalR en Dart es menos estable** | Medio | Media | Usar `signalr_netrcore`. Considerar SSE (Server-Sent Events) como alternativa. |
@@ -2419,7 +2409,6 @@ class HeavyTableWidget extends StatelessWidget {
 | **Mobile (iOS/Android)** | ⚠️ WebView (Ionic) | ✅ Nativo (Skia) |
 | **Rendimiento mobile** | ⚠️ Depende del WebView | ✅ 60fps consistente |
 | **UI/UX nativa** | ⚠️ WebView se siente web | ✅ Nativa (Material/Cupertino) |
-| **Design System existente** | ✅ PrimeNG → PrimeReact (directo) | ❌ Todo custom (Syncfusion) |
 | **Equipo knowledge** | ✅ TypeScript (mismo) | ❌ Dart (nuevo) |
 | **Bundle size** | ✅ ~500KB | ❌ ~5-15MB |
 | **Ecosistema librerías** | ✅ Maduro | ✅ Maduro |

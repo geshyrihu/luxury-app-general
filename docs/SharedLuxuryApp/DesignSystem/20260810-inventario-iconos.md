@@ -452,7 +452,6 @@ Detalle completo con archivo y línea. Excluye los 58 usos internos del mapping
 | 71 | `src/app/core/layout/employee-view/monitor/profile-monitor/profile-monitor.html` | 42 | `pi pi-sync` |
 | 72 | `src/app/core/layout/employee-view/monitor/profile-monitor/profile-monitor.html` | 53 | `pi pi-sign-out` |
 | 73 | `src/app/shared/ui/buttons/web-label/button.ts` | 18 | `pi pi-spinner` |
-| 74 | `src/app/shared/ui/inputs/documentacionprimeng.txt` | 43 | `pi pi-plus` |
 | 75 | `src/app/shared/ui/shared/app-icon/app-icon.spec.ts` | 33 | `pi pi-user` |
 | 76 | `src/app/shared/ui/web/data-view/data-view.ts` | 33 | `pi pi-search` |
 | 77 | `src/app/shared/ui/web/data-view/data-view.ts` | 51 | `pi pi-plus` |

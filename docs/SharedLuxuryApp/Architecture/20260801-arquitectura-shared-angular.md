@@ -10,7 +10,6 @@ Este documento establece las reglas fundamentales de desarrollo en Angular para 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [CommonModule, PrimeNgComponents],
   templateUrl: './user-profile.html'
 })
 export class UserProfileComponent {}

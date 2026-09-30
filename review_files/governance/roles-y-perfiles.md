@@ -13,7 +13,6 @@
 | Rol | Foco Principal | Stack Tecnológico | Secciones CONVENTIONS | Auditor Responsable |
 |-----|---|---|---|---|
 | **Full Stack Developer** | Ciclo completo BD→UI | Angular + .NET + SQL | §1-22 | Tech Lead |
-| **Frontend Senior** | UI, UX, Performance | Angular, PrimeNG, SCSS, Ionic | §2,3,5,6,7,8,15 | Frontend Lead |
 | **Backend Developer** | APIs, Lógica, Datos | .NET 10, EF Core, SQL/PostgreSQL | §1,9,16,18 | Backend Lead |
 | **Mobile Developer** | iOS/Android/PWA | Ionic, Angular, Flutter | §2,13,15 | Mobile Lead |
 | **Tech Lead / Architect** | Diseño, Mentoring, Auditoría | All | §1,14,19-22 | CTO |
@@ -40,7 +39,6 @@ Desarrollador con capacidad de **diseñar e implementar** soluciones completas d
 | Capa | Stack | Versión |
 |------|-------|---------|
 | Frontend | Angular | 22 |
-| Frontend UI | PrimeNG + Ionic | 22, 8 |
 | Backend | .NET | 10 |
 | ORM | EF Core | 10 |
 | Base de Datos | SQL Server / PostgreSQL | Actual |
@@ -83,7 +81,6 @@ Full Stack → **Tech Lead / Architect**
 
 ### Perfil
 
-Experto en **construcción de interfaces complejas**, performance, accesibilidad y diseño responsivo. Entiende profundamente Angular, PrimeNG, CSS moderno y patrones mobile. Guía las decisiones de UI/UX del equipo.
 
 ### Responsabilidades
 
@@ -98,7 +95,6 @@ Experto en **construcción de interfaces complejas**, performance, accesibilidad
 | Área | Stack |
 |------|-------|
 | Frontend Framework | Angular 22 (Signals, standalone) |
-| Component Library | PrimeNG 22 |
 | Mobile | Ionic 8 |
 | Styling | SCSS, PrimeFlex, CSS Variables |
 | State | Signals, RxJS (legacy) |
@@ -108,7 +104,6 @@ Experto en **construcción de interfaces complejas**, performance, accesibilidad
 
 **Críticas (🔴 bloquean merge):**
 - §2: Strict, OnPush, Signals, @if/@for
-- §3: PrimeNG estándar, no hardcode
 - §5: Usar @ui/*, auditar `npm run audit:ui`
 - §6: Wrappers con sufijo `-wrapper`
 
@@ -128,7 +123,6 @@ npm run audit:frontend
 
 # Verificaciones:
 □ npm run audit:ui (catálogo UI limpio)
-□ grep -r "primeng" src/app/modules/ (cero imports directos)
 □ grep -r " any" src/app --include="*.ts" (strict typing)
 □ Validar componentes móviles en CRUDs
 □ Revisar responsive en 3 breakpoints

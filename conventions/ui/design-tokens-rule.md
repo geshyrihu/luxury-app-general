@@ -82,7 +82,6 @@ appsweb/angular/src/styles/
 │   └── _borders.scss         ← Border radius tokens
 ├── theme/
 │   ├── _variables.scss       ← CSS variables exported
-│   ├── mypreset.ts           ← PrimeNG preset (colors)
 │   └── _global.scss          ← Global rules
 └── base/
     └── _dark-mode.scss       ← Dark mode overrides

@@ -3,7 +3,6 @@
 ## Contexto
 
 La Fase 8 Categoría C migró
-`shared/ui/adaptive/tooltip/tooltip.directive.ts` de PrimeNG a
 `NgbTooltip` de `@ng-bootstrap/ng-bootstrap` usando `hostDirectives` con
 alias de inputs (`lxTooltip`→`ngbTooltip`, `tooltipPosition`→`placement`,
 `tooltipDisabled`→`disableTooltip`, `tooltipStyleClass`→`tooltipClass`,
@@ -67,7 +66,6 @@ Los tooltips no aparecen al hacer hover.
 ## Restricciones
 
 - No tocar los **128 consumidores** de `[lxTooltip]`.
-- **No reintroducir PrimeNG** (la migración lo está retirando).
 - Mantener contrato: selector `[lxTooltip]`, inputs `tooltipPosition`,
   `tooltipDisabled`, `tooltipStyleClass`, `tooltipEvent`, `autoClose`,
   `container`, `animation`, `openDelay`, `closeDelay`.

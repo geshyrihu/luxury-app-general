@@ -12,7 +12,6 @@ previa: Angular tolera el tag desconocido sin error, pero como
 `<ng-template>` que contiene (`#headerSupervisor`, `#filter`) **nunca
 se instancian**, así que `<lx-multi-select>` dentro de ellos **nunca
 se renderiza hoy**. Es una funcionalidad ya rota desde antes de esta
-sesión, sin relación con PrimeNG — no la arregles en este prompt
 (sería un cambio de alcance mayor, hay que decidir si esos filtros de
 columna se reconstruyen con algún mecanismo propio de `AppTable` o se
 retiran). Solo repórtalo, deja el `<p-columnfilter>` tal cual.
@@ -44,7 +43,6 @@ preservando la API pública exacta de `MultiSelectBase`
 +import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
 +import { FormsModule } from "@angular/forms";
  import { MultiSelectBase } from "@ui/base/multi-select.base";
--import { MultiSelectModule } from "primeng/multiselect";
 +import { CustomInputMultiselectSignal } from "@ui/inputs/web/custom-input-multiselect-signal";
 
  @Component({
@@ -86,7 +84,6 @@ preservando la API pública exacta de `MultiSelectBase`
 ```
 
 **Detalle de compatibilidad importante**: el `(onChange)` original de
-PrimeNG emitía un objeto con forma `{ originalEvent, value }` — los
 consumidores reales que sí usan `(onChange)` (fuera del scaffolding
 muerto, verifica con
 `grep -rn "onChange)=\"filter" src/app/modules --include="*.html"` si
@@ -106,7 +103,6 @@ construir un componente nuevo — no es parte de este prompt.
 
 ## Verificación
 
-- `grep -n "primeng" multi-select.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -120,8 +116,6 @@ construir un componente nuevo — no es parte de este prompt.
 
 ## Listo cuando
 
-- `multi-select.ts` sin PrimeNG, API pública preservada.
 - El hallazgo del `<p-columnfilter>` muerto reportado (no arreglado).
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `shared/ui` baja de 9
   a 8.

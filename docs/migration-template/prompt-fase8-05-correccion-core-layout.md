@@ -13,11 +13,9 @@ componente equivocado.
 src/app/core/layout/employee-view/desktop/sidebar/sidebar.ts
 ```
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 ```
 ```diff
--import { InputTextModule } from "primeng/inputtext";
 ```
 Quita `InputTextModule` también del arreglo `imports:` — confirmado
 de nuevo, 0 uso de `pInputText` en `sidebar.html`.
@@ -28,7 +26,6 @@ de nuevo, 0 uso de `pInputText` en `sidebar.html`.
 src/app/core/layout/employee-view/movil/home-menu-mobile/home-menu-mobile.ts
 ```
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 ```
 
@@ -49,7 +46,6 @@ patrón original:
 ```diff
 -import { AppMenu } from "@ui/web/menu/menu";
 +import { CustomInputSelectSignal } from "@ui/inputs/web/custom-input-select-signal";
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 ```
 (ajusta `imports:` del `@Component`; puedes quitar `customerMenuItems`
@@ -101,13 +97,11 @@ reviertas — reutiliza la infraestructura de diálogos ya establecida en
 el resto de la app en vez de reinventar markup de modal. Solo falta:
 
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 ```
 
 ## Verificación
 
-- `grep -rn "primeng" <los 4 archivos>` → 0 resultados en todos.
 - `npx tsc --noEmit`: 0 errores.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad — si sigues viendo el error de
@@ -123,7 +117,6 @@ el resto de la app en vez de reinventar markup de modal. Solo falta:
 
 ## Listo cuando
 
-- Los 4 archivos sin ningún import de `primeng/api`/`primeng/*`.
 - `header-direccion-desktop` usando `custom-input-select-signal`, con
   el filtro funcionando para listas largas.
 - `header-employee-desktop` conserva `DialogHandlerService`.

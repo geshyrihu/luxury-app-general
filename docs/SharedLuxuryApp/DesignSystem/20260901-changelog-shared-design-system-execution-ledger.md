@@ -53,7 +53,6 @@
 | 2.2 | Modo baseline en `audit:apps` | ✅ Completada | OpenCode | `f6a4903` |
 | 2.3 | Modo baseline en tokens/design/css | ✅ Completada | OpenCode | `9a15205` |
 | 2.4 | Baseline de los tres audits | ✅ Completada | OpenCode | `9a15205` |
-| 2.4 | Detector de fugas PrimeNG/Ionic | ✅ Completada | OpenCode | `950625b` |
 | 2.5 | `npm run lint` en verde | ✅ Completada | OpenCode | `b484818` |
 | 2.6 | 🧪 Probar que el sello falla ante lo nuevo | ✅ Completada | OpenCode | — |
 | 2.7 | Hook pre-push | ✅ Completada | OpenCode | `c837639` |
@@ -805,7 +804,6 @@ regla en `RELAY-PROTOCOL.md` §4.
 - **Commit:** `b484818` — `[2.5] npm run lint en verde con baselines` (commit vacío `--allow-empty`: la tarea es de verificación; todo el cambio de código quedó en 2.2–2.4. Mismo precedente que 1.6).
 - **Notas / observación:** `git status --short` (git de Windows) = **2 archivos untracked**, ambos **preexistentes** (creados por el supervisor el 08-Ago): `conf.nginx.conf` y `sitios.creados.md` en la raíz de `client/luxuryapp`. NO son artefactos del lint (esos ya están gitignoreados desde 2.1). El RUNBOOK espera 0 cambios pendientes; quedan pendientes **solo por estos 2** → sigue la P3 abierta de 2.1 (¿trackearlos o ignorarlos? decisión del supervisor). No los toco (P8).
 
-### [2.4] — Detector de fugas de PrimeNG/Ionic en `apps/`
 - **Agente:** OpenCode
 - **Fecha:** 2026-08-08
 - **Estado:** ✅ COMPLETADA
@@ -813,9 +811,6 @@ regla en `RELAY-PROTOCOL.md` §4.
   - `node scripts/audit-apps-ui-boundaries.mjs --update-baseline` → **exit 0**
   - `node scripts/audit-apps-ui-boundaries.mjs; echo "exit=$?"` → **`Resumen: conocidas: 15 · nuevas: 0 · resueltas: 0`**, **exit 0** ✅
   - `npm run audit:apps-ui` (wiring en package.json) → **exit 0** ✅
-- **Commit:** `950625b` — `[2.4] detector de fugas de PrimeNG/Ionic con baseline` (script + baseline + package.json: script nuevo y encadenado en `lint`)
-- **Notas:** regla 2.4.1 (`apps/` no importa `primeng/*` ni `@ionic/angular*`); excluye `.spec.ts` (2.4.2), `herramientas-dev/catalog-component-ui/` y `admin-wrapper/conventions-viewer/` (2.4.3, rutas verificadas en disco); baseline `docs/audit/baseline-apps-ui.json` (2.4.4); `"audit:apps-ui"` agregado a `package.json` y a la cadena de `lint` (2.4.5). Clave estable `<archivo>|<descripcion>`.
-- **⚠️ Discrepancia menor vs RUNBOOK (documentada):** el RUNBOOK estimó **~9 conocidas**; el detector reporta **15**. Diagnóstico: son **9 archivos únicos** (8× PrimeNG + 1× Ionic) pero **15 líneas de import** (6 archivos tienen >1 import de PrimeNG). El conteo del resumen es por **ocurrencia**, consistente con los demás audits (apps 72, tokens 162, design 277). El "~9" del RUNBOOK era conteo de archivos. Sin falsos positivos: las 15 están en los 9 archivos legítimos.
 
 ### [2.3] — Modo baseline en `audit:tokens`, `audit:design` y `audit:css`
 - **Agente:** OpenCode
@@ -879,7 +874,6 @@ regla en `RELAY-PROTOCOL.md` §4.
   | `audit:design` | ❌ rojo | **277** hallazgos *(NO estaba en el plan)* |
   | `audit:css` | ❌ rojo | issues críticos *(NO estaba en el plan)* |
 
-  👉 El plan de Fase 2 contemplaba 72 amarras + ~9 fugas de PrimeNG. **Faltan ~440 hallazgos más**
   para que `npm run lint` quede verde. Requiere decisión del usuario sobre el alcance de la Fase 2.
 
 - **Mejora menor detectada:** `audit-report.csv`, `audit-report.json` y `reports/` se generan al

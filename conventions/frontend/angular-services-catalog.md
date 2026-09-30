@@ -165,7 +165,6 @@ this.toast.showSuccess('Guardado exitosamente');
 - Métodos:
   - `openDialog<T>(component, data, title, size): Promise<T>` — Auto-detecta web/mobile
   - `openMobileModal<T>(...)` — Inyecta ModalController (Ionic)
-  - `openDialogWeb<T>(...)` — Inyecta DialogService (PrimeNG)
 - Responsabilidad: Unificación de APIs web/mobile
 
 ```typescript

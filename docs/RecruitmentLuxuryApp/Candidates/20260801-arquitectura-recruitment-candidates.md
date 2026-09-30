@@ -278,7 +278,6 @@ CandidateApplication → RequestEmployeeRegister → Employee
 - ✅ Componentes standalone (no módulos)
 - ✅ OnPush + signals para cambio de estado
 - ✅ Reactive Forms + validación custom
-- ✅ PrimeNG para tabla de postulaciones
 - ✅ Ionic para versión mobile (bottom-sheet para transiciones)
 
 ### Backend (.NET 10)

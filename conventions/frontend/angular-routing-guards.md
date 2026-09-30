@@ -95,11 +95,9 @@ export const roleGuard = (requiredRole: string): CanActivateFn => {
 
 ## 2. Routing Configuration
 
-### Regla crítica de `MenuItem[]` con PrimeNG en standalone components
 
 Cuando un shell o feature standalone alimente `MenuItem[]` a `Menubar`,
 `Menu`, `TieredMenu`, `MegaMenu`, `PanelMenu`, `ContextMenu` o wrappers
-equivalentes de PrimeNG, la navegación no debe declararse con `routerLink`
 dentro del objeto `MenuItem`.
 
 ```typescript
@@ -120,11 +118,9 @@ readonly items: MenuItem[] = [
 **Regla operativa:**
 
 - `routerLink` sí se permite en templates Angular normales.
-- En `MenuItem[]` de PrimeNG usados desde standalone components, usar `command`
   + `Router.navigate()` o `Router.navigateByUrl()`.
 - La auditoría debe revisar este punto aunque el build compile limpio.
 
-**Motivo:** PrimeNG puede materializar internamente `RouterLink` con un
 injector que no hereda bien `ActivatedRoute`, causando
 `NG0201: No provider found for ActivatedRoute` solo en runtime.
 

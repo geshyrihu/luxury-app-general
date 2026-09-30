@@ -2,14 +2,11 @@
 
 El usuario decidió migrar el catálogo interno de componentes
 (`herramientas-dev/catalog-component-ui/*`) a Bootstrap en vez de
-mantenerlo con PrimeNG. Investigación previa (2026-09-16, ver
 `04-bitacora-cambios.md`) confirmó la API real de cada reemplazo —
 sigue las instrucciones exactas de este prompt, no improvises props.
 
 **Advertencia importante descubierta en la investigación**: `app-dialog`
 (`@ui/web/dialog/dialog`) y `app-multi-select`
-(`@ui/web/multi-select/multi-select`) **siguen usando PrimeNG real por
-dentro** (`primeng/dialog`, `primeng/multiselect`). NO los uses como
 reemplazo — para multiselect usa `custom-input-multiselect-signal` (ver
 punto 6 abajo). El caso de dialog se resuelve en un prompt aparte con
 markup Bootstrap nativo.
@@ -20,8 +17,6 @@ Reemplaza (líneas ~415-458, panel de controles global del catálogo de
 botones):
 
 ```diff
--import { SelectButtonModule } from "@ui/web/primeng-selectbutton/primeng-selectbutton";
--import { ToggleSwitchModule } from "@ui/web/primeng-toggleswitch/primeng-toggleswitch";
 +import { AppSelectButton } from "@ui/web/select-button/select-button";
 +import { AppToggleSwitch } from "@ui/web/toggle-switch/toggle-switch";
 ```
@@ -49,7 +44,6 @@ son `model()` en ambos componentes — usa binding de dos vías
 ## 2. `patterns-layouts/catalog-layouts-item/catalog-layouts-item.ts`
 
 ```diff
--import { ButtonModule } from "@ui/web/primeng-button/primeng-button";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
 ```
 
@@ -72,9 +66,6 @@ cualquier archivo ya migrado que lo use; el evento es `(clicked)`, no
 ## 3. `patterns-layouts/catalog-patterns-item/catalog-patterns-item.ts`
 
 ```diff
--import { ButtonModule } from "@ui/web/primeng-button/primeng-button";
--import { InputTextModule } from "@ui/web/primeng-inputtext/primeng-inputtext";
--import { TabsModule } from "@ui/web/primeng-tabs/primeng-tabs";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
 +import { CustomInputTextSignal } from "@ui/inputs/web/custom-input-text-signal";
 +import { Tabs } from "@ui/web/tabs/tabs";
@@ -115,7 +106,6 @@ que prefieras, solo úsalo consistente con el `[(activeId)]` de arriba).
 ## 4. `catalog-core-item/catalog-core-item.ts`
 
 ```diff
--import { ButtonModule } from "@ui/web/primeng-button/primeng-button";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
 ```
 
@@ -145,8 +135,6 @@ que prefieras, solo úsalo consistente con el `[(activeId)]` de arriba).
 
 **Corrección de alcance**: este archivo NO tiene `p-checkbox` (ya
 migrado a `<app-checkbox>`, 100% Bootstrap, no tocar). Lo que sí sigue
-siendo PrimeNG real es `<app-multi-select>` (case `"forms"`, ~línea
-245) — ese componente envuelve `primeng/multiselect` por dentro, así
 que usarlo no cuenta como migrado.
 
 ```diff
@@ -160,15 +148,12 @@ migrado) y quita el import de `AppMultiSelect` si ya no se usa en
 ningún otro lugar del archivo.
 
 **No toques** el import de `MegaMenuItem, MenuItem, TreeNode` desde
-`primeng/api` (línea ~75) — son solo tipos usados para tipar arrays de
 datos demo, no requieren componente Angular; catalogar aparte, fuera
 de este prompt (no bloquea nada, es solo un acoplamiento de tipos).
 
 ## 6. `shared/tokens-colors/tokens-colors.ts`
 
 ```diff
--import { MessageService } from "@ui/web/primeng-api/primeng-api";
--import { ToastModule } from "@ui/web/primeng-toast/primeng-toast";
 +import { MessageService } from "@core/services/message.service";
 +import { AppToast } from "@ui/web/toast/toast";
 ```
@@ -192,7 +177,6 @@ tiene la misma firma `.add({severity,summary,detail,life})`.
 
 ## Verificación (para los 6 archivos)
 
-- `grep -n "primeng" <cada archivo>` → 0 resultados salvo el
   `MegaMenuItem/MenuItem/TreeNode` de `catalog-web-extras.ts` (ese se
   queda, ver punto 5).
 - `npx tsc --noEmit`: 0 errores nuevos.
@@ -206,7 +190,6 @@ tiene la misma firma `.add({severity,summary,detail,life})`.
 
 ## Listo cuando
 
-- Los 6 archivos sin PrimeNG real (salvo la excepción de tipos
   anotada).
 - Capturas confirmando que cada demo se ve/funciona igual.
 - `tsc`/build limpios.

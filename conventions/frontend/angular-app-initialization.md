@@ -175,13 +175,10 @@ function preloadIconifyIcons(): () => Promise<void> {
   };
 }
 
-// ========== CONFIGURACIÓN DE PRIMENG ==========
 
 /**
- * Crear configuración de PrimeNG
  * Define tema, traducciones, y comportamientos globales
  */
-function createPrimeNgConfig(): PrimeNGConfig {
   return {
     ripple: true, // Efecto ripple en botones
     zIndex: {

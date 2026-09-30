@@ -1,6 +1,4 @@
-# Prompt Fase 7 — Catálogo: `catalog-web-item.ts` (12 componentes PrimeNG reales)
 
-Es el archivo más grande del catálogo con PrimeNG real — un
 `@switch (item())` gigante, cada `@case` es una demo independiente.
 Migra los 12 casos listados abajo, uno por uno. **No toques** los
 demás `@case` del archivo (ya son Bootstrap-nativos).
@@ -14,18 +12,6 @@ src/app/modules/admin.luxuryapp/herramientas-dev/catalog-component-ui/catalog-we
 ## Imports a cambiar (líneas ~61-73)
 
 ```diff
--import { AccordionModule } from "@ui/web/primeng-accordion/primeng-accordion";
--import { ButtonModule } from "@ui/web/primeng-button/primeng-button";
--import { DatePickerModule } from "@ui/web/primeng-datepicker/primeng-datepicker";
--import { DialogModule } from "@ui/web/primeng-dialog/primeng-dialog";
--import { InputNumberModule } from "@ui/web/primeng-inputnumber/primeng-inputnumber";
--import { InputTextModule } from "@ui/web/primeng-inputtext/primeng-inputtext";
--import { MultiSelectModule } from "@ui/web/primeng-multiselect/primeng-multiselect";
--import { PopoverModule } from "@ui/web/primeng-popover/primeng-popover";
--import { SelectModule } from "@ui/web/primeng-select/primeng-select";
--import { SelectButtonModule } from "@ui/web/primeng-selectbutton/primeng-selectbutton";
--import { TabsModule } from "@ui/web/primeng-tabs/primeng-tabs";
--import { ToggleSwitchModule } from "@ui/web/primeng-toggleswitch/primeng-toggleswitch";
 +import { Accordion } from "@ui/web/accordion/accordion";
 +import { AccordionPanel } from "@ui/web/accordion/accordion";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
@@ -74,7 +60,6 @@ expandido por defecto).
 
 ## 2. `@case ("button")` (líneas ~322-503) — solo la sección de `p-button`
 
-Dos bloques de variantes. Mapeo de `severity` de PrimeNG a `severity`
 de `il-button` (mismos nombres salvo `warn`→`warning`):
 
 ```diff
@@ -111,7 +96,6 @@ de `il-button` (mismos nombres salvo `warn`→`warning`):
 
 **No toques** la sección "Action Buttons - il-button-*/iw-button-*" que
 está justo debajo (ya migrada) ni "Icon Button con borde" (guía de
-estilo pura, sin PrimeNG).
 
 **Los otros 4 `<p-button>` sueltos en otros `@case` de este mismo
 archivo** (dentro de `"card"` línea ~525, `"table"` línea ~846,
@@ -132,7 +116,6 @@ punto 4).
 ## 4. `@case ("dialog")` (líneas ~566-593)
 
 Mismo problema que `catalog-guia.ts`: NO uses `<app-dialog>` (sigue
-envolviendo PrimeNG). Usa el mismo patrón de modal Bootstrap nativo de
 `prompt-fase7-catalogo-02-dialog-nativo.md`:
 
 ```diff
@@ -259,7 +242,6 @@ Agrega en el `.ts`: `webItemTabActiveId = signal("0");`
 
 ## Verificación
 
-- `grep -n "primeng" catalog-web-item.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), revisa el
   log entero con `grep -c ERROR`, no uses `tail`**.
@@ -269,6 +251,5 @@ Agrega en el `.ts`: `webItemTabActiveId = signal("0");`
 
 ## Listo cuando
 
-- Los 12 casos migrados, 0 PrimeNG real en el archivo.
 - Capturas de los 12.
 - `tsc`/build limpios.

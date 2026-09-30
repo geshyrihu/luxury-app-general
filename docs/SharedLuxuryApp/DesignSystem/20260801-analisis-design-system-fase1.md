@@ -3,7 +3,6 @@
 **Documento base analizado:** `client/angular/src/styles/DESIGN.md`
 **Implementación contrastada:** tokens reales (`core/_*.scss`, `theme/_variables.scss`, `theme/mypreset.ts`, `base/_dark-mode.scss`, `styles.scss`, `app.config.ts`, `index.html`, `package.json`, `angular.json`)
 **Fecha:** 2026-08-01
-**Alcance:** Auditoría de colores, tipografía, tokens, theming, componentes, accesibilidad (WCAG 2.2 AA/AAA), performance, gobernanza y stack técnico declarado (Angular 22, PrimeNG 22, Ionic 8, SSR/Hydration, View Transitions).
 
 > **Metodología:** se evaluó el documento de diseño contra la implementación real del repositorio (no solo contra lo escrito). Los ratios de contraste se calcularon numéricamente (WCAG 2.x, fórrmula de luminancia relativa). Referencias a archivo:línea.
 
@@ -23,7 +22,6 @@ El DS `ERP Premium · Deep Navy` tiene una base cromática sólida y de marca (n
 | Accesibilidad | **4.5** | `user-scalable=no`, focus ring <3:1, acentos <4.5:1 |
 | Tipografía | **5** | Triple sistema de tokens; fuente real ≠ documentada; escala no modular |
 | Tokens de diseño | **5** | Duplicación de nomenclaturas; rule doc ≠ código |
-| Theming / PrimeNG | **6** | Preset alineado a navy; cobertura parcial (~25/80) |
 | Ionic 8 | **7** | Mapeo `--ion-*` presente; modo definido solo como `"ios"` |
 | Responsive / Mobile | **5.5** | Breakpoints definidos; sin container queries; touch 44px no garantizado |
 | Motion | **5** | Tokens existen; sin `prefers-reduced-motion` |
@@ -44,7 +42,6 @@ El DS `ERP Premium · Deep Navy` tiene una base cromática sólida y de marca (n
 | 4 | Tokens / Gobernanza | **Fragmentación de tokens**: spacing doc `--ds-space-*` vs impl `--ds-spacing-*`; sombras doc `--ds-shadow-1..4` vs impl `--ds-shadow-xs..2xl`; tipografía en 3 sistemas | **Alto** | L | Unificar a 1 nomenclatura (CTI) y 1 fuente de verdad; actualizar `design-tokens-rule.md` | `design-tokens-rule.md:129-174`, `_variables.scss:116-125,436-442` |
 | 5 | Tipografía | Diseño declara **Inter** (`DESIGN.md:52`); impl carga **Outfit+EB Garamond** (`index.html:47-55`) que no se usan; `--ds-font-family-base` (Inter) no está cargada → el brand font real es fallback del sistema | **Alto** | S | Self-host variable font única (ej. Outfit), wire a `--ds-font-family-base`, subset latin-ext, quitar fuentes sin uso | `index.html:44-55`, `_variables.scss:399-401` |
 | 6 | Tokens / Consistencia | `--primary-500` en `_variables.scss` = `#4A90E2` (cyan) pero `mypreset.ts` `primary.500` = `#1B365D` (navy); `--ds-tertiary = --info-500 = --primary-500` → mismo nombre, dos significados según fuente | **Alto** | S | Reconciliar escala semántica 500; `--primary-500` debe ser navy base en ambas fuentes | `_variables.scss:33`, `mypreset.ts:16` |
-| 7 | Theming | Dark surfaces **duales**: DS tokens navy (`primary-950…600`) vs preset PrimeNG zinc (`#121212…`) → tarjetas PrimeNG vs componentes DS se ven distintos en dark; 15+ componentes parcheados a mano en `_dark-mode.scss` | **Medio** | L | Alinear preset dark surface a la escala navy del DS; eliminar overrides por componente | `mypreset.ts:40-54`, `_dark-mode.scss` |
 | 8 | CSS Architecture | No existe `@layer reset, tokens, base, components, utilities, overrides`; dark mode gana por **unlayered** + `!important` (varios en `styles.scss`) | **Medio** | M | Adoptar `@layer`; mover `_dark-mode.scss` a layer `overrides` | `app.config.ts:73-76`, `_dark-mode.scss:7-9`, `styles.scss:130-133` |
 | 9 | A11y Contraste | `on-surface-tertiary #9AACBB` documentado como texto = **2.34:1** FAIL; la "corrección AA" del preset `#708599` = 3.82 sigue <4.5 | **Medio** | S | Usar `neutral-500`+ para texto terciario normal o relegarlo a no-texto | `DESIGN.md:212-213`, `mypreset.ts:32,48` |
 | 10 | A11y | `--ds-text-muted #75899C` (3.61) y `--ds-text-disabled #9AACBB/#C5D0DB` (2.34/1.56) usados como texto secundario/placeholder → fallan AA | **Medio** | S | Muted ≥ neutral-600 o ampliar a ≥4.5; placeholders también aplican 1.4.3 | `_variables.scss:393,395`, `_colors.scss:154,156` |
@@ -54,7 +51,6 @@ El DS `ERP Premium · Deep Navy` tiene una base cromática sólida y de marca (n
 | 14 | Tipografía | Escala no modular (48→40→32→24→20→18→16→14→13→12→10 = ratios 0.83/0.80/0.75…) y tamaños móvil 13-14px body, 10px label (<16px recomendado) | **Medio** | M | Escala única rem + `clamp()`; body móvil ≥16px | `DESIGN.md:55-121`, `styles.scss:19-32` |
 | 15 | Responsive | Breakpoints definidos pero sin **container queries**; layout depende de media queries globales/PrimeFlex | **Medio** | L | `@container` en componentes reutilizables | `_variables.scss:127-130` |
 | 16 | Mobile Touch | Tamaño de objetivo táctil **44×44px (WCAG 2.5.8)** no garantizado ni documentado para componentes web | **Medio** | M | Token `--ds-target-size` y audit de controles | `ui-mobile-rules.md` |
-| 17 | PrimeNG | Cobertura **parcial** (~25 de 80+ componentes con tratamiento; sin modo **Unstyled/headless**; sin hooks `use*`) | **Medio** | L | Inventario por estado/variante; adoptar unstyled solo donde se requiera control total | `web/_prime-*.scss`, `_dark-mode.scss` |
 | 18 | Docs | Claims de contraste imprecisos: navy/blanco real **12.12:1** (doc 9.5) y oro/navy real **5.44:1** (doc 6.8) | **Bajo** | S | Corregir valores con calculadora oficial | `DESIGN.md:183,198` |
 | 19 | Gamut | Sin **OKLCH/Display-P3** para gradientes/brand en pantallas modernas | **Bajo** | M | Tokens secundarios `--p3-primary-*` + `color()` con fallback sRGB | `_colors.scss` |
 | 20 | Perf | Fuentes Google Fonts cargadas y **no usadas** (~peso Outfit 100–900); splash en `index.html` con colores hardcodeados (`#0b3164`, `#e2e8f0`) | **Bajo** | S | Mover splash a tokens inline o componente; self-host variable font con subset | `index.html:44-80` |
@@ -134,14 +130,12 @@ Verde = cumple · Rojo = falla. Umbrales: AA texto 4.5:1 / AAA 7:1 / AA texto gr
 | `--ds-motion-easing-standard` | cubic-bezier(0.4,0,0.2,1) | igual | Easing | ✅ |
 | `--ds-spacing-1..16` (4px base) | 4…64px | igual | Espaciado — **nombre difiere del doc `--ds-space-*`** | ⚠️ |
 | `--ion-color-primary` | `#1B365D` | `#D1DEF0` | Ionic | ✅ |
-| `--p-*` bridge | parcial | parcial | PrimeNG | ⚠️ parcial |
 | `--contrast-0/500/900` | `#FFF/#1A2634/#0D141C` | igual | HC mode — uso parcial | ⚠️ |
 
 **Tipografía (3 sistemas en competencia):** `--ds-text-*` (rem, `styles.scss:19-32`), `--ds-font-size-*` (clamp, `_variables.scss:402-411`), `$font-size-*` (SCSS, `_typography.scss:16-25`), además de los tokens `--font-size-*` referidos en `design-tokens-rule.md` que **no existen** en código.
 
 ---
 
-## 5. Cobertura PrimeNG 22 (inventario obligatorio)
 
 | Categoría | Componentes | Estado DS | Notas |
 |---|---|---|---|
@@ -172,7 +166,6 @@ Verde = cumple · Rojo = falla. Umbrales: AA texto 4.5:1 / AAA 7:1 / AA texto gr
 | P2 | `@layer` completo + `prefers-reduced-motion` + HC mode completo | Medio | M | FASE 2.1 |
 | P2 | Alinear preset dark surface a escala navy (eliminar parches por componente) | Medio | M | FASE 2.1 |
 | P3 | SSR/Hydration + View Transitions (plan) | Medio | L | FASE 2.2 |
-| P3 | Container queries, touch 44px, cobertura PrimeNG por estados | Medio | L | FASE 2.3 |
 | P4 | OKLCH/P3, claims de contraste corregidos, budgets CI | Bajo | S/M | Continuo |
 
 **RICE FASE 2.0 (arranque):** tokens unificados (Reach alto / Confidence alta / Effort medio) > contraste acentos > focus > fonts.
@@ -198,8 +191,6 @@ Verde = cumple · Rojo = falla. Umbrales: AA texto 4.5:1 / AAA 7:1 / AA texto gr
 
 | | Positivo | Negativo |
 |---|---|---|
-| **Interno** | **F:** paleta navy/oro de marca única; modo oscuro con contraste AAA; tokens M3 bien mapeados; zoneless activo; bridges `--ion-*`/`--p-*`; auditorías automatizadas | **D:** fragmentación de tokens; dark mode por overrides `!important`; fuente no implementada; acentos no AA; cobertura PrimeNG parcial; sin SSR |
-| **Externo** | **O:** WCAG 2.2 y 2026 con IA/zoom favorables; View Transitions/OKLCH ya soportados en evergreen; comunidad PrimeNG 22 Aura/preset madura | **A:** PrimeNG 22 en `-rc.1` (estabilidad); Ionic 8 + Capacitor 8 con Angular 22 aún joven; dos dominios (public/marketing vs app) exigen theming multi-brand que hoy no existe; riesgo legal VPAT |
 
 ---
 
@@ -256,7 +247,6 @@ Estado: Storybook configurado (`storybook` target) con `@storybook/angular-vite`
 
 | Ruta | Estado | Acción |
 |---|---|---|
-| PrimeNG 17/18 theming legacy → CSS vars | ✅ ya en preset Aura + `--p-*` | mantener; no reintroducir SASS theme |
 | Angular 17/18 → 22 | ✅ zoneless activo (`app.config.ts:85`) | remover `zone.js` y `provideAnimationsAsync` (`:108`) cuando se migre a CSS-only |
 | Ionic 7/8 | ✅ standalone + `--ion-*` | definir selectores por feature, no solo `mode:"ios"` |
 | Theming → tokens | ⚠️ doble nomenclatura | aplicar §9 (romper en una minor) |
@@ -327,7 +317,6 @@ Estado: Storybook configurado (`storybook` target) con `@storybook/angular-vite`
 1. **FASE 2.0 (bloqueante):** unificar tokens (nomenclatura, `--primary-500`, spacing, shadows, tipografía) + contraste de acentos + focus ring ≥3:1 + quitar zoom lock + fuente real (self-host variable).
 2. **FASE 2.1:** `@layer` completo, `prefers-reduced-motion`, HC mode completo, alinear preset dark surfaces navy, eliminar `!important`.
 3. **FASE 2.2:** plan SSR/Hydration (tokens en `<head>`, `ngSkipHydration` selectivo) y View Transitions; budgets y axe en CI.
-4. **FASE 2.3:** container queries, touch 44px, inventario PrimeNG por estado/variante, unstyled donde aplique.
 5. **FASE 2.4:** OKLCH/Display-P3, theming multi-brand (luxury-app.com vs luxurybuildingapp.com), RTL/i18n, iconografía SVG tree-shakeable.
 
 ---

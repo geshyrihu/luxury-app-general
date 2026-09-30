@@ -34,7 +34,6 @@ Cumplir el Req 1 introduciendo una herramienta de control (checklist) para el pr
 ## 3. Frontend - Angular
 - **Nuevo Componente `EmployeeOnboardingChecklist`**:
   - Integrarlo en el expediente del empleado (`employee-file` / `employee-file-tabs`).
-  - **Vista:** Una lista (Listbox o DataView de PrimeNG) que muestre cada tarea.
   - **Acciones:** Un Checkbox o Toggle Switch por cada tarea para cambiar su estado. Al pulsarlo, debe invocar `ToggleTaskStatusAsync`.
   - **UI Detalle:** Mostrar quién y cuándo lo completó si `isCompleted === true`, y un botón/icono para agregar `Notes` a la tarea (ej. "Talla de uniforme M entregada").
 - **Catálogo Administrable**:

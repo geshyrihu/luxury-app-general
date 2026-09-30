@@ -99,7 +99,6 @@ graph LR
 | Mapeo       | Manual `MapToDTO()` (sin AutoMapper)                                                                  |
 | Exportación | EPPlus (`GetAsByteArray`)                                                                             |
 | Respuestas  | `ApiResponseDTO<T>` (nunca `ProblemDetails`)                                                          |
-| Frontend    | Angular 22 (standalone, signals, OnPush), PrimeNG, catálogo `@ui/*`                                   |
 
 ---
 
@@ -318,7 +317,6 @@ Workspace: **`client/angular`** (standalone, signals, OnPush, catálogo `@ui/*`,
 | `RecepcionPipasAguaReporte`  | `app-recepcion-pipas-agua-reporte`  | web        | `reportSignal`, `kpisSignal`, `periodSignal`                     | `ApiResponseService`                                    | Selector periodo (quincena/mes/año), 3 tarjetas KPI, tabla diferencia cisterna coloreada (verde/rojo), exportar Excel                   |
 | `RecepcionPipasAguaAnalisis` | `app-recepcion-pipas-agua-analisis` | web        | `kpisSignal`, `barChartSignal`, `lineChartSignal`, `trendSignal` | `ApiResponseService`                                    | 5 KPIs, gráfico barras litros/mes, gráfico línea diferencia cisterna, tabla tendencia mensual agrupada, `@defer (on viewport)` Chart.js |
 
-**Estilos**: PrimeNG + PrimeFlex (`card`, `grid`, `text-*`); botones/inputs catálogo `@ui/*` (`il-button`, `il-button-save`, `custom-input-*-signal`, `ili-button-*` mobile). **Testing**: `.spec.ts` por componente (Vitest) — cobertura básica inicialización.
 
 **Interfaces** (`core/interfaces/recepcion-pipas-agua.dto.ts`): `recepcion-pipa-agua`, `recepcion-pipa-agua-add`, `recepcion-pipa-agua-update`, `paged-result`.
 

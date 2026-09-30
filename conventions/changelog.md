@@ -2,6 +2,7 @@
 
 ## 2026-09-30
 
+- **Nuevo protocolo compartido de commit/push para agentes:** `operations/agent-commit-push.md` fija atribución por sesión, staging por rutas exactas, Conventional Commits en español, separación por repositorio (`web`/`api`/`mobile`) y push seguro. Referenciado desde `CONVENTIONS.md` §3bis-11 y disponible para KiloCode, OpenCode, Codex, Claude, Antigravity y demás agentes.
 - **Nuevo `audit/security-audit-checklist.md`**, adaptado de [`cloudflare/security-audit-skill`](https://github.com/cloudflare/security-audit-skill) (MIT, 23.3k stars) tras evaluarlo a fondo: se corrieron sus 65 tests reales (22/34 + 24/31 pasan; los 7 fallos son protecciones POSIX — `O_NOFOLLOW`/`fstat` — que no existen en Windows, confirmando que el sandbox OS-enforced del repo no es viable en este entorno). Decisión: no instalar el repo completo (6 fases + ledger JSON + sandboxing es desproporcionado para auditar un módulo, y buena parte de sus 9 "companions" — memory-safety/binario, IPC de escritorio, RPC — no aplica a un stack .NET/Angular sin código nativo). Se adaptaron 3 piezas que sí llenaban un hueco real (antes: 0 checklist de clases de ataque, 0 distinción confirmado/no-confirmado):
   1. Clases de ataque relevantes al stack: aislamiento entre `Customer` (la más crítica — multi-tenant), control de acceso por `ApplicationRole`, inyección (EF Core + rutas de archivo), lógica de negocio como vector, abuso de features, y una lista de "cosas obvias" (secretos, CORS, cookies).
   2. Veredicto `confirmado`/`necesita validación`/`rechazado` y severidad `likelihood × impact` (nunca solo impact), agregado a `audit/audit-severity-model.md` como capa adicional sobre las 5 clasificaciones generales existentes, que se conservan.
@@ -45,7 +46,6 @@
 - **Fase 1 de mejora de CONVENTIONS.md:** corregidos 9 enlaces rotos (skills y scripts con ruta relativa errónea, viewer, pilotos frontend de Candidates inexistentes); limpiado mojibake y emojis corruptos; restauradas las rutas `docs/operativo.md` que un reemplazo global había sustituido por el archivo legacy; unificada la **fecha de corte del sistema rector (2026-09-16)** como campo propio de la cabecera, separado de la fecha de última revisión.
 - **Limpieza de doble codificación UTF-8** en 9 documentos de `conventions/` (`README.md`, `legacy/README.md`, `changelog.md`, `nomenclatura-convenciones.md`, `core/governance-by-role.md`, `core/workflow-por-tipo-de-tarea.md`, `operations/application-roles-catalog.md`, `operations/plan-creation-protocol.md`, `ui/conventions-viewer-update.md`): 403 líneas restauradas, sin otros cambios.
 - **Fase 2: §6.1 de CONVENTIONS.md pasa de reglas completas a tabla de reglas críticas.** El detalle vive en los documentos especializados. Reglas que no tenían documento propio y se movieron: `?` prohibido en DTOs/Entities y constructores primarios (→ `backend/backend-rules.md`), nunca modificar SelectItem (→ `backend/select-items-centralization-rule.md`), patrón `DeleteAsync` con transacción (→ `backend/document-read-write-pattern.md`), greps de auditoría de fechas (→ `frontend/frontend-prohibitions.md`).
-- `frontend/frontend-prohibitions.md` seguía citando la excepción de `p-table`; alineado con la retirada de PrimeNG (Fase 6, 2026-09-16).
 - **Regla superada (antecedente histórico):** `IBusinessTimeService` con zona IANA explícita se aprobó el 2026-08-14 pero nunca se implementó (`Shared/Time/IBusinessTimeService.cs` está comentado y sin registro en DI). La regla vigente es la de fechas y horas de `backend/backend-rules.md`, que consolida `DateTimeExtension.GetMexicoTime()`/`GetMexicoDateOnly()`. Si se retoma, debe implementarse y registrarse en DI antes de volver a exigirlo.
 
 ## 2026-09-16
@@ -54,7 +54,6 @@
 - Reemplaza rutas históricas `docs/reporte_maestro/`, `docs/plans/`, `docs/audit/`, `docs/guides/`, `docs/modulos-nuevos/`, `docs/architecture/`, `docs/analisis/`, `docs/specifications/` y `docs/migraciones/`.
 - Ejecutada la migración física (Fase 2): ~430 archivos reubicados en 16 módulos × ~45 submódulos. Log en `docs/SharedLuxuryApp/Conventions/20260916-changelog-fase2-migracion-docs.log`.
 - Fase 4: limpieza de archivos sueltos de la raíz del repo (12 reubicados a docs/, 6 residuos eliminados).
-- **Nueva regla UI desktop (ui-desktop-rules.md):** en todo `<ng-template #caption>` de tabla, los controles (botón agregar, input de búsqueda) usan tamaño **`sm`**: `il-button-add` con `customClass="btn-sm"` / `size="sm"`, y `web-input-search` con `input input-sm` (34px, token DS). Implementado en `primeng-custom-caption` y `input-search.ts`.
 
 - **Nueva regla §6ter (CONVENTIONS.md):** Estructura y Ubicación de Documentos y Reportes en `docs/`. Jerarquía estricta `docs/[ModuleLuxuryApp]/[Submodulo]/` espejo del catálogo cerrado de módulos §6bis, con **estructura plana obligatoria** (cero subcarpetas dentro del submódulo) y naming `YYYYMMDD-[tipo]-[modulo]-[submodulo].md` (fecha + tipo + módulo + submódulo). Tipos permitidos: `auditoria`, `plan`, `remediacion`, `analisis`, `especificacion`, `guia`, `setup`, `changelog`, `arquitectura`.
 - Reemplaza rutas históricas `docs/reporte_maestro/`, `docs/plans/`, `docs/audit/`, `docs/guides/`, `docs/modulos-nuevos/`, `docs/architecture/`, `docs/analisis/`, `docs/specifications/` y `docs/migraciones/`.
@@ -142,4 +141,3 @@
 - Se crearon `core/governance-by-role.md` y `audit/audit-by-role.md` para absorber gobernanza y auditoria ejecutable por rol desde legacy.
 - Se absorbio una primera capa de reglas faltantes sobre encoding, hooks/scripts de auditoria y catalogo de servicios compartidos backend.
 - Se absorbio una capa inicial de onboarding, training del Tech Lead y gobernanza del conventions-viewer.
-

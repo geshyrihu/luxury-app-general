@@ -83,7 +83,6 @@ Permite ejecutar la automatización bajo demanda para testing en local (donde Ha
 |-----------|------|----------|-------|--------|
 | **Alta** | Agregar `Fuente` a `RequestPosition` entity | Medio (migración BD) | Alto - KPI por canal | Pendiente migración |
 | **Alta** | KPI "Tiempo vacante → 1ª postulación" | Medio (query) | Alto - SLA reclutamiento | Pendiente |
-| **Media** | Dashboard con gráficos (PrimeNG Chart) | Medio | Alto - Visibilidad ejecutiva | Pendiente Fase 5 |
 | **Media** | Automatización: re-asignar entrevistador si no responde 48h | Alto (job + lógica) | Medio - Reduce seguimiento manual | Pendiente |
 | **Baja** | Alerta Slack/Teams | Bajo (webhook) | Medio - Canal extra | Pendiente |
 
@@ -145,7 +144,6 @@ Permite ejecutar la automatización bajo demanda para testing en local (donde Ha
 
 1. **Migración BD**: Agregar `Fuente` a `RequestPosition` entity + columna en `JobVacancyRequests` → habilita KPI por fuente
 2. **KPI "Time to First Application"**: Query dedicado o vista materializada
-3. **Dashboard visual**: Integrar PrimeNG Chart para gráficos de pipeline, tendencias, comparativas
 4. **Automatización avanzada**: Re-asignación automática, alertas multi-canal
 
 ---

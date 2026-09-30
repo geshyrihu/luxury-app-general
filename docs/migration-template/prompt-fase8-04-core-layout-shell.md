@@ -9,34 +9,27 @@ muerto), 2 tienen uso real que migrar.
 ## 1. `employee-view/desktop/sidebar/sidebar.ts` — tipo + import muerto
 
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 ```
 ```diff
--import { InputTextModule } from "primeng/inputtext";
 ```
 Quita también `InputTextModule` del arreglo `imports:` — confirmado
 con `grep -n "pInputText" sidebar.html` → 0 resultados, import muerto,
 no hay campo de búsqueda real usando esa directiva.
 
-**No toques** la variable `primengMenuItems` (nombre heredado, sigue
 siendo válida como `MenuItem[]` con el tipo local) ni la ruta
-`"primengcustomcaption"` (línea ~365, es un `routerLink` hacia una
 página del catálogo interno, sin relación).
 
 ## 2. `employee-view/movil/home-menu-mobile/home-menu-mobile.ts` — solo tipo
 
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 ```
 
 ## 3. `direccion-view/desktop/header-direccion-desktop/header-direccion-desktop.ts` — select real
 
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
--import { SelectModule } from "primeng/select";
 +import { CustomInputSelectSignal } from "@ui/inputs/web/custom-input-select-signal";
 ```
 (ajusta `imports:` del `@Component` igual)
@@ -77,9 +70,7 @@ silenciosamente).
 ## 4. `employee-view/desktop/header-employee-desktop/header-employee-desktop.ts` — dialog real, el más grande
 
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
--import { DialogModule } from "primeng/dialog";
 ```
 (quita `DialogModule` de `imports:`)
 
@@ -148,7 +139,6 @@ cual dentro de `.modal-body`, sin reescribirlo**:
 +<div class="modal-backdrop fade show"></div>
 +}
 ```
-(`[draggable]`/`[resizable]` de PrimeNG no tienen equivalente en
 Bootstrap nativo — se pierden a propósito, son detalles menores de
 interacción, no bloquean nada. `styleClass="elegant-modal"` se
 preserva como clase en el `.modal` raíz por si tiene CSS propio en
@@ -157,7 +147,6 @@ algún archivo de estilos antes de asumir que sigue aplicando igual.)
 
 ## Verificación
 
-- `grep -rn "primeng" <cada uno de los 4 archivos>` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -171,10 +160,7 @@ algún archivo de estilos antes de asumir que sigue aplicando igual.)
 
 ## Listo cuando
 
-- Los 4 archivos sin ningún import de PrimeNG.
 - Capturas confirmando que el shell se ve y funciona igual.
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `src/app/core` queda
   en 0 (solo quedarán los 2 de `pagination-request.dto.ts`/
   `pagination-store.ts`, que se resuelven junto con
-  `web/primeng-table` y `warehouse-stock-add.ts` en un prompt aparte).

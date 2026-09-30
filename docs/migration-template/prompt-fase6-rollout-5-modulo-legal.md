@@ -9,10 +9,8 @@ excepción puntual (punto 1).
 ## 1. Fix puntual antes de correr el script
 
 En `src/app/modules/legal.luxuryapp/comite-vigilancia/comites-list.html`,
-quita la línea `[virtualScrollItemSize]="tablePrimeNgRows"` — es el
 mismo markup muerto ya visto en `ai-knowledge-base-list.html` (sin
 `[virtualScroll]="true"` que lo acompañe, nunca tuvo efecto bajo
-PrimeNG real). No agregues soporte de virtual scroll a `AppTable`.
 
 ## 2. Lote completo (15 archivos)
 
@@ -49,7 +47,6 @@ src/app/modules/legal.luxuryapp/employees-contracts/work-contract/work-contract-
    preexistente ajeno, esos ya se resolvieron).
 5. `ng build` o `ng serve` compilando sin `NG8002`/similares — no te
    quedes solo con `tsc`.
-6. `grep -rn "TableModule\|primeng-table\|<p-sorticon\|<p-table"` sobre
    los 15 archivos → 0 resultados reales.
 
 ## 4. Verificación visual
@@ -69,7 +66,6 @@ descritas.
 - 15 archivos migrados, diff coherente con el dry-run ya revisado.
 - Fix del punto 1 aplicado.
 - `tsc` y `ng build`/`ng serve` limpios.
-- 0 residuales de PrimeNG en los 15 archivos.
 - 4 capturas reales guardadas y reportadas con su ruta.
 - Reporta `git diff --stat` completo del lote.
 

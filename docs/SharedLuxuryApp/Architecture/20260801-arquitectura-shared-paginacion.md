@@ -315,12 +315,10 @@ export class UsersListComponent {
 }
 ```
 
-### Convertir PrimeNG Table Event
 
 **Helper:** `lazyLoadToPaginationRequest`
 
 ```typescript
-import { TableLazyLoadEvent } from 'primeng/table';
 
 export function lazyLoadToPaginationRequest(
   event: TableLazyLoadEvent,

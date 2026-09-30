@@ -444,7 +444,6 @@ y conserva su tabla `TaskFiles`.
 Reglas de plataforma que aplican: el cliente se toma de `customer-id.service.ts`, nunca por
 parámetro manual; los grupos se listan **activos y del cliente en contexto**, excluyendo los de
 visibilidad `Public` (`RN-ALT-044`); acceso a API por `ApiResponseService`; interfaces en
-`interfaces/`; componentes del catálogo `shared/ui`, nunca PrimeNG o Ionic directo.
 
 ### 3.5 Migración de Datos y Prevención de Pérdida
 

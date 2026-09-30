@@ -237,7 +237,6 @@ Estos usan PrimeFlex dentro de `[ngClass]` y necesitan evaluación caso por caso
 | `grid-nogutter` | `row g-0` | |
 | `surface-*` (colores) | `bg-*` custom | Requiere definir variables CSS |
 | `text-500` / `text-*` (shade) | `text-muted` o custom | BS5 no tiene scales numéricas |
-| `bg-*` (PrimeNG shades) | Custom CSS variables | |
 | `p-md-4` / `pr-6` | `p-md-4` / `pe-6` (custom) | BS5 no tiene directional p-* > 3 |
 | `shadow-1` / `shadow-*` | `shadow-sm` / `shadow` | BS5 tiene menos niveles |
 | `border-top-1` | `border-top` | BS5 no tiene grosores custom |

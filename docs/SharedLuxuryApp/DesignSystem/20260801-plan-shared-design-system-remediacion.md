@@ -145,7 +145,6 @@ en [client/angular con 200+ modulos y 2 dominios (web + mobile)].
 - A11y bloqueante: zoom (viewport meta), focus ring, contraste de acentos/muted/tertiary/badges/bordes dark
 - Implementacion de fuente real (single variable font self-host)
 - `@layer` completo + `prefers-reduced-motion` + High Contrast completo
-- Alineacion de superficies dark (DS navy) con preset PrimeNG; reduccion de overrides `!important`
 - Gates CI: contraste, axe, budgets, visual regression
 - Scripts: `scripts/audit-contrast.mjs` y `scripts/migrate-tokens.mjs`
 - Sincronizacion documental: `DESIGN.md`, `design-tokens-rule.md`, `styles-tokens-theming.md`, `CONVENTIONS.md §6.1`, `conventions-viewer`
@@ -153,7 +152,6 @@ en [client/angular con 200+ modulos y 2 dominios (web + mobile)].
 **OUT-OF-SCOPE** (FASE 2.x posterior)
 - SSR/Hydration y View Transitions (plan propio §8; aqui solo se prepara terreno)
 - OKLCH/Display-P3, theming multi-brand (2 dominios), RTL/i18n
-- Migracion a PrimeNG Unstyled/headless (solo inventario)
 - Backend / Ionic en runtime
 
 **Restricciones**
@@ -257,7 +255,6 @@ Unica fuente de verdad: `core/_*.scss` → expone `theme/_variables.scss` → `t
 - T06, T07, T08, T09, T10
 - **Criterio de PASO:** `audit-contrast.mjs` 0 FAIL; focus ring ≥7:1; tab-nav manual sin perdida de foco; axe 0 violaciones AA en las paginas base.
 
-**Progreso 2026-08-01:** FASE 2 completa. T06 ✅ (`index.html:11-14` viewport `width=device-width, initial-scale=1`, sin `maximum-scale`/`user-scalable`). T07 ✅ (`--ds-shadow-focus` 2px solido navy `#1B365D` light / `#D1DEF0` dark; regla global `*:focus-visible` pasa a `outline: 2px solid var(--ds-border-focus)` sin `!important`; eliminados todos los `outline: none` de `src/styles` — kpi grep = 0; `primeng-overrides.css` focus de inputs/select a outline; `_mixins.scss`, `_auth.scss`, `_inputs.scss`, `_prime-dropdown.scss`, `_committee.scss` alineados). T08 ✅ (nuevos `--ds-accent-text-{success,danger,info,warning}` light=700/800 `#157A55/#A63939/#245FA1/#7A5E15` y dark=200; aplicados en `primeng-overrides.css` botones/tags/messages, `web/_cards.scss` badges, `web/_prime-button.scss` danger/success + nuevos info/warning; `--ds-text-link` → accent-text-info). T09 ✅ (`--ds-text-muted` light `#5A6878` (5.70:1), `--ds-text-tertiary` = muted; placeholders heredan y mejoran solos). T10 ✅ (dark `--ds-border` → primary-400 `#78A4D4` 7.62:1 y `--ds-border-strong` → primary-500 `#4A90E2` 6.03:1). Verificado: `audit-contrast.mjs` 0 FAIL (37 PASS, 3 PENDIENTE fuera de alcance: bordes light T10-light y oro premium, 1 exento), SCSS compila 0 errores, `audit:tokens` 0 en `src/styles`, mojibake 0. FASE 3 (T11) pendiente.
 
 ### FASE 3 — Tipografia real (Sprint 3) · RN-DS-020
 - T11 (mas el cuerpo de la fase 1 en tipografia: `--ds-type-*` en produccion)
@@ -269,7 +266,6 @@ Unica fuente de verdad: `core/_*.scss` → expone `theme/_variables.scss` → `t
 - T12, T13
 - **Criterio de PASO:** snapshot visual light/dark/HC igual o mejor; `prefers-reduced-motion` pausa todas las animaciones; HC cubre surfaces/estados.
 
-**Progreso 2026-08-01:** T12/T13 ✅ (con una desviación documentada). `styles.scss` declara `@layer reset, tokens, primeng, primevue, primeng-brand, base, components, utilities, overrides`; tokens (`_variables.scss`) en `@layer tokens` y reset (`box-sizing`) en `@layer reset`. **Desviación:** `_dark-mode.scss` **se mantiene unlayered** (a diferencia del texto literal del plan) porque su diseño actual depende de "unlayered gana" (documentado en su cabecera y en `estandar-hoja-estilos.md`); moverlo a `@layer overrides` exige snapshot visual (criterio de PASO de esta fase) que no puede ejecutarse aquí — queda como follow-up para FASE 7 con verificación visual. T13 ✅: `prefers-reduced-motion` consolida en un único bloque en `styles.scss` §11 (único `!important` global documentado; `--ds-motion-duration-*` → 0ms; duplicado de `base/_global.scss` eliminado); High Contrast completo: bloques light/dark con `--ds-text-muted/tertiary/link`, `--ds-border-strong`, `--ds-accent-text-*` reforzados y aliases `--ds-contrast-{text,bg,border,primary,on-primary,state-hover,state-focus}`. **Hallazgo nuevo:** `primeng-overrides.css` no está referenciado por `angular.json` ni por ningún `@import` (huérfano; sus overrides reales viven en `web/_prime-*.scss` vía `ds-entry.scss`); se aplicaron los tokens de acento T08 también en `_prime-tag.scss` y `_prime-message.scss` (cargados). FASE 5 (T14) pendiente.
 
 ### FASE 5 — Dark mode unificado (Sprint 4) · RN-DS-011
 - T14
@@ -319,7 +315,6 @@ Unica fuente de verdad: `core/_*.scss` → expone `theme/_variables.scss` → `t
 
 ## 8. Dependencias Externas
 
-- **PrimeNG 22** (`^22.0.0-rc.1`): validar estabilidad del preset Aura + `--p-*` para dark unificado
 - **@primeuix/themes `^2.0.3`**: soporte de `colorScheme` custom para escala navy dark
 - **Chromatic/Percy**: licencias/credenciales para visual regression
 - **axe-core + Playwright**: ya en devDependencies (Playwright `^1.62.0`)

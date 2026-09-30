@@ -3,7 +3,6 @@
 Bug real reportado por el usuario con captura: en tablas con muchos
 registros (ej. 13,750 registros / 30 por página = 459 páginas), el
 paginador de `AppTable` renderiza **459 botones numerados** en vez de
-una ventana acotada. PrimeNG por defecto mostraba máximo 5 botones de
 página (`pageLinkSize`), deslizando la ventana según la página actual.
 `AppTable` nunca implementó ese límite.
 

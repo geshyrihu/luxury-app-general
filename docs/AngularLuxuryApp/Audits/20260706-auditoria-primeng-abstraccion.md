@@ -1,15 +1,11 @@
-# Auditoria PrimeNG 22 + Abstraccion en `features/`
 
 > Fecha: 2026-07-06
 > Alcance: `client/angular/src/app/features/`
-> Base: `src/app/features/INVENTARIO-PRIMENG.md`
 
 ## Objetivo
 
-Convertir el inventario de uso directo de PrimeNG en una ruta de limpieza compatible con la regla actual del proyecto:
 
 - En `features/` solo se permite uso directo de `p-table`.
-- El resto de componentes PrimeNG debe consumirse desde `src/app/shared/`.
 - Si no existe wrapper valido en `shared`, primero se crea ahi y luego se migra `features/`.
 - Las excepciones documentadas en `AGENTS.md` se respetan.
 
@@ -37,9 +33,7 @@ Convertir el inventario de uso directo de PrimeNG en una ruta de limpieza compat
 
 ## Mapa de wrappers existentes
 
-| PrimeNG en `features` | Wrapper/componente en `shared` | Estado | Nota |
 |---|---|---|---|
-| `p-table` | `primeng-custom-caption`, `primeng-custom-global-filter`, `primeng-custom-table-emptymessage`, `primeng-custom-table-footer`, `app-action-menu`, `app-data-view-mobile` | Permitido | Se mantiene directo, pero con helpers/shared alrededor. |
 | `p-tag` | `app-status-badge`, `lx-status-badge` | Parcial | Solo para `EStatus` de entidad. |
 | `p-card` | `app-stat-card`, `app-kpi-card`, `app-profile-card`, `app-contact-card` | Parcial | No existe wrapper generico `app-card`. |
 | `p-avatar` | `app-avatar-group` | Parcial | No existe wrapper generico para avatar individual. |
@@ -66,7 +60,6 @@ Convertir el inventario de uso directo de PrimeNG en una ruta de limpieza compat
 | `p-inputnumber` | `custom-input-number-signal` | Parcial | Formularios si; inline en tabla es excepcion. |
 | `p-popover` | `app-action-menu` | Parcial | Muy claro para menus de acciones; no para cualquier popover libre. |
 | `p-rating` | `app-rating`, `lx-rating`, `ili-rating` | Listo | Ya existe abstraction. |
-| `p-toast` | `primeng-custom-toast` | Listo | Migrable. |
 | `p-toolbar` | ninguno generico | Gap | No existe wrapper transversal. |
 | `p-password` | `custom-input-password-signal` | Listo | Migrable. |
 | `p-inputtext` | `custom-input-text-signal` | Listo | Migrable. |
@@ -93,7 +86,6 @@ Estas migraciones reducen rapido uso directo sin crear componentes nuevos:
 - `p-toggleswitch` -> `custom-input-toggle-switch-signal`
 - `p-editor` -> `app-rich-text-editor`
 - `p-confirmdialog` -> `app-confirm-dialog`
-- `p-toast` -> `primeng-custom-toast`
 - `p-rating` -> `app-rating`
 
 ### Ola 2: alto impacto, pero requiere criterio de dominio
@@ -166,9 +158,7 @@ Aunque existe `app-file-upload`, `AGENTS.md` marca `p-fileupload` como excepcion
 
 ## Ruta practica de ejecucion
 
-1. Congelar nuevos imports de PrimeNG en `features/`, salvo `p-table` y excepciones documentadas.
 2. Atacar primero los componentes con wrapper ya listo.
-3. Convertir `INVENTARIO-PRIMENG.md` en backlog por olas, no solo por conteo.
 4. Crear wrappers faltantes solo para patrones repetidos y estables.
 5. Mantener `p-table` directo, pero con reglas de botones, caption, filtros y empty states desde `shared`.
 
@@ -178,7 +168,6 @@ Aunque existe `app-file-upload`, `AGENTS.md` marca `p-fileupload` como excepcion
 - `src/app/shared/ui/adaptive/status-badge/status-badge.ts`
 - `src/app/shared/ui/web/rich-text-editor/rich-text-editor.ts`
 - `src/app/shared/ui/web/confirm-dialog/confirm-dialog.ts`
-- `src/app/shared/ui/web/primeng-custom-toast/primeng-custom-toast.ts`
 - `src/app/shared/ui/web/action-menu/action-menu.ts`
 - `src/app/shared/ui/mobile/action-menu-mobile/action-menu-mobile.ts`
 - `src/app/shared/ui/mobile/data-view-mobile/data-view-mobile.ts`
@@ -196,7 +185,6 @@ Aunque existe `app-file-upload`, `AGENTS.md` marca `p-fileupload` como excepcion
 
 ## Conclusion
 
-La migracion a PrimeNG 22 y la limpieza de abstracciones no deben correrse como dos esfuerzos separados. Ya que el proyecto quiere prohibir PrimeNG directo en `features/`, la mejor inversion ahora es:
 
 - migrar primero lo que ya tiene wrapper;
 - respetar excepciones reales del repo;

@@ -63,6 +63,12 @@ review_files/
 | [`../docs/SharedLuxuryApp/Conventions/20260726-guia-shared-reporte-maestro-legacy.md`](../docs/SharedLuxuryApp/Conventions/20260726-guia-shared-reporte-maestro-legacy.md) | Este archivo — Navegación y estructura |
 | [`NOMENCLATURA_CONVENCIONES.md`](NOMENCLATURA_CONVENCIONES.md) | ⭐ **NUEVO** — Estándar de naming para archivos de convenciones |
 
+### Protocolos operativos compartidos
+
+| Documento | Propósito |
+|-----------|-----------|
+| [`operations/agent-commit-push.md`](operations/agent-commit-push.md) | Flujo común de commit/push y protección de cambios entre agentes |
+
 ---
 
 ## Dominios oficiales (subcarpetas)

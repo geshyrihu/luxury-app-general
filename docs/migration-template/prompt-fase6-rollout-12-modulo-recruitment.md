@@ -53,7 +53,6 @@ complicaciones), así que aplica las mismas 5 reglas de siempre a mano
 en el `.html` y este cambio en el `.ts`:
 
 ```diff
--import { Table, TableModule } from "@ui/web/primeng-table/primeng-table";
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 ```
 

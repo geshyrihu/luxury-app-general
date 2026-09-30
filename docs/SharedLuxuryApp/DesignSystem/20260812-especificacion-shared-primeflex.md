@@ -8,7 +8,6 @@
 
 ## 1. Propósito
 
-PrimeFlex es la librería de utilidades CSS que viene integrada con PrimeNG. Este estándar clarifica:
 - Cuándo SÍ usar PrimeFlex
 - Cuándo NO usar (alternativas)
 - Cómo validar cumplimiento
@@ -18,14 +17,12 @@ PrimeFlex es la librería de utilidades CSS que viene integrada con PrimeNG. Est
 ## 2. Qué es PrimeFlex
 
 ```
-PrimeFlex = utility CSS library (como Tailwind, pero oficial de PrimeNG)
 Mapea internamente a: CSS variables (--ds-*, --primary-*, etc.)
 Ejemplos: flex, gap-3, p-2, m-1, w-100, h-50, text-center
 ```
 
 **Diferencia con Tailwind:**
 - Tailwind: Custom framework, color palette distinto, utility classes propietarias
-- PrimeFlex: Framework integrado con PrimeNG, utiliza Design System tokens internamente
 
 **PrimeFlex viene en:** `node_modules/primeflex/primeflex.css` (ya instalado)
 

@@ -1,8 +1,6 @@
 # Prompt Fase 8 — `paginator` y `menubar`: reescritura real a Bootstrap nativo
 
-Ambos tienen su lógica base **ya sin PrimeNG** (`PaginatorBase`/
 `MenubarBase` son puro Angular) — solo el `template` de cada
-componente web usa PrimeNG. 1 consumidor real cada uno.
 
 ## 1. `web/paginator/paginator.ts`
 
@@ -26,7 +24,6 @@ paginador) — reutiliza la misma lógica:
 +  ViewEncapsulation,
 +} from "@angular/core";
  import { PaginatorBase } from "@ui/base/paginator.base";
--import { PaginatorModule } from "primeng/paginator";
 
  @Component({
    selector: "app-paginator",
@@ -178,7 +175,6 @@ la visibilidad del submenú con un signal simple, mismo espíritu que
 +} from "@angular/core";
  import { RouterModule } from "@angular/router";
  import { MenubarBase } from "@ui/base/menubar.base";
--import { MenubarModule } from "primeng/menubar";
 +import { AppIcon } from "@ui/shared/app-icon/app-icon";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 
@@ -295,13 +291,11 @@ la visibilidad del submenú con un signal simple, mismo espíritu que
 solo los consumes. Actualiza también el import de `MenuItem` en
 `base/menubar.base.ts`:
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 ```
 
 ## Verificación
 
-- `grep -n "primeng" paginator.ts menubar.ts menubar.base.ts` → 0
   resultados en los 3.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
@@ -317,8 +311,6 @@ solo los consumes. Actualiza también el import de `MenuItem` en
 
 ## Listo cuando
 
-- Los 2 componentes (+ `menubar.base.ts`) sin PrimeNG.
 - Capturas del paginador y del menú con su submenú abierto.
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `shared/ui` baja de 14
   a 11.

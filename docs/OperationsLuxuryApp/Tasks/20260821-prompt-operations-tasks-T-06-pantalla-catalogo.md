@@ -165,7 +165,6 @@ recarga la lista si el diálogo devuelve éxito.
 ## Convenciones aplicables
 
 - `CONVENTIONS.md` — Angular 22, `interfaces/` (nunca `models/`), `ApiResponseService` para
-  acceso a API, componentes de `shared/ui` (nunca PrimeNG/Ionic directo)
 - Reglas críticas 6/7/8 del proyecto: SELECTs centralizados, `DisplayName` en español, tokens de
   diseño — no hardcodees colores, espaciados ni tipografía
 - Archivos en UTF-8 sin mojibake

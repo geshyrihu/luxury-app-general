@@ -3,10 +3,8 @@
 ## 1. Fix puntual (bloqueante para terminar el Prompt 4)
 
 En `src/app/modules/system.luxuryapp/configuracion-sistema/knowledge-base/ai-knowledge-base-list.html`,
-quita la línea `[virtualScrollItemSize]="tablePrimeNgRows"` (línea 16
 aprox., dentro de las propiedades de `<app-table>`). Es markup muerto
 de origen: nunca vino acompañado de `[virtualScroll]="true"` (que es
-lo que realmente activa el modo virtual en PrimeNG), así que nunca tuvo
 efecto — confirmado, es el mismo patrón exacto en los otros 3 archivos
 del repo que también lo tienen (ver punto 2). `AppTable` no declara ese
 input, por eso ahora es un error duro de compilación (`NG8002`) en vez
@@ -17,7 +15,6 @@ No agregues el input a `AppTable` ni intentes soportar virtual scroll
 
 ## 2. Anotado para más adelante, no lo toques ahora
 
-Los otros 3 archivos con el mismo `[virtualScrollItemSize]="tablePrimeNgRows"`
 muerto (mismo fix cuando les toque su lote — no forman parte del lote
 actual de 8):
 

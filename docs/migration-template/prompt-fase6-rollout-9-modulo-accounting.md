@@ -112,7 +112,6 @@ de tocar ese archivo específico.
    `aspel-customer-empresa-list.html`.
 5. `npx tsc --noEmit` → limpio.
 6. `ng build` sin errores de plantilla — no te quedes solo con `tsc`.
-7. `grep -rn "TableModule\|primeng-table\|<p-table\b"` sobre el lote →
    0 resultados reales (ignora imports muertos sin `<p-table>` real).
 
 ## Verificación visual
@@ -135,7 +134,6 @@ cargar), guardadas como archivo
 - Los 2 fixes de `virtualScrollItemSize` aplicados.
 - Los 6 excluidos intactos.
 - `tsc` y `ng build` limpios de errores de plantilla.
-- 0 residuales reales de PrimeNG.
 - 8-10 capturas reales completas.
 - `git diff --stat` completo del lote.
 - Cualquier hallazgo ajeno documentado con precisión — dado que es un

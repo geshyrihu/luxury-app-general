@@ -3,15 +3,12 @@
 El chalán dejó 3 archivos sin tocar en Prompt 09 por precaución
 (correcto no borrar sin confirmar) — verifiqué cada uno a mano.
 Veredicto: **1 era real pero de otra naturaleza** (bug preexistente,
-no PrimeNG real), **2 estaban mal diagnosticados** (también son
 imports muertos, igual que el resto).
 
-## 1. `calendario-maestro-lista.ts` — NO tocar, es un bug preexistente sin relación con PrimeNG
 
 Investigado a fondo: el `.html` de este archivo **ya usa `<lx-menu
 #menu>`** (Bootstrap real, línea ~36), no `<p-menu>` — por eso mi
 auditoría anterior no lo encontró. El `.ts` sigue tipando el
-parámetro como `Menu` (de `@ui/web/primeng-menu/primeng-menu`) y
 llamando `menu.toggle(event)` (línea 119) — pero **`LxMenu` no tiene
 ningún método `toggle()`** (verificado leyendo su fuente:
 `src/app/shared/ui/adaptive/menu/menu.ts` solo declara inputs, no
@@ -27,7 +24,6 @@ esta llamada imperativa, sin relación con esta limpieza de Fase 7.
 de un componente compartido) o si el patrón de este archivo debe
 cambiar a otra forma de disparar el popup. Repórtalo aparte como
 hallazgo para que el equipo lo priorice — no es parte del retiro de
-PrimeNG (el tipo `Menu` que sigue importado no bloquea nada crítico,
 solo es un tipo incorrecto).
 
 ## 2. `contract-renewal-form.ts` — SÍ migrar, uso real confirmado
@@ -36,11 +32,9 @@ solo es un tipo incorrecto).
 src/app/modules/recruitment.luxuryapp/expediente-del-empleado/employees/contract-renewal-form.ts
 ```
 Confirmado: `<p-button>` real en 2 sitios (líneas ~186 y ~196),
-importado directo desde `primeng/button` (no vía wrapper). Migra
 igual que los demás casos de `p-button` → `il-button` de esta sesión:
 
 ```diff
--import { ButtonModule } from "primeng/button";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
 ```
 (ajusta `imports:` del `@Component` igual) y en el template cambia
@@ -54,30 +48,25 @@ que son idénticos).
 ```
 src/app/modules/collections.luxuryapp/cobranza-online/detalle-condominos/cobranza-online-detalle-condominos.ts
 ```
-El chalán reportó `SelectButtonModule` (de `primeng/selectbutton`
 directo) como uso real — **verificado que no lo es**: 0 apariciones de
 `<p-selectbutton` en su `.html`. Quita:
 ```diff
--import { SelectButtonModule } from "primeng/selectbutton";
 ```
 y `SelectButtonModule` del arreglo `imports:`.
 
 ## 4. `committee-cobranza-web.ts` — hallazgo nuevo, import muerto
 
 No estaba en ninguna lista anterior — encontrado en un barrido de
-imports directos `primeng/*` (sin pasar por wrapper propio):
 ```
 src/app/modules/committee.luxuryapp/cobranza/committee-cobranza-web.ts
 ```
 Confirmado: 0 apariciones de `<p-tag` en su `.html`. Quita:
 ```diff
--import { TagModule } from "primeng/tag";
 ```
 y `TagModule` del arreglo `imports:`.
 
 ## Verificación
 
-- `grep -rn "from \"primeng/\|from 'primeng/" src/app/modules --include="*.ts"`
   → tras este prompt debe dar solo 2 resultados reales: el de
   `contract-renewal-form.ts` (si decides mantenerlo mientras migras,
   bórralo al terminar) y el de `catalog-web-extras.ts`

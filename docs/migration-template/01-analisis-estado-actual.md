@@ -25,7 +25,6 @@ de un "big bang":
 ```
 src/app/shared/ui/
 ├── base/       🧠 lógica compartida, sin UI de plataforma (BaseInputSignal, etc.)
-├── web/        🖥️ implementación ESCRITORIO — PrimeNG — selector app-*
 ├── mobile/     📱 implementación MÓVIL — Ionic — selector ili-*
 ├── adaptive/   🔀 delegador que elige web/mobile en runtime — selector lx-*
 ├── shared/     🔧 piezas agnósticas de plataforma (app-icon, kpi-card, focus-trap…)
@@ -37,31 +36,24 @@ Reglas de frontera **ya existentes y auditadas** (`npm run audit:ui` →
 `scripts/audit-ui-boundaries.mjs`, corre dentro de `npm run lint`):
 
 - `web/` **nunca** importa Ionic/mobile.
-- `mobile/` **nunca** importa PrimeNG/web.
 - `base/` no importa ninguna librería visual de plataforma.
 - `adaptive/` es la única capa exenta (cruza intencionalmente).
 
 **Consecuencia clave para la migración:** el layer `mobile/` (94 carpetas,
 Ionic) **no se toca**. El layer `adaptive/` (90 carpetas) en principio **no
 cambia su API pública** (`lx-*`) — solo debe seguir apuntando a una
-implementación `web/` que, por dentro, dejará de usar PrimeNG y empezará a
 usar Bootstrap. Si esto se cumple estrictamente, una feature que solo
 consume `lx-*` o wrappers `app-*` reales no debería necesitar tocar su
 HTML. El riesgo real está concentrado en:
 
-1. Las **fugas** donde una feature ya importa PrimeNG directo (ver §5).
-2. Los componentes `web/` que son **demasiado específicos de PrimeNG** para
    sobrevivir con la misma API pública (ej. `p-table` con `templates`
-   PrimeNG-only, `p-dynamicdialog`, `pTemplate`).
 
 ### Convención de selectores (vigente, de `arquitectura-shared-ui.md`)
 
 | Capa | Tecnología | Selector | Ejemplo |
 |---|---|---|---|
-| Web | PrimeNG | `app-*` | `app-status-badge` |
 | Móvil | Ionic | `ili-*` | `ili-status-badge` |
 | Adaptativo | runtime | `lx-*` | `lx-status-badge` |
-| Botón web (label / icon) | PrimeNG | `il-*` / `iw-*` | `iw-button-edit` |
 | Botón móvil (label / icon) | Ionic | `ili-*` / `ii-*` | `ii-button-edit` |
 | Input adaptativo | runtime (selector histórico conservado) | `custom-input-*-signal` | `custom-input-text-signal` |
 
@@ -75,7 +67,6 @@ selector cambie.
 
 | Carpeta | Nº de subcarpetas de componente | Líneas TS+HTML+SCSS |
 |---|---:|---:|
-| `web/` (desktop, PrimeNG) | 173 (de las cuales **45** son wrappers `primeng-*` internos) | 19,135 |
 | `mobile/` (Ionic — fuera de alcance) | 94 | — |
 | `adaptive/` (delegador) | 90 | — |
 | `inputs/web` | 26 | 13,938 (todo `inputs/`) |
@@ -104,37 +95,12 @@ verificados.
 
 ---
 
-## 3. Huella real de PrimeNG por componente (el dato más importante del análisis)
 
-Conteo de `import … from "@ui/web/primeng-*"` en `app/modules/**`:
 
-| Wrapper PrimeNG | Usos | Peso relativo |
 |---|---:|---|
-| `primeng-table` | **341** | 🔴 Crítico |
-| `primeng-custom-caption` | **215** | 🔴 Crítico (satélite de tabla) |
-| `primeng-custom-table-emptymessage` | **187** | 🔴 Crítico (satélite de tabla) |
-| `primeng-custom-table-footer` | **135** | 🔴 Crítico (satélite de tabla) |
-| `primeng-api` | 29 | 🟡 Medio (tipos `MenuItem`, etc.) |
-| `primeng-button` | 26 | 🟡 Medio |
-| `primeng-tag` | 20 | 🟡 Medio |
-| `primeng-inputtext` | 19 | 🟡 Medio |
-| `primeng-message` | 13 | 🟡 Medio |
-| `primeng-divider` | 12 | 🟢 Bajo |
-| `primeng-checkbox` | 11 | 🟢 Bajo |
-| `primeng-skeleton` | 7 | 🟢 Bajo |
-| `primeng-progressspinner` | 5 | 🟢 Bajo |
-| `primeng-select`, `primeng-radiobutton`, `primeng-dialog` | 4 c/u | 🟢 Bajo |
-| `primeng-toolbar`, `primeng-toast`, `primeng-selectbutton` | 3 c/u | 🟢 Bajo |
 | resto (accordion, autocomplete, avatar, badge, breadcrumb, carousel, chip, dataview, datepicker, dynamicdialog, floatlabel, iconfield, inputgroup(addon), inputicon, inputnumber, menu, multiselect, popover, progressbar, ripple, splitbutton, tabs, toggleswitch, custom-toast) | 1–2 c/u | ⚪ Cola larga (~30 componentes) |
 
-**Hallazgo central:** el ecosistema de **tabla** (`primeng-table` +
-`primeng-custom-caption` + `primeng-custom-table-emptymessage` +
-`primeng-custom-table-footer`) concentra **878 de ~1,074 imports
-`primeng-*`** medidos, es decir, **más del 80% de toda la huella de
-PrimeNG en features**. Esto no es casualidad: `conventions/CONVENTIONS.md`
-(sección "Regla especial vigente de PrimeNG") declara **explícitamente**
 que `p-table` y su ecosistema directo son la **única excepción vigente**
-para usar PrimeNG sin pasar por un wrapper adaptativo completo. En la
 práctica, esto significa que la tabla **no está detrás de un
 `lx-data-view`/`app-data-grid` único** como el resto de la librería —
 está compuesta directamente en cada feature. `@ui/web/data-grid` solo tiene
@@ -147,17 +113,8 @@ problema de "reemplazar un componente", es un problema de **tocar
 potencialmente cientos de plantillas de feature** (aunque los 3
 sub-wrappers sí están encapsulados y se pueden rediseñar una sola vez).
 
-### Fuga de PrimeNG fuera del wrapper oficial
 
-- **77 archivos** fuera de `shared/ui` importan `primeng` **directamente**
-  (`from "primeng/..."`), sin pasar por `@ui/web/primeng-*`.
-- **83 archivos en total** en el proyecto importan `primeng` directo → solo
   **6 estarían dentro de `shared/ui`**, lo cual es sorprendentemente bajo
-  frente a las 45 carpetas `primeng-*` — probablemente varias de esas
-  carpetas (`primeng-custom-caption`, `primeng-custom-table-emptymessage`,
-  `primeng-custom-table-footer`, `primeng-custom-global-filter`,
-  `primeng-custom-toast`) son componentes **propios** que decoran `p-table`
-  sin importar el paquete `primeng` en sí (usan `pTemplate`/proyección, no
   imports directos). Este número debe reconciliarse con precisión en la
   Fase 0 (ver plan), no se debe asumir que los 77 archivos son 77
   violaciones — muchos serán uso legítimo de `p-table` bajo la excepción
@@ -174,9 +131,7 @@ core/_colors.scss  (232 variables SCSS, ÚNICA fuente de hex/rgba)
       ↓ (#{c.$*})
 theme/_variables.scss  (expone --primary-*, --secondary-*, --ds-*, --ds-m-* como CSS custom properties)
       ↓ (var(--*))
-theme/mypreset.ts  (preset PrimeNG — SOLO referencia var(--*), nunca hex/rgba)
       ↓
-Componentes PrimeNG
 ```
 
 `src/styles/DESIGN.md` fija el espíritu de marca en un frontmatter YAML
@@ -194,10 +149,8 @@ formal:
 - **Elevación:** 5 niveles de sombra ya definidos como `rgba(27,54,93,*)`.
 
 **Por qué esto es una ventaja crítica para migrar a Bootstrap:** esta
-especificación **ya está desacoplada de PrimeNG**. Los valores hex viven
 en un solo archivo (`core/_colors.scss`) y se exponen como variables CSS
 (`--ds-*`, `--primary-*`) consumidas por **cualquier** capa, no solo por
-PrimeNG. Mapear estos mismos tokens a las variables SCSS de Bootstrap
 (`$primary`, `$secondary`, `$success`, `$danger`, `$warning`, `$info`,
 `$border-radius`, `$spacer`, `$font-family-base`) es un ejercicio acotado
 de "puente", no una reescritura de la paleta. Ver mapeo propuesto en
@@ -219,13 +172,9 @@ sobre todo de **reconciliación de especificidad/orden de carga** (que el
 `.btn` de Bootstrap no gane por cascada al `.btn` del DS) más que una
 reescritura de componentes.
 
-### Archivos de tokens huérfanos detectados (deuda preexistente, no causada por PrimeNG)
 
 - `core/_variables.scss`: **no importado por nada** (breakpoints, z-index,
   tamaños) — confirmado también por `estandar-hoja-estilos.md`.
-- `primeng-overrides.css`: **no referenciado por `angular.json`** — archivo
-  huérfano de 319 líneas de overrides PrimeNG que hoy no se ejecuta.
-- `src/app/mypreset.ts`: preset PrimeNG alternativo (basado en Lara) que
   **no está activo** (el activo es `src/styles/theme/mypreset.ts`, basado
   en Aura). Candidato a borrado independientemente de esta migración.
 
@@ -239,13 +188,10 @@ Estructura real verificada en disco (7 carpetas + 4 archivos raíz):
 styles/
 ├── ds-entry.scss          🚀 entrada DS — @use — SIN alcance sobre reset/tipografía global
 ├── styles.scss            📜 hoja maestra legacy — @import — capas CSS + Ionic + dark mode
-├── primeng-overrides.css  🅿️ HUÉRFANO — no cargado por angular.json
 ├── DESIGN.md              🎨 especificación de marca (frontmatter YAML, ver §4)
 ├── estandar-hoja-estilos.md  📋 documentación interna — ⚠️ parcialmente desactualizada (ver abajo)
 ├── core/     (8 archivos)  tokens SSOT: colors, spacing, borders, shadows, typography, functions, mixins
-├── web/      (18 archivos) PrimeNG overrides (`prime-*.scss`) + clases DS puras (`buttons, cards, inputs, forms, tables, alerts, dropdowns`) + `flatpickr`
 ├── mobile/   (3 archivos)  Ionic (`ionic-rn-theme`, `ili-buttons`, `header-mobile`)
-├── theme/    (2 archivos)  `_variables.scss` (puente a CSS vars) + `mypreset.ts` (preset PrimeNG)
 ├── shared/   (4 archivos)  cross-cutting: `cdk-overrides`, `toast`, `auth`, `sidebar`
 ├── base/     (2 archivos)  `_global.scss`, `_dark-mode.scss`
 └── custom/   (6 archivos)  legacy/específico: avatars, list, custom-table, financial-tables, print, utilities
@@ -254,7 +200,6 @@ styles/
 Orden de capas CSS declarado en `styles.scss` (RN-DS-012):
 
 ```
-@layer ionic, reset, tokens, primeng, primevue, primeng-brand, base, components, utilities, overrides;
 ```
 
 `angular.json` carga, en este orden: `primeflex.css` → `flatpickr.css` →
@@ -289,13 +234,10 @@ inconsistencia preexistente e independiente de esta migración, pero la
 migración es la oportunidad natural para resolverla (instalar `bootstrap`
 real + decidir el punto de entrada SCSS, ver plan).
 
-### Riesgo de versión: PrimeNG en Release Candidate
 
-`package.json` fija `"primeng": "^22.0.0-rc.1"` — el proyecto corre hoy
 sobre un **release candidate**, no una versión estable. Esto es un riesgo
 independiente de la migración (una app en producción sobre un RC), pero
 también implica que **no conviene dejar flotante (`^`) esta dependencia
-durante la ventana de migración**: un bump automático de PrimeNG a mitad
 de la migración podría romper wrappers que ya se planean retirar. Se
 recomienda fijar la versión exacta (`22.0.0-rc.1`, sin `^`) al iniciar la
 Fase 0.
@@ -338,13 +280,9 @@ apoyarse en componentes de `ng-bootstrap` a gran escala.
 
 | # | Hallazgo | Tipo | Acción sugerida |
 |---|---|---|---|
-| 1 | Tabla (`p-table` + 3 sub-wrappers) = 80%+ de la huella de PrimeNG en features | Alcance | Es el ítem #1 del plan, no un ítem más |
 | 2 | Botones (`web/_buttons.scss` + `buttons/web-*`) ya usan markup y nomenclatura Bootstrap-like, sin `p-button` | Oportunidad | Migrar primero como "quick win" y piloto del patrón de trabajo |
-| 3 | 77 archivos con import directo de `primeng` fuera de `shared/ui` | Deuda / riesgo | Reconciliar en Fase 0: separar uso legítimo (`p-table`) de fuga real |
 | 4 | `@ng-bootstrap/ng-bootstrap` ya instalado y usado en 25 archivos, sin `bootstrap.css` cargado | Inconsistencia preexistente | Resolver como parte de la Fase 0 (instalar `bootstrap`, decidir entry point) |
 | 5 | `estandar-hoja-estilos.md` desactualizado (describe carpetas ya fusionadas) | Deuda documental | Corregir antes de que alguien lo use como guía durante la migración |
-| 6 | `primeng-overrides.css`, `core/_variables.scss`, `src/app/mypreset.ts` huérfanos | Deuda documental/código | Confirmar borrado (independiente de la migración, pero se cruza con ella) |
-| 7 | PrimeNG fijado en `^22.0.0-rc.1` (release candidate, versión flotante) | Riesgo de estabilidad | Fijar versión exacta al iniciar Fase 0 |
 | 8 | `inputs/` tiene un rollout adaptativo **en curso e incompleto** (solo 5 de ~15+ tipos migrados a patrón adaptativo) | Coordinación | Secuenciar la migración de inputs a Bootstrap **después** de terminar (o congelar) el rollout adaptativo en curso, para no duplicar trabajo |
 | 9 | `@ng-select/ng-select` ya es dependencia y ya existe `inputs/web/input-ng-select` | Oportunidad | Candidato natural para reemplazar `p-select`/`p-multiselect`/`p-autocomplete`; ambas plantillas de referencia también usan selects con tema Bootstrap |
 | 10 | `mobile/` (Ionic, 94 carpetas) y `adaptive/` (90 carpetas) quedan fuera del alcance directo de esta migración | Alcance | Confirmar explícitamente en el plan para que nadie migre módulos que no corresponde tocar |

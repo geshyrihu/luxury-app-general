@@ -1,12 +1,7 @@
-# Reporte de Análisis - PrimeNG / PrimeIcons / PrimeFlex
 ## Proyecto: luxuryapp-api/appsweb/angular
 
 ### 1. Resumen Ejecutivo
 - **Total de archivos analizados**: ~4,109 archivos bajo `src/`
-- **Archivos `.ts`**: 3,205 con imports de PrimeNG
-- **Archivos `.html`**: 885 conteniendo selectores de PrimeNG
-- **Archivos `.scss`**: 64 con estilos de PrimeNG/PrimeFlex
-- **Total de hallazgos PrimeNG**: ~2,500+ ocurrencias combinadas
 - **Total de hallazgos PrimeIcons**: 6 iconos únicos, < 50 líneas HTML
 - **Total de hallazgos PrimeFlex**: 80 clases únicas, ~5,000+ usos en HTML
 
@@ -17,11 +12,6 @@ src/
 │   ├── shared/
 │   │   └── ui/
 │   │       └── web/
-│   │           └── primeng-*/           # 45 directorios wrapper
-│   │               ├── primeng-api/
-│   │               ├── primeng-button/
-│   │               ├── primeng-table/
-│   │               ├── primeng-dialog/
 │   │               └── ... (39 más)
 ├── styles/
 │   ├── web/
@@ -33,7 +23,6 @@ src/
 └── test-shims/
 ```
 
-### 3. Hallazgos PrimeNG
 
 #### 3.1 Componentes utilizados (en templates HTML)
 | Componente | Selector | Ocurrencias | Archivos únicos |
@@ -81,10 +70,6 @@ src/
 
 #### 3.5 Re-export Wrappers (45 directorios)
 El proyecto utiliza una capa de abstracción con 45 componentes wrapper:
-- `primeng-table`: 350 imports, 833 usos HTML
-- `primeng-button`: 24 imports
-- `primeng-inputtext`: 20 imports
-- `primeng-dialog`: 4 imports
 - Otros: 1-3 imports cada uno
 
 ### 4. Hallazgos PrimeIcons
@@ -169,7 +154,6 @@ El proyecto utiliza una capa de abstracción con 45 componentes wrapper:
 
 ### 6. Estadísticas y Métricas
 
-#### 6.1 Top 10 componentes PrimeNG más usados
 | # | Componente | Ocurrencias |
 |---|------------|-------------|
 | 1 | `<p-sorticon>` | 734 |
@@ -188,23 +172,12 @@ El proyecto utiliza una capa de abstracción con 45 componentes wrapper:
 |-------|------------|
 | `.ts` | 434 imports, 65+ módulos, 3 servicios globales |
 | `.html` | 1,095 selectores, 678 directivas, ~25,000 clases utility |
-| `.scss` | 201 referencias a clases PrimeNG, 9 archivos override dedicados |
-| `.json` | 3 dependencias (primeng, primeflex, primeicons) |
 
 ### 7. Archivos Afectados
 
-#### 7.1 Archivos TS con imports PrimeNG (producción)
 | Sub-paquete | Cantidad |
 |-------------|---------|
-| `primeng/dynamicdialog` | 10+ |
-| `primeng/api` | 15+ |
-| `primeng/button` | 35+ |
-| `primeng/inputtext` | 12 |
-| `primeng/table` | 7 |
-| `primeng/dialog` | 7 |
-| `primeng/select` | 6 |
 
-#### 7.2 Archivos HTML con componentes PrimeNG
 | Módulo | Archivos |
 |---------|---------|
 | `operations.luxuryapp` | ~40+ |
@@ -224,7 +197,6 @@ El proyecto utiliza una capa de abstracción con 45 componentes wrapper:
 #### 8.1 Dependencias detectadas en package.json
 | Paquete | Versión | Estado |
 |----------|--------|--------|
-| `primeng` | `22.1.1` | Activo |
 | `primeflex` | `^4.0.0` | Instalado pero **no cargado explícitamente** |
 | `primeicons` | `8.0.1` | Cargado en angular.json, **migrado a Iconify** |
 | `@primeuix/themes` | `3.0.0` | Activo (LuxuryPreset) |
@@ -234,7 +206,6 @@ El proyecto utiliza una capa de abstracción con 45 componentes wrapper:
 1. **PrimeFlex fantasma**: PrimeFlex `^4.0.0` está en `package.json` pero no se carga como CSS. Las utilidades son proporcionadas por Bootstrap 5.3.8.
 2. **PrimeIcons migrado**: Solo 6 iconos únicos, < 50 líneas con clases `pi`. El proyecto usa predominantemente Iconify (2,337 referencias).
 3. **Dominancia de `<p-sorticon>` + `pSortableColumn`**: 1,357 ocurrencias combinadas en 178 archivos. Patrón repetitivo → posible candidato a abstracción.
-4. **45 wrappers `primeng-*`**: Capa de abstracción bien estructurada. Facilita migración futura.
 5. **Dualidad de temas**: Dos `mypreset.ts` (Lara y Aura) pero solo Aura (`LuxuryPreset`) está activo.
 6. **Uso extensivo de Bootstrap**: Bootstrap 5.3.8 provee la mayoría de utilidades de layout, superponiéndose a PrimeFlex.
 
@@ -246,18 +217,14 @@ El proyecto utiliza una capa de abstracción con 45 componentes wrapper:
 | **Media** | Crear wrapper para `<p-sorticon>` + `pSortableColumn` (patrón repetido 678 veces) | Menos duplicación |
 | **Media** | Reconciliar los dos `mypreset.ts` (eliminar legacy Lara-based) | Claridad |
 | **Media** | Auditar `!important` en SCSS overrides para verificar si siguen siendo necesarios | Mantenibilidad |
-| **Baja** | Evaluar si los 45 wrappers `primeng-*` todos son necesarios o si algunos son vacíos | Limpieza |
 | **Baja** | Migrar `<p-dialog>` directo (2 usos) al wrapper `LxDialogService` | Consistencia |
 
 ### 9. Anexos
 
 #### 9.1 Comandos útiles para futuras auditorías
 ```bash
-# Contar imports PrimeNG en TypeScript
-rg "from 'primeng/" --type ts src/ | wc -l
 
 # Listar todos los sub-paquetes usados
-rg "from 'primeng/(\w+)" --type ts src/ -o --replace '$1' | sort -u
 
 # Contar selectores <p-*> en HTML
 rg "<p-\w+" --type html src/ | wc -l
@@ -271,10 +238,7 @@ rg "d-flex" --type html src/ | wc -l
 # Verificar que primeflex no se carga
 rg "primeflex" angular.json
 
-# Buscar !important en overrides PrimeNG
 rg "!important" src/styles/web/_prime-*.scss
 ```
 
-*Reporte actualizado el 2026-09-16. Angular 22.1.6 / PrimeNG 22.1.1 / PrimeFlex ^4.0.0 / PrimeIcons 8.0.1*
 
-**📁 Archivo generado:** `reporte-primeng-analisis-2026-09-16.md`
