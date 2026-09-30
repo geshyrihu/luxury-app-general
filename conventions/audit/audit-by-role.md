@@ -1,6 +1,6 @@
 # Audit by Role
 
-**Ultima revision:** 2026-07-30
+**Ultima revision:** 2026-09-30 (comandos de seguridad agregados a Backend Developer, enlace a security-audit-checklist.md). Anterior 2026-07-30.
 **Deriva de:** [CONVENTIONS.md](../CONVENTIONS.md)
 
 ## Proposito
@@ -96,6 +96,11 @@ grep -r "api/\\[controller\\]\|api/[A-Z]" api --include="*.cs"
 grep -r "namespace LuxuryApp.Application" api/LuxuryApp.Application --include="*.cs"
 grep -r "public .* Id " api/LuxuryApp.Application --include="*DTO*.cs"
 find api/LuxuryApp.Application -name "*Dtos.cs" -o -name "*DTOs.cs"
+
+# Seguridad — ver security-audit-checklist.md para el checklist completo
+grep -rn "\.Where(" api/LuxuryApp.Application --include="*.cs" -A2 | grep -B2 "CustomerId =="
+grep -rln "FromQuery.*customerId\|FromRoute.*customerId" api/LuxuryApp.Application --include="*.cs"
+grep -rn "password\s*=\|apikey\|Bearer \|-----BEGIN" api --include="*.cs" -i
 ```
 
 ### Criterio de paso
@@ -103,6 +108,8 @@ find api/LuxuryApp.Application -name "*Dtos.cs" -o -name "*DTOs.cs"
 - sin violaciones criticas sobre stack, rutas o shared
 - cualquier ajuste de contrato sensible queda como plan, no como fix improvisado
 - invariantes criticas protegidas fuera del frontend cuando el dominio lo requiera
+- hallazgos de seguridad pasan por el veredicto confirmado/necesita validacion/rechazado
+  de `security-audit-checklist.md`, no se reportan directo como "incumplimiento critico"
 
 ## 3. Mobile Developer
 

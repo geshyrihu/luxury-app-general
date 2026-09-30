@@ -1,6 +1,6 @@
 # Audit Module Conventions
 
-**Ultima revision:** 2026-07-30
+**Ultima revision:** 2026-09-30 (item "seguridad y permisos" enlaza security-audit-checklist.md; tabla de clasificacion des-duplicada, fuente unica audit-severity-model.md). Anterior 2026-07-30.
 
 ## Regla base
 
@@ -40,7 +40,9 @@ Solo existe una modalidad: **auditoria completa**.
 - servicios genericos
 - logica de negocio
 - acceso a datos o API
-- seguridad y permisos
+- seguridad y permisos — usar [security-audit-checklist.md](./security-audit-checklist.md) (aislamiento
+  por `Customer`, control de acceso, inyeccion, veredicto confirmado/necesita
+  validacion/rechazado)
 - UI y styles
 - mobile si aplica
 - performance
@@ -177,11 +179,17 @@ apliquen.
 
 ## Clasificacion obligatoria de hallazgos
 
+Ver [audit-severity-model.md](./audit-severity-model.md) (fuente unica; no duplicar la tabla aqui):
+
 - incumplimiento critico
 - incumplimiento alto
 - deuda tecnica
 - mejora recomendada
 - riesgo de ruptura por shared o contrato
+
+Un hallazgo de seguridad pasa primero por el veredicto confirmado / necesita
+validacion / rechazado de `audit-severity-model.md` antes de mapear a esta
+tabla; ver [security-audit-checklist.md](./security-audit-checklist.md).
 
 ## Salida minima obligatoria
 

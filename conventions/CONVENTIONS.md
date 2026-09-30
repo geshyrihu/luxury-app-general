@@ -9,7 +9,7 @@
 >
 > **Fecha de corte del sistema rector:** 2026-09-16 (referencia única para decidir si un documento es legacy; ver §2 y §8.1)
 >
-> **Ultima revision:** 2026-09-24 (§6.1: nueva columna "Gate hoy" con el estado real de verificación automática de cada regla crítica). Anterior 2026-09-21 (Fases 1-3 de mejora: enlaces, mojibake y fecha de corte unificados; §6.1 pasa a tabla de reglas críticas que enlaza a los documentos especializados; §5.5, §5.9.1, §5.9.2 y §4.7 compactadas con enlace a su documento. Anterior 2026-09-19: Añadido §3bis Guía Rápida por Tarea — índice orientado a acción; PrimeNG Fase 6 completada §5.5; §5.2 limpieza docs eliminados; §9 índices unificados; skill delegacion-estrategica instalada)
+> **Ultima revision:** 2026-09-30 (Framework de Auditoría: nuevo `security-audit-checklist.md` — clases de ataque, veredicto confirmado/necesita validación/rechazado y verificación adversarial, adaptado de `cloudflare/security-audit-skill`; `audit-severity-model.md` ampliado con la misma distinción). Anterior 2026-09-24 (§6.1: nueva columna "Gate hoy" con el estado real de verificación automática de cada regla crítica). Anterior 2026-09-21 (Fases 1-3 de mejora: enlaces, mojibake y fecha de corte unificados; §6.1 pasa a tabla de reglas críticas que enlaza a los documentos especializados; §5.5, §5.9.1, §5.9.2 y §4.7 compactadas con enlace a su documento. Anterior 2026-09-19: Añadido §3bis Guía Rápida por Tarea — índice orientado a acción; PrimeNG Fase 6 completada §5.5; §5.2 limpieza docs eliminados; §9 índices unificados; skill delegacion-estrategica instalada)
 > **Estado:** Vigente
 
 ---
@@ -568,6 +568,7 @@ Estos 4 niveles **deben originarse en FASE 0** (cuando se planea el módulo) y *
 
 - [audit-prompt-comprehensive.md](./audit/audit-prompt-comprehensive.md) — Prompt template completo para auditar cualquier módulo (8 secciones detalladas)
 - [audit-checklist-completo.md](./audit/audit-checklist-completo.md) — Checklist interactivo con 6 tipos de errores a buscar (entidades, permisos, flujos, validaciones, lógica)
+- [security-audit-checklist.md](./audit/security-audit-checklist.md) — 🔴 Clases de ataque (aislamiento por `Customer`, control de acceso, inyección), veredicto confirmado/necesita validación/rechazado, verificación adversarial (adaptado de `cloudflare/security-audit-skill`, 2026-09-30)
 - [ejemplo-auditoria-candidates.md](./audit/ejemplo-auditoria-candidates.md) — Aplicación real paso a paso (ejemplo piloto: Reclutamiento/Candidates)
 - [Audit Agent Instructions](./operations/audit-agent-instructions.md) — guia operativa nivel 3; matriz RN con 4 niveles
 - [Auditoría Rutas Agentes 2026-09-10](./AUDIT_RUTAS_AGENTES_20260910.md) — Inventario y análisis de rutas de agentes
