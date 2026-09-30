@@ -49,7 +49,7 @@ import { imageFormDataInterceptor, offlineInterceptorFn, jwtInterceptor } from '
 export const appConfig: ApplicationConfig = {
   providers: [
     // ========== SECCIÓN 1: CHANGE DETECTION ==========
-    provideZonelessChangeDetection(), // Angular 19: Sin NgZone
+    provideZonelessChangeDetection(), // Angular 22: Sin NgZone
     
     // ========== SECCIÓN 2: ROUTING ==========
     provideRouter(
@@ -227,7 +227,7 @@ bootstrapApplication(AppComponent, appConfig)
 ### Sección 1: Change Detection (Zoneless)
 
 ```typescript
-// Angular 19: Zoneless change detection
+// Angular 22: Zoneless change detection
 provideZonelessChangeDetection()
 
 // Beneficios:
@@ -408,8 +408,9 @@ Recomendación: Comentar librerías no usadas en tu features actuales
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+ (zoneless, ApplicationConfig)  
+**Vigencia:** Angular 22 (zoneless, ApplicationConfig)  
 **Aplicable a:** Toda la aplicación
+
 
 
 

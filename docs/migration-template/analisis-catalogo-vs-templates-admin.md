@@ -9,7 +9,7 @@ nada. Solo lectura + reporte.
 
 `src/app/shared/ui` y el catálogo (`herramientas-dev/catalog-component-ui`)
 
-Existen dos plantillas Angular 21 + Bootstrap 5 compradas, vendoreadas en:
+Existen dos plantillas Angular 22 + Bootstrap 5 compradas, vendoreadas en:
 - `D:\repos\luxuryapp-api\templates_admin\lagos`
 - `D:\repos\luxuryapp-api\templates_admin\minia`
 
@@ -109,3 +109,4 @@ resumen final de 3-5 líneas con las categorías que sí requieren decisión
 del usuario (las de "Sin resolver"). Guárdalo en
 `docs/migration-template/reporte-catalogo-vs-templates-admin.md` y avisa
 cuando esté listo — no implementes nada de lo que sugieras ahí.
+

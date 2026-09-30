@@ -400,5 +400,6 @@ grep -r "catchError" appsweb/angular/src/app --include="*.ts" | wc -l
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+  
+**Vigencia:** Angular 22  
 **Aplicable a:** Todos los componentes y servicios
+

@@ -69,7 +69,7 @@ Para cada módulo: **Qué resuelve** + **Features clave (5-7)** + **Captura real
 - Auditoría inmutable de cada movimiento
 
 ### 6. ARQUITECTURA TÉCNICA (Para CTOs / IT)
-- **Stack:** Angular 20+ (standalone, signals, OnPush) + .NET 10 / ASP.NET Core Minimal APIs
+- **Stack:** Angular 22 (standalone, signals, OnPush) + .NET 10 / ASP.NET Core Minimal APIs
 - **Auth:** Azure AD B2C / IdentityServer + JWT + roles claims
 - **Real-time:** SignalR (hub por cliente)
 - **DB:** SQL Server multi-tenant (schema compartido + tenant_id)
@@ -214,3 +214,4 @@ Semana 9:    Go-live + hipercuidado 30 días + CSM asignado
 - **Internacionalización:** Estructura lista para i18n (data-i18n attributes)
 - **Analytics:** GA4 + Microsoft Clarity + eventos custom (demo_request, pricing_click, module_expand)
 - **Formulario:** Netlify Forms / Formspree / API propia → Slack + Email + CRM (HubSpot/Pipedrive)
+

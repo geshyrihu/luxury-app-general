@@ -54,7 +54,7 @@
 
 El módulo gestiona reuniones (Asamblea / Comité / Operación), sus acuerdos (`MeetingDetails`), el seguimiento de avances (`MeetingDetailsSeguimiento`), los participantes (administración, comité, invitados) y la generación de minutas PDF/Excel con envío de correos.
 
-La arquitectura base es correcta (Minimal APIs con `IEndPointsModule`, CQRS-lite vía `AppService`, AutoMapper, EF Core, Angular 21 con Signals y `AppTable`). Sin embargo, la auditoría identifica **5 hallazgos críticos** que rompen contrato funcional y seguridad, **7 altos** de fuga de datos/consistencia y **11 medios** de deuda técnica. El hallazgo más grave es la desalineación de contrato `TypeMeeting` vs `eTypeMeeting`, que provoca que toda junta creada o editada quede registrada como `Asamblea`.
+La arquitectura base es correcta (Minimal APIs con `IEndPointsModule`, CQRS-lite vía `AppService`, AutoMapper, EF Core, Angular 22 con Signals y `AppTable`). Sin embargo, la auditoría identifica **5 hallazgos críticos** que rompen contrato funcional y seguridad, **7 altos** de fuga de datos/consistencia y **11 medios** de deuda técnica. El hallazgo más grave es la desalineación de contrato `TypeMeeting` vs `eTypeMeeting`, que provoca que toda junta creada o editada quede registrada como `Asamblea`.
 
 **Conteo:** Críticos 5 · Altos 7 · Medios 11.
 
@@ -285,3 +285,4 @@ MeetingManagement ──> AreaDetailsTable (gestion-minuta/:id)
 - `conventions/CONVENTIONS.md` §4.4 (Auditoría), §5.8 (Auditoría), §6.1 (DTOs / 1 archivo = 1 DTO), §5.9.1 (Notificaciones).
 - `conventions/audit/audit-prompt-comprehensive.md`, `conventions/audit/audit-checklist-completo.md`.
 - `api/LuxuryApp.Application/Modules/OperationsLuxuryApp/JuntasMensuales/Minuta/README.md`.
+

@@ -247,7 +247,7 @@ Estado: Storybook configurado (`storybook` target) con `@storybook/angular-vite`
 
 | Ruta | Estado | Acción |
 |---|---|---|
-| Angular 17/18 → 22 | ✅ zoneless activo (`app.config.ts:85`) | remover `zone.js` y `provideAnimationsAsync` (`:108`) cuando se migre a CSS-only |
+| Angular 22/18 → 22 | ✅ zoneless activo (`app.config.ts:85`) | remover `zone.js` y `provideAnimationsAsync` (`:108`) cuando se migre a CSS-only |
 | Ionic 7/8 | ✅ standalone + `--ion-*` | definir selectores por feature, no solo `mode:"ios"` |
 | Theming → tokens | ⚠️ doble nomenclatura | aplicar §9 (romper en una minor) |
 | Dark surfaces | ⚠️ dual navy/zinc | alinear preset al DS |
@@ -322,3 +322,4 @@ Estado: Storybook configurado (`storybook` target) con `@storybook/angular-vite`
 ---
 
 *Reporte generado por auditoría FASE 1 · Basado en `DESIGN.md` + implementación real del repositorio. Los ratios de contraste son cálculos numéricos WCAG 2.x (puede variar ±0.05 por redondeo).*
+

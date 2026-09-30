@@ -28,7 +28,7 @@ Esto viola el principio de responsabilidad única, ya que los datos bancarios y 
    - Generar la migración EF.
    - **IMPORTANTE:** Editar manualmente el archivo `Up()` de la migración generada para insertar los datos existentes de `EmployeeBankData` hacia `EmployeeBeneficiary` ANTES de que haga el `DropColumn` de dichas propiedades.
 
-### Tarea de Frontend (Angular 18)
+### Tarea de Frontend (Angular 22)
 1. **Módulo de Beneficiario**:
    - Construir `employee-beneficiary-list` y `employee-beneficiary-form` (y sus respectivos archivos `.ts`, `.html`).
    - Crear el servicio HTTP `EmployeeBeneficiaryApiService`.
@@ -46,3 +46,4 @@ El agente CLI deberá correr:
 3. Modificar la migración para salvaguardar los datos.
 4. `npm run build` en `client/angular`.
 5. Reportar al Orquestador (yo) cuando haya terminado para proceder a la validación.
+

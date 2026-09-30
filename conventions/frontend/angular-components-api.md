@@ -8,14 +8,14 @@
 
 ## Propósito
 
-Documentar la **nueva API de componentes Angular 17+**: `input()`, `model()`, `standalone`, y `ChangeDetectionStrategy.OnPush`. Define cuándo y cómo usar cada uno.
+Documentar la **nueva API de componentes Angular 22**: `input()`, `model()`, `standalone`, y `ChangeDetectionStrategy.OnPush`. Define cuándo y cómo usar cada uno.
 
 ---
 
 ## Regla de Oro
 
 ```
-Componentes en Angular 17+ = Standalone + OnPush + input()/model() API
+Componentes en Angular 22 = Standalone + OnPush + input()/model() API
 
 ❌ NO: NgModule, @Input/@Output, ChangeDetectionDefault
 ✅ SÍ: standalone: true, OnPush, input()<T>(), model()<T>()
@@ -81,7 +81,7 @@ export class OldAccordionComponent {
   @Input() expandedIds: string[] = [];
 }
 
-// ✅ NUEVO: input() API (Angular 17+)
+// ✅ NUEVO: input() API (Angular 22)
 @Component({})
 export class AccordionComponent {
   items = input<AccordionItem[]>([]); // Signal read-only
@@ -336,7 +336,7 @@ export class AccordionWebComponent {}
 <div *ngIf="isLoading">Loading...</div>
 <div *ngFor="let item of items">{{ item.name }}</div>
 
-// ✅ NUEVO: @if, @for (Angular 17+)
+// ✅ NUEVO: @if, @for (Angular 22)
 @if (isLoading()) {
   <div>Loading...</div>
 } @else {
@@ -418,7 +418,7 @@ grep -r "\*ngFor" appsweb/angular/src/app --include="*.html"
 | ❌ Incorrecto | ✅ Correcto | Razón |
 |---|---|---|
 | NgModule wrapper para componente | standalone: true | Más simple, sin boilerplate |
-| @Input/@Output | input()/model() | Nueva API Angular 17+, más simple |
+| @Input/@Output | input()/model() | Nueva API Angular 22, más simple |
 | *ngIf/*ngFor | @if/@for/@switch | Control flow keyword, mejor performance |
 | ChangeDetectionStrategy.Default | ChangeDetectionStrategy.OnPush | Mejor performance por defecto |
 | Acceder input sin () | {{ item() }} | Signals requieren función |
@@ -438,5 +438,6 @@ grep -r "\*ngFor" appsweb/angular/src/app --include="*.html"
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+ (input/model API, @if/@for/@switch, OnPush)  
+**Vigencia:** Angular 22 (input/model API, @if/@for/@switch, OnPush)  
 **Aplicable a:** Todos los componentes nuevos en el proyecto
+

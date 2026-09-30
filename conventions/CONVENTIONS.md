@@ -138,7 +138,7 @@ Ver detalle en:
   - [Backend Generic Services](./backend/backend-generic-services-catalog.md) — servicios base reutilizables (ApiResponseService, PaginationStore, CustomToastService, DialogHandlerService, StorageService, AuthService, EnumSelectService, DateService, FormHelper, GlobalErrorService)
   - [Select Items Centralization](./backend/select-items-centralization-rule.md) — **NO crear endpoints Select locales**
 
-### 3️⃣ CREAR COMPONENTE FRONTEND (Angular 17+)
+### 3️⃣ CREAR COMPONENTE FRONTEND (Angular 22)
 - **Ubicación**: `appsweb/angular/src/app/modules/[modulo].luxuryapp/[grupo]/[submodulo]/[categoria]/`
 - **Naming**: `[entity]-[purpose].component.ts` (kebab-case)
 - **Estándar**: Standalone + `OnPush` + `signal()`/`computed()`/`effect()`
@@ -287,7 +287,7 @@ es espejo operativo. Si hay desalineación, gana §4. Al cambiar §4 se re-sincr
 10. [Frontend Generic Services Catalog](./frontend/frontend-generic-services-catalog.md)
 11. [Document Display Pattern](./frontend/document-display-pattern.md) — si el modulo muestra documentos/PDFs en listados
 
-**Angular 17+ Infrastructure (Obligatorio antes de escribir código):**
+**Angular 22 Infrastructure (Obligatorio antes de escribir código):**
 
 12. [Angular: App Initialization](./frontend/angular-app-initialization.md) — 🔴 CRÍTICA: app.config.ts, providers, interceptadores, APP_INITIALIZER
 13. [Angular: Services Catalog](./frontend/angular-services-catalog.md) — 🔴 CRÍTICA: 70+ servicios compartidos, cuándo inyectar vs crear
@@ -296,7 +296,7 @@ es espejo operativo. Si hay desalineación, gana §4. Al cambiar §4 se re-sincr
 15. [Angular: Dialog/Modal Abstraction](./frontend/angular-dialog-modal-pattern.md) — 🔴 CRÍTICA: Web/Mobile unificado, DialogHandlerService
 16. [Angular: Error Handling Pattern](./frontend/angular-error-handling-pattern.md) — 🔴 CRÍTICA: GlobalErrorHandler, logging, user feedback
 
-**Angular 17+ Deep Dives (Requerido para componentes nuevos):**
+**Angular 22 Deep Dives (Requerido para componentes nuevos):**
 
 17. [Angular: Signals, State & Caching](./frontend/angular-signals-and-state.md) — 🔴 CRÍTICA: signal(), computed(), effect(), Store Services pattern, caching strategy
 18. [Angular: Forms Pattern](./frontend/angular-forms-pattern.md) — 🔴🟠 ALTA: Reactive Forms tipados, validadores custom, FormGroup<IType>
@@ -988,3 +988,4 @@ Control temporal:
 
 - [Guía Shared Reporte Maestro (Legacy)](../docs/SharedLuxuryApp/Conventions/20260726-guia-shared-reporte-maestro-legacy.md)
 - [Plan de Reestructuración](../docs/SharedLuxuryApp/Conventions/20260729-plan-shared-conventions-restructure.md) — movido fuera de `conventions/` el 2026-09-09 (es un plan fechado ya ejecutado, no una regla); ruta actual según §6ter
+

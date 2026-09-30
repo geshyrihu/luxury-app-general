@@ -266,7 +266,7 @@ su forma de cargar Bootstrap "a pelo".
 
 ### Nota de compatibilidad a verificar en Fase 0
 
-Ambas plantillas están en **Angular 21**, un mayor por debajo de nuestro
+Ambas plantillas están en **Angular 22**, un mayor por debajo de nuestro
 **Angular 22**. No se verificó en esta pasada si `@ng-bootstrap/
 ng-bootstrap@21.0.0` (la versión ya instalada en nuestro `package.json`)
 declara soporte de peer-dependencies para Angular 22 — dado que el
@@ -286,3 +286,4 @@ apoyarse en componentes de `ng-bootstrap` a gran escala.
 | 8 | `inputs/` tiene un rollout adaptativo **en curso e incompleto** (solo 5 de ~15+ tipos migrados a patrón adaptativo) | Coordinación | Secuenciar la migración de inputs a Bootstrap **después** de terminar (o congelar) el rollout adaptativo en curso, para no duplicar trabajo |
 | 9 | `@ng-select/ng-select` ya es dependencia y ya existe `inputs/web/input-ng-select` | Oportunidad | Candidato natural para reemplazar `p-select`/`p-multiselect`/`p-autocomplete`; ambas plantillas de referencia también usan selects con tema Bootstrap |
 | 10 | `mobile/` (Ionic, 94 carpetas) y `adaptive/` (90 carpetas) quedan fuera del alcance directo de esta migración | Alcance | Confirmar explícitamente en el plan para que nadie migre módulos que no corresponde tocar |
+

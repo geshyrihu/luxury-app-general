@@ -387,7 +387,7 @@ grep -A 10 "withInterceptors" appsweb/angular/src/app/app.config.ts
 | ❌ Incorrecto | ✅ Correcto | Razón |
 |---|---|---|
 | Token refresh sin sincronizar | Usar refreshTokenSubject + filter | Evita N refreshes |
-| Crear HttpInterceptor clase | Usar HttpInterceptorFn funcional | Angular 15+ sintaxis |
+| Crear HttpInterceptor clase | Usar HttpInterceptorFn funcional | Angular 22 sintaxis |
 | Lógica de negocio en interceptor | Solo cross-cutting concerns | Separación de responsabilidades |
 | Sin manejo de 401 | CatchError + logout | Experiencia de usuario |
 | FormData directo al API | Procesar en interceptor | Centralización |
@@ -405,5 +405,6 @@ grep -A 10 "withInterceptors" appsweb/angular/src/app/app.config.ts
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 15+ (HttpInterceptorFn funcional)  
+**Vigencia:** Angular 22 (HttpInterceptorFn funcional)  
 **Aplicable a:** Todos los requests HTTP en el proyecto
+

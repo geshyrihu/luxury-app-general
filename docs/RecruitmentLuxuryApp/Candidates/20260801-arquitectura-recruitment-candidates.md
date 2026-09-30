@@ -274,7 +274,7 @@ CandidateApplication → RequestEmployeeRegister → Employee
 
 ## 6. Decisiones Tecnológicas (Por Qué Este Stack)
 
-### Frontend (Angular 17+)
+### Frontend (Angular 22)
 - ✅ Componentes standalone (no módulos)
 - ✅ OnPush + signals para cambio de estado
 - ✅ Reactive Forms + validación custom
@@ -374,3 +374,4 @@ físico no se delega a `OnDelete(DeleteBehavior.Cascade)` de EF Core: se ejecuta
 **Última actualización:** 2026-08-10  
 **Vigencia:** Permanente (cambia solo con aprobación de Tech Lead)  
 **Próxima revisión:** 2026-09-10 (si hay nuevos cambios)
+

@@ -5,7 +5,7 @@
 **Analista:** Antigravity
 
 ## 1. Resumen Ejecutivo
-Se ha realizado una auditoría exhaustiva del flujo de Organigrama (`org-chart.ts` en el frontend y `WorkPositionOrgChartAppService.cs` en el backend). El módulo presenta una arquitectura moderna, basada en Signals (Angular 17+) y Entity Framework Core con transacciones robustas. En términos generales, cumple con un alto estándar de calidad, aunque se identifican áreas menores de mejora técnica y de cumplimiento estricto con las convenciones vigentes.
+Se ha realizado una auditoría exhaustiva del flujo de Organigrama (`org-chart.ts` en el frontend y `WorkPositionOrgChartAppService.cs` en el backend). El módulo presenta una arquitectura moderna, basada en Signals (Angular 22) y Entity Framework Core con transacciones robustas. En términos generales, cumple con un alto estándar de calidad, aunque se identifican áreas menores de mejora técnica y de cumplimiento estricto con las convenciones vigentes.
 
 ## 2. Visión Funcional
 El organigrama permite la visualización jerárquica de los puestos de trabajo de un cliente específico, y la edición gráfica de la estructura (reubicación de nodos, cambio de jefe, reordenamiento) mediante drag & drop, restringido a usuarios con el rol `SuperUsuario`.
@@ -13,7 +13,7 @@ El organigrama permite la visualización jerárquica de los puestos de trabajo d
 ## 3. Hallazgos en Frontend (`org-chart.ts` / `.html` / `.interfaces.ts`)
 
 ### Puntos Fuertes:
-- **Estado y Reactividad:** Implementación excelente de Angular 17+ usando `signal`, `computed` y `effect`. Uso correcto de `ChangeDetectionStrategy.OnPush`.
+- **Estado y Reactividad:** Implementación excelente de Angular 22 usando `signal`, `computed` y `effect`. Uso correcto de `ChangeDetectionStrategy.OnPush`.
 - **Estructura de Plantillas:** Uso correcto del nuevo control flow (`@if`, `@for`).
 - **Accesibilidad:** Uso de `aria-live`, `aria-label`, y atributos enfocables (`tabindex`).
 - **Iconografía:** Uso correcto de `<app-icon>` en lugar de implementaciones legacy.
@@ -51,3 +51,4 @@ El organigrama permite la visualización jerárquica de los puestos de trabajo d
 
 **Prioridad Baja (Optimización):**
 - [ ] **Proyección SQL:** En `GetTreeAsync`, en lugar de cargar las entidades completas con `.Include()`, emplear `.Select(wp => new WorkPositionOrgChartNodeDto { ... })` para reducir drásticamente el uso de memoria RAM en el servidor para clientes muy grandes.
+

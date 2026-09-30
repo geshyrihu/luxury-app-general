@@ -15,7 +15,7 @@ Documentar el patrón de **functional guards** para proteger rutas. Define cuán
 ## Regla de Oro
 
 ```
-Guards en Angular 17+ = Functional Guards (CanActivateFn)
+Guards en Angular 22 = Functional Guards (CanActivateFn)
 
 ❌ NO: Guardianes de clase (class Guard implements CanActivate)
 ✅ SÍ: Functional guards (CanActivateFn), composables con `compose()`
@@ -503,5 +503,6 @@ grep -n "loadComponent\|loadChildren" appsweb/angular/src/app/app.routes.ts
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 15+ (Functional Guards)  
+**Vigencia:** Angular 22 (Functional Guards)  
 **Aplicable a:** Todas las rutas en el proyecto
+

@@ -363,5 +363,6 @@ grep -r "DynamicDialogRef" appsweb/angular/src/app --include="*.ts" | wc -l
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+, Ionic 8+  
+**Vigencia:** Angular 22, Ionic 8+  
 **Aplicable a:** Todos los componentes que abren diálogos/modales
+

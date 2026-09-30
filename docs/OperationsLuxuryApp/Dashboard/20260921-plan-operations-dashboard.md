@@ -143,7 +143,7 @@ appsweb/angular/src/app/modules/operations.luxuryapp/dashboard/metrics/
 └── services/dashboard-metrics.service.ts
 ```
 
-- Standalone + `OnPush` + `signal()`/`computed()` (Angular 17+).
+- Standalone + `OnPush` + `signal()`/`computed()` (Angular 22).
 - Nueva entrada de ruta `/dashboard/metrics` con el mismo guard funcional que protege `/dashboard` hoy.
 - Gráficos: reutilizar `<app-chart-wrapper>` + `chart-adapters.ts` de `shared/ui/web/charts/` — tipo `bar` (distribución por tipo) y `line` (tendencia pendientes vs completadas).
 - Tokens de diseño: solo `var(--ds-*)`/`var(--primary-*)`/`var(--surface-*)`, cero hex/px hardcodeados (`CONVENTIONS.md §3bis 7️⃣`).
@@ -308,3 +308,4 @@ para que el Tech Lead pueda revisar si falta alguno, si hay que modificar alguno
 
 En el reporte (response.md) agrega una sección "Catálogo de KPIs" con: la ruta, el archivo de
 configuración, y una tabla resumen de KPI, estado y roles, generada desde lo realmente implementado.
+
