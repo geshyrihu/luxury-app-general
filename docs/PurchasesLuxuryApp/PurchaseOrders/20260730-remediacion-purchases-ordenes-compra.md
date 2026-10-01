@@ -1,7 +1,12 @@
+> ⛔ **SUPERSEDED (2026-09-30).** Documento legacy: apunta a rutas inexistentes
+> (`SupplierLuxuryApp/Purchases/OrdenCompra`, `client/angular/.../supplier.luxuryapp/po/purchase-order`).
+> Reemplazado por `20260930-plan-remediacion-purchases-ordenes-compra.md`.
+> Se conserva solo como insumo histórico (CONVENTIONS.md §2).
+
 # Plan de Remediacion - OrdenCompra
 
 **Fecha:** 2026-07-30
-**Estado:** Pendiente de aprobacion
+**Estado:** Superseded (ver aviso arriba)
 **Modulo:** `OrdenCompra`
 **Responsable de aprobacion:** Usuario owner de convenciones
 **Auditoria origen:** [../../../docs/PurchasesLuxuryApp/PurchaseOrders/20260730-auditoria-purchases-ordenes-compra.md](../../reporte_maestro/modulos/../../../docs/PurchasesLuxuryApp/PurchaseOrders/20260730-auditoria-purchases-ordenes-compra.md)
