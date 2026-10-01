@@ -42,7 +42,7 @@
 | Lenguaje | TypeScript | Dart 3.x |
 | Componentes | ~480 standalone | ~480 widgets |
 | Servicios | ~70 en core/services | ~70 servicios Dart |
-| UI Library | PrimeNG 22 + PrimeFlex 4 | Flutter Material + paquetes propios |
+| UI Library | Bootstrap 5 + catálogo `@ui/*` propio | Flutter Material + paquetes propios |
 | Mobile | Ionic 8 (WebView) | Nativo (Skia/Impeller) |
 | Híbrido | Capacitor 8 | Flutter Web + Mobile (mismo código) |
 | Estado | Angular Signals | Riverpod / BLoC |
@@ -50,7 +50,7 @@
 | Build | Vite (web) + Gradle (Android) | Dart compile + Gradle/Xcode |
 | Testing | Vitest + Jasmine | flutter_test + integration_test |
 | PWA | @angular/service-worker | Flutter Web (no necesita PWA) |
-| Layout | CSS/PrimeFlex (flexbox) | Widget tree (Row, Column, Flex) |
+| Layout | CSS/Bootstrap 5 (flexbox) | Widget tree (Row, Column, Flex) |
 
 ### 1.2 Diferencias fundamentales Angular → Flutter
 
@@ -60,7 +60,7 @@
 | **UI declarativa**: HTML templates → Widget tree | No hay HTML, CSS ni JSX. Todo es código Dart en árbol de widgets. |
 | **Layout**: CSS (flexbox/grid) → Widgets composicionales | No hay CSS. `Row`, `Column`, `Stack`, `Flex` reemplazan flexbox. |
 | **Responsive**: Media queries CSS → LayoutBuilder/OrientationBuilder | Misma capacidad, distinta implementación. |
-| **UI Library**: PrimeNG → Flutter packages | No hay PrimeNG/PrimeReact para Flutter. Usar paquetes como `syncfusion_flutter_datagrid`, `flutter_datatable`, o widgets custom. |
+| **UI Library**: catálogo `@ui/*` (Bootstrap 5) → Flutter packages | No hay equivalente directo para Flutter. Usar paquetes como `syncfusion_flutter_datagrid`, `flutter_datatable`, o widgets custom. |
 | **Navegación**: React Router → GoRouter/ Navigator 2.0 | Declarativa con GoRouter, similar a React Router. |
 | **Web**: PWA Angular → Flutter Web | Flutter Web compila a Canvas/DOM. No es PWA tradicional. |
 | **Mobile**: Ionic (WebView) → Nativo Flutter | Flutter pinta todo con Skia. Sin WebView. |
@@ -71,7 +71,7 @@
 
 1. **Dart vs TypeScript**: Migrar ~480 archivos TS a Dart. Dart tiene null safety, `sealed class`, `extension methods`, sin `any`/`unknown`.
 2. **Widget tree vs HTML**: Reemplazar todo template HTML + CSS por widgets Dart. El cambio más grande.
-3. **PrimeNG → equivalente Flutter**: No existe PrimeNG/PrimeReact para Flutter. Usar `syncfusion_flutter_datagrid` para tablas, `flutter_form_builder` para formularios, o construir widgets custom.
+3. **Catálogo `@ui/*` → equivalente Flutter**: No existe un equivalente directo del catálogo propio para Flutter. Usar `syncfusion_flutter_datagrid` para tablas, `flutter_form_builder` para formularios, o construir widgets custom.
 4. **Ionic → Flutter nativo**: Ionic (WebView con componentes nativos) → Flutter (todo nativo). Cambio radical en la experiencia mobile.
 5. **Design System SCSS → Flutter Theme**: Migrar 500+ líneas de variables CSS a `ThemeData` + `ThemeExtension`.
 6. **SignalR → signalr_netrcore**: El paquete `signalr_core` para Dart funciona, pero con limitaciones vs JS.
@@ -212,9 +212,9 @@ luxuryapp-api/client/flutter-migration/
 | `action-menu` | `PopupMenuButton` / `AppActionMenu` |
 | `data-view-mobile` | `ListView.builder` wrapper |
 | `buttons` (15 vars) | `AppButton` (ElevatedButton/OutlinedButton wrapper) |
-| `primeng-custom-caption` | `TableCaption` widget |
-| `primeng-custom-table-footer` | `TableFooter` widget |
-| `primeng-custom-toast` | `AppToast` (SnackBar/overlay wrapper) |
+| `table-caption` | `TableCaption` widget |
+| `table-footer` | `TableFooter` widget |
+| `toast` | `AppToast` (SnackBar/overlay wrapper) |
 | `status-badge` | `StatusBadge` (colored chip con icono) |
 | `app-icon` | `AppIcon` (Iconify para Flutter) |
 
@@ -322,55 +322,55 @@ luxuryapp-api/client/flutter-migration/
 | `@angular/service-worker` | Flutter Web (no requiere) |
 | `RouterModule.forChild()` | GoRouter `GoRoute` nesting |
 | ReactiveForms | `flutter_form_builder` / `reactive_forms` |
-| PrimeNG | Syncfusion / widgets custom |
+| Catálogo `@ui/*` (Bootstrap 5) | Syncfusion / widgets custom |
 | Ionic | Flutter Material (nativo) |
 
-### 4.2 Mapeo PrimeNG → Flutter
+### 4.2 Mapeo catálogo `@ui/*` → Flutter
 
-| PrimeNG | Flutter Package | Notas |
+| Componente `@ui/web/*` | Flutter Package | Notas |
 |---------|----------------|-------|
-| `p-table` | `syncfusion_flutter_datagrid` / `DataTable2` | SfDataGrid es el más completo |
-| `p-button` | `ElevatedButton` / `OutlinedButton` / `TextButton` | Nativos de Material |
-| `p-dialog` | `AlertDialog` / `showDialog()` | Nativos |
-| `p-inputText` | `TextField` | Nativo |
-| `p-dropdown` | `DropdownButtonFormField` / `flutter_typeahead` | Nativo + autocomplete |
-| `p-multiSelect` | `MultiSelectChip` / `MultiSelectDialog` | Custom o `flutter_multi_select` |
-| `p-calendar` | `showDatePicker` / `syncfusion_datepicker` | Nativo + Syncfusion |
-| `p-card` | `Card` (Material) | Nativo |
-| `p-tag` | `Chip` / `InputChip` | Nativo + custom styling |
-| `p-badge` | `Badge` widget / `CircleAvatar` | Nativo |
-| `p-toast` | `SnackBar` / `fluttertoast` / overlay | Nativo |
-| `p-confirmDialog` | `showDialog` + `AlertDialog` | Nativo |
-| `p-progressSpinner` | `CircularProgressIndicator` | Nativo |
-| `p-message` | `SnackBar` / `InlineAlert` widget | Nativo |
-| `p-tabView` | `TabBar` + `TabBarView` | Nativo |
-| `p-accordion` | `ExpansionTile` / `ExpansionPanelList` | Nativo |
-| `p-fieldset` | `ExpansionTile` o custom | Custom |
-| `p-toolbar` | `AppBar` / `BottomAppBar` / custom | Nativo |
-| `p-menu` | `Drawer` / `NavigationRail` / `NavigationBar` | Nativo |
-| `p-tooltip` | `Tooltip` | Nativo |
-| `p-avatar` | `CircleAvatar` / custom | Nativo |
-| `p-fileUpload` | `file_picker` / `image_picker` | Paquete |
-| `p-chart` | `fl_chart` | No Syncfusion para charts |
-| `p-popover` | `PopupMenuButton` / `showMenu` | Nativo |
-| `p-inputNumber` | `TextField` + `inputFormatters: [FilteringTextInputFormatter.digitsOnly]` | Nativo |
-| `p-inputMask` | `mask_text_input_formatter` | Paquete |
-| `p-inputTextarea` | `TextField(maxLines: 4)` | Nativo |
-| `p-password` | `TextField(obscureText: true)` | Nativo |
-| `p-checkbox` | `Checkbox` / `CheckboxListTile` | Nativo |
-| `p-radioButton` | `Radio` / `RadioListTile` | Nativo |
-| `p-toggleButton` | `ToggleButtons` | Nativo |
-| `p-selectButton` | `SegmentedButton` / `ToggleButtons` | Nativo |
-| `p-slider` | `Slider` | Nativo |
-| `p-rating` | `RatingBar` (paquete) | No nativo |
-| `p-colorPicker` | `flutter_colorpicker` | Paquete |
-| `p-knob` | Custom | Custom |
-| `p-paginator` | `DataTable` paginator / custom | DataTable.sor |
-| `p-skeleton` | `shimmer` | Paquete |
-| `p-progressBar` | `LinearProgressIndicator` | Nativo |
-| `p-timeline` | `TimelineTile` (paquete) / custom | Paquete `timeline_tile` |
-| `p-tree` | `flutter_treeview` / `TreeView` | Paquete |
-| `p-treetable` | Syncfusion TreeGrid | Syncfusion |
+| `app-table` | `syncfusion_flutter_datagrid` / `DataTable2` | SfDataGrid es el más completo |
+| `il-button` (familia `web-label`) | `ElevatedButton` / `OutlinedButton` / `TextButton` | Nativos de Material |
+| `app-dialog` | `AlertDialog` / `showDialog()` | Nativos |
+| `custom-input-text-signal` | `TextField` | Nativo |
+| `app-select` / `custom-input-select-signal` | `DropdownButtonFormField` / `flutter_typeahead` | Nativo + autocomplete |
+| `app-multi-select` | `MultiSelectChip` / `MultiSelectDialog` | Custom o `flutter_multi_select` |
+| `custom-input-date-signal` | `showDatePicker` / `syncfusion_datepicker` | Nativo + Syncfusion |
+| `app-card` | `Card` (Material) | Nativo |
+| `app-tag` | `Chip` / `InputChip` | Nativo + custom styling |
+| `app-badge` | `Badge` widget / `CircleAvatar` | Nativo |
+| `app-toast` | `SnackBar` / `fluttertoast` / overlay | Nativo |
+| `app-confirm-dialog` | `showDialog` + `AlertDialog` | Nativo |
+| progress spinner (catálogo) | `CircularProgressIndicator` | Nativo |
+| `app-message` | `SnackBar` / `InlineAlert` widget | Nativo |
+| `app-tabs` | `TabBar` + `TabBarView` | Nativo |
+| accordion (catálogo) | `ExpansionTile` / `ExpansionPanelList` | Nativo |
+| `app-fieldset` | `ExpansionTile` o custom | Custom |
+| `app-toolbar` | `AppBar` / `BottomAppBar` / custom | Nativo |
+| `app-menu` / `app-menubar` | `Drawer` / `NavigationRail` / `NavigationBar` | Nativo |
+| `LxTooltipDirective` | `Tooltip` | Nativo |
+| `app-avatar` | `CircleAvatar` / custom | Nativo |
+| `app-file-upload` | `file_picker` / `image_picker` | Paquete |
+| charts (catálogo `@ui/web/charts`) | `fl_chart` | No Syncfusion para charts |
+| `app-popover` | `PopupMenuButton` / `showMenu` | Nativo |
+| input numérico (catálogo) | `TextField` + `inputFormatters: [FilteringTextInputFormatter.digitsOnly]` | Nativo |
+| input con máscara (catálogo) | `mask_text_input_formatter` | Paquete |
+| `custom-input-textarea-signal` | `TextField(maxLines: 4)` | Nativo |
+| input password (catálogo) | `TextField(obscureText: true)` | Nativo |
+| `app-checkbox` | `Checkbox` / `CheckboxListTile` | Nativo |
+| `app-radio-button` | `Radio` / `RadioListTile` | Nativo |
+| `app-toggle-switch` | `ToggleButtons` | Nativo |
+| `app-select-button` | `SegmentedButton` / `ToggleButtons` | Nativo |
+| slider (catálogo) | `Slider` | Nativo |
+| `app-rating` | `RatingBar` (paquete) | No nativo |
+| color picker (catálogo) | `flutter_colorpicker` | Paquete |
+| knob (custom) | Custom | Custom |
+| `app-paginator` | `DataTable` paginator / custom | DataTable.sor |
+| `app-skeleton` | `shimmer` | Paquete |
+| progress bar (catálogo) | `LinearProgressIndicator` | Nativo |
+| `app-timeline` | `TimelineTile` (paquete) / custom | Paquete `timeline_tile` |
+| `app-tree` | `flutter_treeview` / `TreeView` | Paquete |
+| tree table (catálogo) | Syncfusion TreeGrid | Syncfusion |
 | `p-image` | `Image.network` / `Image.file` | Nativo |
 | `p-sidebar` | `Drawer` / `showModalBottomSheet` | Nativo |
 | `p-steps` | `Stepper` / custom | Nativo `Stepper` |
@@ -2358,7 +2358,7 @@ class HeavyTableWidget extends StatelessWidget {
 
 | Riesgo | Impacto | Probabilidad | Mitigación |
 |--------|---------|--------------|------------|
-| **No existe PrimeNG para Flutter** | Alto | Alta | Usar Syncfusion + widgets custom. Syncfusion DataGrid es el reemplazo más completo para p-table. |
+| **No existe el catálogo `@ui/*` para Flutter** | Alto | Alta | Usar Syncfusion + widgets custom. Syncfusion DataGrid es el reemplazo más completo para `app-table`. |
 | **Flutter Web no es buena experiencia para escritorio pesado** | Alto | Alta | Mantener Angular para web desktop. Flutter solo para mobile native + mobile web. |
 | **Dart learning curve para el equipo** | Alto | Alta | Capacitación 2-3 semanas. Dart es más fácil que TypeScript (sin sobrecarga de tipos). |
 | **SignalR en Dart es menos estable** | Medio | Media | Usar `signalr_netrcore`. Considerar SSE (Server-Sent Events) como alternativa. |
@@ -2398,7 +2398,7 @@ class HeavyTableWidget extends StatelessWidget {
 |---------|-------|---------|------------|
 | Lenguaje | TypeScript (mismo) | Dart (nuevo) | +1-2 semanas aprendizaje |
 | UI | JSX (similar a HTML) | Widget tree (nuevo) | +3-4 semanas adaptación |
-| UI Library | PrimeReact (similar) | Syncfusion/custom | +2-3 semanas custom |
+| UI Library | Reescribir catálogo `@ui/*` en React (sin equivalente directo) | Syncfusion/custom | +2-3 semanas custom |
 | Mobile | Ionic (WebView, mismo) | Nativo Flutter | +4-6 semanas nativo |
 | Web | Excelente (PWA, SSR) | Limitado (Canvas) | React gana en web |
 | Estado | Zustand + TanStack Query | Riverpod | Similar esfuerzo |
@@ -2419,7 +2419,7 @@ class HeavyTableWidget extends StatelessWidget {
 | **Mobile (iOS/Android)** | ⚠️ WebView (Ionic) | ✅ Nativo (Skia) |
 | **Rendimiento mobile** | ⚠️ Depende del WebView | ✅ 60fps consistente |
 | **UI/UX nativa** | ⚠️ WebView se siente web | ✅ Nativa (Material/Cupertino) |
-| **Design System existente** | ✅ PrimeNG → PrimeReact (directo) | ❌ Todo custom (Syncfusion) |
+| **Design System existente** | ⚠️ Catálogo `@ui/*` (Bootstrap 5) → reescritura en React (sin equivalente directo) | ❌ Todo custom (Syncfusion) |
 | **Equipo knowledge** | ✅ TypeScript (mismo) | ❌ Dart (nuevo) |
 | **Bundle size** | ✅ ~500KB | ❌ ~5-15MB |
 | **Ecosistema librerías** | ✅ Maduro | ✅ Maduro |

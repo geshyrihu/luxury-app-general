@@ -1,9 +1,0 @@
-namespace LuxuryApp.Application.DTOs;
-
-public class CalendarioMantenimientoDTO : GuidIdEntityDTO
-{
-    public string Sistema { get; set; }
-    public EInventoryCategory InventoryCategory { get; set; }
-    public string NameMachinery { get; set; }
-    public List<CalendarioMantenimientoItemsDTO> MaintenanceCalendars { get; set; }
-}

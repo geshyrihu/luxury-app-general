@@ -29,7 +29,7 @@ const HARDCODED_RULES = [
   /custom-table\s+card\s+hidden\s+md:block/gi,
   /\bTableScrollHeightService\b/gi,
   /\bglobalFilterFields\(\)/gi,
-  /\btablePrimeNgRows\(\)/gi,
+  /\btableRows\(\)/gi,
   /\browsPerPageOptions\(\)/gi,
   /\bFormHelper\.submitCrud\(\)/gi,
   /\bstrict\s*:\s*true\b/gi,
