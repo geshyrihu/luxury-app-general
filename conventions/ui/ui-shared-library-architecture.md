@@ -30,7 +30,6 @@ La arquitectura de `shared/ui` es oficial y no debe considerarse carpeta libre.
 ## Reglas de frontera
 
 - `web/` no importa Ionic/mobile
-- `mobile/` no importa PrimeNG/web
 - `base/` no importa librerias visuales de plataforma
 - `adaptive/` es la capa que cruza cuando aplica
 

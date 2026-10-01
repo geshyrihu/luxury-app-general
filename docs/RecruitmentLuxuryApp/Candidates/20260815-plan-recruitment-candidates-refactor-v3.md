@@ -810,7 +810,6 @@ Fase 8 (0.5-1 día): QA + documentación
 - `dto-file-organization-rule.md` (1 archivo = 1 DTO)
 - Plan de convenciones ya vigente y aparte:
   `docs/plans/20260813-reclutamiento-candidates-remediacion-plan.md` — no mezclar sus tareas
-  (autorización, tokens, PrimeNG) con este refactor de modelo
 
 ---
 
@@ -1106,8 +1105,6 @@ Al probar la app real (migración ya aplicada) el usuario reportó 3 issues sobr
       probado en un formulario reactivo real.
     - Corregido usando el patrón nativo ya establecido en esta misma sesión y precedente en
       `employee-provider-form.html`: `<input type="radio">` con `[checked]`/`(change)` manual
-      contra `form.controls.recruitmentSource`, sin pasar por ningún wrapper PrimeNG (no aplica
-      la regla de wrapper obligatorio de CONVENTIONS.md porque no es un componente PrimeNG).
       `AppRadioButton` se dejó sin tocar (fuera de alcance arreglar su CVA — no lo usa nadie
       más); queda como deuda conocida si en el futuro alguien intenta reutilizarlo en un
       formulario reactivo real.

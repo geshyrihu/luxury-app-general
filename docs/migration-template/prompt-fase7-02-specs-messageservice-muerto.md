@@ -1,28 +1,18 @@
-# Prompt Fase 7 — Paso 2: retirar `MessageService`/`ConfirmationService` de `primeng/api` muertos en 82 specs
 
 Auditoría (2026-09-16) confirmó: **82 archivos `.spec.ts`** importan
 `MessageService` (y en 1 caso también `ConfirmationService`) desde
-`primeng/api` solo para proveerlo como token de DI en `TestBed` — pero
 **el componente bajo prueba nunca lo inyecta** (verificado: ninguno de
-los 82 `.ts` reales bajo prueba tiene un import de `primeng/api`). Es
-un residuo de cuando la app usaba el `MessageService` real de PrimeNG;
 hoy existe `@core/services/message.service.ts` como reemplazo propio y
-la app real ya no depende del token de PrimeNG para esto.
 
-Este import **bloquea poder retirar el paquete `primeng` más
 adelante** si no se limpia (aunque hoy no rompe nada, porque el
 paquete sigue instalado).
 
 ## Regla de edición (idéntica en los 82 archivos)
 
-1. Quita la línea de import de `primeng/api`. En 81 archivos es:
    ```ts
-   import { MessageService } from "primeng/api";
    ```
-   (o con comillas simples `'primeng/api'` — revisa el estilo de cada
    archivo). En **1 archivo** (`google-calendar.spec.ts`) es:
    ```ts
-   import { ConfirmationService, MessageService } from "primeng/api";
    ```
 
 2. Dentro del arreglo `providers:` de `TestBed.configureTestingModule`,
@@ -157,7 +147,6 @@ src/app/modules/system.luxuryapp/configuracion-sistema/vault-secrets/vault-secre
 
 ## No tocar
 
-Cualquier otro `.spec.ts` que importe `primeng/api` y **no** esté en
 esta lista — no existe ninguno (la lista es exhaustiva, 82/82), pero
 si el grep de verificación encuentra alguno fuera de esta lista,
 detente y repórtalo en vez de tocarlo.
@@ -168,7 +157,6 @@ vigentes y no son parte de este prompt.
 
 ## Verificación
 
-- `grep -rn "primeng/api" src/app/modules --include="*.spec.ts"` debe
   devolver **0 resultados** al terminar.
 - `npx tsc --noEmit`: compara el conteo de errores antes/después — no
   debe crecer (puede haber errores preexistentes no relacionados, ya
@@ -184,8 +172,6 @@ vigentes y no son parte de este prompt.
 
 ## Listo cuando
 
-- 82/82 archivos sin `import ... from "primeng/api"`.
-- 0 providers de `MessageService`/`ConfirmationService` de PrimeNG
   restantes en esos archivos.
 - Tests de la muestra verificada siguen pasando.
 - `tsc`/build no empeoraron respecto al estado previo.

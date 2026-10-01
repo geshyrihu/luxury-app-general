@@ -45,7 +45,6 @@ ve todos.
 | `fluent-color:*` | ⚠️ solo en `icon-preload.service.ts`; no en plantillas |
 | `ion-icon` | ⚠️ permitido solo en `shared/ui/mobile/**` |
 
-PrimeIcons sigue instalado porque PrimeNG lo usa internamente. **Eso no autoriza
 a escribir la clase a mano en ninguna plantilla propia.**
 
 ### 2. Todo icono sale del catálogo
@@ -75,11 +74,9 @@ error de compilación.
 <app-icon icon="material-symbols-light:me-lo-invento" />
 ```
 
-### 3. ⚠️ El input `icon` de PrimeNG NO entiende Iconify
 
 **Esta es la trampa que costó 27 sitios y no es evidente.**
 
-Los componentes de PrimeNG que reciben un icono lo pintan como **clase CSS**:
 
 ```html
 <span [class]="icon"></span>
@@ -93,7 +90,6 @@ Afecta a `p-button`, `p-scrolltop`, `p-breadcrumb` (a través de `MenuItem.icon`
 `p-menu`, `p-menubar`, `p-tabmenu`, `p-contextmenu`, `p-panelmenu` y a cualquier
 API basada en `MenuItem`.
 
-**La solución es la plantilla de icono que PrimeNG ofrece.** Solo se usa cuando
 el input `icon` está **ausente** (`@if (!icon() && iconTemplate())`), así que hay
 que quitarlo:
 
@@ -270,7 +266,6 @@ grep -rn "pi pi-" src/app --include=*.html --include=*.ts
 grep -rn "mdi:" src/app
 # Esperado: 0
 
-# ❌ Iconify dentro de un componente PrimeNG
 grep -rn -B2 'icon="material-symbols-light' src/app | grep "<p-"
 # Esperado: 0 — debe ir por <ng-template #icon>
 
@@ -293,7 +288,6 @@ grep -rn "<ili-icon" src/app --include=*.html --include=*.ts | \
 | Hallazgo | Severidad |
 |:---|:---|
 | Literal fuera del catálogo | 🔴 CRÍTICO — icono invisible |
-| Iconify en un input `icon` de PrimeNG | 🔴 CRÍTICO — icono invisible |
 | `pi pi-` en plantilla propia | 🟠 ALTO |
 | `<app-icon>` sin declarar en `imports` | 🔴 CRÍTICO — icono invisible |
 | `<ili-icon>` sin declarar `AppIconMobile` en `imports` | 🔴 CRÍTICO — icono invisible |
@@ -305,7 +299,6 @@ grep -rn "<ili-icon" src/app --include=*.html --include=*.ts | \
 
 - [ ] `npm run audit:icon-names` en verde
 - [ ] Todo icono nuevo verificado contra el set real de Iconify **antes** de usarlo
-- [ ] Ningún componente PrimeNG recibe un identificador de Iconify en `icon`
 - [ ] `AppIcon` declarado en `imports` de todo componente web que use `<app-icon>`
 - [ ] `AppIconMobile` declarado en `imports` de todo componente móvil que use `<ili-icon>`
 - [ ] `LxIcon` declarado en `imports` de todo componente adaptativo que use `<lx-icon>`
@@ -335,5 +328,4 @@ Un **wrapper por plataforma**, no un paquete por plataforma. Una dependencia de 
 
 - `feather-icons` se desinstaló por tener 0 usos.
 - `iconify-icon` se conserva vía `<app-icon>` (wrapper, mapeo en `shared/utils/icon-mapping.ts` y CSP declarada).
-- PrimeIcons permanece instalado porque PrimeNG lo usa internamente; eso NO autoriza a escribir `pi pi-*` en plantillas (la regla de uso está arriba).
 - **Decisión abierta (no un descuido):** `iconify-icon` resuelve los iconos contra `api.iconify.design` en tiempo de ejecución; no hay paquete offline instalado.

@@ -11,7 +11,6 @@ confirmó **0 uso real** de PrimeFlex y PrimeIcons en todo
   match encontrado está dentro de un string de documentación que ya
   marca el patrón como "retirado"). Solo queda cargado como CSS muerto.
 
-Esto es **independiente** de PrimeNG en sí (que todavía tiene uso real
 y no se toca en este prompt).
 
 ## 1. `appsweb/angular/package.json`
@@ -23,7 +22,6 @@ Quita estas 2 líneas (dentro de `dependencies`):
 -    "primeicons": "8.0.1",
 ```
 
-**No toques** `"primeng": "22.1.1"` ni `"@primeuix/themes"` /
 `"@primeuix/utils"` — esos siguen en uso real (ver bitácora, bloqueo
 por `ConfirmDialog` global y catálogo interno).
 
@@ -60,4 +58,3 @@ nuevo.
 - `primeflex`/`primeicons` fuera de `package.json` y `node_modules`.
 - Línea de `primeicons.css` fuera de `angular.json`.
 - `tsc`/build limpios (log completo, no `tail`).
-- `primeng`/`@primeuix/*` siguen intactos (no es parte de este paso).

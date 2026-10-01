@@ -1,6 +1,5 @@
 # Prompt 14 — Fase 6: módulo `purchases.luxuryapp` (7 archivos)
 
-Módulo chico. 4 automáticos, 1 manual (markup muerto de PrimeNG), 2
 exclusiones catalogadas.
 
 ## 1. Lote automático — 4 archivos vía script
@@ -29,7 +28,6 @@ archivo tiene un `<p-sorticon />` **sin `field`** en la columna
 ordenable** — su `<th>` no tiene `pSortableColumn`, a diferencia de
 la columna "DESCRIPCIÓN" que sí lo tiene y sí tiene su
 `<p-sorticon field="producto" />` correcto. Es markup muerto/copiado
-sin terminar del original PrimeNG, mismo tipo de hallazgo que
 `virtualScrollItemSize` sin `virtualScroll` visto en lotes anteriores.
 
 Cambio: **elimina la línea** `<p-sorticon />` (línea 48, dentro de
@@ -54,7 +52,6 @@ Y luego: `<p-table` → `<app-table`, `</p-table>` → `</app-table>`,
 no hace falta tocarlos). En el `.ts`, mismo import exacto de siempre:
 
 ```diff
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 ```
 

@@ -4,7 +4,6 @@
 **Versión:** Única vigente (consolida planes previos 2026-08-04/05/09/11, eliminados)
 **Alcance:** Backend `api/LuxuryApp.Application/Moduls/ReclutamientoLuxuryApp/Candidates/` + Frontend `client/angular/src/app/apps/reclutamiento.luxuryapp/candidates/`
 **Duración estimada:** 3 fases (~6-8 semanas)
-**Severidad:** 🔴 CRÍTICA (DTOs en archivos compartidos, PrimeNG directo, iconos retirados, guards sin rol)
 **Basado en:** `docs/reporte_maestro/modulos/20260813-auditoria-reclutamiento-candidatos-revision.md`
 **Estado:** Pendiente de aprobación Tech Lead
 
@@ -78,14 +77,10 @@ Cada tipo debe vivir en su propio archivo (`dto-file-organization-rule.md`, sin 
 
 ---
 
-**1.5 Quitar `p-progressBar` de PrimeNG (C5)**
 
-- [x] Eliminar `import { ProgressBarModule } from "primeng/progressbar"` (`candidate-application-kpis.ts:15`)
 - [x] Reemplazar `<p-progressBar>` del template por wrapper oficial de `shared/ui` (o `@ui/*` equivalente)
-- [x] Verificar que el único PrimeNG restante en el feature es `p-table`
 - [x] `npm run lint` sin violaciones nuevas (modo baseline)
 
-**Deliverable:** Sin PrimeNG directo fuera de la excepción `p-table`.
 
 ---
 
@@ -327,7 +322,6 @@ Cierre:
 
 ✅ **Frontend:**
 - [ ] 100% `OnPush`; 0 `*ngIf`/`*ngFor`
-- [ ] Sin PrimeNG fuera de `p-table`
 - [ ] 0 `mdi:`/`pi pi-`; `<app-icon>` declarado
 - [ ] 0 hex/px literales fuera de tokens
 - [ ] Guards por rol en todas las rutas

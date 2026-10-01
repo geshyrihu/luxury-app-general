@@ -34,7 +34,6 @@ import { provideHttpClient, withInterceptors, withFetch, HTTP_INTERCEPTORS } fro
 import { provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
-import { providePrimeng } from 'primeng/config';
 import { provideEchartsCore } from 'ngx-echarts/core';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideServiceWorker } from '@angular/service-worker';
@@ -50,7 +49,7 @@ import { imageFormDataInterceptor, offlineInterceptorFn, jwtInterceptor } from '
 export const appConfig: ApplicationConfig = {
   providers: [
     // ========== SECCIÓN 1: CHANGE DETECTION ==========
-    provideZonelessChangeDetection(), // Angular 19: Sin NgZone
+    provideZonelessChangeDetection(), // Angular 22: Sin NgZone
     
     // ========== SECCIÓN 2: ROUTING ==========
     provideRouter(
@@ -90,10 +89,6 @@ export const appConfig: ApplicationConfig = {
       preventDuplicates: true,
       progressBar: true,
     }),
-    
-    // PrimeNG (componentes web)
-    providePrimeng(createPrimeNgConfig()),
-    
     // ECharts (gráficos)
     provideEchartsCore({
       echarts: () => import('echarts'),
@@ -180,13 +175,10 @@ function preloadIconifyIcons(): () => Promise<void> {
   };
 }
 
-// ========== CONFIGURACIÓN DE PRIMENG ==========
 
 /**
- * Crear configuración de PrimeNG
  * Define tema, traducciones, y comportamientos globales
  */
-function createPrimeNgConfig(): PrimeNGConfig {
   return {
     ripple: true, // Efecto ripple en botones
     zIndex: {
@@ -235,7 +227,7 @@ bootstrapApplication(AppComponent, appConfig)
 ### Sección 1: Change Detection (Zoneless)
 
 ```typescript
-// Angular 19: Zoneless change detection
+// Angular 22: Zoneless change detection
 provideZonelessChangeDetection()
 
 // Beneficios:
@@ -394,7 +386,7 @@ grep -A 5 "withInterceptors" appsweb/angular/src/app/app.config.ts
 
 ```
 Tamaño por librería (aproximado):
-- PrimeNG: ~500KB
+- ng-bootstrap: ~??KB
 - ECharts: ~1.2MB
 - Firebase: ~300KB
 - ngx-translate: ~50KB
@@ -416,5 +408,9 @@ Recomendación: Comentar librerías no usadas en tu features actuales
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+ (zoneless, ApplicationConfig)  
+**Vigencia:** Angular 22 (zoneless, ApplicationConfig)  
 **Aplicable a:** Toda la aplicación
+
+
+
+

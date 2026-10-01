@@ -427,7 +427,6 @@ export class ScheduleFormComponent {
 
 ### 3.4 Consideraciones de UI/UX
 
-1. **Tabs para Ciclos > 1 Semana**: Si `duracionCicloSemanas` es 2 o 4, usa tabs (PrimeNG `p-tabView`) para no saturar la pantalla.
 2. **Checkbox de Descanso**: Al marcar "Es descanso", deshabilita los timepickers automáticamente.
 3. **Validación Visual**: Si `HoraSalida < HoraEntrada`, muestra un badge "Cruza medianoche" (ej. 22:00 a 06:00).
 4. **Vista de Calendario**: Para horarios con ciclos de 4 semanas, considera una vista de calendario que muestre las próximas 4 semanas con colores según el día de trabajo/descanso.

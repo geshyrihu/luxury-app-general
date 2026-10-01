@@ -1,16 +1,12 @@
-# Auditoría de uso de PrimeNG — Componentes y clases base
 
 Línea base para las Fases 3, 4, 5 y 6 del Plan de Migración
 (`docs/migration-template/02-plan-migracion.md`).
 
 - **Fecha de generación:** 2026-09-14
-- **Comando:** `node scripts/audit-primeng.mjs`
 - **Raíces escaneadas:** `appsweb/angular/src/app`
-- **Stack medido:** Angular `^22.1.6` · PrimeNG `22.1.1`
 - **Archivos `.html` escaneados:** 884 (607 con al menos un uso)
 
 > Este documento es **generado automáticamente**: se sobrescribe en cada
-> ejecución del script. No editar a mano; editar `scripts/audit-primeng.mjs`.
 
 ## 1. Método
 
@@ -38,9 +34,7 @@ considerados no aportó ninguna coincidencia):
 - Archivos de respaldo excluidos del escaneo: `appsweb/angular/src/app/modules/collections.luxuryapp/cobranza-online/resumen/cobranza-online-resumen.bak.html`.
 - Plantillas **inline** en archivos `.ts` (3,205 archivos revisados): 274 aperturas `<p-*`,
   **fuera** de las tablas porque el alcance del ticket es `.html`. Ver anexo 6.1.
-- El regex de etiquetas **no** cubre las directivas de atributo de PrimeNG: `pSortableColumn`: 671 · `pTemplate`: 14 en `.html`. Ver anexo 6.3.
 - 1,615 de esos usos de clase (75.26% del total) son **padding de PrimeFlex** (`p-3`, `p-2`, `p-4`, `p-0`, `p-5`, `p-1`, `p-md-4`, `p-md-5`, `p-md-3`, `p-xl-4`, `p-md-0`, `p-lg-5`, `p-md-2`),
-  no clases de componente PrimeNG. Se conservan en el §3 —son el resultado literal del regex del ticket— y se aíslan en el §3.1.
 
 ## 2. Top de Componentes (`<p-*`)
 
@@ -70,7 +64,6 @@ Total: **1,087** aperturas de etiqueta en **14** componentes distintos.
 Fuera del ecosistema de tabla quedan **12** aperturas (1.10%):
 `<p-dialog>` (2) · `<p-inputgroup>` (2) · `<p-inputgroup-addon>` (2) · `<p-button>` (1) · `<p-confirmdialog>` (1) · `<p-iconfield>` (1) · `<p-inputicon>` (1) · `<p-inputnumber>` (1) · `<p-select>` (1)
 
-## 3. Top de Clases PrimeNG (`p-*`)
 
 Total: **2,146** usos de clase en **64** clases distintas.
 
@@ -80,72 +73,18 @@ Total: **2,146** usos de clase en **64** clases distintas.
 | 2 | `p-2` | 378 | 17.61% | PrimeFlex |
 | 3 | `p-4` | 296 | 13.79% | PrimeFlex |
 | 4 | `p-0` | 97 | 4.52% | PrimeFlex |
-| 5 | `p-datatable-sm` | 81 | 3.77% | PrimeNG* |
 | 6 | `p-5` | 72 | 3.36% | PrimeFlex |
-| 7 | `p-button-sm` | 66 | 3.08% | PrimeNG* |
 | 8 | `p-1` | 55 | 2.56% | PrimeFlex |
-| 9 | `p-button` | 52 | 2.42% | PrimeNG* |
-| 10 | `p-button-text` | 45 | 2.10% | PrimeNG* |
 | 11 | `p-md-4` | 43 | 2.00% | PrimeFlex |
-| 12 | `p-button-rounded` | 38 | 1.77% | PrimeNG* |
-| 13 | `p-button-primary` | 37 | 1.72% | PrimeNG* |
-| 14 | `p-button-outlined` | 27 | 1.26% | PrimeNG* |
-| 15 | `p-inputtext` | 23 | 1.07% | PrimeNG* |
 | 16 | `p-md-5` | 18 | 0.84% | PrimeFlex |
-| 17 | `p-error` | 16 | 0.75% | PrimeNG* |
 | 18 | `p-md-3` | 16 | 0.75% | PrimeFlex |
-| 19 | `p-datatable-gridlines` | 14 | 0.65% | PrimeNG* |
-| 20 | `p-button-secondary` | 13 | 0.61% | PrimeNG* |
-| 21 | `p-component` | 11 | 0.51% | PrimeNG* |
-| 22 | `p-datatable-striped` | 10 | 0.47% | PrimeNG* |
-| 23 | `p-button-danger` | 9 | 0.42% | PrimeNG* |
-| 24 | `p-inputtext-sm` | 8 | 0.37% | PrimeNG* |
-| 25 | `p-rowgroup-footer` | 8 | 0.37% | PrimeNG* |
-| 26 | `p-inputgroup` | 7 | 0.33% | PrimeNG* |
-| 27 | `p-fluid` | 6 | 0.28% | PrimeNG* |
-| 28 | `p-tag` | 6 | 0.28% | PrimeNG* |
-| 29 | `p-text-secondary` | 6 | 0.28% | PrimeNG* |
-| 30 | `p-badge` | 4 | 0.19% | PrimeNG* |
-| 31 | `p-multiselect-representative-option` | 4 | 0.19% | PrimeNG* |
 | 32 | `p-xl-4` | 4 | 0.19% | PrimeFlex |
-| 33 | `p-badge-rounded` | 3 | 0.14% | PrimeNG* |
-| 34 | `p-badge-success` | 3 | 0.14% | PrimeNG* |
 | 35 | `p-md-0` | 3 | 0.14% | PrimeFlex |
-| 36 | `p-rowgroup-header` | 3 | 0.14% | PrimeNG* |
-| 37 | `p-tag-success` | 3 | 0.14% | PrimeNG* |
-| 38 | `p-input-icon-left` | 2 | 0.09% | PrimeNG* |
-| 39 | `p-inputtextarea` | 2 | 0.09% | PrimeNG* |
-| 40 | `p-message` | 2 | 0.09% | PrimeNG* |
-| 41 | `p-12` | 1 | 0.05% | PrimeNG* |
-| 42 | `p-badge-info` | 1 | 0.05% | PrimeNG* |
-| 43 | `p-button-icon` | 1 | 0.05% | PrimeNG* |
-| 44 | `p-button-icon-left` | 1 | 0.05% | PrimeNG* |
-| 45 | `p-button-info` | 1 | 0.05% | PrimeNG* |
-| 46 | `p-button-label` | 1 | 0.05% | PrimeNG* |
-| 47 | `p-button-plain` | 1 | 0.05% | PrimeNG* |
-| 48 | `p-button-success` | 1 | 0.05% | PrimeNG* |
-| 49 | `p-button-warning` | 1 | 0.05% | PrimeNG* |
-| 50 | `p-dialog-footer` | 1 | 0.05% | PrimeNG* |
-| 51 | `p-field-checkbox` | 1 | 0.05% | PrimeNG* |
-| 52 | `p-inputgroup-addon` | 1 | 0.05% | PrimeNG* |
-| 53 | `p-inputgroup-sm` | 1 | 0.05% | PrimeNG* |
 | 54 | `p-lg-5` | 1 | 0.05% | PrimeFlex |
-| 55 | `p-link` | 1 | 0.05% | PrimeNG* |
 | 56 | `p-md-2` | 1 | 0.05% | PrimeFlex |
-| 57 | `p-message-icon` | 1 | 0.05% | PrimeNG* |
-| 58 | `p-message-info` | 1 | 0.05% | PrimeNG* |
-| 59 | `p-message-text` | 1 | 0.05% | PrimeNG* |
-| 60 | `p-message-warn` | 1 | 0.05% | PrimeNG* |
-| 61 | `p-message-wrapper` | 1 | 0.05% | PrimeNG* |
-| 62 | `p-progressbar` | 1 | 0.05% | PrimeNG* |
-| 63 | `p-tag-info` | 1 | 0.05% | PrimeNG* |
-| 64 | `p-text-justify` | 1 | 0.05% | PrimeNG* |
 
-> `PrimeNG*`: clase `p-*` que **no** es padding de PrimeFlex. Puede ser una clase de
-> componente PrimeNG o una clase propia del design system con el mismo prefijo; el script
 > no resuelve su origen en CSS/SCSS, solo la presencia en plantillas.
 
-### 3.1 Clases `p-*` sin padding de PrimeFlex (candidatas a PrimeNG)
 
 Subtotal: **531** usos en **51** clases (24.74% del total de clases).
 
@@ -208,8 +147,6 @@ Subtotal: **531** usos en **51** clases (24.74% del total de clases).
 | Métrica | Valor |
 |:---|---:|
 | Archivos `.html` escaneados | 884 |
-| Archivos con al menos un uso PrimeNG | 607 |
-| Archivos sin uso PrimeNG | 277 |
 | Aperturas de componentes `<p-*` | 1,087 |
 | Componentes distintos | 14 |
 | Usos de clases `p-*` | 2,146 |
@@ -221,15 +158,12 @@ Subtotal: **531** usos en **51** clases (24.74% del total de clases).
 | Concepto | Valor | % del gran total |
 |:---|---:|---:|
 | Componentes `<p-*` en `.html` | 1,087 | 33.62% |
-| Clases `p-*` sin padding de PrimeFlex (candidatas a PrimeNG) | 531 | 16.42% |
-| Clases de padding PrimeFlex (ruido para PrimeNG, deuda de la capa de utilidades) | 1,615 | 49.95% |
 
 **Fuera del alcance del ticket (no suman al gran total):**
 
 | Concepto | Valor |
 |:---|---:|
 | Aperturas `<p-*` en plantillas inline `.ts` | 274 |
-| Directivas de atributo PrimeNG en `.html` (`pSortableColumn`, `pTemplate`) | 685 |
 
 ## 5. Distribución por carpeta
 
@@ -352,7 +286,6 @@ Total: **274** aperturas en **84** componentes distintos, dentro de **112** arch
 | `<p-treeselect>` | 1 |
 | `<p-treetable>` | 1 |
 
-**Archivos `.ts` con plantilla inline que usa PrimeNG (top 15 de 112):**
 
 | Archivo | Aperturas `<p-*` |
 |:---|---:|
@@ -392,7 +325,6 @@ Total: **274** aperturas en **84** componentes distintos, dentro de **112** arch
 | `appsweb/angular/src/app/modules/operations.luxuryapp/inventarios-y-almacn/fire-extinguisher-inventory/inventario-extintor.html` | 5 | 16 | 21 |
 | `appsweb/angular/src/app/modules/accounting.luxuryapp/general-ledger/contabilidad-cliente/analisis-cobranza-cliente/analisis-cobranza-cliente.html` | 8 | 12 | 20 |
 
-### 6.3 Directivas de atributo PrimeNG (fuera del regex de etiquetas)
 
 Nombre de atributo que empieza con `p` + mayúscula (`pSortableColumn`, `pTemplate`) seguido de `=` y un valor entre comillas, medido case-sensitive.
 En `.html` la posición de atributo es inequívoca; en `.ts` la medida es **heurística** (plantillas inline y literales de cadena) y puede incluir identificadores que no son directivas.
@@ -415,10 +347,7 @@ En `.html` la posición de atributo es inequívoca; en `.ts` la medida es **heur
   en 112 archivos, con `<p-button>`, `<p-skeleton>` y `<p-table>` a la cabeza.
   El alcance del ticket es `.html`; conviene decidir si las fases 3–6 miden también esas plantillas.
 - De las clases `p-*`, 75.26% del volumen es **padding de PrimeFlex**
-  (deuda de la capa de utilidades, no de PrimeNG) y el resto se concentra en botones, inputs y tabla.
 
 ## 8. Criterio de aceptación del ticket
 
-- [x] `node scripts/audit-primeng.mjs` termina con exit 0.
-- [x] `docs/plans/primeng-components-audit.md` se sobrescribe con el escaneo completo.
 - [x] Resumen en consola con el top 5 de componentes, el top 5 de clases y los totales globales.

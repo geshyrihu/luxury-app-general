@@ -519,7 +519,6 @@ La carpeta `api/LuxuryApp.Application/Shared/Services/` contiene **35 interfaces
 | `EmployeeDTO` / `EmployeePrincipalDataEditDTO` / `EmployeeBirthdayDTO` | Datos de empleado reutilizados entre módulos |
 | `NotificationUserDTO` / `NotificationUserAddOrEditDTO` | Preferencias de notificación por usuario |
 | `CalendarEventDTO` / `ChatMessageDTO` / `ChatSessionDTO` / `AiKnowledgeBaseDTO` | Integraciones UI (calendario, chat, IA) |
-| `ChartPiscinaDTO` / `ChartLinePrimeDTO` / `DatasetCharLinePrime` / `MultiAxisDataset` / `MultiAxisPrimeChart` / `DataSetGraficoDTO` | Datasets para gráficas (PrimeNG charts) |
 | `WhatsAppTemplateTestDTO` | Prueba de plantillas de `IWhatsAppService` |
 | `MaintenanceWeeklyExecutiveReportDTO` / `MaintenanceWeeklyExecutiveReportRequestDTO` / `ProjectedExpenseUpdateDTO` | Casos específicos de mantenimiento/finanzas ya resueltos — revisar antes de duplicar lógica de reporte |
 

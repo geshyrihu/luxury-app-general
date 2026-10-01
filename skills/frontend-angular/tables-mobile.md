@@ -14,7 +14,5 @@
 - **Acciones Móviles**: Usar `app-action-menu`.
 
 ## 3.14. Helpers de Tabla
-Importar desde `@core/helpers/table-primeng-option`:
 - `globalFilterFields(data)`: Extrae automáticamente las keys para búsqueda global.
-- `tablePrimeNgRows()`: Fija el valor por defecto en 30.
 - `rowsPerPageOptions()`: [30, 50, 75, 100, 150, 200].

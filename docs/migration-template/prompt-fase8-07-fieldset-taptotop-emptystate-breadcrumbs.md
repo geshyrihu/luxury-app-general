@@ -12,9 +12,7 @@ cualquier prompt futuro.
 
 Investigado: el componente **ya renderiza markup Bootstrap puro**
 (`<nav><ol class="breadcrumb">`, sin `<p-breadcrumb>` en ningún lado)
-— el comentario del archivo que dice "PrimeNG p-breadcrumb" está
 desactualizado, corrígelo también. Lo único que queda es un
-`import type { MenuItem } from "primeng/api"` (borrado en compilación,
 cero acoplamiento real, pero bloquea poder quitar el paquete).
 
 ```
@@ -22,19 +20,14 @@ src/app/shared/ui/web/breadcrumbs/breadcrumbs.ts
 src/app/shared/ui/base/breadcrumbs.base.ts
 ```
 ```diff
--import type { MenuItem } from "primeng/api";
 +import type { MenuItem } from "@core/interfaces/menu-item.interface";
 ```
 (en `breadcrumbs.base.ts`, actualiza también el comentario JSDoc que
-dice "web: app-breadcrumbs (PrimeNG p-breadcrumb)" → "web:
 app-breadcrumbs (Bootstrap nativo)", y quita el comentario
-"Type-only:... cero acoplamiento de runtime con PrimeNG" si ya no
-aplica literalmente porque el tipo tampoco viene de PrimeNG)
 
 ## 2. `web/tap-to-top/tap-to-top.ts` — trivial, la lógica ya es propia
 
 `TapToTopBase` (`base/tap-to-top.base.ts`) **ya tiene toda la lógica
-sin PrimeNG** (`show`/`onWindowScroll`/`tapToTop()` con
 `ViewportScroller`) — solo el template del componente web usa
 `<p-scrolltop>` de más.
 
@@ -46,7 +39,6 @@ src/app/shared/ui/web/tap-to-top/tap-to-top.ts
 +import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
  import { TapToTopBase } from "@ui/base/tap-to-top.base";
  import { AppIcon } from "@ui/shared/app-icon/app-icon";
--import { ScrollTopModule } from "primeng/scrolltop";
 
  @Component({
    selector: "app-scroll-top",
@@ -116,7 +108,6 @@ hace falta, no lo asumas de antemano.)
 src/app/shared/ui/web/empty-state/empty-state.ts
 ```
 ```diff
--import { ButtonModule } from "primeng/button";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
 ```
 ```diff
@@ -171,7 +162,6 @@ src/app/shared/ui/web/fieldset/fieldset.ts
 +  ViewEncapsulation,
 +} from "@angular/core";
  import { FieldsetBase } from "@ui/base/fieldset.base";
--import { FieldsetModule } from "primeng/fieldset";
 +import { AppIcon } from "@ui/shared/app-icon/app-icon";
 
  @Component({
@@ -247,7 +237,6 @@ src/app/shared/ui/web/fieldset/fieldset.ts
 
 ## Verificación
 
-- `grep -n "primeng" <los 5 archivos>` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -263,7 +252,6 @@ src/app/shared/ui/web/fieldset/fieldset.ts
 
 ## Listo cuando
 
-- Los 5 archivos sin PrimeNG.
 - Fieldset con toggle funcionando de verdad (captura antes/después de
   hacer clic en el legend).
 - `tsc`/build limpios.

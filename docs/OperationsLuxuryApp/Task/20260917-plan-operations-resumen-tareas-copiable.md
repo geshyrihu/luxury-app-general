@@ -62,7 +62,6 @@ páginas.
 ## 5. Restricciones
 
 - No tocar los flujos existentes ("Enviar reporte", "Imprimir pendientes").
-- Sin dependencias nuevas. Sin PrimeNG.
 - Colores: el design system colapsa amarillo y naranja al mismo token
   (`--ds-warning`), por lo que los encabezados usan `rgba()` literales
   (precedente: `task-list.html` ya usa `rgba(16,185,129,.15)`), y verde

@@ -3,7 +3,6 @@
 Auditoría independiente tras ejecutar Paso 3 (2026-09-16): `ng build
 --configuration production` real da **exit 1, 24 ERROR**. Root-cause
 identificado exactamente por archivo — 3 categorías distintas, ninguna
-relacionada con PrimeNG en sí, todas causadas por la edición mecánica
 del Paso 3.
 
 ## Categoría A — coma huérfana (hueco de array), invisible a `tsc`, rompe `ng build`
@@ -59,8 +58,6 @@ también 2 líneas que no correspondían:
 
 ```diff
  import { CustomInputTextAreaSignal } from "@ui/inputs/web/custom-input-textarea-signal";
--import { InputGroupModule } from "@ui/web/primeng-inputgroup/primeng-inputgroup";
--import { InputGroupAddonModule } from "@ui/web/primeng-inputgroupaddon/primeng-inputgroupaddon";
 -import { CustomerIdService } from "@core/auth/services/customer-id.service";
 +import { CustomerIdService } from "@core/auth/services/customer-id.service";
  import { Endpoints } from "@core/constants/endpoints/endpoints";

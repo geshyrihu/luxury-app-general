@@ -109,7 +109,6 @@ En el `.ts` (`daily-task-list.ts`), el import es el patrón exacto
 estándar:
 
 ```diff
--import { TableModule } from "@ui/web/primeng-table/primeng-table";
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 ```
 

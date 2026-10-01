@@ -61,7 +61,6 @@ Mismo patrón ya visto varias veces (`accounting.luxuryapp`,
 retipar a `AppTable`.
 
 ```diff
--import { Table, TableModule } from "@ui/web/primeng-table/primeng-table";
 +import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 ```
 

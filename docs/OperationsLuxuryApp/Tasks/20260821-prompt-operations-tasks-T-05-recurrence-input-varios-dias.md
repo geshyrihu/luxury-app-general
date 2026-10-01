@@ -113,7 +113,6 @@ una limpieza general del repositorio.
 
 ## Convenciones aplicables
 
-- `CONVENTIONS.md` — Angular 22, componentes de `shared/ui`, nunca PrimeNG/Ionic directo (ya lo
   respeta el archivo; sigue el mismo patrón para lo nuevo)
 - Signals donde el archivo ya los usa; no introduzcas un paradigma distinto (por ejemplo, no
   cambies a RxJS puro donde hoy hay signals)

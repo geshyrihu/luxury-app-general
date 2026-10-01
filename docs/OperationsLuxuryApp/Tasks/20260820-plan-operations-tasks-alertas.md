@@ -568,7 +568,6 @@ RecurringTaskComplianceAppServiceTests` → **4/4 pasan**, igual que lo reportad
 
 Leí el componente, el HTML, el spec, el bloque de endpoints, la interfaz y los tres archivos de
 routing tocados. Todo coincide con el prompt: sin acciones de escritura (`[showAdd]="false"`
-verificado como `@Input` real en `primeng-custom-caption.ts:33` y `data-view-mobile.ts:80`),
 columna "Grupo" única, K5 calculado en cliente con el caso `N/A` cubierto por un test dedicado.
 
 Encontró y resolvió algo que el prompt no anticipó: `route-whitelist.ts` — un mecanismo de rutas
@@ -598,13 +597,10 @@ Validador cruzado `backupRequiredForCriticalValidator` correcto (a nivel de `For
 del control). `onWorkGroupChange` limpia `backupUserId` al cambiar de grupo — buena adición no
 pedida explícitamente. `app-recurrence-input` conectado exactamente como se indicó
 (`formControlName`, no `[control]` aislado). `p-panel [toggleable]/[collapsed]` para la sección
-avanzada — confirmé que este uso directo de PrimeNG ya es precedente aceptado en el repo
 (`panel-aprobaciones.ts`, `notifications-gadget.ts`, `notifications-list-web.ts` lo usan igual),
-no es una violación nueva de la regla "nunca PrimeNG directo". Confirmé también que
 `web-custom-input-datepicker-signal` es el selector real del componente (no una invención).
 
 **Lista:** sigue el patrón exacto de `task-template-list.ts` (vista dual web/mobile,
-`PrimeNgCustomCaption`, `DataViewMobile`), cliente siempre desde `customerIdS.customerId()`, sin
 selector de cliente. `onToggleStatus` usa `onPatch` al endpoint correcto, no hay acción de borrado.
 Columnas `workGroupName`/`criticality`/`status`, tal como pedía el ticket.
 

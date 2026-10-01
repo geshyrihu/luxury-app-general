@@ -15,7 +15,7 @@ Corrige el proxy de desarrollo de Angular:
 1. Abre el archivo de configuración del proxy de Angular (generalmente `proxy.conf.json` o `proxy.conf.js` en la raíz de `client/angular/`).
 2. Agrega una nueva regla para la ruta `"/api/AspelCOI"`.
 3. Configura el `target` apuntando a la URL del backend local de C# (revisa hacia dónde apuntan las otras reglas del proxy, ej. `https://localhost:7143` o `http://localhost:5000`).
-4. Si estás usando Angular 17+ con `application` builder, verifica que el proxy esté referenciado en el `angular.json`.
+4. Si estás usando Angular 22 con `application` builder, verifica que el proxy esté referenciado en el `angular.json`.
 5. Reinicia el servidor de Angular (si aplica).
 6. Reporta el éxito en `docs/plans/dynamic-sync-report.md`.
 ```
@@ -53,3 +53,4 @@ Modifica el Dashboard de Mock Aspel para accionar la sincronización:
 5. Al recibir la respuesta exitosa (200 OK), cierra el modal, muestra una alerta de éxito y manda llamar a `refresh()` para recargar la tabla con la información de la nueva empresa.
 6. Reporta la finalización en `docs/plans/dynamic-sync-report.md`.
 ```
+

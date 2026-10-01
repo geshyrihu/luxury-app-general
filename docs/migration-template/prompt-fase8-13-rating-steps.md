@@ -14,8 +14,6 @@ src/app/shared/ui/web/rating/rating.ts
 ```diff
 -import { FormsModule } from "@angular/forms";
  import { RatingBase } from "@ui/base/rating.base";
--import { ButtonModule } from "primeng/button";
--import { RatingModule } from "primeng/rating";
 +import { AppIcon } from "@ui/shared/app-icon/app-icon";
 
  @Component({
@@ -100,7 +98,6 @@ src/app/shared/ui/web/steps/steps.ts
 ```
 ```diff
 -import { StepsBase } from "@ui/base/steps.base";
--import { StepsModule } from "primeng/steps";
 +import { StepsBase } from "@ui/base/steps.base";
 +import { AppIcon } from "@ui/shared/app-icon/app-icon";
 ```
@@ -183,7 +180,6 @@ línea ~188 antes de asumir más campos)
 
 ## Verificación
 
-- `grep -n "primeng" rating.ts steps.ts` → 0 resultados en ambos.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -197,9 +193,7 @@ línea ~188 antes de asumir más campos)
 
 ## Listo cuando
 
-- `rating.ts`/`steps.ts` sin PrimeNG.
 - Capturas de ambos en consumidores reales.
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `shared/ui` baja de 8
   a 6 (quedan: `listbox`, `timeline`, `tree`, `image-analysis-dialog`,
   `custom-input-upload-pdf-signal`, `editor`).

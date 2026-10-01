@@ -17,7 +17,6 @@ Dato importante encontrado: el `set selectedNodes` del consumidor
 simplificación** de la selección recibida (deduplica, filtra
 ancestros redundantes) antes de guardarla como `selectedCodes`. Esto
 significa que el algoritmo de cascada de `Tree` no tiene que ser
-pixel-perfecto respecto a PrimeNG — solo tiene que dar una UX de
 checkbox-tree correcta (marcar/desmarcar cascada + estado parcial),
 el consumidor ya absorbe el resto.
 
@@ -38,7 +37,6 @@ componente hijo separado):
 -  ViewEncapsulation,
 -} from "@angular/core";
 -import { TreeBase } from "@ui/base/tree.base";
--import { TreeModule } from "primeng/tree";
 +import {
 +  ChangeDetectionStrategy,
 +  Component,
@@ -240,12 +238,10 @@ componente hijo separado):
 
 - **`metaKeySelection`**: no se implementó ctrl/shift-click para modos
   `single`/`multiple` — el único consumidor real usa `selectionMode="checkbox"`
-  con `[metaKeySelection]="false"`, que en PrimeNG tampoco activa ese
   comportamiento en modo checkbox. Si en el futuro se necesita
   `single`/`multiple` con selección múltiple por teclado, hay que
   ampliarlo — no lo sobre-construyas ahora.
 - **`draggable`/`droppable` de `TreeNode`**: no implementados (eran
-  para reordenar nodos DENTRO del árbol vía PrimeNG). El
   drag&drop real que sí usa el consumidor es de `@angular/cdk/drag-drop`,
   aplicado directamente en su propia plantilla `#default` — no pasa
   por `Tree`, sigue funcionando igual sin cambios.
@@ -253,12 +249,10 @@ componente hijo separado):
   (`isExpanded` lo revisa), pero una vez que el usuario expande/colapsa
   manualmente, el signal interno (`expandedSet`) manda — si el array
   `value()` cambia de referencia (nuevos nodos), el estado de expansión
-  se resetea (mismo comportamiento esperable que tenía PrimeNG por
   identidad de objeto).
 
 ## Verificación
 
-- `grep -n "primeng" tree.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -284,9 +278,7 @@ componente hijo separado):
 
 ## Listo cuando
 
-- `tree.ts` sin PrimeNG.
 - Los 7 puntos de la prueba real confirmados con capturas.
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `shared/ui` baja de 4
   a 3 (quedan: `image-analysis-dialog`,
   `custom-input-upload-pdf-signal`, `editor`).

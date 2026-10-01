@@ -316,7 +316,6 @@
 
 ---
 
-### **CAPA 4: Frontend Web (Angular 22 / PrimeNG)**
 
 **Experiencia de usuario y rendimiento en navegador.**
 
@@ -336,16 +335,12 @@
 - **📖 CONVENTIONS.md ref:** §2.3 (Signals API obligatorio)
 
 #### 4.2 Violación del Catálogo Custom
-- **❌ Error:** Usar PrimeNG directo en features fuera de la excepción vigente de `<p-table>` y su ecosistema directo de tabla
 - **✅ Fix:** Consumir componente del catálogo `@ui/*` o wrapper oficial. Si el caso es tabla desktop/web, validar que el uso directo de `<p-table>` siga el patrón oficial vigente del proyecto
 - **🔍 Audit:**
   ```bash
   grep -rn "<p-table\|<p-button\|<p-input" appsweb/angular/src/app/modules/[MOD]/
-  # Resultado esperado: 0 para PrimeNG directo fuera de la excepción de tabla
-  grep -rn "primeng\|@ionic" appsweb/angular/src/app/modules/[MOD]/*.ts
   # Resultado esperado: sin imports directos salvo los estrictamente necesarios para la tabla aprobada
   ```
-- **Criterio PASO:** Cero imports directos de PrimeNG/Ionic fuera de la excepción de tabla; si hay `p-table`, la auditoría valida caption, empty state, footer, acciones, estilos y separación desktop/mobile
 - **📊 Riesgo:** 🟡 MEDIO (inconsistencia visual, desviación de DS)
 - **📖 CONVENTIONS.md ref:** §3 (Catálogo custom), DESIGN_CONVENTIONS.md (91 componentes)
 
@@ -381,7 +376,6 @@
   grep -rn "<p-table\|<app-chart" appsweb/angular/src/app/modules/[MOD]/ | grep -v "@defer"
   # Componentes pesados deben estar en @defer
   ```
-- **Criterio PASO:** Componentes PrimeNG complejos usan `@defer`
 - **📊 Riesgo:** 🟡 MEDIO (slow initial paint, LCP)
 - **📖 CONVENTIONS.md ref:** §2.5 (Performance: @defer)
 
@@ -1258,7 +1252,6 @@
   grep -rn "<p-button\|<p-input\|<ion-" appsweb/angular/src/app/modules/[MOD]/ | wc -l
   # Resultado esperado: 0 (usar <app-* o <ili-*)
   ```
-- **Criterio PASO:** Cero imports diretos de PrimeNG/Ionic en features
 - **📊 Riesgo:** 🟡 MEDIO (inconsistencia visual)
 - **📖 CONVENTIONS.md ref:** §3 (UX/UI), DESIGN_CONVENTIONS.md
 

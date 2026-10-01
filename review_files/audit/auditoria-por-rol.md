@@ -87,12 +87,10 @@ echo "OnPush: $ONPUSH / $TOTAL"
 
 ### 1.3 Catálogo UI (§5)
 
-**Regla:** Cero imports de `primeng` o `@ionic` directo en features
 
 **Comando:**
 ```bash
 # Buscar imports prohibidos
-grep -r "from ['\"]primeng\|from ['\"]@ionic" \
   appsweb/angular/src/app/modules \
   --include="*.ts" \
   | grep -v node_modules
@@ -108,7 +106,6 @@ grep -r "from ['\"]primeng\|from ['\"]@ionic" \
 ```bash
 # Reemplazar imports con @ui/*
 find appsweb/angular/src/app/modules -name "*.ts" \
-  -exec sed -i "s/from 'primeng/from '@ui\/primeng/g" {} \;
 ```
 
 ---
@@ -573,11 +570,8 @@ Cuando falla una auditoría:
 - **Problema:** `"strict": false` debe ser `true`
 - **Fix:** `sed -i 's/"strict": false/"strict": true/' tsconfig.json`
 
-### 2. PrimeNG import directo (§5) - 🔴 CRÍTICA
 - **Archivo:** appsweb/angular/src/app/modules/admin/dashboard.ts
 - **Línea:** 3
-- **Problema:** `import { ButtonModule } from 'primeng/button'`
-- **Fix:** `import { ButtonModule } from '@ui/primeng/button'`
 
 ### 3. OnPush missing (§2.4) - 🟠 ALTA
 - **Archivo:** appsweb/angular/src/app/modules/admin/users-list.ts

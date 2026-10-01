@@ -1,7 +1,6 @@
 # Prompt Fase 7 — Paso 8: migración real — `product-output-form.ts` (último `pInputText` genuino)
 
 Confirmado (2026-09-16): este es el **único archivo de negocio real**
-que queda con un uso genuino de PrimeNG a nivel de componente/directiva
 (los otros 3 candidatos que parecían reales resultaron ser imports
 muertos con coincidencia de clase CSS, ver `prompt-fase7-07-*.md`).
 
@@ -14,7 +13,6 @@ src/app/modules/operations.luxuryapp/inventarios-y-almacn/product-exit/product-o
 ## Cambio en el `.ts`
 
 ```diff
--import { InputTextModule } from "@ui/web/primeng-inputtext/primeng-inputtext";
 ```
 Quita también `InputTextModule` del arreglo `imports:`.
 
@@ -38,7 +36,6 @@ criterio.)
 
 ## Verificación
 
-- `grep -n "primeng" product-output-form.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), revisa el
   log entero con `grep -c ERROR`, no uses `tail`**.
@@ -49,10 +46,7 @@ criterio.)
 
 ## Listo cuando
 
-- `product-output-form.ts`/`.html` sin ningún rastro de PrimeNG.
 - Captura confirmando que se ve igual.
 - `tsc`/build limpios.
-- Con esto, **0 archivos de negocio real con PrimeNG genuino quedan
   en todo `src/app/modules`** — solo faltan el catálogo interno
   (`catalog-component-ui/*`) y el `ConfirmDialog` global antes de
-  poder retirar el paquete `primeng`.

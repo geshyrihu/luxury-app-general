@@ -116,7 +116,6 @@ Automáticamente ejecuta verificaciones ANTES de cada commit:
 
 ### ¿Cómo arreglo un error de auditoría?
 
-**Ejemplo: "Encontrados 3 import(s) directo(s) de primeng/@ionic"**
 
 ```bash
 # 1. Leer el error completo (te lo dice el hook)

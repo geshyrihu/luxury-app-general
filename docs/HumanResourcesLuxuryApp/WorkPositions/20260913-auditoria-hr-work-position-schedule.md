@@ -111,7 +111,6 @@
 | Signals (no BehaviorSubject) | §1.2 | ✅ 0 BehaviorSubject, signal() y computed() utilizados | — |
 | @if/@for (no *ngIf/*ngFor) | §1.3 | ✅ 0 usos de *ngIf/*ngFor, usa @if/@for | — |
 | ApiResponseService (no HttpClient directo) | §1.4 | ✅ 0 HttpClient, usa ApiResponseService | — |
-| p-table (excepción PrimeNG) | §5.3 | ✅ Único componente PrimeNG directo, con patrón oficial | — |
 | Sin pi pi- directo | §5.3 | ✅ 0 usos de pi pi- | — |
 | Formularios tipados (Reactive Forms) | §4.2 Angular:18 | ✅ FormGroup<WorkPositionScheduleControls> tipado | — |
 | Sin console.* en producción | §4.2 Frontend | ✅ Eliminado console.error (F1-03) | — |

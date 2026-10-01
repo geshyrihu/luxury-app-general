@@ -12,15 +12,12 @@ src/app/shared/ui/web/bottom-nav/bottom-nav.ts
 src/app/shared/ui/web/bottom-nav/bottom-nav.spec.ts
 src/app/shared/ui/adaptive/bottom-nav/bottom-nav.ts
 ```
-`web/bottom-nav/bottom-nav.ts` sigue importando `primeng/api`+
-`primeng/tabs` y **0 consumidores reales** (confirmado de nuevo:
 `grep -rl "@ui/web/bottom-nav/\|@ui/adaptive/bottom-nav/" src/app --include="*.ts" --include="*.html" | grep -v spec` →
 solo `adaptive/bottom-nav/bottom-nav.ts`, que a su vez tampoco tiene
 consumidores reales). Es un componente **distinto** de
 `@ui/mobile/bottom-nav/bottom-nav.ts` (`MobileBottomNav`, selector
 `ili-bottom-nav`) — ese SÍ es real, tiene un consumidor genuino
 (`core/layout/committee-layout/desktop/mobile-nav.ts`) y **no
-importa PrimeNG en absoluto** — no lo toques, es un archivo
 completamente distinto pese al nombre parecido.
 
 Borra los 3 archivos de arriba (`web/bottom-nav/` y
@@ -59,7 +56,6 @@ path).
 
 **Excepción a revisar aparte, no la borres a ciegas**:
 `shared/ui/shared/app-icon/app-icon.component.ts` también aparece
-como huérfano en ese comando, pero no tiene relación con PrimeNG ni
 con este borrado — probablemente es una ruta que ya estaba desactualizada
 antes de esta sesión (el componente real pudo haberse movido/renombrado
 en otro momento). Verifica dónde vive `AppIcon` realmente hoy
@@ -70,7 +66,6 @@ real y muy usado.
 
 ## Verificación
 
-- `grep -n "primeng" src/app/shared/ui/web/bottom-nav/*.ts` → ya no
   debería existir el archivo.
 - `grep -oP '"path":\s*"\K[^"]+' .../ui-dictionary.ts | sort -u | while read -r p; do [ -f "src/app/$p" ] || echo "$p"; done`
   → 0 resultados salvo, si decides dejarlo así, ninguno (corrige
@@ -89,6 +84,5 @@ real y muy usado.
 - 0 entradas huérfanas en `ui-dictionary.ts` (la de `app-icon`
   corregida, no borrada).
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `src/app/shared`
   debería quedar en exactamente 28 (los archivos de Categoría B/C/D
   que faltan por migrar) — repórtalo.

@@ -167,7 +167,6 @@ catálogo de 383 componentes que pasa de activo latente a activo verificable.
 
 **Constraints**
 - **Control de versiones (corregido 2026-08-10).** `client/angular` **sí** es un repositorio git independiente, igual que `api/` y `client/flutter/`. La raíz `d:\repos\luxuryapp-api` no lo es: es un contenedor. Una comprobación previa desde la raíz concluyó erróneamente que no había git — `git` busca hacia arriba, nunca hacia abajo. El rollback es `git checkout` / `git revert` (§10). Ninguna tarea borra archivos: los documentos obsoletos se marcan como superseded.
-- Stack verificado: Angular 22.0.5 · PrimeNG 22.0.0-rc.1 · Ionic 8.8.13 · TypeScript 6.0.3 · `@primeuix/themes` 2.0.3 · Vitest 4 · Playwright 1.62 · Storybook (angular-vite).
 - Zoneless activo (`provideZonelessChangeDetection`). Todo componente nuevo o tocado debe ser compatible.
 
 ---
@@ -239,7 +238,6 @@ relleno aparece como `color:`.
 | Sistema | Usos reales | Destino |
 |:---|:---|:---|
 | `ion-icon` | 146 | **Conservar** — móvil |
-| `primeicons` | 140 | **Conservar** — web (dependencia interna de PrimeNG; no escribir la clase a mano) |
 | `iconify-icon` (vía `<app-icon>`) | 2,141 (`app-icon`) | **Estándar web — conservar; NO desinstalar** |
 | `feather-icons` + `@types/feather-icons` | **0** | **Desinstalado** (2026-08-09) |
 
@@ -273,7 +271,6 @@ tablas embebidas, paneles de detalle, listados en drawer. Meta: ≥12 componente
 **`@defer` — 0 usos.** Con zoneless activo y componentes pesados en catálogo, no
 hay una sola frontera de carga diferida. Candidatos medidos:
 `web/charts` (ECharts), `web/gantt`, `web/territory-map`, `web/pivot-table`,
-el editor de PrimeNG y el visor de PDF. `@defer (on viewport)` en los seis.
 
 **Lo que ya está bien y no se toca:** 1171 `input()`, 181 `output()`, 42
 `model()`, 95 `computed()`, 77 `OnPush`, zoneless activo. La adopción de señales
@@ -491,7 +488,6 @@ ser huérfanos; sus call sites reales:
 
 | Ítem | Detalle |
 |:---|:---|
-| `pi pi-` directos (esquivan `<app-icon>`) | **138 usos** en 29 archivos (el plan maestro estimó 141; la diferencia proviene de las ediciones congeladas de E0.1). Distribución: `apps/**` (55 usos), `shared/ui` (11), `core/layout` shell + `shared/utils` (resto). PrimeIcons permanece como dependencia porque PrimeNG lo usa internamente, pero **ningún template propio debe escribir la clase `pi pi-` a mano**. Migrar a `<app-icon>` es deseable pero **fuera del alcance §2** (plantillas de módulos de negocio + shell congelado E0.1). Ticket aparte. |
 | CDN de Iconify (`api.iconify.design`) | `core/services/icon-preload.service.ts` hace fetch en runtime a `https://api.iconify.design` junto a `api.simplesvg.com` y `api.unisvg.com` (ambos en `connect-src` de la CSP). Es deliberado y funciona. **Trade-off:** para un ERP en redes corporativas, si el CDN está bloqueado o cae, no hay iconos en ninguna pantalla. Iconify soporta sets empaquetados offline (disponibilidad vs privacidad vs tamaño de bundle). **Decisión del Tech Lead:** no se cambia el modo en esta entrega; queda documentado como riesgo. |
 
 ---
@@ -531,7 +527,6 @@ aplicación Angular 22, optimization scripts on / styles off, hash all):
 
 **Decisión de calibración (RN-DS-025).** El initial mide **4.06 MB crudos** pero
 **645 KB de transferencia** (lo que realmente recibe el usuario). Para un ERP con
-383 componentes + PrimeNG + Ionic + ECharts, **645 KB de transferencia está en el
 rango normal** de esa clase de aplicación: la transferencia no es el problema.
 La deuda de reducción sigue siendo válida, pero se justifica por
 **mantenibilidad y tiempo de parseo del `main` eager (3.18 MB)**, no porque la
@@ -543,7 +538,6 @@ no para gritar**.
 - `budgets.anyComponentStyle`: `maximumWarning: "19kb"`, `maximumError: "20kb"`.
   Con máx real 18.11 KB (`preventive-maintenance.scss`) **no dispara warning** hoy.
 - `styles` global: 884 KB crudo / 61 KB gz — dentro de lo esperado para el DS
-  completo + PrimeNG + Ionic.
 
 **Meta de reducción de bundle (documentada, NO como warning eterno).** El objetivo
 de 3 MB inicial se registra aquí como meta con delta explícito, no como umbral de CI

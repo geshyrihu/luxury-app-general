@@ -2,7 +2,7 @@
 
 **Última revisión:** 2026-08-06  
 **Derivado de:** CONVENTIONS.md §4 (Frontend Rules) + exploración codebase  
-**Severidad:** 🔴 CRÍTICA — Patrón obligatorio en todo componente/servicio Angular 17+
+**Severidad:** 🔴 CRÍTICA — Patrón obligatorio en todo componente/servicio Angular 22
 
 ---
 
@@ -15,7 +15,7 @@ Documentar el patrón de **signals como fuente única de verdad** para estado en
 ## Regla de Oro
 
 ```
-Estado en Angular 17+ = WritableSignal + computed() + effect()
+Estado en Angular 22 = WritableSignal + computed() + effect()
 
 ❌ NO: BehaviorSubject, .subscribe(), async pipe
 ✅ SÍ: signal(), computed(), effect(), {{ signal() }} o injected signals
@@ -473,5 +473,6 @@ find appsweb/angular/src/app -name "*store.service.ts" -type f
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+ (signals estables)  
+**Vigencia:** Angular 22 (signals estables)  
 **Aplicable a:** Todos los componentes y servicios nuevos
+

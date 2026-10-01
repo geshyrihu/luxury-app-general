@@ -502,5 +502,6 @@ open coverage/index.html
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+ (TestBed, async testing utilities)  
+**Vigencia:** Angular 22 (TestBed, async testing utilities)  
 **Aplicable a:** Todos los servicios y componentes nuevos en el proyecto
+

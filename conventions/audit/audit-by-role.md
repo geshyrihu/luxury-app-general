@@ -49,7 +49,6 @@ Este documento no reemplaza la auditoria completa. La complementa con una vista
 ```bash
 grep '"strict".*true' appsweb/angular/tsconfig.json
 grep -r " any" appsweb/angular/src/app/modules --include="*.ts"
-grep -r "from ['\"]primeng\|from ['\"]@ionic" appsweb/angular/src/app/modules --include="*.ts"
 find appsweb/angular/src/app/modules -name "*wrapper.ts"
 grep -r "patchValue\|setValue" appsweb/angular/src/app/modules --include="*.ts"
 grep -r "::ng-deep\|styles:\s*\[" appsweb/angular/src/app/modules --include="*.ts" --include="*.scss"
@@ -61,7 +60,6 @@ grep -r "::ng-deep\|styles:\s*\[" appsweb/angular/src/app/modules --include="*.t
 - feature structure consistente con patrones vivos
 - sin bypass al catalogo UI
 - si hay `p-table`, la excepcion se usa solo para la tabla y no para abrir uso
-  directo libre de PrimeNG
 - formularios editables auditados en create y edit
 - controles de seleccion visibles y coherentes con el shape real del response
 

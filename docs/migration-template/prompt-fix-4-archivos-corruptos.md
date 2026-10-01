@@ -1,6 +1,5 @@
 # Prompt — Reparar los 4 archivos corruptos que bloquean `ng serve`
 
-Estos 4 archivos son **ajenos a la migración PrimeNG→Bootstrap** (el
 usuario confirmó que la corrupción y los commits relacionados son
 propios, de otra tarea). Se corrigen ahora porque **impiden que `ng
 serve` levante para cualquier verificación**, no solo para Fase 6.

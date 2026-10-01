@@ -36,7 +36,6 @@ La migración `mdi:` → `material-symbols-light:` está cerrada:
 | Nombres de icono inválidos | 0 |
 | `pi pi-` | 8, todos inertes (ver Fase 4) |
 | Literales corregidos | 606 |
-| Hosts PrimeNG reparados | 26 |
 
 Se añadió `scripts/audit-icon-names.mjs` (`npm run audit:icon-names`, dentro de
 `audit:ds` y del workflow). Exige que todo literal `material-symbols-light:*`

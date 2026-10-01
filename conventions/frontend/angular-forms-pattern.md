@@ -15,7 +15,7 @@ Documentar el patrón de **Reactive Forms tipadas y fuertemente validadas**. Def
 ## Regla de Oro
 
 ```
-Formularios en Angular 17+ = Reactive Forms + Typed FormGroup + Custom Validators
+Formularios en Angular 22 = Reactive Forms + Typed FormGroup + Custom Validators
 
 ❌ NO: Template Forms (*ngModel), FormArray sin tipado
 ✅ SÍ: FormBuilder + IFormType interface + Validators custom
@@ -479,5 +479,6 @@ find appsweb/angular/src/app -name "*validator*" -type f
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+ (Reactive Forms, input() API)  
+**Vigencia:** Angular 22 (Reactive Forms, input() API)  
 **Aplicable a:** Todos los formularios en el proyecto
+

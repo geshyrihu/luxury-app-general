@@ -86,10 +86,7 @@
 | `w-5` | `col` | En `<custom-input-phone-prefix>`, contexto de grid |
 | `flex-1` | `flex-fill` | En `<custom-input-mask-signal>` |
 | `md:w-auto` | `w-md-auto` | Evaluar si BS5 soporta, si no → `@media` custom |
-| `p-inputtext` | `form-control` | PrimeNG class en inputs nativos (Fase 5, no ahora) |
-| `p-component` | *(eliminar)* | PrimeNG class en inputs nativos (Fase 5, no ahora) |
 
-**Nota sobre `p-inputtext` / `p-component`:** estas son clases de PrimeNG, no PrimeFlex. Se documentan aquí por aparecer en los mismos atributos `class="..."`, pero su reemplazo corresponde a la **Fase 5** del plan maestro (reemplazo de componentes). En este Track Flex solo se eliminan las clases PrimeFlex (`w-full`) de esas cadenas, dejando `p-inputtext p-component` intactos.
 
 ---
 
@@ -103,7 +100,6 @@
 
 2. **Lote 2 — `w-full` en `class` de inputs nativos** (7 archivos, ~8 reemplazos):
    - Regex: `"w-full p-inputtext` → `"p-inputtext` (quitar `w-full`, agregar `w-100` al final si necesario)
-   - Cuidado: no romper clases PrimeNG que se migran en Fase 5
 
 3. **Lote 3 — Clases sueltas** (2 reemplazos):
    - `flex-1` → `flex-fill` (1 archivo)

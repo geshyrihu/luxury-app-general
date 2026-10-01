@@ -1,8 +1,6 @@
 # Prompt Fase 8 — Paso 1: borrar 94 componentes de `shared/ui` con 0 consumidores reales
 
-Se decidió retirar PrimeNG por completo del repo, incluida la
 librería compartida `src/app/shared/ui/**` (135 archivos con imports
-directos de `primeng/*` en total). Investigación exhaustiva
 (2026-09-16) clasificó 94 de esos archivos como **completamente
 muertos**: 0 consumidores reales en todo `src/app` fuera de (a) sus
 propios `.spec.ts`, (b) el catálogo interno de componentes
@@ -31,7 +29,6 @@ componente — repórtalo aparte.**
 
 ## Lista de 82 componentes a verificar y borrar (carpeta completa: `web/<nombre>/`, `adaptive/<nombre>/`, `mobile/<nombre>/` si existen)
 
-**Barriles `primeng-*` (35, solo `web/primeng-<x>/`, sin adaptive/mobile)**:
 ```
 accordion autocomplete avatar badge button carousel checkbox chip
 datepicker dialog divider floatlabel iconfield inputgroup
@@ -40,8 +37,6 @@ multiselect popover progressspinner radiobutton ripple select
 selectbutton skeleton splitbutton tabs tag toast toggleswitch toolbar
 api
 ```
-(el prefijo real de la carpeta es `primeng-<nombre>`, ej.
-`web/primeng-accordion/`, `web/primeng-api/` — no confundir con los
 componentes Bootstrap reales que tienen el mismo nombre sin el
 prefijo, ej. `web/accordion/` SÍ tiene consumidores reales, no lo
 toques)
@@ -92,12 +87,10 @@ src/app/shared/ui/inputs/web/input-ng-select/input-ng-select.ts
 src/app/shared/ui/inputs/web/custom-input-select-prefix-signal.ts
 src/app/shared/ui/inputs/web/input-select-prefix/input-select-prefix.ts
 ```
-`custom-input-ng-select-signal.ts` envuelve `primeng/select` (pese al
 nombre, no usa `@ng-select/ng-select` real); su único "consumidor" es
 `input-ng-select.ts`, que a su vez no tiene ningún consumidor real
 fuera del catálogo. Mismo patrón para el par
 `custom-input-select-prefix-signal.ts`/`input-select-prefix.ts`
-(envuelve `primeng/inputgroup`+`inputgroupaddon`+`inputtext`+`select`).
 Verifica ambas cadenas con el mismo grep de arriba antes de borrar. Si
 en el futuro se necesita un select con prefijo, ya existe
 `inputs/web/input-select/input-select.ts` (`WebInputSelect`, con
@@ -112,12 +105,7 @@ reconstruye en este prompt, solo se borra lo muerto.
   ruteado, pero es un caso de decisión aparte (¿el equipo lo quiere
   conservar como plantilla "próximamente"?), no lo borres en este
   prompt.
-- `web/primeng-custom-caption`, `web/primeng-custom-global-filter`,
-  `web/primeng-custom-table-emptymessage`,
-  `web/primeng-custom-table-footer`, `web/primeng-dynamicdialog` — NO
-  importan PrimeNG directo, ya están limpios, no forman parte de esta
   lista aunque el nombre empiece igual.
-- `web/primeng-table` — tiene 1 consumidor real
   (`warehouse-stock-add.ts`) + 2 en `core/` (tipo
   `TableLazyLoadEvent`), se resuelve en un prompt aparte junto con esos
   3 archivos.
@@ -148,7 +136,6 @@ reconstruye en este prompt, solo se borra lo muerto.
   verificados y borrados (carpeta completa: web + adaptive + mobile +
   base si existen).
 - `tsc`/build limpios.
-- Reporta el conteo de archivos con `from "primeng/` que quedan en
   `src/app/shared` tras este borrado (debería bajar de 125 a ~30-35,
   correspondiendo a los componentes de Categoría C que faltan
   reescribir).

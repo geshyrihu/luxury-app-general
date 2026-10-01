@@ -27,7 +27,6 @@
 |----|--------|--------|
 | H5 | Duplicación de clasificación y `CONCEPTS_CATALOG` | Remediado |
 | H6 | Filtro fragmentado + `month = 4` fijo en inspección | Remediado |
-| H7 | Imports directos `primeng/api` y `primeng/dynamicdialog` | Remediado |
 | H8 | Cobertura mobile incompleta (6 vistas) | Remediado |
 | H9 | Clases de color no-semánticas | Remediado |
 | H10 | `requerimientos.md` vacío + `response-json/` sin referenciar | Remediado |
@@ -114,9 +113,7 @@
 
 ### T2.3 — Barriles `@ui/*` en imports directos (H7)
 **Archivos:** `resumen.ts`, `advances.ts`, `debtors.ts`, `department-charges.ts`, `department-payments.ts`, `clasificacion-detail.ts`
-**Cambio:** `SharedModule` desde `@ui/web/primeng-api/primeng-api`; `DynamicDialogConfig` desde `@ui/web/primeng-dynamicdialog/primeng-dynamicdialog`.
 **Validación:**
-- [x] `grep -rn "from ['\"]primeng/"` en módulo → 0
 - [x] tsc limpio
 **Estimado:** 1h
 **Estado:** COMPLETADO (2026-08-06) — 6 archivos migrados a barriles `@ui/*`
@@ -171,7 +168,6 @@
 ### Fase 2
 - [x] Clasificación y catálogo en un solo lugar (H5)
 - [x] Precedencia del filtro definida/documentada y `month = 4` corregido (H6)
-- [x] Cero imports directos de `primeng/*` (H7)
 - [x] Specs mínimos pasando (T2.4)
 
 ### Fase 3

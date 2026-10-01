@@ -214,7 +214,6 @@ Usuario → piscina-list.onDelete → DELETE /api/piscina/{id}   [SIN Authorize]
 - **Complejidad:** Pequeña. **Fase: MEDIO PLAZO.**
 
 ### PRIM-012 — BAJA — Calidad frontend (menores)
-- Duplicado import `PrimeNgCustomCaption` (`piscina-list.ts:60-61`).
 - Texto debug `"?? "` en mobile (`piscina-list.html:101`); `<div class="hidden md:block"></div>` vacío (`piscina-bitacora-list.html:2`).
 - Tipado débil: todos los `signal`/resultados son `any` (sin interfaces de contrato).
 - `piscina-bitacora-list.html:23` `pSortableColumn="filtro"` pero muestra `item.dateString` (propiedad `Filtro`/`dateString` con mayúscula) → orden por fecha no funciona.

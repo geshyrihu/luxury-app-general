@@ -39,7 +39,6 @@ npm run audit:frontend
 **Verificaciones incluidas:**
 1. ✅ Strict TypeScript (`strict: true`)
 2. ✅ ChangeDetectionStrategy.OnPush
-3. ✅ Catálogo UI (`@ui/*`, no primeng directo)
 4. ✅ Wrappers con sufijo `-wrapper`
 5. ✅ Componentes móviles en CRUD
 6. ✅ Naming convention
@@ -114,8 +113,6 @@ dotnet run audit:backend
      FIX: Actualizar tsconfig.json
 
   2. Catálogo UI
-     Encontrados 3 import(s) directo(s) de primeng/@ionic
-     FIX: Usar imports desde @ui/* en lugar de primeng/@ionic directamente
 ```
 
 **Acción:**

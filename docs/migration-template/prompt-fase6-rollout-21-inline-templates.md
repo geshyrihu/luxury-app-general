@@ -70,7 +70,6 @@ etc.) antes de renombrar las etiquetas.
 Como son plantillas inline (no hay script que las procese), aplica
 las sustituciones a mano en cada uno:
 - `<p-table` → `<app-table`, `</p-table>` → `</app-table>`
-- `import { TableModule } from "@ui/web/primeng-table/primeng-table";` → `import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";`
 - `TableModule,` en el arreglo `imports:` → `AppTable,` / `AppSortableColumn,` / `AppSorticon,`
 - Si aparece `pTemplate="X"` → `#X` (solo en `button-catalog.ts`)
 

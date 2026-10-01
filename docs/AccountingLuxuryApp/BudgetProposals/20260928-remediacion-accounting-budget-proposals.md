@@ -89,3 +89,27 @@ Este documento registra todas las correcciones, ajustes y refactorizaciones real
 - **Problema:** Los cambios de estado de 'Listo' y la eliminación de cuentas no se reflejaban en tiempo real para otros usuarios conectados al mismo grupo (cliente/ejercicio), o, si lo hacían, sobreescribían y borraban la data enriquecida (Aspel) local.
 - **Solución UI:** Se actualizó handleBudgetProposalItemUpdate para utilizar patchItemInState y se añadió suscripción y método handleBudgetProposalItemDelete en presupuesto-propuesta.ts.
 - **Solución Backend:** Se añadió el evento SignalR ReceiveBudgetProposalItemDelete mediante SendBudgetProposalItemDeleteAsync e IBudgetProposalRealTimeService, inyectándolo en el endpoint DELETE y recogiendo el excludedConnectionId por *query parameter*.
+
+### 2.11 Mejora UX: Ícono de Guardar en Input de Propuesta
+- **Problema:** Los usuarios se confundían al tener que presionar la tecla Enter para guardar un nuevo monto en la propuesta presupuestal.
+- **Solución UI:** Se agregó un pequeño botón con un ícono de disquete (a-floppy-disk) posicionado absolutamente a la derecha dentro de la misma celda/input de 'PSTO (202X) MENSUAL'. Este botón llama a la misma función updateProposalItem(item) y se desactiva si la propuesta no está en 'Borrador' o si es una fila agrupadora. También se ajustó el padding del input (pe-4 pr-4) para que los números no se empalmen con el nuevo ícono.
+
+### 2.12 Corrección: Ícono de guardar oculto / FontAwesome faltante
+- **Problema:** El ícono de guardar no se visualizaba porque el proyecto utiliza <app-icon> con material-symbols-light en lugar de FontAwesome. Además, quedaba traslapado por las flechas nativas (spin buttons) del input de tipo número.
+- **Solución UI:** Se cambió a <app-icon icon="material-symbols-light:save-outline" />, se separó 28px desde la derecha para librar los *spin buttons*, y se amplió el padding del número (pe-5 pr-5) para evitar empalmes.
+
+### 2.13 Cambio a Input Nativo con Input-Group y Toast
+- **Problema:** El <custom-input-number-signal> causaba que el ícono absoluto se viera mal alineado y amontonado.
+- **Solución UI:** Se reemplazó el componente custom por un <input type="number"> nativo envuelto en un div.input-group de Bootstrap. Esto garantiza que el input numérico y el botón (con su ícono de guardar) se acomoden horizontalmente de forma perfecta sin empalmarse. Además, se habilitó la visualización del Toast de éxito (pasando 	rue al método onPut) para que el usuario reciba retroalimentación visual al guardar.
+
+### 2.14 Corrección: Múltiples Toasts y Sincronización Parcial
+- **Problema:** Al presionar el botón de guardar se lanzaban dos peticiones porque se disparaba simultáneamente el evento \(blur)\ del input y el \(click)\ del botón. Adicionalmente, cuando SignalR recibía el update en otras máquinas, actualizaba el *Gasto Propuesto* pero las columnas de *DIF* y *%* no se refrescaban.
+- **Solución UI:** Se agregó una actualización optimista al inicio de \updateProposalItem()\ para descartar peticiones concurrentes idénticas. También se incluyeron \difference\ y \percentageIncrease\ en el método \patchItemInState()\ para que el receptor de SignalR copie estos valores calculados a las vistas locales en tiempo real.
+
+### 2.15 Formateo de Miles en Input Nativo
+- **Problema:** Tras cambiar a un input nativo para arreglar el *layout*, se perdió el separador de miles automáticos que ofrecía el custom input al capturar presupuestos (ej. 2,563).
+- **Solución UI:** Se importó NgxMaskDirective en el componente y se le aplicó mask="separator.0" y 	housandSeparator="," al <input type="text">. Como la lógica de updateProposalItem() y onProposedAmountChange() ya limpiaban las comas usando eplace(/,/g, ''), no hubo necesidad de alterar la lógica matemática.
+
+### 2.16 Investigación: Recarga Automática por Inactividad
+- **Pregunta del usuario:** ¿Por qué la aplicación se recarga sola después de 1 minuto de inactividad en producción?
+- **Diagnóstico:** El archivo \pp.ts\ y el \UpdateService\ de la PWA tienen configurada una política de actualización silenciosa. Cuando detectan que se ha liberado una nueva versión de la app en los servidores, esperan a que el usuario deje de interactuar por exactamente 60 segundos (\updateIdleDelayMs = 60_000\). Una vez cumplido ese minuto de inactividad, aplican la actualización y refrescan la pantalla solas. Como hemos estado subiendo ajustes continuamente hoy, el usuario ha estado experimentando estas recargas para obtener las mejoras.

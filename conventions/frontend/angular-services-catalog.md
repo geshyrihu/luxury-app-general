@@ -165,7 +165,6 @@ this.toast.showSuccess('Guardado exitosamente');
 - Métodos:
   - `openDialog<T>(component, data, title, size): Promise<T>` — Auto-detecta web/mobile
   - `openMobileModal<T>(...)` — Inyecta ModalController (Ionic)
-  - `openDialogWeb<T>(...)` — Inyecta DialogService (PrimeNG)
 - Responsabilidad: Unificación de APIs web/mobile
 
 ```typescript
@@ -463,5 +462,6 @@ find appsweb/angular/src/app/modules -name "*service.ts" -type f | \
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+ (signals, injection API)  
+**Vigencia:** Angular 22 (signals, injection API)  
 **Aplicable a:** Todos los componentes y features que necesitan servicios
+

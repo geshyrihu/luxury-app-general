@@ -122,17 +122,13 @@ Misma regla de clave estable: **archivo + descripción de la violación, sin nú
 
 ---
 
-## TAREA 2.4 — Detector de fugas de PrimeNG/Ionic en `apps/`
 
 **Riesgo:** 🟡
 
-Regla: `apps/` nunca importa `primeng/*` ni `@ionic/angular*`. Solo `shared/ui/` puede.
 
 - [ ] 2.4.1 Crear `scripts/audit-apps-ui-boundaries.mjs`.
 - [ ] 2.4.2 **Excluir `.spec.ts`** — son pruebas, no se envían a producción y es legítimo que
-      simulen diálogos de PrimeNG. *(De 146 coincidencias brutas, 127 son tests.)*
 - [ ] 2.4.3 **Excluir `herramientas-dev/catalog-component-ui/` y `conventions-viewer`** — su
-      función *es* exhibir componentes de PrimeNG. *(10 de los 19 restantes.)*
 - [ ] 2.4.4 Baseline en `docs/audit/baseline-apps-ui.json` (~9 conocidas).
 - [ ] 2.4.5 Agregar `"audit:apps-ui": "node scripts/audit-apps-ui-boundaries.mjs"` a los scripts
       de `package.json` y encadenarlo en `lint`.
@@ -144,7 +140,6 @@ node scripts/audit-apps-ui-boundaries.mjs; echo "exit=$?"
 ```
 Esperado: `exit=0`, ~9 conocidas.
 
-**Commit:** `[2.4] detector de fugas de PrimeNG/Ionic con baseline`
 
 ---
 

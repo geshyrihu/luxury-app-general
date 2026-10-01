@@ -18,7 +18,6 @@ Sin embargo, la auditoría detectó **violaciones críticas de gates oficiales**
 | Capa | Estado | Motivo |
 |---|---|---|
 | **UI / Iconos** | 🔴 | `audit:icon-names` falla: **4 iconos fuera del catálogo** en el módulo (regla §5.5). |
-| **UI / Design** | 🔴 | `audit:design` falla: import directo de PrimeNG en `recruitment-agenda-list.ts` + estilos inline (incl. `modulo-candidates-doc.html`, basura autogenerada). |
 | **Apps / Fronteras** | 🔴 | `audit:apps` falla: `recursos-humanos.luxuryapp` (lado Employee) importa de `reclutamiento.luxuryapp` — viola aislamiento entre apps. |
 | **API / Autenticación** | 🟠 | Políticas AND rompen acceso de entrevistadores a `interviewer-action`/`interview-response` (403). |
 | **API / Archivos** | 🟠 | Fotos de candidato se guardan con extensión `.pdf`. |
@@ -112,7 +111,6 @@ Flujo alterno: `POST .../direct-hire/{requestPositionId}` crea `Employee` direct
 | Cero `| async` / `BehaviorSubject` | ✅ | Patrón de signals puro. |
 | Suscripciones con `takeUntilDestroyed` | 🟠 Parcial | 3 suscripciones sin cleanup en `candidate-application-form.ts:127,131,136`; `paramMap` sin TUD en `candidate-recruitment-interviews.ts:112` y `candidate-work-position-candidates.ts:163,168`. |
 | PrimeFlex (`p-*` classes) | ✅ Uso extendido | `p-3`, `p-4`, `flex-column`, `surface-border`, etc. |
-| PrimeNG directo | 🔴 1 violación | `recruitment-agenda-list.ts:13` importa PrimeNG directamente (usar `@ui/*`). `p-selectbutton` en `recruitment-agenda-list.html:74` está fuera del ecosistema p-table. |
 | Estilos con tokens CSS | ✅ | Estilos propios 100% `var(--ds-*)`; 0 hex/rgba/px literales. |
 | Estilos inline | 🔴 Violaciones | `candidate-interview-response.html:167`, `candidate-interviewer-queue.html:222`, `recruitment-agenda-list.html:114`, y ~60 en `modulo-candidates-doc.html`. |
 | Lazy loading | ✅ 100% | 9 rutas con `loadComponent` (`candidates.routing.ts:14,27,40,53,66,79,92,105,119`). |
@@ -155,7 +153,6 @@ Flujo alterno: `POST .../direct-hire/{requestPositionId}` crea `Employee` direct
 | A6 | **`allowedRoles` duplicado 8×** en el routing; cualquier cambio de roles debe tocarse en 8 sitios. | `candidates.routing.ts:20,33,46,59,72,85,98,111,125` |
 | A7 | **Tres fuentes de verdad para el status de agenda** con labels/severidades divergentes: `recruitment-shared/agenda-status-tag-options.ts:8-28` (11 códigos), `recruitment-agenda-list.ts:65-79` (5), `candidate-work-position-candidates.ts:67-83` (7). | Ídem |
 | A8 | **Redundancia BD en la cadena de alta** (7 puntos, ver §2.3): `CandidateId` redundante, `Folio`/`ConfirmationFinish` duplicados, fechas triplicadas, estado en 4 niveles, coherencia Employee↔WorkPosition sin garantía. | `RequestPosition.cs`, `RequestEmployeeRegister.cs`, `CandidateProcess.cs` |
-| A9 | **`audit:design` falla dentro del módulo**: import PrimeNG directo + estilos inline. | `recruitment-agenda-list.ts:13`, `candidate-interview-response.html:167`, `candidate-interviewer-queue.html:222`, `recruitment-agenda-list.html:114` |
 
 ### 🟡 Medios / Bajos
 
@@ -228,7 +225,6 @@ Flujo alterno: `POST .../direct-hire/{requestPositionId}` crea `Employee` direct
 | `node scripts/scan-mojibake.mjs client/angular` | ✅ 0 | (La ruta `client/luxuryapp` no existe; se usó `client/angular`.) |
 | `npm run audit:icon-names` | 🔴 exit 1 | 5 nombres fuera de catálogo; 4 en el módulo |
 | `npm run audit:apps` | 🔴 exit 1 | Cross-app imports (Employee←Candidatos) |
-| `npm run audit:design` | 🔴 exit 1 | PrimeNG directo + inline styles en el módulo |
 | `npm run audit:css` | 🔴 exit 1 | Sin hallazgos dentro de `candidates/` |
 | `npm run audit:tokens` | ✅ exit 0 | 0 hardcodes en el módulo |
 | `npm run audit:ui` | ✅ exit 0 | Fronteras shared/ui OK |
@@ -256,7 +252,6 @@ Prioridad ordenada por riesgo/impacto. Cada ítem indica archivos afectados y la
 9. **Resolver redundancia BD (A8).** Plan de migración aprobado: eliminar `RequestEmployeeRegister.CandidateId` redundante o declararlo fuente; unificar `Folio`/`ConfirmationFinish`; derivar fechas/estados de una sola tabla (candidato: `CandidateProcess` como fuente del estado del pipeline). Requiere FASE 0 + plan.
 10. **Centralizar agenda status (A7).** Una sola fuente (componente compartido o catálogo) reemplazando las 3 listas.
 11. **Constante única de `allowedRoles` (A6).** Extraer a constante del módulo.
-12. **Cerrar `audit:design` del módulo (A9).** Reemplazar import directo de PrimeNG por wrapper `@ui/*`; mover estilos inline a clases con tokens.
 13. **Refactor `CandidateProcessAppService` (2652 líneas).** Extraer: transiciones de etapa, alta de empleado (sync banco/clínica/emergencia), notificaciones, queries de bandejas.
 
 ### 🟡 Baja (mantenimiento)

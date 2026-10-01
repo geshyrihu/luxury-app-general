@@ -3,7 +3,6 @@
 Continúa `prompt-fase6-piloto-1c-revertir-header-a-blanco.md`, ya
 ejecutado y auditado (header blanco confirmado). Comparando la captura
 resultante (`fase6-piloto-1c-bank-app-table-white.png`) contra la
-referencia real (`fase6-piloto-1b-bank-primeng.png`) se ven 2 diferencias
 más, no cubiertas por el Prompt 1c porque no estaban en su alcance:
 
 ## 1. Falta la línea divisoria debajo del header
@@ -75,7 +74,6 @@ Agrega en el bloque `styles` del mismo archivo (junto a
 
 Mismo banco de pruebas temporal de los prompts anteriores
 (`bank-list-desktop` → `app-table`, restaurado al final). Captura
-nueva y compárala con `fase6-piloto-1b-bank-primeng.png`:
 
 1. La fila de encabezado debe tener la misma línea divisoria inferior
    que las filas de datos.

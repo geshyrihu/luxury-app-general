@@ -1,7 +1,6 @@
 # Prompt Fase 7 — ConfirmDialog Parte 1: migrar los 10 consumidores de `ConfirmationService`
 
 Último bloqueo estructural de Fase 7: el `<p-confirmdialog>` global en
-`app.html` + `ConfirmationService` de PrimeNG. El reemplazo **ya
 existe en el repo y ya está en uso en otros 6+ archivos**:
 `ConfirmService` (`@ui/buttons/shared/confirm.service`), que usa
 SweetAlert2 en web (`Swal.fire(...)`) e Ionic `AlertController` en
@@ -22,7 +21,6 @@ casos de Paso 3.
 ### 1. `src/app/modules/human-resources.luxuryapp/time-off/admin-vacaciones-balance/admin-vacaciones-balance.ts`
 
 ```diff
--import { ConfirmationService } from "@ui/web/primeng-api/primeng-api";
 +import { ConfirmService } from "@ui/buttons/shared/confirm.service";
 ```
 ```diff
@@ -71,13 +69,11 @@ casos de Paso 3.
    }
 ```
 Quita también `providers: [ConfirmationService]` si estaba en el
-`@Component` (verifica), y quita el import de `"@ui/web/primeng-api/primeng-api"`
 completo si `ConfirmationService` era lo único que traía de ahí.
 
 ### 2. `src/app/modules/legal.luxuryapp/employees-contracts/work-contract/work-contract-list.ts`
 
 ```diff
--import { ConfirmationService } from "@ui/web/primeng-api/primeng-api";
 +import { ConfirmService } from "@ui/buttons/shared/confirm.service";
 ```
 ```diff
@@ -107,7 +103,6 @@ completo si `ConfirmationService` era lo único que traía de ahí.
 ### 3. `src/app/modules/operations.luxuryapp/inventarios-y-almacn/inventory-engine-system/service-order.ts`
 
 ```diff
--import { ConfirmationService } from "@ui/web/primeng-api/primeng-api";
 +import { ConfirmService } from "@ui/buttons/shared/confirm.service";
 ```
 ```diff
@@ -142,14 +137,12 @@ completo si `ConfirmationService` era lo único que traía de ahí.
 +  }
 ```
 El parámetro `event: Event` solo se usaba para `target` (posicionamiento
-de PrimeNG, no aplica a SweetAlert2) — quítalo de la firma. **Busca el
 sitio en la plantilla (`.html`) que llama a `confirm($event, ...)`** y
 actualízalo a `confirm(...)` sin el `$event`.
 
 ### 4. `src/app/modules/system.luxuryapp/configuracion-sistema/knowledge-base/ai-knowledge-base-list.ts`
 
 ```diff
--import { ConfirmationService } from "@ui/web/primeng-api/primeng-api";
 +import { ConfirmService } from "@ui/buttons/shared/confirm.service";
 ```
 ```diff
@@ -197,7 +190,6 @@ deja solo `DialogService` (`ConfirmationService` no debe seguir ahí).
 
 Ninguno de estos llama `.confirm()` en ningún lado — verificado con
 `grep -c "\.confirm("` → 0 en los 6. Quita el import de
-`ConfirmationService` (de `"@ui/web/primeng-api/primeng-api"`), la
 línea `confirmationService = inject(ConfirmationService);` si existe,
 y `ConfirmationService` del arreglo `providers:` del `@Component` si
 existe:
@@ -220,7 +212,6 @@ vez de borrarlo sin más.
 
 - `grep -rn "ConfirmationService" src/app/modules --include="*.ts"` →
   **0 resultados** en los 10 archivos (puede seguir habiendo otros
-  usos de `MenuItem`/`TreeNode`/`SortEvent` de `primeng/api` en otros
   archivos — esos NO son parte de este prompt, no los toques).
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), revisa el
@@ -228,7 +219,6 @@ vez de borrarlo sin más.
 - Capturas reales de los 4 flujos de eliminación del Grupo A (abrir el
   diálogo de confirmación, cancelar, y confirmar de verdad en al menos
   1 de los 4) — debe verse el SweetAlert2 (ícono de pregunta, botones
-  "Sí, eliminar"/"Cancelar"), no el dialog de PrimeNG.
 
 ## Listo cuando
 

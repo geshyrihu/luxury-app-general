@@ -61,7 +61,6 @@
 ### Frontend
 - [ ] Componentes standalone + `ChangeDetectionStrategy.OnPush`.
 - [ ] Usa signals/computed (NO `BehaviorSubject`).
-- [ ] Usa `@ui/*` (NO PrimeNG directo, salvo `p-table` excepción vigente).
 - [ ] Tokens CSS (NO hex/px literales).
 - [ ] Tipos en `interfaces/` con sufijos `.interface.ts`/`.dto.ts`; sin prefijo `I`; `Dto` no `DTO`.
 - [ ] Navegación por constantes (NO rutas hardcodeadas).

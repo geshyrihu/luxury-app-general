@@ -72,8 +72,8 @@
 | **OnPush** | Angular 22 | Change Detection | Default en CONVENTIONS.md | `changeDetection: ChangeDetectionStrategy.OnPush` |
 | **@if / @for / @switch** | Angular 22 | Templates | Nueva control flow | `@if (condition) { ... }` |
 | **Reactive Forms** | Angular 22 | `@angular/forms` | OBLIGATORIO, no template forms | `this.form = new FormGroup(...)` |
-| **PrimeNG 22** | 22.x | `primeng` | Desktop UI | `<p-button>` |
-| **Ionic 8** | 8.x | `@ionic/angular` | Mobile UI | `<ion-button>` |
+| **ng-bootstrap** | 21.0.0 | `@ng-bootstrap/ng-bootstrap` | Desktop UI | `<ngb-button>` |
+| **Ionic 9** | 9.x | `@ionic/angular` | Mobile UI | `<ion-button>` |
 | **PaginationStore** | Custom | `appsweb/angular/src/app/shared/store` | State de paginación | `paginationStore.pageNumber.set(2)` |
 | **ApiResponseService** | Custom | `appsweb/angular/src/app/shared/services` | HTTP + envelope handling | `this.api.get<User>('/users')` |
 | **DialogHandlerService** | Custom | `appsweb/angular/src/app/core/services` | Manejo de diálogos | `this.dialogHandler.openDialog(Component)` |

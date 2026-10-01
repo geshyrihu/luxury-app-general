@@ -1,9 +1,6 @@
-# Prompt Fase 8 — `file-upload.ts`: últimos 4 fragmentos PrimeNG (10 consumidores reales)
 
 Investigado a fondo: toda la lógica real (drag&drop nativo,
 `prepareFiles`, `addFiles`, procesamiento de imágenes, estado de cada
-archivo) **ya es 100% nativa**, sin PrimeNG. Solo quedan 4 piezas de
-UI usando PrimeNG:
 
 ```
 src/app/shared/ui/web/file-upload/file-upload.ts
@@ -138,9 +135,6 @@ método `onFilesSelected` por completo**, nada más lo llama.
 ## Imports
 
 ```diff
--import { ButtonModule } from "primeng/button";
--import { FileUploadHandlerEvent, FileUploadModule } from "primeng/fileupload";
--import { ProgressBarModule } from "primeng/progressbar";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
 +import { WebButtonIcon } from "@ui/buttons/web-icon/button";
 ```
@@ -152,10 +146,8 @@ método `onFilesSelected` por completo**, nada más lo llama.
 confirma el import path exacto abriendo cualquier otro archivo ya
 migrado que los use, ej. `empty-state.ts` del prompt anterior)
 
-`FileUploadHandlerEvent` (tipo de `primeng/fileupload`) se usaba en
 `upload = output<FileUploadHandlerEvent>()`. **0 consumidores reales
 escuchan `(upload)`** (verificado), así que define un tipo local
-mínimo en el mismo archivo en vez de importar el de PrimeNG:
 ```diff
 +export interface FileUploadEvent {
 +  originalEvent: Event;
@@ -177,11 +169,9 @@ con el mismo tipo (opcional, no bloqueante).
 `invalidFileSizeMessageSummary/Detail`, `(onRemove)`, `(onClear)`,
 `<ng-template #content>`) — Angular los ignora en silencio
 (`strictTemplates: false`), es drift preexistente sin relación con
-PrimeNG, no lo arregles en este prompt.
 
 ## Verificación
 
-- `grep -n "primeng" file-upload.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -196,8 +186,6 @@ PrimeNG, no lo arregles en este prompt.
 
 ## Listo cuando
 
-- `file-upload.ts` sin ningún import de PrimeNG.
 - Capturas de al menos 2 consumidores reales probados.
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `shared/ui` baja de 19
   a 18.

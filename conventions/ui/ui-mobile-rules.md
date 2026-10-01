@@ -76,7 +76,6 @@
 ## Riesgos Históricos Preservados
 
 ### 1. Frankenstein visual
-- ❌ Intentar que PrimeNG e Ionic se vean iguales rompe la naturalidad del stack
 
 ### 2. Detección pobre de dispositivo
 - ❌ No decidir solo por breakpoints; considerar patrón y plataforma
@@ -85,7 +84,6 @@
 - ❌ No modelar desktop y mobile como si dispararan exactamente los mismos gestos
 
 ### 4. Ilusión de "código una sola vez"
-- ❌ No mezclar PrimeNG e Ionic en el mismo template como regla general
 
 ### 5. Sobre-densificación
 - ❌ No intentar replicar layouts compactos de desktop en mobile (peor experiencia táctil)

@@ -13,7 +13,6 @@
 
 1. Migrar colores hardcodeados en `shared/ui/web/module-guide/module-guide.css` a tokens del Design System.
 2. Reubicar `shared/ui/web/module-guide/module-guide.md` a la carpeta de documentación del módulo que realmente describe (Contabilidad → Espejo Aspel Full).
-3. Eliminar `shared/ui/inputs/documentacionprimeng.txt` (basura de copy-paste, sin valor).
 4. Limpiar bloques de código comentado con hex sueltos en `styles/custom/_custom-table.scss`.
 
 **Fuera de alcance — NO HACER:**
@@ -74,20 +73,15 @@ test -f appsweb/angular/src/app/shared/ui/web/module-guide/module-guide.md && ec
 
 ---
 
-## Tarea 3 — Eliminar `documentacionprimeng.txt`
 
-**Archivo:** `appsweb/angular/src/app/shared/ui/inputs/documentacionprimeng.txt`
 
-**Problema (verificado):** Volcado sin editar de la documentación pública de `p-autocomplete` de PrimeNG, con basura evidente de copy-paste intercalada (línea 10: `erwerwqeqer`, línea 17: `we`). No sigue ninguna estructura ni ubicación de documentación oficial (Regla Universal #9 de `CONVENTIONS.md`). No aporta valor: la documentación de PrimeNG ya existe públicamente y no debe vivir copiada y a medias dentro del repo.
 
 **Acción:**
 ```bash
-git rm appsweb/angular/src/app/shared/ui/inputs/documentacionprimeng.txt
 ```
 
 **Verificación:**
 ```bash
-test -f appsweb/angular/src/app/shared/ui/inputs/documentacionprimeng.txt && echo "FALTA BORRAR" || echo "OK: eliminado"
 ```
 
 ---

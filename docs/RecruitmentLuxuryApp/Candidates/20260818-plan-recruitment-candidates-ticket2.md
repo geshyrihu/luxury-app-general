@@ -28,7 +28,6 @@ Mejorar la usabilidad del formulario de registro de empleado / solicitud de alta
 **Archivo principal afectado:** `candidate-process-hiring-modal.html` / `.ts` (sección de domicilio).
 - **Cambios en UI:**
   - Cambiar el `<custom-input-text>` de `zipCode` a `<custom-input-mask>` o `<custom-input-number>` si el catálogo lo soporta.
-  - Alternativa: Usar `<custom-input-text>` pero agregando `keyfilter="num"` (PrimeNG) o `[pKeyFilter]="'num'"`.
 - **Validaciones en FormGroup:**
   - Agregar `Validators.required` (si aplica).
   - Agregar `Validators.pattern('^[0-9]{5}$')` para forzar 5 dígitos numéricos.

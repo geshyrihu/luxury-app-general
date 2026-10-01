@@ -26,7 +26,6 @@ modales.
 <p-table
   [globalFilterFields]="globalFilterFields()"
   [paginator]="true"
-  [rows]="tablePrimeNgRows"
   [rowsPerPageOptions]="rowsPerPageOptions"
   [scrollable]="true"
   [scrollHeight]="scrollHeight()"
@@ -38,7 +37,6 @@ modales.
   class="custom-table card"
 >
   <ng-template #caption>
-    <primeng-custom-caption (add)="add.emit(...)" [dt]="dt" aria-label="..." />
   </ng-template>
   <ng-template #header>
     <tr><th pSortableColumn="code">Codigo <p-sorticon field="code" /></th>...</tr>
@@ -47,10 +45,8 @@ modales.
     <tr><td>{{ item.code }}</td>...<td><iw-button-edit .../><iw-button-delete .../></td></tr>
   </ng-template>
   <ng-template #emptymessage>
-    <primeng-custom-table-emptymessage [colspan]="4" />
   </ng-template>
   <ng-template #paginatorleft>
-    <primeng-custom-table-footer [data]="data()" />
   </ng-template>
 </p-table>
 ```
@@ -62,15 +58,10 @@ vacía con `app-empty-state`, pie con conteo. Los botones de fila
 (`iw-button-edit`, `iw-button-delete`) **ya son Bootstrap** (ver hallazgo
 del análisis §4).
 
-### A.2 Lo que realmente depende de PrimeNG (y lo que no)
 
 Se leyó el código de los 3 sub-wrappers para separar mito de realidad:
 
-| Pieza | ¿Depende de PrimeNG realmente? | Detalle |
 |---|---|---|
-| `primeng-custom-table-emptymessage` | **No.** | Es un componente propio (`app-empty-state` + `<tr><td colspan>`), cero imports de `primeng`. Se reutiliza **tal cual** en el nuevo componente de tabla. |
-| `primeng-custom-table-footer` | **No.** | Componente propio, solo calcula `data().length`. Se reutiliza **tal cual**. |
-| `primeng-custom-caption` | **No, ni siquiera "casi".** | Su único acoplamiento real es una línea: `table.filterGlobal(term, "contains")`, donde `table = dt.input<any>(undefined)` — **ya está tipado `any`, no `Table` de PrimeNG.** No hace falta "re-tipar `dt`" como decía la versión anterior de este documento: el wrapper no cambia ni una línea, solo necesita que el componente nuevo exponga un método público `filterGlobal(term, mode)`. |
 | `p-table` en sí (paginación, orden, scroll, filtro, slots `#header/#body/#caption/#emptymessage/#paginatorleft`) | **Sí, 100%.** | Esto es lo único que realmente hay que reconstruir. |
 
 > ⚠️ **Corrección grave 2026-09-15 (auditoría de maestro antes de escribir el
@@ -81,7 +72,6 @@ Se leyó el código de los 3 sub-wrappers para separar mito de realidad:
 ### A.2bis `.custom-table`/`_prime-table.scss` — hallazgo real (2026-09-15)
 
 Se leyeron completos `src/styles/custom/_custom-table.scss` (273 líneas) y
-`src/styles/web/_prime-table.scss` (101 líneas, el archivo que PrimeNG
 override visual base — uno de los "9 archivos `web/_prime-*.scss`" que
 `03-inventario-componentes.md` Grupo 6 da por "retirar en Fase 7 cuando el
 componente asociado esté 🟢", asumiendo implícitamente que para entonces ya
@@ -94,10 +84,8 @@ antes** — ver por qué abajo).
 con lo que decía este documento.
 
 **Todo lo demás de `_custom-table.scss` (líneas 66-272) y el 100% de
-`_prime-table.scss` dependen de marcado propietario de PrimeNG que
 `app-table` no va a generar:**
 
-| Selector actual (PrimeNG) | Qué estiliza | Se pierde si no se porta |
 |---|---|---|
 | `.custom-table.p-datatable` / `.custom-table .p-datatable` | Layout flex/altura del contenedor completo | La tabla deja de llenar su contenedor con scroll interno |
 | `.p-datatable-wrapper` | El área con scroll vertical real | `[scrollable]`/`[scrollHeight]` deja de funcionar |
@@ -106,7 +94,6 @@ con lo que decía este documento.
 | `.p-datatable-thead > tr > th.p-sortable-column:hover` | Hover del encabezado ordenable | Sin feedback visual al pasar el mouse sobre columnas ordenables |
 | `.p-datatable-tbody > tr.row-status-{completed,in-progress,reopened,not-started} > td:first-child` | Borde izquierdo de color por estado de tarea (usado en tableros de tareas) | Filas pierden el indicador visual de estado |
 | `.p-datatable-thead > tr > th.th-{selected,deselected,col-dark,col-green,col-orange,col-red,col-blue-medium,col-blue-dark,col-navy}` | 9 variantes de color de encabezado por columna (usadas para resaltar columnas específicas en varias tablas financieras/reportes) | Todas las columnas resaltadas vuelven al color por defecto |
-| `.p-datatable-header` | Quita borde/fondo por defecto del caption | El caption puede volver a mostrar chrome de PrimeNG no deseado |
 | `.custom-table-fixed` (modificador completo, `.p-datatable-table`/`table` + `.table-col-{7,5,12,50,3,13,10}`) | Modo "sin scroll horizontal" con anchos fijos, usado explícitamente en algunas tablas | Se rompe el modo `custom-table-fixed` donde se use |
 | **Todo `_prime-table.scss`** (`.p-datatable` completo: `border-radius`, `box-shadow`, `border`, `.p-datatable-thead`/`.p-datatable-tbody`/`.p-datatable-tfoot`, `.p-paginator`/`.p-paginator-element`/`.p-highlight`) | **La piel visual base de absolutamente todas las tablas de la app**: radio de borde, sombra, borde, padding de celda, hover de fila, y el paginador completo (botones, página activa) | **Cada una de las 334 tablas pierde su aspecto base** — no es un caso de borde, es el default de todas |
 
@@ -130,7 +117,6 @@ hoja de `app-table` antes, no después. Igual aplica a `_custom-table.scss`
 corregirse ahora, no en Fase 7).
 
 **Conclusión revisada:** de las 4 piezas que forman "el ecosistema de
-tabla" (código), 3 ya están desacopladas de PrimeNG y sobreviven casi sin
 tocar. Pero el ecosistema real tiene una **quinta pieza no contada antes**
 — el CSS base (2 archivos) — que sí requiere trabajo mecánico dirigido
 antes de que el lote piloto se vea bien.
@@ -164,7 +150,6 @@ propone construir un componente propio (`app-table`, en
    (`#caption`, `#header`, `#body let-item`, `#emptymessage`,
    `#paginatorleft`/`#footer`), leyéndolos vía `@ContentChild(TemplateRef)`
    + `ngTemplateOutlet` — la misma técnica que usa Angular nativo (y que
-   PrimeNG usa por dentro para `pTemplate`). **Esto es clave**: si se
    respeta el mismo contrato de nombres de template, el contenido interno
    de cada `<ng-template>` (el `<tr><td>...` de cada fila, las columnas del
    header) **no cambia**, solo cambia la etiqueta contenedora de
@@ -172,7 +157,6 @@ propone construir un componente propio (`app-table`, en
    `@Input` (`[value]` se mantiene, `[paginator]`/`[rows]` se mantienen o
    se renombran de forma mínima).
 3. Expone `filterGlobal(term, mode)` públicamente (para no tocar
-   `primeng-custom-caption`).
 4. Implementa orden por columna con una directiva propia
    `appSortableColumn="campo"` (mismo nombre de atributo que
    `pSortableColumn` es tentador para minimizar diffs, pero **se decide en
@@ -181,7 +165,6 @@ propone construir un componente propio (`app-table`, en
 5. Paginación client-side con `NgbPagination` o `.pagination` nativo de
    Bootstrap; scroll interno con CSS (`max-height` + `overflow-y: auto` +
    `position: sticky` en `thead`) reemplazando `[scrollable]`/
-   `[scrollHeight]` de PrimeNG.
 6. Modo `[lazy]="true"` + `(onLazyLoad)` como capa opcional para las 12
    pantallas server-side, con la misma forma de evento que hoy (para no
    reescribir la lógica de esas 12 pantallas, solo el componente que la
@@ -289,7 +272,6 @@ app: `openDialog(component, data, title, size)` y
 `openDialogCustom(component, config)`, ambos devuelven `Promise<T>`. Por
 dentro:
 
-- **Rama web:** usa `DialogService.open()` de `primeng/dynamicdialog`.
 - **Rama móvil** (`PlatformService.isMobile()`): usa `ModalController` de
   Ionic con un wrapper propio, `IonicDialogModal`.
 - El archivo **re-exporta** los tipos: `export { DialogService,
@@ -301,7 +283,6 @@ dentro:
 | Origen del import | Nº de archivos |
 |---|---:|
 | `from ".../core/services/dialog-handler.service"` (barrel local) | **610** |
-| `from "primeng/dynamicdialog"` (directo) | **66** (de los cuales la mayoría son `.spec.ts` de prueba, más `app.config.ts`, `ionic-dialog-modal.ts`, `primeng-dynamicdialog.ts` — es decir, plumbing esperado, no fuga real de features) |
 
 **Lectura:** el 90%+ del consumo real de "abrir un modal" en la app ya
 pasa por un único archivo. Si ese archivo sigue exportando los mismos
@@ -309,7 +290,6 @@ pasa por un único archivo. Si ese archivo sigue exportando los mismos
 `DialogSize`) con la misma forma de uso (`config.data`, `ref.close(value)`,
 `ref.onClose`, `ref.onDestroy`), **los 610 archivos no cambian una sola
 línea**. Solo hay que reconciliar (Fase 0, ya lo dice el plan general) los
-~66 archivos que importan directo de `primeng/dynamicdialog`, y de esos la
 mayoría son specs o los propios archivos de infraestructura que sí se
 tocan de todas formas al implementar el reemplazo.
 
@@ -325,7 +305,6 @@ nadie usa:
 | `openDialog(component, data, title, size, autoMaximize?)` | **262** | Es prácticamente el 100% del uso real |
 | `openDialogCustom(component, config)` | **3** (`committee-cobranza-mobile.ts`, `committee-cobranza-web.ts`, `directorio.ts`) — y los 3 solo pasan `{ title, size, data }`, **ningún otro campo del `DialogConfig`** | El método "avanzado" existe pero nadie ejerce nada que `openDialog()` no ofrezca ya |
 | `autoMaximize: true` | **12**, todos visores de reportes grandes (fondeos, estados financieros, informes de comité, biblioteca de consejo) | Real y deliberado — se preserva |
-| `draggable: false` / `resizable: false` / `maximizable: false` (override explícito) | **0** | Nadie desactiva el default `true` — pero tampoco hay evidencia de que alguien dependa de arrastrar/redimensionar a propósito, es "chrome" ambiental de PrimeNG, no una función elegida |
 | `dismissableMask` | **0** en `DialogConfig` real (el único hit de grep, `command-palette.ts`, es un componente aparte que **no** usa `DialogHandlerService`, es su propio overlay CDK) | Sin uso real |
 | `position` (`DialogConfig.position`) | **0** en `DialogConfig` real (todos los hits de grep eran de otros sistemas: `echarts`, `toast`, páginas de catálogo/demo) | Sin uso real |
 | `extraOptions` | **0** | Sin uso real |
@@ -356,7 +335,6 @@ preserva** (12 usos reales) vía `NgbModalRef.update({ fullscreen: true
 
 ### B.3 El hueco real no es "abrir un modal" — es la carcasa (header + botón cerrar)
 
-Hallazgo clave de la lectura de código (2026-09-15): `PrimeNG DynamicDialog`
 renderiza el header (`title`), el botón de cerrar (X) y el ícono de
 maximizar **por fuera** del componente de formulario — es chrome propio
 de `<p-dynamicdialog>`, no algo que cada uno de los ~170+ formularios
@@ -403,7 +381,6 @@ this.formInjector = Injector.create({
 
 El formulario que se renderiza dentro (`ngComponentOutlet` +
 `formInjector`) sigue haciendo `inject(DynamicDialogConfig).data` e
-`inject(DynamicDialogRef).close(valor)` **sin saber que no hay PrimeNG
 real detrás**. Es un stub inyectado por DI.
 
 ### B.3ter Diseño confirmado: `DesktopDialogShell`, gemelo de `IonicDialogModal`
@@ -416,19 +393,15 @@ decisión pendiente:**
 - `NgbModalOptions.injector?: Injector` **existe** — la técnica de stub
   vía `Injector.create()` funciona tal cual, sin cambiar de versión.
 - `NgbModalOptions.backdrop: boolean | 'static'` → mapea directo a
-  `modal`/`dismissableMask` de PrimeNG (`'static'` = no cierra al click
   fuera).
 - `NgbModalOptions.keyboard: boolean` → mapea directo a `closeOnEscape`.
 - `NgbModalOptions.size: 'sm' | 'lg' | 'xl' | string` → cualquier string
   no estándar se pasa como clase `modal-{size}`, suficiente para los 4
   tamaños propios (`DialogSize` ya usa nombres de clase Bootstrap:
   `modal-sm`/`modal-md`/`modal-lg`/`modal-fullscreen` — ver B.2bis, el
-  enum **ya está pensado en términos de Bootstrap**, no de PrimeNG).
 - `NgbModalOptions.fullscreen` + `NgbModalRef.update({ fullscreen: true
   })` → cubre `autoMaximize` (12 usos reales) de forma más simple que
-  el mecanismo actual de PrimeNG (`dialogS.getInstance(ref).maximize()`).
 - `NgbModalRef.result: Promise<any>` **se resuelve** con `.close(value)`
-  y **se rechaza** con `.dismiss(reason)` — a diferencia de PrimeNG, donde
   `subscribeToDialogClose` actual siempre *resuelve* (nunca rechaza),
   incluso al cerrar con X/Escape/backdrop sin pasar valor. **Hay que
   replicar ese comportamiento explícitamente** (capturar el rechazo y
@@ -478,7 +451,6 @@ export class DesktopDialogShell implements OnInit {
     });
     // dispara onChildComponentLoaded tras el primer ciclo de detección de
     // cambios, para que `autoMaximize` (que se suscribe a este evento) siga
-    // funcionando igual que hoy en PrimeNG.
   }
 
   private finish(result: unknown): void {
@@ -526,26 +498,22 @@ Con esto, los 265 consumidores reales (`openDialog`/`openDialogCustom`)
 no cambian una sola línea: siguen llamando `dialogS.openDialog(Form,
 data, title, size)` y el formulario inyectado sigue leyendo
 `inject(DynamicDialogConfig).data` / `inject(DynamicDialogRef).close(v)`
-sin saber que ya no hay PrimeNG detrás — exactamente el mismo contrato
 que ya funciona hoy en móvil. `DynamicDialogConfig`/`DynamicDialogRef`/
 `DialogService`/`DialogSize` se redefinen como **clases/tipos propios**
 (mismo nombre, mismo shape mínimo) y se siguen exportando desde
 `dialog-handler.service.ts` — los 610 archivos que importan el barrel
 por cualquier motivo (tipos, el enum, etc.) no se enteran del cambio.
-Los ~66 imports directos de `primeng/dynamicdialog` que sean código de
 producción real se redirigen con un cambio de una línea al barrel local
 (Fase 0 general, ya en `02-plan-migracion.md`).
 
 ### B.4 Piezas de la API actual — estado resuelto tras la verificación 2026-09-15
 
-| Funcionalidad actual (PrimeNG `DynamicDialog`) | Uso medido (reverificado) | Equivalente Bootstrap/ng-bootstrap | Estado |
 |---|---:|---|---|
 | `DialogSize.sm/md/lg/full` | 265 consumidores reales (`lg` ≈192 dominante, `full` ≈64, `md` ≈55, `sm` ≈22) | El enum **ya usa nombres de clase Bootstrap** (`modal-sm`/`modal-md`/`modal-lg`/`modal-fullscreen`) — se aplican vía `windowClass`, no hace falta reinterpretar nada | ✅ Resuelto — ver B.3ter, nota de tamaño |
 | `dialogS.getInstance(ref).maximize()` (auto-maximize) | **12 archivos reales** (no 2 — cifra corregida), todos visores de reportes grandes | `NgbModalRef.update({ fullscreen: true })`, confirmado que existe en `NgbModalOptions`/`NgbModalRef` v21.0.0 | ✅ Resuelto — se preserva, ver B.3ter |
 | `draggable` / `resizable` | **0 overrides explícitos** en 265 consumidores — siempre en el default `true`, sin evidencia de uso deliberado | Bootstrap no trae drag/resize nativo; requeriría directivas propias desde cero | ⚪ **Fuera de alcance — decisión confirmada con el usuario 2026-09-15.** Ver B.2bis. Se puede reconsiderar puntualmente si un flujo real lo reclama después |
 | `dismissableMask` | **0 usos reales** en `DialogConfig` (el único hit de grep pertenece a otro componente que no usa `DialogHandlerService`) | `NgbModalOptions.backdrop: 'static'`, confirmado en el tipo instalado | ✅ Resuelto — no hace falta exponerlo, o se mapea directo si se decide mantener por compatibilidad de firma |
 | `position` (`center/top/bottom/left/right/...`) | **0 usos reales** en `DialogConfig` (los 30 archivos que contenían la palabra `position:` eran de `echarts`, `toast`, páginas demo de catálogo — nada relacionado con `DialogHandlerService`) | Bootstrap centra por defecto (`centered: true`); sin necesidad de más | ✅ Resuelto — no hace falta construir posiciones no-centro |
-| `extraOptions` (escape hatch a config PrimeNG arbitraria) | **0 usos reales** | N/A | ✅ Resuelto — se puede retirar de `DialogConfig` sin impacto |
 | `NgbModalRef.result` rechaza en dismiss (X/Esc/backdrop), a diferencia del `subscribeToDialogClose` actual que siempre resuelve | Comportamiento transversal a los 265 consumidores | `.result.catch(() => undefined)` en `openDialog()`/`openDialogCustom()` | ✅ Resuelto — ver snippet B.3ter, **es la única pieza que requiere código explícito de compatibilidad, no un simple mapeo 1:1** |
 
 ### B.5 Resumen del enfoque para modales
@@ -558,7 +526,6 @@ producción real se redirigen con un cambio de una línea al barrel local
    Confirmado que `NgbModalOptions.injector` existe en la versión
    instalada (`21.0.0`), ya no es una decisión pendiente.
 3. Construir `DesktopDialogShell` (ver B.3ter) — el componente que
-   dibuja el header (título + botón cerrar) que hoy PrimeNG genera
    automáticamente y que ningún formulario dibuja por su cuenta. Este
    es el hueco real a cubrir, no un detalle menor.
 4. Redefinir `DynamicDialogConfig`/`DynamicDialogRef`/`DialogService` como
@@ -571,7 +538,6 @@ producción real se redirigen con un cambio de una línea al barrel local
    (12 usos reales) sí se preserva vía `NgbModalRef.update({ fullscreen:
    true })`. `dismissableMask`/`position`/`extraOptions` no tienen uso
    real medido — no hace falta construir soporte para ellos.
-6. Redirigir los ~66 imports directos de `primeng/dynamicdialog` que sean
    código de producción real hacia el barrel local.
 7. Criterio de aceptación: un formulario real (ej. `bank-form` del mismo
    módulo de bancos) abierto vía `openDialog()` debe verse y comportarse
@@ -586,8 +552,6 @@ producción real se redirigen con un cambio de una línea al barrel local
 ## Actualización a documentos previos
 
 - `03-inventario-componentes.md`: la complejidad de
-  `primeng-custom-caption`, `primeng-custom-table-emptymessage` y
-  `primeng-custom-table-footer` se corrige de "Alta" a **Baja/Media** —
   ver detalle en A.2 de este documento.
 - `02-plan-migracion.md` Fase 6: se incorpora el hallazgo de A.3 (178
   usan sort, 183 usan scroll, solo 12 son lazy/server-side) para
@@ -604,7 +568,6 @@ producción real se redirigen con un cambio de una línea al barrel local
   de Fase 0 (firma de `Injector` en `NgbModalOptions`) queda **resuelta
   y confirmada** (sí existe en la v21.0.0 instalada); se descubrió que
   el verdadero riesgo no era la reapertura del diálogo sino la carcasa
-  de header/botón-cerrar que PrimeNG dibuja fuera del formulario (B.3,
   B.3ter); y se confirmó con el usuario que `draggable`/`resizable`
   quedan fuera de alcance por falta de evidencia de uso real (B.2bis).
   Ver secciones B.2bis, B.3, B.3bis, B.3ter y B.4 (reescritas).

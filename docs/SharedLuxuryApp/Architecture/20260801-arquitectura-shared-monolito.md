@@ -196,14 +196,11 @@ flowchart TD
 ### 🎨 Regla de UI — Gateway al Design System (`shared/ui/`)
 
 > [!WARNING]
-> **PROHIBIDO usar componentes nativos de PrimeNG / Ionic / otra librería directamente dentro de `apps/`.**
 > Dentro de **cualquier** componente de `apps/{portal}/` (`pages/`, `components/`, `services/`):
 > - ❌ NO se importa ni declara `p-button`, `p-table`, `p-dialog`, `ButtonModule`, `TableModule`, `IonButton`, `ion-button`, `IonInput`, etc. directamente.
 > - ✅ SIEMPRE se usa el wrapper custom de `shared/ui/` (ej. `iw-button-*`, `il-button-*`, `ii-button-*`, `ili-button-*`, `lx-*`, tablas, modales, etc.).
 >
-> **Razón (el beneficio real):** `shared/ui/` es la **ÚNICA capa de presentación**. Si mañana se elimina PrimeNG, se cambia a otra librería, o se ajusta el botón `X`, el cambio se aplica **UNA sola vez** en `shared/ui/` y se propaga a **todo el sistema** — en lugar de editar componente por componente en los 16 portales.
 >
-> **Excepción (solo `shared/ui/`):** Únicamente `shared/ui/` puede importar librerías externas (PrimeNG/Ionic). `core/` puede usarlas solo si es infra transversal justificada (ej. toast/loading global vía `custom-toast.service`), y `apps/` **nunca** lo hace.
 
 ### 🚦 Regla de Rutas — Prefijo de Portal (Namespacing)
 
@@ -219,7 +216,6 @@ flowchart TD
 > [!CAUTION]
 > **ENFORCEMENT REQUERIDO (faltante hoy):** La Regla de Oro y la Regla de UI no son verificables sin herramientas. **Acción obligatoria:** agregar `eslint-plugin-boundaries` (o equivalente) con reglas que:
 > 1. Prohíban imports cruzados `apps/* → apps/*` (Regla de Oro).
-> 2. Prohíban imports de `primeng/*` e `@ionic/angular*` dentro de `apps/**` (Regla de UI) — solo `shared/ui` los puede consumir.
 > 3. Fuerce `core/*`/`shared/*` como únicos consumibles compartidos.
 > 4. El **prefijo de ruta** (🚦 Regla de Rutas) se valida por **convención en revisión de PR** (y opcionalmente con un script/CI o regla ESLint custom que chequee que cada `{portal}.routes.ts` solo declare paths relativos al slug). Sin esto, la arquitectura se degrada en la práctica.
 
@@ -247,7 +243,6 @@ La propuesta original omitió la capa de estado. El proyecto **YA usa Angular Si
 | 6 | `core/auth` + `core/layout` + `core/http` existen | ❌ Dispersos | Consolidar guards/interceptores/layout en `core/` |
 | 7 | Enforce de fronteras (Regla de Oro) | ❌ Ausente | Agregar `eslint-plugin-boundaries` |
 | 8 | `INDEX.ts` como Public API en cada portal | ❌ Solo 7 en `features/` | Estandarizar en `apps/{portal}/INDEX.ts` |
-| 9 | Regla de UI: NO PrimeNG/Ionic nativo en `apps/` (solo `shared/ui/`) | ❌ No enforce | ESLint que bane `primeng/*`+`@ionic/angular*` en `apps/**` |
 | 10 | Regla de Rutas: prefijo de portal en paths (`auth/login`) | ❌ No enforce | Convención en PR + script/CI que valide slug |
 
 ---

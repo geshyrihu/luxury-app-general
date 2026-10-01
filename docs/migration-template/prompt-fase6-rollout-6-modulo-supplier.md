@@ -49,7 +49,6 @@ diferentes, procesa los dos, no asumas que es un duplicado del mismo.
 3. Si calza, corre el mismo comando con `--write`.
 4. `npx tsc --noEmit` → limpio.
 5. `ng build` o `ng serve` compilando sin `NG8002`/similares.
-6. `grep -rn "TableModule\|primeng-table\|<p-table\b"` sobre los 17 →
    0 resultados.
 
 ## Verificación visual
@@ -64,7 +63,6 @@ paginan, y el caption funciona. Capturas reales guardadas como archivo
 
 - 17 archivos migrados, diff coherente con el dry-run.
 - `tsc` y `ng build`/`ng serve` limpios.
-- 0 residuales de PrimeNG.
 - 4-5 capturas reales guardadas y reportadas con su ruta.
 - `git diff --stat` completo del lote.
 - Cualquier hallazgo ajeno al codemod (backend 404, errores

@@ -8,7 +8,6 @@ Autorizado: primera corrida real con `--write` sobre esos mismos 8.
 ## 1. Hallazgo aparte, corrígelo a mano (no es parte del codemod)
 
 En `committee-cobranza-web.html`, el `<ng-template #empty>` (línea
-~337) usa un nombre que **ni PrimeNG real ni `app-table`** reconocen
 (el nombre correcto es `#emptymessage`) — el mensaje "Sin morosos" /
 "No se encontraron propiedades con deuda" probablemente nunca se
 mostró, ni antes de esta migración. Se buscó en todo el repo: **solo 2
@@ -47,7 +46,6 @@ invocarse — es el mismo que ya corriste en dry-run, solo agregando
 2. `npx tsc --noEmit` — limpio salvo los 4 archivos ya conocidos y
    ajenos (`recepcion-pipas-agua-list.ts`, `sanction-list.ts`,
    `employee-list.ts`, `recruitment-staff-board.ts`).
-3. `grep -rn "TableModule\|primeng-table\|pSortableColumn\|<p-sorticon\|<p-table" ` sobre
    los 8 pares → 0 resultados.
 4. En el navegador (`ng serve`), abre al menos 3 de las 8 pantallas
    (elige variedad: una con `[lazy]` como `password-list`, una sin
@@ -65,7 +63,6 @@ invocarse — es el mismo que ya corriste en dry-run, solo agregando
 - Los 8 archivos escritos, diff idéntico al dry-run ya auditado.
 - Fix manual de `#empty` aplicado en `committee-cobranza-web.html`.
 - `tsc` limpio (salvo los 4 ajenos ya conocidos).
-- 0 referencias residuales a PrimeNG en los 16 archivos.
 - Capturas reales de al menos 2 pantallas verificando visualmente.
 
 Con esto cerrado, el siguiente paso es escalar el mismo script a los

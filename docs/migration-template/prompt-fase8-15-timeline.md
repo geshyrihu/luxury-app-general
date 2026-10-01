@@ -12,7 +12,6 @@ reconstruir la línea vertical conectora que `<p-timeline>` proveía.
 src/app/shared/ui/web/timeline/timeline.ts
 ```
 ```diff
--import { TimelineModule } from "primeng/timeline";
  import { AppIcon } from "@ui/shared/app-icon/app-icon";
 ```
 ```diff
@@ -125,7 +124,6 @@ sobre-construyas ahora para casos que nadie usa.
 
 ## Verificación
 
-- `grep -n "primeng" timeline.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -137,9 +135,7 @@ sobre-construyas ahora para casos que nadie usa.
 
 ## Listo cuando
 
-- `timeline.ts` sin PrimeNG.
 - Captura del timeline real funcionando.
 - `tsc`/build limpios.
-- Con esto, el conteo de `primeng/*` directo en `shared/ui` baja de 5
   a 4 (quedan: `tree`, `image-analysis-dialog`,
   `custom-input-upload-pdf-signal`, `editor`).

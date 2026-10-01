@@ -93,7 +93,6 @@ Full Stack → Lee §1-22 (o §1-9 + §2-3 + §15 hoy, resto luego)
 
 *Frontend:*
 - "§2: `strict: true` obligatorio, cero `any`"
-- "§5: Nunca importes primeng directo, usa `@ui/`"
 - "§6: Wrappers con sufijo `-wrapper`"
 
 *Backend:*

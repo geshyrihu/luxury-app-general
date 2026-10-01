@@ -1,10 +1,7 @@
 # Prompt Fase 8 — ÚLTIMO archivo: `editor.ts` (Quill real, 2 consumidores)
 
-Este es el **último archivo con PrimeNG real en todo `src/app/shared/ui`**.
-Con este prompt cerrado, la Fase 8 (retiro de PrimeNG de la librería
 compartida) queda completa.
 
-`p-editor` de PrimeNG es en sí mismo un wrapper delgado sobre Quill —
 `quill` (`^2.0.3`) **ya es una dependencia real del proyecto**
 (confirmado en `package.json`). No hay ningún wrapper Quill existente
 que reutilizar (el único que había, `rich-text-editor`, se borró en
@@ -59,7 +56,6 @@ src/app/shared/ui/web/editor/editor.ts
 +} from "@angular/core";
 +import { NG_VALUE_ACCESSOR } from "@angular/forms";
  import { EditorBase } from "@ui/base/editor.base";
--import { EditorModule } from "primeng/editor";
 +import Quill from "quill";
 
  @Component({
@@ -155,7 +151,6 @@ agrégalo).
 
 ## Verificación
 
-- `grep -n "primeng" editor.ts` → 0 resultados.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
   que el proceso termine de verdad, revisa el log entero con
@@ -175,8 +170,6 @@ agrégalo).
 
 ## Listo cuando
 
-- `editor.ts` sin PrimeNG.
 - `quill/dist/quill.snow.css` cargado globalmente.
 - Capturas de los 2 consumidores con contenido con formato.
 - `tsc`/build limpios.
-- **Con esto, `grep -rl 'from ["\x27]primeng/' src/app/shared --include="*.ts" | grep -v spec` debe dar 0 resultados — toda la librería compartida `shared/ui` queda 100% libre de PrimeNG real.** Reporta ese conteo final como cierre de Fase 8.

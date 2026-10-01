@@ -20,11 +20,6 @@ Usa el mismo patrón de modal Bootstrap nativo ya establecido
 ```diff
  import { FormsModule } from "@angular/forms";
  import { MessageService } from "@core/services/message.service";
--import { ButtonModule } from "primeng/button";
--import { DialogModule } from "primeng/dialog";
--import { FileUploadModule } from "primeng/fileupload";
--import { ProgressBarModule } from "primeng/progressbar";
--import { TextareaModule } from "primeng/textarea";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
  import { TicketAnalysisService } from "@core/services/ticket-analysis.service";
  import { ImageProcessingService } from "@core/services/image-processing.service";
@@ -140,7 +135,6 @@ Usa el mismo patrón de modal Bootstrap nativo ya establecido
 `onFileSelect(event: any)` sigue recibiendo el evento nativo del
 `<input type="file">` (`event.target.files`) — **verifica el cuerpo
 actual del método**: como ahora es un `<input>` nativo en vez de
-`p-fileupload`, el shape del evento cambia de `event.files` (PrimeNG)
 a `event.target.files` (nativo). Ajusta `onFileSelect` para leer
 `(event.target as HTMLInputElement).files` en vez de `event.files`.
 
@@ -163,9 +157,7 @@ src/app/shared/ui/inputs/web/custom-input-upload-pdf-signal.ts
 ```diff
  import { ApiResponseService } from "@core/http/services/api-response.service";
  import { Component, inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
--import { SharedModule } from "primeng/api";
  import { DynamicDialogConfig, DynamicDialogRef } from "@core/services/dialog-handler.service";
--import { FileUploadHandlerEvent, FileUploadModule } from "primeng/fileupload";
 +import { FileUpload } from "@ui/web/file-upload/file-upload";
 +import { WebButtonLabel } from "@ui/buttons/web-label/button";
 
@@ -274,7 +266,6 @@ en este archivo)
 
 ## Verificación
 
-- `grep -n "primeng" image-analysis-dialog.component.ts custom-input-upload-pdf-signal.ts`
   → 0 resultados en ambos.
 - `npx tsc --noEmit`: 0 errores nuevos.
 - `ng build` **redirigido a archivo completo (`> log 2>&1`), espera a
@@ -292,7 +283,6 @@ en este archivo)
 
 ## Listo cuando
 
-- Ambos archivos sin PrimeNG.
 - Capturas de los 2 flujos reales probados.
 - `tsc`/build limpios.
 - Con esto, **`shared/ui` queda en 1 archivo pendiente: `editor`** —

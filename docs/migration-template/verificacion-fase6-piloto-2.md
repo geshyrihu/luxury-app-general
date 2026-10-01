@@ -24,7 +24,6 @@ Diffstat de los 7 archivos del piloto: **53 líneas añadidas, 44 eliminadas**.
 
 ## Verificaciones
 
-- `rg` sobre los 7 archivos: no quedan `TableModule`, `primeng-table`, `<p-table>`, `pSortableColumn` ni `p-sorticon`.
 - Navegador: las cuatro rutas cargaron autenticadas como `admin` y mostraron datos reales.
 - Paginación lazy: confirmada en Log API.
 - Tabla anidada: pendiente de validación visual porque la respuesta actual no expone ninguna fila `Update` en la página inicial.

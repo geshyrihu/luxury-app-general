@@ -35,7 +35,6 @@ general-ledger/presupuesto-web-aspel/espejo-aspel-presupuesto.ts
 ```
 
 Los 3 tienen `import { Table, TableModule } from
-"@ui/web/primeng-table/primeng-table";` y usan
 `dt = viewChild<Table>("dt")` (o `"table"`) — una referencia tipada al
 componente de tabla vía `viewChild` con signals. El script no toca
 este patrón porque no coincide exactamente con el import esperado.
@@ -47,7 +46,6 @@ o los dos archivos por el script si lo ajustas, o los dos a mano).
 Cambio exacto en el `.ts`:
 
 ```diff
-- import { Table, TableModule } from "@ui/web/primeng-table/primeng-table";
 + import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";
 ```
 

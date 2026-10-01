@@ -44,7 +44,6 @@ Sobre `appsweb/angular/src/app/modules/**` (`.html` y `.ts`):
 - **1 archivo** (`purchases.luxuryapp/solicitudes-compras/detalle/product-modal-add.html`)
   tiene un `<p-sorticon />` suelto, sin `field` y sin `pSortableColumn`
   en el `<th>` que lo contiene (columna "Cantidad", línea ~48) — es
-  markup muerto de origen, nunca hizo nada útil ni con PrimeNG.
   `AppSorticon.field` es un input obligatorio, así que copiarlo tal
   cual rompería la compilación. **El script debe excluir este archivo
   del lote automático** — se migra aparte, a mano, borrando ese
@@ -82,7 +81,6 @@ dependencias nuevas). Debe:
      ya tiene `#`, no tocar esos.
    - En el `.ts` correspondiente (mismo nombre base, o el mismo
      archivo si el template es inline): reemplazar la línea
-     `import { TableModule } from "@ui/web/primeng-table/primeng-table";`
      por
      `import { AppTable, AppSortableColumn, AppSorticon } from "@ui/web/table/table";`,
      y dentro del array `imports: [...]` del `@Component`, reemplazar

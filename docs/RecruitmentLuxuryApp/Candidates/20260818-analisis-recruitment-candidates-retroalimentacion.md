@@ -39,7 +39,6 @@ En lugar de incrustar el `HiringDocumentValidation` en `solicitud-alta-status-fo
 - Modificar el backend si es necesario para que el DTO del listado de Solicitudes de Alta devuelva `EmployeeId` (si aún no lo hace).
 
 #### 2. Crear Modal `HiringDocumentValidationModal`
-- Puedes envolver `HiringDocumentValidation` en un `Dialog` de PrimeNG o usar el servicio de modales internos (`ModalService`).
 - El componente debe recibir el `EmployeeId`.
 
 #### 3. Modificar `HiringDocumentValidation` (Botón de Rechazo)

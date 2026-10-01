@@ -10,7 +10,6 @@
 ## Resumen
 
 **Problema:**
-Cuando `<ng-template #caption>` en `p-table` contiene filtros + `<primeng-custom-caption>`, hay ambigüedad sobre cómo alinearlo.
 
 **Solución:**
 Usar estructura estándar: `flex flex-wrap gap-3 align-items-center justify-content-between`
@@ -22,15 +21,12 @@ Implementado en `recruitment-agenda-list.html` (líneas 71-88) → funciona corr
 
 ## Propuesta de Texto para CONVENTIONS.md
 
-### Ubicación Sugerida: §4.2.3bis (Frontend UI Patterns - PrimeNG Tables)
 
 ```markdown
-## 4.2.3bis PrimeNG Table Caption Alignment (Single Row)
 
 ### Requisito: Alinear filtros + caption en una sola fila
 
 Cuando `<ng-template #caption>` contiene filtros/controles LADO IZQUIERDO + 
-`<primeng-custom-caption>` LADO DERECHO:
 
 **Estructura obligatoria:**
 
@@ -45,7 +41,6 @@ Cuando `<ng-template #caption>` contiene filtros/controles LADO IZQUIERDO +
     </div>
 
     <!-- Componente caption a la DERECHA -->
-    <primeng-custom-caption [dt]="dt" [showAdd]="true" />
   </div>
 </ng-template>
 
@@ -91,7 +86,6 @@ Cuando `<ng-template #caption>` contiene filtros/controles LADO IZQUIERDO +
 
 ### Opción B: Documentar en archivo separado
 
-- Ubicación: `conventions/frontend/primeng-caption-alignment.md`
 - Referencia desde CONVENTIONS.md: Breve mención + link
 - Aplicación: Cuando necesario
 
@@ -111,7 +105,6 @@ Cuando `<ng-template #caption>` contiene filtros/controles LADO IZQUIERDO +
 ✅   <div class="flex flex-wrap gap-2">
 ✅     Filtros con gap-2
 ✅   </div>
-✅   <primeng-custom-caption ... />
 ✅ </div>
 ```
 

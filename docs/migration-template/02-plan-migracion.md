@@ -1,12 +1,9 @@
-# 02 — Plan de Migración PrimeNG → Bootstrap
 
 📅 Versión histórica base: 2026-09-13 (v2 — reordenado por riesgo ascendente + checklist de
 decisiones, a partir de la petición del usuario tras estabilizar Angular)
 🛡️ Estado histórico: ✅ Fases 0-8 ejecutadas y verificadas. Este documento
-queda actualizado con el cierre final Fase 9 (limpieza total PrimeNG y
 remediación Design System) definido el 2026-09-18. El estado vigente es el
 addendum de Fase 9; las referencias
-anteriores a convivencia o dependencias PrimeNG describen contexto histórico.
 Fases 0-8 cerradas (Fase 5/Inputs sustancialmente cerrada
 2026-09-14; Fase 4/Modales cerrada 2026-09-15, commit `6b86307ef`) —
 próximo y actual: Fase 9 (limpieza semántica y remediación DS). Decisiones #4/#5 del checklist de
@@ -16,11 +13,9 @@ de verdad) corregido el 2026-09-14. Ver `04-bitacora-cambios.md` para
 el detalle completo de Fase 3 y del arranque de Fase 6.
 👤 Responsable: Equipo Frontend LuxuryApp
 
-## Addendum vigente — Fase 9: retiro total de referencias PrimeNG
 
 ### 0. Pre-planeación
 
-**Problem statement:** Actualmente, el código ya no depende del paquete PrimeNG,
 pero conserva archivos SCSS, wrappers, helpers, nombres de clases, scripts y
 documentación heredada. Esto hace que futuras personas o agentes puedan
 reintroducir APIs retiradas y dificulta distinguir componentes propios de
@@ -28,9 +23,7 @@ adaptadores legacy.
 
 **Objetivo de cierre:** dejar `appsweb/angular` sin dependencias, imports,
 selectores, nombres de carpetas/archivos, comentarios operativos ni
-documentación vigente asociados a PrimeNG/PrimeFlex/PrimeIcons/PrimeUIX.
 
-**Definición de residuo:** se consideran residuos los tokens `primeng`,
 `primeflex`, `primeicons`, `primeuix`, `prime-overrides`, nombres de archivos o
 carpetas con esos prefijos, selectores legacy `p-*`/`pXxx` y referencias a
 componentes retirados. Palabras españolas como `primer`, `primero` o `primera`
@@ -40,10 +33,7 @@ no son coincidencias de limpieza.
 
 | Indicador | Baseline 2026-09-18 | Target | Verificación |
 |---|---:|---:|---|
-| Dependencias PrimeNG/ecosistema | 0 | 0 | `package*.json`, `npm ls` |
-| Imports `primeng`/`@primeuix` | 0 | 0 | búsqueda por regex en `src` |
 | Archivos con nombre legacy | 30+ | 0 | inventario de paths |
-| Imports `web/primeng-*` | múltiples | 0 | búsqueda global |
 | Referencias operativas en docs/scripts | numerosas | 0 | búsqueda global excluyendo historial archivado |
 | Build producción | PASS | PASS | `npx ng build --configuration production` |
 | Auditorías UI/SCSS | PASS | PASS | `audit:ui`, `audit:scss-build` |
@@ -82,7 +72,6 @@ no son coincidencias de limpieza.
 |---|---|---|---|
 | D-09.1 | `web/_prime-*.scss`: borrar o renombrar/consolidar | Borrar archivos sin selectores activos; mover reglas activas a `_components.scss`, `_forms.scss`, `_tables.scss` o `_overlays.scss` | Fase 9.1 |
 | D-09.2 | `.rf-prime-table` | Renombrar a `.rf-table`; es clase propia, no conservar alias | Fase 9.2 |
-| D-09.3 | Wrappers `primeng-custom-*` | Renombrar a `table-*` y actualizar consumidores atómicamente | Fase 9.3 |
 | D-09.4 | `PRIME_TO_ICONIFY` | Mantener temporalmente solo si existen valores legacy persistidos; renombrar a `LEGACY_ICON_TO_ICONIFY` | Fase 9.4 |
 | D-09.5 | Documentos históricos de migración | Conservar fuera de documentación operativa o eliminar referencias legacy si el objetivo es grep cero | Fase 9.3 |
 
@@ -110,7 +99,6 @@ registra antes de implementarse.
 #### Fase 9.1 — CSS legacy y tokens
 
 - [ ] Auditar selectores de `src/styles/web/_prime-*.scss`, `p-*`, `pXxx`,
-  `--p-*` y capas `primeng/primevue` contra uso real.
 - [ ] Migrar reglas activas a nombres neutrales y tokens DS/Bootstrap.
 - [ ] Retirar imports legacy de `ds-entry.scss`.
 - [ ] Simplificar `styles.scss`, `_dark-mode.scss`, `_variables.scss`,
@@ -123,16 +111,10 @@ comparación visual de tablas, dialogs, forms, dark mode y overlays.
 
 #### Fase 9.2 — Wrappers, helpers y servicios
 
-- [x] Renombrar carpetas/componentes `primeng-custom-*` a nombres neutrales.
-- [x] Eliminar `primeng-dynamicdialog` y usar
   `@core/services/dialog-handler.service` directamente.
-- [x] Eliminar `primeng-notification.service` y su spec; no tenía consumidores
   funcionales.
-- [x] Renombrar `table-primeng-option` a `table-options` y símbolos a
   `tableRows`/`tableDefaultRows`.
-- [x] Renombrar `primeng-radar-chart` a `radar-chart` y selector del radar.
 - [x] Actualizar imports, templates, specs, catálogo UI, rutas y metadata.
-- [x] Renombrar `primengMenuItems`, `getTablePrimeNgRows` y nombres internos
   equivalentes del shell/catálogo.
 
 **Paso:** cero paths/imports/selectores legacy; consumidores funcionales y
@@ -147,7 +129,6 @@ en Fase 9.1/9.3.
 - [ ] Actualizar `scripts/extract-design-conventions.mjs` y auditorías para
   reglas Bootstrap/shared UI.
 - [ ] Retirar o archivar scripts de migración ya ejecutados que escriban
-  nombres `primeng-*`.
 - [ ] Marcar `docs/audits/*` y reportes históricos como archivo no operativo o
   moverlos fuera del árbol de documentación vigente.
 
@@ -209,7 +190,6 @@ para cerrar gobernanza, accesibilidad y veracidad documental. No se acepta
   mejore comportamiento; no reemplazar media queries globales masivamente.
 - [ ] Resolver B-04/B-05: consolidar motion y z-index; eliminar escala huérfana.
 
-**P3 — backlog explícito, no bloqueante del retiro PrimeNG:**
 
 - [ ] A-06: ticket separado para los 282 hardcodes de `modules/**`.
 - [ ] M-08: evaluar OKLCH/Display-P3 solo para brand/gradientes cuando exista
@@ -241,7 +221,6 @@ decisión DS explícita.
 #### Fase 9.7 — Barrido final y cierre
 
 - [ ] Búsqueda final de términos y paths prohibidos.
-- [ ] `npm ls primeng @primeuix/themes @primeuix/utils`: vacío.
 - [ ] `npx tsc --noEmit`.
 - [ ] `npx ng build --configuration production` con log completo.
 - [ ] `npm run audit:ui`.
@@ -251,7 +230,6 @@ decisión DS explícita.
 - [ ] Actualizar `response.md`, `logs.txt`, bitácora e índice de migración.
 
 **Cierre:** cero dependencias, imports, paths, selectores y documentación
-operativa asociados a PrimeNG/PrimeFlex/PrimeIcons/PrimeUIX; build y auditorías
 verdes; auditoría DS sin bloqueantes; validación visual contra Lagos/Minia
 registrada; decisiones custom aprobadas o explícitamente diferidas.
 
@@ -271,7 +249,6 @@ diagnóstico, lo usa para decidir orden y alcance.
 
 ## 1. Objetivo
 
-Reemplazar PrimeNG como librería de UI de escritorio en `appsweb/angular`
 por **Bootstrap 5** (+ `@ng-bootstrap/ng-bootstrap` para comportamiento
 interactivo: modal, dropdown, tooltip, popover, accordion, nav/tabs,
 datepicker, pagination), tomando como referencia visual y estructural
@@ -289,7 +266,6 @@ datepicker, pagination), tomando como referencia visual y estructural
 ## 2. Principios rectores
 
 1. **La capa adaptativa es el escudo.** Mientras una feature consuma
-   `lx-*`/`app-*` en vez de PrimeNG directo, el swap de PrimeNG→Bootstrap
    ocurre *dentro* del wrapper y la feature no se toca. Por eso la Fase 0
    prioriza **cerrar las fugas** antes de tocar visual.
 2. **Migrar de menor a mayor riesgo, nunca al revés.** El riesgo se mide
@@ -297,7 +273,6 @@ datepicker, pagination), tomando como referencia visual y estructural
    un patrón probado en el propio repo para resolverlo, y (c) qué tan
    reversible es el cambio si algo sale mal. Ver la matriz de riesgo en §6.
 3. **Convivencia deliberada y explícita, no accidental.** Durante toda la
-   migración conviven PrimeNG y Bootstrap en la misma app — esto es una
    decisión, no una etapa transitoria que "se resuelve sola". Se declara
    el mecanismo de convivencia (capas CSS, ver §4) para que la coexistencia
    no degrade a colisión de especificidad.
@@ -342,7 +317,6 @@ suposiciones):
    juntos, antes de cualquier otra regla — no antes, no en medio. Se
    intentó de las dos formas y Sass rechazó el archivo ambas veces. Por
    eso **no existe** una declaración explícita `@layer ionic, reset,
-   tokens, bootstrap, primeng, …;` en `ds-entry.scss` como se planteaba
    originalmente.
 2. **Excluir `reboot` a mano rompe el build.** Se intentó replicar el
    import-stack de `bootstrap/scss/bootstrap` quitando solo la línea
@@ -369,7 +343,6 @@ tocar nada más y sin `!important`.
   **antes** de `bootstrap/scss/bootstrap` (no después, ver la nota crítica
   de §5 sobre por qué el orden importa de verdad, no solo en teoría).
 - **No usar `::ng-deep`** para overrides de Bootstrap, misma regla ya
-  vigente para PrimeNG (`estandar-hoja-estilos.md`).
 - Pendiente de verificación visual (no hecho en esta sesión): abrir la app
   con `ng serve`/`ng build` y confirmar en pantalla que ningún elemento
   existente cambió de aspecto por la sola presencia de Bootstrap cargado
@@ -450,16 +423,12 @@ el `sass` CLI del proyecto — no es una suposición:**
 | 4 | Modales (`DialogHandlerService`) | 1 servicio + ~66 imports directos a reconciliar (610 consumidores NO se tocan) | **Sí — `IonicDialogModal` ya resuelve el mismo problema en móvil** | Media (un solo servicio, pero muy usado) | 🟡 Medio-alto (alto apalancamiento, bajo esfuerzo de código) |
 | 5 | Inputs | 26 tipos × (web+adaptive+bridge), entrelazado con rollout adaptativo en curso | Sí — patrón CVA adaptativo ya existe | Media | 🟠 Alto |
 | 6 | Tabla (`p-table` + ecosistema) | ~341 plantillas de feature + 1 componente nuevo | No hay equivalente propio aún — se construye en esta fase | Baja una vez desplegado a 341 archivos | 🔴 Muy alto |
-| 7 | Limpieza final | `package.json`, `conventions/`, borrado de wrappers PrimeNG | N/A | Total (es el cierre) | Ninguno |
 
 **⚠️ Decisión 2026-09-14 (usuario): cambio de orden respecto a la
 justificación original de abajo.** Modales (Fase 4) deja de ir antes que
 Inputs — se agrupa con Tabla (Fase 6) como **el último bloque a revisar**,
 después de Inputs (Fase 5). Motivo explícito del usuario: conviene cerrar
 primero todo lo demás (incluyendo Inputs) y dejar `DialogHandlerService` +
-`p-table` y su ecosistema (`p-sorticon`, `primeng-custom-caption`,
-`primeng-custom-table-emptymessage`, `primeng-custom-table-footer`,
-`primeng-custom-global-filter`, `data-grid`, `p-dataview`) como el cierre
 final antes de la limpieza de Fase 7. Orden real de ejecución desde aquí:
 **Fase 5 (Inputs) → Fase 4+6 combinadas (Modales+Tabla, al final) → Fase 7
 (limpieza)**. La numeración de fases no se cambia (evita reescribir
@@ -485,8 +454,6 @@ para Fase 3 y Fase 6.
 
 #### 0.1 Ya resuelto (verificado 2026-09-13, tras la estabilización de Angular)
 
-- ✅ **PrimeNG ya no es un release candidate y ya está fijado sin `^`:**
-  `"primeng": "22.1.1"` (antes `^22.0.0-rc.1`). El riesgo de upgrade
   accidental durante la migración ya no existe — no se requiere acción.
 - ✅ **`primeicons` fijado:** `"primeicons": "8.0.1"` (antes `^7.0.0`).
 - ✅ **`@ng-bootstrap/ng-bootstrap@21.0.0` es compatible con Angular
@@ -511,12 +478,9 @@ una asunción de este documento:
 | 2 | Estrategia de reactividad de tema (dark mode) en variables Bootstrap | ✅ **Resuelto 2026-09-13, distinto a lo planteado**: no existe `$enable-css-vars` en Bootstrap 5.3.8 (verificado en el código fuente). Se usan valores hex fijos en `_bootstrap-tokens.scss`; la reactividad de tema para componentes Bootstrap queda **pendiente de diseño**, no resuelta — ver §5 | Verificación visual de Fase 1 |
 | 3 | Desactivar reboot de Bootstrap | ✅ **Resuelto 2026-09-13, distinto a lo planteado**: excluirlo a mano rompe el build (`_type.scss` depende de él). Se mantiene el reboot, envuelto en `@layer bootstrap` — todo el CSS unlayered existente ya le gana por especificación CSS. Ver §4 | — |
 | 4 | Nombre del componente de tabla nuevo y si conserva `pSortableColumn` como nombre de atributo o se renombra | ✅ **Resuelto 2026-09-15 (confirmado con el usuario al arrancar Fase 6)**: `app-table` (componente), `appSortableColumn` (directiva de orden), `app-sorticon` (ícono de orden) — consistente con el prefijo `app-*` ya usado en todos los wrappers migrados (`app-tag`, `app-divider`, `app-toolbar`, `app-badge`...). Coincide con lo que ya usaban los ejemplos de código de `05-tablas-y-modales.md` §A.4/A.5, no requirió reescribirlos | — |
-| 5 | Construir tabla propia sobre `.table` de Bootstrap vs. evaluar librería headless de tabla | ✅ **Resuelto 2026-09-15 (confirmado con el usuario al arrancar Fase 6)**: tabla propia. Reutiliza tal cual los 3 sub-componentes ya desacoplados de PrimeNG (`primeng-custom-caption`/`-table-emptymessage`/`-table-footer`) y el SCSS `.custom-table` existente; mismo patrón `*Base` + `ContentChild`/`TemplateRef` que ya usan `accordion`/`tabs`/`toolbar` en esta migración. Sin dependencia nueva | — |
 | 6 | Camino A/B para inputs frente al rollout adaptativo en curso | ✅ **Decidido**: (B) — congelar el rollout en curso y migrar directo a Bootstrap los tipos que faltan | Fase 5 |
 | 7 | Firma exacta de `NgbModalOptions` para inyectar un `Injector` custom en la versión instalada (`ng-bootstrap@21.0.0`) | ✅ **Resuelto 2026-09-15**: `NgbModalOptions.injector?: Injector` existe tal cual en `types/ng-bootstrap-ng-bootstrap-modal.d.ts` de la versión instalada — la técnica de stub-vía-`Injector` de `IonicDialogModal` es directamente trasladable, sin cambiar de versión. Ver `05-tablas-y-modales.md` §B.3ter | — |
 | 8 | Tabla de equivalencia `DialogSize` (px) → clases de tamaño de Bootstrap | ✅ **Resuelto 2026-09-15, más simple de lo planteado**: el enum `DialogSize` (`src/app/core/enums/dialog-size.enum.ts`) **ya usa nombres de clase Bootstrap** (`modal-sm`/`modal-md`/`modal-lg`/`modal-fullscreen`, no px) — no hace falta tabla de equivalencia, se aplican directo vía `windowClass`. Ver `05-tablas-y-modales.md` §B.3ter | — |
-| 9 | Clasificación exacta de los archivos con import directo de `primeng` fuera de `shared/ui` | ✅ **Resuelto 2026-09-13** — ver 0.3 punto 3 abajo: 41 archivos de producción clasificados (excluyendo specs), de los cuales 9 eran fuga real de `DynamicDialog` y ya se redirigieron al barrel local; el resto son la excepción legítima de `p-table` o componentes visuales pendientes de su fase correspondiente (documentado en `03-inventario-componentes.md`) | — |
-| 10 | Borrado de huérfanos (`core/_variables.scss`, `primeng-overrides.css`, `src/app/mypreset.ts`) | ✅ **Resuelto 2026-09-13, distinto a lo planteado**: al verificar cada uno antes de borrar, solo `primeng-overrides.css` era realmente huérfano (borrado). `core/_variables.scss` SÍ tiene un consumidor (`theme/_variables.scss`, aunque no usa lo importado) y `src/app/mypreset.ts` SÍ se usa (`app.config.ts` importa `PrimeNgSpanishLocale` de ahí) — el análisis previo estaba equivocado en estos dos. Ninguno de los dos se tocó | — |
 | 11 | Corrección de `estandar-hoja-estilos.md` (desactualizado) | ✅ **Resuelto 2026-09-13** | — |
 | 12 | Política de "code freeze" por componente durante su migración | ✅ **Resuelto 2026-09-13**: no aplica mientras el flujo maestro/chalán mantenga un único ejecutor (agente externo) tocando cada componente a la vez — que es como ha operado toda la migración hasta ahora, sin choques. Si en el futuro hay 2+ desarrolladores trabajando wrappers en paralelo, se activa la política original (congelar el wrapper mientras está 🟡) | Todas las fases con más de un desarrollador/agente en paralelo |
 | 13 | Quién aprueba que una fase pasa de 🟡 a 🟢 | ✅ **Resuelto 2026-09-13**: la auditoría de Claude (maestro/auditor) contra el criterio de aceptación de cada prompt — descrita en `00-INDICE.md` "Cambio de flujo de trabajo" — **es** la revisión de "segundo revisor" que pedía la recomendación original de §7; no se agrega un segundo revisor humano adicional | Todas las fases |
@@ -535,11 +499,9 @@ una asunción de este documento:
    Verificado compilando con `sass` real (no solo revisado a ojo): el
    `.btn-primary` compilado deriva su color de hover/active correctamente
    de `#003152`, y `.btn`/las clases DS siguen fuera de cualquier `@layer`.
-3. ✅ Reconciliados los imports directos de `primeng` en archivos de
    producción (excluyendo `.spec.ts`): **41 archivos** (21 en `core/`, 18
    en `modules/`, 2 de plumbing raíz `app.ts`/`app.config.ts`). De esos,
    **9 archivos** importaban `DynamicDialogConfig`/`DynamicDialogRef`
-   directo de `primeng/dynamicdialog` en vez del barrel local
    (`core/services/dialog-handler.service.ts`) — ya redirigidos, 0 cambio
    de comportamiento hoy, ver lista completa en `04-bitacora-cambios.md`.
    El resto son la excepción legítima de tabla (`TableModule`/
@@ -548,17 +510,14 @@ una asunción de este documento:
    correspondiente (2 o 3), no ahora. Detalle completo por archivo en
    `03-inventario-componentes.md` y `04-bitacora-cambios.md`.
 4. ✅ Corregido `src/styles/estandar-hoja-estilos.md`.
-5. ✅ Borrado `primeng-overrides.css` (único huérfano real confirmado, ver
    decisión #10 arriba).
 6. ✅ Extendida `scripts/audit-ui-boundaries.mjs` con la regla
    transicional: advierte (no bloquea) componentes de `web/` que importen
-   PrimeNG y Bootstrap/`ng-bootstrap` a la vez. Ya detectó 1 caso
    preexistente real: `web/mesanio/mesanio.ts` (usa `ng-bootstrap`).
 7. ✅ **Hecho 2026-09-13**: `ng build` de producción verde (con una
    advertencia de presupuesto de bundle esperada y ya ajustada, ver
    `04-bitacora-cambios.md`), más piloto visual real en `ng serve` +
    Playwright sobre la página de login (`/auth`), en tema claro y oscuro.
-   Sin colisiones encontradas entre Bootstrap y PrimeNG/DS. En el camino
    se destapó y se corrigió un problema preexistente no relacionado
    (dependencia opcional faltante de `ngx-markdown`) que bloqueaba la
    carga de cualquier página en el dev server — documentado en la
@@ -579,11 +538,8 @@ análisis), bajo riesgo, alto volumen de uso (1,376 imports de
    (`shared/ui/buttons/base/base-button.ts`) y de los ~25 componentes
    `buttons/web-label/*` / `web-icon/*`: todos renderizan `<button
    [class]="buttonClasses()">` plano, cero `p-button`/`pButton`, cero
-   dependencia de PrimeNG o Bootstrap en el TS. **Una única excepción
    real encontrada:** `web-icon/button-tracking.ts` usa `<p-overlaybadge>`
-   de PrimeNG para el contador de notificaciones sobre el ícono — no es
    un problema del sistema de botones en sí, es una dependencia de
-   *badge*, que se resuelve en la Fase 2 (`primeng-badge`/`overlaybadge`).
    Documentado en `03-inventario-componentes.md`, no bloquea esta fase.
 2. ✅ **Auditoría propiedad-por-propiedad de `.btn` (Bootstrap) vs `.btn`
    (DS) — no solo visual, se comparó el CSS compilado real.** Encontró y
@@ -615,7 +571,6 @@ análisis), bajo riesgo, alto volumen de uso (1,376 imports de
    contexto de posicionamiento en vez de perjudicarse. Queda anotado como
    ítem de bajo riesgo a confirmar cuando le toque su fase (`.card` no
    está en el alcance de ninguna fase numerada todavía porque no depende
-   de PrimeNG — es una clase propia del DS, se revisa igual por la
    exposición ya existente a Bootstrap desde la Fase 0).
 4. ✅ Sin cambios de selector, sin cambios de `@Input` — cumplido.
 
@@ -643,7 +598,6 @@ sitios) y `message` (1 sitio) ya usan `<app-tag>`/`<app-divider>`/
 `<app-message>` en toda la app real (fuera de la herramienta de catálogo
 `admin.luxuryapp/herramientas-dev/catalog-component-ui`, que se dejó
 deliberadamente sin tocar — no está claro si esa página quiere mostrar
-PrimeNG a propósito como referencia; se decide aparte, no bloquea nada).
 Verificado con `tsc --noEmit` (sin errores nuevos) y `npm run audit:ui`
 (verde). La "reescritura interna" de `badge`, `avatar`, `chip`,
 `checkbox`, `radio-button`, `skeleton`, `progress-bar`, `spinner`,
@@ -653,10 +607,8 @@ componente por componente contra el código real el 2026-09-13, ver
 **Cierre:** verificación visual en vivo ✅ hecha y aceptada 2026-09-13
 para los 4 componentes con consumidor real (`progress-bar`, `spinner`,
 `badge`, `avatar`); catálogo interno ✅ migrado 2026-09-13 en su totalidad
-para los 11 componentes de esta fase (0 usos de PrimeNG verificados por
 `grep` sobre todo `catalog-component-ui/`), dejando `p-table`/`p-dialog`/
 `p-tabs`/`p-accordion`/`p-toast`/`p-select*`/`p-datepicker`/`p-popover`/
-`p-toggleswitch`/`p-selectbutton`/`p-card`/`p-button` en PrimeNG hasta su
 propia fase. **Fase 2 declarada ✅ CERRADA** por decisión del usuario:
 las políticas de code-freeze/segundo revisor (decisiones #12/#13 de
 Fase 0) son transversales a todas las fases —no se habían exigido
@@ -675,8 +627,6 @@ Fase 3/4, no bloquea esta. Ver detalle completo en
 > de adopción; `badge` tenía solo 1 uso real y la excepción de
 > `buttons/web-icon/button-tracking.ts` (citada arriba como parte de la
 > "reescritura interna completa") seguía usando `<p-overlaybadge>` de
-> PrimeNG directo. Total: **21 archivos de producción** con fugas
-> directas a PrimeNG en componentes que este documento declaraba
 > cerrados. Se armó un prompt de auditoría profunda + un prompt de
 > resolución, ambos ejecutados y verificados en código el 2026-09-14 —
 > **ahora sí cerrados de verdad**, ver `03-inventario-componentes.md`
@@ -693,17 +643,13 @@ Fase 3/4, no bloquea esta. Ver detalle completo en
 > `p-tag` para diseñar su reemplazo, se descubrió que **ya existe** un
 > componente `app-tag` (`shared/ui/web/tag/tag.ts`) completo, con su
 > propia base compartida (`shared/ui/base/tag.base.ts`), **sin ninguna
-> dependencia de PrimeNG ni de Bootstrap** — CSS propio con tokens
 > `--ds-*`. Es una implementación TERMINADA que nadie está usando todavía
-> en producción: las features siguen escribiendo `<p-tag>` (PrimeNG
 > directo) en vez de `<app-tag>`. Se hizo un barrido de **todas** las
-> carpetas `primeng-*` de `web/` contra su posible contraparte nativa
 > (`web/<nombre>`, sin el prefijo) y el resultado fue:
 >
 > | Estado | Componentes |
 > |---|---|
 > | ✅ **Ya existe, limpio, listo para adoptar** (solo falta redirigir las plantillas de feature) | `tag`, `divider`, `message`, `status-badge` |
-> | ⚠️ **Ya existe el andamiaje (`XBase` + `web/X`), pero la implementación interna todavía envuelve PrimeNG** — hay que reescribir el `template`/`imports` del componente existente, sin tocar selector ni `@Input` | `badge`, `avatar`, `chip`, `checkbox`, `radio-button`, `skeleton`, `progress-bar`, `spinner`, `toolbar`, `breadcrumbs` (Fase 2); `accordion`, `carousel`, `dialog`, `iconfield`, `inputicon`, `menu`, `popover`, `tabs`, `split-button` (Fase 3/4) |
 > | ❌ **No existe ninguna contraparte, hay que crear el componente desde cero** | `select-button`, `toggle-switch` (Fase 3) |
 >
 > **Consecuencia práctica:** ningún componente de esta fase (ni de la
@@ -720,7 +666,6 @@ Fase 3/4, no bloquea esta. Ver detalle completo en
 > 2. **Reescritura interna** (`badge`, `avatar`, `chip`, `checkbox`,
 >    `radio-button`, `skeleton`, `progress-bar`, `spinner`, `toolbar`,
 >    `breadcrumbs`): mismo selector, mismo `XBase`, se reemplaza el
->    `template`/`imports` de PrimeNG por markup propio con tokens
 >    `--ds-*` — análogo a lo que ya se demostró viable en `tag.base.ts`
 >    (que ya expone un `colors()` computed reutilizable con el mismo
 >    patrón de `bg`/`text`/`border` por severidad).
@@ -728,7 +673,6 @@ Fase 3/4, no bloquea esta. Ver detalle completo en
 Componentes sin comportamiento interactivo complejo (no requieren JS de
 `ng-bootstrap`), cada uno con ≤20 usos medidos, wrapper autocontenido:
 
-| PrimeNG | Usos | Reemplazo Bootstrap |
 |---|---:|---|
 | `p-tag` | 20 | `.badge` + variantes de color del DS |
 | `p-message` | 13 | `.alert` (ya existen clases DS en `web/_alerts.scss`) |
@@ -758,12 +702,6 @@ Fase 0).
 >
 > | Componente | Andamiaje (`*Base`+`web/*`) | Uso real del wrapper `app-*` | Fuga directa `<p-*>` fuera del wrapper (mayor riesgo) |
 > |---|---|---|---|
-> | `tabs` | ✅ ya envuelve PrimeNG por dentro | **0** en todo el repo (ni catálogo) | Ninguna |
-> | `split-button` | ✅ ya envuelve PrimeNG por dentro | **0** en todo el repo (ni catálogo) | Ninguna |
-> | `accordion` | ✅ ya envuelve PrimeNG por dentro | **0** (solo catálogo) | 1: `collections.../aspel-cobranza-reglas-negocio.html` |
-> | `carousel` | ✅ ya envuelve PrimeNG por dentro | **0** (solo catálogo) | 1: `core/pages-extras/comingsoon.html` |
-> | `menu` | ✅ ya envuelve PrimeNG por dentro | 1: `recruitment-shell.html` | **1 en el shell**: `core/layout/employee-view/monitor/header-employee-monitor.html` (header, visible en toda la app) |
-> | `popover` | ✅ ya envuelve PrimeNG por dentro | 0 (solo catálogo) | **2 en el shell**: `core/layout/committee-layout/monitor/profile.html` y `core/layout/employee-view/monitor/profile-monitor/profile-monitor.html` (menú de perfil, visible en cada pantalla autenticada) |
 > | `select-button` | ❌ no existe, crear desde cero | — | 2: `recruitment.../recruitment-agenda-list.html` y **el mismo header del shell** (`header-employee-monitor.html`) |
 > | `toggle-switch` | ❌ no existe, crear desde cero | — | **0** fuera del catálogo (más bajo riesgo de lo que sugiere la tabla original) |
 > | `toast`/`custom-toast` | Servicio central, no un componente visual suelto | — | **No es un simple swap de tag** — ver hallazgo siguiente |
@@ -771,15 +709,12 @@ Fase 0).
 > **Hallazgo adicional sobre `toast`:** no es un componente aislado de "3
 > usos". `app.ts` hospeda el `<p-toast>`/`<p-custom-toast>` raíz, y **dos
 > servicios paralelos** (`core/services/custom-toast.service.ts` y
-> `core/services/primeng-notification.service.ts` — ambos activos, con
 > superposición de responsabilidad no resuelta, ajena a esta migración)
-> inyectan `MessageService` de `primeng/api` y son consumidos por **8+
 > archivos de features** (`cont-list-minuta-pendientes.ts`,
 > `admin-vacaciones-balance.ts`, `diagram-editor.ts`,
 > `ordenes-servicio-fotos.ts`, `ordenes-servicio-reporte-proveedor.ts`,
 > `manual-flowchart-editor.ts`, `org-chart.ts`, `orden-compra*.ts/html`).
 > Migrar el toast de verdad requiere reemplazar `MessageService` mismo
-> (una clase de PrimeNG, no solo el componente `<p-toast>`) — **mismo
 > patrón que `DialogHandlerService` en Fase 4** (stub vía
 > `Injector.create`, barrel intacto para los consumidores). No se
 > resuelve como los demás componentes de esta fase.
@@ -799,7 +734,6 @@ peer-compatible en Fase 0). Se agrupan aparte de la Fase 2 porque su
 riesgo es mayor: hay estado (abierto/cerrado), navegación por teclado,
 posicionamiento (popper):
 
-| PrimeNG | Usos | Reemplazo | Nota |
 |---|---:|---|---|
 | `p-tabs`/`p-tabview` | 2 | `NgbNav` / `.nav.nav-tabs` | |
 | `p-accordion` | 1 | `NgbAccordion` | |
@@ -811,7 +745,6 @@ posicionamiento (popper):
 | `p-selectbutton` | 3 | `.btn-group` con radios ocultos | |
 | `p-toggleswitch` | 2 | `.form-check.form-switch` | |
 | `p-select`/`p-multiselect`/`p-autocomplete` (directos, fuera de `inputs/`) | 4/2/1 | `@ng-select` (ya integrado, ver Fase 5) | Si aparecen antes de la Fase 5 de inputs, migrarlos igual — no esperar |
-| `p-datepicker` (wrapper directo) | 1 | Mantener `flatpickr` (ya sin dependencia PrimeNG) | |
 | `p-iconfield`/`p-inputicon`/`p-inputgroup(addon)`/`p-floatlabel` | ≤2 c/u | `.input-group`/`.form-floating` de Bootstrap | |
 | `p-api` (tipos `MenuItem`, etc.) | 29 | Tipos propios o los de `@ng-bootstrap` según destino | Transversal a varios de los componentes de esta fase |
 
@@ -822,7 +755,6 @@ migrado (son los que más dependen de esto).
 > ⚠️ **Cierre real de Fases 2-3, con hallazgos adicionales
 > (2026-09-14).** Al auditar el estado de `toolbar`/`breadcrumb` (ver
 > nota al inicio del documento) se encontraron, además, **9 tipos de
-> fuga directa a PrimeNG nunca documentados en ninguna fase de este
 > plan** — no aparecían ni en la tabla de Fase 2 ni en la de Fase 3
 > porque nadie los había medido: `p-button`/`pButton` directo (fuera del
 > sistema de botones de Fase 1), `pTooltip`, `pInputTextarea`,
@@ -863,7 +795,6 @@ migrado (son los que más dependen de esto).
 > upload HTTP (`ApiResponseService.onPostFile`) y UI avanzada de
 > `p-fileupload` (drag-drop multi-archivo). **Importa
 > `DynamicDialogConfig`/`DynamicDialogRef` directo de
-> `primeng/dynamicdialog`, no del barrel local** — exactamente la fuga
 > que el punto 4 de abajo debe reconciliar. Agregarlo a la lista exacta
 > de archivos a redirigir al barrel antes de migrar `DialogHandlerService`
 > en sí.
@@ -874,7 +805,6 @@ Ver el análisis completo con código real en
 usuario antes de ejecutar esta fase ("ir a fondo para tener nuestro
 propio motor que dé los beneficios que tenemos con estos modales").
 Hallazgo clave de esa verificación: **el riesgo real no es reabrir el
-diálogo, es la carcasa** (header con título + botón cerrar) que PrimeNG
 dibuja automáticamente fuera del formulario — ningún componente de
 formulario la dibuja por su cuenta hoy, así que el motor propio debe
 incluir un componente `DesktopDialogShell` (gemelo de
@@ -899,7 +829,6 @@ Resumen ejecutable:
    **Manejar explícitamente** que `NgbModalRef.result` rechaza en
    dismiss (X/Esc/backdrop) a diferencia del comportamiento actual que
    siempre resuelve (`.result.catch(() => undefined)`).
-4. Redirigir los imports directos de `primeng/dynamicdialog` que sean
    código de producción real (no specs, no plumbing) hacia el barrel
    local — 16 archivos, ya listados en `03-inventario-componentes.md`.
 5. `autoMaximize` (12 usos reales, no 2 — cifra corregida) se preserva
@@ -925,7 +854,6 @@ usado tras `lg`).
 > paso (ver `04-bitacora-cambios.md` para el detalle completo del
 > proceso, incluyendo dos hallazgos no triviales corregidos en el
 > camino): `DesktopDialogShell` construido y funcionando, `DialogHandlerService`
-> reescrito sobre `NgbModal`, 0 imports directos de `primeng/dynamicdialog`
 > en todo `src/app` (verificado con grep), build de producción limpio
 > desde cero, confirmación visual real del usuario (modal centrado,
 > fondo oscurecido, tamaño correcto). Botón de cerrar migrado de
@@ -941,7 +869,6 @@ usado tras `lg`).
 Ver hallazgo #8 del análisis: el patrón adaptativo de inputs está a mitad
 de camino (5 de ~15+ tipos: text, select, number, textarea, checkbox).
 Decisión ya tomada en el checklist de Fase 0 (#6): **camino B — congelar
-el rollout adaptativo actual sobre PrimeNG y migrar directo a Bootstrap
 los tipos que faltan**, para no construirlos dos veces.
 
 Reemplazo propuesto para los 26 tipos de `inputs/web/*`: `<input
@@ -950,7 +877,6 @@ class="form-control">` / `<select class="form-select">` /
 simples; `@ng-select` (ya es dependencia, ya existe
 `inputs/web/input-ng-select`) para select/multiselect/autocomplete;
 mantener `flatpickr` para date/date-time/date-range (ya sin dependencia
-de PrimeNG).
 
 **Criterio de aceptación:** validación de formularios reactivos
 (mensajes de error, estados `touched`/`dirty`/`invalid`), comportamiento
@@ -972,9 +898,6 @@ real en [05-tablas-y-modales.md](./05-tablas-y-modales.md) §A.
 2. Diseñar `app-table` sobre `.table` de Bootstrap, conservando la
    ergonomía de slots `<ng-template #caption/#header/#body/
    #emptymessage/#paginatorleft>` (§A.4 de `05-tablas-y-modales.md`),
-   reutilizando **tal cual** `primeng-custom-table-emptymessage` y
-   `primeng-custom-table-footer` (ya desacoplados de PrimeNG), y
-   re-tipando `primeng-custom-caption` para apuntar al método
    `filterGlobal()` del nuevo componente.
 3. Diseñar primero el caso client-side (cubre 178 tablas con orden y 183
    con scroll interno) y en una segunda pasada el modo `[lazy]`/
@@ -986,11 +909,9 @@ real en [05-tablas-y-modales.md](./05-tablas-y-modales.md) §A.
    cambio por archivo es mecánico y acotado si se conserva la ergonomía de
    slots, ver `05-tablas-y-modales.md` §A.5).
 6. Actualizar la excepción de `conventions/CONVENTIONS.md` ("Regla
-   especial vigente de PrimeNG") una vez que `app-table` sea el estándar.
 
 **Criterio de aceptación:** lote piloto con build verde, paridad funcional
 (orden, filtro, paginación, export si aplica) verificada manualmente
-contra la versión PrimeNG anterior, antes de aprobar el rollout masivo.
 
 ### Fase 6.5 — Track Flex (Migración masiva de PrimeFlex)
 
@@ -1076,11 +997,9 @@ login).
 
 ### Fase 7 — Limpieza final
 
-1. Eliminar `primeng`, `primeicons`, `primeflex` de `package.json` cuando
    el inventario en `03-inventario-componentes.md` esté 100% 🟢.
 2. Eliminar `src/styles/theme/mypreset.ts` y toda referencia en
    `app.config.ts`.
-3. Eliminar las carpetas `web/primeng-*` y sus specs.
 4. Eliminar los overrides `web/_prime-*.scss` (9 archivos) y
    `web/_prime-tokens.scss`.
 5. Actualizar `conventions/ui/*`, `conventions/styles/*` y
@@ -1088,7 +1007,6 @@ login).
    `web/` — la actualización real de esas reglas vive en `conventions/`,
    este plan solo la dispara.
 6. Actualizar `scripts/audit-ui-boundaries.mjs` para que `web/` prohíba
-   import de `primeng` en vez de tolerarlo.
 7. Retirar el flag transicional de la Fase 0.
 
 ---
@@ -1111,21 +1029,15 @@ login).
 
 | Riesgo | Mitigación |
 |---|---|
-| Colisión de cascada Bootstrap ↔ DS/PrimeNG durante la coexistencia | Capas CSS explícitas (§4), reboot de Bootstrap desactivado, piloto obligatorio en Fase 0 |
 | La tabla (Fase 6) se subestima y bloquea todo el plan | Lote piloto obligatorio antes del rollout masivo; fase con criterio de aceptación propio, no se puede saltar; se hace al final cuando el patrón de trabajo ya está probado |
-| Migrar inputs (Fase 5) duplicando el trabajo del rollout adaptativo en curso | Decisión ya tomada (camino B, checklist Fase 0 #6): congelar el rollout PrimeNG actual |
 | Se pierde reactividad de tema (dark mode) al mapear tokens a variables SCSS de Bootstrap | `$enable-css-vars` de Bootstrap 5.3+ (decisión #2 del checklist) |
-| Se migra un componente y se rompe una feature que hacía fuga directa a PrimeNG sin saberlo | Fase 0 checklist #9 (reconciliación de los 77 archivos) es bloqueante antes de tocar visual |
-| Dos desarrolladores tocan el mismo wrapper en paralelo (uno lo migra, otro lo extiende en PrimeNG) | Política de code-freeze por componente (checklist #12) |
 | Documentación queda inconsistente durante la migración (conventions vs. realidad) | Cada fase que retire un patrón actualiza `conventions/` como parte de su "hecho", no como tarea aparte |
 
 ## 9. Cómo medir avance
 
-Métrica simple y verificable: **imports `primeng` restantes en el
 repo**, medible en cualquier momento con:
 
 ```
-grep -rl "from \"primeng" appsweb/angular/src --include="*.ts" | wc -l
 ```
 
 Línea base medida en el análisis inicial (2026-09-12): **83 archivos**.

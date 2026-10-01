@@ -15,7 +15,6 @@ Bórralo (y la carpeta `adaptive/bottom-nav/` si queda vacía después).
 **No relacionado, no tocar**: de paso se encontró
 `web/header-customer/header-customer.spec.ts`, que también está
 "huérfano" (importa `./haeder-customer`, con un typo en el nombre real
-del archivo) — es un bug preexistente sin relación con PrimeNG ni con
 esta limpieza, de antes de esta sesión. Fuera de alcance, no lo toques
 aquí.
 

@@ -22,7 +22,6 @@ Catalogo normativo mixto: por tipo de componente y por caso de uso.
   - si no existe, usar `app-*` o `ili-*` segun plataforma
 - Paridad visual:
   - no forzar paridad visual exacta entre web y mobile
-  - respetar la naturaleza de PrimeNG en desktop y de Ionic en mobile
 - Dentro de `app-data-view-mobile`:
   - botones `ili-button-*`
   - acciones moviles `ili-*`
@@ -30,7 +29,6 @@ Catalogo normativo mixto: por tipo de componente y por caso de uso.
   - botones `il-button-*` o `iw-button-*`
   - acciones web `app-*`
   - `p-table` y su ecosistema directo necesario para construir la tabla son la
-    unica excepcion permitida de uso directo de PrimeNG en features Angular
 - Inputs:
   - usar `custom-input-*-signal`
   - no usar inputs raw
@@ -43,7 +41,6 @@ Catalogo normativo mixto: por tipo de componente y por caso de uso.
   - usar `lx-card` para contenedores visuales
   - usar `lx-accordion`, `lx-tabs`, `lx-empty-state` y `lx-spinner` cuando el catalogo cubre la necesidad
 - HTML segregado por plataforma:
-  - no usar `*ngIf="isMobile"` como patron para mezclar PrimeNG e Ionic en el mismo template
   - separar implementaciones por plataforma cuando el caso lo requiera
 - Wrappers:
   - no sobre-abstraer wrappers al punto de volverlos cajones de sastre
@@ -85,12 +82,10 @@ Catalogo normativo mixto: por tipo de componente y por caso de uso.
 
 - Usar `<button>`, `<input>`, `<p-button>`, `<ion-button>` o `<ion-list>`
   directo cuando el catalogo ya cubre el caso.
-- Usar PrimeNG directo en features fuera de la excepcion vigente de `p-table`
   y su ecosistema directo de tabla.
 - Mezclar criterios desktop y mobile dentro del mismo scope sin seguir el patron adaptativo aprobado.
 - Mezclar componentes web y mobile dentro del mismo bloque sin separacion controlada por plataforma.
 - Disenar por intuicion cuando ya existe decision tree oficial.
-- Forzar paridad visual exacta entre PrimeNG e Ionic.
 - Resolver diferencias de plataforma con hacks CSS o condicionando todo con `isMobile`.
 - Crear wrappers gigantes sin limite claro de responsabilidad.
 

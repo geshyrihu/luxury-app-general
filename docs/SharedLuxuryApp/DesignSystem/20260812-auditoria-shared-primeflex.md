@@ -140,7 +140,6 @@ Si otro agente está usando PrimeFlex, debe cumplir:
 
 ```html
 <div class="flex flex-column gap-3">
-  <primeng-custom-caption />
   <div class="flex flex-wrap gap-2 px-2">
     <iw-button-item
       [severity]="statusFilter() === 'active' ? 'primary' : 'secondary'"

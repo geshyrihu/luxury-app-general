@@ -133,7 +133,6 @@ Para cada grupo de §2.B:
 
 #### Fase 3 — Verificación final
 - [ ] `ng build` en verde.
-- [ ] `npm run audit:ui` (frontera PrimeNG/Ionic, §5).
 - [ ] Re-scan mojibake.
 - [ ] Grep de sanity:confirmar 0 imports a `core/interfaces` que no sean los del kernel (§2.A).
 

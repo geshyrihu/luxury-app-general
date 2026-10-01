@@ -8,7 +8,6 @@
 
 ## Propósito
 
-Documentar **DialogHandlerService**: abstracción multiplataforma que unifica diálogos web (PrimeNG) y móviles (Ionic) bajo una API única.
 
 ---
 
@@ -17,7 +16,6 @@ Documentar **DialogHandlerService**: abstracción multiplataforma que unifica di
 ```
 Diálogos = DialogHandlerService Centralizado
 
-❌ NO: Inyectar DialogService (PrimeNG) o ModalController (Ionic) directamente
 ✅ SÍ: Inyectar DialogHandlerService que auto-detecta plataforma
 ```
 
@@ -35,7 +33,6 @@ Diálogos = DialogHandlerService Centralizado
 @Injectable({ providedIn: 'root' })
 export class DialogHandlerService {
   private readonly platform = inject(PlatformService);
-  private readonly primeDialogService = inject(DialogService); // PrimeNG
   private readonly modalController = inject(ModalController);   // Ionic
   
   /**
@@ -60,7 +57,6 @@ export class DialogHandlerService {
   }
   
   /**
-   * Abre diálogo web (PrimeNG DynamicDialog)
    */
   private openDialogWeb<T>(
     component: Type<any>,
@@ -199,7 +195,6 @@ export class EditItemComponent {
 }
 ```
 
-**Nota:** Componentes que se abren en diálogo usan `DynamicDialogRef` (PrimeNG) o `ModalController` (Ionic). Ambos tienen `close()` que resuelve la `Promise`.
 
 ---
 
@@ -319,7 +314,6 @@ if (result?.action === 'save') {
 ### Checklist de Diálogos/Modales
 
 - [ ] ¿Usa DialogHandlerService para abrir diálogos?
-- [ ] ¿No inyecta DialogService (PrimeNG) directamente?
 - [ ] ¿No inyecta ModalController (Ionic) directamente?
 - [ ] ¿Componentes dentro de diálogo usan DynamicDialogRef.close()?
 - [ ] ¿Mismo código funciona en web y mobile?
@@ -364,11 +358,11 @@ grep -r "DynamicDialogRef" appsweb/angular/src/app --include="*.ts" | wc -l
 - [UI Desktop Rules](../ui/ui-desktop-rules.md) — Modales en desktop
 - [UI Mobile Rules](../ui/ui-mobile-rules.md) — Modales en mobile
 - [angular-services-catalog.md](./angular-services-catalog.md) — DialogHandlerService
-- PrimeNG Docs: [DynamicDialog](https://primeng.org/dynamicdialog)
 - Ionic Docs: [ModalController](https://ionicframework.com/docs/api/modal)
 
 ---
 
 **Última actualización:** 2026-08-06  
-**Vigencia:** Angular 17+, Ionic 8+  
+**Vigencia:** Angular 22, Ionic 8+  
 **Aplicable a:** Todos los componentes que abren diálogos/modales
+

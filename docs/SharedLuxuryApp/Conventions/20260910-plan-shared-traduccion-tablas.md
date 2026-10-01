@@ -1,8 +1,8 @@
-Ôªø# Diccionario de Traducci√≥n de Tablas (Fase 1)
+# Diccionario de TraducciÛn de Tablas (Fase 1)
 
-Aqu√≠ tienes la propuesta oficial de traducci√≥n para las 47 tablas. He aplicado reglas estrictas de gram√°tica inglesa, respetando los sustantivos incontables (*mass nouns* como Equipment, Stock, Data, History) para evitar aberraciones como Equipments o Datas.
+AquÌ tienes la propuesta oficial de traducciÛn para las 47 tablas. He aplicado reglas estrictas de gram·tica inglesa, respetando los sustantivos incontables (*mass nouns* como Equipment, Stock, Data, History) para evitar aberraciones como Equipments o Datas.
 
-| Entidad C# actual | Tabla SQL actual | Tabla SQL propuesta (Ingl√©s Plural / Incontable) |
+| Entidad C# actual | Tabla SQL actual | Tabla SQL propuesta (InglÈs Plural / Incontable) |
 |---|---|---|
 | CatalogPurchaseOrderBudget | PurchaseOrderBudgetTypes | **PurchaseOrderBudgetTypes** (Ya plural) |
 | PurchaseOrderBudget | PurchaseOrderBudgets | **PurchaseOrderBudgets** (Ya plural) |

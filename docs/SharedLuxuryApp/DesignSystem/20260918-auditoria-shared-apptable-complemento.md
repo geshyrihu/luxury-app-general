@@ -1,20 +1,16 @@
-# Complemento de auditoria: AppTable y reconciliacion PrimeNG
 
 **Fecha:** 2026-09-18  
 **Proyecto:** `luxuryapp-api/appsweb/angular`  
-**Reporte base:** `20260916-auditoria-shared-primeng-analisis.md`  
 **Fuente tecnica:** `src/app/shared/ui/web/table/table.ts`  
 **Documentacion operativa:** `src/app/shared/ui/web/table/README.md`
 
 ## 1. Objetivo
 
-Este documento agrega la informacion que faltaba en el reporte PrimeNG:
 
 - diferencia entre el snapshot historico y el estado migrado actual;
 - inventario funcional real de `AppTable`;
 - contrato de uso para consumidores standalone;
 - estado de `pReorderableRowHandle`;
-- matriz de paridad frente a funcionalidades de PrimeNG;
 - limites que no deben declararse como implementados;
 - verificaciones y pendientes de runtime.
 
@@ -23,7 +19,6 @@ normativa del framework.
 
 ## 2. Reconciliacion del reporte original
 
-El reporte base registro un snapshot amplio de PrimeNG con cifras como 833
 `<p-table>`, 734 `<p-sorticon>`, 678 `pSortableColumn` y 71 `pFrozenColumn`.
 Esas cifras no representan el estado actual del codigo migrado.
 
@@ -48,10 +43,8 @@ La fuente vigente para el estado de migracion es:
 | Orden de columnas | 71 `pFrozenColumn` reportados | Directiva propia `AppFrozenColumn`; runtime debe verificarse por lote |
 | Orden de filas | 9 handles reportados | Directivas propias `AppReorderableRow` y `AppReorderableRowHandle` |
 | Orden por columna | 734 `p-sorticon`/678 `pSortableColumn` | `AppSorticon` y `AppSortableColumn` |
-| Lazy loading | Mezclado en conteo PrimeNG | `AppTableLazyEvent` propio, compatible en forma con PrimeNG |
 | Persistencia | No descrita por componente | Responsabilidad de cada consumidor mediante outputs |
 
-No se debe usar el reporte base para afirmar que PrimeNG sigue renderizando
 `p-table` en una pantalla sin verificar el template actual.
 
 ## 3. Inventario actual de `AppTable`
@@ -197,7 +190,6 @@ condiciones anteriores:
 
 El componente debe importar `AppReorderableRow` y
 `AppReorderableRowHandle`. Su handler debe usar `dragIndex` y `dropIndex`; no
-debe asumir que PrimeNG ya muta el array.
 
 Si la misma fila soporta otro drag, como enlace de dependencia, el handler de
 ese flujo debe filtrar por su MIME propio (`application/task-link`) y no
@@ -227,9 +219,7 @@ Con `[lazy]="true"`:
 La busqueda server-side debe conectarse desde el consumidor, normalmente por
 el evento `search` del caption.
 
-## 7. Matriz de paridad frente a PrimeNG
 
-| Funcionalidad PrimeNG | AppTable actual | Persistencia/observacion |
 |---|---|---|
 | `value` | Implementada | Input reemplazado por el consumidor |
 | `pTemplate` | Implementada mediante templates nombrados | Slots propios |
@@ -279,7 +269,6 @@ el evento `search` del caption.
 1. Reemplazar `any[]` de `value` por un tipo generico si Angular y el contrato
    de consumidores lo permiten.
 2. Agregar indicador visual propio para `loading`.
-3. Evaluar capacidades PrimeNG restantes solo con evidencia de uso real.
 
 ## 9. Verificacion requerida
 
@@ -312,7 +301,6 @@ confirmar cero `ERROR`.
 
 ## 10. Conclusion
 
-El reporte PrimeNG original describe un estado historico y no basta para
 evaluar la implementacion propia actual. `AppTable` ya tiene un nucleo amplio
 de tabla, incluyendo las directivas necesarias para `pReorderableRowHandle`.
 

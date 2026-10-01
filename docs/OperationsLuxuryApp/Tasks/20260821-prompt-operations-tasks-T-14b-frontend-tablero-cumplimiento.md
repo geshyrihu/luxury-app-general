@@ -22,7 +22,6 @@ con `.ts`, `.html`, `.spec.ts`. Componente de **sólo lectura**, sin diálogo de
 hay CRUD aquí.
 
 Usa `task-template-list.ts` (`.../templates/task-template-list/`, ya usado como referencia exacta
-en T-06) como referencia de convención: `ApiResponseService`, `TableModule`/`PrimeNgCustom*`,
 vista dual web/mobile (`DataViewMobile`), `signal<T[]>([])` + `onLoadData()`. Diferencia clave: no
 hay acción de agregar/editar/eliminar — es un tablero, no un catálogo.
 

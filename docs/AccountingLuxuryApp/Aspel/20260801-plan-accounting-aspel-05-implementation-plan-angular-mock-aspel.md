@@ -38,7 +38,7 @@ Crea la capa de servicios HTTP para interactuar con la API del Mock Aspel.
 ### Prompt de Ejecución (Copiar y pegar al Agente CLI)
 ```text
 Genera los componentes visuales para administrar el Mock de Aspel.
-1. En la misma carpeta `mock-aspel/`, genera los siguientes componentes (usa Standalone si el proyecto es Angular 14+):
+1. En la misma carpeta `mock-aspel/`, genera los siguientes componentes (usa Standalone si el proyecto es Angular 22):
    - `MockAspelDashboardComponent`: Una pantalla con una tabla para mostrar los Saldos y Movimientos. Debe incluir controles de paginación simples y un selector de "Ejercicio" y "Periodo".
    - `MockAspelPolizaFormComponent`: Un formulario (Reactivo o basado en Señales) para registrar una Póliza Manual. Debe tener campos para el encabezado y una tabla dinámica (FormArray o array en señal) para agregar Partidas (Debe/Haber). 
 2. Inyecta el `MockAspelService` en ambos componentes para consumir los datos.
@@ -64,3 +64,4 @@ Configura las rutas para aislar el módulo y hacerlo accesible.
 5. Ejecuta el linter o `ng build` para confirmar que el módulo de rutas no rompe la aplicación actual.
 6. Al terminar, actualiza el reporte final bajo "Reporte Angular Fase 03".
 ```
+

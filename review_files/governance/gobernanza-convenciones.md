@@ -22,8 +22,6 @@ El archivo CONVENTIONS.md actual está organizado por **tecnología** (§1-18), 
 | Rol | Focus | Tecnologías Principales | Secciones CONVENTIONS Aplicables |
 |-----|-------|----------|-----------|
 | **Full Stack Developer** | Ciclo completo | Angular + .NET + SQL | §1-18, §19-22 |
-| **Frontend Senior / Especialista UI** | Web UI | Angular, PrimeNG, SCSS, Ionic | §2, §3, §4, §5, §6, §7, §8, §15 |
-| **Mobile Developer** (Ionic) | iOS/Android/PWA | Ionic, Angular, PrimeNG | §2, §13, §15 (mobile patterns) |
 | **Backend Developer** (.NET) | APIs, Logic, Data | .NET 10, EF Core, SQL Server/PostgreSQL | §1, §9, §16, §18 |
 | **Tech Lead / Architect** | Design, Mentoring, Code Review | All | §1-22, §19-22 |
 | **Enterprise Systems Engineer** | Integration, Legacy | .NET + SQL Server, Angular | §1, §9, §18 |
@@ -44,7 +42,6 @@ El archivo CONVENTIONS.md actual está organizado por **tecnología** (§1-18), 
 | Campo | Valor |
 |-------|-------|
 | **Roles Responsables** | Frontend Senior, Full Stack |
-| **Tecnologías** | Angular 22, PrimeNG 22 |
 | **Severidad Audit** | 🔴 Crítica |
 | **Automatización** | `npm run audit:ui` |
 | **Revisor** | Tech Lead + Frontend Senior |
@@ -96,7 +93,6 @@ CONVENTIONS.md (mantener intacto)
 | Sección | Reglas | Auditor | Severidad | Criterio de Paso |
 |---------|--------|---------|-----------|-----------------|
 | §2 (Angular) | 1-18 | Frontend Lead | 🔴 Crítica | `strict: true`, OnPush, Signals |
-| §3 (UX/UI) | All | Design System | 🟠 Alta | PrimeNG estándar, no hardcode colores |
 | §5 (Componentes) | All | Catálogo UI | 🔴 Crítica | Usar `@ui/*`, auditar con `npm run audit:ui` |
 | §6 (Wrappers) | All | Architecture | 🟠 Alta | Sufijo `-wrapper`, estructura estándar |
 | §7 (Nombrado) | All | Code Review | 🟠 Alta | Consistencia triple (file/class/selector) |
@@ -140,8 +136,6 @@ CONVENTIONS.md (mantener intacto)
 # Command: npm run audit:frontend
 
 ✅ Verificaciones:
-□ Cero imports de primeng/ionic directo en features
-  Comando: grep -r "from 'primeng\|from '@ionic" appsweb/angular/src/app/modules/
 □ 100% strict: true en tsconfig
   Verificar: grep "strict.*true" appsweb/angular/tsconfig.json
 □ 100% ChangeDetectionStrategy.OnPush
@@ -204,7 +198,6 @@ La misma regla puede ser **crítica para un rol** pero **media para otro**:
 | Minimal APIs | 🟠 ALTA | 🔵 N/A | 🔴 CRÍTICA | 🔵 N/A | 🔴 CRÍTICA |
 | Ionic mobile component | 🟠 ALTA | 🔴 CRÍTICA | 🔵 N/A | 🔴 CRÍTICA | 🟠 ALTA |
 | SQL indexing | 🟡 MEDIA | 🔵 N/A | 🔴 CRÍTICA | 🔵 N/A | 🟠 ALTA |
-| PrimeNG standard imports | 🔴 CRÍTICA | 🔴 CRÍTICA | 🔵 N/A | 🟠 ALTA | 🟠 ALTA |
 
 ---
 
@@ -233,7 +226,6 @@ Crear archivo nuevo: `docs/GOVERNANCE.md` con:
 **Comando:** `npm run audit:frontend`
 
 **Criterios de Paso:**
-- [ ] Cero imports PrimeNG directo → 100% pass
 - [ ] Cero `any` en TypeScript → 100% pass
 - [ ] Cero `*ngIf`/`*ngFor` → 100% pass
 - [ ] 100% OnPush → 100% pass

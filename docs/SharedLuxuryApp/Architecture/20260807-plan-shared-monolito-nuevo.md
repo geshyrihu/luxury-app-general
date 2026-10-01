@@ -112,15 +112,12 @@ de ese sitio. La Fase 2 existe para cortar esas 72 amarras.
 | Paridad funcional con `client/angular` | — | 18/18 portales | F1 |
 | Layout `projects/` listo para multi-app | ❌ `root: ""` | ✅ | F1 |
 | Imports cruzados entre portales | **72** | **0** | F2 |
-| Fugas PrimeNG/Ionic en código de negocio | **~9** | **0** | F2 |
 | `npm run lint` | ❌ exit 1 | ✅ exit 0 | F2 |
 | Portales publicables como sitio propio | **0** | **≥1** | F3 |
 
-> ⚠️ **Corrección de medición (07-Ago-2026):** el número "146 fugas de PrimeNG" que circuló antes
 > estaba inflado. De 146 archivos, **127 son `.spec.ts`** (pruebas — no se envían a producción y es
 > legítimo que simulen diálogos). De los 19 restantes, **10 son herramientas internas**
 > (`herramientas-dev/catalog-component-ui/`, `conventions-viewer`) cuyo propósito *es* mostrar
-> componentes de PrimeNG. **Violaciones reales en código de negocio: ~9** (cobranza 6, committee 1,
 > mantenimiento 1, operations 1). Los **72 imports cruzados sí son todos código real** — verificado.
 
 ---
@@ -144,7 +141,6 @@ Tener un proyecto `client/luxuryapp` que:
 - ✅ Verificar paridad funcional (build dev + prod + navegación de los 18 portales).
 - ✅ Repo git propio para el proyecto nuevo.
 - ✅ **Sellar el crecimiento de la deuda** en modo baseline + hook/CI (Fase 2).
-- ✅ **Alcance completo de `npm run lint` verde** — las 72 amarras, las ~9 fugas de PrimeNG,
       los 162 tokens y los 277 hallazgos de diseño. **Pero resueltos bajo demanda, por portal.**
 - ✅ Extraer portales a sitios independientes, **uno a la vez, cuando el usuario lo decida**
       (rutas/host en servidor incluidos).
@@ -263,7 +259,6 @@ luxuryapp/                   luxuryapp/
 - [ ] 2.1 Agregar **modo baseline** a los 4 auditores en rojo: cargan un archivo con las
       violaciones conocidas y **solo fallan ante las nuevas**.
 - [ ] 2.2 Generar el baseline inicial y commitearlo (`docs/audit/baseline-*.json`).
-- [ ] 2.3 Crear `scripts/audit-apps-ui-boundaries.mjs` (fugas de PrimeNG/Ionic en `apps/`),
       **excluyendo `.spec.ts`** y con lista blanca para `herramientas-dev/`. También en baseline.
 - [ ] 2.4 `npm run lint` → **exit 0** con el baseline aplicado.
 - [ ] 2.5 Enchufar `npm run lint` a hook pre-push y/o CI que **falle** el pipeline.
@@ -333,7 +328,6 @@ acoplamiento nulo. Lo que se aprenda ahí es la receta para los demás.
 Se repite tal cual para cada portal. Las tareas 3.3–3.5 **se saltan** si el coste es 0.
 
 - [ ] 3.1 **El usuario decide** qué portal se extrae.
-- [ ] 3.2 Listar sus amarras (`sale` y `entra`) y sus fugas de PrimeNG.
 - [ ] 3.3 **Clasificar cada amarra preguntando dónde DEBERÍA estar la pieza**, no cómo compartirla
       desde donde está:
 
@@ -412,7 +406,6 @@ el baseline bajó · receta actualizada.
 - [ ] Layout `projects/` operativo — agregar un sitio es un comando
 - [ ] `client/angular` intacto y marcado como respaldo
 - [ ] **0** imports cruzados entre portales
-- [ ] **0** fugas PrimeNG/Ionic en código de negocio
 - [ ] `npm run lint` exit 0 y el pipeline falla ante una violación deliberada
 - [ ] **1** portal publicado como sitio independiente, con su procedimiento documentado
 

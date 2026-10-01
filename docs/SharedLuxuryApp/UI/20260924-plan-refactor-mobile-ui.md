@@ -12,7 +12,6 @@ La auditoría móvil de UI/UX demostró que las vistas de administración (`/adm
 
 ## 2. Decisión Arquitectónica (ADR)
 Siguiendo lo dictado en `arquitectura-shared-ui.md` (§4 y §5), la solución no es aislar el CSS a la fuerza, sino **separar el HTML** mediante Componentes Adaptativos.
-Se implementará un wrapper o bifurcación con `@if (platform.isMobile())` que renderice un template estrictamente basado en Ionic para móviles, y el template original de Bootstrap/PrimeNG para escritorio.
 
 ## 3. Matriz de Reglas de Negocio a Respetar (4 Niveles)
 - **Nivel 1 (Invariantes):** Ninguna lógica de negocio en TypeScript (CVA, signals, llamadas HTTP) debe alterarse. Ambas vistas (web/móvil) consumen el mismo controlador o Signal.

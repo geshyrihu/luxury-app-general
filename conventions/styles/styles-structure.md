@@ -15,7 +15,6 @@ y sus capas oficiales.
 
 - raiz:
   - `ds-entry.scss`
-  - `primeng-overrides.css`
   - `styles.scss`
   - `DESIGN.md`
   - `estandar-hoja-estilos.md`
@@ -32,7 +31,6 @@ y sus capas oficiales.
 
 - token o decision base -> `core/`
 - variables CSS y tema -> `theme/`
-- comportamiento web / PrimeNG -> `web/`
 - comportamiento mobile / Ionic -> `mobile/`
 - estilos transversales compartidos -> `shared/`
 - estilos legacy o muy especificos -> `custom/`
@@ -40,7 +38,6 @@ y sus capas oficiales.
 
 ## Antipatrones
 
-- Meter un override PrimeNG dentro de una capa mobile.
 - Agregar estilos de feature en global si deben vivir en la feature.
 - Tocar `custom/` para decisiones que en realidad pertenecen a tokens core.
 
