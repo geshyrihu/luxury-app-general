@@ -1,0 +1,314 @@
+- generic [ref=f13e1]:
+  - link [ref=f13e7] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+    - text: Saltar al contenido principal
+  - main [ref=f13e9]:
+    - generic [ref=f13e12]:
+      - generic [ref=f13e17]:
+        - generic [ref=f13e19]:
+          - button [ref=f13e20] [cursor=pointer]
+          - button [ref=f13e27] [cursor=pointer]:
+            - generic [ref=f13e29]: LUXURY
+          - navigation [ref=f13e36]:
+            - list [ref=f13e37]:
+              - listitem [ref=f13e38]:
+                - link [ref=f13e39] [cursor=pointer]:
+                  - /url: /dashboard
+              - listitem [ref=f13e44]:
+                - text: /
+                - link [ref=f13e45] [cursor=pointer]:
+                  - /url: /inspections
+                  - generic [ref=f13e46]: Inspecciones
+              - listitem [ref=f13e47]:
+                - text: /
+                - link [ref=f13e48] [cursor=pointer]:
+                  - /url: /inspections/details/019c6c06-4968-7758-9ad4-000aacd9dcfd
+                  - generic [ref=f13e49]: Inspection detalle
+        - generic [ref=f13e51]:
+          - button [ref=f13e52] [cursor=pointer]
+          - button [ref=f13e57] [cursor=pointer]
+          - button [ref=f13e62] [cursor=pointer]
+          - button [ref=f13e67] [cursor=pointer]
+          - button [ref=f13e72] [cursor=pointer]
+          - button [ref=f13e77] [cursor=pointer]
+          - button [ref=f13e82] [cursor=pointer]
+          - button [ref=f13e87] [cursor=pointer]
+          - button [ref=f13e92] [cursor=pointer]
+          - button [ref=f13e97] [cursor=pointer]
+          - button [ref=f13e102] [cursor=pointer]
+          - button [ref=f13e109] [cursor=pointer]:
+            - generic [ref=f13e110]: "17"
+          - button [ref=f13e120] [cursor=pointer]
+      - navigation [ref=f13e130]:
+        - generic [ref=f13e131]:
+          - generic [ref=f13e132]: LuxuryApp
+          - generic [ref=f13e133]: Gestión Inteligente
+        - generic [ref=f13e141]:
+          - heading [level=2] [ref=f13e142]: Administrador LBG
+          - paragraph [ref=f13e143]: Desconocido
+          - heading [level=3] [ref=f13e145]: LUXURY
+        - generic [ref=f13e146]:
+          - generic [ref=f13e147]: Design System
+          - list [ref=f13e149]:
+            - listitem [ref=f13e150]:
+              - button [ref=f13e151] [cursor=pointer]:
+                - generic [ref=f13e152]: Luxury Design System
+          - separator [ref=f13e163]
+          - list [ref=f13e164]:
+            - listitem [ref=f13e165]:
+              - button [ref=f13e166] [cursor=pointer]:
+                - generic [ref=f13e167]: Legal
+            - listitem [ref=f13e177]:
+              - link [ref=f13e178] [cursor=pointer]:
+                - /url: /contabilidad
+                - generic [ref=f13e183]: Contabilidad
+            - listitem [ref=f13e184]:
+              - link [ref=f13e185] [cursor=pointer]:
+                - /url: /cobranza-nativa
+                - generic [ref=f13e190]: Cobranza Panel
+            - listitem [ref=f13e191]:
+              - button [ref=f13e192] [cursor=pointer]:
+                - generic [ref=f13e193]: Tickets
+            - listitem [ref=f13e203]:
+              - button [ref=f13e204] [cursor=pointer]:
+                - generic [ref=f13e205]: Inspecciones
+            - listitem [ref=f13e215]:
+              - button [ref=f13e216] [cursor=pointer]:
+                - generic [ref=f13e217]: Juntas de comite
+            - listitem [ref=f13e227]:
+              - button [ref=f13e228] [cursor=pointer]:
+                - generic [ref=f13e229]: Compras
+            - listitem [ref=f13e239]:
+              - button [ref=f13e240] [cursor=pointer]:
+                - generic [ref=f13e241]: Bitacoras
+            - listitem [ref=f13e251]:
+              - button [ref=f13e252] [cursor=pointer]:
+                - generic [ref=f13e253]: Almacen
+            - listitem [ref=f13e263]:
+              - button [ref=f13e264] [cursor=pointer]:
+                - generic [ref=f13e265]: Inventarios
+            - listitem [ref=f13e275]:
+              - button [ref=f13e276] [cursor=pointer]:
+                - generic [ref=f13e277]: Biblioteca
+            - listitem [ref=f13e287]:
+              - button [ref=f13e288] [cursor=pointer]:
+                - generic [ref=f13e289]: Calendarios
+            - listitem [ref=f13e297]:
+              - button [ref=f13e298] [cursor=pointer]:
+                - generic [ref=f13e299]: Directorios
+            - listitem [ref=f13e307]:
+              - link [ref=f13e308] [cursor=pointer]:
+                - /url: /supervision
+                - generic [ref=f13e313]: Supervisión
+            - listitem [ref=f13e314]:
+              - button [ref=f13e315] [cursor=pointer]:
+                - generic [ref=f13e316]: Reportes
+            - listitem [ref=f13e324]:
+              - button [ref=f13e325] [cursor=pointer]:
+                - generic [ref=f13e326]: Entrega recepción
+            - listitem [ref=f13e334]:
+              - button [ref=f13e335] [cursor=pointer]:
+                - generic [ref=f13e336]: Reclutamiento
+            - listitem [ref=f13e344]:
+              - generic [ref=f13e345]: Sistemas
+            - listitem [ref=f13e351]:
+              - generic [ref=f13e352]: Reservaciones
+            - listitem [ref=f13e358]:
+              - generic [ref=f13e359]: Pases QR
+            - listitem [ref=f13e365]:
+              - generic [ref=f13e366]: Paqueteria
+            - listitem [ref=f13e372]:
+              - button [ref=f13e373] [cursor=pointer]:
+                - generic [ref=f13e374]: Recursos Humanos
+            - listitem [ref=f13e382]:
+              - link [ref=f13e383] [cursor=pointer]:
+                - /url: /announcements/manage
+                - generic [ref=f13e388]: Anuncios
+            - listitem [ref=f13e389]:
+              - button [ref=f13e390] [cursor=pointer]:
+                - generic [ref=f13e391]: Utilidades
+      - generic [ref=f13e404]:
+        - generic [ref=f13e409]:
+          - generic [ref=f13e410]:
+            - heading [level=1] [ref=f13e411]: Cuarto de Bombas Torre 3
+            - paragraph [ref=f13e412]: Creado el 10/4/2025
+            - generic [ref=f13e413]:
+              - generic [ref=f13e414]: Diario
+              - generic [ref=f13e420]: Activa
+              - generic [ref=f13e426]: "3"
+          - generic [ref=f13e432]:
+            - button [ref=f13e434] [cursor=pointer]:
+              - generic [ref=f13e439]: Editar
+            - button [ref=f13e441] [cursor=pointer]:
+              - generic [ref=f13e446]: Eliminar
+        - generic [ref=f13e450]:
+          - generic [ref=f13e451]:
+            - heading [level=2] [ref=f13e452]: Equipos y criterios de revisión
+            - button [ref=f13e454] [cursor=pointer]:
+              - generic [ref=f13e459]: Agregar Equipo
+          - generic [ref=f13e460]:
+            - paragraph [ref=f13e465]: No hay equipos configurados en este recorrido.
+            - button [ref=f13e467] [cursor=pointer]:
+              - generic [ref=f13e472]: Agregar el primer equipo
+  - dialog [ref=f13e474]:
+    - document:
+      - generic [ref=f13e476]:
+        - generic [ref=f13e477]:
+          - heading "Agregar Equipo" [level=5] [ref=f13e478]
+          - button "Cerrar" [ref=f13e479] [cursor=pointer]
+        - generic [ref=f13e488]:
+          - generic [ref=f13e493]:
+            - generic [ref=f13e494]: Equipo o área
+            - generic [ref=f13e496]:
+              - generic [ref=f13e497]:
+                - generic [ref=f13e498]:
+                  - generic [ref=f13e536]: Lobby Principal
+                  - combobox "Equipo o área" [ref=f13e501]
+                - button "Clear all" [ref=f13e533] [cursor=pointer]:
+                  - generic: ×
+                - generic [ref=f13e502] [cursor=pointer]
+              - status [ref=f13e503]
+          - generic [ref=f13e507]:
+            - generic [ref=f13e508]: Posición *
+            - spinbutton "Posición *" [ref=f13e510]: "1"
+          - generic [ref=f13e511]:
+            - generic [ref=f13e512]: Revisiones
+            - generic [ref=f13e513]: No hay revisiones agregadas
+            - generic [ref=f13e520]:
+              - generic [ref=f13e521]:
+                - generic [ref=f13e522]:
+                  - generic [ref=f13e523]: Seleccione una revisión
+                  - combobox [expanded] [active] [ref=f13e525]
+                - generic [ref=f13e526] [cursor=pointer]
+              - status [ref=f13e527]
+          - generic [ref=f13e528]:
+            - button "Guardar" [disabled]
+  - listbox "Options List" [ref=f13e538]:
+    - generic [ref=f13e539]:
+      - option "AC - CONFIRMAR FUNCIONAMIENTO DE VENTILADORES Y MOTORES" [ref=f13e540] [cursor=pointer]
+      - option "AC - INSPECCIONAR ESTADO DE SERPENTINES Y FILTROS" [ref=f13e541] [cursor=pointer]
+      - option "AC - LECTURA DE MANÓMETROS (ALTA/BAJA PRESIÓN)" [ref=f13e542] [cursor=pointer]
+      - option "ALBERCAR CONTROL DE INTERCAMBIADORES" [ref=f13e543] [cursor=pointer]
+      - option "ALBERCAS LIMPIEZA EN TANQUES DE RECUPERACION" [ref=f13e544] [cursor=pointer]
+      - option "BA - INSPECCIONAR ESTADO DE VÁLVULAS DE RETENCIÓN Y DESCARGA" [ref=f13e545] [cursor=pointer]
+      - option "BOMBAS - ANCLAJE DE TUBERIAS Y EQUIPOS" [ref=f13e546] [cursor=pointer]
+      - option "BOMBAS - LIMPIEZA GENERAL" [ref=f13e547] [cursor=pointer]
+      - option "BOMBAS- SOBRECALENTAMIENTO" [ref=f13e548] [cursor=pointer]
+      - option "BOMBAS- SUCCION Y DESCARGA DE AGUA" [ref=f13e549] [cursor=pointer]
+      - option "BOMBAS- VALVULAS Y FILTROS" [ref=f13e550] [cursor=pointer]
+      - option "CA - FUNCIONAMIENTO DE CONTROLADORES EN LÍNEA DE CONTROL DE ACCESOS" [ref=f13e551] [cursor=pointer]
+      - option "CA - FUNCIONAMIENTO DE EQUIPO CENTRAL DE CONTROL DE ACCESOS" [ref=f13e552] [cursor=pointer]
+      - option "CA - FUNCIONAMIENTO DE SOFTWARE DE CONTROL DE ACCESOS" [ref=f13e553] [cursor=pointer]
+      - option "CALDERAS- MEDIDOR DE GAS" [ref=f13e554] [cursor=pointer]
+      - option "CALENTADOR- CONEXIONES DE GAS" [ref=f13e555] [cursor=pointer]
+      - option "CALENTADOR- OPERACION EN AUTOMATICO" [ref=f13e556] [cursor=pointer]
+      - option "CALIDAD DE AGUA" [ref=f13e557] [cursor=pointer]
+      - option "CARCAMOS- FUNCIONAMIENTO BOMBA ACHIQUE" [ref=f13e558] [cursor=pointer]
+      - option "CCCTV - FUNCIONAMIENTO DE SOFTWARE DE CCTV" [ref=f13e559] [cursor=pointer]
+      - option "CCTV - FUNCIONAMIENTO CORRECTO." [ref=f13e560] [cursor=pointer]
+      - option "CCTV - FUNCIONAMIENTO DE DVR'S" [ref=f13e561] [cursor=pointer]
+      - option "CCTV - FUNCIONAMIENTO DE ESTACIONES DE TRABAJO" [ref=f13e562] [cursor=pointer]
+      - option "CCTV - FUNCIONAMIENTO DE MINISPLIT" [ref=f13e563] [cursor=pointer]
+      - option "CCTV - FUNCIONAMIENTO DE MONITORES" [ref=f13e564] [cursor=pointer]
+      - option "CISTERNA - PORCENTAJE DE AGUA" [ref=f13e565] [cursor=pointer]
+      - option "CISTERNA - VERIFICAR AUSENCIA DE FUGAS O GRIETAS EN ESTRUCTURA" [ref=f13e566] [cursor=pointer]
+      - option "CLORADOR- NIVEL DE CLORO" [ref=f13e567] [cursor=pointer]
+      - option "CM - ACCESO EN BUEN ESTADO" [ref=f13e568] [cursor=pointer]
+      - option "CM - CONFIRMAR FUNCIONAMIENTO DE VENTILACIÓN Y EXTRACCIÓN DE AIRE" [ref=f13e569] [cursor=pointer]
+      - option "CM - INSPECCIONAR BANDEJAS DE GOTEO Y DRENAJES" [ref=f13e570] [cursor=pointer]
+      - option "CM - PINTURA EN BUEN ESTADO" [ref=f13e571] [cursor=pointer]
+      - option "CM - REVISAR NIVELES DE ACEITE Y REFRIGERANTE EN EQUIPOS CRÍTICOS" [ref=f13e572] [cursor=pointer]
+      - option "CM - VERIFICAR ESTADO GENERAL DE EQUIPOS (VIBRACIONES, RUIDOS ANORMALES, FUGAS)" [ref=f13e573] [cursor=pointer]
+      - option "EL - CUALQUIER ANOMALÍA REPORTAR A PROVEEDOR SCHINDLER" [ref=f13e574] [cursor=pointer]
+      - option "EL - ESTADO DEL ALUMBRADO INTERNO E INDICADORES DE PISOS" [ref=f13e575] [cursor=pointer]
+      - option "EL - FUNCIONAMIENTO DE CONTROLADORES EN LÍNEA DE CONTROLES DE ACCESO" [ref=f13e576] [cursor=pointer]
+      - option "EL - FUNCIONAMIENTO NORMAL DE PUERTAS Y CONTROLES INTERNOS/EXTERNOS" [ref=f13e577] [cursor=pointer]
+      - option "EL - REVISIÓN DE CONTROLES DE ACCESO (TARJETAS, BIOMÉTRICO)" [ref=f13e578] [cursor=pointer]
+      - option "EL - VERIFICAR AUSENCIA DE RUIDOS O VIBRACIONES ANÓMALAS" [ref=f13e579] [cursor=pointer]
+      - option "ESTADO DE BATERIAS" [ref=f13e580] [cursor=pointer]
+      - option "EXTRACCION - CONFIRMAR FUNCIONAMIENTO DE VENTILADORES Y EXTRACTORES DE AIRE" [ref=f13e581] [cursor=pointer]
+      - option "EXTRACCION - REVISAR INFORME DE PROVEEDOR CYVSA (PRESIONES, FLUJO DE AIRE)" [ref=f13e582] [cursor=pointer]
+      - option "FILTRO DE AIRE" [ref=f13e583] [cursor=pointer]
+      - option "FILTRO DE ARENA- CONEXIONES" [ref=f13e584] [cursor=pointer]
+      - option "FILTRO DE ARENA- FUGAS" [ref=f13e585] [cursor=pointer]
+      - option "FILTRO DE ARENA- LIMPIZA" [ref=f13e586] [cursor=pointer]
+      - option "FILTRO DE ARENA- POSICION DE CABEZAL" [ref=f13e587] [cursor=pointer]
+      - option "FILTRO DE CARTON- LIMPIEZA" [ref=f13e588] [cursor=pointer]
+      - option "FILTRO DE CARTON- SIN FUGAS" [ref=f13e589] [cursor=pointer]
+      - option "FUGAS DE LIQUIDOS" [ref=f13e590] [cursor=pointer]
+      - option "INDICADOR DE REPOSO ENCENDIDO" [ref=f13e591] [cursor=pointer]
+      - option "LIMPIEZA DE AREA" [ref=f13e592] [cursor=pointer]
+      - option "LIMPIEZA DE CANASTILLA" [ref=f13e593] [cursor=pointer]
+      - option "LIMPIEZA DE REJILLAS" [ref=f13e594] [cursor=pointer]
+      - option "NIVEL DE ACEITE" [ref=f13e595] [cursor=pointer]
+      - option "NIVEL DE ANTICONGELANTE" [ref=f13e596] [cursor=pointer]
+      - option "NIVEL DE COMBUSTIBLE" [ref=f13e597] [cursor=pointer]
+      - option "PCI - PRUEBA OPERATIVA DE BOMBA JOCKEY (ARRANQUE POR PÉRDIDA DE PRESIÓN)" [ref=f13e598] [cursor=pointer]
+      - option "PCI - REVISIÓN DE BOMBA ELÉCTRICA Y MOTOR DIÉSEL (NIVEL DE COMBUSTIBLE, ACEITE)" [ref=f13e599] [cursor=pointer]
+      - option "PCI - VERIFICAR ESTADO DE VÁLVULAS Y TUBERÍAS" [ref=f13e600] [cursor=pointer]
+      - option "PCI - VERIFICAR NIVELES DE CISTERNAS" [ref=f13e601] [cursor=pointer]
+      - option "PCI- FUGA DE LIQUIDOS" [ref=f13e602] [cursor=pointer]
+      - option "PCI- LIMPIEZA" [ref=f13e603] [cursor=pointer]
+      - option "PCI- NIVEL DE ACEITE" [ref=f13e604] [cursor=pointer]
+      - option "PCI- NIVEL DE ANTICONGELANTE" [ref=f13e605] [cursor=pointer]
+      - option "PCI- NIVEL DE DIESEL" [ref=f13e606] [cursor=pointer]
+      - option "PCI- PARO EN PRESION DEMANDADA" [ref=f13e607] [cursor=pointer]
+      - option "PCI- PRESION DE AGUA EN TABLERO" [ref=f13e608] [cursor=pointer]
+      - option "PCI- PRESION LINE DE 12KCM2" [ref=f13e609] [cursor=pointer]
+      - option "PCI- REVISION DE PRECALENTADOR" [ref=f13e610] [cursor=pointer]
+      - option "PCI- TUBERIAS Y CONEXIONES" [ref=f13e611] [cursor=pointer]
+      - option "PERCEPCION DE RUIDOS ANORMALES" [ref=f13e612] [cursor=pointer]
+      - option "PRUEBA DE ARRANQUE CON CARGA" [ref=f13e613] [cursor=pointer]
+      - option "PRUEBA DE ARRANQUE MANUAL" [ref=f13e614] [cursor=pointer]
+      - option "PRUEBA DE ARRANQUE SIN CARGA" [ref=f13e615] [cursor=pointer]
+      - option "PTAR - CALIDAD DE BACTERIA" [ref=f13e616] [cursor=pointer]
+      - option "PTAR AJUSTE DE TUBO DE DESNATADOR" [ref=f13e617] [cursor=pointer]
+      - option "PTAR CLARIFICACIÓN DE CAMARA" [ref=f13e618] [cursor=pointer]
+      - option "PTAR CONEXIONES" [ref=f13e619] [cursor=pointer]
+      - option "PTAR REVISION DE CLORADOR" [ref=f13e620] [cursor=pointer]
+      - option "PTAR- REVISION DE RETORNO DE LODOS" [ref=f13e621] [cursor=pointer]
+      - option "PTAR- TALLADO DE REACTORES (PAREDES)" [ref=f13e622] [cursor=pointer]
+      - option "PTAR- VALVULAS CHECK" [ref=f13e623] [cursor=pointer]
+      - option "REVISION DE ANTENA DEL PARARRAYOS" [ref=f13e624] [cursor=pointer]
+      - option "REVISION DE CONTINUIDAD DE CABLEADO DEL PARARRAYOS" [ref=f13e625] [cursor=pointer]
+      - option "REVISION DE ENFRIAMIENTO" [ref=f13e626] [cursor=pointer]
+      - option "REVISION DE FUGAS" [ref=f13e627] [cursor=pointer]
+      - option "REVISION DE FUNCIONAMIENTO ENCENDIDO/APAGADO" [ref=f13e628] [cursor=pointer]
+      - option "REVISION DE LA MARCHA DE MOTOR" [ref=f13e629] [cursor=pointer]
+      - option "REVISION DE REGISTROS LIBRES Y LIMPIOS" [ref=f13e630] [cursor=pointer]
+      - option "REVISION DE RESISTENCIAS" [ref=f13e631] [cursor=pointer]
+      - option "REVISION DEL CONTENEDOR DE SAL" [ref=f13e632] [cursor=pointer]
+      - option "REVISION DEL DISPLAY ENCENDIDOS" [ref=f13e633] [cursor=pointer]
+      - option "REVISION DEL FLOTADOR" [ref=f13e634] [cursor=pointer]
+      - option "REVISION DEL GUARDAMOTOR" [ref=f13e635] [cursor=pointer]
+      - option "REVISION DEL PRESOSTATO" [ref=f13e636] [cursor=pointer]
+      - option "REVISION DEL QUEMADOR" [ref=f13e637] [cursor=pointer]
+      - option "REVISION TIRANTES DE ACERO DEL PARARRAYO" [ref=f13e638] [cursor=pointer]
+      - option "SERVICIO- PRESION MANOMETRO GAS" [ref=f13e639] [cursor=pointer]
+      - option "SITEMA BOMBEO - INSPECCIONAR VÁLVULAS DE CONTROL Y BYPASS" [ref=f13e640] [cursor=pointer]
+      - option "SITEMA BOMBEO - PRESION MANOMETRO AGUA" [ref=f13e641] [cursor=pointer]
+      - option "SITEMA BOMBEO - VERIFICAR FUNCIONAMIENTO DE BOMBAS PRINCIPALES Y ALTERNAS" [ref=f13e642] [cursor=pointer]
+      - option "SOPLADOR EN AUTOMÁTICO Y FUNCIONANDO" [ref=f13e643] [cursor=pointer]
+      - option "TABLERO ELECTRICO- FUNCIONAMIENTO CONTROL DE HORARIO" [ref=f13e644] [cursor=pointer]
+      - option "TABLERO ELECTRICO- ON-OFF-AUTO" [ref=f13e645] [cursor=pointer]
+      - option "TABLERO ELECTRICO- OPERACION EN AUTOMATICO" [ref=f13e646] [cursor=pointer]
+      - option "TABLERO ELECTRICO- REVISION DE AMPERAJE" [ref=f13e647] [cursor=pointer]
+      - option "TABLERO ELECTRICO- REVISION DE FRECUENCIA" [ref=f13e648] [cursor=pointer]
+      - option "TABLERO ELECTRICO- REVISION DE INTERRUPTORES" [ref=f13e649] [cursor=pointer]
+      - option "TABLERO ELECTRICO- REVISION DE VOLTAJE" [ref=f13e650] [cursor=pointer]
+      - option "TABLERO ELECTRICO- REVISION VARIADOR DE FRECUENCIA" [ref=f13e651] [cursor=pointer]
+      - option "TABLEROS ELECTRICOS- NOMENCLATURA DE PASTILLAS" [ref=f13e652] [cursor=pointer]
+      - option "TE - CORRECTO SUMINISTRO DE QUÍMICOS (INHIBIDORES, BIOCIDAS)" [ref=f13e653] [cursor=pointer]
+      - option "TE - ESTADO DE BANDEJAS Y ELIMINACIÓN DE SEDIMENTOS" [ref=f13e654] [cursor=pointer]
+      - option "TE - NIVEL DE AGUA EN TINAS Y FUNCIONAMIENTO DE VÁLVULAS DE LLENADO" [ref=f13e655] [cursor=pointer]
+      - option "TE - REVISIÓN DE BOMBAS ASOCIADAS (PRESIÓN, RUIDOS, FUGAS)" [ref=f13e656] [cursor=pointer]
+      - option "TEMPERATURA DE MAQUINA" [ref=f13e657] [cursor=pointer]
+      - option "TEMPERATURA PRECALENTADOR" [ref=f13e658] [cursor=pointer]
+      - option "TINACOS - INSPECCIONAR TAPAS DE TINACOS" [ref=f13e659] [cursor=pointer]
+      - option "TINACOS - NIVEL DE AGUA" [ref=f13e660] [cursor=pointer]
+      - option "TINACOS - VERIFICAR POSIBLES FUGAS EN TUBERÍAS" [ref=f13e661] [cursor=pointer]
+      - option "VALVULA EN POSICION DE FILTRADO" [ref=f13e662] [cursor=pointer]
+      - option "VERIFICACION DE BANDAS" [ref=f13e663] [cursor=pointer]
+      - option "VERIFICACION DE PILOTO ENCENDIDO" [ref=f13e664] [cursor=pointer]
+      - option "VERIFICACION DEL CONTROL DE TEMPERATURA" [ref=f13e665] [cursor=pointer]
+      - option "VOZ-DATOS - FUNCIONAMIENTO DE RACK DE VOZ/DATOS" [ref=f13e666] [cursor=pointer]

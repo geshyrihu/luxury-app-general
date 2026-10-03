@@ -4,7 +4,7 @@
 
 > **Tipo:** Plan de Remediación (deriva del análisis `20260930-analisis-purchases-ordenes-compra.md`).
 > Aplica **las 6 reglas obligatorias** de `DOCUMENT-RULES-MANDATORY.md` (Reglas 1-6).
-> **Estado:** ⏳ Pendiente de aprobación. No se ejecuta nada hasta autorización explícita.
+> **Estado:** ✅ Autorizado (2026-09-30) — en ejecución. Bitácora: `20260930-changelog-purchases-ordenes-compra.md`.
 > **Supersede:** `20260730-remediacion-purchases-ordenes-compra.md` (legacy, rutas muertas). Ver §Metadata.
 
 ---

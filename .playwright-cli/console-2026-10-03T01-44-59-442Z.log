@@ -1,0 +1,8 @@
+[    1840ms] [LOG] %c📦 [StorageService] Inicializando servicio de almacenamiento local... color: #3F51B5; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1841ms] [LOG] %c [AuthService] Verificando ruta inicial: /auth/login | Es publica: true color: #9C27B0; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1841ms] [LOG] %c [AuthService] Ruta publica detectada. Omitiendo login silencioso. color: #FFC107; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1842ms] [LOG] %c🚀 [Initializer] Starting application state initialization... color: purple; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1843ms] [LOG] %c🤷 [Initializer] No user session. Skipping customer state initialization. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1844ms] [LOG] %c✅ [Initializer] State initialization complete. color: green; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1991ms] [LOG] %c🔄 UpdateService: Inicializando servicio de actualizaciones color: blue; font-weight: bold; @ http://localhost:4200/chunk-2BPO4FAW.js:17
+[    1992ms] [LOG] %c🔄 UpdateService: ❌ Service Worker NO habilitado color: red; font-weight: bold; @ http://localhost:4200/chunk-2BPO4FAW.js:33

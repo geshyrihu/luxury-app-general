@@ -1,0 +1,131 @@
+- generic [active] [ref=f10e1]:
+  - link "Saltar al contenido principal" [ref=f10e2] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+  - generic "Aplicación LuxuryApp" [ref=f10e3]:
+    - main [ref=f10e7]:
+      - generic [ref=f10e10]:
+        - generic [ref=f10e15]:
+          - generic [ref=f10e17]:
+            - button "Abrir o cerrar el menú lateral" [ref=f10e18] [cursor=pointer]
+            - button "LUXURY" [ref=f10e25] [cursor=pointer]
+            - navigation "breadcrumb" [ref=f10e34]:
+              - list [ref=f10e35]:
+                - listitem [ref=f10e36]:
+                  - link "Inicio" [ref=f10e37] [cursor=pointer]:
+                    - /url: /dashboard
+                - listitem [ref=f10e42]:
+                  - text: /
+                  - link "Inspecciones" [ref=f10e43] [cursor=pointer]:
+                    - /url: /inspections
+                - listitem [ref=f10e45]:
+                  - text: /
+                  - link "Inspecciones" [ref=f10e46] [cursor=pointer]:
+                    - /url: /inspections
+          - generic [ref=f10e49]:
+            - button "Inicio" [ref=f10e50] [cursor=pointer]
+            - button "Pagina anterior" [ref=f10e55] [cursor=pointer]
+            - button "Pagina siguiente" [ref=f10e60] [cursor=pointer]
+            - button "Actualizar" [ref=f10e65] [cursor=pointer]
+            - button "Mi edificio" [ref=f10e70] [cursor=pointer]
+            - button "Anuncios" [ref=f10e75] [cursor=pointer]
+            - button "Comunicado IA" [ref=f10e80] [cursor=pointer]
+            - button "Telefonos de Emergencia" [ref=f10e85] [cursor=pointer]
+            - button "Configuración" [ref=f10e90] [cursor=pointer]
+            - button "Novedades" [ref=f10e95] [cursor=pointer]
+            - button "Cambiar tema claro u oscuro" [ref=f10e100] [cursor=pointer]
+            - button "Notificaciones" [ref=f10e564] [cursor=pointer]:
+              - generic [ref=f10e565]: "17"
+            - button "Abrir menú de usuario" [ref=f10e118] [cursor=pointer]
+        - navigation [ref=f10e128]:
+          - generic [ref=f10e129]:
+            - generic [ref=f10e130]: LuxuryApp
+            - generic [ref=f10e131]: Gestión Inteligente
+          - generic [ref=f10e139]:
+            - heading "Administrador LBG" [level=2] [ref=f10e140]
+            - paragraph [ref=f10e141]: Desconocido
+            - heading "LUXURY" [level=3] [ref=f10e143]
+          - generic [ref=f10e144]:
+            - generic [ref=f10e145]: Design System
+            - list [ref=f10e147]:
+              - listitem [ref=f10e148]:
+                - button "Luxury Design System" [ref=f10e149] [cursor=pointer]
+            - separator [ref=f10e161]
+            - list [ref=f10e162]:
+              - listitem [ref=f10e163]:
+                - button "Legal" [ref=f10e164] [cursor=pointer]
+              - listitem [ref=f10e175]:
+                - link "Contabilidad" [ref=f10e176] [cursor=pointer]:
+                  - /url: /contabilidad
+              - listitem [ref=f10e182]:
+                - link "Cobranza Panel" [ref=f10e183] [cursor=pointer]:
+                  - /url: /cobranza-nativa
+              - listitem [ref=f10e189]:
+                - button "Tickets" [ref=f10e190] [cursor=pointer]
+              - listitem [ref=f10e201]:
+                - button "Inspecciones" [ref=f10e202] [cursor=pointer]
+              - listitem [ref=f10e213]:
+                - button "Juntas de comite" [ref=f10e214] [cursor=pointer]
+              - listitem [ref=f10e225]:
+                - button "Compras" [ref=f10e226] [cursor=pointer]
+              - listitem [ref=f10e237]:
+                - button "Bitacoras" [ref=f10e238] [cursor=pointer]
+              - listitem [ref=f10e249]:
+                - button "Almacen" [ref=f10e250] [cursor=pointer]
+              - listitem [ref=f10e261]:
+                - button "Inventarios" [ref=f10e262] [cursor=pointer]
+              - listitem [ref=f10e273]:
+                - button "Biblioteca" [ref=f10e274] [cursor=pointer]
+              - listitem [ref=f10e285]:
+                - button "Calendarios" [ref=f10e286] [cursor=pointer]
+              - listitem [ref=f10e297]:
+                - button "Directorios" [ref=f10e298] [cursor=pointer]
+              - listitem [ref=f10e309]:
+                - link "Supervisión" [ref=f10e310] [cursor=pointer]:
+                  - /url: /supervision
+              - listitem [ref=f10e316]:
+                - button "Reportes" [ref=f10e317] [cursor=pointer]
+              - listitem [ref=f10e328]:
+                - button "Entrega recepción" [ref=f10e329] [cursor=pointer]
+              - listitem [ref=f10e340]:
+                - button "Reclutamiento" [ref=f10e341] [cursor=pointer]
+              - listitem [ref=f10e352]:
+                - generic [ref=f10e353]: Sistemas
+              - listitem [ref=f10e359]:
+                - generic [ref=f10e360]: Reservaciones
+              - listitem [ref=f10e366]:
+                - generic [ref=f10e367]: Pases QR
+              - listitem [ref=f10e373]:
+                - generic [ref=f10e374]: Paqueteria
+              - listitem [ref=f10e380]:
+                - button "Recursos Humanos" [ref=f10e381] [cursor=pointer]
+              - listitem [ref=f10e392]:
+                - link "Anuncios" [ref=f10e393] [cursor=pointer]:
+                  - /url: /announcements/manage
+              - listitem [ref=f10e399]:
+                - button "Utilidades" [ref=f10e400] [cursor=pointer]
+        - generic [ref=f10e415]:
+          - generic [ref=f10e423]:
+            - heading "Inspecciones" [level=1] [ref=f10e424]
+            - paragraph [ref=f10e425]: Panel central de gestión de recorridos e inspecciones
+          - generic [ref=f10e436]:
+            - heading "¿Qué es un Recorrido?" [level=2] [ref=f10e437]
+            - paragraph [ref=f10e438]: Un Recorrido es una inspección periódica de un grupo de equipos o áreas. El Administrador lo crea en el Catálogo definiendo frecuencia y equipos; el sistema genera automáticamente las inspecciones pendientes cada día. El responsable asignado las ve en 'Mis Recorridos' y las ejecuta ahí mismo. Si encuentra un hallazgo crítico, se notifica automáticamente al Jefe de Mantenimiento.
+          - heading "Administración de Recorridos" [level=2] [ref=f10e444]
+          - generic [ref=f10e446]:
+            - generic [ref=f10e463] [cursor=pointer]:
+              - heading "Catálogo de Recorridos" [level=3] [ref=f10e464]
+              - paragraph [ref=f10e465]: Gestión de recorridos y puntos de inspección.
+            - generic [ref=f10e482] [cursor=pointer]:
+              - heading "Informes de Inspección" [level=3] [ref=f10e483]
+              - paragraph [ref=f10e484]: Consulta y seguimiento de informes de inspección.
+            - generic [ref=f10e501] [cursor=pointer]:
+              - heading "Áreas de Inspección (placeholder)" [level=3] [ref=f10e502]
+              - paragraph [ref=f10e503]: Consulta del catálogo de áreas de inspección.
+          - heading "Mis Recorridos" [level=2] [ref=f10e509]
+          - generic [ref=f10e511]:
+            - generic [ref=f10e528] [cursor=pointer]:
+              - heading "Mis Recorridos (Lista)" [level=3] [ref=f10e529]
+              - paragraph [ref=f10e530]: Consulta recorridos asignados para inspección.
+            - generic [ref=f10e547] [cursor=pointer]:
+              - heading "Ejecutar Recorrido" [level=3] [ref=f10e548]
+              - paragraph [ref=f10e549]: Realiza un recorrido de inspección asignado.

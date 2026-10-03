@@ -49,6 +49,16 @@ convenciones y no debe crearse de forma arbitraria o duplicada.
   - checklist de validacion
   - historial de cambios
 
+### Nivel 3: guia de usuario del modulo
+
+- ubicacion base:
+  - `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/guia-usuario.md`
+- obligatorio siempre que el modulo tenga UI consumible por un usuario de negocio
+- unico nivel orientado a usuario final, no a developer
+- generado con la skill `guia-usuario-modulo`; contenido minimo detallado abajo
+  en "Documentos obligatorios"
+- nunca inventa comportamiento: lo no verificado se marca `PENDIENTE`
+
 ## Reglas operativas
 
 - frontend y backend del mismo modulo deben documentarse de forma coordinada; no
@@ -84,7 +94,7 @@ convenciones y no debe crearse de forma arbitraria o duplicada.
 
 ## Documentos obligatorios por módulo y su contenido mínimo
 
-Son **6 documentos**, todos obligatorios, sin excepciones opcionales. El orden de lectura para developers está en `CONVENTIONS.md` §4.7.
+Son **7 documentos**, todos obligatorios, sin excepciones opcionales. El orden de lectura para developers está en `CONVENTIONS.md` §4.7.
 
 ### Backend
 
@@ -152,9 +162,30 @@ Son **6 documentos**, todos obligatorios, sin excepciones opcionales. El orden d
 - Ejemplo de flujo completo (paso a paso)
 - ¿Cuándo preguntar al Tech Lead?
 
+**6. Guía de Usuario (Nivel 3)** — `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/guia-usuario.md`
+
+- **Único de los 7 orientado a usuario final/negocio/soporte** — los otros 6 asumen lector técnico (developer). Español, sin jerga de código.
+- Generado con la skill `guia-usuario-modulo` (`.agents/skills/guia-usuario-modulo/SKILL.md`), que combina: lectura real del código (backend + frontend), un diagrama generado con la skill `archify` sourced del código real (con cita de archivo/línea), y una exploración real de la UI con `playwright-cli` — **obligatoria**, usando las credenciales genéricas de dev `admin`/`Hwtc00--` como fallback cuando el módulo no indique otras.
+- Contenido mínimo:
+  - Resumen (qué hace el módulo, en 1 párrafo sin jerga)
+  - Para qué sirve / qué problema resuelve
+  - Usuarios objetivo (roles de negocio, no roles técnicos)
+  - Conceptos clave (glosario breve si el módulo tiene vocabulario propio)
+  - Flujo principal (narrado, no diagrama técnico)
+  - Diagrama (generado por Archify, no Mermaid a mano)
+  - Casos de uso (2-4 escenarios reales)
+  - Paso a paso para el usuario (con capturas reales de la exploración Playwright, no descripciones inventadas)
+  - Permisos necesarios (en términos de rol de negocio)
+  - Estados posibles del registro/proceso (tabla)
+  - Errores comunes y qué hacer
+  - Preguntas frecuentes
+  - Limitaciones conocidas
+  - Archivos relevantes para desarrolladores (enlace a los otros 6 documentos, no duplicar su contenido)
+- **Disciplina obligatoria:** nunca inventar comportamiento. Todo lo que no se pueda verificar leyendo el código o navegando la UI real se marca explícitamente `PENDIENTE: confirmar con el equipo` — no se rellena con una suposición razonable.
+
 ### Auditoría
 
-**6. Auditoría ejecutada** — `docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-auditoria-[modulo]-[submodulo].md`
+**7. Auditoría ejecutada** — `docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-auditoria-[modulo]-[submodulo].md`
 
 - Matriz de Reglas de Negocio (4 niveles: Invariante, Flujo, Seguridad, Validación)
 - Matriz de permisos (endpoint — rol — autorización)

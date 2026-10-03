@@ -1,0 +1,22 @@
+[    1595ms] [LOG] %c📦 [StorageService] Inicializando servicio de almacenamiento local... color: #3F51B5; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1598ms] [LOG] %c [AuthService] Verificando ruta inicial: / | Es publica: false color: #9C27B0; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1598ms] [LOG] %c [AuthService] Ruta no publica. Intentando login silencioso... color: #009688; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1607ms] [LOG] %c🚀 [Initializer] Starting application state initialization... color: purple; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1701ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:7070/api/auth/refresh:0
+[    1706ms] [LOG] %c🚫 Error en refreshToken, forzando logout local. color: red;font-style: italic HttpErrorResponse @ http://localhost:4200/chunk-H2E4C4AE.js:2896
+[    1708ms] [LOG] %c [AuthTrace] clearSession.before color: #03A9F4; font-style: italic; {at: 2026-10-03T01:33:13.490Z, applicationUserId: null, tokenCustomerId: null, roles: Array(0), customerAccessCount: 0} @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1710ms] [LOG] %c🔍 [StorageService] Recuperando valor para clave: 'customerId' color: #2196F3; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1710ms] [LOG] %c🟡 [StorageService] No se encontró valor para clave 'customerId' o es undefined. color: #FF9800; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1711ms] [LOG] %c [CustomerTrace] clearCustomerData.before color: #FF9800; font-style: italic; {at: 2026-10-03T01:33:13.492Z, state: Object, storedCustomerId: undefined} @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1711ms] [LOG] %c🧹 [StorageService] Limpiando clave específica: 'customerId' color: #FF5722; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1712ms] [LOG] %c✅ [StorageService] Clave 'customerId' ha sido limpiada. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1712ms] [LOG] %c🔍 [StorageService] Recuperando valor para clave: 'customerId' color: #2196F3; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1713ms] [LOG] %c🟡 [StorageService] No se encontró valor para clave 'customerId' o es undefined. color: #FF9800; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1714ms] [LOG] %c [CustomerTrace] clearCustomerData.after color: #FF9800; font-style: italic; {at: 2026-10-03T01:33:13.495Z, state: Object, storedCustomerId: undefined} @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1725ms] [LOG] %c [AuthTrace] trySilentLogin.finalize color: #8BC34A; font-style: italic; {at: 2026-10-03T01:33:13.507Z, isAuthenticated: false} @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1727ms] [LOG] %c🤷 [Initializer] No user session. Skipping customer state initialization. color: #9E9E9E; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1728ms] [LOG] %c✅ [Initializer] State initialization complete. color: green; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1820ms] [LOG] %c🔄 UpdateService: Inicializando servicio de actualizaciones color: blue; font-weight: bold; @ http://localhost:4200/chunk-2BPO4FAW.js:17
+[    1821ms] [LOG] %c🔄 UpdateService: ❌ Service Worker NO habilitado color: red; font-weight: bold; @ http://localhost:4200/chunk-2BPO4FAW.js:33
+[    1841ms] [LOG] %c🚀 [App] ¡Aplicación iniciada! Soy más ligero y rápido que nunca. color: #673AB7; font-style: italic; @ http://localhost:4200/chunk-H2E4C4AE.js:2883
+[    1857ms] [LOG] Angular is running in development mode. @ http://localhost:4200/@fs/D:/repos/luxuryapp-api/appsweb/angular/.angular/cache/22.1.8/luxury-app/vite/deps/core-BtAdGG1h.js?v=79c56015:9175

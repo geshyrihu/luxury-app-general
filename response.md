@@ -1,38 +1,45 @@
-Now the final report.
-Reporte R2 (T-201, T-202, T-204, T-205)
+I see what happened: while I was on the detached baseline 500211248, someone/something committed 9a3857dfd (an unrelated feature: "captura modalidad interna en mantenimiento") and there are many working-tree changes. This is a shared repo with concurrent work. I must not disturb it.
+My Fase 0 commits are safe at 7c853d068 (reflog HEAD@{2}). Let me stop making changes and verify my commits are intact, then report. Let me check without touching the working tree.
 
-1. Tabla de tareas
-   ID Estado Archivos:líneas Evidencia
-   T-201 hecho InventarioExtintorAppService.cs:13-91; InventarioHidranteAppService.cs:11-68; InventarioDetectorHumoAppService.cs:23-95; InventarioEstacionManualAppService.cs:12-67 5/5 pruebas verdes; JSON idéntico al legacy
-   T-202 sin cambios necesarios — grep sin .Include(...Extinguisher/Hydrant/Detector/Station) ni acceso a navegaciones; los 12 dependientes solo usan FK id. La FK se toca en T-203
-   T-204 hecho CustomerAppService.cs:430 (+2 líneas) 1/1 prueba verde; 0 huérfanos
-   T-205 hecho IEquipmentPhotoPathService.cs (nuevo); EquipmentPhotoPathService.cs (nuevo); MachineryAppService.cs:6-14,77-103; DependencyInjection.Controllers.cs:317 6/6 pruebas verdes
-2. T-201 — Confirmación de respuesta idéntica de los 4 listados
-   Las 4 pruebas FireInventoryReadFromEquipmentTests construyen el DTO "legacy" a mano (como el código previo: ExtinguisherType.GetDisplayName(), ExpirationDate.ToString("dd-MMM-yy", es-MX), Ubication→Location, PhotoPath→Photo) y comparan JsonSerializer.Serialize(result.Data) byte a byte contra la respuesta del servicio migrado (que lee Equipment + EquipmentFireDetails). Las 4 pasan. Una quinta prueba verifica que cada listado solo devuelve el CustomerId correcto y su FireAssetKind.
+# Running in appsweb\angular
 
-- Extintor: ExtinguisherType/ExpirationDate desde EquipmentFireDetails; HydrantType/CabinetNumber, DetectorType, StationType análogos.
-- DTOs y endpoints intactos (no se tocó ningún DTOs/, EndPoints/ ni Mapping/ de los 4 módulos).
+$ Write-Output "=== my fase0 commits intact? ==="; git log --oneline -1 7c853d068; git log --oneline -1 de7db55e2; Write-Output "=== does 7c853d068 contain my changes? ==="; git show --stat 7c853d068 2>&1 | Select-Object -First 3; Write-Output "=== count working tree changes (concurrent work, NOT mine) ==="; (git status --short | Measure-Object -Line).Lines
+=== my fase0 commits intact? ===
+7c853d068 refactor(ui): migrar selectores embebidos de negocio de tag a clase (grupo C)
+de7db55e2 refactor(ui): migrar CSS por nombre de tag a clases de host (grupo A)
+=== does 7c853d068 contain my changes? ===
+commit 7c853d068ad6b08d1f952384db5f46ebb0104e79
+Author: geshyrihu <geshyrihu@users.noreply.github.com>
+Date: Sat Oct 3 08:18:40 2026 -0600
+=== count working tree changes (concurrent work, NOT mine) ===
+695
+Critical situation. There's active concurrent work in this repo (695 uncommitted files + a new commit 9a3857dfd made while I was on the detached baseline). My Fase 0 commits are safe at 7c853d068, but I must not run destructive git ops (checkout/stash) that could clobber someone else's in-progress work.
+Let me stop and confirm with you before proceeding, because this is an irreversible-risk situation.
 
-3. T-202 — Conclusión
-   No se requiere cambio. Los 12 dependientes (Bitacora*, FireInspectionPeriod*, FireCycleInspection\*) navegan a las tablas de fuego por su FK (ExtinguisherId/HydrantId/DetectorId/StationId), pero ningún servicio hace .Include() ni lee .Extinguisher/.Hydrant/.Detector/.Station; solo proyectan el FK id y sus propias columnas. Las tablas de fuego siguen existiendo y pobladas, así que todo sigue igual. El reapuntado de la FK es T-203.
-4. Build, pruebas, gate
+# Questions
 
-- Build: LuxuryApp.Application + LuxuryApp.Tests → 0 errores.
-- Suite completa: Con error: 16, Superado: 685, Total: 703. Línea base = 16 fallas. Compare-Object → 0 fallas nuevas (+13 superadas: 672→685).
-- Pruebas nuevas R2: 5 (T-201) + 1 (T-204) + 6 (T-205) = 12, todas verdes.
-- Gate de convenciones: OK, ninguna regla crítica empeoró.
+Diagnóstico del 850px ya resuelto: es DEUDA UX PREEXISTENTE, no un fallo de Fase 0 (captura baseline en commit 500211248 muestra exactamente el mismo layout roto: columnas colapsadas a 1 carácter 'D i a s', '8 7 d i a s'). La tabla no tiene manejo responsive en la zona muerta 768–992px. PERO durante el diagnóstico detecté que el repo tiene trabajo concurrente activo: 695 archivos sin commitear + un commit nuevo (9a3857dfd 'captura modalidad interna en mantenimiento') que apareció mientras estaba en el baseline detached. Mis 3 commits de Fase 0 están intactos en 7c853d068. ¿Cómo procedo?
+Espero a que el usuario cierre su trabajo
+Entendido. Me detengo por completo.
+Estado actual — NO toco nada más
+Rama: appsweb/angular está en HEAD detached (desde 500211248), con:
 
-5. Hashes de commits (repo api/, sin push)
-   Hash Mensaje
-   09906e87f T-201: los 4 modulos de fuego leen de Equipment + EquipmentFireDetails
-   39d921e03 T-201: pruebas de lectura identica de los 4 listados
-   9d3f5f263 T-204: purga de cliente borra EquipmentFireDetails antes de Equipment
-   2a7f7aae3 T-204: prueba de purga sin huerfanos en EquipmentFireDetails
-   da2987eb8 T-205: ruta de foto por categoria para Equipment de contra incendio
-   663676781 T-205: pruebas de ruta de foto por categoria
-   T-202 no genera commit (sin cambios).
-6. Discrepancias y preguntas abiertas
-7. T-205 sin GetExtintorPhotoPath en QR. El prompt menciona "QR (EquipmentQrLabelAppService.cs)" como sitio a revisar, pero ese servicio no resuelve Equipment.PhotoPath en absoluto (solo lista etiquetas QR). Igual EquipmentInspection\*AppService no resuelve fotos. Los sitios reales con GetMachineryFilePath sobre Equipment eran los 2 resolvers de AutoMapper + MachineryAppService + MaintenanceCalendar + EntregaRecepcion. Implementé un EquipmentPhotoPathService central y lo apliqué a GetById/GetFichaTecnica (los únicos que pueden recibir un Equipment de categoría 10). Los demás filtran por categoría (nunca ven FireProtection) o son O-3 (listados con inventoryCategory explícito, fuera de R2). ¿Se confirma que basta con GetById/GetFichaTecnica, o el arquitecto quiere también el branch O-3?
-8. Registro de la foto en inspección. Si el flujo de inspección de Equipment debe mostrar la foto del activo de fuego, hoy no resuelve ninguna ruta; habría que añadir el EquipmentPhotoPathService allí. No lo hice porque el prompt pidió "verificar", y ese servicio no consume PhotoPath. ¿Se requiere?
-9. Reloj de migración. No ejecuté el botón ni toqué BD. T-203 (FK) queda para la ronda aparte.
-10. git status muestra IMachineryAppService.cs modificado por el hook externo de whitespace (no mío, sin cambios de firma).
+- 695 archivos modificados sin commitear (trabajo concurrente, no mío)
+- Un commit nuevo 9a3857dfd que apareció durante mi diagnóstico
+  Mis commits de Fase 0 están intactos (reflog HEAD@{2}):
+- de7db55e2 grupo A
+- ca7457cd1 grupo B
+- 7c853d068 grupo C
+  No ejecutaré checkout, stash, reset ni ningún comando que pueda pisar el trabajo en curso.
+  Diagnóstico 850px — concluido
+  Es deuda UX preexistente, no una regresión de Fase 0. Prueba:
+- Captura baseline (500211248, sin Fase 0) a 850px → layout roto idéntico: columnas colapsadas a 1 carácter (D i a s, 8 7 d i a s), celdas estiradas verticalmente.
+- Captura post-Fase 0 a 850px → exactamente el mismo break.
+- Causa raíz: la tabla (app-table) no tiene manejo responsive en la zona muerta 768–992px. PlatformService solo cambia a móvil por debajo de 768px; entre 768 y ~1000px la app sigue renderizando la tabla desktop, que no cabe y colapsa.
+  No hay regla que revertir. Mi afirmación previa "sin regresiones visibles a 850px" fue errónea por optimismo — la corrijo: a 850px la tabla ya estaba rota antes de Fase 0.
+  Pendiente cuando cierres tu trabajo
+
+1. Avísame cuando el working tree esté limpio y pueda volver a main/7c853d068.
+2. Repetiré la verificación visual en 1400 / 850 / 600 sobre el estado Fase 0 real (sin overlay de TS ni ediciones ajenas).
+3. Escribiré el reporte de diagnóstico con la comparación baseline vs post-Fase 0 y la deuda UX 768–992px documentada (propuesta: regla min-width responsive en app-table o cambio de breakpoint, a decidir fuera de Fase 0).
+   ¿Confirmo que espero tu señal para retomar?

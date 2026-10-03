@@ -1,13 +1,34 @@
-   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
-[19:42:15 ERR] Excepción no controlada: An error occurred while saving the entity changes. See the inner exception for details.
-Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
- ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_ManualCallPointLogs_Customers_CustomerId". The conflict occurred in database "LuxuryBuildingGroup", table "dbo.Customers", column 'Id'.
-The statement has been terminated.
-   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__270_0(Task`1 result)
-   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
---- End of stack trace from previous location ---
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
-   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+ [JwtTrace] request ObjectappUserId: "63f5fe75-4fbb-4328-a2dd-b7224778752e"at: "2026-10-03T02:48:25.222Z"authTokenPrefix: "eyJhbGciOiJI"hasAuthorizationHeader: truemethod: "GET"storageCustomerId: "4c5cd4ae-d859-a85f-8ff6-8fac21901457"url: "http://localhost:7070/api/select-item-enum/equipment-content-type"xCustomerId: "4c5cd4ae-d859-a85f-8ff6-8fac21901457"[[Prototype]]: Object
+forms.mjs:3915
+  It looks like you're using the disabled attribute with a reactive form directive. If you set disabled to true
+  when you set up this control in your component class, the disabled attribute will actually be set in the DOM for
+  you. We recommend using this approach to avoid 'changed after checked' errors.
+
+  Example:
+  // Specify the `disabled` property at control creation time:
+  form = new FormGroup({
+    first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),
+    last: new FormControl('Drew', Validators.required)
+  });
+
+  // Controls can also be enabled/disabled after creation:
+  form.get('first')?.enable();
+  form.get('last')?.disable();
+
+isDisabled @ forms.mjs:3915
+console-logger.service.ts:100 🚫 API Error: GET LIST: select-item-enum/equipment-content-type Ha ocurrido un error interno del servidor
+[20:48:25 ERR] Excepción no controlada: The request matched multiple endpoints. Matches:
+
+HTTP: GET api/select-item-enum/equipment-content-type/{defaultOption?}
+HTTP: GET api/select-item-enum/equipment-content-type/{defaultOption?}
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches:
+
+HTTP: GET api/select-item-enum/equipment-content-type/{defaultOption?}
+HTTP: GET api/select-item-enum/equipment-content-type/{defaultOption?}
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at LuxuryApp.Api.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in D:\repos\luxuryapp-api\api\LuxuryApp.Api\Middleware\GlobalExceptionMiddleware.cs:line 19

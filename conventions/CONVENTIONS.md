@@ -387,7 +387,7 @@ docs/[ModuleLuxuryApp]/[Submodulo]/
 
 **Nota:** Cuando un módulo backend/frontend ya existe y necesita documentarse de forma coherente.
 
-**6 documentos obligatorios, sin excepciones opcionales.** Ubicación, contenido mínimo de cada uno y reglas de actualización: [Module Documentation Instructions](./operations/module-documentation-instructions.md).
+**7 documentos obligatorios, sin excepciones opcionales.** Ubicación, contenido mínimo de cada uno y reglas de actualización: [Module Documentation Instructions](./operations/module-documentation-instructions.md).
 
 | # | Documento | Ubicación |
 |---|-----------|-----------|
@@ -396,7 +396,10 @@ docs/[ModuleLuxuryApp]/[Submodulo]/
 | 3 | Operativo (frontend) | `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/operativo.md` |
 | 4 | Setup / onboarding (frontend) | `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/setup.md` |
 | 5 | Decisiones (frontend) | `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/decisiones.md` |
-| 6 | Auditoría ejecutada | `docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-auditoria-[modulo]-[submodulo].md` |
+| 6 | Guía de Usuario (Nivel 3, orientada a negocio) | `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/guia-usuario.md` |
+| 7 | Auditoría ejecutada | `docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-auditoria-[modulo]-[submodulo].md` |
+
+**Documento 6 (Guía de Usuario):** única pieza orientada a usuario final/negocio/soporte, no a desarrolladores — los otros 6 asumen lector técnico. Se genera con la skill [guia-usuario-modulo](../.agents/skills/guia-usuario-modulo/SKILL.md), que combina lectura de código real, diagrama [Archify](../.agents/skills/archify/SKILL.md) con evidencia de fuente, y exploración de UI real con `playwright-cli` (obligatoria, credenciales genéricas `admin`/`Hwtc00--` como fallback de dev). Nunca inventa comportamiento: lo no verificable se marca `PENDIENTE: confirmar con el equipo`.
 
 **Orden de lectura obligatorio para developers:**
 
@@ -678,6 +681,8 @@ Los agentes deben apoyarse en estos recursos en lugar de usar guías obsoletas:
 - [Delegacion Estrategica](../.agents/skills/delegacion-estrategica/SKILL.md) — Estrategia oficial de orquestación, fallback (OmniRoute) y ejecución CLI.
 - [Planeacion Modulos](../.agents/skills/planeacion-modulos/SKILL.md) — Workflow para planear módulos ANTES de escribir código.
 - [Angular Developer](../.agents/skills/angular-developer/SKILL.md) — Guía especializada para desarrollo frontend.
+- [Archify](../.agents/skills/archify/SKILL.md) — Diagramas interactivos (arquitectura/workflow/secuencia/dataflow/lifecycle) como HTML autocontenido, con evidencia de código real (commit + rango de líneas) cuando el diagrama describe un módulo existente. Usar para documentación técnica de módulos (§4.7), Architecture Delta en auditorías/PRs, y diagramas de planes de migración.
+- [Guía de Usuario de Módulo](../.agents/skills/guia-usuario-modulo/SKILL.md) — Genera el documento 6 de §4.7 (Guía de Usuario, orientada a negocio): lee el código real, genera diagrama con Archify, explora la UI real con `playwright-cli` (obligatorio) y escribe una guía funcional en español. Nunca inventa — lo no verificable se marca `PENDIENTE`.
 - [Guide Agent Instructions](./guides/guide-agent-instructions.md) — Instrucciones para agentes de documentación
 - [Guía Delegación Documentación Módulos](./guides/guia-delegacion-documentacion-modulos.md) — Protocolo de delegación a agentes CLI
 

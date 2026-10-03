@@ -1,0 +1,178 @@
+﻿=== CSS TAG-NAME SELECTOR HITS: 144 ===
+by selector: {"ion-item":8,"ion-icon":5,"ion-label":4,"ion-content":5,"lx-card":1,"ili-button":3,"app-icon":17,"app-table":4,"app-sorticon":1,"app-manuals-and-processes-detail":2,"app-my-assigned-tasks-list":1,"app-task-list":1,"app-data-view-mobile":3,"ion-button":12,"ion-list":1,"ion-note":2,"ion-searchbar":2,"ion-popover":1,"iw-button":4,"app-header-employee-desktop":1,"iw-button-edit":3,"iw-button-delete":3,"iw-button-item":3,"iw-button-save":3,"iw-button-download":3,"iw-button-confirm":3,"iw-button-add":3,"iw-button-active-desactive":3,"iw-button-send-email":3,"iw-button-tracking":3,"iw-button-view-pdf":3,"ili-action-menu":1,"ion-item-divider":2,"app-tag":2,"app-table-caption":1,"app-task-status":1,"base-input-signal":2,"lx-section-nav":1,"custom-search-input-signal":2,"custom-input-date-signal":2,"custom-input-select-button-signal":4,"app-tabs":4,"ion-progress-bar":2,"app-badge":1,"custom-input-text-signal":1,"custom-input-switch-signal":1,"web-input-date":1,"ili-badge":2,"ili-chip":1,"ili-image":1,"app-empty-state":1}
+
+src/styles/base/_global.scss:10	[ion-item]	Usado en ion-item listItemTemplate para mostrar foto/logo con fallback.
+src/styles/base/_global.scss:175	[ion-icon]	ion-tab-bar.app-tab-bar ion-icon,
+src/styles/base/_global.scss:176	[ion-label]	ion-tab-bar.app-tab-bar ion-label {
+src/styles/base/_global.scss:181	[ion-icon]	ion-tab-bar.app-tab-bar ion-icon {
+src/styles/base/_global.scss:193	[ion-content]	/* ion-content debe expandirse para llenar el espacio entre header y footer */
+src/styles/base/_global.scss:194	[ion-content]	#main-content ion-content {
+src/styles/custom/_committee.scss:954	[lx-card]	lx-card {
+src/styles/custom/_committee.scss:1006	[ili-button]	ili-button {
+src/styles/custom/_committee.scss:1355	[app-icon]	app-icon { font-size: 1.15rem; }
+src/styles/custom/_custom-table.scss:2	[app-table]	CUSTOM TABLE ÔÇö Wrapper/overlay para app-table con scroll vertical
+src/styles/custom/_custom-table.scss:66	[app-table]	/* Case 2: Used on the app-table host */
+src/styles/custom/_custom-table.scss:87	[app-table]	/* app-table owns scroll behavior */
+src/styles/custom/_custom-table.scss:116	[app-sorticon]	app-sorticon,
+src/styles/custom/_print.scss:159	[app-manuals-and-processes-detail]	app-task-list, app-my-assigned-tasks-list, app-manuals-and-processes-detail {
+src/styles/custom/_print.scss:159	[app-my-assigned-tasks-list]	app-task-list, app-my-assigned-tasks-list, app-manuals-and-processes-detail {
+src/styles/custom/_print.scss:159	[app-task-list]	app-task-list, app-my-assigned-tasks-list, app-manuals-and-processes-detail {
+src/styles/custom/_print.scss:167	[app-data-view-mobile]	app-data-view-mobile {
+src/styles/custom/_print.scss:597	[app-manuals-and-processes-detail]	app-manuals-and-processes-detail {
+src/styles/mobile/_ili-buttons.scss:27	[ion-button]	ion-button {
+src/styles/mobile/_ili-buttons.scss:59	[ion-button]	ion-button app-icon,
+src/styles/mobile/_ili-buttons.scss:59	[app-icon]	ion-button app-icon,
+src/styles/mobile/_ili-buttons.scss:60	[ion-button]	ion-button ion-icon {
+src/styles/mobile/_ili-buttons.scss:60	[ion-icon]	ion-button ion-icon {
+src/styles/mobile/_ili-buttons.scss:66	[ion-button]	ion-button.ion-color-danger {
+src/styles/mobile/_ionic-rn-theme.scss:41	[ion-content]	ion-content {
+src/styles/mobile/_ionic-rn-theme.scss:68	[ion-button]	ion-button {
+src/styles/mobile/_ionic-rn-theme.scss:76	[ion-list]	ion-list {
+src/styles/mobile/_ionic-rn-theme.scss:80	[ion-item]	> ion-item:first-of-type {
+src/styles/mobile/_ionic-rn-theme.scss:84	[ion-item]	> ion-item:last-of-type {
+src/styles/mobile/_ionic-rn-theme.scss:89	[ion-item]	> ion-item:only-child {
+src/styles/mobile/_ionic-rn-theme.scss:109	[ion-item]	ion-item {
+src/styles/mobile/_ionic-rn-theme.scss:127	[ion-label]	ion-label {
+src/styles/mobile/_ionic-rn-theme.scss:138	[ion-note]	ion-note {
+src/styles/mobile/_ionic-rn-theme.scss:174	[ion-button]	ion-button {
+src/styles/mobile/_ionic-rn-theme.scss:231	[ion-searchbar]	ion-searchbar {
+src/styles/mobile/_ionic-rn-theme.scss:313	[ion-popover]	ion-popover {
+src/styles/mobile/_ionic-rn-theme.scss:332	[ion-content]	ion-content {
+src/styles/mobile/_ionic-rn-theme.scss:338	[ion-button]	ion-button { --color: var(--ds-primary); }
+src/styles/mobile/_ionic-rn-theme.scss:340	[ion-item]	ion-item {
+src/styles/mobile/_ionic-rn-theme.scss:353	[ion-label]	ion-label {
+src/styles/mobile/_ionic-rn-theme.scss:357	[ion-searchbar]	ion-searchbar {
+src/styles/shared/_sidebar.scss:321	[app-icon]	app-icon dimensiona su glifo con 1em, as├¡ que basta con el font-size. */
+src/styles/shared/_sidebar.scss:322	[app-icon]	app-header-employee-monitor .toolbar-icon-btn app-icon,
+src/styles/shared/_sidebar.scss:323	[iw-button]	app-header-employee-monitor iw-button app-icon {
+src/styles/shared/_sidebar.scss:323	[app-icon]	app-header-employee-monitor iw-button app-icon {
+src/styles/shared/_sidebar.scss:347	[app-header-employee-desktop]	:is(app-header-employee-monitor, app-header-employee-desktop) .customer-selector-btn {
+src/styles/shared/_sidebar.scss:383	[app-icon]	app-icon {
+src/styles/web/_buttons.scss:507	[iw-button-edit]	iw-button-edit,
+src/styles/web/_buttons.scss:508	[iw-button-delete]	iw-button-delete,
+src/styles/web/_buttons.scss:509	[iw-button-item]	iw-button-item,
+src/styles/web/_buttons.scss:510	[iw-button-save]	iw-button-save,
+src/styles/web/_buttons.scss:511	[iw-button-download]	iw-button-download,
+src/styles/web/_buttons.scss:512	[iw-button-confirm]	iw-button-confirm,
+src/styles/web/_buttons.scss:513	[iw-button-add]	iw-button-add,
+src/styles/web/_buttons.scss:514	[iw-button-active-desactive]	iw-button-active-desactive,
+src/styles/web/_buttons.scss:515	[iw-button-send-email]	iw-button-send-email,
+src/styles/web/_buttons.scss:516	[iw-button-tracking]	iw-button-tracking,
+src/styles/web/_buttons.scss:517	[iw-button-view-pdf]	iw-button-view-pdf,
+src/styles/web/_buttons.scss:518	[iw-button]	iw-button
+src/styles/web/_buttons.scss:531	[iw-button-edit]	iw-button-edit,
+src/styles/web/_buttons.scss:532	[iw-button-delete]	iw-button-delete,
+src/styles/web/_buttons.scss:533	[iw-button-item]	iw-button-item,
+src/styles/web/_buttons.scss:534	[iw-button-save]	iw-button-save,
+src/styles/web/_buttons.scss:535	[iw-button-download]	iw-button-download,
+src/styles/web/_buttons.scss:536	[iw-button-confirm]	iw-button-confirm,
+src/styles/web/_buttons.scss:537	[iw-button-add]	iw-button-add,
+src/styles/web/_buttons.scss:538	[iw-button-active-desactive]	iw-button-active-desactive,
+src/styles/web/_buttons.scss:539	[iw-button-send-email]	iw-button-send-email,
+src/styles/web/_buttons.scss:540	[iw-button-tracking]	iw-button-tracking,
+src/styles/web/_buttons.scss:541	[iw-button-view-pdf]	iw-button-view-pdf,
+src/styles/web/_buttons.scss:542	[iw-button]	iw-button
+src/styles/web/_buttons.scss:545	[iw-button-edit]	iw-button-edit,
+src/styles/web/_buttons.scss:546	[iw-button-delete]	iw-button-delete,
+src/styles/web/_buttons.scss:547	[iw-button-item]	iw-button-item,
+src/styles/web/_buttons.scss:548	[iw-button-save]	iw-button-save,
+src/styles/web/_buttons.scss:549	[iw-button-download]	iw-button-download,
+src/styles/web/_buttons.scss:550	[iw-button-confirm]	iw-button-confirm,
+src/styles/web/_buttons.scss:551	[iw-button-add]	iw-button-add,
+src/styles/web/_buttons.scss:552	[iw-button-active-desactive]	iw-button-active-desactive,
+src/styles/web/_buttons.scss:553	[iw-button-send-email]	iw-button-send-email,
+src/styles/web/_buttons.scss:554	[iw-button-tracking]	iw-button-tracking,
+src/styles/web/_buttons.scss:555	[iw-button-view-pdf]	iw-button-view-pdf,
+src/styles/web/_buttons.scss:556	[iw-button]	iw-button
+src/app/core/layout/employee-view/movil/notifications-list-mobile/notifications-list-mobile.ts:36	[ion-content]	ion-content {
+src/app/core/layout/employee-view/movil/notifications-list-mobile/notifications-list-mobile.ts:40	[ion-label]	.unread ion-label h2 {
+src/app/modules/admin.luxuryapp/admin-wrapper/conventions-viewer/conventions-viewer.service.ts:440	[app-icon]	'Un solo paquete de iconos (material-symbols-light) y una sola fuente de valores (app-icon.catalog.ts). Un nombre de icono inexistente NO falla: no rompe la compilacion, no avisa por consola, no pone una prueba en rojo. Simplemente no dibuja. En 2026-08-11 se hallaron 606 iconos en blanco en produccion por esa causa. Ojo con Bootstrap: su input icon espera una CLASE CSS, no un identificador de Iconify.',
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/catalog-mobile/mobile-buttons/mobile-buttons.ts:73	[ili-button]	<!-- Variantes sem├ínticas (ili-button variant="ÔÇª") -->
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/catalog-mobile/mobile-buttons/mobile-buttons.ts:77	[ili-button]	<code>&lt;ili-button variant="ÔÇª"&gt;</code> ÔÇö primary,
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/catalog-mobile/mobile-buttons/mobile-buttons.ts:168	[ili-action-menu]	<div class="section-label">Action-sheet (ili-action-menu)</div>
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/catalog-mobile/mobile-lists/mobile-lists.ts:170	[ion-item-divider]	<!-- Lista agrupada con ion-list-header + ion-item-divider -->
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/catalog-web-item/catalog-web-item.ts:1154	[app-tag]	Estados de sincronizacion - app-tag severity
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/catalog-web-item/catalog-web-item.ts:1159	[app-tag]	Usar <code>app-tag [severity]</code> con la funcion
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/catalog-web-item/catalog-web-item.ts:1199	[app-table]	<code>app-table class="custom-table "</code>
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/foundations/catalog-guide/catalog-guia.ts:170	[app-data-view-mobile]	rule: "Obligatorio implementar app-data-view-mobile en cada listado operativo.",
+src/app/modules/admin.luxuryapp/infrastructure/catalog-component-ui/foundations/catalog-guide-item/catalog-guia-item.ts:540	[app-data-view-mobile]	rule: "Obligatorio implementar app-data-view-mobile en cada listado operativo.",
+src/app/modules/admin.luxuryapp/security-permissions/module-app-roles/module-app-rol-list.ts:49	[ion-item-divider]	:host ::ng-deep ion-item-divider {
+src/app/modules/auth.luxuryapp/account-recovery/recovery-code/recovery-code-mobile.ts:230	[ion-button]	.lm-btn-wrapper ::ng-deep ion-button {
+src/app/modules/auth.luxuryapp/account-recovery/recovery-password/recovery-mobile.ts:240	[ion-button]	.lm-btn-wrapper ::ng-deep ion-button {
+src/app/modules/auth.luxuryapp/account-recovery/reset-password/reset-password-mobile.ts:210	[ion-button]	.lm-btn-wrapper ::ng-deep ion-button {
+src/app/modules/auth.luxuryapp/auth/login-mobile.ts:251	[ion-button]	.lm-btn-wrapper ::ng-deep ion-button {
+src/app/modules/operations.luxuryapp/task/tasks/task-message/task-list.ts:115	[app-table-caption]	:host ::ng-deep app-table-caption > div {
+src/app/modules/operations.luxuryapp/task/tasks/task-message/task-list.ts:118	[app-task-status]	:host ::ng-deep app-task-status > div {
+src/app/modules/operations.luxuryapp/task/tasks/task-message/task-list.ts:121	[base-input-signal]	:host ::ng-deep base-input-signal .field {
+src/app/modules/recruitment.luxuryapp/recruitment-requests/recruitment-staff-board/employee-form.ts:43	[lx-section-nav]	.employee-shell-header lx-section-nav {
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:57	[base-input-signal]	:host ::ng-deep base-input-signal .field {
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:61	[custom-search-input-signal]	:host ::ng-deep custom-search-input-signal,
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:62	[custom-search-input-signal]	:host ::ng-deep custom-search-input-signal .field {
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:68	[custom-input-date-signal]	:host ::ng-deep custom-input-date-signal .field-horizontal,
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:69	[custom-input-select-button-signal]	:host ::ng-deep custom-input-select-button-signal .field-horizontal {
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:74	[custom-input-date-signal]	:host ::ng-deep custom-input-date-signal .field-content,
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:75	[custom-input-select-button-signal]	:host ::ng-deep custom-input-select-button-signal .field-content {
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:80	[custom-input-select-button-signal]	:host ::ng-deep custom-input-select-button-signal .btn-group {
+src/app/modules/recruitment.luxuryapp/recruitment-requests/requests/recruitment-shared/filter-requests.ts:86	[custom-input-select-button-signal]	:host ::ng-deep custom-input-select-button-signal .btn {
+src/app/modules/recruitment.luxuryapp/vacancy-requests/vacante-detail-modal.ts:34	[app-tabs]	:host ::ng-deep app-tabs > .nav.nav-tabs {
+src/app/modules/recruitment.luxuryapp/vacancy-requests/vacante-detail-modal.ts:41	[app-tabs]	:host ::ng-deep app-tabs > .nav.nav-tabs .nav-link {
+src/app/modules/recruitment.luxuryapp/vacancy-requests/vacante-detail-modal.ts:50	[app-tabs]	:host ::ng-deep app-tabs > .nav.nav-tabs .nav-link:hover,
+src/app/modules/recruitment.luxuryapp/vacancy-requests/vacante-detail-modal.ts:51	[app-tabs]	:host ::ng-deep app-tabs > .nav.nav-tabs .nav-link.active {
+src/app/shared/ui/base/breadcrumbs.base.ts:20	[app-icon]	/** Resuelve un nombre/clase/legacy a AppIconName para el binding de app-icon. */
+src/app/shared/ui/base/menubar.base.ts:14	[app-icon]	/** Resuelve un nombre/clase/legacy a AppIconName para el binding de app-icon. */
+src/app/shared/ui/base/progress-bar.base.ts:16	[ion-progress-bar]	*  - mobile:  `ili-progress-bar`  (Ionic ion-progress-bar, value 0..1)
+src/app/shared/ui/base/rating.base.ts:6	[app-icon]	*  - mobile:  `ili-rating`  (estrellas t├íctiles con app-icon)
+src/app/shared/ui/buttons/mobile-label/button.ts:36	[ion-icon]	/* app-icon (a diferencia de ion-icon) no recibe el margen por defecto de
+src/app/shared/ui/buttons/mobile-label/button.ts:36	[app-icon]	/* app-icon (a diferencia de ion-icon) no recibe el margen por defecto de
+src/app/shared/ui/buttons/mobile-label/button.ts:37	[ion-button]	ion-button, por eso el icono queda pegado al texto. Lo separamos. */
+src/app/shared/ui/buttons/mobile-label/button.ts:38	[app-icon]	app-icon[slot="start"] {
+src/app/shared/ui/buttons/mobile-label/button.ts:41	[app-icon]	app-icon[slot="end"] {
+src/app/shared/ui/buttons/web-icon/button-tracking.ts:46	[app-badge]	.tracking-badge-anchor app-badge {
+src/app/shared/ui/inputs/base/base-ionic-input.ts:62	[ion-note]	ion-note {
+src/app/shared/ui/inputs/base/base-ionic-input.ts:72	[ion-item]	/** lines: separador del ion-item */
+src/app/shared/ui/inputs/base/base-ionic-input.ts:75	[ion-item]	/** Clase personalizada para el ion-item */
+src/app/shared/ui/inputs/mobile/ion-input-text.ts:9	[custom-input-text-signal]	* Input de texto nativo para vistas m├│viles. Equivalente a custom-input-text-signal.
+src/app/shared/ui/inputs/mobile/ion-input-toggle.ts:10	[custom-input-switch-signal]	* Equivalente al custom-input-switch-signal de Bootstrap.
+src/app/shared/ui/inputs/web/custom-input-date-signal.spec.ts:62	[web-input-date]	it('should keep ISO date string as-is (conversi├│n a Date ocurre en web-input-date)', () => {
+src/app/shared/ui/mobile/app-icon/app-icon.ts:35	[ion-icon]	ion-icon {
+src/app/shared/ui/mobile/badge/badge.ts:19	[ili-badge]	ili-badge .ili-badge-small {
+src/app/shared/ui/mobile/badge/badge.ts:23	[ili-badge]	ili-badge .ili-badge-large {
+src/app/shared/ui/mobile/chip/chip.ts:43	[ili-chip]	ili-chip ion-chip.ili-chip-clickable {
+src/app/shared/ui/mobile/image/image.ts:65	[ili-image]	ili-image ion-img::part(image) { object-fit: contain; }
+src/app/shared/ui/mobile/progress-bar/progress-bar.ts:34	[ion-progress-bar]	.ili-progress-bar-root ion-progress-bar {
+src/app/shared/ui/web/table-empty-message/table-empty-message.spec.ts:21	[app-empty-state]	it('should render app-empty-state inside a tr>td', () => {
+src/app/shared/ui/web/toast/toast.ts:96	[app-icon]	.app-toast-success app-icon,
+src/app/shared/ui/web/toast/toast.ts:98	[app-icon]	.app-toast-info app-icon,
+src/app/shared/ui/web/toast/toast.ts:100	[app-icon]	.app-toast-warn app-icon,
+src/app/shared/ui/web/toast/toast.ts:102	[app-icon]	.app-toast-error app-icon,
+
+=== @media THRESHOLDS (styles + shared/ui + core/modules inline) ===
+threshold counts(px): {"366":1,"414":1,"480":2,"560":1,"575":1,"640":4,"767":1,"768":6,"900":1,"992":3,"1199":3,"1200":1,"1216":1,"1999":1,"575.98":1}
+src/styles/custom/_committee.scss:249	min-width:768px	@media (min-width: 768px) {
+src/styles/custom/_committee.scss:255	min-width:1200px	@media (min-width: 1200px) {
+src/styles/custom/_committee.scss:278	min-width:768px	@media (min-width: 768px) {
+src/styles/custom/_committee.scss:295	min-width:768px	@media (min-width: 768px) {
+src/styles/custom/_committee.scss:655	max-width:640px	@media (max-width: 640px) {
+src/styles/custom/_committee.scss:762	max-width:900px	@media (max-width: 900px) {
+src/styles/custom/_committee.scss:766	max-width:560px	@media (max-width: 560px) {
+src/styles/custom/_list.scss:64	max-width:414px	@media (max-width: 414px) {
+src/styles/custom/_list.scss:68	max-width:366px	@media (max-width: 366px) {
+src/styles/custom/_list.scss:89	max-width:480px	@media (max-width: 480px) {
+src/styles/custom/_list.scss:102	max-width:1199px	@media (max-width: 1199px) {
+src/styles/custom/_list.scss:105	max-width:575px	@media (max-width: 575px) {
+src/styles/custom/_list.scss:111	max-width:1999px	@media (max-width: 1999px) {
+src/styles/custom/_list.scss:114	max-width:992px	@media (max-width: 992px) {
+src/styles/custom/_list.scss:120	max-width:1199px	@media (max-width: 1199px) {
+src/styles/custom/_list.scss:145	max-width:1199px	@media (max-width: 1199px) {
+src/styles/custom/_list.scss:170	max-width:1216px	@media (max-width: 1216px) {
+src/styles/shared/_auth.scss:26	min-width:992px	@media screen and (min-width: 992px) {
+src/styles/shared/_auth.scss:46	min-width:992px	@media screen and (min-width: 992px) {
+src/styles/web/_alerts.scss:172	max-width:480px	@media (max-width: 480px) {
+src/styles/web/_cards.scss:141	max-width:768px	@media (max-width: 768px) {
+src/styles/web/_forms.scss:239	max-width:640px	@media (max-width: 640px) {
+src/styles/web/_timelines.scss:78	max-width:575.98px	@media (max-width: 575.98px) {
+src/app/shared/ui/inputs/base/base-input-signal.ts:113	max-width:768px	@media (max-width: 768px) {
+src/app/shared/ui/web/action-menu/action-menu.ts:61	max-width:767px	@media (max-width: 767px) {
+src/app/shared/ui/web/customer-360/customer-360.ts:364	max-width:640px	@media (max-width: 640px) {
+src/app/shared/ui/web/section-nav/section-nav.ts:108	max-width:640px	@media (max-width: 640px) {
+src/app/shared/ui/web/title-solicitud-pago-pdf/cabecera-solicitud-pago-pdf.component.scss:30	max-width:768px	@media (max-width: 768px) {

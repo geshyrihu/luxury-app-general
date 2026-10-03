@@ -1,0 +1,185 @@
+- generic [ref=f13e1]:
+  - link [ref=f13e7] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+    - text: Saltar al contenido principal
+  - main [ref=f13e9]:
+    - generic [ref=f13e12]:
+      - generic [ref=f13e17]:
+        - generic [ref=f13e19]:
+          - button [ref=f13e20] [cursor=pointer]
+          - button [ref=f13e27] [cursor=pointer]:
+            - generic [ref=f13e29]: LUXURY
+          - navigation [ref=f13e36]:
+            - list [ref=f13e37]:
+              - listitem [ref=f13e38]:
+                - link [ref=f13e39] [cursor=pointer]:
+                  - /url: /dashboard
+              - listitem [ref=f13e44]:
+                - text: /
+                - link [ref=f13e45] [cursor=pointer]:
+                  - /url: /inspections
+                  - generic [ref=f13e46]: Inspecciones
+              - listitem [ref=f13e47]:
+                - text: /
+                - link [ref=f13e48] [cursor=pointer]:
+                  - /url: /inspections/details/019c6c06-4968-7758-9ad4-000aacd9dcfd
+                  - generic [ref=f13e49]: Inspection detalle
+        - generic [ref=f13e51]:
+          - button [ref=f13e52] [cursor=pointer]
+          - button [ref=f13e57] [cursor=pointer]
+          - button [ref=f13e62] [cursor=pointer]
+          - button [ref=f13e67] [cursor=pointer]
+          - button [ref=f13e72] [cursor=pointer]
+          - button [ref=f13e77] [cursor=pointer]
+          - button [ref=f13e82] [cursor=pointer]
+          - button [ref=f13e87] [cursor=pointer]
+          - button [ref=f13e92] [cursor=pointer]
+          - button [ref=f13e97] [cursor=pointer]
+          - button [ref=f13e102] [cursor=pointer]
+          - button [ref=f13e109] [cursor=pointer]:
+            - generic [ref=f13e110]: "17"
+          - button [ref=f13e120] [cursor=pointer]
+      - navigation [ref=f13e130]:
+        - generic [ref=f13e131]:
+          - generic [ref=f13e132]: LuxuryApp
+          - generic [ref=f13e133]: Gestión Inteligente
+        - generic [ref=f13e141]:
+          - heading [level=2] [ref=f13e142]: Administrador LBG
+          - paragraph [ref=f13e143]: Desconocido
+          - heading [level=3] [ref=f13e145]: LUXURY
+        - generic [ref=f13e146]:
+          - generic [ref=f13e147]: Design System
+          - list [ref=f13e149]:
+            - listitem [ref=f13e150]:
+              - button [ref=f13e151] [cursor=pointer]:
+                - generic [ref=f13e152]: Luxury Design System
+          - separator [ref=f13e163]
+          - list [ref=f13e164]:
+            - listitem [ref=f13e165]:
+              - button [ref=f13e166] [cursor=pointer]:
+                - generic [ref=f13e167]: Legal
+            - listitem [ref=f13e177]:
+              - link [ref=f13e178] [cursor=pointer]:
+                - /url: /contabilidad
+                - generic [ref=f13e183]: Contabilidad
+            - listitem [ref=f13e184]:
+              - link [ref=f13e185] [cursor=pointer]:
+                - /url: /cobranza-nativa
+                - generic [ref=f13e190]: Cobranza Panel
+            - listitem [ref=f13e191]:
+              - button [ref=f13e192] [cursor=pointer]:
+                - generic [ref=f13e193]: Tickets
+            - listitem [ref=f13e203]:
+              - button [ref=f13e204] [cursor=pointer]:
+                - generic [ref=f13e205]: Inspecciones
+            - listitem [ref=f13e215]:
+              - button [ref=f13e216] [cursor=pointer]:
+                - generic [ref=f13e217]: Juntas de comite
+            - listitem [ref=f13e227]:
+              - button [ref=f13e228] [cursor=pointer]:
+                - generic [ref=f13e229]: Compras
+            - listitem [ref=f13e239]:
+              - button [ref=f13e240] [cursor=pointer]:
+                - generic [ref=f13e241]: Bitacoras
+            - listitem [ref=f13e251]:
+              - button [ref=f13e252] [cursor=pointer]:
+                - generic [ref=f13e253]: Almacen
+            - listitem [ref=f13e263]:
+              - button [ref=f13e264] [cursor=pointer]:
+                - generic [ref=f13e265]: Inventarios
+            - listitem [ref=f13e275]:
+              - button [ref=f13e276] [cursor=pointer]:
+                - generic [ref=f13e277]: Biblioteca
+            - listitem [ref=f13e287]:
+              - button [ref=f13e288] [cursor=pointer]:
+                - generic [ref=f13e289]: Calendarios
+            - listitem [ref=f13e297]:
+              - button [ref=f13e298] [cursor=pointer]:
+                - generic [ref=f13e299]: Directorios
+            - listitem [ref=f13e307]:
+              - link [ref=f13e308] [cursor=pointer]:
+                - /url: /supervision
+                - generic [ref=f13e313]: Supervisión
+            - listitem [ref=f13e314]:
+              - button [ref=f13e315] [cursor=pointer]:
+                - generic [ref=f13e316]: Reportes
+            - listitem [ref=f13e324]:
+              - button [ref=f13e325] [cursor=pointer]:
+                - generic [ref=f13e326]: Entrega recepción
+            - listitem [ref=f13e334]:
+              - button [ref=f13e335] [cursor=pointer]:
+                - generic [ref=f13e336]: Reclutamiento
+            - listitem [ref=f13e344]:
+              - generic [ref=f13e345]: Sistemas
+            - listitem [ref=f13e351]:
+              - generic [ref=f13e352]: Reservaciones
+            - listitem [ref=f13e358]:
+              - generic [ref=f13e359]: Pases QR
+            - listitem [ref=f13e365]:
+              - generic [ref=f13e366]: Paqueteria
+            - listitem [ref=f13e372]:
+              - button [ref=f13e373] [cursor=pointer]:
+                - generic [ref=f13e374]: Recursos Humanos
+            - listitem [ref=f13e382]:
+              - link [ref=f13e383] [cursor=pointer]:
+                - /url: /announcements/manage
+                - generic [ref=f13e388]: Anuncios
+            - listitem [ref=f13e389]:
+              - button [ref=f13e390] [cursor=pointer]:
+                - generic [ref=f13e391]: Utilidades
+      - generic [ref=f13e404]:
+        - generic [ref=f13e409]:
+          - generic [ref=f13e410]:
+            - heading [level=1] [ref=f13e411]: Cuarto de Bombas Torre 3
+            - paragraph [ref=f13e412]: Creado el 10/4/2025
+            - generic [ref=f13e413]:
+              - generic [ref=f13e414]: Diario
+              - generic [ref=f13e420]: Activa
+              - generic [ref=f13e426]: "3"
+          - generic [ref=f13e432]:
+            - button [ref=f13e434] [cursor=pointer]:
+              - generic [ref=f13e439]: Editar
+            - button [ref=f13e441] [cursor=pointer]:
+              - generic [ref=f13e446]: Eliminar
+        - generic [ref=f13e450]:
+          - generic [ref=f13e451]:
+            - heading [level=2] [ref=f13e452]: Equipos y criterios de revisión
+            - button [ref=f13e454] [cursor=pointer]:
+              - generic [ref=f13e459]: Agregar Equipo
+          - generic [ref=f13e460]:
+            - paragraph [ref=f13e465]: No hay equipos configurados en este recorrido.
+            - button [ref=f13e467] [cursor=pointer]:
+              - generic [ref=f13e472]: Agregar el primer equipo
+  - dialog [ref=f13e474]:
+    - document:
+      - generic [ref=f13e476]:
+        - generic [ref=f13e477]:
+          - heading "Agregar Equipo" [level=5] [ref=f13e478]
+          - button "Cerrar" [ref=f13e479] [cursor=pointer]
+        - generic [ref=f13e488]:
+          - generic [ref=f13e493]:
+            - generic [ref=f13e494]: Equipo o área
+            - generic [ref=f13e496]:
+              - generic [ref=f13e497]:
+                - generic [ref=f13e498]:
+                  - generic [ref=f13e536]: Lobby Principal
+                  - combobox "Equipo o área" [active] [ref=f13e501]
+                - button "Clear all" [ref=f13e533] [cursor=pointer]:
+                  - generic: ×
+                - generic [ref=f13e502] [cursor=pointer]
+              - status [ref=f13e503]
+          - generic [ref=f13e507]:
+            - generic [ref=f13e508]: Posición *
+            - spinbutton "Posición *" [ref=f13e510]: "0"
+          - generic [ref=f13e511]:
+            - generic [ref=f13e512]: Revisiones
+            - generic [ref=f13e513]: No hay revisiones agregadas
+            - generic [ref=f13e520]:
+              - generic [ref=f13e521]:
+                - generic [ref=f13e522]:
+                  - generic [ref=f13e523]: Seleccione una revisión
+                  - combobox [ref=f13e525]
+                - generic [ref=f13e526] [cursor=pointer]
+              - status [ref=f13e527]
+          - generic [ref=f13e528]:
+            - button "Guardar" [disabled]

@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2026-10-01T04:52:37.145Z",
+  "mode": "NO-REGRESIÓN (falla si empeora)",
+  "tool": "axe-core / @axe-core/playwright",
+  "config": "a11y-targets.json",
+  "baseUrl": "http://localhost:4200",
+  "axeTags": [
+    "wcag2a",
+    "wcag2aa"
+  ],
+  "summary": {
+    "targetsTotal": 7,
+    "anonymousTargets": 2,
+    "sessionTargets": 5,
+    "routesEvaluated": 1,
+    "routesBlockedByAuth": 1,
+    "routesUnreachable": 5,
+    "totalViolations": 0,
+    "distinctRules": 0
+  },
+  "routesEvaluated": [
+    {
+      "path": "/login",
+      "label": "login (público)",
+      "auth": "anonymous",
+      "requested": "http://localhost:4200/login",
+      "landedUrl": "http://localhost:4200/auth/login",
+      "violations": 0,
+      "passes": 22,
+      "incomplete": 3,
+      "violationsDetail": []
+    }
+  ],
+  "routesBlockedByAuth": [
+    {
+      "path": "/recovery-password",
+      "label": "recuperación de contraseña (pública)",
+      "auth": "anonymous",
+      "requested": "http://localhost:4200/recovery-password",
+      "landed": "http://localhost:4200/auth/login",
+      "reason": "auth-redirect"
+    }
+  ],
+  "routesUnreachable": [
+    {
+      "path": "/dashboard",
+      "label": "dashboard",
+      "auth": "session",
+      "reason": "no-auth-state"
+    },
+    {
+      "path": "/home",
+      "label": "home",
+      "auth": "session",
+      "reason": "no-auth-state"
+    },
+    {
+      "path": "/operations",
+      "label": "listado con tabla (operations)",
+      "auth": "session",
+      "reason": "no-auth-state"
+    },
+    {
+      "path": "/admin",
+      "label": "panel admin",
+      "auth": "session",
+      "reason": "no-auth-state"
+    },
+    {
+      "path": "/cobranza",
+      "label": "cobranza",
+      "auth": "session",
+      "reason": "no-auth-state"
+    }
+  ],
+  "violationsByRule": [],
+  "coverage": {
+    "declared": true,
+    "note": "Cobertura parcial: 1 rutas evaluadas. 1 rutas siguieron redirigiendo al muro de auth pese a la sesión: hallazgo de la app (permisos/ruta inexistente), no fallo del script.",
+    "routesUnreachableReasons": [
+      "no-auth-state"
+    ]
+  },
+  "regression": {
+    "previousTotal": null,
+    "currentTotal": 0,
+    "regressed": false,
+    "noReference": true
+  }
+}

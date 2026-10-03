@@ -1,0 +1,83 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Ciclo de vida de un Recorrido de Inspección",
+    "quality_profile": "standard",
+    "output": "appsweb/angular/src/app/modules/maintenance.luxuryapp/inspection/docs/recorridos-workflow.html"
+  },
+  "lanes": [
+    { "id": "admin", "label": "Administración del Recorrido" },
+    { "id": "plan", "label": "Programación Automática" },
+    { "id": "exec", "label": "Ejecución en Campo" },
+    { "id": "follow", "label": "Seguimiento y Aviso", "variant": "exception" }
+  ],
+  "nodes": [
+    { "id": "catalogo", "lane": "admin", "col": 0, "type": "frontend", "label": "Catálogo de Recorridos", "sublabel": "lista por cliente", "width": 190 },
+    { "id": "form", "lane": "admin", "col": 1, "type": "frontend", "label": "Formulario de Recorrido", "sublabel": "diaria / semanal / mensual", "width": 190 },
+    { "id": "guardar_def", "lane": "admin", "col": 2, "type": "backend", "label": "Guardar Recorrido", "sublabel": "valida frecuencia y días", "width": 190 },
+    { "id": "detalle", "lane": "admin", "col": 3, "type": "frontend", "label": "Detalle del Recorrido", "sublabel": "equipos y criterios", "width": 190 },
+    { "id": "agregar_equipo", "lane": "admin", "col": 4, "type": "frontend", "label": "Agregar Equipo", "sublabel": "equipo + criterios", "width": 190 },
+    { "id": "vincular_activo", "lane": "admin", "col": 5, "type": "backend", "label": "Vincular Equipo", "sublabel": "equipo debe ser del cliente", "width": 190 },
+    { "id": "recurrencia", "lane": "plan", "col": 0, "type": "backend", "label": "Calcular Recurrencia", "sublabel": "¿corresponde hoy?", "width": 190 },
+    { "id": "generar", "lane": "plan", "col": 1, "type": "backend", "label": "Generar Inspección", "sublabel": "asigna responsable primario", "width": 190 },
+    { "id": "ejec_pendiente", "lane": "plan", "col": 2, "type": "database", "label": "Ejecución Pendiente", "sublabel": "CustomerInspections", "width": 190 },
+    { "id": "mis_recorridos", "lane": "exec", "col": 2, "type": "frontend", "label": "Mis Recorridos", "sublabel": "lista del día", "width": 190 },
+    { "id": "ejecutar", "lane": "exec", "col": 3, "type": "frontend", "label": "Ejecutar Inspección", "sublabel": "Bien / Mal + observaciones", "width": 190 },
+    { "id": "guardar_res", "lane": "exec", "col": 4, "type": "backend", "label": "Guardar Resultados", "sublabel": "incluye evidencia fotográfica", "width": 190 },
+    { "id": "finalizar", "lane": "exec", "col": 5, "type": "backend", "label": "Finalizar Inspección", "sublabel": "cierra la ejecución", "width": 190 },
+    { "id": "reporte", "lane": "follow", "col": 4, "type": "frontend", "label": "Reporte de Inspección", "sublabel": "consulta y descarga PDF", "width": 190 },
+    { "id": "notificar", "lane": "follow", "col": 5, "type": "security", "label": "Aviso de Hallazgo Crítico", "sublabel": "Jefe de Mantenimiento / Admin", "width": 190 }
+  ],
+  "edges": [
+    { "id": "e_catalogo_form", "from": "catalogo", "to": "form", "label": "Nuevo Recorrido", "variant": "default" },
+    { "id": "e_form_guardar", "from": "form", "to": "guardar_def", "label": "Guardar", "variant": "emphasis" },
+    { "id": "e_guardar_detalle", "from": "guardar_def", "to": "detalle", "variant": "default" },
+    { "id": "e_detalle_equipo", "from": "detalle", "to": "agregar_equipo", "label": "Agregar Equipo", "variant": "default" },
+    { "id": "e_equipo_vincular", "from": "agregar_equipo", "to": "vincular_activo", "label": "Guardar equipo", "variant": "emphasis" },
+    { "id": "e_vincular_recurrencia", "from": "vincular_activo", "to": "recurrencia", "label": "recorrido activo", "variant": "default", "role": "return" },
+    { "id": "e_recurrencia_generar", "from": "recurrencia", "to": "generar", "variant": "default" },
+    { "id": "e_generar_pendiente", "from": "generar", "to": "ejec_pendiente", "label": "crea pendiente", "variant": "emphasis" },
+    { "id": "e_mis_generar", "from": "mis_recorridos", "to": "generar", "label": "consulta la fecha", "variant": "dashed", "role": "async" },
+    { "id": "e_pendiente_mis", "from": "ejec_pendiente", "to": "mis_recorridos", "label": "asignada al responsable", "variant": "default" },
+    { "id": "e_mis_ejecutar", "from": "mis_recorridos", "to": "ejecutar", "label": "Inspeccionar", "variant": "emphasis" },
+    { "id": "e_ejecutar_guardar", "from": "ejecutar", "to": "guardar_res", "label": "Bien/Mal + observaciones", "variant": "default" },
+    { "id": "e_guardar_finalizar", "from": "guardar_res", "to": "finalizar", "label": "Finalizar Inspección", "variant": "emphasis" },
+    { "id": "e_finalizar_reporte", "from": "finalizar", "to": "reporte", "label": "resultado cerrado", "variant": "default" },
+    { "id": "e_finalizar_notificar", "from": "finalizar", "to": "notificar", "label": "si hay hallazgo crítico", "variant": "security", "role": "branch" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Un Recorrido, dos capas",
+      "items": [
+        "El Recorrido (definición) guarda frecuencia, equipos y responsables",
+        "La Inspección (ejecución) guarda quién, cuándo y con qué resultados"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Hallazgo crítico",
+      "items": [
+        "El aviso se dispara al finalizar, una sola vez por ejecución",
+        "Destinatarios: Jefe de Mantenimiento y Administrador"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "Fuentes del código (archivo:línea)",
+      "items": [
+        "inspection-list/lista-inspecciones.ts:85 — Catálogo de Recorridos",
+        "inspections-add-edit/inspecciones-form.ts:72 — frecuencias",
+        "Inspections/Services/InspectionAppService.cs:91 — guardar recorrido",
+        "inspection-asset-add/inspeccion-activo-condominio.ts:176 — Agregar Equipo",
+        "InspectionRecurrenceCalculator.cs:22 — cálculo de recurrencia",
+        "CustomerInspectionAppService.cs:11 — generación de inspecciones",
+        "logbook/mis-inspecciones-lista.ts:70 — Mis Recorridos",
+        "logbook/mis-inspecciones-ejecutar.html:44 — ejecución Bien/Mal",
+        "CustomerInspectionAppService.cs:190 — Finalizar Inspección",
+        "InspectionCriticalFindingNotificationService.cs:19 — aviso crítico"
+      ]
+    }
+  ]
+}

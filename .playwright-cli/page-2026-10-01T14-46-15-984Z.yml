@@ -1,0 +1,5 @@
+- generic [active] [ref=f10e1]:
+  - link "Saltar al contenido principal" [ref=f10e2] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+  - generic "Aplicación LuxuryApp" [ref=f10e3]:
+    - img "LuxuryApp" [ref=f10e5]

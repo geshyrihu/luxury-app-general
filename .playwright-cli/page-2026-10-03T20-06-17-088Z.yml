@@ -1,0 +1,99 @@
+- generic [active] [ref=f14e1]:
+  - link "Saltar al contenido principal" [ref=f14e2] [cursor=pointer]:
+    - /url: "#app-root-outlet"
+  - generic "Aplicación LuxuryApp" [ref=f14e3]:
+    - main [ref=f14e4]:
+      - generic [ref=f14e86]:
+        - generic [ref=f14e91]:
+          - generic [ref=f14e93]:
+            - button "Abrir o cerrar el menú lateral" [ref=f14e94] [cursor=pointer]
+            - button "LUXURY" [ref=f14e99] [cursor=pointer]
+            - navigation "breadcrumb" [ref=f14e106]:
+              - list [ref=f14e107]:
+                - listitem [ref=f14e108]:
+                  - link "Inicio" [ref=f14e109] [cursor=pointer]:
+                    - /url: /dashboard
+          - generic [ref=f14e113]:
+            - button "Inicio" [ref=f14e114] [cursor=pointer]
+            - button "Pagina anterior" [ref=f14e117] [cursor=pointer]
+            - button "Pagina siguiente" [ref=f14e120] [cursor=pointer]
+            - button "Actualizar" [ref=f14e123] [cursor=pointer]
+            - button "Mi edificio" [ref=f14e126] [cursor=pointer]
+            - button "Anuncios" [ref=f14e129] [cursor=pointer]
+            - button "Comunicado IA" [ref=f14e132] [cursor=pointer]
+            - button "Telefonos de Emergencia" [ref=f14e135] [cursor=pointer]
+            - button "Configuración" [ref=f14e138] [cursor=pointer]
+            - button "Novedades" [ref=f14e141] [cursor=pointer]
+            - button "Cambiar tema claro u oscuro" [ref=f14e144] [cursor=pointer]
+            - button "Notificaciones" [ref=f14e149] [cursor=pointer]
+            - button "Abrir menú de usuario" [ref=f14e156] [cursor=pointer]
+        - navigation [ref=f14e164]:
+          - generic [ref=f14e165]:
+            - generic [ref=f14e166]: LuxuryApp
+            - generic [ref=f14e167]: Gestión Inteligente
+          - generic [ref=f14e175]:
+            - heading "Administrador LBG" [level=2] [ref=f14e176]
+            - paragraph [ref=f14e177]: Desconocido
+            - heading "LUXURY" [level=3] [ref=f14e179]
+          - status "Cargando" [ref=f14e183]
+        - generic [ref=f14e185]:
+          - generic [ref=f14e194]:
+            - generic [ref=f14e197]:
+              - generic [ref=f14e198]:
+                - generic [ref=f14e200]:
+                  - button [ref=f14e202] [cursor=pointer]
+                  - button [ref=f14e206] [cursor=pointer]
+                  - button [ref=f14e211] [cursor=pointer]
+                - textbox "Buscar aquí..." [ref=f14e221]
+              - generic [ref=f14e222]:
+                - generic [ref=f14e227]: Critico (>8d)
+                - generic [ref=f14e228]: Alerta (7-8d)
+            - table [ref=f14e230]:
+              - rowgroup [ref=f14e231]:
+                - row [ref=f14e232]:
+                  - button "Módulo" [ref=f14e233] [cursor=pointer]
+                  - button "Fecha" [ref=f14e238] [cursor=pointer]
+                  - button "Actividad / Asunto" [ref=f14e243] [cursor=pointer]
+                  - button "Responsable" [ref=f14e248] [cursor=pointer]
+                  - columnheader "último Seguimiento" [ref=f14e253]
+                  - button "Estatus" [ref=f14e254] [cursor=pointer]
+                  - button "Días" [ref=f14e259] [cursor=pointer]
+              - rowgroup [ref=f14e264]:
+                - row [ref=f14e265]:
+                  - cell "Bien Bandeja Limpia! No tienes actividades pendientes por atender." [ref=f14e266]:
+                    - generic [ref=f14e267]:
+                      - generic [ref=f14e271]: Bien Bandeja Limpia!
+                      - generic [ref=f14e272]: No tienes actividades pendientes por atender.
+            - generic [ref=f14e273]:
+              - generic [ref=f14e274]: En total hay 0 registros.
+              - generic [ref=f14e277]: 0-0 de 0
+              - generic [ref=f14e278]:
+                - navigation "Páginas de tabla" [ref=f14e279]:
+                  - list [ref=f14e280]:
+                    - listitem [ref=f14e281]:
+                      - button "Anterior" [disabled]
+                    - listitem [ref=f14e282]:
+                      - button "1" [disabled] [ref=f14e283]
+                    - listitem [ref=f14e284]:
+                      - button "Siguiente" [disabled]
+                - combobox [ref=f14e285]:
+                  - option "30" [selected]
+                  - option "50"
+                  - option "75"
+                  - option "100"
+                  - option "150"
+                  - option "200"
+          - generic: Cargando...
+    - alert [ref=f14e61]:
+      - generic [ref=f14e62]:
+        - strong [ref=f14e65]: 🔔 Notificaciones
+        - button "Cerrar" [ref=f14e66] [cursor=pointer]
+      - generic [ref=f14e67]:
+        - generic [ref=f14e68]: ¿Recibir notificaciones importantes? Actívalas ahora.
+        - generic [ref=f14e69]:
+          - button "Activar" [ref=f14e70] [cursor=pointer]
+          - button "Ahora no" [ref=f14e71] [cursor=pointer]
+  - generic [ref=f14e298]:
+    - generic [ref=f14e299]: "TS2304: Cannot find name 'This'."
+    - generic [ref=f14e300]: src/app/core/services/dialog-handler.service.ts:129:34
+    - generic [ref=f14e301]: Click outside, press Esc key, or fix the code to dismiss.
