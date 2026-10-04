@@ -59,8 +59,8 @@ Las 42 filas corresponden a los roles sincronizados por `CreateRoles()`; nombres
 | Contador | Staff | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | |
 | Cobranza | Staff | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | |
 | JefeMantenimiento | Staff | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
-| TecnicoMantenimiento | Staff | — | — | — | ✓ | ✓ | — | — | — | — | — | — | — | — | — | — | — | — | |
-| MttoNocturno | Staff | — | — | — | ✓ | — | — | — | — | — | — | — | — | — | — | — | — | — | |
+| TecnicoMantenimiento | Staff | — | — | — | ✓ | ✓ | — | ✓ | ✓ | — | — | — | — | — | — | — | — | — | Ejecuta trabajo de campo: captura hallazgos y evidencia. |
+| MttoNocturno | Staff | — | — | — | ✓ | — | — | ✓ | ✓ | — | — | — | — | — | — | — | — | — | Ejecuta trabajo de campo: captura hallazgos y evidencia. |
 | Almacenista | Staff | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | |
 | SupervisorObra | Staff | — | — | — | — | ✓ | ✓ | ✓ | ✓ | ✓ | — | — | — | — | — | — | — | — | |
 | Recepcionista | Staff | — | — | — | — | ✓ | ✓ | ✓ | ✓ | ✓ | — | — | — | — | — | — | — | — | |
