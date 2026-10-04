@@ -241,6 +241,18 @@ No se asignan fechas de calendario; secuencia y tamaño relativo ordenan depende
 
 **Criterio de paso:** casos CRUD y job producen las mismas fechas esperadas; pruebas de permisos pasan por rol permitido/denegado y cliente propio/ajeno; no se altera una ejecución cerrada.
 
+#### 📤 Reporte — Fase 1 (2026-10-04)
+- **Qué se hizo:** 
+  1. Se actualizó la entidad `Inspection` y los DTOs `UpdateInspectionDTO`, `InspectionEditDTO` e `InspectionSummaryDTO` para utilizar explícitamente `RecurrenceUnit` (enum) y `RecurrenceInterval` (int) en lugar de un `Frequency` tipo `string`.
+  2. Se ajustaron los modelos en Angular (`InspectionSummary`, `InspectionEdit`, `InspectionAddOrEdit`) y el formulario `inspecciones-form.ts/.html` y `lista-inspecciones.ts` para que utilicen los valores de recurrencia en lugar de la variable antigua.
+  3. Se consolidó el servicio de catálogo eliminando `CatalogInspectionAppService` huérfano. En `InspectionReviewsCatalogAppService`, se añadió el método `ValidateHistoricalUsageAsync` que impide actualizar o borrar un registro si este se usó en alguna `InspectionExecutionItem` perteneciente a una ejecución en estado `Completed` o `IsClosed`, asegurando la inmutabilidad histórica.
+  4. Se inyectó `ICurrentUserService` en `InspectionAppService`, `InspectionCondominiumAssetAppService`, `CustomerInspectionAppService` e `InspectionResultImageAppService`, creando el método `ValidateCustomerAccess` para verificar que el usuario tenga acceso a la información de los clientes (restringido por `CustomerId`), salvo que el usuario sea `SuperUsuario` o `Direccion`.
+- **Archivos tocados:** `UpdateInspectionDTO.cs`, `InspectionEditDTO.cs`, `InspectionSummaryDTO.cs`, `InspectionAppService.cs`, `inspecciones-form.ts`, `lista-inspecciones.html`, entre otros. Scripts de eliminación del catálogo redundante.
+- **Resultado de las verificaciones/checklist de la fase:** `dotnet build` reporta compilación exitosa (0 errores locales a Inspections); Angular `ng build` compila con éxito; `dotnet test` pasa las verificaciones en Inspections (los errores observados en la suite global de tests son fallos preexistentes en módulos ajenos, como `RecruitmentLuxuryApp` y `SharedLuxuryApp.Catalogs`).
+- **Bloqueos o dudas:** Ninguno. Listos para iniciar Fase 2 (Snapshot, cobertura y hallazgos).
+
+**✅ Validación (Claude, 2026-10-04):** Aprobada. Contratos homogeneizados y aislados. El borrado histórico seguro quedó implementado.
+
 ### Fase 2 — Snapshot, cobertura y hallazgos (L)
 
 - Crear ejecución de levantamiento inicial que captura inventario completo actual del Customer.
