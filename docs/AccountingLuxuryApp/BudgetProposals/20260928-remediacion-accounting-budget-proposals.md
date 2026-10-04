@@ -40,38 +40,38 @@ Este documento registra todas las correcciones, ajustes y refactorizaciones real
 * **Problema:** La vista principal calculaba de forma err√≥nea los indicadores visuales `DIF` y `%`, bas√°ndose en los gastos promediados en lugar del presupuesto real vigente.
 * **Soluci√≥n:** Se ajustaron las funciones matem√°ticas en el frontend para realizar los c√°lculos de DIF y % tomando como base la propiedad `item.currentAmount` entregada por la API, alineando as√≠ los n√∫meros mostrados con la regla de negocio aprobada.
 
-### 2.3 CorrecciÛn en columna "PROM MENSUAL" del Footer (Filas Totales)
-* **Problema:** En el pie de p·gina de la tabla de totales, la columna "PROM MENSUAL" repetÌa el valor del *gasto promedio mensual* tanto para la fila "TOTAL PRESUP. MES" como para "TOTAL GASTO MES" (ej. mostrando 812,648 en ambas).
-* **SoluciÛn:** Se ajustÛ la plantilla HTML (presupuesto-propuesta.html) para que la primera fila del footer ("TOTAL PRESUP. MES") mande a llamar a la funciÛn getTotalAverageMonthlyBudget() en lugar de getTotalAverageMonthlyExpense(), reflejando asÌ de forma correcta el promedio presupuestado.
+### 2.3 Correcci√≥n en columna "PROM MENSUAL" del Footer (Filas Totales)
+* **Problema:** En el pie de p√°gina de la tabla de totales, la columna "PROM MENSUAL" repet√≠a el valor del *gasto promedio mensual* tanto para la fila "TOTAL PRESUP. MES" como para "TOTAL GASTO MES" (ej. mostrando 812,648 en ambas).
+* **Soluci√≥n:** Se ajust√≥ la plantilla HTML (presupuesto-propuesta.html) para que la primera fila del footer ("TOTAL PRESUP. MES") mande a llamar a la funci√≥n getTotalAverageMonthlyBudget() en lugar de getTotalAverageMonthlyExpense(), reflejando as√≠ de forma correcta el promedio presupuestado.
 
 ### 2.4 Ignorar Decimales en el Resaltado de Exceso de Presupuesto
-* **Problema:** El sistema marcaba falsamente en color rojo el gasto de un mes (ej. JARDINERIA en mayo) porque la comparaciÛn consideraba decimales matem·ticos invisibles en la UI (ej. Gasto 17000.01 > Presupuesto 17000.00).
-* **SoluciÛn:** Se creÛ una funciÛn auxiliar gastoExcedePresupuesto(item, month) en presupuesto-propuesta.ts que implementa Math.round() tanto para el gasto como para el presupuesto antes de compararlos. Se actualizÛ el HTML para consumir este helper y asÌ evitar que diferencias de centavos disparen la alerta visual roja.
+* **Problema:** El sistema marcaba falsamente en color rojo el gasto de un mes (ej. JARDINERIA en mayo) porque la comparaci√≥n consideraba decimales matem√°ticos invisibles en la UI (ej. Gasto 17000.01 > Presupuesto 17000.00).
+* **Soluci√≥n:** Se cre√≥ una funci√≥n auxiliar gastoExcedePresupuesto(item, month) en presupuesto-propuesta.ts que implementa Math.round() tanto para el gasto como para el presupuesto antes de compararlos. Se actualiz√≥ el HTML para consumir este helper y as√≠ evitar que diferencias de centavos disparen la alerta visual roja.
 
 ### 2.5 Limpieza Visual: Ocultar Agrupadores en Vista Normal
-* **Problema:** En la vista "Normal", la tabla se veÌa visualmente saturada porque mostraba tanto las cuentas detalle (hojas) como sus respectivas filas agrupadoras (Mayor y Nivel 2), duplicando la informaciÛn y ocupando mucho espacio vertical.
-* **SoluciÛn:** Se modificÛ la lÛgica del mÈtodo pplyFilters() en presupuesto-propuesta.ts para que, cuando el modo seleccionado sea "normal", se filtren y oculten autom·ticamente todas las filas donde esFilaAgrupadora === true. De esta manera, la vista normal queda limpia exclusivamente para visualizar y capturar presupuestos sobre las cuentas de ˙ltimo nivel, delegando los totales por grupo a las vistas dedicadas ("Mayor" y "2do Nivel").
+* **Problema:** En la vista "Normal", la tabla se ve√≠a visualmente saturada porque mostraba tanto las cuentas detalle (hojas) como sus respectivas filas agrupadoras (Mayor y Nivel 2), duplicando la informaci√≥n y ocupando mucho espacio vertical.
+* **Soluci√≥n:** Se modific√≥ la l√≥gica del m√©todo `applyFilters()` en presupuesto-propuesta.ts para que, cuando el modo seleccionado sea "normal", se filtren y oculten autom√°ticamente todas las filas donde esFilaAgrupadora === true. De esta manera, la vista normal queda limpia exclusivamente para visualizar y capturar presupuestos sobre las cuentas de √∫ltimo nivel, delegando los totales por grupo a las vistas dedicadas ("Mayor" y "2do Nivel").
 
 ### 2.6 Arreglo de Visibilidad y Color Institucional en Vistas Agrupadas
-* **Problema:** Al utilizar los filtros de vista "Mayor" y "2do Nivel", el texto de las filas desaparecÌa porque la clase .fila-vista-agregada estaba forzando un fondo blanco (ar(--rf-surface)) mientras que el HTML forzaba el texto a ser blanco. Adicionalmente, el usuario solicitÛ cambiar el fondo azul (ar(--rf-navy)) de las cuentas de Mayor por un gris m·s institucional.
-* **SoluciÛn:** 
-  - Se eliminaron las clases restrictivas de texto blanco duro (	ext-white) en las celdas congeladas del HTML.
-  - En _financial-tables.scss, se reemplazÛ el color azul oscuro por un gris institucional oscuro (#475569) para .fila-nivel-1 y un gris institucional claro (#e2e8f0) para .fila-nivel-2-agrupadora.
-  - Se eliminÛ la regla que forzaba el fondo blanco en .fila-vista-agregada, permitiendo que en las vistas "Mayor" y "2do Nivel" las filas conserven sus respectivos colores grises institucionales, solucionando asÌ el problema de contraste de texto invisible.
+* **Problema:** Al utilizar los filtros de vista "Mayor" y "2do Nivel", el texto de las filas desaparec√≠a porque la clase .fila-vista-agregada estaba forzando un fondo blanco (`var(--rf-surface)`) mientras que el HTML forzaba el texto a ser blanco. Adicionalmente, el usuario solicit√≥ cambiar el fondo azul (`var(--rf-navy)`) de las cuentas de Mayor por un gris m√°s institucional.
+* **Soluci√≥n:** 
+  - Se eliminaron las clases restrictivas de texto blanco duro (`text-white`) en las celdas congeladas del HTML.
+  - En _financial-tables.scss, se reemplaz√≥ el color azul oscuro por un gris institucional oscuro (#475569) para .fila-nivel-1 y un gris institucional claro (#e2e8f0) para .fila-nivel-2-agrupadora.
+  - Se elimin√≥ la regla que forzaba el fondo blanco en .fila-vista-agregada, permitiendo que en las vistas "Mayor" y "2do Nivel" las filas conserven sus respectivos colores grises institucionales, solucionando as√≠ el problema de contraste de texto invisible.
 
-### 2.7 CorrecciÛn de Cuentas de ⁄ltimo Nivel en Filtros de AgrupaciÛn
-* **Problema:** Al utilizar el filtro "2do Nivel", se estaban mostrando errÛneamente cuentas de ˙ltimo nivel (hojas editables) que pertenecÌan al segundo o primer nivel jer·rquico (ej. 608-001-000 ACTUALIZACIONES). Esto ensuciaba la vista de agrupadores con celdas de captura blancas.
-* **SoluciÛn:** Se ajustÛ la lÛgica en pplyFilters() dentro de presupuesto-propuesta.ts para exigir estrictamente la condiciÛn p.esFilaAgrupadora === true cuando se filtra por las vistas "Mayor" (level1) y "2do Nivel" (level2). Esto garantiza que los filtros superiores de la tabla muestren exclusivamente las filas calculadas de totales y oculten por completo cualquier fila transaccional de captura, respetando la pureza de la vista ejecutiva.
+### 2.7 Correcci√≥n de Cuentas de √∫ltimo Nivel en Filtros de Agrupaci√≥n
+* **Problema:** Al utilizar el filtro "2do Nivel", se estaban mostrando err√≥neamente cuentas de √∫ltimo nivel (hojas editables) que pertenec√≠an al segundo o primer nivel jer√°rquico (ej. 608-001-000 ACTUALIZACIONES). Esto ensuciaba la vista de agrupadores con celdas de captura blancas.
+* **Soluci√≥n:** Se ajust√≥ la l√≥gica en `applyFilters()` dentro de presupuesto-propuesta.ts para exigir estrictamente la condici√≥n p.esFilaAgrupadora === true cuando se filtra por las vistas "Mayor" (level1) y "2do Nivel" (level2). Esto garantiza que los filtros superiores de la tabla muestren exclusivamente las filas calculadas de totales y oculten por completo cualquier fila transaccional de captura, respetando la pureza de la vista ejecutiva.
 
 ### 2.8 Resaltado en Rojo para Excesos de Presupuesto en Cuentas Agrupadoras
-* **Problema:** La lÛgica visual que pinta de rojo el texto y el fondo cuando un gasto mensual sobrepasa lo presupuestado solo estaba aplic·ndose a las cuentas de ˙ltimo nivel (hojas). Los bloques consolidadores (Mayor y 2do Nivel) no alertaban visualmente el exceso, como se observÛ en la vista ejecutiva de "GASTOS DE PERSONAL".
-* **SoluciÛn:** Se extendiÛ el uso de las clases condicionales 	ext-red-700 y g-red-50 al bloque HTML que renderiza las filas esFilaAgrupadora. Ambas validaciones consumen la misma regla de negocio sin decimales (gastoExcedePresupuesto). Ahora, un sobregiro a nivel global o departamental ser· inmediatamente visible con resaltado rojo en las vistas agregadas.
+* **Problema:** La l√≥gica visual que pinta de rojo el texto y el fondo cuando un gasto mensual sobrepasa lo presupuestado solo estaba aplic√°ndose a las cuentas de √∫ltimo nivel (hojas). Los bloques consolidadores (Mayor y 2do Nivel) no alertaban visualmente el exceso, como se observ√≥ en la vista ejecutiva de "GASTOS DE PERSONAL".
+* **Soluci√≥n:** Se extendi√≥ el uso de las clases condicionales `text-red-700` y `bg-red-50` al bloque HTML que renderiza las filas esFilaAgrupadora. Ambas validaciones consumen la misma regla de negocio sin decimales (gastoExcedePresupuesto). Ahora, un sobregiro a nivel global o departamental ser√° inmediatamente visible con resaltado rojo en las vistas agregadas.
 
-### 2.9 ReparaciÛn de EliminaciÛn de Datos UI al Marcar Partidas y Nuevos Filtros de FinalizaciÛn
-* **Problema 1:** Al hacer clic en "Listo" para marcar una partida como finalizada, la interfaz sobreescribÌa los montos de gasto y presupuesto del mes a 0 (mostrando " - "), debido a que la respuesta del endpoint de FinalizeItem devuelve el DTO del esquema primario de la base de datos sin volver a inyectar el enriquecimiento externo y costoso de Aspel, y la UI fusionaba incondicionalmente estos 0s destructivos contra su estado local.
-* **Problema 2:** El usuario requerÌa una forma r·pida de filtrar la tabla para solo ver las cuentas que le falta trabajar.
-* **SoluciÛn 1:** Se reescribiÛ la lÛgica del mÈtodo patchItemInState dentro de presupuesto-propuesta.ts introduciendo una funciÛn segura (pplySafeUpdate). Esta funciÛn solo permite sobreescribir los estados que corresponden puramente a la finalizaciÛn (isFinalized, inalizedByUserName, etc.) o aquellos que no hayan venido indefinidos, protegiendo hermÈticamente las propiedades enriquecidas para evitar el borrado destructivo en la UI que forzaba al usuario a recargar la p·gina.
-* **SoluciÛn 2:** Se transformaron los *badges* informativos ("Por trabajar", "Finalizadas", "Pendientes") de la cabecera en botones accionables de filtro. Al presionarlos, el estado global de la vista iewMode cambia a "normal" (vista de hoja) y se ocultan din·micamente las partidas que no cumplen la condiciÛn.
+### 2.9 Reparaci√≥n de Eliminaci√≥n de Datos UI al Marcar Partidas y Nuevos Filtros de Finalizaci√≥n
+* **Problema 1:** Al hacer clic en "Listo" para marcar una partida como finalizada, la interfaz sobreescrib√≠a los montos de gasto y presupuesto del mes a 0 (mostrando " - "), debido a que la respuesta del endpoint de FinalizeItem devuelve el DTO del esquema primario de la base de datos sin volver a inyectar el enriquecimiento externo y costoso de Aspel, y la UI fusionaba incondicionalmente estos 0s destructivos contra su estado local.
+* **Problema 2:** El usuario requer√≠a una forma r√°pida de filtrar la tabla para solo ver las cuentas que le falta trabajar.
+* **Soluci√≥n 1:** Se reescribi√≥ la l√≥gica del m√©todo patchItemInState dentro de presupuesto-propuesta.ts introduciendo una funci√≥n segura (`applySafeUpdate`). Esta funci√≥n solo permite sobreescribir los estados que corresponden puramente a la finalizaci√≥n (isFinalized, `finalizedByUserName`, etc.) o aquellos que no hayan venido indefinidos, protegiendo herm√©ticamente las propiedades enriquecidas para evitar el borrado destructivo en la UI que forzaba al usuario a recargar la p√°gina.
+* **Soluci√≥n 2:** Se transformaron los *badges* informativos ("Por trabajar", "Finalizadas", "Pendientes") de la cabecera en botones accionables de filtro. Al presionarlos, el estado global de la vista `viewMode` cambia a "normal" (vista de hoja) y se ocultan din√°micamente las partidas que no cumplen la condici√≥n.
 
 ---
 
@@ -83,33 +83,31 @@ Este documento registra todas las correcciones, ajustes y refactorizaciones real
 
 
 
+### 2.10 Sincronizaci√≥n Real-Time SignalR (Listo / Eliminar)
+- **Problema:** Los cambios de estado de 'Listo' y la eliminaci√≥n de cuentas no se reflejaban en tiempo real para otros usuarios conectados al mismo grupo (cliente/ejercicio), o, si lo hac√≠an, sobreescrib√≠an y borraban la data enriquecida (Aspel) local.
+- **Soluci√≥n UI:** Se actualiz√≥ handleBudgetProposalItemUpdate para utilizar patchItemInState y se a√±adi√≥ suscripci√≥n y m√©todo handleBudgetProposalItemDelete en presupuesto-propuesta.ts.
+- **Soluci√≥n Backend:** Se a√±adi√≥ el evento SignalR ReceiveBudgetProposalItemDelete mediante SendBudgetProposalItemDeleteAsync e IBudgetProposalRealTimeService, inyect√°ndolo en el endpoint DELETE y recogiendo el excludedConnectionId por *query parameter*.
 
+### 2.11 Mejora UX: √≠cono de Guardar en Input de Propuesta
+- **Problema:** Los usuarios se confund√≠an al tener que presionar la tecla Enter para guardar un nuevo monto en la propuesta presupuestal.
+- **Soluci√≥n UI:** Se agreg√≥ un peque√±o bot√≥n con un √≠cono de disquete (`fa-floppy-disk`) posicionado absolutamente a la derecha dentro de la misma celda/input de 'PSTO (202X) MENSUAL'. Este bot√≥n llama a la misma funci√≥n updateProposalItem(item) y se desactiva si la propuesta no est√° en 'Borrador' o si es una fila agrupadora. Tambi√©n se ajust√≥ el padding del input (pe-4 pr-4) para que los n√∫meros no se empalmen con el nuevo √≠cono.
 
-### 2.10 SincronizaciÛn Real-Time SignalR (Listo / Eliminar)
-- **Problema:** Los cambios de estado de 'Listo' y la eliminaciÛn de cuentas no se reflejaban en tiempo real para otros usuarios conectados al mismo grupo (cliente/ejercicio), o, si lo hacÌan, sobreescribÌan y borraban la data enriquecida (Aspel) local.
-- **SoluciÛn UI:** Se actualizÛ handleBudgetProposalItemUpdate para utilizar patchItemInState y se aÒadiÛ suscripciÛn y mÈtodo handleBudgetProposalItemDelete en presupuesto-propuesta.ts.
-- **SoluciÛn Backend:** Se aÒadiÛ el evento SignalR ReceiveBudgetProposalItemDelete mediante SendBudgetProposalItemDeleteAsync e IBudgetProposalRealTimeService, inyect·ndolo en el endpoint DELETE y recogiendo el excludedConnectionId por *query parameter*.
-
-### 2.11 Mejora UX: Õcono de Guardar en Input de Propuesta
-- **Problema:** Los usuarios se confundÌan al tener que presionar la tecla Enter para guardar un nuevo monto en la propuesta presupuestal.
-- **SoluciÛn UI:** Se agregÛ un pequeÒo botÛn con un Ìcono de disquete (a-floppy-disk) posicionado absolutamente a la derecha dentro de la misma celda/input de 'PSTO (202X) MENSUAL'. Este botÛn llama a la misma funciÛn updateProposalItem(item) y se desactiva si la propuesta no est· en 'Borrador' o si es una fila agrupadora. TambiÈn se ajustÛ el padding del input (pe-4 pr-4) para que los n˙meros no se empalmen con el nuevo Ìcono.
-
-### 2.12 CorrecciÛn: Õcono de guardar oculto / FontAwesome faltante
-- **Problema:** El Ìcono de guardar no se visualizaba porque el proyecto utiliza <app-icon> con material-symbols-light en lugar de FontAwesome. Adem·s, quedaba traslapado por las flechas nativas (spin buttons) del input de tipo n˙mero.
-- **SoluciÛn UI:** Se cambiÛ a <app-icon icon="material-symbols-light:save-outline" />, se separÛ 28px desde la derecha para librar los *spin buttons*, y se ampliÛ el padding del n˙mero (pe-5 pr-5) para evitar empalmes.
+### 2.12 Correcci√≥n: √≠cono de guardar oculto / FontAwesome faltante
+- **Problema:** El √≠cono de guardar no se visualizaba porque el proyecto utiliza <app-icon> con material-symbols-light en lugar de FontAwesome. Adem√°s, quedaba traslapado por las flechas nativas (spin buttons) del input de tipo n√∫mero.
+- **Soluci√≥n UI:** Se cambi√≥ a <app-icon icon="material-symbols-light:save-outline" />, se separ√≥ 28px desde la derecha para librar los *spin buttons*, y se ampli√≥ el padding del n√∫mero (pe-5 pr-5) para evitar empalmes.
 
 ### 2.13 Cambio a Input Nativo con Input-Group y Toast
-- **Problema:** El <custom-input-number-signal> causaba que el Ìcono absoluto se viera mal alineado y amontonado.
-- **SoluciÛn UI:** Se reemplazÛ el componente custom por un <input type="number"> nativo envuelto en un div.input-group de Bootstrap. Esto garantiza que el input numÈrico y el botÛn (con su Ìcono de guardar) se acomoden horizontalmente de forma perfecta sin empalmarse. Adem·s, se habilitÛ la visualizaciÛn del Toast de Èxito (pasando 	rue al mÈtodo onPut) para que el usuario reciba retroalimentaciÛn visual al guardar.
+- **Problema:** El <custom-input-number-signal> causaba que el √≠cono absoluto se viera mal alineado y amontonado.
+- **Soluci√≥n UI:** Se reemplaz√≥ el componente custom por un <input type="number"> nativo envuelto en un div.input-group de Bootstrap. Esto garantiza que el input num√©rico y el bot√≥n (con su √≠cono de guardar) se acomoden horizontalmente de forma perfecta sin empalmarse. Adem√°s, se habilit√≥ la visualizaci√≥n del Toast de √©xito (pasando `true` al m√©todo onPut) para que el usuario reciba retroalimentaci√≥n visual al guardar.
 
-### 2.14 CorrecciÛn: M˙ltiples Toasts y SincronizaciÛn Parcial
-- **Problema:** Al presionar el botÛn de guardar se lanzaban dos peticiones porque se disparaba simult·neamente el evento \(blur)\ del input y el \(click)\ del botÛn. Adicionalmente, cuando SignalR recibÌa el update en otras m·quinas, actualizaba el *Gasto Propuesto* pero las columnas de *DIF* y *%* no se refrescaban.
-- **SoluciÛn UI:** Se agregÛ una actualizaciÛn optimista al inicio de \updateProposalItem()\ para descartar peticiones concurrentes idÈnticas. TambiÈn se incluyeron \difference\ y \percentageIncrease\ en el mÈtodo \patchItemInState()\ para que el receptor de SignalR copie estos valores calculados a las vistas locales en tiempo real.
+### 2.14 Correcci√≥n: M√∫ltiples Toasts y Sincronizaci√≥n Parcial
+- **Problema:** Al presionar el bot√≥n de guardar se lanzaban dos peticiones porque se disparaba simult√°neamente el evento `(blur)` del input y el `(click)` del bot√≥n. Adicionalmente, cuando SignalR recib√≠a el update en otras m√°quinas, actualizaba el *Gasto Propuesto* pero las columnas de *DIF* y *%* no se refrescaban.
+- **Soluci√≥n UI:** Se agreg√≥ una actualizaci√≥n optimista al inicio de `updateProposalItem()` para descartar peticiones concurrentes id√©nticas. Tambi√©n se incluyeron `difference` y `percentageIncrease` en el m√©todo `patchItemInState()` para que el receptor de SignalR copie estos valores calculados a las vistas locales en tiempo real.
 
 ### 2.15 Formateo de Miles en Input Nativo
-- **Problema:** Tras cambiar a un input nativo para arreglar el *layout*, se perdiÛ el separador de miles autom·ticos que ofrecÌa el custom input al capturar presupuestos (ej. 2,563).
-- **SoluciÛn UI:** Se importÛ NgxMaskDirective en el componente y se le aplicÛ mask="separator.0" y 	housandSeparator="," al <input type="text">. Como la lÛgica de updateProposalItem() y onProposedAmountChange() ya limpiaban las comas usando eplace(/,/g, ''), no hubo necesidad de alterar la lÛgica matem·tica.
+- **Problema:** Tras cambiar a un input nativo para arreglar el *layout*, se perdi√≥ el separador de miles autom√°ticos que ofrec√≠a el custom input al capturar presupuestos (ej. 2,563).
+- **Soluci√≥n UI:** Se import√≥ NgxMaskDirective en el componente y se le aplic√≥ mask="separator.0" y `thousandSeparator=","` al <input type="text">. Como la l√≥gica de updateProposalItem() y onProposedAmountChange() ya limpiaban las comas usando `replace(/,/g, '')`, no hubo necesidad de alterar la l√≥gica matem√°tica.
 
-### 2.16 InvestigaciÛn: Recarga Autom·tica por Inactividad
-- **Pregunta del usuario:** øPor quÈ la aplicaciÛn se recarga sola despuÈs de 1 minuto de inactividad en producciÛn?
-- **DiagnÛstico:** El archivo \pp.ts\ y el \UpdateService\ de la PWA tienen configurada una polÌtica de actualizaciÛn silenciosa. Cuando detectan que se ha liberado una nueva versiÛn de la app en los servidores, esperan a que el usuario deje de interactuar por exactamente 60 segundos (\updateIdleDelayMs = 60_000\). Una vez cumplido ese minuto de inactividad, aplican la actualizaciÛn y refrescan la pantalla solas. Como hemos estado subiendo ajustes continuamente hoy, el usuario ha estado experimentando estas recargas para obtener las mejoras.
+### 2.16 Investigaci√≥n: Recarga Autom√°tica por Inactividad
+- **Pregunta del usuario:** ¬øPor qu√© la aplicaci√≥n se recarga sola despu√©s de 1 minuto de inactividad en producci√≥n?
+- **Diagn√≥stico:** El archivo `app.ts` y el `UpdateService` de la PWA tienen configurada una pol√≠tica de actualizaci√≥n silenciosa. Cuando detectan que se ha liberado una nueva versi√≥n de la app en los servidores, esperan a que el usuario deje de interactuar por exactamente 60 segundos (`updateIdleDelayMs = 60_000`). Una vez cumplido ese minuto de inactividad, aplican la actualizaci√≥n y refrescan la pantalla solas. Como hemos estado subiendo ajustes continuamente hoy, el usuario ha estado experimentando estas recargas para obtener las mejoras.

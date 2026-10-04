@@ -57,7 +57,7 @@ Toda guia creada o actualizada aqui debe seguir:
 - [ ] incluye patron de diagnostico
 - [ ] incluye protocolo de intervencion
 - [ ] incluye validaciones obligatorias
-- [ ] incluye seÃ±ales de alto riesgo para escalar
+- [ ] incluye señales de alto riesgo para escalar
 - [ ] si ya existia una guia oficial, se actualizo en lugar de duplicarla
 - [ ] el archivo quedo indexado en este `README.md`
 

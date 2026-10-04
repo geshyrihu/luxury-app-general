@@ -227,7 +227,7 @@ Escenarios minimos esperados:
 
 ## 6. Criterios de Completitud
 
-- el modulo ya no contiene archivos residuales extraÃ±os
+- el modulo ya no contiene archivos residuales extraños
 - el DTO frontend ya no contiene contaminacion espuria
 - el modulo no arrastra falsos positivos de namespace por patrones transversales del proyecto
 - el README refleja rutas y comportamiento reales

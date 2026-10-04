@@ -202,101 +202,101 @@ Metodos: 95 | Endpoints HTTP: 80
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| CustomerAppService | `IncrementCount` | OTHER | `void` | âš  naming no CRUD estandar |
-| IApplicationRoleAppService | `CreateRole` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IApplicationRoleAppService | `CreateRoles` | CREATE | `Task` | âœ“ |
-| IApplicationRoleAppService | `DeleteRole` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IApplicationRoleAppService | `GetRole` | GET_SINGLE | `Task<ApiResponseDTO<ApplicationRoleDTO>>` | âš  Get sin ByXxx/All |
-| IApplicationRoleAppService | `GetRoles` | GET_LIST | `Task<ApiResponseDTO<List<ApplicationRolesDTO>>>` | âš  Get sin ByXxx/All |
-| IApplicationRoleAppService | `UpdateRole` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IApprovalRulesAdminService | `GetMatrixAsync` | GET_SINGLE | `Task<ApiResponseDTO<ApprovalMatrixDTO>>` | âš  Get sin ByXxx/All |
-| IApprovalRulesAdminService | `UpdateMatrixAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAsambleaChecklistTemplateAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<AsambleaChecklistTemplateDTO>>` | âœ“ |
-| IAsambleaChecklistTemplateAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAsambleaChecklistTemplateAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<AsambleaChecklistTemplateDTO>>>` | âœ“ |
-| IAsambleaChecklistTemplateAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AsambleaChecklistTemplateAddOrEditDTO>>` | âœ“ |
-| IAsambleaChecklistTemplateAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AsambleaChecklistTemplateDTO>>` | âœ“ |
-| ICustomerAddressAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerAddressAddOrEditDTO>>` | âœ“ |
-| ICustomerAddressAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CustomerAddressAddOrEditDTO>>` | âœ“ |
-| ICustomerAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CustomerDTO>>` | âœ“ |
-| ICustomerAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICustomerAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<CustomerDTO[]>>` | âœ“ |
-| ICustomerAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerDTO>>` | âœ“ |
-| ICustomerAppService | `GetPointMapsAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| ICustomerAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CustomerDTO>>` | âœ“ |
-| ICustomerDataCompanyAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CustomerDataCompanyDTO>>` | âœ“ |
-| ICustomerDataCompanyAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICustomerDataCompanyAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<CustomerDataCompanyDTO>>>` | âœ“ |
-| ICustomerDataCompanyAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerDataCompanyAddOrEditDTO>>` | âœ“ |
-| ICustomerDataCompanyAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CustomerDataCompanyDTO>>` | âœ“ |
-| ICustomerImageAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CustomerImageDTO>>` | âœ“ |
-| ICustomerImageAppService | `AddBulkAsync` | CREATE | `Task<ApiResponseDTO<CustomerImageDTO[]>>` | âœ“ |
-| ICustomerImageAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICustomerImageAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerImageDTO[]>>` | âœ“ |
-| ICustomerLocationAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CustomerLocationDTO>>` | âœ“ |
-| ICustomerLocationAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICustomerLocationAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerLocationDTO[]>>` | âœ“ |
-| ICustomerLocationAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerLocationDTO>>` | âœ“ |
-| ICustomerLocationAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CustomerLocationDTO>>` | âœ“ |
-| ICustomerModulAppService | `GetActiveModulesForCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<ActiveModulesForCustomerDTO>>>` | âš  Get sin ByXxx/All |
-| ICustomerModulAppService | `GetCustomerModulAsync` | GET_LIST | `Task<ApiResponseDTO<List<CustomerModulListDTO>>>` | âš  Get sin ByXxx/All |
-| ICustomerModulAppService | `GetCustomerModulesAsync` | GET_LIST | `Task<ApiResponseDTO<List<ModuleGroupDTO>>>` | âš  Get sin ByXxx/All |
-| ICustomerModulAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<ModulePermissionDTO>>>` | âš  naming no CRUD estandar |
-| ICustomerModulAppService | `UpdateModuleStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IDataCustomerAppService | `GetDataEmailComite` | GET_LIST | `Task<List<string>>` | âš  Get sin ByXxx/All |
-| IDataCustomerAppService | `GetDataEmailCondominos` | GET_LIST | `Task<List<string>>` | âš  Get sin ByXxx/All |
-| IEmployeeDataValidationService | `GetMissingDataReportAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeMissingDataDTO>>>` | âš  Get sin ByXxx/All |
-| IJobService | `ExecuteAsync` | SPECIAL | `Task` | âœ“ |
-| IMenuItemsAppService | `GetModuleCustomAsync` | GET_LIST | `Task<ApiResponseDTO<List<MenuItemDTO>>>` | âš  Get sin ByXxx/All |
-| IModuleAppAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ModuleAppDTO>>` | âœ“ |
-| IModuleAppAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IModuleAppAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ModuleAppDTO>>>` | âœ“ |
-| IModuleAppAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ModuleAppGetDTO>>` | âœ“ |
-| IModuleAppAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ModuleAppDTO>>` | âœ“ |
-| IModuleAppRolAppService | `AssignmentsAsync` | SPECIAL | `Task<ApiResponseDTO<List<ModuleGroupRolDTO>>>` | âœ“ |
-| IModuleAppRolAppService | `ListModuleAsync` | OTHER | `Task<ApiResponseDTO<List<ModuleAppDTO>>>` | âš  naming no CRUD estandar |
-| IModuleAppRolAppService | `ListRoleAsync` | OTHER | `Task<ApiResponseDTO<List<ModuleAppRolDTO>>>` | âš  naming no CRUD estandar |
-| IModuleAppRolAppService | `UpdateModuleAppRolAssignedAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOrgStructureValidationService | `GetMissingOrgStructureReportAsync` | GET_LIST | `Task<ApiResponseDTO<List<WorkPositionMissingDataDTO>>>` | âš  Get sin ByXxx/All |
-| IUpdateDataBaseService | `BackfillAgendaEventsFromMeetingsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IUpdateDataBaseService | `BackfillHistoricalMeetingTimesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IUpdateDataBaseService | `CapitalizeUserNamesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IUpdateDataBaseService | `ImportAsambleaChecklistCatalogAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IUpdateDataBaseService | `RecalculateWorkPositionFoliosAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IUpdateDataBaseService | `ReseedNativeChargeTypeCatalogsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IUpdateDataBaseService | `ResyncGoogleCalendarEventTimesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IUpdateDataBaseService | `RetroactiveAssignEmployeeRolesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IUpdateDataBaseService | `SeedDocumentCatalogsAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IUpdateDataBaseService | `SeedNativeCollectionTestDataAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IUpdateDataBaseService | `SeedRecruitmentSourcesAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IUserAccountAppService | `AddRoleToUser` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IUserAccountAppService | `CreateAccountAsync` | CREATE | `Task<ApiResponseDTO<ApplicationUserDTO>>` | âœ“ |
-| IUserAccountAppService | `DeleteAccountAndRelationsAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IUserAccountAppService | `ExistsApplicationUserUserNameAsync` | GET_SINGLE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IUserAccountAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ApplicationUserDTO>>>` | âœ“ |
-| IUserAccountAppService | `GetAllRoleAccount` | GET_LIST | `Task<ApiResponseDTO<List<AddApplicationRoleToUserDTO>>>` | âœ“ |
-| IUserAccountAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ApplicationUserCreateDTO>>` | âœ“ |
-| IUserAccountAppService | `SearchExistingPersonAsync` | OTHER | `Task<ApiResponseDTO<List<string>>>` | âš  naming no CRUD estandar |
-| IUserAccountAppService | `SearchExistingPhoneAsync` | OTHER | `Task<ApiResponseDTO<List<string>>>` | âš  naming no CRUD estandar |
-| IUserAccountAppService | `ToBlockAccountAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IUserAccountAppService | `ToUnlockAccountAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IUserAccountAppService | `UpdateAccountAsync` | UPDATE | `Task<ApiResponseDTO<ApplicationUserDTO>>` | âœ“ |
-| IUserRoleService | `GetUsersInRoleAsync` | GET_LIST | `Task<List<ApplicationUser>>` | âš  Get sin ByXxx/All |
-| RoleAssignmentMatrixService | `CanAssignRole` | OTHER | `bool` | âš  naming no CRUD estandar |
-| RoleAssignmentMatrixService | `GetAllowedRoles` | GET_LIST | `RoleAssignmentMatrixResult` | âœ“ |
-| UpdateDataBaseAppService | `BackfillAgendaEventsFromMeetingsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| UpdateDataBaseAppService | `BackfillHistoricalMeetingTimesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| UpdateDataBaseAppService | `CapitalizeUserNamesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| UpdateDataBaseAppService | `ImportAsambleaChecklistCatalogAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | âœ“ |
-| UpdateDataBaseAppService | `RecalculateWorkPositionFoliosAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | âœ“ |
-| UpdateDataBaseAppService | `ReseedNativeChargeTypeCatalogsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| UpdateDataBaseAppService | `ResyncGoogleCalendarEventTimesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| UpdateDataBaseAppService | `RetroactiveAssignEmployeeRolesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| UpdateDataBaseAppService | `SeedDocumentCatalogsAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| UpdateDataBaseAppService | `SeedNativeCollectionTestDataAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | âœ“ |
-| UpdateDataBaseAppService | `SeedRecruitmentSourcesAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| UserAccountAppService | `GetUserById` | GET_SINGLE | `Task<ApplicationUser>` | âœ“ |
-| UserAccountAppService | `UpdateUserRolesDirectly` | UPDATE | `Task<bool>` | âœ“ |
+| CustomerAppService | `IncrementCount` | OTHER | `void` | ⚠ naming no CRUD estandar |
+| IApplicationRoleAppService | `CreateRole` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IApplicationRoleAppService | `CreateRoles` | CREATE | `Task` | ✓ |
+| IApplicationRoleAppService | `DeleteRole` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IApplicationRoleAppService | `GetRole` | GET_SINGLE | `Task<ApiResponseDTO<ApplicationRoleDTO>>` | ⚠ Get sin ByXxx/All |
+| IApplicationRoleAppService | `GetRoles` | GET_LIST | `Task<ApiResponseDTO<List<ApplicationRolesDTO>>>` | ⚠ Get sin ByXxx/All |
+| IApplicationRoleAppService | `UpdateRole` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IApprovalRulesAdminService | `GetMatrixAsync` | GET_SINGLE | `Task<ApiResponseDTO<ApprovalMatrixDTO>>` | ⚠ Get sin ByXxx/All |
+| IApprovalRulesAdminService | `UpdateMatrixAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAsambleaChecklistTemplateAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<AsambleaChecklistTemplateDTO>>` | ✓ |
+| IAsambleaChecklistTemplateAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAsambleaChecklistTemplateAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<AsambleaChecklistTemplateDTO>>>` | ✓ |
+| IAsambleaChecklistTemplateAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AsambleaChecklistTemplateAddOrEditDTO>>` | ✓ |
+| IAsambleaChecklistTemplateAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AsambleaChecklistTemplateDTO>>` | ✓ |
+| ICustomerAddressAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerAddressAddOrEditDTO>>` | ✓ |
+| ICustomerAddressAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CustomerAddressAddOrEditDTO>>` | ✓ |
+| ICustomerAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CustomerDTO>>` | ✓ |
+| ICustomerAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICustomerAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<CustomerDTO[]>>` | ✓ |
+| ICustomerAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerDTO>>` | ✓ |
+| ICustomerAppService | `GetPointMapsAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| ICustomerAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CustomerDTO>>` | ✓ |
+| ICustomerDataCompanyAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CustomerDataCompanyDTO>>` | ✓ |
+| ICustomerDataCompanyAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICustomerDataCompanyAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<CustomerDataCompanyDTO>>>` | ✓ |
+| ICustomerDataCompanyAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerDataCompanyAddOrEditDTO>>` | ✓ |
+| ICustomerDataCompanyAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CustomerDataCompanyDTO>>` | ✓ |
+| ICustomerImageAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CustomerImageDTO>>` | ✓ |
+| ICustomerImageAppService | `AddBulkAsync` | CREATE | `Task<ApiResponseDTO<CustomerImageDTO[]>>` | ✓ |
+| ICustomerImageAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICustomerImageAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerImageDTO[]>>` | ✓ |
+| ICustomerLocationAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CustomerLocationDTO>>` | ✓ |
+| ICustomerLocationAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICustomerLocationAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerLocationDTO[]>>` | ✓ |
+| ICustomerLocationAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerLocationDTO>>` | ✓ |
+| ICustomerLocationAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CustomerLocationDTO>>` | ✓ |
+| ICustomerModulAppService | `GetActiveModulesForCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<ActiveModulesForCustomerDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICustomerModulAppService | `GetCustomerModulAsync` | GET_LIST | `Task<ApiResponseDTO<List<CustomerModulListDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICustomerModulAppService | `GetCustomerModulesAsync` | GET_LIST | `Task<ApiResponseDTO<List<ModuleGroupDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICustomerModulAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<ModulePermissionDTO>>>` | ⚠ naming no CRUD estandar |
+| ICustomerModulAppService | `UpdateModuleStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IDataCustomerAppService | `GetDataEmailComite` | GET_LIST | `Task<List<string>>` | ⚠ Get sin ByXxx/All |
+| IDataCustomerAppService | `GetDataEmailCondominos` | GET_LIST | `Task<List<string>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeDataValidationService | `GetMissingDataReportAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeMissingDataDTO>>>` | ⚠ Get sin ByXxx/All |
+| IJobService | `ExecuteAsync` | SPECIAL | `Task` | ✓ |
+| IMenuItemsAppService | `GetModuleCustomAsync` | GET_LIST | `Task<ApiResponseDTO<List<MenuItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| IModuleAppAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ModuleAppDTO>>` | ✓ |
+| IModuleAppAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IModuleAppAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ModuleAppDTO>>>` | ✓ |
+| IModuleAppAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ModuleAppGetDTO>>` | ✓ |
+| IModuleAppAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ModuleAppDTO>>` | ✓ |
+| IModuleAppRolAppService | `AssignmentsAsync` | SPECIAL | `Task<ApiResponseDTO<List<ModuleGroupRolDTO>>>` | ✓ |
+| IModuleAppRolAppService | `ListModuleAsync` | OTHER | `Task<ApiResponseDTO<List<ModuleAppDTO>>>` | ⚠ naming no CRUD estandar |
+| IModuleAppRolAppService | `ListRoleAsync` | OTHER | `Task<ApiResponseDTO<List<ModuleAppRolDTO>>>` | ⚠ naming no CRUD estandar |
+| IModuleAppRolAppService | `UpdateModuleAppRolAssignedAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOrgStructureValidationService | `GetMissingOrgStructureReportAsync` | GET_LIST | `Task<ApiResponseDTO<List<WorkPositionMissingDataDTO>>>` | ⚠ Get sin ByXxx/All |
+| IUpdateDataBaseService | `BackfillAgendaEventsFromMeetingsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IUpdateDataBaseService | `BackfillHistoricalMeetingTimesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IUpdateDataBaseService | `CapitalizeUserNamesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IUpdateDataBaseService | `ImportAsambleaChecklistCatalogAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | ✓ |
+| IUpdateDataBaseService | `RecalculateWorkPositionFoliosAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | ✓ |
+| IUpdateDataBaseService | `ReseedNativeChargeTypeCatalogsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IUpdateDataBaseService | `ResyncGoogleCalendarEventTimesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IUpdateDataBaseService | `RetroactiveAssignEmployeeRolesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IUpdateDataBaseService | `SeedDocumentCatalogsAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IUpdateDataBaseService | `SeedNativeCollectionTestDataAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | ✓ |
+| IUpdateDataBaseService | `SeedRecruitmentSourcesAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IUserAccountAppService | `AddRoleToUser` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IUserAccountAppService | `CreateAccountAsync` | CREATE | `Task<ApiResponseDTO<ApplicationUserDTO>>` | ✓ |
+| IUserAccountAppService | `DeleteAccountAndRelationsAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IUserAccountAppService | `ExistsApplicationUserUserNameAsync` | GET_SINGLE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IUserAccountAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ApplicationUserDTO>>>` | ✓ |
+| IUserAccountAppService | `GetAllRoleAccount` | GET_LIST | `Task<ApiResponseDTO<List<AddApplicationRoleToUserDTO>>>` | ✓ |
+| IUserAccountAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ApplicationUserCreateDTO>>` | ✓ |
+| IUserAccountAppService | `SearchExistingPersonAsync` | OTHER | `Task<ApiResponseDTO<List<string>>>` | ⚠ naming no CRUD estandar |
+| IUserAccountAppService | `SearchExistingPhoneAsync` | OTHER | `Task<ApiResponseDTO<List<string>>>` | ⚠ naming no CRUD estandar |
+| IUserAccountAppService | `ToBlockAccountAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IUserAccountAppService | `ToUnlockAccountAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IUserAccountAppService | `UpdateAccountAsync` | UPDATE | `Task<ApiResponseDTO<ApplicationUserDTO>>` | ✓ |
+| IUserRoleService | `GetUsersInRoleAsync` | GET_LIST | `Task<List<ApplicationUser>>` | ⚠ Get sin ByXxx/All |
+| RoleAssignmentMatrixService | `CanAssignRole` | OTHER | `bool` | ⚠ naming no CRUD estandar |
+| RoleAssignmentMatrixService | `GetAllowedRoles` | GET_LIST | `RoleAssignmentMatrixResult` | ✓ |
+| UpdateDataBaseAppService | `BackfillAgendaEventsFromMeetingsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| UpdateDataBaseAppService | `BackfillHistoricalMeetingTimesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| UpdateDataBaseAppService | `CapitalizeUserNamesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| UpdateDataBaseAppService | `ImportAsambleaChecklistCatalogAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | ✓ |
+| UpdateDataBaseAppService | `RecalculateWorkPositionFoliosAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | ✓ |
+| UpdateDataBaseAppService | `ReseedNativeChargeTypeCatalogsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| UpdateDataBaseAppService | `ResyncGoogleCalendarEventTimesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| UpdateDataBaseAppService | `RetroactiveAssignEmployeeRolesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| UpdateDataBaseAppService | `SeedDocumentCatalogsAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| UpdateDataBaseAppService | `SeedNativeCollectionTestDataAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | ✓ |
+| UpdateDataBaseAppService | `SeedRecruitmentSourcesAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| UserAccountAppService | `GetUserById` | GET_SINGLE | `Task<ApplicationUser>` | ✓ |
+| UserAccountAppService | `UpdateUserRolesDirectly` | UPDATE | `Task<bool>` | ✓ |
 
 ### Endpoints
 
@@ -405,30 +405,30 @@ Metodos: 24 | Endpoints HTTP: 19
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IAccesoCustomersAppService | `AddCustomerToUserAccount` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAccesoCustomersAppService | `GetCustomersWithAccessStatus` | GET_LIST | `Task<ApiResponseDTO<List<AccesoCustomerDTO>>>` | âš  Get sin ByXxx/All |
-| IAuthAppService | `ConfirmRecoverPasswordAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IAuthAppService | `LoginAsync` | OTHER | `Task<ApiResponseDTO<UserTokenDTO>>` | âš  naming no CRUD estandar |
-| IAuthAppService | `LogoutAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IAuthAppService | `RecoverPasswordAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IAuthAppService | `SetRefreshTokenCookie` | UPDATE | `void` | âœ“ |
-| ICredentialNotificationService | `SendInitialCredentialsAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPasswordAppService | `AddCredentialAsync` | CREATE | `Task<ApiResponseDTO<CredentialDetailDTO>>` | âœ“ |
-| IPasswordAppService | `DeleteCredentialAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPasswordAppService | `GetCredentialByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CredentialDetailDTO>>` | âœ“ |
-| IPasswordAppService | `GetCredentialsPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<CredentialDetailDTO>>>` | âœ“ |
-| IPasswordAppService | `UpdateCredentialAsync` | UPDATE | `Task<ApiResponseDTO<CredentialDetailDTO>>` | âœ“ |
-| IPersonDataAppService | `EmployeeBirthdayAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeBirthdayDTO>>>` | âš  naming no CRUD estandar |
-| IPersonDataAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<PersonData>>` | âœ“ |
-| IRecoveryAccountUserAppService | `InitiateRecoveryByCodeAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IRecoveryAccountUserAppService | `SendMailRecoverPasswordAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRecoveryAccountUserAppService | `SendNewPasswordForEmailAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRecoveryAccountUserAppService | `SendNewUserNameForEmailAsync` | SPECIAL | `Task<ApiResponseDTO<UserNameDTO>>` | âœ“ |
-| IRecoveryAccountUserAppService | `ValidateRecoveryCodeAsync` | SPECIAL | `Task<ApiResponseDTO<ValidateRecoveryCodeResultDTO>>` | âœ“ |
-| IUserConnectionStatusService | `UpdateStateUser` | UPDATE | `Task` | âœ“ |
-| IUserProfileAppService | `ChangePasswordAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IUserProfileAppService | `UpdateImageAsync` | UPDATE | `Task<ApiResponseDTO<ImgPathFileCommonDTO>>` | âœ“ |
-| JwtService | `BuildAndPersistClientTokensAsync` | OTHER | `Task<UserTokenDTO>` | âš  naming no CRUD estandar |
+| IAccesoCustomersAppService | `AddCustomerToUserAccount` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAccesoCustomersAppService | `GetCustomersWithAccessStatus` | GET_LIST | `Task<ApiResponseDTO<List<AccesoCustomerDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAuthAppService | `ConfirmRecoverPasswordAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IAuthAppService | `LoginAsync` | OTHER | `Task<ApiResponseDTO<UserTokenDTO>>` | ⚠ naming no CRUD estandar |
+| IAuthAppService | `LogoutAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IAuthAppService | `RecoverPasswordAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IAuthAppService | `SetRefreshTokenCookie` | UPDATE | `void` | ✓ |
+| ICredentialNotificationService | `SendInitialCredentialsAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPasswordAppService | `AddCredentialAsync` | CREATE | `Task<ApiResponseDTO<CredentialDetailDTO>>` | ✓ |
+| IPasswordAppService | `DeleteCredentialAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPasswordAppService | `GetCredentialByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CredentialDetailDTO>>` | ✓ |
+| IPasswordAppService | `GetCredentialsPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<CredentialDetailDTO>>>` | ✓ |
+| IPasswordAppService | `UpdateCredentialAsync` | UPDATE | `Task<ApiResponseDTO<CredentialDetailDTO>>` | ✓ |
+| IPersonDataAppService | `EmployeeBirthdayAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeBirthdayDTO>>>` | ⚠ naming no CRUD estandar |
+| IPersonDataAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<PersonData>>` | ✓ |
+| IRecoveryAccountUserAppService | `InitiateRecoveryByCodeAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IRecoveryAccountUserAppService | `SendMailRecoverPasswordAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRecoveryAccountUserAppService | `SendNewPasswordForEmailAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRecoveryAccountUserAppService | `SendNewUserNameForEmailAsync` | SPECIAL | `Task<ApiResponseDTO<UserNameDTO>>` | ✓ |
+| IRecoveryAccountUserAppService | `ValidateRecoveryCodeAsync` | SPECIAL | `Task<ApiResponseDTO<ValidateRecoveryCodeResultDTO>>` | ✓ |
+| IUserConnectionStatusService | `UpdateStateUser` | UPDATE | `Task` | ✓ |
+| IUserProfileAppService | `ChangePasswordAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IUserProfileAppService | `UpdateImageAsync` | UPDATE | `Task<ApiResponseDTO<ImgPathFileCommonDTO>>` | ✓ |
+| JwtService | `BuildAndPersistClientTokensAsync` | OTHER | `Task<UserTokenDTO>` | ⚠ naming no CRUD estandar |
 
 ### Endpoints
 
@@ -510,151 +510,151 @@ Metodos: 145 | Endpoints HTTP: 135
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| AspelCobranzaHausDetalleAppService | `BuildConceptNameFromAccount` | OTHER | `string` | âš  naming no CRUD estandar |
-| AspelCobranzaHausDetalleAppService | `LogAudit` | OTHER | `void` | âš  naming no CRUD estandar |
-| AspelCobranzaHausDetalleAppService | `NormalizeSegmentedAccountCode` | OTHER | `string` | âš  naming no CRUD estandar |
-| AspelCobranzaHausDetalleAppService | `SplitAccountSegments` | SPECIAL | `string[]` | âœ“ |
-| CobranzaOnlineAccountAppService | `GetAccountsTreeAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CobranzaOnlineAccountResponseDTO>>>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineBalanceAppService | `GetBalancesByCustomerAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CobranzaOnlineBalanceResponseDTO>>>>` | âœ“ |
-| CobranzaOnlineDashboardAppService | `GetCollectionAnalysisAsync` | GET_LIST | `Task<ApiResponseDTO<CobranzaOnlineAnalysisResponseDTO>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineDashboardAppService | `GetDashboardAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineDashboardResponseDTO>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineDashboardAppService | `GetExcludedAccountsAsync` | GET_LIST | `Task<ApiResponseDTO<CobranzaOnlineExcludedAccountListResponseDTO>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineDashboardAppService | `GetInspectionAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineInspectionResponseDTO>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineDashboardAppService | `GetInspectionHistoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineInspectionHistoryResponseDTO>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineDashboardAppService | `GetSyncDiagnosticsAsync` | GET_LIST | `Task<CobranzaOnlineSyncDiagnosticsDTO>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineDashboardAppService | `GetSyncStatusAsync` | GET_LIST | `Task<ApiResponseDTO<CobranzaOnlineSyncMetadataDTO>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineDashboardAppService | `UpsertExcludedAccountAsync` | OTHER | `Task<ApiResponseDTO<CobranzaOnlineExcludedAccountRowDTO>>` | âš  naming no CRUD estandar |
-| CobranzaOnlineMovementAppService | `GetMovimientosAsync` | GET_LIST | `Task<ApiResponseDTO<List<CobranzaOnlineMovementResponseDTO>>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlinePolicyAppService | `GetPoliciesAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CobranzaOnlinePolicyResponseDTO>>>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlinePortfolioAppService | `GetCarteraAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CobranzaOnlinePortfolioDTO>>>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineReporteFinancieroAppService | `GetReporteFinancieroAsync` | GET_SINGLE | `Task<ApiResponseDTO<ReporteFinancieroResponseDTO>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineStatementAppService | `GetCuentasNivel3Async` | GET_LIST | `Task<ApiResponseDTO<List<CobranzaOnlineAccountResponseDTO>>>` | âš  Get sin ByXxx/All |
-| CobranzaOnlineStatementAppService | `GetEstadoCuentaAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineStatementResponseDTO>>` | âš  Get sin ByXxx/All |
-| IAdjustmentService | `CancelCreditNoteAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAdjustmentService | `CreateAdjustmentAsync` | CREATE | `Task<ApiResponseDTO<AdjustmentResponseDTO>>` | âœ“ |
-| IAdjustmentService | `CreateCreditNoteAsync` | CREATE | `Task<ApiResponseDTO<CreditNoteResponseDTO>>` | âœ“ |
-| IAdjustmentService | `GetPendingCreditNotesAsync` | GET_LIST | `Task<ApiResponseDTO<List<CreditNoteResponseDTO>>>` | âš  Get sin ByXxx/All |
-| IAspelCobranzaHausAppService | `GetAccountsByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelAccountsByCustomerResponseDTO>>` | âœ“ |
-| IAspelCobranzaHausAppService | `GetCustomersAsync` | GET_LIST | `Task<ApiResponseDTO<List<AspelCustomerResponseDTO>>>` | âš  Get sin ByXxx/All |
-| IAspelCobranzaHausAppService | `GetDeudasActualesAsync` | GET_LIST | `Task<ApiResponseDTO<AspelDeudasActualesResponseDTO>>` | âš  Get sin ByXxx/All |
-| IAspelCobranzaHausAppService | `GetEstadoCuentaRangoAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelEstadoCuentaResponseDTO>>` | âš  Get sin ByXxx/All |
-| IAspelCobranzaHausDetalleAppService | `GetDetalleCobranzaRangoAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaDetalleResponseDTO>>` | âœ“ |
-| IAspelCobranzaHausDetalleAppService | `GetDetalleCobranzaRangoAuditAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaDetalleAuditResponseDTO>>` | âœ“ |
-| IAspelCobranzaHausLocalAppService | `GetAccountsByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaHausLocalAccountsByCustomerResponseDTO>>` | âœ“ |
-| IAspelCobranzaHausLocalAppService | `GetCustomersAsync` | GET_LIST | `Task<ApiResponseDTO<List<AspelCobranzaHausLocalCustomerResponseDTO>>>` | âš  Get sin ByXxx/All |
-| IAspelCobranzaHausLocalAppService | `GetDeudasActualesAsync` | GET_LIST | `Task<ApiResponseDTO<AspelCobranzaHausLocalDeudasActualesResponseDTO>>` | âš  Get sin ByXxx/All |
-| IAspelCobranzaHausLocalAppService | `GetEstadoCuentaRangoAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaHausLocalEstadoCuentaResponseDTO>>` | âš  Get sin ByXxx/All |
-| IAspelCobranzaHausLocalAppService | `GetStatusAsync` | GET_LIST | `Task<ApiResponseDTO<AspelCobranzaHausLocalStatusResponseDTO>>` | âš  Get sin ByXxx/All |
-| IAspelCobranzaHausLocalDetalleAppService | `GetDetalleCobranzaRangoAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaHausLocalCobranzaDetalleResponseDTO>>` | âœ“ |
-| IChargeAppService | `BulkImportSaldoInicialAsync` | OTHER | `Task<ApiResponseDTO<BulkChargeImportResultDTO>>` | âš  naming no CRUD estandar |
-| IChargeAppService | `BulkSetInitialBalanceAsync` | OTHER | `Task<ApiResponseDTO<BulkSetInitialBalanceResultDTO>>` | âš  naming no CRUD estandar |
-| IChargeAppService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IChargeAppService | `CancelPaidChargeAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IChargeAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ChargeResponseDTO>>` | âœ“ |
-| IChargeAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChargeResponseDTO>>>` | âœ“ |
-| IChargeAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ChargeResponseDTO>>` | âœ“ |
-| IChargeAppService | `GetInitialBalanceStatusAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyInitialBalanceDTO>>>` | âš  Get sin ByXxx/All |
-| IChargeAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ChargeResponseDTO>>` | âœ“ |
-| IChargesGeneratorService | `GenerateMonthlyChargesAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | âœ“ |
-| IChargesGeneratorService | `GenerateRetroactiveAdjustmentsAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | âœ“ |
-| IChargeTemplateAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ChargeTemplateResponseDTO>>` | âœ“ |
-| IChargeTemplateAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IChargeTemplateAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChargeTemplateResponseDTO>>>` | âœ“ |
-| IChargeTemplateAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ChargeTemplateResponseDTO>>` | âœ“ |
-| IChargeTemplateAppService | `GetCoverageAsync` | GET_LIST | `Task<ApiResponseDTO<List<TemplateCoverageDTO>>>` | âš  Get sin ByXxx/All |
-| IChargeTemplateAppService | `PreviewAsync` | SPECIAL | `Task<ApiResponseDTO<IndivisoFeeComparisonDTO>>` | âœ“ |
-| IChargeTemplateAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ChargeTemplateResponseDTO>>` | âœ“ |
-| IChargeTypeCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ChargeTypeCatalogResponseDTO>>` | âœ“ |
-| IChargeTypeCatalogAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IChargeTypeCatalogAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChargeTypeCatalogResponseDTO>>>` | âœ“ |
-| IChargeTypeCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ChargeTypeCatalogResponseDTO>>` | âœ“ |
-| IChargeTypeCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ChargeTypeCatalogResponseDTO>>` | âœ“ |
-| ICobranzaMetricasService | `GetMetricasAsync` | GET_LIST | `Task<ApiResponseDTO<CobranzaMetricasResponseDTO>>` | âš  Get sin ByXxx/All |
-| ICobranzaNativaNotificationService | `SendMonthlyStatementEmailAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICobranzaNativaNotificationService | `SendMonthlyStatementsBatchAsync` | SPECIAL | `Task<ApiResponseDTO<SendNativeStatementBatchResponseDTO>>` | âœ“ |
-| ICobranzaNativaNotificationService | `SendPaymentReceiptEmailAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICobranzaPaymentAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CobranzaPaymentResponseDTO>>` | âœ“ |
-| ICobranzaPaymentAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<CobranzaPaymentResponseDTO>>>` | âœ“ |
-| ICobranzaPaymentAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaPaymentResponseDTO>>` | âœ“ |
-| ICobranzaPaymentAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CobranzaPaymentResponseDTO>>` | âœ“ |
-| ICollectionCaseAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CollectionCaseResponseDTO>>` | âœ“ |
-| ICollectionCaseAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<CollectionCaseResponseDTO>>>` | âœ“ |
-| ICollectionCaseAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CollectionCaseResponseDTO>>` | âœ“ |
-| ICollectionCaseAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CollectionCaseResponseDTO>>` | âœ“ |
-| ICollectionManagerService | `EvaluateAndEscalateAccountsAsync` | OTHER | `Task<ApiResponseDTO<int>>` | âš  naming no CRUD estandar |
-| ICollectionManagerService | `LogCollectionActivityAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IFinancialApprovalService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFinancialApprovalService | `CancelRequestAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFinancialApprovalService | `CreateRequestAsync` | CREATE | `Task<ApiResponseDTO<FinancialApprovalResponseDTO>>` | âœ“ |
-| IFinancialApprovalService | `GetByPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<FinancialApprovalResponseDTO>>>` | âœ“ |
-| IFinancialApprovalService | `GetPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<FinancialApprovalResponseDTO>>>` | âš  Get sin ByXxx/All |
-| IFinancialApprovalService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFinancialAuditService | `GetByPropertyAsync` | GET_LIST | `Task<List<FinancialAuditLogDTO>>` | âœ“ |
-| IFinancialAuditService | `GetByTenantAsync` | GET_LIST | `Task<List<FinancialAuditLogDTO>>` | âœ“ |
-| IFinancialAuditService | `LogAsync` | OTHER | `Task` | âš  naming no CRUD estandar |
-| IInvoiceQueryAppService | `GetByChargeAsync` | GET_LIST | `Task<ApiResponseDTO<List<InvoiceResponseDTO>>>` | âœ“ |
-| IInvoiceQueryAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InvoiceResponseDTO>>` | âœ“ |
-| IInvoiceService | `CancelInvoiceAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInvoiceService | `GenerateInvoiceAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ILateFeeCalculatorService | `ProcessLateFeesAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | âœ“ |
-| ILateFeePolicyAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<LateFeePolicyResponseDTO>>` | âœ“ |
-| ILateFeePolicyAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ILateFeePolicyAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<LateFeePolicyResponseDTO>>>` | âœ“ |
-| ILateFeePolicyAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<LateFeePolicyResponseDTO>>` | âœ“ |
-| ILateFeePolicyAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<LateFeePolicyResponseDTO>>` | âœ“ |
-| ILedgerIntegrityService | `CheckPropertyIntegrityAsync` | SPECIAL | `Task<PropertyIntegrityResultDTO>` | âœ“ |
-| ILedgerIntegrityService | `CheckTenantIntegrityAsync` | SPECIAL | `Task<LedgerIntegrityReportDTO>` | âœ“ |
-| ILedgerService | `BeginBatchAsync` | OTHER | `Task<FinancialBatch>` | âš  naming no CRUD estandar |
-| ILedgerService | `GetBatchEntriesAsync` | GET_LIST | `Task<List<FinancialLedgerEntry>>` | âš  Get sin ByXxx/All |
-| ILedgerService | `GetChargeBalanceAsync` | GET_SINGLE | `Task<decimal>` | âš  Get sin ByXxx/All |
-| ILedgerService | `GetPropertyBalanceAsync` | GET_SINGLE | `Task<decimal>` | âš  Get sin ByXxx/All |
-| ILedgerService | `GetPropertyLedgerAsync` | GET_LIST | `Task<List<FinancialLedgerEntry>>` | âš  Get sin ByXxx/All |
-| ILedgerService | `WriteAsync` | OTHER | `Task` | âš  naming no CRUD estandar |
-| INativeCollectionNotificationSettingsService | `GetByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<NativeCollectionNotificationSettingsResponseDTO>>` | âœ“ |
-| INativeCollectionNotificationSettingsService | `GetEffectiveSettingsAsync` | GET_LIST | `Task<NativeCollectionNotificationSettingsResponseDTO>` | âš  Get sin ByXxx/All |
-| INativeCollectionNotificationSettingsService | `SaveAsync` | UPDATE | `Task<ApiResponseDTO<NativeCollectionNotificationSettingsResponseDTO>>` | âœ“ |
-| INativeCollectionRealTimeService | `GetExcludedConnectionIdAsync` | GET_SINGLE | `Task<string>` | âš  Get sin ByXxx/All |
-| INativeCollectionRealTimeService | `SendUpdateAsync` | SPECIAL | `Task` | âœ“ |
-| INativeStatementService | `GetStatementByPropertyAsync` | GET_SINGLE | `Task<ApiResponseDTO<NativeStatementResponseDTO>>` | âœ“ |
-| INotificationEngineService | `ProcessNotificationsAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | âœ“ |
-| IPaymentAllocationService | `ApplyPaymentToChargesAsync` | SPECIAL | `Task<ApiResponseDTO<ApplyPaymentResultDTO>>` | âœ“ |
-| IPaymentAllocationService | `AutoApplyOverpaymentsAsync` | OTHER | `Task<ApiResponseDTO<ApplyPaymentResultDTO>>` | âš  naming no CRUD estandar |
-| IPaymentAllocationService | `CancelPaymentAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPaymentAllocationService | `GetPendingChargesByPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<PendingChargeDTO>>>` | âœ“ |
-| IPeriodClosureService | `ClosePeriodAsync` | SPECIAL | `Task<ApiResponseDTO<PeriodClosureResponseDTO>>` | âœ“ |
-| IPeriodClosureService | `FindBlockingClosureAsync` | GET_SINGLE | `Task<CollectionPeriodClosure>` | âš  Get sin ByXxx/All |
-| IPeriodClosureService | `GetPeriodsAsync` | GET_LIST | `Task<ApiResponseDTO<List<PeriodClosureResponseDTO>>>` | âš  Get sin ByXxx/All |
-| IPeriodClosureService | `IsPeriodClosedAsync` | OTHER | `Task<bool>` | âš  naming no CRUD estandar |
-| IPeriodClosureService | `ReopenPeriodAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPropertyFineAppService | `AddEvidenceAsync` | CREATE | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | âœ“ |
-| IPropertyFineAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | âœ“ |
-| IPropertyFineAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyFineResponseDTO>>>` | âœ“ |
-| IPropertyFineAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | âœ“ |
-| IPropertyFineAppService | `GetByPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyFineResponseDTO>>>` | âœ“ |
-| IPropertyFineAppService | `IssueChargeAsync` | OTHER | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | âš  naming no CRUD estandar |
-| IPropertyFineAppService | `RemoveEvidenceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPropertyFineAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | âœ“ |
-| IPropertyFineAppService | `VoidAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IPropertyMemberService | `AddMemberAsync` | CREATE | `Task<ApiResponseDTO<PropertyMemberResponseDTO>>` | âœ“ |
-| IPropertyMemberService | `CreateMemberWithAccountAsync` | CREATE | `Task<ApiResponseDTO<PropertyMemberResponseDTO>>` | âœ“ |
-| IPropertyMemberService | `DeleteMemberAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPropertyMemberService | `EndMembershipAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IPropertyMemberService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyMemberResponseDTO>>>` | âœ“ |
-| IPropertyMemberService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PropertyMemberResponseDTO>>` | âœ“ |
-| IPropertyMemberService | `GetByPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyMemberResponseDTO>>>` | âœ“ |
-| IPropertyMemberService | `GetFinancialResponsibleAsync` | GET_SINGLE | `Task<PropertyMember>` | âš  Get sin ByXxx/All |
-| IPropertyMemberService | `GetNotificationRecipientsAsync` | GET_LIST | `Task<List<PropertyMemberNotificationRecipientDTO>>` | âš  Get sin ByXxx/All |
-| IPropertyMemberService | `MigrateFromLegacyAsync` | SPECIAL | `Task<ApiResponseDTO<MigrationResultDTO>>` | âœ“ |
-| IPropertyMemberService | `UpdateMemberAsync` | UPDATE | `Task<ApiResponseDTO<PropertyMemberResponseDTO>>` | âœ“ |
-| IReconciliationService | `GetUnallocatedPaymentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CobranzaPaymentResponseDTO>>>` | âœ“ |
-| IReconciliationService | `ReconcileUnallocatedPaymentsAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | âœ“ |
-| IRegulationArticleAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<RegulationArticleResponseDTO>>` | âœ“ |
-| IRegulationArticleAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRegulationArticleAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<RegulationArticleResponseDTO>>>` | âœ“ |
-| IRegulationArticleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RegulationArticleResponseDTO>>` | âœ“ |
-| IRegulationArticleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RegulationArticleResponseDTO>>` | âœ“ |
-| IWebhookHandlerService | `HandlePaymentWebhookAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| NativeStatementPdfExportService | `Export` | SPECIAL | `byte[]` | âœ“ |
+| AspelCobranzaHausDetalleAppService | `BuildConceptNameFromAccount` | OTHER | `string` | ⚠ naming no CRUD estandar |
+| AspelCobranzaHausDetalleAppService | `LogAudit` | OTHER | `void` | ⚠ naming no CRUD estandar |
+| AspelCobranzaHausDetalleAppService | `NormalizeSegmentedAccountCode` | OTHER | `string` | ⚠ naming no CRUD estandar |
+| AspelCobranzaHausDetalleAppService | `SplitAccountSegments` | SPECIAL | `string[]` | ✓ |
+| CobranzaOnlineAccountAppService | `GetAccountsTreeAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CobranzaOnlineAccountResponseDTO>>>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineBalanceAppService | `GetBalancesByCustomerAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CobranzaOnlineBalanceResponseDTO>>>>` | ✓ |
+| CobranzaOnlineDashboardAppService | `GetCollectionAnalysisAsync` | GET_LIST | `Task<ApiResponseDTO<CobranzaOnlineAnalysisResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineDashboardAppService | `GetDashboardAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineDashboardResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineDashboardAppService | `GetExcludedAccountsAsync` | GET_LIST | `Task<ApiResponseDTO<CobranzaOnlineExcludedAccountListResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineDashboardAppService | `GetInspectionAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineInspectionResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineDashboardAppService | `GetInspectionHistoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineInspectionHistoryResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineDashboardAppService | `GetSyncDiagnosticsAsync` | GET_LIST | `Task<CobranzaOnlineSyncDiagnosticsDTO>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineDashboardAppService | `GetSyncStatusAsync` | GET_LIST | `Task<ApiResponseDTO<CobranzaOnlineSyncMetadataDTO>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineDashboardAppService | `UpsertExcludedAccountAsync` | OTHER | `Task<ApiResponseDTO<CobranzaOnlineExcludedAccountRowDTO>>` | ⚠ naming no CRUD estandar |
+| CobranzaOnlineMovementAppService | `GetMovimientosAsync` | GET_LIST | `Task<ApiResponseDTO<List<CobranzaOnlineMovementResponseDTO>>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlinePolicyAppService | `GetPoliciesAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CobranzaOnlinePolicyResponseDTO>>>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlinePortfolioAppService | `GetCarteraAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CobranzaOnlinePortfolioDTO>>>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineReporteFinancieroAppService | `GetReporteFinancieroAsync` | GET_SINGLE | `Task<ApiResponseDTO<ReporteFinancieroResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineStatementAppService | `GetCuentasNivel3Async` | GET_LIST | `Task<ApiResponseDTO<List<CobranzaOnlineAccountResponseDTO>>>` | ⚠ Get sin ByXxx/All |
+| CobranzaOnlineStatementAppService | `GetEstadoCuentaAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineStatementResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IAdjustmentService | `CancelCreditNoteAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAdjustmentService | `CreateAdjustmentAsync` | CREATE | `Task<ApiResponseDTO<AdjustmentResponseDTO>>` | ✓ |
+| IAdjustmentService | `CreateCreditNoteAsync` | CREATE | `Task<ApiResponseDTO<CreditNoteResponseDTO>>` | ✓ |
+| IAdjustmentService | `GetPendingCreditNotesAsync` | GET_LIST | `Task<ApiResponseDTO<List<CreditNoteResponseDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAspelCobranzaHausAppService | `GetAccountsByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelAccountsByCustomerResponseDTO>>` | ✓ |
+| IAspelCobranzaHausAppService | `GetCustomersAsync` | GET_LIST | `Task<ApiResponseDTO<List<AspelCustomerResponseDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAspelCobranzaHausAppService | `GetDeudasActualesAsync` | GET_LIST | `Task<ApiResponseDTO<AspelDeudasActualesResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelCobranzaHausAppService | `GetEstadoCuentaRangoAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelEstadoCuentaResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelCobranzaHausDetalleAppService | `GetDetalleCobranzaRangoAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaDetalleResponseDTO>>` | ✓ |
+| IAspelCobranzaHausDetalleAppService | `GetDetalleCobranzaRangoAuditAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaDetalleAuditResponseDTO>>` | ✓ |
+| IAspelCobranzaHausLocalAppService | `GetAccountsByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaHausLocalAccountsByCustomerResponseDTO>>` | ✓ |
+| IAspelCobranzaHausLocalAppService | `GetCustomersAsync` | GET_LIST | `Task<ApiResponseDTO<List<AspelCobranzaHausLocalCustomerResponseDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAspelCobranzaHausLocalAppService | `GetDeudasActualesAsync` | GET_LIST | `Task<ApiResponseDTO<AspelCobranzaHausLocalDeudasActualesResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelCobranzaHausLocalAppService | `GetEstadoCuentaRangoAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaHausLocalEstadoCuentaResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelCobranzaHausLocalAppService | `GetStatusAsync` | GET_LIST | `Task<ApiResponseDTO<AspelCobranzaHausLocalStatusResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelCobranzaHausLocalDetalleAppService | `GetDetalleCobranzaRangoAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaHausLocalCobranzaDetalleResponseDTO>>` | ✓ |
+| IChargeAppService | `BulkImportSaldoInicialAsync` | OTHER | `Task<ApiResponseDTO<BulkChargeImportResultDTO>>` | ⚠ naming no CRUD estandar |
+| IChargeAppService | `BulkSetInitialBalanceAsync` | OTHER | `Task<ApiResponseDTO<BulkSetInitialBalanceResultDTO>>` | ⚠ naming no CRUD estandar |
+| IChargeAppService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IChargeAppService | `CancelPaidChargeAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IChargeAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ChargeResponseDTO>>` | ✓ |
+| IChargeAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChargeResponseDTO>>>` | ✓ |
+| IChargeAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ChargeResponseDTO>>` | ✓ |
+| IChargeAppService | `GetInitialBalanceStatusAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyInitialBalanceDTO>>>` | ⚠ Get sin ByXxx/All |
+| IChargeAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ChargeResponseDTO>>` | ✓ |
+| IChargesGeneratorService | `GenerateMonthlyChargesAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | ✓ |
+| IChargesGeneratorService | `GenerateRetroactiveAdjustmentsAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | ✓ |
+| IChargeTemplateAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ChargeTemplateResponseDTO>>` | ✓ |
+| IChargeTemplateAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IChargeTemplateAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChargeTemplateResponseDTO>>>` | ✓ |
+| IChargeTemplateAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ChargeTemplateResponseDTO>>` | ✓ |
+| IChargeTemplateAppService | `GetCoverageAsync` | GET_LIST | `Task<ApiResponseDTO<List<TemplateCoverageDTO>>>` | ⚠ Get sin ByXxx/All |
+| IChargeTemplateAppService | `PreviewAsync` | SPECIAL | `Task<ApiResponseDTO<IndivisoFeeComparisonDTO>>` | ✓ |
+| IChargeTemplateAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ChargeTemplateResponseDTO>>` | ✓ |
+| IChargeTypeCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ChargeTypeCatalogResponseDTO>>` | ✓ |
+| IChargeTypeCatalogAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IChargeTypeCatalogAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChargeTypeCatalogResponseDTO>>>` | ✓ |
+| IChargeTypeCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ChargeTypeCatalogResponseDTO>>` | ✓ |
+| IChargeTypeCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ChargeTypeCatalogResponseDTO>>` | ✓ |
+| ICobranzaMetricasService | `GetMetricasAsync` | GET_LIST | `Task<ApiResponseDTO<CobranzaMetricasResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| ICobranzaNativaNotificationService | `SendMonthlyStatementEmailAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICobranzaNativaNotificationService | `SendMonthlyStatementsBatchAsync` | SPECIAL | `Task<ApiResponseDTO<SendNativeStatementBatchResponseDTO>>` | ✓ |
+| ICobranzaNativaNotificationService | `SendPaymentReceiptEmailAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICobranzaPaymentAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CobranzaPaymentResponseDTO>>` | ✓ |
+| ICobranzaPaymentAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<CobranzaPaymentResponseDTO>>>` | ✓ |
+| ICobranzaPaymentAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaPaymentResponseDTO>>` | ✓ |
+| ICobranzaPaymentAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CobranzaPaymentResponseDTO>>` | ✓ |
+| ICollectionCaseAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CollectionCaseResponseDTO>>` | ✓ |
+| ICollectionCaseAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<CollectionCaseResponseDTO>>>` | ✓ |
+| ICollectionCaseAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CollectionCaseResponseDTO>>` | ✓ |
+| ICollectionCaseAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CollectionCaseResponseDTO>>` | ✓ |
+| ICollectionManagerService | `EvaluateAndEscalateAccountsAsync` | OTHER | `Task<ApiResponseDTO<int>>` | ⚠ naming no CRUD estandar |
+| ICollectionManagerService | `LogCollectionActivityAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IFinancialApprovalService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFinancialApprovalService | `CancelRequestAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFinancialApprovalService | `CreateRequestAsync` | CREATE | `Task<ApiResponseDTO<FinancialApprovalResponseDTO>>` | ✓ |
+| IFinancialApprovalService | `GetByPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<FinancialApprovalResponseDTO>>>` | ✓ |
+| IFinancialApprovalService | `GetPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<FinancialApprovalResponseDTO>>>` | ⚠ Get sin ByXxx/All |
+| IFinancialApprovalService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFinancialAuditService | `GetByPropertyAsync` | GET_LIST | `Task<List<FinancialAuditLogDTO>>` | ✓ |
+| IFinancialAuditService | `GetByTenantAsync` | GET_LIST | `Task<List<FinancialAuditLogDTO>>` | ✓ |
+| IFinancialAuditService | `LogAsync` | OTHER | `Task` | ⚠ naming no CRUD estandar |
+| IInvoiceQueryAppService | `GetByChargeAsync` | GET_LIST | `Task<ApiResponseDTO<List<InvoiceResponseDTO>>>` | ✓ |
+| IInvoiceQueryAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InvoiceResponseDTO>>` | ✓ |
+| IInvoiceService | `CancelInvoiceAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInvoiceService | `GenerateInvoiceAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ILateFeeCalculatorService | `ProcessLateFeesAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | ✓ |
+| ILateFeePolicyAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<LateFeePolicyResponseDTO>>` | ✓ |
+| ILateFeePolicyAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ILateFeePolicyAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<LateFeePolicyResponseDTO>>>` | ✓ |
+| ILateFeePolicyAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<LateFeePolicyResponseDTO>>` | ✓ |
+| ILateFeePolicyAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<LateFeePolicyResponseDTO>>` | ✓ |
+| ILedgerIntegrityService | `CheckPropertyIntegrityAsync` | SPECIAL | `Task<PropertyIntegrityResultDTO>` | ✓ |
+| ILedgerIntegrityService | `CheckTenantIntegrityAsync` | SPECIAL | `Task<LedgerIntegrityReportDTO>` | ✓ |
+| ILedgerService | `BeginBatchAsync` | OTHER | `Task<FinancialBatch>` | ⚠ naming no CRUD estandar |
+| ILedgerService | `GetBatchEntriesAsync` | GET_LIST | `Task<List<FinancialLedgerEntry>>` | ⚠ Get sin ByXxx/All |
+| ILedgerService | `GetChargeBalanceAsync` | GET_SINGLE | `Task<decimal>` | ⚠ Get sin ByXxx/All |
+| ILedgerService | `GetPropertyBalanceAsync` | GET_SINGLE | `Task<decimal>` | ⚠ Get sin ByXxx/All |
+| ILedgerService | `GetPropertyLedgerAsync` | GET_LIST | `Task<List<FinancialLedgerEntry>>` | ⚠ Get sin ByXxx/All |
+| ILedgerService | `WriteAsync` | OTHER | `Task` | ⚠ naming no CRUD estandar |
+| INativeCollectionNotificationSettingsService | `GetByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<NativeCollectionNotificationSettingsResponseDTO>>` | ✓ |
+| INativeCollectionNotificationSettingsService | `GetEffectiveSettingsAsync` | GET_LIST | `Task<NativeCollectionNotificationSettingsResponseDTO>` | ⚠ Get sin ByXxx/All |
+| INativeCollectionNotificationSettingsService | `SaveAsync` | UPDATE | `Task<ApiResponseDTO<NativeCollectionNotificationSettingsResponseDTO>>` | ✓ |
+| INativeCollectionRealTimeService | `GetExcludedConnectionIdAsync` | GET_SINGLE | `Task<string>` | ⚠ Get sin ByXxx/All |
+| INativeCollectionRealTimeService | `SendUpdateAsync` | SPECIAL | `Task` | ✓ |
+| INativeStatementService | `GetStatementByPropertyAsync` | GET_SINGLE | `Task<ApiResponseDTO<NativeStatementResponseDTO>>` | ✓ |
+| INotificationEngineService | `ProcessNotificationsAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | ✓ |
+| IPaymentAllocationService | `ApplyPaymentToChargesAsync` | SPECIAL | `Task<ApiResponseDTO<ApplyPaymentResultDTO>>` | ✓ |
+| IPaymentAllocationService | `AutoApplyOverpaymentsAsync` | OTHER | `Task<ApiResponseDTO<ApplyPaymentResultDTO>>` | ⚠ naming no CRUD estandar |
+| IPaymentAllocationService | `CancelPaymentAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPaymentAllocationService | `GetPendingChargesByPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<PendingChargeDTO>>>` | ✓ |
+| IPeriodClosureService | `ClosePeriodAsync` | SPECIAL | `Task<ApiResponseDTO<PeriodClosureResponseDTO>>` | ✓ |
+| IPeriodClosureService | `FindBlockingClosureAsync` | GET_SINGLE | `Task<CollectionPeriodClosure>` | ⚠ Get sin ByXxx/All |
+| IPeriodClosureService | `GetPeriodsAsync` | GET_LIST | `Task<ApiResponseDTO<List<PeriodClosureResponseDTO>>>` | ⚠ Get sin ByXxx/All |
+| IPeriodClosureService | `IsPeriodClosedAsync` | OTHER | `Task<bool>` | ⚠ naming no CRUD estandar |
+| IPeriodClosureService | `ReopenPeriodAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPropertyFineAppService | `AddEvidenceAsync` | CREATE | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | ✓ |
+| IPropertyFineAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | ✓ |
+| IPropertyFineAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyFineResponseDTO>>>` | ✓ |
+| IPropertyFineAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | ✓ |
+| IPropertyFineAppService | `GetByPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyFineResponseDTO>>>` | ✓ |
+| IPropertyFineAppService | `IssueChargeAsync` | OTHER | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | ⚠ naming no CRUD estandar |
+| IPropertyFineAppService | `RemoveEvidenceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPropertyFineAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PropertyFineResponseDTO>>` | ✓ |
+| IPropertyFineAppService | `VoidAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IPropertyMemberService | `AddMemberAsync` | CREATE | `Task<ApiResponseDTO<PropertyMemberResponseDTO>>` | ✓ |
+| IPropertyMemberService | `CreateMemberWithAccountAsync` | CREATE | `Task<ApiResponseDTO<PropertyMemberResponseDTO>>` | ✓ |
+| IPropertyMemberService | `DeleteMemberAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPropertyMemberService | `EndMembershipAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IPropertyMemberService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyMemberResponseDTO>>>` | ✓ |
+| IPropertyMemberService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PropertyMemberResponseDTO>>` | ✓ |
+| IPropertyMemberService | `GetByPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<PropertyMemberResponseDTO>>>` | ✓ |
+| IPropertyMemberService | `GetFinancialResponsibleAsync` | GET_SINGLE | `Task<PropertyMember>` | ⚠ Get sin ByXxx/All |
+| IPropertyMemberService | `GetNotificationRecipientsAsync` | GET_LIST | `Task<List<PropertyMemberNotificationRecipientDTO>>` | ⚠ Get sin ByXxx/All |
+| IPropertyMemberService | `MigrateFromLegacyAsync` | SPECIAL | `Task<ApiResponseDTO<MigrationResultDTO>>` | ✓ |
+| IPropertyMemberService | `UpdateMemberAsync` | UPDATE | `Task<ApiResponseDTO<PropertyMemberResponseDTO>>` | ✓ |
+| IReconciliationService | `GetUnallocatedPaymentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CobranzaPaymentResponseDTO>>>` | ✓ |
+| IReconciliationService | `ReconcileUnallocatedPaymentsAsync` | SPECIAL | `Task<ApiResponseDTO<int>>` | ✓ |
+| IRegulationArticleAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<RegulationArticleResponseDTO>>` | ✓ |
+| IRegulationArticleAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRegulationArticleAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<RegulationArticleResponseDTO>>>` | ✓ |
+| IRegulationArticleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RegulationArticleResponseDTO>>` | ✓ |
+| IRegulationArticleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RegulationArticleResponseDTO>>` | ✓ |
+| IWebhookHandlerService | `HandlePaymentWebhookAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| NativeStatementPdfExportService | `Export` | SPECIAL | `byte[]` | ✓ |
 
 ### Endpoints
 
@@ -811,17 +811,17 @@ Metodos: 11 | Endpoints HTTP: 11
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| ICommitteeAppService | `GetBuildingInsuranceAsync` | GET_SINGLE | `Task<ApiResponseDTO<CommitteeBuildingInsuranceDTO>>` | âš  Get sin ByXxx/All |
-| ICommitteeAppService | `GetCustomDocumentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeCustomDocumentDTO>>>` | âš  Get sin ByXxx/All |
-| ICommitteeAppService | `GetDirectorioAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeDirectorioDTO>>>` | âš  Get sin ByXxx/All |
-| ICommitteeAppService | `GetFinancialReportsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeBoardDirectorsDocumentDTO>>>` | âš  Get sin ByXxx/All |
-| ICommitteeAppService | `GetHomeImagesAsync` | GET_LIST | `Task<ApiResponseDTO<CommitteeHomeImagesDTO>>` | âš  Get sin ByXxx/All |
-| ICommitteeAppService | `GetMeetingMinuteDetailAsync` | GET_SINGLE | `Task<ApiResponseDTO<CommitteeMeetingBoardDirectorsDTO>>` | âš  Get sin ByXxx/All |
-| ICommitteeAppService | `GetMeetingMinutesAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeBoardDirectorsDocumentDTO>>>` | âš  Get sin ByXxx/All |
-| ICommitteeAppService | `GetMonthlyMeetingsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeBoardDirectorsDocumentDTO>>>` | âš  Get sin ByXxx/All |
-| ICommitteeAppService | `GetPolicyContractsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteePolicyContractDTO>>>` | âš  Get sin ByXxx/All |
-| ICommitteeCobranzaAppService | `GetMorosoDetailAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaDetalleResponseDTO>>` | âš  Get sin ByXxx/All |
-| ICommitteeCobranzaAppService | `GetMorososReportAsync` | GET_SINGLE | `Task<ApiResponseDTO<CommitteeMorososResponseDTO>>` | âš  Get sin ByXxx/All |
+| ICommitteeAppService | `GetBuildingInsuranceAsync` | GET_SINGLE | `Task<ApiResponseDTO<CommitteeBuildingInsuranceDTO>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeAppService | `GetCustomDocumentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeCustomDocumentDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeAppService | `GetDirectorioAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeDirectorioDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeAppService | `GetFinancialReportsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeBoardDirectorsDocumentDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeAppService | `GetHomeImagesAsync` | GET_LIST | `Task<ApiResponseDTO<CommitteeHomeImagesDTO>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeAppService | `GetMeetingMinuteDetailAsync` | GET_SINGLE | `Task<ApiResponseDTO<CommitteeMeetingBoardDirectorsDTO>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeAppService | `GetMeetingMinutesAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeBoardDirectorsDocumentDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeAppService | `GetMonthlyMeetingsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteeBoardDirectorsDocumentDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeAppService | `GetPolicyContractsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CommitteePolicyContractDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeCobranzaAppService | `GetMorosoDetailAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelCobranzaDetalleResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| ICommitteeCobranzaAppService | `GetMorososReportAsync` | GET_SINGLE | `Task<ApiResponseDTO<CommitteeMorososResponseDTO>>` | ⚠ Get sin ByXxx/All |
 
 ### Endpoints
 
@@ -859,49 +859,49 @@ Metodos: 43 | Endpoints HTTP: 42
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IComparativoAppService | `AnalyzeComparativeChartAsync` | OTHER | `Task<ApiResponseDTO<string>>` | âš  naming no CRUD estandar |
-| IComparativoAppService | `DeleteProvider` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IComparativoAppService | `GetPosicionCotizacion` | GET_SINGLE | `ApiResponseDTO<GetPosicionCotizacionDTO>` | âš  Get sin ByXxx/All |
-| IComparativoAppService | `GetSCDTO` | GET_SINGLE | `Task<ApiResponseDTO<SCDTO>>` | âš  Get sin ByXxx/All |
-| IComparativoAppService | `GetSolicitudCompraCuadroComparativoDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudCompraCuadroComparativoDTO>>` | âš  Get sin ByXxx/All |
-| IComparativoAppService | `UpdateCuadroComparativoAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompra>>` | âœ“ |
-| ICotizacionProveedorAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CotizacionProveedor>>` | âœ“ |
-| ICotizacionProveedorAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICotizacionProveedorAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CotizacionProveedorDTO>>` | âœ“ |
-| ICotizacionProveedorAppService | `GetProviders` | GET_LIST | `ApiResponseDTO<IEnumerable<SelectItemDTO<Guid>>>` | âš  Get sin ByXxx/All |
-| ICotizacionProveedorAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<CotizacionProveedorDTO>>>` | âš  naming no CRUD estandar |
-| ICotizacionProveedorAppService | `RemoveFileAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICotizacionProveedorAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CotizacionProveedor>>` | âœ“ |
-| ICotizacionProveedorAppService | `UpdateProviderAsync` | UPDATE | `Task<ApiResponseDTO<CotizacionProveedor>>` | âœ“ |
-| IEvidenciaAppService | `AddCotizacionEvidenceAsync` | CREATE | `Task<ApiResponseDTO<CotizacionProveedorEvidenceDTO>>` | âœ“ |
-| IEvidenciaAppService | `AddSolicitudEvidenceAsync` | CREATE | `Task<ApiResponseDTO<SolicitudCompraEvidenceDTO>>` | âœ“ |
-| IEvidenciaAppService | `DeleteCotizacionEvidenceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEvidenciaAppService | `DeleteSolicitudEvidenceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IHistorialComprasAppService | `GetPagadasAsync` | GET_LIST | `Task<ApiResponseDTO<List<OrdenesCompraPagadasDTO>>>` | âš  Get sin ByXxx/All |
-| IPresupuestoAppService | `AddBudgetAsync` | CREATE | `Task<ApiResponseDTO<SolicitudCompraBudgetDTO>>` | âœ“ |
-| IPresupuestoAppService | `DeleteBudgetAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPresupuestoAppService | `GetAvailableBudgetsAsync` | GET_LIST | `Task<ApiResponseDTO<BudgetToPurchaseOrderDTO>>` | âš  Get sin ByXxx/All |
-| ISolicitudCompraAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SolicitudCompra>>` | âœ“ |
-| ISolicitudCompraAppService | `DeleteSolicitudComplete` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISolicitudCompraAppService | `DeleteSupportPdfAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISolicitudCompraAppService | `GetComiteEventsAsync` | GET_LIST | `ApiResponseDTO<IEnumerable<ComiteEventoDTO>>` | âš  Get sin ByXxx/All |
-| ISolicitudCompraAppService | `GetIdSolicitudCompraAsync` | GET_SINGLE | `Task<ApiResponseDTO<Guid>>` | âš  Get sin ByXxx/All |
-| ISolicitudCompraAppService | `GetSelectedForPresentationAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<SolicitudesCompraIndexDTO>>>` | âš  Get sin ByXxx/All |
-| ISolicitudCompraAppService | `GetSolicitudCompraIndexDTO` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<SolicitudesCompraIndexDTO>>>` | âš  Get sin ByXxx/All |
-| ISolicitudCompraAppService | `GetSolicitudCompraIndividual` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudCompraIndividualDTO>>` | âš  Get sin ByXxx/All |
-| ISolicitudCompraAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompra>>` | âœ“ |
-| ISolicitudCompraAppService | `UpdatePresentationOrderAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISolicitudCompraAppService | `UpdatePresentationSelectionAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompra>>` | âœ“ |
-| ISolicitudCompraAppService | `UploadRequestPdfAsync` | SPECIAL | `Task<ApiResponseDTO<string>>` | âœ“ |
-| ISolicitudCompraAppService | `UploadSupportPdfAsync` | SPECIAL | `Task<ApiResponseDTO<string>>` | âœ“ |
-| ISolicitudCompraDetalleAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SolicitudCompraDetalle>>` | âœ“ |
-| ISolicitudCompraDetalleAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISolicitudCompraDetalleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudCompraDetalleDTO>>` | âœ“ |
-| ISolicitudCompraDetalleAppService | `GetProductListAddDTO` | GET_SINGLE | `Task<ApiResponseDTO<SearchProductToAddDTO>>` | âœ“ |
-| ISolicitudCompraDetalleAppService | `GetSolicitudCompraDetalleEditProductDTO` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudCompraDetalleEditProductDTO>>` | âœ“ |
-| ISolicitudCompraDetalleAppService | `SearchToAddRequest` | OTHER | `Task<ApiResponseDTO<IEnumerable<SolicitudCompraDetalleProductListAddDTO>>>` | âš  naming no CRUD estandar |
-| ISolicitudCompraDetalleAppService | `UpdateCantidadUnidadAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompraDetalle>>` | âœ“ |
-| ISolicitudCompraDetalleAppService | `UpdatePriceAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompraDetalle>>` | âœ“ |
+| IComparativoAppService | `AnalyzeComparativeChartAsync` | OTHER | `Task<ApiResponseDTO<string>>` | ⚠ naming no CRUD estandar |
+| IComparativoAppService | `DeleteProvider` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IComparativoAppService | `GetPosicionCotizacion` | GET_SINGLE | `ApiResponseDTO<GetPosicionCotizacionDTO>` | ⚠ Get sin ByXxx/All |
+| IComparativoAppService | `GetSCDTO` | GET_SINGLE | `Task<ApiResponseDTO<SCDTO>>` | ⚠ Get sin ByXxx/All |
+| IComparativoAppService | `GetSolicitudCompraCuadroComparativoDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudCompraCuadroComparativoDTO>>` | ⚠ Get sin ByXxx/All |
+| IComparativoAppService | `UpdateCuadroComparativoAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompra>>` | ✓ |
+| ICotizacionProveedorAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CotizacionProveedor>>` | ✓ |
+| ICotizacionProveedorAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICotizacionProveedorAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CotizacionProveedorDTO>>` | ✓ |
+| ICotizacionProveedorAppService | `GetProviders` | GET_LIST | `ApiResponseDTO<IEnumerable<SelectItemDTO<Guid>>>` | ⚠ Get sin ByXxx/All |
+| ICotizacionProveedorAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<CotizacionProveedorDTO>>>` | ⚠ naming no CRUD estandar |
+| ICotizacionProveedorAppService | `RemoveFileAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICotizacionProveedorAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CotizacionProveedor>>` | ✓ |
+| ICotizacionProveedorAppService | `UpdateProviderAsync` | UPDATE | `Task<ApiResponseDTO<CotizacionProveedor>>` | ✓ |
+| IEvidenciaAppService | `AddCotizacionEvidenceAsync` | CREATE | `Task<ApiResponseDTO<CotizacionProveedorEvidenceDTO>>` | ✓ |
+| IEvidenciaAppService | `AddSolicitudEvidenceAsync` | CREATE | `Task<ApiResponseDTO<SolicitudCompraEvidenceDTO>>` | ✓ |
+| IEvidenciaAppService | `DeleteCotizacionEvidenceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEvidenciaAppService | `DeleteSolicitudEvidenceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IHistorialComprasAppService | `GetPagadasAsync` | GET_LIST | `Task<ApiResponseDTO<List<OrdenesCompraPagadasDTO>>>` | ⚠ Get sin ByXxx/All |
+| IPresupuestoAppService | `AddBudgetAsync` | CREATE | `Task<ApiResponseDTO<SolicitudCompraBudgetDTO>>` | ✓ |
+| IPresupuestoAppService | `DeleteBudgetAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPresupuestoAppService | `GetAvailableBudgetsAsync` | GET_LIST | `Task<ApiResponseDTO<BudgetToPurchaseOrderDTO>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudCompraAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SolicitudCompra>>` | ✓ |
+| ISolicitudCompraAppService | `DeleteSolicitudComplete` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISolicitudCompraAppService | `DeleteSupportPdfAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISolicitudCompraAppService | `GetComiteEventsAsync` | GET_LIST | `ApiResponseDTO<IEnumerable<ComiteEventoDTO>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudCompraAppService | `GetIdSolicitudCompraAsync` | GET_SINGLE | `Task<ApiResponseDTO<Guid>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudCompraAppService | `GetSelectedForPresentationAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<SolicitudesCompraIndexDTO>>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudCompraAppService | `GetSolicitudCompraIndexDTO` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<SolicitudesCompraIndexDTO>>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudCompraAppService | `GetSolicitudCompraIndividual` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudCompraIndividualDTO>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudCompraAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompra>>` | ✓ |
+| ISolicitudCompraAppService | `UpdatePresentationOrderAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISolicitudCompraAppService | `UpdatePresentationSelectionAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompra>>` | ✓ |
+| ISolicitudCompraAppService | `UploadRequestPdfAsync` | SPECIAL | `Task<ApiResponseDTO<string>>` | ✓ |
+| ISolicitudCompraAppService | `UploadSupportPdfAsync` | SPECIAL | `Task<ApiResponseDTO<string>>` | ✓ |
+| ISolicitudCompraDetalleAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SolicitudCompraDetalle>>` | ✓ |
+| ISolicitudCompraDetalleAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISolicitudCompraDetalleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudCompraDetalleDTO>>` | ✓ |
+| ISolicitudCompraDetalleAppService | `GetProductListAddDTO` | GET_SINGLE | `Task<ApiResponseDTO<SearchProductToAddDTO>>` | ✓ |
+| ISolicitudCompraDetalleAppService | `GetSolicitudCompraDetalleEditProductDTO` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudCompraDetalleEditProductDTO>>` | ✓ |
+| ISolicitudCompraDetalleAppService | `SearchToAddRequest` | OTHER | `Task<ApiResponseDTO<IEnumerable<SolicitudCompraDetalleProductListAddDTO>>>` | ⚠ naming no CRUD estandar |
+| ISolicitudCompraDetalleAppService | `UpdateCantidadUnidadAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompraDetalle>>` | ✓ |
+| ISolicitudCompraDetalleAppService | `UpdatePriceAsync` | UPDATE | `Task<ApiResponseDTO<SolicitudCompraDetalle>>` | ✓ |
 
 ### Endpoints
 
@@ -1009,170 +1009,170 @@ Metodos: 164 | Endpoints HTTP: 139
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| BudgetProposalService | `GetBudgetProposalItemAsync` | GET_SINGLE | `Task<ApiResponseDTO<BudgetProposalItemDTO>>` | âš  Get sin ByXxx/All |
-| CobranzaMigratorService | `RunSincronizacionCobranzaAsync` | SPECIAL | `Task<bool>` | âœ“ |
-| ContabilidadMigratorService | `RunMigrationAsync` | SPECIAL | `Task<bool>` | âœ“ |
-| ContabilidadOnlineLocalService | `GetDatosBasicosViaAspelApiAsync` | GET_SINGLE | `Task<AspelDatosCombinadosDTO>` | âš  Get sin ByXxx/All |
-| ContabilidadOnlineLocalService | `GetDatosConsolidadosViaAspelApiAsync` | GET_SINGLE | `Task<AspelDatosCombinadosDTO>` | âš  Get sin ByXxx/All |
-| ContabilidadOnlineLocalService | `GetDebugRawDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelDatosCombinadosDTO>>` | âš  Get sin ByXxx/All |
-| ContabilidadOnlineLocalService | `GetRawDataViaAspelApiAsync` | GET_SINGLE | `Task<AspelRawResponseDTO>` | âš  Get sin ByXxx/All |
-| FinancialReportAppService | `AuthorizeAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | âœ“ |
-| FinancialReportAppService | `CreatePeriodAsync` | CREATE | `Task<ApiResponseDTO<EstadoFinanciero>>` | âœ“ |
-| FinancialReportAppService | `DesauthorizeAsync` | OTHER | `Task<ApiResponseDTO<EstadoFinanciero>>` | âš  naming no CRUD estandar |
-| FinancialReportAppService | `FirstOrDefaultAsync` | OTHER | `Task<ApiResponseDTO<EstadoFinanciero>>` | âš  naming no CRUD estandar |
-| FinancialReportAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<FinancialReportListCustomerDTO>>>` | âš  naming no CRUD estandar |
-| FinancialReportAppService | `PropietariosAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| FinancialReportAppService | `ReporteEnvioAnualAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| FinancialReportAppService | `ReporteEnvioMensualAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| FinancialReportAppService | `SendAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | âœ“ |
-| FinancialReportAppService | `ToCustomerAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| FinancialReportAppService | `UploadFileAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | âœ“ |
-| FormulaEvaluatorService | `Evaluate` | OTHER | `decimal?` | âš  naming no CRUD estandar |
-| FormulaEvaluatorService | `Parse` | OTHER | `decimal` | âš  naming no CRUD estandar |
-| IAccountCatalogService | `GetFlatAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccountFlatItemDTO>>>` | âš  Get sin ByXxx/All |
-| IAccountCatalogService | `GetTreeAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccountTreeNodeDTO>>>` | âš  Get sin ByXxx/All |
-| IAccountingCatalogAppService | `GetAllByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<GroupedAccountingCatalogDTO>>>` | âœ“ |
-| IAnalisisCobranzaOnlineService | `GetAnalisisCobranzaOnlineAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineAnalysisResponseDTO>>` | âš  Get sin ByXxx/All |
-| IAnalisisCobranzaService | `GetAnalisisCobranzaAsync` | GET_SINGLE | `Task<ApiResponseDTO<AnalisisCobranzaDTO>>` | âš  Get sin ByXxx/All |
-| IAspelCustomerEmpresaAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<AspelCustomerEmpresaDTO>>` | âœ“ |
-| IAspelCustomerEmpresaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAspelCustomerEmpresaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<AspelCustomerEmpresaDTO>>>` | âœ“ |
-| IAspelCustomerEmpresaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AspelCustomerEmpresaDTO>>` | âœ“ |
-| IAspelFastReportQueryService | `GetLiveBalancesAsync` | GET_LIST | `Task<IEnumerable<AspelFastAccountBalanceDTO>>` | âš  Get sin ByXxx/All |
-| IAspelMappingService | `GetEmpresaIdAsync` | GET_SINGLE | `Task<int?>` | âš  Get sin ByXxx/All |
-| IAspelQuotationService | `FixedExpensesCatalogSelectAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IAspelQuotationService | `GetAccountBudgetStatusAsync` | GET_LIST | `Task<PurchaseOrderBudgetForOrdenCompraDTO>` | âš  Get sin ByXxx/All |
-| IAspelQuotationService | `GetAspelFullQuotation` | GET_SINGLE | `Task<ApiResponseDTO<AspelBudgetDTO>>` | âš  Get sin ByXxx/All |
-| IAspelQuotationService | `GetAspelMirrorAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelBudgetDTO>>` | âš  Get sin ByXxx/All |
-| IAspelQuotationService | `GetAspelQuotation` | GET_SINGLE | `Task<ApiResponseDTO<AspelBudgetDTO>>` | âš  Get sin ByXxx/All |
-| IAspelQuotationService | `GetAspelQuotationSummaryAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelBudgetDTO>>` | âš  Get sin ByXxx/All |
-| IAspelQuotationService | `GetMultipleAccountsBudgetStatusAsync` | GET_LIST | `Task<List<PurchaseOrderBudgetForOrdenCompraDTO>>` | âš  Get sin ByXxx/All |
-| IAspelQuotationService | `ToPurchaseOrderSelectAsync` | OTHER | `Task<ApiResponseDTO<BudgetToPurchaseOrderDTO>>` | âš  naming no CRUD estandar |
-| IAutitoriaCuentasAspelService | `GetComparativaAsync` | GET_SINGLE | `Task<ApiResponseDTO<AutitoriaCuentasAspelResponseDTO>>` | âš  Get sin ByXxx/All |
-| IBancosInversionesService | `GetBancosInversionesAsync` | GET_LIST | `Task<ApiResponseDTO<BancosInversionesDTO>>` | âš  Get sin ByXxx/All |
-| IBillingConfigAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BillingConfigResponseDTO>>` | âœ“ |
-| IBillingConfigAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<BillingConfigResponseDTO>>` | âœ“ |
-| IBudgetAccountRuleAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<BudgetAccountRuleDataDTO>>` | âœ“ |
-| IBudgetAccountRuleAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBudgetAccountRuleAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<BudgetAccountRuleDataDTO>>>` | âœ“ |
-| IBudgetAccountRuleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBudgetProposalItemSupportService | `AddBudgetProposalItemSupportFilesAsync` | CREATE | `Task<ApiResponseDTO<BudgetProposalItemDTO>>` | âœ“ |
-| IBudgetProposalItemSupportService | `DeleteBudgetProposalItemSupportFileAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBudgetProposalItemSupportService | `GetBudgetProposalItemWithSupportAsync` | GET_SINGLE | `Task<ApiResponseDTO<BudgetProposalItemSupportDetailsDTO>>` | âš  Get sin ByXxx/All |
-| IBudgetProposalItemSupportService | `UpdateBudgetProposalItemSupportInfoAsync` | UPDATE | `Task<ApiResponseDTO<BudgetProposalItemDTO>>` | âœ“ |
-| IBudgetProposalService | `AddAccountsToProposalAsync` | CREATE | `Task<ApiResponseDTO<IEnumerable<BudgetProposalItemDTO>>>` | âœ“ |
-| IBudgetProposalService | `CreateProposalAsync` | CREATE | `Task<ApiResponseDTO<BudgetProposalDTO>>` | âœ“ |
-| IBudgetProposalService | `DeleteProposalItemAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBudgetProposalService | `GetAvailableAspelAccountsAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<AvailableAccountDTO>>>` | âš  Get sin ByXxx/All |
-| IBudgetProposalService | `GetFeeComparisonAsync` | GET_SINGLE | `Task<ApiResponseDTO<UniformFeeComparisonDTO>>` | âš  Get sin ByXxx/All |
-| IBudgetProposalService | `GetFeeComparisonByIndivisoAsync` | GET_SINGLE | `Task<ApiResponseDTO<IndivisoFeeComparisonDTO>>` | âœ“ |
-| IBudgetProposalService | `GetItemHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<BudgetProposalItemHistoryDTO>>>` | âš  Get sin ByXxx/All |
-| IBudgetProposalService | `GetProposalsAsync` | GET_LIST | `Task<ApiResponseDTO<BudgetProposalDTO>>` | âš  Get sin ByXxx/All |
-| IBudgetProposalService | `UpdateProposalItemAsync` | UPDATE | `Task<ApiResponseDTO<BudgetProposalItemDTO>>` | âœ“ |
-| ICatalogoGastosFijosAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CatalogoGastosFijosDTO>>` | âœ“ |
-| ICatalogoGastosFijosAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICatalogoGastosFijosAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CatalogoGastosFijosDTO>>>` | âœ“ |
-| ICatalogoGastosFijosAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CatalogoGastosFijosDTO>>` | âœ“ |
-| ICatalogoGastosFijosAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CatalogoGastosFijosDTO>>` | âœ“ |
-| ICatalogoGastosFijosAppService | `ValidarCreateOrderAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ICatalogoGastosFijosDetallesAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<FixedExpenseCatalogDetail>>` | âœ“ |
-| ICatalogoGastosFijosDetallesAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICatalogoGastosFijosDetallesAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<FixedExpenseCatalogDetail>>>` | âœ“ |
-| ICatalogoGastosFijosDetallesAppService | `GetAllCatalogoGastosFijosProductoDTOAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CatalogoGastosFijosDetalleDTO>>>` | âœ“ |
-| ICatalogoGastosFijosDetallesAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<FixedExpenseCatalogDetail>>` | âœ“ |
-| ICatalogoGastosFijosDetallesAppService | `GetDetallesOrdenCompraFijosAsync` | GET_LIST | `Task<ApiResponseDTO<List<CatalogoGastosFijosDetallesDTO>>>` | âœ“ |
-| ICatalogoGastosFijosDetallesAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<FixedExpenseCatalogDetail>>` | âœ“ |
-| ICatalogoGastosFijosPresupuestoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CatalogPurchaseOrderBudgetDTO>>` | âœ“ |
-| ICatalogoGastosFijosPresupuestoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICatalogoGastosFijosPresupuestoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CatalogPurchaseOrderBudgetDTO>>>` | âœ“ |
-| ICatalogoGastosFijosPresupuestoAppService | `GetByCatalogoGastosFijosIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<CatalogPurchaseOrderBudgetDTO>>>` | âœ“ |
-| ICatalogoGastosFijosPresupuestoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CatalogPurchaseOrderBudgetDTO>>` | âœ“ |
-| ICatalogoGastosFijosPresupuestoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CatalogPurchaseOrderBudgetDTO>>` | âœ“ |
-| ICedulaExtraordinariaService | `GetCedulaExtraordinariaAsync` | GET_SINGLE | `Task<ApiResponseDTO<CedulaExtraordinariaDTO>>` | âš  Get sin ByXxx/All |
-| ICedulaPresupuestalService | `GetCedulaPresupuestalAsync` | GET_SINGLE | `Task<ApiResponseDTO<FinancialStatementDTO>>` | âš  Get sin ByXxx/All |
-| ICoiMapeoAppService | `ActualizarMapeoAsync` | OTHER | `Task<ActionResult<ApiResponseDTO<CoiMapeoAccountResponseDTO>>>` | âš  naming no CRUD estandar |
-| ICoiMapeoAppService | `AutoMapeoAsync` | OTHER | `Task<ActionResult<ApiResponseDTO<int>>>` | âš  naming no CRUD estandar |
-| ICoiMapeoAppService | `GetEstadoMapeoAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CoiMapeoAccountResponseDTO>>>>` | âš  Get sin ByXxx/All |
-| ICoiMapeoAppService | `GetPropertiesDisponiblesAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CoiMapeoPropertyOptionDTO>>>>` | âš  Get sin ByXxx/All |
-| IContabilidadMinutaAppService | `ListaMinutaAsync` | OTHER | `Task<ApiResponseDTO<List<MeetingContabilidadDTO>>>` | âš  naming no CRUD estandar |
-| IContabilidadMinutaAppService | `ListaMinutaLegalAsync` | OTHER | `Task<ApiResponseDTO<List<MeetingContabilidadDTO>>>` | âš  naming no CRUD estandar |
-| IContabilidadMinutaAppService | `ListaSeguimientosAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IContabilidadMinutaAppService | `PendientesAsync` | OTHER | `Task<ApiResponseDTO<List<MeetingPendientesDTO>>>` | âš  naming no CRUD estandar |
-| IDynamicReportEngineService | `ExecuteAsync` | SPECIAL | `Task<ApiResponseDTO<ReportResultDTO>>` | âœ“ |
-| IDynamicReportEngineService | `GetAccountCatalogAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccountFlatItemDTO>>>` | âš  Get sin ByXxx/All |
-| IDynamicReportEngineService | `GetAccountTreeAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccountTreeNodeDTO>>>` | âš  Get sin ByXxx/All |
-| IEpfService | `GetBalanceSheetAsync` | GET_SINGLE | `Task<ApiResponseDTO<FinancialStatementDTO>>` | âš  Get sin ByXxx/All |
-| IEpfService | `GetEpfAsync` | GET_SINGLE | `Task<ApiResponseDTO<EpfDTO>>` | âš  Get sin ByXxx/All |
-| IEspejoAspelFullService | `GetEspejoAsync` | GET_SINGLE | `Task<ApiResponseDTO<EspejoAspelFullResponseDTO>>` | âš  Get sin ByXxx/All |
-| IEstadoResultadosService | `GetEstadoResultadosAsync` | GET_LIST | `Task<ApiResponseDTO<FinancialStatementDTO>>` | âš  Get sin ByXxx/All |
-| IFinancialReportAppServiceV1 | `AuthorizeAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | âœ“ |
-| IFinancialReportAppServiceV1 | `CreatePeriodAsync` | CREATE | `Task<ApiResponseDTO<EstadoFinanciero>>` | âœ“ |
-| IFinancialReportAppServiceV1 | `DesauthorizeAsync` | OTHER | `Task<ApiResponseDTO<EstadoFinanciero>>` | âš  naming no CRUD estandar |
-| IFinancialReportAppServiceV1 | `FirstOrDefaultAsync` | OTHER | `Task<ApiResponseDTO<EstadoFinanciero>>` | âš  naming no CRUD estandar |
-| IFinancialReportAppServiceV1 | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<FinancialReportListCustomerDTO>>>` | âš  naming no CRUD estandar |
-| IFinancialReportAppServiceV1 | `PropietariosAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IFinancialReportAppServiceV1 | `ReporteEnvioAnualAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IFinancialReportAppServiceV1 | `ReporteEnvioMensualAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IFinancialReportAppServiceV1 | `SendAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | âœ“ |
-| IFinancialReportAppServiceV1 | `ToCustomerAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IFinancialReportAppServiceV1 | `UploadFileAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | âœ“ |
-| IFlujoCajaService | `GetFlujoCajaAsync` | GET_SINGLE | `Task<ApiResponseDTO<FlujoCajaDTO>>` | âš  Get sin ByXxx/All |
-| IFondoReservaService | `GetFondoReservaAsync` | GET_SINGLE | `Task<ApiResponseDTO<FondoReservaDTO>>` | âš  Get sin ByXxx/All |
-| IFundingAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<FundingListDTO>>` | âœ“ |
-| IFundingAppService | `AnalyzeUploadedFilesAsync` | OTHER | `Task<List<AnalyzedInvoiceDTO>>` | âš  naming no CRUD estandar |
-| IFundingAppService | `AuthorizeFundingAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `CompleteFundingAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `ConfirmFundingAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IFundingAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `DeleteDetailAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `DetailsAsync` | OTHER | `Task<ApiResponseDTO<FundingDetailDTO>>` | âš  naming no CRUD estandar |
-| IFundingAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<FundingListDTO[]>>` | âœ“ |
-| IFundingAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<FundingAddOrEditDTO>>` | âœ“ |
-| IFundingAppService | `GetPurchaseDetailAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseDetailAsyncDTO>>` | âš  Get sin ByXxx/All |
-| IFundingAppService | `GetPurchaseHistoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseHistoryDTO[]>>` | âš  Get sin ByXxx/All |
-| IFundingAppService | `InvalidateAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IFundingAppService | `RevertCompleteFundingAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IFundingAppService | `RevokeAuthorizationAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `RevokeConfirmationAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<FundingListDTO>>` | âœ“ |
-| IFundingAppService | `UpdateOrderAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `UpdatePurchasePaidStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `ValidateFundingAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFundingAppService | `ValidateInvoiceAsync` | SPECIAL | `Task<ApiResponseDTO<ValidationResultDTO>>` | âœ“ |
-| ILivePreviewEngineService | `ComputeAsync` | OTHER | `Task<ApiResponseDTO<LivePreviewResultDTO>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `BitacoraAlbercaParametrosAsync` | OTHER | `Task<ApiResponseDTO<List<ChartPiscinaDTO>>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `BitacoradiariaAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `CargaTicket` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `DataGraficoMensualAsync` | OTHER | `Task<ApiResponseDTO<List<MultiAxisPrimeChart>>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `EntradaProductoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `PrestamoHerramientaAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `ProveedorAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `ReportPurchaseAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `ResumenAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IMaintenanceReportAppService | `SalidaProductoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `TicketAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `TicketResponsable` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMaintenanceReportAppService | `WeeklyExecutiveReportAsync` | OTHER | `Task<ApiResponseDTO<MaintenanceWeeklyExecutiveReportDTO>>` | âš  naming no CRUD estandar |
-| IPresupuestoContabilidadService | `GetPresupuestoContabilidadAsync` | GET_SINGLE | `Task<ApiResponseDTO<PresupuestoContabilidadDTO>>` | âš  Get sin ByXxx/All |
-| IProjectedExpenseAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ProjectedExpenseDTO>>` | âœ“ |
-| IProjectedExpenseAppService | `AddOrUpdateRecurrenceAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IProjectedExpenseAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IProjectedExpenseAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<ProjectedExpenseDTO>>>` | âœ“ |
-| IProjectedExpenseAppService | `GetByAccountIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<ProjectedExpenseDTO>>>` | âœ“ |
-| IProjectedExpenseAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProjectedExpenseDTO>>` | âœ“ |
-| IProjectedExpenseAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ProjectedExpenseDTO>>` | âœ“ |
-| IProyectosAprobadosService | `GetProyectosAprobadosAsync` | GET_LIST | `Task<ApiResponseDTO<ProyectosAprobadosDTO>>` | âš  Get sin ByXxx/All |
-| IReportDefinitionService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ReportDefinitionDTO>>` | âœ“ |
-| IReportDefinitionService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IReportDefinitionService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ReportDefinitionListDTO>>>` | âœ“ |
-| IReportDefinitionService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ReportDefinitionDTO>>` | âœ“ |
-| IReportDefinitionService | `GetTemplatesAsync` | GET_LIST | `Task<ApiResponseDTO<List<ReportDefinitionListDTO>>>` | âš  Get sin ByXxx/All |
-| IReportDefinitionService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ReportDefinitionDTO>>` | âœ“ |
-| IReporteFinancieroService | `GetReporteFinancieroAsync` | GET_SINGLE | `Task<ApiResponseDTO<ReporteFinancieroDTO>>` | âš  Get sin ByXxx/All |
-| IValidacionCatalogoService | `GetCatalogValidationAsync` | GET_SINGLE | `Task<ApiResponseDTO<FinancialStatementDTO>>` | âš  Get sin ByXxx/All |
-| LivePreviewEngineService | `Parse` | OTHER | `decimal` | âš  naming no CRUD estandar |
-| ReportExcelExportService | `Export` | SPECIAL | `byte[]` | âœ“ |
-| ReportPdfExportService | `Export` | SPECIAL | `byte[]` | âœ“ |
+| BudgetProposalService | `GetBudgetProposalItemAsync` | GET_SINGLE | `Task<ApiResponseDTO<BudgetProposalItemDTO>>` | ⚠ Get sin ByXxx/All |
+| CobranzaMigratorService | `RunSincronizacionCobranzaAsync` | SPECIAL | `Task<bool>` | ✓ |
+| ContabilidadMigratorService | `RunMigrationAsync` | SPECIAL | `Task<bool>` | ✓ |
+| ContabilidadOnlineLocalService | `GetDatosBasicosViaAspelApiAsync` | GET_SINGLE | `Task<AspelDatosCombinadosDTO>` | ⚠ Get sin ByXxx/All |
+| ContabilidadOnlineLocalService | `GetDatosConsolidadosViaAspelApiAsync` | GET_SINGLE | `Task<AspelDatosCombinadosDTO>` | ⚠ Get sin ByXxx/All |
+| ContabilidadOnlineLocalService | `GetDebugRawDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelDatosCombinadosDTO>>` | ⚠ Get sin ByXxx/All |
+| ContabilidadOnlineLocalService | `GetRawDataViaAspelApiAsync` | GET_SINGLE | `Task<AspelRawResponseDTO>` | ⚠ Get sin ByXxx/All |
+| FinancialReportAppService | `AuthorizeAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | ✓ |
+| FinancialReportAppService | `CreatePeriodAsync` | CREATE | `Task<ApiResponseDTO<EstadoFinanciero>>` | ✓ |
+| FinancialReportAppService | `DesauthorizeAsync` | OTHER | `Task<ApiResponseDTO<EstadoFinanciero>>` | ⚠ naming no CRUD estandar |
+| FinancialReportAppService | `FirstOrDefaultAsync` | OTHER | `Task<ApiResponseDTO<EstadoFinanciero>>` | ⚠ naming no CRUD estandar |
+| FinancialReportAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<FinancialReportListCustomerDTO>>>` | ⚠ naming no CRUD estandar |
+| FinancialReportAppService | `PropietariosAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| FinancialReportAppService | `ReporteEnvioAnualAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| FinancialReportAppService | `ReporteEnvioMensualAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| FinancialReportAppService | `SendAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | ✓ |
+| FinancialReportAppService | `ToCustomerAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| FinancialReportAppService | `UploadFileAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | ✓ |
+| FormulaEvaluatorService | `Evaluate` | OTHER | `decimal?` | ⚠ naming no CRUD estandar |
+| FormulaEvaluatorService | `Parse` | OTHER | `decimal` | ⚠ naming no CRUD estandar |
+| IAccountCatalogService | `GetFlatAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccountFlatItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAccountCatalogService | `GetTreeAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccountTreeNodeDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAccountingCatalogAppService | `GetAllByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<GroupedAccountingCatalogDTO>>>` | ✓ |
+| IAnalisisCobranzaOnlineService | `GetAnalisisCobranzaOnlineAsync` | GET_SINGLE | `Task<ApiResponseDTO<CobranzaOnlineAnalysisResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IAnalisisCobranzaService | `GetAnalisisCobranzaAsync` | GET_SINGLE | `Task<ApiResponseDTO<AnalisisCobranzaDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelCustomerEmpresaAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<AspelCustomerEmpresaDTO>>` | ✓ |
+| IAspelCustomerEmpresaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAspelCustomerEmpresaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<AspelCustomerEmpresaDTO>>>` | ✓ |
+| IAspelCustomerEmpresaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AspelCustomerEmpresaDTO>>` | ✓ |
+| IAspelFastReportQueryService | `GetLiveBalancesAsync` | GET_LIST | `Task<IEnumerable<AspelFastAccountBalanceDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelMappingService | `GetEmpresaIdAsync` | GET_SINGLE | `Task<int?>` | ⚠ Get sin ByXxx/All |
+| IAspelQuotationService | `FixedExpensesCatalogSelectAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IAspelQuotationService | `GetAccountBudgetStatusAsync` | GET_LIST | `Task<PurchaseOrderBudgetForOrdenCompraDTO>` | ⚠ Get sin ByXxx/All |
+| IAspelQuotationService | `GetAspelFullQuotation` | GET_SINGLE | `Task<ApiResponseDTO<AspelBudgetDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelQuotationService | `GetAspelMirrorAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelBudgetDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelQuotationService | `GetAspelQuotation` | GET_SINGLE | `Task<ApiResponseDTO<AspelBudgetDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelQuotationService | `GetAspelQuotationSummaryAsync` | GET_SINGLE | `Task<ApiResponseDTO<AspelBudgetDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelQuotationService | `GetMultipleAccountsBudgetStatusAsync` | GET_LIST | `Task<List<PurchaseOrderBudgetForOrdenCompraDTO>>` | ⚠ Get sin ByXxx/All |
+| IAspelQuotationService | `ToPurchaseOrderSelectAsync` | OTHER | `Task<ApiResponseDTO<BudgetToPurchaseOrderDTO>>` | ⚠ naming no CRUD estandar |
+| IAutitoriaCuentasAspelService | `GetComparativaAsync` | GET_SINGLE | `Task<ApiResponseDTO<AutitoriaCuentasAspelResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IBancosInversionesService | `GetBancosInversionesAsync` | GET_LIST | `Task<ApiResponseDTO<BancosInversionesDTO>>` | ⚠ Get sin ByXxx/All |
+| IBillingConfigAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BillingConfigResponseDTO>>` | ✓ |
+| IBillingConfigAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<BillingConfigResponseDTO>>` | ✓ |
+| IBudgetAccountRuleAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<BudgetAccountRuleDataDTO>>` | ✓ |
+| IBudgetAccountRuleAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBudgetAccountRuleAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<BudgetAccountRuleDataDTO>>>` | ✓ |
+| IBudgetAccountRuleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBudgetProposalItemSupportService | `AddBudgetProposalItemSupportFilesAsync` | CREATE | `Task<ApiResponseDTO<BudgetProposalItemDTO>>` | ✓ |
+| IBudgetProposalItemSupportService | `DeleteBudgetProposalItemSupportFileAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBudgetProposalItemSupportService | `GetBudgetProposalItemWithSupportAsync` | GET_SINGLE | `Task<ApiResponseDTO<BudgetProposalItemSupportDetailsDTO>>` | ⚠ Get sin ByXxx/All |
+| IBudgetProposalItemSupportService | `UpdateBudgetProposalItemSupportInfoAsync` | UPDATE | `Task<ApiResponseDTO<BudgetProposalItemDTO>>` | ✓ |
+| IBudgetProposalService | `AddAccountsToProposalAsync` | CREATE | `Task<ApiResponseDTO<IEnumerable<BudgetProposalItemDTO>>>` | ✓ |
+| IBudgetProposalService | `CreateProposalAsync` | CREATE | `Task<ApiResponseDTO<BudgetProposalDTO>>` | ✓ |
+| IBudgetProposalService | `DeleteProposalItemAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBudgetProposalService | `GetAvailableAspelAccountsAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<AvailableAccountDTO>>>` | ⚠ Get sin ByXxx/All |
+| IBudgetProposalService | `GetFeeComparisonAsync` | GET_SINGLE | `Task<ApiResponseDTO<UniformFeeComparisonDTO>>` | ⚠ Get sin ByXxx/All |
+| IBudgetProposalService | `GetFeeComparisonByIndivisoAsync` | GET_SINGLE | `Task<ApiResponseDTO<IndivisoFeeComparisonDTO>>` | ✓ |
+| IBudgetProposalService | `GetItemHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<BudgetProposalItemHistoryDTO>>>` | ⚠ Get sin ByXxx/All |
+| IBudgetProposalService | `GetProposalsAsync` | GET_LIST | `Task<ApiResponseDTO<BudgetProposalDTO>>` | ⚠ Get sin ByXxx/All |
+| IBudgetProposalService | `UpdateProposalItemAsync` | UPDATE | `Task<ApiResponseDTO<BudgetProposalItemDTO>>` | ✓ |
+| ICatalogoGastosFijosAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CatalogoGastosFijosDTO>>` | ✓ |
+| ICatalogoGastosFijosAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICatalogoGastosFijosAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CatalogoGastosFijosDTO>>>` | ✓ |
+| ICatalogoGastosFijosAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CatalogoGastosFijosDTO>>` | ✓ |
+| ICatalogoGastosFijosAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CatalogoGastosFijosDTO>>` | ✓ |
+| ICatalogoGastosFijosAppService | `ValidarCreateOrderAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ICatalogoGastosFijosDetallesAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<FixedExpenseCatalogDetail>>` | ✓ |
+| ICatalogoGastosFijosDetallesAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICatalogoGastosFijosDetallesAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<FixedExpenseCatalogDetail>>>` | ✓ |
+| ICatalogoGastosFijosDetallesAppService | `GetAllCatalogoGastosFijosProductoDTOAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CatalogoGastosFijosDetalleDTO>>>` | ✓ |
+| ICatalogoGastosFijosDetallesAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<FixedExpenseCatalogDetail>>` | ✓ |
+| ICatalogoGastosFijosDetallesAppService | `GetDetallesOrdenCompraFijosAsync` | GET_LIST | `Task<ApiResponseDTO<List<CatalogoGastosFijosDetallesDTO>>>` | ✓ |
+| ICatalogoGastosFijosDetallesAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<FixedExpenseCatalogDetail>>` | ✓ |
+| ICatalogoGastosFijosPresupuestoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CatalogPurchaseOrderBudgetDTO>>` | ✓ |
+| ICatalogoGastosFijosPresupuestoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICatalogoGastosFijosPresupuestoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CatalogPurchaseOrderBudgetDTO>>>` | ✓ |
+| ICatalogoGastosFijosPresupuestoAppService | `GetByCatalogoGastosFijosIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<CatalogPurchaseOrderBudgetDTO>>>` | ✓ |
+| ICatalogoGastosFijosPresupuestoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CatalogPurchaseOrderBudgetDTO>>` | ✓ |
+| ICatalogoGastosFijosPresupuestoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CatalogPurchaseOrderBudgetDTO>>` | ✓ |
+| ICedulaExtraordinariaService | `GetCedulaExtraordinariaAsync` | GET_SINGLE | `Task<ApiResponseDTO<CedulaExtraordinariaDTO>>` | ⚠ Get sin ByXxx/All |
+| ICedulaPresupuestalService | `GetCedulaPresupuestalAsync` | GET_SINGLE | `Task<ApiResponseDTO<FinancialStatementDTO>>` | ⚠ Get sin ByXxx/All |
+| ICoiMapeoAppService | `ActualizarMapeoAsync` | OTHER | `Task<ActionResult<ApiResponseDTO<CoiMapeoAccountResponseDTO>>>` | ⚠ naming no CRUD estandar |
+| ICoiMapeoAppService | `AutoMapeoAsync` | OTHER | `Task<ActionResult<ApiResponseDTO<int>>>` | ⚠ naming no CRUD estandar |
+| ICoiMapeoAppService | `GetEstadoMapeoAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CoiMapeoAccountResponseDTO>>>>` | ⚠ Get sin ByXxx/All |
+| ICoiMapeoAppService | `GetPropertiesDisponiblesAsync` | GET_LIST | `Task<ActionResult<ApiResponseDTO<List<CoiMapeoPropertyOptionDTO>>>>` | ⚠ Get sin ByXxx/All |
+| IContabilidadMinutaAppService | `ListaMinutaAsync` | OTHER | `Task<ApiResponseDTO<List<MeetingContabilidadDTO>>>` | ⚠ naming no CRUD estandar |
+| IContabilidadMinutaAppService | `ListaMinutaLegalAsync` | OTHER | `Task<ApiResponseDTO<List<MeetingContabilidadDTO>>>` | ⚠ naming no CRUD estandar |
+| IContabilidadMinutaAppService | `ListaSeguimientosAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IContabilidadMinutaAppService | `PendientesAsync` | OTHER | `Task<ApiResponseDTO<List<MeetingPendientesDTO>>>` | ⚠ naming no CRUD estandar |
+| IDynamicReportEngineService | `ExecuteAsync` | SPECIAL | `Task<ApiResponseDTO<ReportResultDTO>>` | ✓ |
+| IDynamicReportEngineService | `GetAccountCatalogAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccountFlatItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| IDynamicReportEngineService | `GetAccountTreeAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccountTreeNodeDTO>>>` | ⚠ Get sin ByXxx/All |
+| IEpfService | `GetBalanceSheetAsync` | GET_SINGLE | `Task<ApiResponseDTO<FinancialStatementDTO>>` | ⚠ Get sin ByXxx/All |
+| IEpfService | `GetEpfAsync` | GET_SINGLE | `Task<ApiResponseDTO<EpfDTO>>` | ⚠ Get sin ByXxx/All |
+| IEspejoAspelFullService | `GetEspejoAsync` | GET_SINGLE | `Task<ApiResponseDTO<EspejoAspelFullResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IEstadoResultadosService | `GetEstadoResultadosAsync` | GET_LIST | `Task<ApiResponseDTO<FinancialStatementDTO>>` | ⚠ Get sin ByXxx/All |
+| IFinancialReportAppServiceV1 | `AuthorizeAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | ✓ |
+| IFinancialReportAppServiceV1 | `CreatePeriodAsync` | CREATE | `Task<ApiResponseDTO<EstadoFinanciero>>` | ✓ |
+| IFinancialReportAppServiceV1 | `DesauthorizeAsync` | OTHER | `Task<ApiResponseDTO<EstadoFinanciero>>` | ⚠ naming no CRUD estandar |
+| IFinancialReportAppServiceV1 | `FirstOrDefaultAsync` | OTHER | `Task<ApiResponseDTO<EstadoFinanciero>>` | ⚠ naming no CRUD estandar |
+| IFinancialReportAppServiceV1 | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<FinancialReportListCustomerDTO>>>` | ⚠ naming no CRUD estandar |
+| IFinancialReportAppServiceV1 | `PropietariosAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IFinancialReportAppServiceV1 | `ReporteEnvioAnualAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IFinancialReportAppServiceV1 | `ReporteEnvioMensualAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IFinancialReportAppServiceV1 | `SendAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | ✓ |
+| IFinancialReportAppServiceV1 | `ToCustomerAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IFinancialReportAppServiceV1 | `UploadFileAsync` | SPECIAL | `Task<ApiResponseDTO<EstadoFinanciero>>` | ✓ |
+| IFlujoCajaService | `GetFlujoCajaAsync` | GET_SINGLE | `Task<ApiResponseDTO<FlujoCajaDTO>>` | ⚠ Get sin ByXxx/All |
+| IFondoReservaService | `GetFondoReservaAsync` | GET_SINGLE | `Task<ApiResponseDTO<FondoReservaDTO>>` | ⚠ Get sin ByXxx/All |
+| IFundingAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<FundingListDTO>>` | ✓ |
+| IFundingAppService | `AnalyzeUploadedFilesAsync` | OTHER | `Task<List<AnalyzedInvoiceDTO>>` | ⚠ naming no CRUD estandar |
+| IFundingAppService | `AuthorizeFundingAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `CompleteFundingAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `ConfirmFundingAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IFundingAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `DeleteDetailAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `DetailsAsync` | OTHER | `Task<ApiResponseDTO<FundingDetailDTO>>` | ⚠ naming no CRUD estandar |
+| IFundingAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<FundingListDTO[]>>` | ✓ |
+| IFundingAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<FundingAddOrEditDTO>>` | ✓ |
+| IFundingAppService | `GetPurchaseDetailAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseDetailAsyncDTO>>` | ⚠ Get sin ByXxx/All |
+| IFundingAppService | `GetPurchaseHistoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseHistoryDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IFundingAppService | `InvalidateAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IFundingAppService | `RevertCompleteFundingAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IFundingAppService | `RevokeAuthorizationAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `RevokeConfirmationAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<FundingListDTO>>` | ✓ |
+| IFundingAppService | `UpdateOrderAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `UpdatePurchasePaidStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `ValidateFundingAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFundingAppService | `ValidateInvoiceAsync` | SPECIAL | `Task<ApiResponseDTO<ValidationResultDTO>>` | ✓ |
+| ILivePreviewEngineService | `ComputeAsync` | OTHER | `Task<ApiResponseDTO<LivePreviewResultDTO>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `BitacoraAlbercaParametrosAsync` | OTHER | `Task<ApiResponseDTO<List<ChartPiscinaDTO>>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `BitacoradiariaAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `CargaTicket` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `DataGraficoMensualAsync` | OTHER | `Task<ApiResponseDTO<List<MultiAxisPrimeChart>>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `EntradaProductoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `PrestamoHerramientaAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `ProveedorAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `ReportPurchaseAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `ResumenAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | ✓ |
+| IMaintenanceReportAppService | `SalidaProductoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `TicketAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `TicketResponsable` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceReportAppService | `WeeklyExecutiveReportAsync` | OTHER | `Task<ApiResponseDTO<MaintenanceWeeklyExecutiveReportDTO>>` | ⚠ naming no CRUD estandar |
+| IPresupuestoContabilidadService | `GetPresupuestoContabilidadAsync` | GET_SINGLE | `Task<ApiResponseDTO<PresupuestoContabilidadDTO>>` | ⚠ Get sin ByXxx/All |
+| IProjectedExpenseAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ProjectedExpenseDTO>>` | ✓ |
+| IProjectedExpenseAppService | `AddOrUpdateRecurrenceAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IProjectedExpenseAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IProjectedExpenseAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<ProjectedExpenseDTO>>>` | ✓ |
+| IProjectedExpenseAppService | `GetByAccountIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<ProjectedExpenseDTO>>>` | ✓ |
+| IProjectedExpenseAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProjectedExpenseDTO>>` | ✓ |
+| IProjectedExpenseAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ProjectedExpenseDTO>>` | ✓ |
+| IProyectosAprobadosService | `GetProyectosAprobadosAsync` | GET_LIST | `Task<ApiResponseDTO<ProyectosAprobadosDTO>>` | ⚠ Get sin ByXxx/All |
+| IReportDefinitionService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ReportDefinitionDTO>>` | ✓ |
+| IReportDefinitionService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IReportDefinitionService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ReportDefinitionListDTO>>>` | ✓ |
+| IReportDefinitionService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ReportDefinitionDTO>>` | ✓ |
+| IReportDefinitionService | `GetTemplatesAsync` | GET_LIST | `Task<ApiResponseDTO<List<ReportDefinitionListDTO>>>` | ⚠ Get sin ByXxx/All |
+| IReportDefinitionService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ReportDefinitionDTO>>` | ✓ |
+| IReporteFinancieroService | `GetReporteFinancieroAsync` | GET_SINGLE | `Task<ApiResponseDTO<ReporteFinancieroDTO>>` | ⚠ Get sin ByXxx/All |
+| IValidacionCatalogoService | `GetCatalogValidationAsync` | GET_SINGLE | `Task<ApiResponseDTO<FinancialStatementDTO>>` | ⚠ Get sin ByXxx/All |
+| LivePreviewEngineService | `Parse` | OTHER | `decimal` | ⚠ naming no CRUD estandar |
+| ReportExcelExportService | `Export` | SPECIAL | `byte[]` | ✓ |
+| ReportPdfExportService | `Export` | SPECIAL | `byte[]` | ✓ |
 
 ### Endpoints
 
@@ -1333,9 +1333,9 @@ Metodos: 3 | Endpoints HTTP: 2
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IAsambleaChecklistAppService | `GetBySessionIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<AsambleaChecklistExecutionDTO>>>` | âœ“ |
-| IAsambleaChecklistAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<AsambleaChecklistExecutionDTO>>` | âœ“ |
-| IAsambleaChecklistService | `EnsureChecklistForPlanAsync` | OTHER | `Task` | âš  naming no CRUD estandar |
+| IAsambleaChecklistAppService | `GetBySessionIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<AsambleaChecklistExecutionDTO>>>` | ✓ |
+| IAsambleaChecklistAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<AsambleaChecklistExecutionDTO>>` | ✓ |
+| IAsambleaChecklistService | `EnsureChecklistForPlanAsync` | OTHER | `Task` | ⚠ naming no CRUD estandar |
 
 ### Endpoints
 
@@ -1366,61 +1366,61 @@ Metodos: 55 | Endpoints HTTP: 46
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| BoardDirectorsAppService | `GetBoardDirectorsDocumentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | âš  Get sin ByXxx/All |
-| BoardDirectorsAppService | `GetBoardDirectorsFinancialReportsAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | âš  Get sin ByXxx/All |
-| BoardDirectorsAppService | `GetBoardDirectorsMeetingAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingBoardDirectorsDTO>>` | âš  Get sin ByXxx/All |
-| BoardDirectorsAppService | `GetBoardDirectorsMeetingMinutesAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | âš  Get sin ByXxx/All |
-| BoardDirectorsAppService | `GetBoardDirectorsMonthlyMeetingsAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | âš  Get sin ByXxx/All |
-| BoardDirectorsAppService | `GetCustomDocumentsByTypeAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | âœ“ |
-| IContractAddendumAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<ContractAddendumListDTO[]>>` | âœ“ |
-| IContractAddendumAppService | `GetByContractAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContractAddendumListDTO[]>>` | âœ“ |
-| IContractRenewalAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO[]>>` | âœ“ |
-| IContractRenewalAppService | `GetByContractAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO[]>>` | âœ“ |
-| IContractRenewalAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO>>` | âœ“ |
-| IContractRenewalAppService | `LinkPerformanceEvaluationAsync` | OTHER | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO>>` | âš  naming no CRUD estandar |
-| IContractRenewalAppService | `RegisterDecisionAsync` | CREATE | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO>>` | âœ“ |
-| IContratoPolizaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ContratoPoliza>>` | âœ“ |
-| IContratoPolizaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<ContratoPoliza>>` | âœ“ |
-| IContratoPolizaAppService | `DeleteDocumentAsync` | DELETE | `Task<ApiResponseDTO<ContratoPoliza>>` | âœ“ |
-| IContratoPolizaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âœ“ |
-| IContratoPolizaAppService | `GetBuildingInsurancePolicyAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IContratoPolizaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IContratoPolizaAppService | `GetDocumentAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContratoPoliza>>` | âš  Get sin ByXxx/All |
-| IContratoPolizaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ContratoPoliza>>` | âœ“ |
-| IEmployeeContractGeneratorService | `GenerateContractOnConfirmedAsync` | SPECIAL | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | âœ“ |
-| IEmployeeWorkContractAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | âœ“ |
-| IEmployeeWorkContractAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeWorkContractAppService | `GetByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeWorkContractDTO[]>>` | âœ“ |
-| IEmployeeWorkContractAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeWorkContractDTO[]>>` | âœ“ |
-| IEmployeeWorkContractAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | âœ“ |
-| IEmployeeWorkContractAppService | `TerminateAsync` | OTHER | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | âš  naming no CRUD estandar |
-| IEmployeeWorkContractAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | âœ“ |
-| IEmployeeWorkContractAppService | `UploadSignedAsync` | SPECIAL | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | âœ“ |
-| ILegalEmployeeAppService | `GetActiveEmployeesByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<LegalEmployeeDTO[]>>` | âœ“ |
-| ILegalMatterAppService | `CategoryPostAsync` | OTHER | `Task<ApiResponseDTO<LegalMatterCategory>>` | âš  naming no CRUD estandar |
-| ILegalMatterAppService | `CategoryPutAsync` | OTHER | `Task<ApiResponseDTO<LegalMatterCategory>>` | âš  naming no CRUD estandar |
-| ILegalMatterAppService | `CategorySelectAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âš  naming no CRUD estandar |
-| ILegalMatterAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ILegalMatterAppService | `DeleteCategoryByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ILegalMatterAppService | `GetAsync` | GET_SINGLE | `Task<ApiResponseDTO<LegalMatterAddDTO>>` | âš  Get sin ByXxx/All |
-| ILegalMatterAppService | `GetCategoriesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âš  Get sin ByXxx/All |
-| ILegalMatterAppService | `GetCategoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<LegalMatterCategoryAddOrEditDTO>>` | âš  Get sin ByXxx/All |
-| ILegalMatterAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<LegalMatterCategoryWithMattersDTO>>>` | âœ“ |
-| ILegalMatterAppService | `GetSelectForAddTicketAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| ILegalMatterAppService | `PostAsync` | CREATE | `Task<ApiResponseDTO<LegalMatter>>` | âœ“ |
-| ILegalMatterAppService | `PutAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ILegalReportAppService | `EstadosFinancierosAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| ILegalReportAppService | `GenerateWeeklyReportAsync` | SPECIAL | `Task<ApiResponseDTO<byte[]>>` | âœ“ |
-| ILegalReportAppService | `GetPendingMinutesAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| ILegalReportAppService | `ObtenerResumenTickets` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| ILegalReportAppService | `PendingAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  naming no CRUD estandar |
-| ILegalReportAppService | `PendingSummaryAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  naming no CRUD estandar |
-| ILegalReportAppService | `PendingUnassignedDataAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  naming no CRUD estandar |
-| ILegalReportAppService | `RequestsAttendedAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  naming no CRUD estandar |
-| ILegalReportAppService | `RequestsPendingAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  naming no CRUD estandar |
-| ILegalReportAppService | `SummaryCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<object>>>` | âœ“ |
-| ILegalReportAppService | `SummaryIndividualAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<object>>>` | âœ“ |
-| ILegalReportAppService | `TotalRequestsAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âœ“ |
+| BoardDirectorsAppService | `GetBoardDirectorsDocumentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | ⚠ Get sin ByXxx/All |
+| BoardDirectorsAppService | `GetBoardDirectorsFinancialReportsAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | ⚠ Get sin ByXxx/All |
+| BoardDirectorsAppService | `GetBoardDirectorsMeetingAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingBoardDirectorsDTO>>` | ⚠ Get sin ByXxx/All |
+| BoardDirectorsAppService | `GetBoardDirectorsMeetingMinutesAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | ⚠ Get sin ByXxx/All |
+| BoardDirectorsAppService | `GetBoardDirectorsMonthlyMeetingsAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | ⚠ Get sin ByXxx/All |
+| BoardDirectorsAppService | `GetCustomDocumentsByTypeAsync` | GET_LIST | `Task<ApiResponseDTO<List<BoardDirectorsDocumentDTO>>>` | ✓ |
+| IContractAddendumAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<ContractAddendumListDTO[]>>` | ✓ |
+| IContractAddendumAppService | `GetByContractAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContractAddendumListDTO[]>>` | ✓ |
+| IContractRenewalAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO[]>>` | ✓ |
+| IContractRenewalAppService | `GetByContractAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO[]>>` | ✓ |
+| IContractRenewalAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO>>` | ✓ |
+| IContractRenewalAppService | `LinkPerformanceEvaluationAsync` | OTHER | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO>>` | ⚠ naming no CRUD estandar |
+| IContractRenewalAppService | `RegisterDecisionAsync` | CREATE | `Task<ApiResponseDTO<ContractRenewalEvaluationDTO>>` | ✓ |
+| IContratoPolizaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ContratoPoliza>>` | ✓ |
+| IContratoPolizaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<ContratoPoliza>>` | ✓ |
+| IContratoPolizaAppService | `DeleteDocumentAsync` | DELETE | `Task<ApiResponseDTO<ContratoPoliza>>` | ✓ |
+| IContratoPolizaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ✓ |
+| IContratoPolizaAppService | `GetBuildingInsurancePolicyAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IContratoPolizaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IContratoPolizaAppService | `GetDocumentAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContratoPoliza>>` | ⚠ Get sin ByXxx/All |
+| IContratoPolizaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ContratoPoliza>>` | ✓ |
+| IEmployeeContractGeneratorService | `GenerateContractOnConfirmedAsync` | SPECIAL | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | ✓ |
+| IEmployeeWorkContractAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | ✓ |
+| IEmployeeWorkContractAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeWorkContractAppService | `GetByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeWorkContractDTO[]>>` | ✓ |
+| IEmployeeWorkContractAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeWorkContractDTO[]>>` | ✓ |
+| IEmployeeWorkContractAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | ✓ |
+| IEmployeeWorkContractAppService | `TerminateAsync` | OTHER | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | ⚠ naming no CRUD estandar |
+| IEmployeeWorkContractAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | ✓ |
+| IEmployeeWorkContractAppService | `UploadSignedAsync` | SPECIAL | `Task<ApiResponseDTO<EmployeeWorkContractDTO>>` | ✓ |
+| ILegalEmployeeAppService | `GetActiveEmployeesByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<LegalEmployeeDTO[]>>` | ✓ |
+| ILegalMatterAppService | `CategoryPostAsync` | OTHER | `Task<ApiResponseDTO<LegalMatterCategory>>` | ⚠ naming no CRUD estandar |
+| ILegalMatterAppService | `CategoryPutAsync` | OTHER | `Task<ApiResponseDTO<LegalMatterCategory>>` | ⚠ naming no CRUD estandar |
+| ILegalMatterAppService | `CategorySelectAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ⚠ naming no CRUD estandar |
+| ILegalMatterAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ILegalMatterAppService | `DeleteCategoryByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ILegalMatterAppService | `GetAsync` | GET_SINGLE | `Task<ApiResponseDTO<LegalMatterAddDTO>>` | ⚠ Get sin ByXxx/All |
+| ILegalMatterAppService | `GetCategoriesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ⚠ Get sin ByXxx/All |
+| ILegalMatterAppService | `GetCategoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<LegalMatterCategoryAddOrEditDTO>>` | ⚠ Get sin ByXxx/All |
+| ILegalMatterAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<LegalMatterCategoryWithMattersDTO>>>` | ✓ |
+| ILegalMatterAppService | `GetSelectForAddTicketAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| ILegalMatterAppService | `PostAsync` | CREATE | `Task<ApiResponseDTO<LegalMatter>>` | ✓ |
+| ILegalMatterAppService | `PutAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| ILegalReportAppService | `EstadosFinancierosAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| ILegalReportAppService | `GenerateWeeklyReportAsync` | SPECIAL | `Task<ApiResponseDTO<byte[]>>` | ✓ |
+| ILegalReportAppService | `GetPendingMinutesAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| ILegalReportAppService | `ObtenerResumenTickets` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| ILegalReportAppService | `PendingAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ naming no CRUD estandar |
+| ILegalReportAppService | `PendingSummaryAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ naming no CRUD estandar |
+| ILegalReportAppService | `PendingUnassignedDataAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ naming no CRUD estandar |
+| ILegalReportAppService | `RequestsAttendedAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ naming no CRUD estandar |
+| ILegalReportAppService | `RequestsPendingAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ naming no CRUD estandar |
+| ILegalReportAppService | `SummaryCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<object>>>` | ✓ |
+| ILegalReportAppService | `SummaryIndividualAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<object>>>` | ✓ |
+| ILegalReportAppService | `TotalRequestsAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ✓ |
 
 ### Endpoints
 
@@ -1518,206 +1518,206 @@ Metodos: 200 | Endpoints HTTP: 201
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IBitacoraDetectorHumoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BitacoraDetectorHumo>>` | âœ“ |
-| IBitacoraDetectorHumoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBitacoraDetectorHumoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BitacoraDetectorHumoDTO[]>>` | âœ“ |
-| IBitacoraDetectorHumoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraDetectorHumoAddOrEditDTO>>` | âœ“ |
-| IBitacoraEstacionManualAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BitacoraEstacionManual>>` | âœ“ |
-| IBitacoraEstacionManualAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBitacoraEstacionManualAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BitacoraEstacionManualDTO[]>>` | âœ“ |
-| IBitacoraEstacionManualAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraEstacionManualAddOrEditDTO>>` | âœ“ |
-| IBitacoraExtintorAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BitacoraExtintor>>` | âœ“ |
-| IBitacoraExtintorAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBitacoraExtintorAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BitacoraExtintorDTO[]>>` | âœ“ |
-| IBitacoraExtintorAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraExtintorAddOrEditDTO>>` | âœ“ |
-| IBitacoraHidranteAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BitacoraHidrante>>` | âœ“ |
-| IBitacoraHidranteAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBitacoraHidranteAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BitacoraHidranteDTO[]>>` | âœ“ |
-| IBitacoraHidranteAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraHidranteAddOrEditDTO>>` | âœ“ |
-| IBitacoraMantenimientoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MaintenanceLog>>` | âœ“ |
-| IBitacoraMantenimientoAppService | `BitacoraDashboardAsync` | OTHER | `Task<ApiResponseDTO<List<BitacoraMantenimientoDashboardDTO>>>` | âš  naming no CRUD estandar |
-| IBitacoraMantenimientoAppService | `BitacoraIndividualAsync` | OTHER | `Task<ApiResponseDTO<List<BitacoraMantenimientoDTO>>>` | âš  naming no CRUD estandar |
-| IBitacoraMantenimientoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBitacoraMantenimientoAppService | `FindByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraMantenimientoDTO>>` | âœ“ |
-| IBitacoraMantenimientoAppService | `GetAllBitacoraMantenimientoDTO` | GET_LIST | `Task<ApiResponseDTO<List<BitacoraMantenimientoDTO>>>` | âœ“ |
-| ICalendarioMaestroAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MasterCalendar>>` | âœ“ |
-| ICalendarioMaestroAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<int>>` | âœ“ |
-| ICalendarioMaestroAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ICalendarioMaestroAppService | `GetAsyncByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CalendarioMaestroAddOrEditDTO>>` | âœ“ |
-| ICalendarioMaestroAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MasterCalendar>>` | âœ“ |
-| ICalendarioMaestroEquipoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MasterCalendarEquipment>>` | âœ“ |
-| ICalendarioMaestroEquipoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICalendarioMaestroEquipoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<CalendarioMaestroEquipoDTO[]>>` | âœ“ |
-| ICalendarioMaestroEquipoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CalendarioMaestroEquipoDTO>>` | âœ“ |
-| ICalendarioMaestroEquipoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MasterCalendarEquipment>>` | âœ“ |
-| IControlPrestamoHerramientaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ToolLoan>>` | âœ“ |
-| IControlPrestamoHerramientaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IControlPrestamoHerramientaAppService | `GetAllIndexDTO` | GET_LIST | `Task<ApiResponseDTO<ControlPrestamoHerramientaPagedListDTO>>` | âœ“ |
-| IControlPrestamoHerramientaAppService | `GetById` | GET_SINGLE | `Task<ApiResponseDTO<ControlPrestamoHerramientaDTO>>` | âœ“ |
-| IControlPrestamoHerramientaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ToolLoan>>` | âœ“ |
-| IElevatorsEmergencyCallAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ElevatorsEmergencyCallDTO>>` | âœ“ |
-| IElevatorsEmergencyCallAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IElevatorsEmergencyCallAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ElevatorsEmergencyCallDTO>>>` | âœ“ |
-| IElevatorsEmergencyCallAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ElevatorsEmergencyCallAddOrEditDTO>>` | âœ“ |
-| IElevatorsEmergencyCallAppService | `GetElevatorsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âš  Get sin ByXxx/All |
-| IElevatorsEmergencyCallAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ElevatorsEmergencyCallDTO>>` | âœ“ |
-| IElevatorSparePartsChangeAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ElevatorSparePartsChangeDTO>>` | âœ“ |
-| IElevatorSparePartsChangeAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IElevatorSparePartsChangeAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ElevatorSparePartsChangeDTO>>>` | âœ“ |
-| IElevatorSparePartsChangeAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ElevatorSparePartsChangeAddOrEditDTO>>` | âœ“ |
-| IElevatorSparePartsChangeAppService | `GetElevatorsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âš  Get sin ByXxx/All |
-| IElevatorSparePartsChangeAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ElevatorSparePartsChangeDTO>>` | âœ“ |
-| IEquipmentInspectionDefinitionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EquipmentInspectionDefinitionDTO>>` | âœ“ |
-| IEquipmentInspectionDefinitionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEquipmentInspectionDefinitionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EquipmentInspectionDefinitionDTO>>` | âœ“ |
-| IEquipmentInspectionDefinitionAppService | `GetByMachineryAsync` | GET_LIST | `Task<ApiResponseDTO<List<EquipmentInspectionDefinitionListDTO>>>` | âœ“ |
-| IEquipmentInspectionDefinitionAppService | `ToggleActiveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEquipmentInspectionDefinitionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EquipmentInspectionDefinitionDTO>>` | âœ“ |
-| IEquipmentInspectionExecutionAppService | `AdministrativeUpdateAsync` | OTHER | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | âš  naming no CRUD estandar |
-| IEquipmentInspectionExecutionAppService | `CompleteAsync` | SPECIAL | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | âœ“ |
-| IEquipmentInspectionExecutionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | âœ“ |
-| IEquipmentInspectionExecutionAppService | `GetByMachineryAsync` | GET_LIST | `Task<ApiResponseDTO<List<EquipmentInspectionExecutionListDTO>>>` | âœ“ |
-| IEquipmentInspectionExecutionAppService | `GetPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<EquipmentInspectionExecutionListDTO>>>` | âš  Get sin ByXxx/All |
-| IEquipmentInspectionExecutionAppService | `StartFromQrAsync` | OTHER | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | âš  naming no CRUD estandar |
-| IEquipmentInspectionExecutionAppService | `StartManualAsync` | OTHER | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | âš  naming no CRUD estandar |
-| IEquipmentQrLabelAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EquipmentQrLabelDTO>>` | âœ“ |
-| IEquipmentQrLabelAppService | `DownloadAsync` | SPECIAL | `Task<ApiResponseDTO<EquipmentQrDownloadItemDTO>>` | âœ“ |
-| IEquipmentQrLabelAppService | `DownloadBatchAsync` | SPECIAL | `Task<ApiResponseDTO<List<EquipmentQrDownloadItemDTO>>>` | âœ“ |
-| IEquipmentQrLabelAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EquipmentQrLabelDTO>>` | âœ“ |
-| IEquipmentQrLabelAppService | `GetByMachineryAsync` | GET_LIST | `Task<ApiResponseDTO<List<EquipmentQrLabelListDTO>>>` | âœ“ |
-| IEquipmentQrLabelAppService | `RegenerateAsync` | OTHER | `Task<ApiResponseDTO<EquipmentQrLabelDTO>>` | âš  naming no CRUD estandar |
-| IEquipmentQrLabelAppService | `ResolveAsync` | OTHER | `Task<ApiResponseDTO<EquipmentQrResolveDTO>>` | âš  naming no CRUD estandar |
-| IEquipoClasificacionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EquipoClasificacionDTO>>` | âœ“ |
-| IEquipoClasificacionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEquipoClasificacionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<EquipoClasificacionDTO[]>>` | âœ“ |
-| IEquipoClasificacionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EquipoClasificacionDTO>>` | âœ“ |
-| IEquipoClasificacionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EquipoClasificacionDTO>>` | âœ“ |
-| IFireCycleInspectionAppService | `GetDetectorAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireCycleInspectionDetectorAddOrEditDTO?>>` | âš  Get sin ByXxx/All |
-| IFireCycleInspectionAppService | `GetEstacionAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireCycleInspectionEstacionAddOrEditDTO?>>` | âš  Get sin ByXxx/All |
-| IFireCycleInspectionAppService | `GetExtintorAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireCycleInspectionExtintorAddOrEditDTO?>>` | âš  Get sin ByXxx/All |
-| IFireCycleInspectionAppService | `GetHidranteAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireCycleInspectionHidranteAddOrEditDTO?>>` | âš  Get sin ByXxx/All |
-| IFireCycleInspectionAppService | `UpsertDetectorAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IFireCycleInspectionAppService | `UpsertEstacionAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IFireCycleInspectionAppService | `UpsertExtintorAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IFireCycleInspectionAppService | `UpsertHidranteAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IFireInspectionCycleAppService | `GenerateCycleForPeriodAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionCycleAppService | `GetActiveByPeriodAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireInspectionCycleDetailDTO>>` | âœ“ |
-| IFireInspectionCycleAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<FireInspectionCycleDTO[]>>` | âœ“ |
-| IFireInspectionCycleAppService | `GetDetailAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireInspectionCycleDetailDTO>>` | âš  Get sin ByXxx/All |
-| IFireInspectionPeriodAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<FireInspectionPeriod>>` | âœ“ |
-| IFireInspectionPeriodAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<FireInspectionPeriodDTO[]>>` | âœ“ |
-| IFireInspectionPeriodAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireInspectionPeriodAddOrEditDTO>>` | âœ“ |
-| IFireInspectionPeriodAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodItemsAppService | `AddDetectorAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodItemsAppService | `AddEstacionAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodItemsAppService | `AddExtintorAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodItemsAppService | `AddHidranteAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodItemsAppService | `GetDetectoresAsync` | GET_LIST | `Task<ApiResponseDTO<object[]>>` | âš  Get sin ByXxx/All |
-| IFireInspectionPeriodItemsAppService | `GetEstacionesAsync` | GET_LIST | `Task<ApiResponseDTO<object[]>>` | âš  Get sin ByXxx/All |
-| IFireInspectionPeriodItemsAppService | `GetExtintoresAsync` | GET_LIST | `Task<ApiResponseDTO<object[]>>` | âš  Get sin ByXxx/All |
-| IFireInspectionPeriodItemsAppService | `GetHidrantesAsync` | GET_LIST | `Task<ApiResponseDTO<object[]>>` | âš  Get sin ByXxx/All |
-| IFireInspectionPeriodItemsAppService | `RemoveDetectorAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodItemsAppService | `RemoveEstacionAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodItemsAppService | `RemoveExtintorAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IFireInspectionPeriodItemsAppService | `RemoveHidranteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioDetectorHumoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InventarioDetectorHumo>>` | âœ“ |
-| IInventarioDetectorHumoAppService | `DeleteAllByCustomerAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioDetectorHumoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioDetectorHumoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioDetectorHumoDTO[]>>` | âœ“ |
-| IInventarioDetectorHumoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioDetectorHumoAddOrEditDTO>>` | âœ“ |
-| IInventarioDetectorHumoAppService | `ImportFromExcelAsync` | SPECIAL | `Task<ImportPropertiesResultDTO>` | âœ“ |
-| IInventarioDetectorHumoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InventarioDetectorHumo>>` | âœ“ |
-| IInventarioEstacionManualAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InventarioEstacionManual>>` | âœ“ |
-| IInventarioEstacionManualAppService | `DeleteAllByCustomerAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioEstacionManualAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioEstacionManualAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioEstacionManualDTO[]>>` | âœ“ |
-| IInventarioEstacionManualAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioEstacionManualAddOrEditDTO>>` | âœ“ |
-| IInventarioEstacionManualAppService | `ImportFromExcelAsync` | SPECIAL | `Task<ImportPropertiesResultDTO>` | âœ“ |
-| IInventarioEstacionManualAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InventarioEstacionManual>>` | âœ“ |
-| IInventarioExtintorAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InventarioExtintor>>` | âœ“ |
-| IInventarioExtintorAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioExtintorAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioExtintorDTO[]>>` | âœ“ |
-| IInventarioExtintorAppService | `GetAllGroupAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IInventarioExtintorAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioExtintorAddOrEditDTO>>` | âœ“ |
-| IInventarioExtintorAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InventarioExtintor>>` | âœ“ |
-| IInventarioHidranteAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InventarioHidrante>>` | âœ“ |
-| IInventarioHidranteAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioHidranteAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioHidranteDTO[]>>` | âœ“ |
-| IInventarioHidranteAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioHidranteAddOrEditDTO>>` | âœ“ |
-| IInventarioHidranteAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InventarioHidrante>>` | âœ“ |
-| IMachineryAppService | `ActasEntregaAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMachineryAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Equipment>>` | âœ“ |
-| IMachineryAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<Equipment>>` | âœ“ |
-| IMachineryAppService | `DeleteDocumentAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMachineryAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IMachineryAppService | `GetAllCardAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IMachineryAppService | `GetAllMachineryDetailAsync` | GET_LIST | `Task<ApiResponseDTO<MachineryDetailDTO[]>>` | âœ“ |
-| IMachineryAppService | `GetAutocompeteInvAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IMachineryAppService | `GetById` | GET_SINGLE | `Task<ApiResponseDTO<MachineryDTO>>` | âœ“ |
-| IMachineryAppService | `GetFichaTecnica` | GET_SINGLE | `Task<ApiResponseDTO<MachineryFichaTecnicaDTO>>` | âš  Get sin ByXxx/All |
-| IMachineryAppService | `GetListServiceHistory` | GET_LIST | `Task<ApiResponseDTO<List<ListServiceHistoryDTO>>>` | âœ“ |
-| IMachineryAppService | `GetMachinerySelectItemAsync` | GET_SINGLE | `Task<ApiResponseDTO<SelectItemDTO<Guid>>>` | âš  Get sin ByXxx/All |
-| IMachineryAppService | `InformePdfAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMachineryAppService | `InventarioCompletoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMachineryAppService | `ListEngineSystemsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IMachineryAppService | `SubirDocumentoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IMachineryAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Equipment>>` | âœ“ |
-| IMachineryAppService | `UpdateCategoryAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IMachineryAssetAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IMachineryDocumentAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MachineryDocumentDTO[]>>` | âœ“ |
-| IMaintenanceCalendarAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MaintenanceCalendar>>` | âœ“ |
-| IMaintenanceCalendarAppService | `CronogramaAnualAsync` | OTHER | `Task<ApiResponseDTO<List<CalendarioMantenimientoDTO>>>` | âš  naming no CRUD estandar |
-| IMaintenanceCalendarAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMaintenanceCalendarAppService | `ExportCalendarAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IMaintenanceCalendarAppService | `GeneralMantenimientoAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IMaintenanceCalendarAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IMaintenanceCalendarAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MaintenanceCalendarDTO>>` | âœ“ |
-| IMaintenanceCalendarAppService | `GetCronogramaAnualPdfStatusAsync` | GET_LIST | `Task<ApiResponseDTO<List<CronogramaAnualPdfStatusDTO>>>` | âš  Get sin ByXxx/All |
-| IMaintenanceCalendarAppService | `GetOfMachineryAsync` | GET_SINGLE | `Task<ApiResponseDTO<MaintenanceCalendarDTO[]>>` | âš  Get sin ByXxx/All |
-| IMaintenanceCalendarAppService | `GetResumenAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IMaintenanceCalendarAppService | `GetResumenGastosAsync` | GET_LIST | `Task<ApiResponseDTO<ResumenGastosDTO>>` | âš  Get sin ByXxx/All |
-| IMaintenanceCalendarAppService | `ListServiceAsync` | OTHER | `Task<ApiResponseDTO<List<MaintenanceCalendarListDTO>>>` | âš  naming no CRUD estandar |
-| IMaintenanceCalendarAppService | `ProveedoresCalendarioAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âš  naming no CRUD estandar |
-| IMaintenanceCalendarAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MaintenanceCalendar>>` | âœ“ |
-| IMedidorAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Meter>>` | âœ“ |
-| IMedidorAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMedidorAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MedidorDTO[]>>` | âœ“ |
-| IMedidorAppService | `GetAllInactiveAsync` | GET_LIST | `Task<ApiResponseDTO<MedidorDTO[]>>` | âœ“ |
-| IMedidorAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MedidorDTO>>` | âœ“ |
-| IMedidorAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Meter>>` | âœ“ |
-| IMedidorCategoriaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MedidorCategoria>>` | âœ“ |
-| IMedidorCategoriaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMedidorCategoriaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MedidorCategoriaDTO[]>>` | âœ“ |
-| IMedidorCategoriaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MedidorCategoriaDTO>>` | âœ“ |
-| IMedidorCategoriaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MedidorCategoria>>` | âœ“ |
-| IMedidorLecturaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeterReading>>` | âœ“ |
-| IMedidorLecturaAppService | `DataGraficoDiariaAsync` | OTHER | `Task<ApiResponseDTO<DataSetChart>>` | âš  naming no CRUD estandar |
-| IMedidorLecturaAppService | `DataGraficoMensualAsync` | OTHER | `Task<ApiResponseDTO<DataSetChart>>` | âš  naming no CRUD estandar |
-| IMedidorLecturaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMedidorLecturaAppService | `ExportExcel` | SPECIAL | `ApiResponseDTO<IEnumerable<MedidorLecturaExcelDTO>>` | âœ“ |
-| IMedidorLecturaAppService | `GetAll` | GET_LIST | `ApiResponseDTO<MedidorLecturaDTO[]>` | âœ“ |
-| IMedidorLecturaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MedidorLecturaDTO>>` | âœ“ |
-| IMedidorLecturaAppService | `GetUltimaLecturaAsync` | GET_SINGLE | `Task<ApiResponseDTO<MedidorLecturaDTO>>` | âš  Get sin ByXxx/All |
-| IMedidorLecturaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeterReading>>` | âœ“ |
-| IMedidorLecturaAppService | `VerificarRegistroDelDia` | OTHER | `ApiResponseDTO<bool>` | âš  naming no CRUD estandar |
-| IPiscinaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PiscinaDTO>>` | âœ“ |
-| IPiscinaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<PiscinaDTO>>` | âœ“ |
-| IPiscinaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PiscinaDTO[]>>` | âœ“ |
-| IPiscinaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PiscinaDTO>>` | âœ“ |
-| IPiscinaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PiscinaDTO>>` | âœ“ |
-| IPiscinaBitacoraAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PiscinaBitacoraDTO>>` | âœ“ |
-| IPiscinaBitacoraAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPiscinaBitacoraAppService | `ExportExcelAsync` | SPECIAL | `Task<ApiResponseDTO<IEnumerable<PiscinaBitacoraExcelDTO>>>` | âœ“ |
-| IPiscinaBitacoraAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PiscinaBitacoraDTO[]>>` | âœ“ |
-| IPiscinaBitacoraAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PiscinaBitacoraDTO>>` | âœ“ |
-| IPiscinaBitacoraAppService | `ImportExcelAsync` | SPECIAL | `Task<ApiResponseDTO<PiscinaBitacoraImportResultDTO>>` | âœ“ |
-| IPiscinaBitacoraAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PiscinaBitacoraDTO>>` | âœ“ |
-| IRecepcionPipasAguaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<WaterTruckDelivery>>` | âœ“ |
-| IRecepcionPipasAguaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRecepcionPipasAguaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<RecepcionPipaAguaDTO>>>` | âœ“ |
-| IRecepcionPipasAguaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RecepcionPipaAguaDTO>>` | âœ“ |
-| IRecepcionPipasAguaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<WaterTruckDelivery>>` | âœ“ |
+| IBitacoraDetectorHumoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BitacoraDetectorHumo>>` | ✓ |
+| IBitacoraDetectorHumoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBitacoraDetectorHumoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BitacoraDetectorHumoDTO[]>>` | ✓ |
+| IBitacoraDetectorHumoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraDetectorHumoAddOrEditDTO>>` | ✓ |
+| IBitacoraEstacionManualAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BitacoraEstacionManual>>` | ✓ |
+| IBitacoraEstacionManualAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBitacoraEstacionManualAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BitacoraEstacionManualDTO[]>>` | ✓ |
+| IBitacoraEstacionManualAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraEstacionManualAddOrEditDTO>>` | ✓ |
+| IBitacoraExtintorAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BitacoraExtintor>>` | ✓ |
+| IBitacoraExtintorAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBitacoraExtintorAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BitacoraExtintorDTO[]>>` | ✓ |
+| IBitacoraExtintorAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraExtintorAddOrEditDTO>>` | ✓ |
+| IBitacoraHidranteAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BitacoraHidrante>>` | ✓ |
+| IBitacoraHidranteAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBitacoraHidranteAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BitacoraHidranteDTO[]>>` | ✓ |
+| IBitacoraHidranteAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraHidranteAddOrEditDTO>>` | ✓ |
+| IBitacoraMantenimientoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MaintenanceLog>>` | ✓ |
+| IBitacoraMantenimientoAppService | `BitacoraDashboardAsync` | OTHER | `Task<ApiResponseDTO<List<BitacoraMantenimientoDashboardDTO>>>` | ⚠ naming no CRUD estandar |
+| IBitacoraMantenimientoAppService | `BitacoraIndividualAsync` | OTHER | `Task<ApiResponseDTO<List<BitacoraMantenimientoDTO>>>` | ⚠ naming no CRUD estandar |
+| IBitacoraMantenimientoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBitacoraMantenimientoAppService | `FindByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BitacoraMantenimientoDTO>>` | ✓ |
+| IBitacoraMantenimientoAppService | `GetAllBitacoraMantenimientoDTO` | GET_LIST | `Task<ApiResponseDTO<List<BitacoraMantenimientoDTO>>>` | ✓ |
+| ICalendarioMaestroAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MasterCalendar>>` | ✓ |
+| ICalendarioMaestroAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<int>>` | ✓ |
+| ICalendarioMaestroAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| ICalendarioMaestroAppService | `GetAsyncByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CalendarioMaestroAddOrEditDTO>>` | ✓ |
+| ICalendarioMaestroAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MasterCalendar>>` | ✓ |
+| ICalendarioMaestroEquipoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MasterCalendarEquipment>>` | ✓ |
+| ICalendarioMaestroEquipoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICalendarioMaestroEquipoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<CalendarioMaestroEquipoDTO[]>>` | ✓ |
+| ICalendarioMaestroEquipoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CalendarioMaestroEquipoDTO>>` | ✓ |
+| ICalendarioMaestroEquipoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MasterCalendarEquipment>>` | ✓ |
+| IControlPrestamoHerramientaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ToolLoan>>` | ✓ |
+| IControlPrestamoHerramientaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IControlPrestamoHerramientaAppService | `GetAllIndexDTO` | GET_LIST | `Task<ApiResponseDTO<ControlPrestamoHerramientaPagedListDTO>>` | ✓ |
+| IControlPrestamoHerramientaAppService | `GetById` | GET_SINGLE | `Task<ApiResponseDTO<ControlPrestamoHerramientaDTO>>` | ✓ |
+| IControlPrestamoHerramientaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ToolLoan>>` | ✓ |
+| IElevatorsEmergencyCallAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ElevatorsEmergencyCallDTO>>` | ✓ |
+| IElevatorsEmergencyCallAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IElevatorsEmergencyCallAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ElevatorsEmergencyCallDTO>>>` | ✓ |
+| IElevatorsEmergencyCallAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ElevatorsEmergencyCallAddOrEditDTO>>` | ✓ |
+| IElevatorsEmergencyCallAppService | `GetElevatorsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ⚠ Get sin ByXxx/All |
+| IElevatorsEmergencyCallAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ElevatorsEmergencyCallDTO>>` | ✓ |
+| IElevatorSparePartsChangeAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ElevatorSparePartsChangeDTO>>` | ✓ |
+| IElevatorSparePartsChangeAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IElevatorSparePartsChangeAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ElevatorSparePartsChangeDTO>>>` | ✓ |
+| IElevatorSparePartsChangeAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ElevatorSparePartsChangeAddOrEditDTO>>` | ✓ |
+| IElevatorSparePartsChangeAppService | `GetElevatorsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ⚠ Get sin ByXxx/All |
+| IElevatorSparePartsChangeAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ElevatorSparePartsChangeDTO>>` | ✓ |
+| IEquipmentInspectionDefinitionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EquipmentInspectionDefinitionDTO>>` | ✓ |
+| IEquipmentInspectionDefinitionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEquipmentInspectionDefinitionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EquipmentInspectionDefinitionDTO>>` | ✓ |
+| IEquipmentInspectionDefinitionAppService | `GetByMachineryAsync` | GET_LIST | `Task<ApiResponseDTO<List<EquipmentInspectionDefinitionListDTO>>>` | ✓ |
+| IEquipmentInspectionDefinitionAppService | `ToggleActiveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEquipmentInspectionDefinitionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EquipmentInspectionDefinitionDTO>>` | ✓ |
+| IEquipmentInspectionExecutionAppService | `AdministrativeUpdateAsync` | OTHER | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | ⚠ naming no CRUD estandar |
+| IEquipmentInspectionExecutionAppService | `CompleteAsync` | SPECIAL | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | ✓ |
+| IEquipmentInspectionExecutionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | ✓ |
+| IEquipmentInspectionExecutionAppService | `GetByMachineryAsync` | GET_LIST | `Task<ApiResponseDTO<List<EquipmentInspectionExecutionListDTO>>>` | ✓ |
+| IEquipmentInspectionExecutionAppService | `GetPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<EquipmentInspectionExecutionListDTO>>>` | ⚠ Get sin ByXxx/All |
+| IEquipmentInspectionExecutionAppService | `StartFromQrAsync` | OTHER | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | ⚠ naming no CRUD estandar |
+| IEquipmentInspectionExecutionAppService | `StartManualAsync` | OTHER | `Task<ApiResponseDTO<EquipmentInspectionExecutionDetailDTO>>` | ⚠ naming no CRUD estandar |
+| IEquipmentQrLabelAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EquipmentQrLabelDTO>>` | ✓ |
+| IEquipmentQrLabelAppService | `DownloadAsync` | SPECIAL | `Task<ApiResponseDTO<EquipmentQrDownloadItemDTO>>` | ✓ |
+| IEquipmentQrLabelAppService | `DownloadBatchAsync` | SPECIAL | `Task<ApiResponseDTO<List<EquipmentQrDownloadItemDTO>>>` | ✓ |
+| IEquipmentQrLabelAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EquipmentQrLabelDTO>>` | ✓ |
+| IEquipmentQrLabelAppService | `GetByMachineryAsync` | GET_LIST | `Task<ApiResponseDTO<List<EquipmentQrLabelListDTO>>>` | ✓ |
+| IEquipmentQrLabelAppService | `RegenerateAsync` | OTHER | `Task<ApiResponseDTO<EquipmentQrLabelDTO>>` | ⚠ naming no CRUD estandar |
+| IEquipmentQrLabelAppService | `ResolveAsync` | OTHER | `Task<ApiResponseDTO<EquipmentQrResolveDTO>>` | ⚠ naming no CRUD estandar |
+| IEquipoClasificacionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EquipoClasificacionDTO>>` | ✓ |
+| IEquipoClasificacionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEquipoClasificacionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<EquipoClasificacionDTO[]>>` | ✓ |
+| IEquipoClasificacionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EquipoClasificacionDTO>>` | ✓ |
+| IEquipoClasificacionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EquipoClasificacionDTO>>` | ✓ |
+| IFireCycleInspectionAppService | `GetDetectorAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireCycleInspectionDetectorAddOrEditDTO?>>` | ⚠ Get sin ByXxx/All |
+| IFireCycleInspectionAppService | `GetEstacionAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireCycleInspectionEstacionAddOrEditDTO?>>` | ⚠ Get sin ByXxx/All |
+| IFireCycleInspectionAppService | `GetExtintorAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireCycleInspectionExtintorAddOrEditDTO?>>` | ⚠ Get sin ByXxx/All |
+| IFireCycleInspectionAppService | `GetHidranteAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireCycleInspectionHidranteAddOrEditDTO?>>` | ⚠ Get sin ByXxx/All |
+| IFireCycleInspectionAppService | `UpsertDetectorAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IFireCycleInspectionAppService | `UpsertEstacionAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IFireCycleInspectionAppService | `UpsertExtintorAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IFireCycleInspectionAppService | `UpsertHidranteAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IFireInspectionCycleAppService | `GenerateCycleForPeriodAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionCycleAppService | `GetActiveByPeriodAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireInspectionCycleDetailDTO>>` | ✓ |
+| IFireInspectionCycleAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<FireInspectionCycleDTO[]>>` | ✓ |
+| IFireInspectionCycleAppService | `GetDetailAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireInspectionCycleDetailDTO>>` | ⚠ Get sin ByXxx/All |
+| IFireInspectionPeriodAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<FireInspectionPeriod>>` | ✓ |
+| IFireInspectionPeriodAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<FireInspectionPeriodDTO[]>>` | ✓ |
+| IFireInspectionPeriodAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<FireInspectionPeriodAddOrEditDTO>>` | ✓ |
+| IFireInspectionPeriodAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodItemsAppService | `AddDetectorAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodItemsAppService | `AddEstacionAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodItemsAppService | `AddExtintorAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodItemsAppService | `AddHidranteAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodItemsAppService | `GetDetectoresAsync` | GET_LIST | `Task<ApiResponseDTO<object[]>>` | ⚠ Get sin ByXxx/All |
+| IFireInspectionPeriodItemsAppService | `GetEstacionesAsync` | GET_LIST | `Task<ApiResponseDTO<object[]>>` | ⚠ Get sin ByXxx/All |
+| IFireInspectionPeriodItemsAppService | `GetExtintoresAsync` | GET_LIST | `Task<ApiResponseDTO<object[]>>` | ⚠ Get sin ByXxx/All |
+| IFireInspectionPeriodItemsAppService | `GetHidrantesAsync` | GET_LIST | `Task<ApiResponseDTO<object[]>>` | ⚠ Get sin ByXxx/All |
+| IFireInspectionPeriodItemsAppService | `RemoveDetectorAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodItemsAppService | `RemoveEstacionAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodItemsAppService | `RemoveExtintorAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IFireInspectionPeriodItemsAppService | `RemoveHidranteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioDetectorHumoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InventarioDetectorHumo>>` | ✓ |
+| IInventarioDetectorHumoAppService | `DeleteAllByCustomerAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioDetectorHumoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioDetectorHumoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioDetectorHumoDTO[]>>` | ✓ |
+| IInventarioDetectorHumoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioDetectorHumoAddOrEditDTO>>` | ✓ |
+| IInventarioDetectorHumoAppService | `ImportFromExcelAsync` | SPECIAL | `Task<ImportPropertiesResultDTO>` | ✓ |
+| IInventarioDetectorHumoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InventarioDetectorHumo>>` | ✓ |
+| IInventarioEstacionManualAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InventarioEstacionManual>>` | ✓ |
+| IInventarioEstacionManualAppService | `DeleteAllByCustomerAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioEstacionManualAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioEstacionManualAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioEstacionManualDTO[]>>` | ✓ |
+| IInventarioEstacionManualAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioEstacionManualAddOrEditDTO>>` | ✓ |
+| IInventarioEstacionManualAppService | `ImportFromExcelAsync` | SPECIAL | `Task<ImportPropertiesResultDTO>` | ✓ |
+| IInventarioEstacionManualAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InventarioEstacionManual>>` | ✓ |
+| IInventarioExtintorAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InventarioExtintor>>` | ✓ |
+| IInventarioExtintorAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioExtintorAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioExtintorDTO[]>>` | ✓ |
+| IInventarioExtintorAppService | `GetAllGroupAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| IInventarioExtintorAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioExtintorAddOrEditDTO>>` | ✓ |
+| IInventarioExtintorAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InventarioExtintor>>` | ✓ |
+| IInventarioHidranteAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InventarioHidrante>>` | ✓ |
+| IInventarioHidranteAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioHidranteAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioHidranteDTO[]>>` | ✓ |
+| IInventarioHidranteAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioHidranteAddOrEditDTO>>` | ✓ |
+| IInventarioHidranteAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InventarioHidrante>>` | ✓ |
+| IMachineryAppService | `ActasEntregaAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMachineryAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Equipment>>` | ✓ |
+| IMachineryAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<Equipment>>` | ✓ |
+| IMachineryAppService | `DeleteDocumentAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMachineryAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| IMachineryAppService | `GetAllCardAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| IMachineryAppService | `GetAllMachineryDetailAsync` | GET_LIST | `Task<ApiResponseDTO<MachineryDetailDTO[]>>` | ✓ |
+| IMachineryAppService | `GetAutocompeteInvAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IMachineryAppService | `GetById` | GET_SINGLE | `Task<ApiResponseDTO<MachineryDTO>>` | ✓ |
+| IMachineryAppService | `GetFichaTecnica` | GET_SINGLE | `Task<ApiResponseDTO<MachineryFichaTecnicaDTO>>` | ⚠ Get sin ByXxx/All |
+| IMachineryAppService | `GetListServiceHistory` | GET_LIST | `Task<ApiResponseDTO<List<ListServiceHistoryDTO>>>` | ✓ |
+| IMachineryAppService | `GetMachinerySelectItemAsync` | GET_SINGLE | `Task<ApiResponseDTO<SelectItemDTO<Guid>>>` | ⚠ Get sin ByXxx/All |
+| IMachineryAppService | `InformePdfAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMachineryAppService | `InventarioCompletoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMachineryAppService | `ListEngineSystemsAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IMachineryAppService | `SubirDocumentoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IMachineryAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Equipment>>` | ✓ |
+| IMachineryAppService | `UpdateCategoryAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IMachineryAssetAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IMachineryDocumentAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MachineryDocumentDTO[]>>` | ✓ |
+| IMaintenanceCalendarAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MaintenanceCalendar>>` | ✓ |
+| IMaintenanceCalendarAppService | `CronogramaAnualAsync` | OTHER | `Task<ApiResponseDTO<List<CalendarioMantenimientoDTO>>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceCalendarAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMaintenanceCalendarAppService | `ExportCalendarAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IMaintenanceCalendarAppService | `GeneralMantenimientoAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceCalendarAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IMaintenanceCalendarAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MaintenanceCalendarDTO>>` | ✓ |
+| IMaintenanceCalendarAppService | `GetCronogramaAnualPdfStatusAsync` | GET_LIST | `Task<ApiResponseDTO<List<CronogramaAnualPdfStatusDTO>>>` | ⚠ Get sin ByXxx/All |
+| IMaintenanceCalendarAppService | `GetOfMachineryAsync` | GET_SINGLE | `Task<ApiResponseDTO<MaintenanceCalendarDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IMaintenanceCalendarAppService | `GetResumenAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IMaintenanceCalendarAppService | `GetResumenGastosAsync` | GET_LIST | `Task<ApiResponseDTO<ResumenGastosDTO>>` | ⚠ Get sin ByXxx/All |
+| IMaintenanceCalendarAppService | `ListServiceAsync` | OTHER | `Task<ApiResponseDTO<List<MaintenanceCalendarListDTO>>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceCalendarAppService | `ProveedoresCalendarioAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ⚠ naming no CRUD estandar |
+| IMaintenanceCalendarAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MaintenanceCalendar>>` | ✓ |
+| IMedidorAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Meter>>` | ✓ |
+| IMedidorAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMedidorAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MedidorDTO[]>>` | ✓ |
+| IMedidorAppService | `GetAllInactiveAsync` | GET_LIST | `Task<ApiResponseDTO<MedidorDTO[]>>` | ✓ |
+| IMedidorAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MedidorDTO>>` | ✓ |
+| IMedidorAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Meter>>` | ✓ |
+| IMedidorCategoriaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MedidorCategoria>>` | ✓ |
+| IMedidorCategoriaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMedidorCategoriaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MedidorCategoriaDTO[]>>` | ✓ |
+| IMedidorCategoriaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MedidorCategoriaDTO>>` | ✓ |
+| IMedidorCategoriaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MedidorCategoria>>` | ✓ |
+| IMedidorLecturaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeterReading>>` | ✓ |
+| IMedidorLecturaAppService | `DataGraficoDiariaAsync` | OTHER | `Task<ApiResponseDTO<DataSetChart>>` | ⚠ naming no CRUD estandar |
+| IMedidorLecturaAppService | `DataGraficoMensualAsync` | OTHER | `Task<ApiResponseDTO<DataSetChart>>` | ⚠ naming no CRUD estandar |
+| IMedidorLecturaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMedidorLecturaAppService | `ExportExcel` | SPECIAL | `ApiResponseDTO<IEnumerable<MedidorLecturaExcelDTO>>` | ✓ |
+| IMedidorLecturaAppService | `GetAll` | GET_LIST | `ApiResponseDTO<MedidorLecturaDTO[]>` | ✓ |
+| IMedidorLecturaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MedidorLecturaDTO>>` | ✓ |
+| IMedidorLecturaAppService | `GetUltimaLecturaAsync` | GET_SINGLE | `Task<ApiResponseDTO<MedidorLecturaDTO>>` | ⚠ Get sin ByXxx/All |
+| IMedidorLecturaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeterReading>>` | ✓ |
+| IMedidorLecturaAppService | `VerificarRegistroDelDia` | OTHER | `ApiResponseDTO<bool>` | ⚠ naming no CRUD estandar |
+| IPiscinaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PiscinaDTO>>` | ✓ |
+| IPiscinaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<PiscinaDTO>>` | ✓ |
+| IPiscinaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PiscinaDTO[]>>` | ✓ |
+| IPiscinaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PiscinaDTO>>` | ✓ |
+| IPiscinaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PiscinaDTO>>` | ✓ |
+| IPiscinaBitacoraAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PiscinaBitacoraDTO>>` | ✓ |
+| IPiscinaBitacoraAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPiscinaBitacoraAppService | `ExportExcelAsync` | SPECIAL | `Task<ApiResponseDTO<IEnumerable<PiscinaBitacoraExcelDTO>>>` | ✓ |
+| IPiscinaBitacoraAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PiscinaBitacoraDTO[]>>` | ✓ |
+| IPiscinaBitacoraAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PiscinaBitacoraDTO>>` | ✓ |
+| IPiscinaBitacoraAppService | `ImportExcelAsync` | SPECIAL | `Task<ApiResponseDTO<PiscinaBitacoraImportResultDTO>>` | ✓ |
+| IPiscinaBitacoraAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PiscinaBitacoraDTO>>` | ✓ |
+| IRecepcionPipasAguaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<WaterTruckDelivery>>` | ✓ |
+| IRecepcionPipasAguaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRecepcionPipasAguaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<RecepcionPipaAguaDTO>>>` | ✓ |
+| IRecepcionPipasAguaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RecepcionPipaAguaDTO>>` | ✓ |
+| IRecepcionPipasAguaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<WaterTruckDelivery>>` | ✓ |
 
 ### Endpoints
 
@@ -2035,492 +2035,492 @@ Metodos: 486 | Endpoints HTTP: 421
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IAccessCredentialService | `GenerateQrCredentialAsync` | SPECIAL | `Task<ApiResponseDTO<AccessCredentialDTO>>` | âœ“ |
-| IAccessCredentialService | `GetCredentialByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AccessCredentialDTO>>` | âœ“ |
-| IAccessCredentialService | `RevokeCredentialAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAccessDashboardService | `GetCurrentOccupancyAsync` | GET_SINGLE | `Task<ApiResponseDTO<OccupancyDTO>>` | âš  Get sin ByXxx/All |
-| IAccessDashboardService | `GetDashboardStatsAsync` | GET_LIST | `Task<ApiResponseDTO<DashboardStatsDTO>>` | âš  Get sin ByXxx/All |
-| IAccessEventService | `ExportEventsAsync` | SPECIAL | `Task<byte[]>` | âœ“ |
-| IAccessEventService | `GetEventsPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<AccessEventDTO>>>` | âœ“ |
-| IAccessPointService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<AccessPointDTO>>` | âœ“ |
-| IAccessPointService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccessPointDTO>>>` | âœ“ |
-| IAccessPointService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AccessPointDTO>>` | âœ“ |
-| IAccessScanService | `ScanAsync` | OTHER | `Task<ApiResponseDTO<AccessScanResultDTO>>` | âš  naming no CRUD estandar |
-| IAgendaSemanalAppService | `GetAgendaMesesAsync` | GET_LIST | `Task<ApiResponseDTO<List<AgendaSemanalEventDTO>>>` | âš  Get sin ByXxx/All |
-| IAgendaSemanalAppService | `GetAgendaSemanalAsync` | GET_LIST | `Task<ApiResponseDTO<List<AgendaSemanalEventDTO>>>` | âš  Get sin ByXxx/All |
-| IAgendaSupervisionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<AgendaSupervision>>` | âœ“ |
-| IAgendaSupervisionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAgendaSupervisionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IAgendaSupervisionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AgendaSupervisionAddOrEditDTO>>` | âœ“ |
-| IAgendaSupervisionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AgendaSupervisionDTO>>` | âœ“ |
-| IAlmacenAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<AlmacenDTO>>` | âœ“ |
-| IAlmacenAppService | `AsignarResponsablesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IAlmacenAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAlmacenAppService | `GetAllByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<AlmacenDTO>>>` | âœ“ |
-| IAlmacenAppService | `GetAllForCurrentUserAsync` | GET_LIST | `Task<ApiResponseDTO<List<AlmacenDTO>>>` | âœ“ |
-| IAlmacenAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AlmacenDTO>>` | âœ“ |
-| IAlmacenAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AlmacenDTO>>` | âœ“ |
-| IAnnouncementAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<AnnouncementDTO>>` | âœ“ |
-| IAnnouncementAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAnnouncementAppService | `GeneratePdfAsync` | SPECIAL | `Task<ApiResponseDTO<byte[]>>` | âœ“ |
-| IAnnouncementAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<AnnouncementListDTO>>>` | âœ“ |
-| IAnnouncementAppService | `GetAllForAdminAsync` | GET_LIST | `Task<ApiResponseDTO<List<AnnouncementAdminListDTO>>>` | âœ“ |
-| IAnnouncementAppService | `GetAnalyticsByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<AnnouncementAnalyticsDTO>>>` | âœ“ |
-| IAnnouncementAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AnnouncementDTO>>` | âœ“ |
-| IAnnouncementAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AnnouncementDTO>>` | âœ“ |
-| IAnnouncementNotificationService | `SendNewAnnouncementNotificationAsync` | SPECIAL | `Task` | âœ“ |
-| IBuildingCustomerAppService | `GetCaratulaAsync` | GET_SINGLE | `Task<ApiResponseDTO<CaratulaDTO>>` | âš  Get sin ByXxx/All |
-| ICatalogInspectionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CatalogInspectionDTO>>` | âœ“ |
-| ICatalogInspectionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICatalogInspectionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<CatalogInspectionDTO>>>` | âœ“ |
-| ICatalogInspectionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CatalogInspectionDTO>>` | âœ“ |
-| ICatalogInspectionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CatalogInspectionDTO>>` | âœ“ |
-| ICatalogoEntregaRecepcionDescripcionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CatalogoEntregaRecepcionDescripcionDTO>>` | âœ“ |
-| ICatalogoEntregaRecepcionDescripcionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICatalogoEntregaRecepcionDescripcionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<CatalogoEntregaRecepcionDescripcionDTO[]>>` | âœ“ |
-| ICatalogoEntregaRecepcionDescripcionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CatalogoEntregaRecepcionDescripcionDTO>>` | âœ“ |
-| ICatalogoEntregaRecepcionDescripcionAppService | `GetGruposAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| ICatalogoEntregaRecepcionDescripcionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CatalogoEntregaRecepcionDescripcionDTO>>` | âœ“ |
-| IComiteVigilanciaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ComiteVigilanciaSavedDTO>>` | âœ“ |
-| IComiteVigilanciaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IComiteVigilanciaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<ComiteVigilanciaDTO[]>>` | âœ“ |
-| IComiteVigilanciaAppService | `GetAllCommitteesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CommitteeDirectoryDTO>>>` | âœ“ |
-| IComiteVigilanciaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ComiteVigilanciaEditDTO>>` | âœ“ |
-| IComiteVigilanciaAppService | `SendCredentialsAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IComiteVigilanciaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ComiteVigilanciaSavedDTO>>` | âœ“ |
-| IContratosLegalAppService | `GetContratosPorVencerAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContratosPorVencerResumenDTO>>` | âš  Get sin ByXxx/All |
-| IContratosLegalAppService | `GetContratosVigentesAsync` | GET_LIST | `Task<ApiResponseDTO<ContratosVigentesResumenDTO>>` | âš  Get sin ByXxx/All |
-| ICustomDocumentAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<DocumentLegalRecordCreatedDTO>>` | âœ“ |
-| ICustomDocumentAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICustomDocumentAppService | `GetAllByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| ICustomDocumentAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<DocumentLegalRecordAddOrEditDTO>>` | âœ“ |
-| ICustomDocumentAppService | `GetDocumentPathAsync` | GET_SINGLE | `Task<string>` | âš  Get sin ByXxx/All |
-| ICustomDocumentAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICustomDocumentAppService | `UpdateSortOrderAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ICustomerInspectionAppService | `GetCustomerInspectionReportDateDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerInspectionReportDTO>>` | âš  Get sin ByXxx/All |
-| ICustomerInspectionAppService | `GetCustomerInspectionReportDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerInspectionReportDTO>>` | âš  Get sin ByXxx/All |
-| ICustomerInspectionAppService | `GetGroupedInspectionDataAsync` | GET_LIST | `Task<ApiResponseDTO<List<GroupedInspectionDataDTO>>>` | âš  Get sin ByXxx/All |
-| ICustomerInspectionAppService | `GetInspectionsByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<CustomerInspectionDTO>>>` | âœ“ |
-| ICustomerInspectionAppService | `UpdateInspectionDataAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICustomerProviderAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICustomerProviderAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerProviderAddOrEditDTO>>` | âœ“ |
-| ICustomerProviderAppService | `GetCustomerProviderDTOAsync` | GET_LIST | `Task<ApiResponseDTO<List<CustomerProviderListDTO>>>` | âš  Get sin ByXxx/All |
-| ICustomerProviderAppService | `PostAsync` | CREATE | `Task<ApiResponseDTO<CustomerProvider>>` | âœ“ |
-| ICustomerProviderAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IDashboardAppService | `GetFiltroMinutasAreaAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| IDashboardAppService | `GetGlobalPendingItemsAsync` | GET_LIST | `Task<ApiResponseDTO<List<PendingItemDTO>>>` | âš  Get sin ByXxx/All |
-| IDiagramDrawService | `CreateDiagramAsync` | CREATE | `Task<ApiResponseDTO<DiagramDrawDTO>>` | âœ“ |
-| IDiagramDrawService | `DeleteDiagramAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IDiagramDrawService | `GetDiagramByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<DiagramDrawDTO>>` | âœ“ |
-| IDiagramDrawService | `GetDiagramsAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<DiagramDrawDTO>>>` | âš  Get sin ByXxx/All |
-| IDiagramDrawService | `UpdateDiagramAsync` | UPDATE | `Task<ApiResponseDTO<DiagramDrawDTO>>` | âœ“ |
-| IEntradaProductoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EntradaProductoDTO>>` | âœ“ |
-| IEntradaProductoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEntradaProductoAppService | `GetAllByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<EntradaProductoDTO[]>>` | âœ“ |
-| IEntradaProductoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EntradaProductoDTO>>` | âœ“ |
-| IEntradaProductoAppService | `GetResumenByCustomerAndPeriodoAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IEntradaProductoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EntradaProductoDTO>>` | âœ“ |
-| IEntregaRecepcionAppService | `GetExtintoresAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionAppService | `GetInventarioEquiposAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionAppService | `GetInventarioHerramientasAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionAppService | `GetInventarioInstalacionesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionAppService | `GetInventarioInsumosAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionAppService | `GetInventarioLlavesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionAppService | `GetInventarioMantenimientosAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionAppService | `GetOrganigramaAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionAppService | `GetPendientesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  Get sin ByXxx/All |
-| IEntregaRecepcionDescripcionAppService | `DeleteFile` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEntregaRecepcionDescripcionAppService | `FindByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EntregaRecepcionDescripcionAddOrEditDTO>>` | âœ“ |
-| IEntregaRecepcionDescripcionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IEntregaRecepcionDescripcionAppService | `InvalidarArchivoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IEntregaRecepcionDescripcionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IEntregaRecepcionDescripcionAppService | `ValidarArchivoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IGanttAppService | `GetGanttDataByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<GanttTaskDTO>>>` | âœ“ |
-| IGeneralSummaryService | `EvaluateAreasAsync` | OTHER | `Task<object>` | âš  naming no CRUD estandar |
-| IGeneralSummaryService | `GeneralResultFilterAsync` | OTHER | `GeneralResultFilterDTO` | âš  naming no CRUD estandar |
-| IGeneralSummaryService | `GetAreaEvaluationDetailAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetGeneralResultAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetMinutesGeneralSummaryAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetMinutesGeneralSummaryGroupAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetMinutesSummaryReportAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetMinutesSummaryReportFilterAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetPositionAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetPreventiveSummaryReportAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetTicketSummaryReportAsync` | GET_SINGLE | `Task<object>` | âš  Get sin ByXxx/All |
-| IGeneralSummaryService | `GetTicketSummaryReportByCustomerAsync` | GET_SINGLE | `Task<object>` | âœ“ |
-| IGoogleCalendarEventAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<GoogleCalendarEventDetailDTO>>` | âœ“ |
-| IGoogleCalendarEventAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IGoogleCalendarEventAppService | `DeleteSeriesAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IGoogleCalendarEventAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<GoogleCalendarEventListItemDTO>>>` | âœ“ |
-| IGoogleCalendarEventAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<GoogleCalendarEventDetailDTO>>` | âœ“ |
-| IGoogleCalendarEventAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<GoogleCalendarEventDetailDTO>>` | âœ“ |
-| IGoogleCalendarEventAppService | `UpdateSeriesAsync` | UPDATE | `Task<ApiResponseDTO<GoogleCalendarEventDetailDTO>>` | âœ“ |
-| IGoogleCalendarService | `CreateEventAsync` | CREATE | `Task<GoogleCalendarSyncResultDTO>` | âœ“ |
-| IGoogleCalendarService | `DeleteEventAsync` | DELETE | `Task` | âœ“ |
-| IGoogleCalendarService | `GetConnectionStatusAsync` | GET_LIST | `Task<GoogleCalendarConnectionStatusDTO>` | âš  Get sin ByXxx/All |
-| IGoogleCalendarService | `UpdateEventAsync` | UPDATE | `Task<GoogleCalendarSyncResultDTO>` | âœ“ |
-| IIncidentAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<IncidentDetailDTO>>` | âœ“ |
-| IIncidentAppService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IIncidentAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IIncidentAppService | `GenerateActAsync` | SPECIAL | `Task<byte[]>` | âœ“ |
-| IIncidentAppService | `GeneratePdfAsync` | SPECIAL | `Task<byte[]>` | âœ“ |
-| IIncidentAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IncidentListDTO[]>>` | âœ“ |
-| IIncidentAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentListDTO[]>>` | âœ“ |
-| IIncidentAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentDetailDTO>>` | âœ“ |
-| IIncidentAppService | `GetDashboardAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentDashboardDTO>>` | âš  Get sin ByXxx/All |
-| IIncidentAppService | `ResolveAsync` | OTHER | `Task<ApiResponseDTO<IncidentDetailDTO>>` | âš  naming no CRUD estandar |
-| IIncidentAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<IncidentDetailDTO>>` | âœ“ |
-| IIncidentAppService | `UploadSignedActAsync` | SPECIAL | `Task<ApiResponseDTO<IncidentDetailDTO>>` | âœ“ |
-| IIncidentAttachmentAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<IncidentAttachmentListDTO>>` | âœ“ |
-| IIncidentAttachmentAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IIncidentAttachmentAppService | `GetByIncidentAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentAttachmentListDTO[]>>` | âœ“ |
-| IIncidentNotificationService | `NotifyIncidentCreatedAsync` | SPECIAL | `Task` | âœ“ |
-| IIncidentPdfService | `GeneratePdfAsync` | SPECIAL | `Task<byte[]>` | âœ“ |
-| IIncidentPdfService | `SavePdfAsync` | UPDATE | `Task<string>` | âœ“ |
-| IIncidentPdfService | `SaveSignedActAsync` | UPDATE | `Task<string>` | âœ“ |
-| IIncidentReportAppService | `ExportAsync` | SPECIAL | `Task<FileContentResult>` | âœ“ |
-| IIncidentReportAppService | `GetPendingInvestigationAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentPendingDTO[]>>` | âš  Get sin ByXxx/All |
-| IIncidentReportAppService | `GetStatsAsync` | GET_LIST | `Task<ApiResponseDTO<IncidentStatsDTO>>` | âš  Get sin ByXxx/All |
-| IIncidentTypeAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<IncidentTypeDetailDTO>>` | âœ“ |
-| IIncidentTypeAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IIncidentTypeAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IncidentTypeListDTO[]>>` | âœ“ |
-| IIncidentTypeAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentTypeDetailDTO>>` | âœ“ |
-| IIncidentTypeAppService | `ToggleActiveAsync` | SPECIAL | `Task<ApiResponseDTO<IncidentTypeDetailDTO>>` | âœ“ |
-| IIncidentTypeAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<IncidentTypeDetailDTO>>` | âœ“ |
-| IIncidentWitnessAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<IncidentWitnessListDTO>>` | âœ“ |
-| IIncidentWitnessAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IIncidentWitnessAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentWitnessDetailDTO>>` | âœ“ |
-| IIncidentWitnessAppService | `GetByIncidentAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentWitnessListDTO[]>>` | âœ“ |
-| IIncidentWitnessAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<IncidentWitnessListDTO>>` | âœ“ |
-| IInspectionAppService | `AddInspectionAsync` | CREATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IInspectionAppService | `AddOrUpdateCondominiumAssetAsync` | CREATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IInspectionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<InspectionListItemDTO>>>` | âœ“ |
-| IInspectionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InspectionEditDTO>>` | âœ“ |
-| IInspectionAppService | `GetListInspection` | GET_LIST | `Task<ApiResponseDTO<List<Inspection>>>` | âœ“ |
-| IInspectionAppService | `UpdateInspectionAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IInspectionCondominiumAssetAppService | `DeleteInspectionCondominiumAssetAndRelatedDataAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInspectionCondominiumAssetAppService | `DeleteReviewByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInspectionCondominiumAssetAppService | `GetInspectionCondominiumAsset` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IInspectionCondominiumAssetAppService | `GetInspectionCondominiumAssetDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<InspectionCondominiumAssetDTO>>` | âš  Get sin ByXxx/All |
-| IInspectionCondominiumAssetAppService | `InspectionDetailAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IInspectionCondominiumAssetAppService | `UpdateCondominiumAsset` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IInspectionResultImageAppService | `DeleteInspectionImageAsync` | DELETE | `Task<ApiResponseDTO<InspectionResultImage>>` | âœ“ |
-| IInspectionResultImageAppService | `GetListImagesAsync` | GET_LIST | `Task<ApiResponseDTO<List<InspectionImageListDTO>>>` | âœ“ |
-| IInspectionResultImageAppService | `UpdateInspectionImagesAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInspectionReviewsCatalogAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InspectionReviewsCatalog>>` | âœ“ |
-| IInspectionReviewsCatalogAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInspectionReviewsCatalogAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<InspectionReviewsCatalog>>>` | âœ“ |
-| IInspectionReviewsCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InspectionReviewsCatalog>>` | âœ“ |
-| IInspectionReviewsCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InspectionReviewsCatalog>>` | âœ“ |
-| IInventarioIluminacionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<LightingStock>>` | âœ“ |
-| IInventarioIluminacionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioIluminacionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IInventarioIluminacionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioIluminacionDTO>>` | âœ“ |
-| IInventarioIluminacionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<LightingStock>>` | âœ“ |
-| IInventarioLlaveAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<KeyInventory>>` | âœ“ |
-| IInventarioLlaveAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioLlaveAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioLlaveDTO[]>>` | âœ“ |
-| IInventarioLlaveAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioLlaveDTO>>` | âœ“ |
-| IInventarioLlaveAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<KeyInventory>>` | âœ“ |
-| IInventarioPinturaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PaintStock>>` | âœ“ |
-| IInventarioPinturaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInventarioPinturaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IInventarioPinturaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioPinturaDTO>>` | âœ“ |
-| IInventarioPinturaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PaintStock>>` | âœ“ |
-| IInvitationAppService | `GetByVisitAsync` | GET_LIST | `Task<ApiResponseDTO<List<InvitationDTO>>>` | âœ“ |
-| IInvitationAppService | `ResendInvitationAsync` | OTHER | `Task<ApiResponseDTO<InvitationDTO>>` | âš  naming no CRUD estandar |
-| IInvitationAppService | `SendInvitationAsync` | SPECIAL | `Task<ApiResponseDTO<InvitationDTO>>` | âœ“ |
-| IJuntaMensualSessionAppService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | âœ“ |
-| IJuntaMensualSessionAppService | `CreateFromAgendaAsync` | CREATE | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | âœ“ |
-| IJuntaMensualSessionAppService | `CreateMeetingAsync` | CREATE | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | âœ“ |
-| IJuntaMensualSessionAppService | `GetAccessibleAsync` | GET_LIST | `Task<ApiResponseDTO<List<JuntaMensualSessionDTO>>>` | âš  Get sin ByXxx/All |
-| IJuntaMensualSessionAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<JuntaMensualSessionDTO>>>` | âœ“ |
-| IJuntaMensualSessionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | âœ“ |
-| IJuntaMensualSessionAppService | `GetDetailByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<JuntaMensualSessionDetailDTO>>` | âœ“ |
-| IJuntaMensualSessionAppService | `LinkMeetingAsync` | OTHER | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | âš  naming no CRUD estandar |
-| IJuntaMensualSessionAppService | `LinkPresentationAsync` | OTHER | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | âš  naming no CRUD estandar |
-| IJuntaMensualSessionAppService | `RescheduleAsync` | OTHER | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | âš  naming no CRUD estandar |
-| IJuntaMensualSessionBackfillAppService | `ApplyAsync` | SPECIAL | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | âœ“ |
-| IJuntaMensualSessionBackfillAppService | `PreviewAsync` | SPECIAL | `Task<ApiResponseDTO<List<JuntaMensualSessionBackfillCandidateDTO>>>` | âœ“ |
-| IJuntaMensualSessionMaintenanceAppService | `CleanupFutureEmptySessionsAsync` | SPECIAL | `Task` | âœ“ |
-| IMeetingAdministracionAppService | `AddParticipanteAdministracionAsync` | CREATE | `Task<ApiResponseDTO<MeetingAdministracion>>` | âœ“ |
-| IMeetingAdministracionAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMeetingAdministracionAppService | `GetParticipantesAdministracionAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| IMeetingAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeetingHeaderDTO>>` | âœ“ |
-| IMeetingAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMeetingAppService | `EnviarEmailPendientesResponsable` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IMeetingAppService | `FindByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingHeaderDTO>>` | âœ“ |
-| IMeetingAppService | `GetMeetingDetailsById` | GET_SINGLE | `ApiResponseDTO<MeetingDTO>` | âœ“ |
-| IMeetingAppService | `GetMeetingReportPdf` | GET_SINGLE | `ApiResponseDTO<CreateMinutaPdfDTO>` | âš  Get sin ByXxx/All |
-| IMeetingAppService | `GetSeguimientoMinutasAsync` | GET_LIST | `Task<ApiResponseDTO<List<SeguimientoMinutasDTO>>>` | âš  Get sin ByXxx/All |
-| IMeetingAppService | `list` | OTHER | `ApiResponseDTO<List<MeetingDTO>>` | âš  naming no CRUD estandar |
-| IMeetingAppService | `MinutaAllPendientes` | OTHER | `ApiResponseDTO<object>` | âš  naming no CRUD estandar |
-| IMeetingAppService | `MinutaPendientes` | OTHER | `ApiResponseDTO<object>` | âš  naming no CRUD estandar |
-| IMeetingAppService | `OnSendEmailResponsible` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IMeetingAppService | `SendEmailAllPendingMeeting` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMeetingAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeetingHeaderDTO>>` | âœ“ |
-| IMeetingComiteAppService | `AddParticipanteComiteAsync` | CREATE | `Task<ApiResponseDTO<MeetingComite>>` | âœ“ |
-| IMeetingComiteAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMeetingComiteAppService | `GetParticipantesComiteAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| IMeetingDetailsAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeetingDetails>>` | âœ“ |
-| IMeetingDetailsAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMeetingDetailsAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<MettingetailsDTO>>>` | âœ“ |
-| IMeetingDetailsAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingDetailsAddOrEditDTO>>` | âœ“ |
-| IMeetingDetailsAppService | `GetMeetingLegalDTOAsync` | GET_LIST | `Task<ApiResponseDTO<List<MeetingLegalDTO>>>` | âš  Get sin ByXxx/All |
-| IMeetingDetailsAppService | `MinutasFiltroAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IMeetingDetailsAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeetingDetails>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeetingDetailsSeguimiento>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `ExportSummaryToExcelAsync` | SPECIAL | `Task<byte[]>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MeetingDetailFollowUpsDTO[]>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingDetailFollowUpsDTO>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `ResumenMinutaPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `ResumenMinutasGraficoPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `ResumenMinutasPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `ResumenPreventivosGraficoPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `ResumenPreventivosPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IMeetingDetailsSeguimientoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeetingDetailsSeguimiento>>` | âœ“ |
-| IMeetingInvitadoAppService | `AddParticipanteInvitadoAsync` | CREATE | `Task<ApiResponseDTO<MeetingInvitado>>` | âœ“ |
-| IMeetingInvitadoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMeetingInvitadoAppService | `GetParticipantesInvitadoAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| IOwnerAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<OwnerDTO>>` | âœ“ |
-| IOwnerAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOwnerAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<OwnerDTO>>>` | âœ“ |
-| IOwnerAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OwnerAddOrEditDTO>>` | âœ“ |
-| IOwnerAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OwnerDTO>>` | âœ“ |
-| IPanicAlertAppService | `AttendAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IPanicAlertAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<PanicAlertDTO>>` | âœ“ |
-| IPanicAlertAppService | `GetActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<PanicAlertDTO>>>` | âš  Get sin ByXxx/All |
-| IPanicAlertAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PanicAlertDTO>>` | âœ“ |
-| IPanicAlertAppService | `GetHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<PanicAlertDTO>>>` | âš  Get sin ByXxx/All |
-| IPanicAlertAppService | `ResolveAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IPanicAlertNotificationService | `NotifyEmitterAsync` | SPECIAL | `Task` | âœ“ |
-| IPanicAlertNotificationService | `NotifyRecipientsAsync` | SPECIAL | `Task` | âœ“ |
-| IPendingTaskReportAppService | `SendPendingTaskReportAsync` | SPECIAL | `Task` | âœ“ |
-| IPersonalAusenteAppService | `GetPersonalAusenteAsync` | GET_SINGLE | `Task<ApiResponseDTO<PersonalAusenteResumenDTO>>` | âš  Get sin ByXxx/All |
-| IPresentacionJuntaComiteAppService | `AddFechaAsync` | CREATE | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | âœ“ |
-| IPresentacionJuntaComiteAppService | `AddFileAsync` | CREATE | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | âœ“ |
-| IPresentacionJuntaComiteAppService | `AutorizarPresentacionAsync` | OTHER | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | âš  naming no CRUD estandar |
-| IPresentacionJuntaComiteAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPresentacionJuntaComiteAppService | `DeletePdfAsync` | DELETE | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | âœ“ |
-| IPresentacionJuntaComiteAppService | `GeneralesAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IPresentacionJuntaComiteAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<PresentacionJuntaComiteDTO>>>` | âœ“ |
-| IPresentacionJuntaComiteAppService | `GetBodyEmailEstadosFinancierosCondominos` | GET_LIST | `string` | âš  Get sin ByXxx/All |
-| IPresentacionJuntaComiteAppService | `GetBodyEmailEstadosFinancierosTesorero` | GET_SINGLE | `string` | âš  Get sin ByXxx/All |
-| IPresentacionJuntaComiteAppService | `GetBodyEmailPresentacionComite` | GET_SINGLE | `string` | âš  Get sin ByXxx/All |
-| IPresentacionJuntaComiteAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PresentacionJuntaComiteDTO>>` | âœ“ |
-| IPresentacionJuntaComiteAppService | `UpdateFechaAsync` | UPDATE | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | âœ“ |
-| IProductAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Producto>>` | âœ“ |
-| IProductAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IProductAppService | `GetAutoCompleteSelectItemAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âš  Get sin ByXxx/All |
-| IProductAppService | `GetMachinerySelectItemAsync` | GET_SINGLE | `Task<ApiResponseDTO<SelectItemDTO<Guid>>>` | âš  Get sin ByXxx/All |
-| IProductAppService | `GetProductAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProductoDTO>>` | âš  Get sin ByXxx/All |
-| IProductAppService | `GetProductsAsync` | GET_LIST | `Task<ApiResponseDTO<ProductoIndexDTO[]>>` | âš  Get sin ByXxx/All |
-| IProductAppService | `GetProductsPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<ProductoIndexDTO>>>` | âœ“ |
-| IProductAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Producto>>` | âœ“ |
-| IPropertyAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PropertyDTO>>` | âœ“ |
-| IPropertyAppService | `AssignAccountNumberAsync` | SPECIAL | `Task<ApiResponseDTO<PropertyDTO>>` | âœ“ |
-| IPropertyAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPropertyAppService | `DownloadTemplateAsync` | SPECIAL | `Task<FileDownloadDTO>` | âœ“ |
-| IPropertyAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PropertyDTO[]>>` | âœ“ |
-| IPropertyAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PropertyDTO>>` | âœ“ |
-| IPropertyAppService | `ImportPropertiesFromExcelAsync` | SPECIAL | `Task<ImportPropertiesResultDTO>` | âœ“ |
-| IPropertyAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PropertyDTO>>` | âœ“ |
-| IPropertyOccupantAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PropertyOccupantDTO>>` | âœ“ |
-| IPropertyOccupantAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPropertyOccupantAppService | `GetAllByPropertyIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<PropertyOccupantDTO>>>` | âœ“ |
-| IPropertyOccupantAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PropertyOccupantDTO>>` | âœ“ |
-| IPropertyOccupantAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PropertyOccupantDTO>>` | âœ“ |
-| IRadioComunicacionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RadioComunicacion>>` | âœ“ |
-| IRadioComunicacionAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<RadioComunicacion>>` | âœ“ |
-| IRadioComunicacionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<RadioComunicacionDTO[]>>` | âœ“ |
-| IRadioComunicacionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RadioComunicacionItemDTO>>` | âœ“ |
-| IRadioComunicacionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RadioComunicacion>>` | âœ“ |
-| IReclutamientoResumenAppService | `GetVacantesPendientesAsync` | GET_LIST | `Task<ApiResponseDTO<VacantesResumenDTO>>` | âš  Get sin ByXxx/All |
-| IRecurringTaskCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<RecurringTaskTemplateDTO>>` | âœ“ |
-| IRecurringTaskCatalogAppService | `GetAllByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<RecurringTaskTemplateDTO>>>` | âœ“ |
-| IRecurringTaskCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RecurringTaskTemplateDTO>>` | âœ“ |
-| IRecurringTaskCatalogAppService | `ToggleStatusAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRecurringTaskCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RecurringTaskTemplateDTO>>` | âœ“ |
-| IRecurringTaskComplianceAppService | `GetDashboardAsync` | GET_SINGLE | `Task<ApiResponseDTO<ComplianceDashboardDTO>>` | âš  Get sin ByXxx/All |
-| IRecurringTaskGenerationService | `GenerateAsync` | SPECIAL | `Task<RecurringTaskGenerationRunResult>` | âœ“ |
-| ISalidaProductoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SalidaProducto>>` | âœ“ |
-| ISalidaProductoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<SalidaProducto>>` | âœ“ |
-| ISalidaProductoAppService | `GenerateReportAsync` | SPECIAL | `Task<ApiResponseDTO<byte[]>>` | âœ“ |
-| ISalidaProductoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SalidaProductoDTO>>` | âœ“ |
-| ISalidaProductoAppService | `GetPagedByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PagedResultDTO<SalidaProductoDTO>>>` | âœ“ |
-| ISalidaProductoAppService | `RealizarDevolucionAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ISalidaProductoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<SalidaProducto>>` | âœ“ |
-| ISanctionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SanctionDetailDTO>>` | âœ“ |
-| ISanctionAppService | `ChangeStatusAsync` | UPDATE | `Task<ApiResponseDTO<SanctionDetailDTO>>` | âœ“ |
-| ISanctionAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISanctionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<SanctionListDTO[]>>` | âœ“ |
-| ISanctionAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<SanctionListDTO[]>>` | âœ“ |
-| ISanctionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SanctionDetailDTO>>` | âœ“ |
-| ISanctionAppService | `GetExpiringAsync` | GET_SINGLE | `Task<ApiResponseDTO<SanctionListDTO[]>>` | âš  Get sin ByXxx/All |
-| ISanctionNotificationService | `NotifySanctionAppliedAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskService | `MarkInactiveUsersOfflineAsync` | OTHER | `Task` | âš  naming no CRUD estandar |
-| IScheduledTaskService | `OnValidateForCustomer` | OTHER | `Task` | âš  naming no CRUD estandar |
-| IScheduledTaskService | `SendContractsAndPoliciesExpirationNotificationsAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskService | `SendLegalReportAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskService | `SendLegalTicketReportToCustomerAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskService | `SendPendingTicketGroupReportAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskService | `SendRecruitmentReportAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskService | `SendTestEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskService | `SendVacanciesReportAsync` | SPECIAL | `Task` | âœ“ |
-| IServiceOrderAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ServiceOrder>>` | âœ“ |
-| IServiceOrderAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IServiceOrderAppService | `DeleteDocumentAsync` | DELETE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IServiceOrderAppService | `DeleteImgAsync` | DELETE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IServiceOrderAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ServiceOrderDTO>>>` | âœ“ |
-| IServiceOrderAppService | `GetAllPinturaAsync` | GET_LIST | `Task<ApiResponseDTO<List<ServiceOrderDTO>>>` | âœ“ |
-| IServiceOrderAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ServiceOrderDTO>>` | âœ“ |
-| IServiceOrderAppService | `GetPendingPreventiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<ServiceOrderDTO>>>` | âš  Get sin ByXxx/All |
-| IServiceOrderAppService | `GetServiceOrderInforme` | GET_LIST | `ApiResponseDTO<IEnumerable<ServiceOrderInformeDTO>>` | âš  Get sin ByXxx/All |
-| IServiceOrderAppService | `GetServiceOrderSupportAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IServiceOrderAppService | `OnGetUserSelectItemAsync` | OTHER | `Task<ApiResponseDTO<SelectItemDTO<string>>>` | âš  naming no CRUD estandar |
-| IServiceOrderAppService | `OrdenesServicioFotosAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IServiceOrderAppService | `OrdenesServicioReporteProveedorAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IServiceOrderAppService | `SubirDocumentoAsync` | OTHER | `Task<ApiResponseDTO<ServiceOrder>>` | âš  naming no CRUD estandar |
-| IServiceOrderAppService | `SubirImgAsync` | OTHER | `Task<ApiResponseDTO<ServiceOrder>>` | âš  naming no CRUD estandar |
-| IServiceOrderAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ServiceOrder>>` | âœ“ |
-| IServiceOrderAppService | `UpdateCalendarIdAsync` | UPDATE | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IServiceOrderAppService | `UpdateCalendarioId` | UPDATE | `ApiResponseDTO<bool>` | âœ“ |
-| IStockPorAlmacenAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<WarehouseStock>>` | âœ“ |
-| IStockPorAlmacenAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IStockPorAlmacenAppService | `GetAllInventarioProductoAsync` | GET_LIST | `Task<ApiResponseDTO<List<StockPorAlmacenIndexDTO>>>` | âœ“ |
-| IStockPorAlmacenAppService | `GetAllInventarioProductoPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<StockPorAlmacenIndexDTO>>>` | âœ“ |
-| IStockPorAlmacenAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<StockPorAlmacenDTO>>` | âœ“ |
-| IStockPorAlmacenAppService | `GetExistenciaProductoAsync` | GET_SINGLE | `Task<ApiResponseDTO<StockPorAlmacenDTO>>` | âš  Get sin ByXxx/All |
-| IStockPorAlmacenAppService | `GetProductoDropdownDTOAsync` | GET_LIST | `Task<ApiResponseDTO<List<ProductoListAddDTO>>>` | âš  Get sin ByXxx/All |
-| IStockPorAlmacenAppService | `GetProductoDropdownPagedAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProductoDropdownListDTO>>` | âœ“ |
-| IStockPorAlmacenAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<WarehouseStock>>` | âœ“ |
-| ISupervisionReportsAppService | `GetEstadosFinancierosAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| ISupervisionReportsAppService | `GetPendingLegalAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| ISupervisionReportsAppService | `GetPendingMinutesAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| ISupervisionReportsAppService | `GetPendingTicketsAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| ISuspensionDayAppService | `AddBulkAsync` | CREATE | `Task<ApiResponseDTO<SuspensionDayDetailDTO[]>>` | âœ“ |
-| ISuspensionDayAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISuspensionDayAppService | `GetByIncidentAsync` | GET_SINGLE | `Task<ApiResponseDTO<SuspensionDayDetailDTO[]>>` | âœ“ |
-| ITareasLegalAppService | `GetTareasActivasAsync` | GET_LIST | `Task<ApiResponseDTO<TareasLegalResumenDTO>>` | âš  Get sin ByXxx/All |
-| ITaskAlertEngineService | `RunAsync` | SPECIAL | `Task<TaskAlertEngineRunResult>` | âœ“ |
-| ITaskAppService | `ClearDependencyAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ITaskAppService | `CloseTaskAsync` | SPECIAL | `Task<ApiResponseDTO<TasksCloseDTO>>` | âœ“ |
-| ITaskAppService | `CreateTaskAsync` | CREATE | `Task<ApiResponseDTO<TasksAddOrEditDTO>>` | âœ“ |
-| ITaskAppService | `DeleteTaskAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskAppService | `GetAvailablePredecessorsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âš  Get sin ByXxx/All |
-| ITaskAppService | `GetByClosedAsync` | GET_SINGLE | `Task<ApiResponseDTO<TasksCloseDTO>>` | âœ“ |
-| ITaskAppService | `GetByIdTaskViewDTO` | GET_SINGLE | `Task<ApiResponseDTO<TasksViewDTO>>` | âœ“ |
-| ITaskAppService | `GetByIdWithGroupAsync` | GET_SINGLE | `Task<ApiResponseDTO<TasksAddOrEditDTO>>` | âœ“ |
-| ITaskAppService | `GetLegalPendingReportAsync` | GET_LIST | `Task<ApiResponseDTO<List<LegalPendingReportItemDTO>>>` | âš  Get sin ByXxx/All |
-| ITaskAppService | `GetLegalTasksAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<LegalTaskListItemDTO>>>` | âœ“ |
-| ITaskAppService | `GetLegalTasksByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<LegalTaskListItemDTO>>>` | âœ“ |
-| ITaskAppService | `GetListMyAssignedTasksAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<MyAssignedTasksDTO>>>` | âœ“ |
-| ITaskAppService | `GetListMyRequestAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<MyRequestTasksDTO>>>` | âœ“ |
-| ITaskAppService | `GetPathReportAsync` | GET_SINGLE | `Task<ApiResponseDTO<string>>` | âš  Get sin ByXxx/All |
-| ITaskAppService | `GetTasksByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<TaskMonitoringDTO>>>` | âœ“ |
-| ITaskAppService | `GetTaskStatusAsync` | GET_LIST | `Task<ApiResponseDTO<int>>` | âš  Get sin ByXxx/All |
-| ITaskAppService | `InProgressAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ITaskAppService | `ListTaskAsync` | OTHER | `Task<ApiResponseDTO<TasksListDTO>>` | âš  naming no CRUD estandar |
-| ITaskAppService | `MyTaskProgramationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ITaskAppService | `OnUpdatePriority` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ITaskAppService | `ParticipanAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âš  naming no CRUD estandar |
-| ITaskAppService | `ProgramationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ITaskAppService | `ProgramationGetByIdAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| ITaskAppService | `ReopenAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskAppService | `SetDependencyAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskAppService | `UpdateOrderAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskAppService | `UpdateRelevanceAsync` | UPDATE | `Task<ApiResponseDTO<TasksAddOrEditDTO>>` | âœ“ |
-| ITaskAppService | `UpdateTaskAsync` | UPDATE | `Task<ApiResponseDTO<TasksAddOrEditDTO>>` | âœ“ |
-| ITaskAppService | `UpdateTaskCustomerAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskAppService | `UpdateTaskStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskAttachmentAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskAttachmentAppService | `GetByTaskIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<TaskAttachmentFileDTO>>>` | âœ“ |
-| ITaskAttachmentAppService | `UploadAsync` | SPECIAL | `Task<ApiResponseDTO<TaskAttachmentFileDTO>>` | âœ“ |
-| ITaskChecklistAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<TaskChecklistItemDTO>>` | âœ“ |
-| ITaskChecklistAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskChecklistAppService | `GetByTaskIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<TaskChecklistItemDTO>>>` | âœ“ |
-| ITaskChecklistAppService | `ToggleDoneAsync` | SPECIAL | `Task<ApiResponseDTO<TaskChecklistItemDTO>>` | âœ“ |
-| ITaskEscalationService | `RunAsync` | SPECIAL | `Task<TaskEscalationRunResult>` | âœ“ |
-| ITaskFollowUpAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskFollowUpAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskFollowUpAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<TaskFollowUpDTO>>>` | âš  naming no CRUD estandar |
-| ITaskGroupAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<WorkGroup>>` | âœ“ |
-| ITaskGroupAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<WorkGroup>>` | âœ“ |
-| ITaskGroupAppService | `GetAllByClientAsync` | GET_LIST | `Task<ApiResponseDTO<List<TaskGroupDTO>>>` | âœ“ |
-| ITaskGroupAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TaskGroupAddOrEditDTO>>` | âœ“ |
-| ITaskGroupAppService | `GetCustomerIdByTaskGroupIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<Guid>>` | âœ“ |
-| ITaskGroupAppService | `ToggleStatusAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskGroupAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<TaskGroupAddOrEditDTO>>` | âœ“ |
-| ITaskGroupCategoryAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<TaskGroupCategoryDTO>>` | âœ“ |
-| ITaskGroupCategoryAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskGroupCategoryAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<TaskGroupCategoryDTO[]>>` | âœ“ |
-| ITaskGroupCategoryAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TaskGroupCategoryAddOrEditDTO>>` | âœ“ |
-| ITaskGroupCategoryAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<TaskGroupCategoryDTO>>` | âœ“ |
-| ITaskGroupMemberAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskGroupMemberAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskGroupMemberAppService | `GetAvailableParticipantsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âš  Get sin ByXxx/All |
-| ITaskGroupMemberAppService | `GetExistingParticipantsAsync` | GET_LIST | `Task<ApiResponseDTO<List<WorkGroupMembersDTO>>>` | âš  Get sin ByXxx/All |
-| ITaskGroupMemberAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskJustificationService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<TaskJustificationDTO>>` | âœ“ |
-| ITaskJustificationService | `GetByTaskIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<TaskJustificationDTO>>>` | âœ“ |
-| ITaskJustificationService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<TaskJustificationDTO>>` | âœ“ |
-| ITaskJustificationService | `RequestAsync` | OTHER | `Task<ApiResponseDTO<TaskJustificationDTO>>` | âš  naming no CRUD estandar |
-| ITaskLegalAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ITaskLegalAppService | `CategoryAsync` | OTHER | `Task<ApiResponseDTO<LegalMatterCategoryAddOrEditDTO>>` | âš  naming no CRUD estandar |
-| ITaskLegalAppService | `CreateCategoryAsync` | CREATE | `Task<ApiResponseDTO<LegalMatterCategory>>` | âœ“ |
-| ITaskLegalAppService | `CreateLegalTaskAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskLegalAppService | `CreatePdf` | CREATE | `void` | âœ“ |
-| ITaskLegalAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskLegalAppService | `DeleteCategoryByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskLegalAppService | `GetlegalMatterAddDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<LegalMatterAddDTO>>` | âš  Get sin ByXxx/All |
-| ITaskLegalAppService | `GetListEmployeeLegal` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ITaskLegalAppService | `GetListLegalMatter` | GET_LIST | `Task<ApiResponseDTO<List<LegalMatterCategoryWithMattersDTO>>>` | âœ“ |
-| ITaskLegalAppService | `ObtenerResumenTickets` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| ITaskLegalAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ITaskLegalAppService | `UpdateCategoryAsync` | UPDATE | `Task<ApiResponseDTO<LegalMatterCategory>>` | âœ“ |
-| ITaskMessageReadAppService | `GetByTaskMessageIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| ITasksReportAppService | `GetReportClientAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| ITasksReportAppService | `GetTaskReportAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| ITasksReportAppService | `WeeklyReportAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| ITasksReportAppService | `WeeklyReportPreviewAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| ITaskWorkPlanAppService | `CreateWeeklyWorkPlanAsync` | CREATE | `Task<ApiResponseDTO<TaskWorkPlan>>` | âœ“ |
-| ITaskWorkPlanAppService | `GetPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âš  Get sin ByXxx/All |
-| ITaskWorkPlanAppService | `WeeklyReportPreviewAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IVisitAppService | `CancelVisitAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IVisitAppService | `CreateVisitAsync` | CREATE | `Task<ApiResponseDTO<VisitDTO>>` | âœ“ |
-| IVisitAppService | `GetActiveVisitsAsync` | GET_LIST | `Task<ApiResponseDTO<List<VisitDTO>>>` | âš  Get sin ByXxx/All |
-| IVisitAppService | `GetVisitByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<VisitDTO>>` | âœ“ |
-| IVisitAppService | `GetVisitsPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<VisitDTO>>>` | âœ“ |
-| IVisitorService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<VisitorDTO>>` | âœ“ |
-| IVisitorService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<VisitorDTO>>>` | âœ“ |
-| IVisitorService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<VisitorDTO>>` | âœ“ |
-| IVisitorService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<VisitorDTO>>` | âœ“ |
-| IWarehouseAuthorizationService | `IsUserAuthorizedForWarehouseAsync` | OTHER | `Task<bool>` | âš  naming no CRUD estandar |
-| MeetingDertailsSeguimientoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeetingDetailsSeguimiento>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `ExportSummaryToExcelAsync` | SPECIAL | `Task<byte[]>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MeetingDetailFollowUpsDTO[]>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingDetailFollowUpsDTO>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `ResumenMinutaPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `ResumenMinutasGraficoPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `ResumenMinutasPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `ResumenPreventivosGraficoPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `ResumenPreventivosPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| MeetingDertailsSeguimientoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeetingDetailsSeguimiento>>` | âœ“ |
-| RecurringTaskGenerationService | `AdjustForBusinessDay` | SPECIAL | `DateOnly` | âœ“ |
-| RecurringTaskGenerationService | `GetOccurrences` | GET_LIST | `List<DateOnly>` | âš  Get sin ByXxx/All |
-| RecurringTaskGenerationService | `ProcessTemplateAsync` | SPECIAL | `Task<TemplateGenerationResult>` | âœ“ |
-| RecurringTaskGenerationService | `ResolvePrincipalResponsibleAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| RecurringTaskGenerationService | `ToRunResult` | OTHER | `RecurringTaskGenerationRunResult` | âš  naming no CRUD estandar |
-| TaskAlertEngineService | `Count` | GET_SINGLE | `void` | âœ“ |
-| TaskAlertEngineService | `ToRunResult` | OTHER | `TaskAlertEngineRunResult` | âš  naming no CRUD estandar |
-| TaskAppService | `SaveChanged` | UPDATE | `Task` | âœ“ |
-| TaskEscalationService | `ToRunResult` | OTHER | `TaskEscalationRunResult` | âš  naming no CRUD estandar |
-| TaskJustificationAppService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<TaskJustificationDTO>>` | âœ“ |
-| TaskJustificationAppService | `GetByTaskIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<TaskJustificationDTO>>>` | âœ“ |
-| TaskJustificationAppService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<TaskJustificationDTO>>` | âœ“ |
-| TaskJustificationAppService | `RequestAsync` | OTHER | `Task<ApiResponseDTO<TaskJustificationDTO>>` | âš  naming no CRUD estandar |
+| IAccessCredentialService | `GenerateQrCredentialAsync` | SPECIAL | `Task<ApiResponseDTO<AccessCredentialDTO>>` | ✓ |
+| IAccessCredentialService | `GetCredentialByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AccessCredentialDTO>>` | ✓ |
+| IAccessCredentialService | `RevokeCredentialAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAccessDashboardService | `GetCurrentOccupancyAsync` | GET_SINGLE | `Task<ApiResponseDTO<OccupancyDTO>>` | ⚠ Get sin ByXxx/All |
+| IAccessDashboardService | `GetDashboardStatsAsync` | GET_LIST | `Task<ApiResponseDTO<DashboardStatsDTO>>` | ⚠ Get sin ByXxx/All |
+| IAccessEventService | `ExportEventsAsync` | SPECIAL | `Task<byte[]>` | ✓ |
+| IAccessEventService | `GetEventsPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<AccessEventDTO>>>` | ✓ |
+| IAccessPointService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<AccessPointDTO>>` | ✓ |
+| IAccessPointService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<AccessPointDTO>>>` | ✓ |
+| IAccessPointService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AccessPointDTO>>` | ✓ |
+| IAccessScanService | `ScanAsync` | OTHER | `Task<ApiResponseDTO<AccessScanResultDTO>>` | ⚠ naming no CRUD estandar |
+| IAgendaSemanalAppService | `GetAgendaMesesAsync` | GET_LIST | `Task<ApiResponseDTO<List<AgendaSemanalEventDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAgendaSemanalAppService | `GetAgendaSemanalAsync` | GET_LIST | `Task<ApiResponseDTO<List<AgendaSemanalEventDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAgendaSupervisionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<AgendaSupervision>>` | ✓ |
+| IAgendaSupervisionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAgendaSupervisionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| IAgendaSupervisionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AgendaSupervisionAddOrEditDTO>>` | ✓ |
+| IAgendaSupervisionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AgendaSupervisionDTO>>` | ✓ |
+| IAlmacenAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<AlmacenDTO>>` | ✓ |
+| IAlmacenAppService | `AsignarResponsablesAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IAlmacenAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAlmacenAppService | `GetAllByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<AlmacenDTO>>>` | ✓ |
+| IAlmacenAppService | `GetAllForCurrentUserAsync` | GET_LIST | `Task<ApiResponseDTO<List<AlmacenDTO>>>` | ✓ |
+| IAlmacenAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AlmacenDTO>>` | ✓ |
+| IAlmacenAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AlmacenDTO>>` | ✓ |
+| IAnnouncementAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<AnnouncementDTO>>` | ✓ |
+| IAnnouncementAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAnnouncementAppService | `GeneratePdfAsync` | SPECIAL | `Task<ApiResponseDTO<byte[]>>` | ✓ |
+| IAnnouncementAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<AnnouncementListDTO>>>` | ✓ |
+| IAnnouncementAppService | `GetAllForAdminAsync` | GET_LIST | `Task<ApiResponseDTO<List<AnnouncementAdminListDTO>>>` | ✓ |
+| IAnnouncementAppService | `GetAnalyticsByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<AnnouncementAnalyticsDTO>>>` | ✓ |
+| IAnnouncementAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AnnouncementDTO>>` | ✓ |
+| IAnnouncementAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AnnouncementDTO>>` | ✓ |
+| IAnnouncementNotificationService | `SendNewAnnouncementNotificationAsync` | SPECIAL | `Task` | ✓ |
+| IBuildingCustomerAppService | `GetCaratulaAsync` | GET_SINGLE | `Task<ApiResponseDTO<CaratulaDTO>>` | ⚠ Get sin ByXxx/All |
+| ICatalogInspectionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CatalogInspectionDTO>>` | ✓ |
+| ICatalogInspectionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICatalogInspectionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<CatalogInspectionDTO>>>` | ✓ |
+| ICatalogInspectionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CatalogInspectionDTO>>` | ✓ |
+| ICatalogInspectionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CatalogInspectionDTO>>` | ✓ |
+| ICatalogoEntregaRecepcionDescripcionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CatalogoEntregaRecepcionDescripcionDTO>>` | ✓ |
+| ICatalogoEntregaRecepcionDescripcionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICatalogoEntregaRecepcionDescripcionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<CatalogoEntregaRecepcionDescripcionDTO[]>>` | ✓ |
+| ICatalogoEntregaRecepcionDescripcionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CatalogoEntregaRecepcionDescripcionDTO>>` | ✓ |
+| ICatalogoEntregaRecepcionDescripcionAppService | `GetGruposAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| ICatalogoEntregaRecepcionDescripcionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CatalogoEntregaRecepcionDescripcionDTO>>` | ✓ |
+| IComiteVigilanciaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ComiteVigilanciaSavedDTO>>` | ✓ |
+| IComiteVigilanciaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IComiteVigilanciaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<ComiteVigilanciaDTO[]>>` | ✓ |
+| IComiteVigilanciaAppService | `GetAllCommitteesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CommitteeDirectoryDTO>>>` | ✓ |
+| IComiteVigilanciaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ComiteVigilanciaEditDTO>>` | ✓ |
+| IComiteVigilanciaAppService | `SendCredentialsAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IComiteVigilanciaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ComiteVigilanciaSavedDTO>>` | ✓ |
+| IContratosLegalAppService | `GetContratosPorVencerAsync` | GET_SINGLE | `Task<ApiResponseDTO<ContratosPorVencerResumenDTO>>` | ⚠ Get sin ByXxx/All |
+| IContratosLegalAppService | `GetContratosVigentesAsync` | GET_LIST | `Task<ApiResponseDTO<ContratosVigentesResumenDTO>>` | ⚠ Get sin ByXxx/All |
+| ICustomDocumentAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<DocumentLegalRecordCreatedDTO>>` | ✓ |
+| ICustomDocumentAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICustomDocumentAppService | `GetAllByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| ICustomDocumentAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<DocumentLegalRecordAddOrEditDTO>>` | ✓ |
+| ICustomDocumentAppService | `GetDocumentPathAsync` | GET_SINGLE | `Task<string>` | ⚠ Get sin ByXxx/All |
+| ICustomDocumentAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICustomDocumentAppService | `UpdateSortOrderAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| ICustomerInspectionAppService | `GetCustomerInspectionReportDateDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerInspectionReportDTO>>` | ⚠ Get sin ByXxx/All |
+| ICustomerInspectionAppService | `GetCustomerInspectionReportDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerInspectionReportDTO>>` | ⚠ Get sin ByXxx/All |
+| ICustomerInspectionAppService | `GetGroupedInspectionDataAsync` | GET_LIST | `Task<ApiResponseDTO<List<GroupedInspectionDataDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICustomerInspectionAppService | `GetInspectionsByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<CustomerInspectionDTO>>>` | ✓ |
+| ICustomerInspectionAppService | `UpdateInspectionDataAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICustomerProviderAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICustomerProviderAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerProviderAddOrEditDTO>>` | ✓ |
+| ICustomerProviderAppService | `GetCustomerProviderDTOAsync` | GET_LIST | `Task<ApiResponseDTO<List<CustomerProviderListDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICustomerProviderAppService | `PostAsync` | CREATE | `Task<ApiResponseDTO<CustomerProvider>>` | ✓ |
+| ICustomerProviderAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IDashboardAppService | `GetFiltroMinutasAreaAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| IDashboardAppService | `GetGlobalPendingItemsAsync` | GET_LIST | `Task<ApiResponseDTO<List<PendingItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| IDiagramDrawService | `CreateDiagramAsync` | CREATE | `Task<ApiResponseDTO<DiagramDrawDTO>>` | ✓ |
+| IDiagramDrawService | `DeleteDiagramAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IDiagramDrawService | `GetDiagramByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<DiagramDrawDTO>>` | ✓ |
+| IDiagramDrawService | `GetDiagramsAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<DiagramDrawDTO>>>` | ⚠ Get sin ByXxx/All |
+| IDiagramDrawService | `UpdateDiagramAsync` | UPDATE | `Task<ApiResponseDTO<DiagramDrawDTO>>` | ✓ |
+| IEntradaProductoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EntradaProductoDTO>>` | ✓ |
+| IEntradaProductoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEntradaProductoAppService | `GetAllByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<EntradaProductoDTO[]>>` | ✓ |
+| IEntradaProductoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EntradaProductoDTO>>` | ✓ |
+| IEntradaProductoAppService | `GetResumenByCustomerAndPeriodoAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IEntradaProductoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EntradaProductoDTO>>` | ✓ |
+| IEntregaRecepcionAppService | `GetExtintoresAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionAppService | `GetInventarioEquiposAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionAppService | `GetInventarioHerramientasAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionAppService | `GetInventarioInstalacionesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionAppService | `GetInventarioInsumosAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionAppService | `GetInventarioLlavesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionAppService | `GetInventarioMantenimientosAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionAppService | `GetOrganigramaAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionAppService | `GetPendientesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ Get sin ByXxx/All |
+| IEntregaRecepcionDescripcionAppService | `DeleteFile` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEntregaRecepcionDescripcionAppService | `FindByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EntregaRecepcionDescripcionAddOrEditDTO>>` | ✓ |
+| IEntregaRecepcionDescripcionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| IEntregaRecepcionDescripcionAppService | `InvalidarArchivoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IEntregaRecepcionDescripcionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IEntregaRecepcionDescripcionAppService | `ValidarArchivoAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IGanttAppService | `GetGanttDataByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<GanttTaskDTO>>>` | ✓ |
+| IGeneralSummaryService | `EvaluateAreasAsync` | OTHER | `Task<object>` | ⚠ naming no CRUD estandar |
+| IGeneralSummaryService | `GeneralResultFilterAsync` | OTHER | `GeneralResultFilterDTO` | ⚠ naming no CRUD estandar |
+| IGeneralSummaryService | `GetAreaEvaluationDetailAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetGeneralResultAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetMinutesGeneralSummaryAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetMinutesGeneralSummaryGroupAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetMinutesSummaryReportAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetMinutesSummaryReportFilterAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetPositionAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetPreventiveSummaryReportAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetTicketSummaryReportAsync` | GET_SINGLE | `Task<object>` | ⚠ Get sin ByXxx/All |
+| IGeneralSummaryService | `GetTicketSummaryReportByCustomerAsync` | GET_SINGLE | `Task<object>` | ✓ |
+| IGoogleCalendarEventAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<GoogleCalendarEventDetailDTO>>` | ✓ |
+| IGoogleCalendarEventAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IGoogleCalendarEventAppService | `DeleteSeriesAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IGoogleCalendarEventAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<GoogleCalendarEventListItemDTO>>>` | ✓ |
+| IGoogleCalendarEventAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<GoogleCalendarEventDetailDTO>>` | ✓ |
+| IGoogleCalendarEventAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<GoogleCalendarEventDetailDTO>>` | ✓ |
+| IGoogleCalendarEventAppService | `UpdateSeriesAsync` | UPDATE | `Task<ApiResponseDTO<GoogleCalendarEventDetailDTO>>` | ✓ |
+| IGoogleCalendarService | `CreateEventAsync` | CREATE | `Task<GoogleCalendarSyncResultDTO>` | ✓ |
+| IGoogleCalendarService | `DeleteEventAsync` | DELETE | `Task` | ✓ |
+| IGoogleCalendarService | `GetConnectionStatusAsync` | GET_LIST | `Task<GoogleCalendarConnectionStatusDTO>` | ⚠ Get sin ByXxx/All |
+| IGoogleCalendarService | `UpdateEventAsync` | UPDATE | `Task<GoogleCalendarSyncResultDTO>` | ✓ |
+| IIncidentAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<IncidentDetailDTO>>` | ✓ |
+| IIncidentAppService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IIncidentAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IIncidentAppService | `GenerateActAsync` | SPECIAL | `Task<byte[]>` | ✓ |
+| IIncidentAppService | `GeneratePdfAsync` | SPECIAL | `Task<byte[]>` | ✓ |
+| IIncidentAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IncidentListDTO[]>>` | ✓ |
+| IIncidentAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentListDTO[]>>` | ✓ |
+| IIncidentAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentDetailDTO>>` | ✓ |
+| IIncidentAppService | `GetDashboardAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentDashboardDTO>>` | ⚠ Get sin ByXxx/All |
+| IIncidentAppService | `ResolveAsync` | OTHER | `Task<ApiResponseDTO<IncidentDetailDTO>>` | ⚠ naming no CRUD estandar |
+| IIncidentAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<IncidentDetailDTO>>` | ✓ |
+| IIncidentAppService | `UploadSignedActAsync` | SPECIAL | `Task<ApiResponseDTO<IncidentDetailDTO>>` | ✓ |
+| IIncidentAttachmentAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<IncidentAttachmentListDTO>>` | ✓ |
+| IIncidentAttachmentAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IIncidentAttachmentAppService | `GetByIncidentAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentAttachmentListDTO[]>>` | ✓ |
+| IIncidentNotificationService | `NotifyIncidentCreatedAsync` | SPECIAL | `Task` | ✓ |
+| IIncidentPdfService | `GeneratePdfAsync` | SPECIAL | `Task<byte[]>` | ✓ |
+| IIncidentPdfService | `SavePdfAsync` | UPDATE | `Task<string>` | ✓ |
+| IIncidentPdfService | `SaveSignedActAsync` | UPDATE | `Task<string>` | ✓ |
+| IIncidentReportAppService | `ExportAsync` | SPECIAL | `Task<FileContentResult>` | ✓ |
+| IIncidentReportAppService | `GetPendingInvestigationAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentPendingDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IIncidentReportAppService | `GetStatsAsync` | GET_LIST | `Task<ApiResponseDTO<IncidentStatsDTO>>` | ⚠ Get sin ByXxx/All |
+| IIncidentTypeAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<IncidentTypeDetailDTO>>` | ✓ |
+| IIncidentTypeAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IIncidentTypeAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IncidentTypeListDTO[]>>` | ✓ |
+| IIncidentTypeAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentTypeDetailDTO>>` | ✓ |
+| IIncidentTypeAppService | `ToggleActiveAsync` | SPECIAL | `Task<ApiResponseDTO<IncidentTypeDetailDTO>>` | ✓ |
+| IIncidentTypeAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<IncidentTypeDetailDTO>>` | ✓ |
+| IIncidentWitnessAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<IncidentWitnessListDTO>>` | ✓ |
+| IIncidentWitnessAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IIncidentWitnessAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentWitnessDetailDTO>>` | ✓ |
+| IIncidentWitnessAppService | `GetByIncidentAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidentWitnessListDTO[]>>` | ✓ |
+| IIncidentWitnessAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<IncidentWitnessListDTO>>` | ✓ |
+| IInspectionAppService | `AddInspectionAsync` | CREATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IInspectionAppService | `AddOrUpdateCondominiumAssetAsync` | CREATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IInspectionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<InspectionListItemDTO>>>` | ✓ |
+| IInspectionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InspectionEditDTO>>` | ✓ |
+| IInspectionAppService | `GetListInspection` | GET_LIST | `Task<ApiResponseDTO<List<Inspection>>>` | ✓ |
+| IInspectionAppService | `UpdateInspectionAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IInspectionCondominiumAssetAppService | `DeleteInspectionCondominiumAssetAndRelatedDataAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInspectionCondominiumAssetAppService | `DeleteReviewByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInspectionCondominiumAssetAppService | `GetInspectionCondominiumAsset` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IInspectionCondominiumAssetAppService | `GetInspectionCondominiumAssetDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<InspectionCondominiumAssetDTO>>` | ⚠ Get sin ByXxx/All |
+| IInspectionCondominiumAssetAppService | `InspectionDetailAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IInspectionCondominiumAssetAppService | `UpdateCondominiumAsset` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IInspectionResultImageAppService | `DeleteInspectionImageAsync` | DELETE | `Task<ApiResponseDTO<InspectionResultImage>>` | ✓ |
+| IInspectionResultImageAppService | `GetListImagesAsync` | GET_LIST | `Task<ApiResponseDTO<List<InspectionImageListDTO>>>` | ✓ |
+| IInspectionResultImageAppService | `UpdateInspectionImagesAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInspectionReviewsCatalogAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<InspectionReviewsCatalog>>` | ✓ |
+| IInspectionReviewsCatalogAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInspectionReviewsCatalogAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<InspectionReviewsCatalog>>>` | ✓ |
+| IInspectionReviewsCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InspectionReviewsCatalog>>` | ✓ |
+| IInspectionReviewsCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InspectionReviewsCatalog>>` | ✓ |
+| IInventarioIluminacionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<LightingStock>>` | ✓ |
+| IInventarioIluminacionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioIluminacionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| IInventarioIluminacionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioIluminacionDTO>>` | ✓ |
+| IInventarioIluminacionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<LightingStock>>` | ✓ |
+| IInventarioLlaveAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<KeyInventory>>` | ✓ |
+| IInventarioLlaveAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioLlaveAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<InventarioLlaveDTO[]>>` | ✓ |
+| IInventarioLlaveAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioLlaveDTO>>` | ✓ |
+| IInventarioLlaveAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<KeyInventory>>` | ✓ |
+| IInventarioPinturaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PaintStock>>` | ✓ |
+| IInventarioPinturaAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInventarioPinturaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| IInventarioPinturaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<InventarioPinturaDTO>>` | ✓ |
+| IInventarioPinturaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PaintStock>>` | ✓ |
+| IInvitationAppService | `GetByVisitAsync` | GET_LIST | `Task<ApiResponseDTO<List<InvitationDTO>>>` | ✓ |
+| IInvitationAppService | `ResendInvitationAsync` | OTHER | `Task<ApiResponseDTO<InvitationDTO>>` | ⚠ naming no CRUD estandar |
+| IInvitationAppService | `SendInvitationAsync` | SPECIAL | `Task<ApiResponseDTO<InvitationDTO>>` | ✓ |
+| IJuntaMensualSessionAppService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | ✓ |
+| IJuntaMensualSessionAppService | `CreateFromAgendaAsync` | CREATE | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | ✓ |
+| IJuntaMensualSessionAppService | `CreateMeetingAsync` | CREATE | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | ✓ |
+| IJuntaMensualSessionAppService | `GetAccessibleAsync` | GET_LIST | `Task<ApiResponseDTO<List<JuntaMensualSessionDTO>>>` | ⚠ Get sin ByXxx/All |
+| IJuntaMensualSessionAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<JuntaMensualSessionDTO>>>` | ✓ |
+| IJuntaMensualSessionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | ✓ |
+| IJuntaMensualSessionAppService | `GetDetailByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<JuntaMensualSessionDetailDTO>>` | ✓ |
+| IJuntaMensualSessionAppService | `LinkMeetingAsync` | OTHER | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | ⚠ naming no CRUD estandar |
+| IJuntaMensualSessionAppService | `LinkPresentationAsync` | OTHER | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | ⚠ naming no CRUD estandar |
+| IJuntaMensualSessionAppService | `RescheduleAsync` | OTHER | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | ⚠ naming no CRUD estandar |
+| IJuntaMensualSessionBackfillAppService | `ApplyAsync` | SPECIAL | `Task<ApiResponseDTO<JuntaMensualSessionDTO>>` | ✓ |
+| IJuntaMensualSessionBackfillAppService | `PreviewAsync` | SPECIAL | `Task<ApiResponseDTO<List<JuntaMensualSessionBackfillCandidateDTO>>>` | ✓ |
+| IJuntaMensualSessionMaintenanceAppService | `CleanupFutureEmptySessionsAsync` | SPECIAL | `Task` | ✓ |
+| IMeetingAdministracionAppService | `AddParticipanteAdministracionAsync` | CREATE | `Task<ApiResponseDTO<MeetingAdministracion>>` | ✓ |
+| IMeetingAdministracionAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMeetingAdministracionAppService | `GetParticipantesAdministracionAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| IMeetingAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeetingHeaderDTO>>` | ✓ |
+| IMeetingAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMeetingAppService | `EnviarEmailPendientesResponsable` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IMeetingAppService | `FindByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingHeaderDTO>>` | ✓ |
+| IMeetingAppService | `GetMeetingDetailsById` | GET_SINGLE | `ApiResponseDTO<MeetingDTO>` | ✓ |
+| IMeetingAppService | `GetMeetingReportPdf` | GET_SINGLE | `ApiResponseDTO<CreateMinutaPdfDTO>` | ⚠ Get sin ByXxx/All |
+| IMeetingAppService | `GetSeguimientoMinutasAsync` | GET_LIST | `Task<ApiResponseDTO<List<SeguimientoMinutasDTO>>>` | ⚠ Get sin ByXxx/All |
+| IMeetingAppService | `list` | OTHER | `ApiResponseDTO<List<MeetingDTO>>` | ⚠ naming no CRUD estandar |
+| IMeetingAppService | `MinutaAllPendientes` | OTHER | `ApiResponseDTO<object>` | ⚠ naming no CRUD estandar |
+| IMeetingAppService | `MinutaPendientes` | OTHER | `ApiResponseDTO<object>` | ⚠ naming no CRUD estandar |
+| IMeetingAppService | `OnSendEmailResponsible` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IMeetingAppService | `SendEmailAllPendingMeeting` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMeetingAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeetingHeaderDTO>>` | ✓ |
+| IMeetingComiteAppService | `AddParticipanteComiteAsync` | CREATE | `Task<ApiResponseDTO<MeetingComite>>` | ✓ |
+| IMeetingComiteAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMeetingComiteAppService | `GetParticipantesComiteAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| IMeetingDetailsAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeetingDetails>>` | ✓ |
+| IMeetingDetailsAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMeetingDetailsAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<MettingetailsDTO>>>` | ✓ |
+| IMeetingDetailsAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingDetailsAddOrEditDTO>>` | ✓ |
+| IMeetingDetailsAppService | `GetMeetingLegalDTOAsync` | GET_LIST | `Task<ApiResponseDTO<List<MeetingLegalDTO>>>` | ⚠ Get sin ByXxx/All |
+| IMeetingDetailsAppService | `MinutasFiltroAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IMeetingDetailsAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeetingDetails>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeetingDetailsSeguimiento>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `ExportSummaryToExcelAsync` | SPECIAL | `Task<byte[]>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MeetingDetailFollowUpsDTO[]>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingDetailFollowUpsDTO>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `ResumenMinutaPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `ResumenMinutasGraficoPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `ResumenMinutasPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `ResumenPreventivosGraficoPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `ResumenPreventivosPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IMeetingDetailsSeguimientoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeetingDetailsSeguimiento>>` | ✓ |
+| IMeetingInvitadoAppService | `AddParticipanteInvitadoAsync` | CREATE | `Task<ApiResponseDTO<MeetingInvitado>>` | ✓ |
+| IMeetingInvitadoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMeetingInvitadoAppService | `GetParticipantesInvitadoAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| IOwnerAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<OwnerDTO>>` | ✓ |
+| IOwnerAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOwnerAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<OwnerDTO>>>` | ✓ |
+| IOwnerAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OwnerAddOrEditDTO>>` | ✓ |
+| IOwnerAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OwnerDTO>>` | ✓ |
+| IPanicAlertAppService | `AttendAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IPanicAlertAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<PanicAlertDTO>>` | ✓ |
+| IPanicAlertAppService | `GetActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<PanicAlertDTO>>>` | ⚠ Get sin ByXxx/All |
+| IPanicAlertAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PanicAlertDTO>>` | ✓ |
+| IPanicAlertAppService | `GetHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<PanicAlertDTO>>>` | ⚠ Get sin ByXxx/All |
+| IPanicAlertAppService | `ResolveAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IPanicAlertNotificationService | `NotifyEmitterAsync` | SPECIAL | `Task` | ✓ |
+| IPanicAlertNotificationService | `NotifyRecipientsAsync` | SPECIAL | `Task` | ✓ |
+| IPendingTaskReportAppService | `SendPendingTaskReportAsync` | SPECIAL | `Task` | ✓ |
+| IPersonalAusenteAppService | `GetPersonalAusenteAsync` | GET_SINGLE | `Task<ApiResponseDTO<PersonalAusenteResumenDTO>>` | ⚠ Get sin ByXxx/All |
+| IPresentacionJuntaComiteAppService | `AddFechaAsync` | CREATE | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | ✓ |
+| IPresentacionJuntaComiteAppService | `AddFileAsync` | CREATE | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | ✓ |
+| IPresentacionJuntaComiteAppService | `AutorizarPresentacionAsync` | OTHER | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | ⚠ naming no CRUD estandar |
+| IPresentacionJuntaComiteAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPresentacionJuntaComiteAppService | `DeletePdfAsync` | DELETE | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | ✓ |
+| IPresentacionJuntaComiteAppService | `GeneralesAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IPresentacionJuntaComiteAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<PresentacionJuntaComiteDTO>>>` | ✓ |
+| IPresentacionJuntaComiteAppService | `GetBodyEmailEstadosFinancierosCondominos` | GET_LIST | `string` | ⚠ Get sin ByXxx/All |
+| IPresentacionJuntaComiteAppService | `GetBodyEmailEstadosFinancierosTesorero` | GET_SINGLE | `string` | ⚠ Get sin ByXxx/All |
+| IPresentacionJuntaComiteAppService | `GetBodyEmailPresentacionComite` | GET_SINGLE | `string` | ⚠ Get sin ByXxx/All |
+| IPresentacionJuntaComiteAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PresentacionJuntaComiteDTO>>` | ✓ |
+| IPresentacionJuntaComiteAppService | `UpdateFechaAsync` | UPDATE | `Task<ApiResponseDTO<PresentacionJuntaComite>>` | ✓ |
+| IProductAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Producto>>` | ✓ |
+| IProductAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IProductAppService | `GetAutoCompleteSelectItemAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ⚠ Get sin ByXxx/All |
+| IProductAppService | `GetMachinerySelectItemAsync` | GET_SINGLE | `Task<ApiResponseDTO<SelectItemDTO<Guid>>>` | ⚠ Get sin ByXxx/All |
+| IProductAppService | `GetProductAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProductoDTO>>` | ⚠ Get sin ByXxx/All |
+| IProductAppService | `GetProductsAsync` | GET_LIST | `Task<ApiResponseDTO<ProductoIndexDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IProductAppService | `GetProductsPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<ProductoIndexDTO>>>` | ✓ |
+| IProductAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Producto>>` | ✓ |
+| IPropertyAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PropertyDTO>>` | ✓ |
+| IPropertyAppService | `AssignAccountNumberAsync` | SPECIAL | `Task<ApiResponseDTO<PropertyDTO>>` | ✓ |
+| IPropertyAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPropertyAppService | `DownloadTemplateAsync` | SPECIAL | `Task<FileDownloadDTO>` | ✓ |
+| IPropertyAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PropertyDTO[]>>` | ✓ |
+| IPropertyAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PropertyDTO>>` | ✓ |
+| IPropertyAppService | `ImportPropertiesFromExcelAsync` | SPECIAL | `Task<ImportPropertiesResultDTO>` | ✓ |
+| IPropertyAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PropertyDTO>>` | ✓ |
+| IPropertyOccupantAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PropertyOccupantDTO>>` | ✓ |
+| IPropertyOccupantAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPropertyOccupantAppService | `GetAllByPropertyIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<PropertyOccupantDTO>>>` | ✓ |
+| IPropertyOccupantAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PropertyOccupantDTO>>` | ✓ |
+| IPropertyOccupantAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PropertyOccupantDTO>>` | ✓ |
+| IRadioComunicacionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RadioComunicacion>>` | ✓ |
+| IRadioComunicacionAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<RadioComunicacion>>` | ✓ |
+| IRadioComunicacionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<RadioComunicacionDTO[]>>` | ✓ |
+| IRadioComunicacionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RadioComunicacionItemDTO>>` | ✓ |
+| IRadioComunicacionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RadioComunicacion>>` | ✓ |
+| IReclutamientoResumenAppService | `GetVacantesPendientesAsync` | GET_LIST | `Task<ApiResponseDTO<VacantesResumenDTO>>` | ⚠ Get sin ByXxx/All |
+| IRecurringTaskCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<RecurringTaskTemplateDTO>>` | ✓ |
+| IRecurringTaskCatalogAppService | `GetAllByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<RecurringTaskTemplateDTO>>>` | ✓ |
+| IRecurringTaskCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RecurringTaskTemplateDTO>>` | ✓ |
+| IRecurringTaskCatalogAppService | `ToggleStatusAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRecurringTaskCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RecurringTaskTemplateDTO>>` | ✓ |
+| IRecurringTaskComplianceAppService | `GetDashboardAsync` | GET_SINGLE | `Task<ApiResponseDTO<ComplianceDashboardDTO>>` | ⚠ Get sin ByXxx/All |
+| IRecurringTaskGenerationService | `GenerateAsync` | SPECIAL | `Task<RecurringTaskGenerationRunResult>` | ✓ |
+| ISalidaProductoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SalidaProducto>>` | ✓ |
+| ISalidaProductoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<SalidaProducto>>` | ✓ |
+| ISalidaProductoAppService | `GenerateReportAsync` | SPECIAL | `Task<ApiResponseDTO<byte[]>>` | ✓ |
+| ISalidaProductoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SalidaProductoDTO>>` | ✓ |
+| ISalidaProductoAppService | `GetPagedByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PagedResultDTO<SalidaProductoDTO>>>` | ✓ |
+| ISalidaProductoAppService | `RealizarDevolucionAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ISalidaProductoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<SalidaProducto>>` | ✓ |
+| ISanctionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SanctionDetailDTO>>` | ✓ |
+| ISanctionAppService | `ChangeStatusAsync` | UPDATE | `Task<ApiResponseDTO<SanctionDetailDTO>>` | ✓ |
+| ISanctionAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISanctionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<SanctionListDTO[]>>` | ✓ |
+| ISanctionAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<SanctionListDTO[]>>` | ✓ |
+| ISanctionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SanctionDetailDTO>>` | ✓ |
+| ISanctionAppService | `GetExpiringAsync` | GET_SINGLE | `Task<ApiResponseDTO<SanctionListDTO[]>>` | ⚠ Get sin ByXxx/All |
+| ISanctionNotificationService | `NotifySanctionAppliedAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskService | `MarkInactiveUsersOfflineAsync` | OTHER | `Task` | ⚠ naming no CRUD estandar |
+| IScheduledTaskService | `OnValidateForCustomer` | OTHER | `Task` | ⚠ naming no CRUD estandar |
+| IScheduledTaskService | `SendContractsAndPoliciesExpirationNotificationsAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskService | `SendLegalReportAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskService | `SendLegalTicketReportToCustomerAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskService | `SendPendingTicketGroupReportAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskService | `SendRecruitmentReportAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskService | `SendTestEmailAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskService | `SendVacanciesReportAsync` | SPECIAL | `Task` | ✓ |
+| IServiceOrderAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<ServiceOrder>>` | ✓ |
+| IServiceOrderAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IServiceOrderAppService | `DeleteDocumentAsync` | DELETE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IServiceOrderAppService | `DeleteImgAsync` | DELETE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IServiceOrderAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ServiceOrderDTO>>>` | ✓ |
+| IServiceOrderAppService | `GetAllPinturaAsync` | GET_LIST | `Task<ApiResponseDTO<List<ServiceOrderDTO>>>` | ✓ |
+| IServiceOrderAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ServiceOrderDTO>>` | ✓ |
+| IServiceOrderAppService | `GetPendingPreventiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<ServiceOrderDTO>>>` | ⚠ Get sin ByXxx/All |
+| IServiceOrderAppService | `GetServiceOrderInforme` | GET_LIST | `ApiResponseDTO<IEnumerable<ServiceOrderInformeDTO>>` | ⚠ Get sin ByXxx/All |
+| IServiceOrderAppService | `GetServiceOrderSupportAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IServiceOrderAppService | `OnGetUserSelectItemAsync` | OTHER | `Task<ApiResponseDTO<SelectItemDTO<string>>>` | ⚠ naming no CRUD estandar |
+| IServiceOrderAppService | `OrdenesServicioFotosAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IServiceOrderAppService | `OrdenesServicioReporteProveedorAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IServiceOrderAppService | `SubirDocumentoAsync` | OTHER | `Task<ApiResponseDTO<ServiceOrder>>` | ⚠ naming no CRUD estandar |
+| IServiceOrderAppService | `SubirImgAsync` | OTHER | `Task<ApiResponseDTO<ServiceOrder>>` | ⚠ naming no CRUD estandar |
+| IServiceOrderAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ServiceOrder>>` | ✓ |
+| IServiceOrderAppService | `UpdateCalendarIdAsync` | UPDATE | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IServiceOrderAppService | `UpdateCalendarioId` | UPDATE | `ApiResponseDTO<bool>` | ✓ |
+| IStockPorAlmacenAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<WarehouseStock>>` | ✓ |
+| IStockPorAlmacenAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IStockPorAlmacenAppService | `GetAllInventarioProductoAsync` | GET_LIST | `Task<ApiResponseDTO<List<StockPorAlmacenIndexDTO>>>` | ✓ |
+| IStockPorAlmacenAppService | `GetAllInventarioProductoPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<StockPorAlmacenIndexDTO>>>` | ✓ |
+| IStockPorAlmacenAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<StockPorAlmacenDTO>>` | ✓ |
+| IStockPorAlmacenAppService | `GetExistenciaProductoAsync` | GET_SINGLE | `Task<ApiResponseDTO<StockPorAlmacenDTO>>` | ⚠ Get sin ByXxx/All |
+| IStockPorAlmacenAppService | `GetProductoDropdownDTOAsync` | GET_LIST | `Task<ApiResponseDTO<List<ProductoListAddDTO>>>` | ⚠ Get sin ByXxx/All |
+| IStockPorAlmacenAppService | `GetProductoDropdownPagedAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProductoDropdownListDTO>>` | ✓ |
+| IStockPorAlmacenAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<WarehouseStock>>` | ✓ |
+| ISupervisionReportsAppService | `GetEstadosFinancierosAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| ISupervisionReportsAppService | `GetPendingLegalAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| ISupervisionReportsAppService | `GetPendingMinutesAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| ISupervisionReportsAppService | `GetPendingTicketsAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| ISuspensionDayAppService | `AddBulkAsync` | CREATE | `Task<ApiResponseDTO<SuspensionDayDetailDTO[]>>` | ✓ |
+| ISuspensionDayAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISuspensionDayAppService | `GetByIncidentAsync` | GET_SINGLE | `Task<ApiResponseDTO<SuspensionDayDetailDTO[]>>` | ✓ |
+| ITareasLegalAppService | `GetTareasActivasAsync` | GET_LIST | `Task<ApiResponseDTO<TareasLegalResumenDTO>>` | ⚠ Get sin ByXxx/All |
+| ITaskAlertEngineService | `RunAsync` | SPECIAL | `Task<TaskAlertEngineRunResult>` | ✓ |
+| ITaskAppService | `ClearDependencyAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ITaskAppService | `CloseTaskAsync` | SPECIAL | `Task<ApiResponseDTO<TasksCloseDTO>>` | ✓ |
+| ITaskAppService | `CreateTaskAsync` | CREATE | `Task<ApiResponseDTO<TasksAddOrEditDTO>>` | ✓ |
+| ITaskAppService | `DeleteTaskAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskAppService | `GetAvailablePredecessorsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ⚠ Get sin ByXxx/All |
+| ITaskAppService | `GetByClosedAsync` | GET_SINGLE | `Task<ApiResponseDTO<TasksCloseDTO>>` | ✓ |
+| ITaskAppService | `GetByIdTaskViewDTO` | GET_SINGLE | `Task<ApiResponseDTO<TasksViewDTO>>` | ✓ |
+| ITaskAppService | `GetByIdWithGroupAsync` | GET_SINGLE | `Task<ApiResponseDTO<TasksAddOrEditDTO>>` | ✓ |
+| ITaskAppService | `GetLegalPendingReportAsync` | GET_LIST | `Task<ApiResponseDTO<List<LegalPendingReportItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| ITaskAppService | `GetLegalTasksAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<LegalTaskListItemDTO>>>` | ✓ |
+| ITaskAppService | `GetLegalTasksByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<LegalTaskListItemDTO>>>` | ✓ |
+| ITaskAppService | `GetListMyAssignedTasksAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<MyAssignedTasksDTO>>>` | ✓ |
+| ITaskAppService | `GetListMyRequestAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<MyRequestTasksDTO>>>` | ✓ |
+| ITaskAppService | `GetPathReportAsync` | GET_SINGLE | `Task<ApiResponseDTO<string>>` | ⚠ Get sin ByXxx/All |
+| ITaskAppService | `GetTasksByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<TaskMonitoringDTO>>>` | ✓ |
+| ITaskAppService | `GetTaskStatusAsync` | GET_LIST | `Task<ApiResponseDTO<int>>` | ⚠ Get sin ByXxx/All |
+| ITaskAppService | `InProgressAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ITaskAppService | `ListTaskAsync` | OTHER | `Task<ApiResponseDTO<TasksListDTO>>` | ⚠ naming no CRUD estandar |
+| ITaskAppService | `MyTaskProgramationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ITaskAppService | `OnUpdatePriority` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ITaskAppService | `ParticipanAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ⚠ naming no CRUD estandar |
+| ITaskAppService | `ProgramationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ITaskAppService | `ProgramationGetByIdAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| ITaskAppService | `ReopenAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskAppService | `SetDependencyAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskAppService | `UpdateOrderAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskAppService | `UpdateRelevanceAsync` | UPDATE | `Task<ApiResponseDTO<TasksAddOrEditDTO>>` | ✓ |
+| ITaskAppService | `UpdateTaskAsync` | UPDATE | `Task<ApiResponseDTO<TasksAddOrEditDTO>>` | ✓ |
+| ITaskAppService | `UpdateTaskCustomerAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskAppService | `UpdateTaskStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskAttachmentAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskAttachmentAppService | `GetByTaskIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<TaskAttachmentFileDTO>>>` | ✓ |
+| ITaskAttachmentAppService | `UploadAsync` | SPECIAL | `Task<ApiResponseDTO<TaskAttachmentFileDTO>>` | ✓ |
+| ITaskChecklistAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<TaskChecklistItemDTO>>` | ✓ |
+| ITaskChecklistAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskChecklistAppService | `GetByTaskIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<TaskChecklistItemDTO>>>` | ✓ |
+| ITaskChecklistAppService | `ToggleDoneAsync` | SPECIAL | `Task<ApiResponseDTO<TaskChecklistItemDTO>>` | ✓ |
+| ITaskEscalationService | `RunAsync` | SPECIAL | `Task<TaskEscalationRunResult>` | ✓ |
+| ITaskFollowUpAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskFollowUpAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskFollowUpAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<TaskFollowUpDTO>>>` | ⚠ naming no CRUD estandar |
+| ITaskGroupAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<WorkGroup>>` | ✓ |
+| ITaskGroupAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<WorkGroup>>` | ✓ |
+| ITaskGroupAppService | `GetAllByClientAsync` | GET_LIST | `Task<ApiResponseDTO<List<TaskGroupDTO>>>` | ✓ |
+| ITaskGroupAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TaskGroupAddOrEditDTO>>` | ✓ |
+| ITaskGroupAppService | `GetCustomerIdByTaskGroupIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<Guid>>` | ✓ |
+| ITaskGroupAppService | `ToggleStatusAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskGroupAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<TaskGroupAddOrEditDTO>>` | ✓ |
+| ITaskGroupCategoryAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<TaskGroupCategoryDTO>>` | ✓ |
+| ITaskGroupCategoryAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskGroupCategoryAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<TaskGroupCategoryDTO[]>>` | ✓ |
+| ITaskGroupCategoryAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TaskGroupCategoryAddOrEditDTO>>` | ✓ |
+| ITaskGroupCategoryAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<TaskGroupCategoryDTO>>` | ✓ |
+| ITaskGroupMemberAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskGroupMemberAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskGroupMemberAppService | `GetAvailableParticipantsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ⚠ Get sin ByXxx/All |
+| ITaskGroupMemberAppService | `GetExistingParticipantsAsync` | GET_LIST | `Task<ApiResponseDTO<List<WorkGroupMembersDTO>>>` | ⚠ Get sin ByXxx/All |
+| ITaskGroupMemberAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskJustificationService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<TaskJustificationDTO>>` | ✓ |
+| ITaskJustificationService | `GetByTaskIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<TaskJustificationDTO>>>` | ✓ |
+| ITaskJustificationService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<TaskJustificationDTO>>` | ✓ |
+| ITaskJustificationService | `RequestAsync` | OTHER | `Task<ApiResponseDTO<TaskJustificationDTO>>` | ⚠ naming no CRUD estandar |
+| ITaskLegalAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| ITaskLegalAppService | `CategoryAsync` | OTHER | `Task<ApiResponseDTO<LegalMatterCategoryAddOrEditDTO>>` | ⚠ naming no CRUD estandar |
+| ITaskLegalAppService | `CreateCategoryAsync` | CREATE | `Task<ApiResponseDTO<LegalMatterCategory>>` | ✓ |
+| ITaskLegalAppService | `CreateLegalTaskAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskLegalAppService | `CreatePdf` | CREATE | `void` | ✓ |
+| ITaskLegalAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskLegalAppService | `DeleteCategoryByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskLegalAppService | `GetlegalMatterAddDTOAsync` | GET_SINGLE | `Task<ApiResponseDTO<LegalMatterAddDTO>>` | ⚠ Get sin ByXxx/All |
+| ITaskLegalAppService | `GetListEmployeeLegal` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ITaskLegalAppService | `GetListLegalMatter` | GET_LIST | `Task<ApiResponseDTO<List<LegalMatterCategoryWithMattersDTO>>>` | ✓ |
+| ITaskLegalAppService | `ObtenerResumenTickets` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| ITaskLegalAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| ITaskLegalAppService | `UpdateCategoryAsync` | UPDATE | `Task<ApiResponseDTO<LegalMatterCategory>>` | ✓ |
+| ITaskMessageReadAppService | `GetByTaskMessageIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| ITasksReportAppService | `GetReportClientAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| ITasksReportAppService | `GetTaskReportAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| ITasksReportAppService | `WeeklyReportAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| ITasksReportAppService | `WeeklyReportPreviewAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| ITaskWorkPlanAppService | `CreateWeeklyWorkPlanAsync` | CREATE | `Task<ApiResponseDTO<TaskWorkPlan>>` | ✓ |
+| ITaskWorkPlanAppService | `GetPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ⚠ Get sin ByXxx/All |
+| ITaskWorkPlanAppService | `WeeklyReportPreviewAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IVisitAppService | `CancelVisitAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IVisitAppService | `CreateVisitAsync` | CREATE | `Task<ApiResponseDTO<VisitDTO>>` | ✓ |
+| IVisitAppService | `GetActiveVisitsAsync` | GET_LIST | `Task<ApiResponseDTO<List<VisitDTO>>>` | ⚠ Get sin ByXxx/All |
+| IVisitAppService | `GetVisitByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<VisitDTO>>` | ✓ |
+| IVisitAppService | `GetVisitsPagedAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<VisitDTO>>>` | ✓ |
+| IVisitorService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<VisitorDTO>>` | ✓ |
+| IVisitorService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<VisitorDTO>>>` | ✓ |
+| IVisitorService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<VisitorDTO>>` | ✓ |
+| IVisitorService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<VisitorDTO>>` | ✓ |
+| IWarehouseAuthorizationService | `IsUserAuthorizedForWarehouseAsync` | OTHER | `Task<bool>` | ⚠ naming no CRUD estandar |
+| MeetingDertailsSeguimientoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeetingDetailsSeguimiento>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `ExportSummaryToExcelAsync` | SPECIAL | `Task<byte[]>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<MeetingDetailFollowUpsDTO[]>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeetingDetailFollowUpsDTO>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `ResumenMinutaPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `ResumenMinutasGraficoPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `ResumenMinutasPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `ResumenPreventivosGraficoPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `ResumenPreventivosPresentacionAsync` | SPECIAL | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| MeetingDertailsSeguimientoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeetingDetailsSeguimiento>>` | ✓ |
+| RecurringTaskGenerationService | `AdjustForBusinessDay` | SPECIAL | `DateOnly` | ✓ |
+| RecurringTaskGenerationService | `GetOccurrences` | GET_LIST | `List<DateOnly>` | ⚠ Get sin ByXxx/All |
+| RecurringTaskGenerationService | `ProcessTemplateAsync` | SPECIAL | `Task<TemplateGenerationResult>` | ✓ |
+| RecurringTaskGenerationService | `ResolvePrincipalResponsibleAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| RecurringTaskGenerationService | `ToRunResult` | OTHER | `RecurringTaskGenerationRunResult` | ⚠ naming no CRUD estandar |
+| TaskAlertEngineService | `Count` | GET_SINGLE | `void` | ✓ |
+| TaskAlertEngineService | `ToRunResult` | OTHER | `TaskAlertEngineRunResult` | ⚠ naming no CRUD estandar |
+| TaskAppService | `SaveChanged` | UPDATE | `Task` | ✓ |
+| TaskEscalationService | `ToRunResult` | OTHER | `TaskEscalationRunResult` | ⚠ naming no CRUD estandar |
+| TaskJustificationAppService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<TaskJustificationDTO>>` | ✓ |
+| TaskJustificationAppService | `GetByTaskIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<TaskJustificationDTO>>>` | ✓ |
+| TaskJustificationAppService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<TaskJustificationDTO>>` | ✓ |
+| TaskJustificationAppService | `RequestAsync` | OTHER | `Task<ApiResponseDTO<TaskJustificationDTO>>` | ⚠ naming no CRUD estandar |
 
 ### Endpoints
 
@@ -2996,293 +2996,293 @@ Metodos: 287 | Endpoints HTTP: 323
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| ICandidateAppService | `ArchiveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateAppService | `CheckDuplicateCandidateAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateDuplicateCheckResultDTO>>` | âœ“ |
-| ICandidateAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CandidateDetailDTO>>` | âœ“ |
-| ICandidateAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateAppService | `EnsureCandidateFromFormerEmployeeAsync` | OTHER | `Task<ApiResponseDTO<FormerEmployeeCandidateResultDTO>>` | âš  naming no CRUD estandar |
-| ICandidateAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateDetailDTO>>` | âœ“ |
-| ICandidateAppService | `GetDeleteImpactAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateDeleteImpactDTO>>` | âš  Get sin ByXxx/All |
-| ICandidateAppService | `GetFormerEmployeesAsync` | GET_LIST | `Task<ApiResponseDTO<List<FormerEmployeeTalentPoolItemDTO>>>` | âš  Get sin ByXxx/All |
-| ICandidateAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateListItemDTO>>>` | âœ“ |
-| ICandidateAppService | `SearchByPhoneAsync` | OTHER | `Task<ApiResponseDTO<CandidateListItemDTO>>` | âš  naming no CRUD estandar |
-| ICandidateAppService | `UnarchiveAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ICandidateAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CandidateDetailDTO>>` | âœ“ |
-| ICandidateAutomationService | `ExecuteDailyMonitoringAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyApplicationCreatedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyApplicationSentToOperationsInterviewAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyApplicationStageStalledAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyInterviewCancelledAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyInterviewDecisionRevertedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyInterviewFeedbackSubmittedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyInterviewScheduledAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyOperationsInterviewAgendaPendingAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyOperationsInterviewEscalatedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyOperationsInterviewOverdueAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyOperationsInterviewReminderAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessCreatedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessInterviewCancelledAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessInterviewDecisionRevertedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessInterviewFeedbackSubmittedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessInterviewScheduledAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessOperationsInterviewAgendaPendingAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessOperationsInterviewEscalatedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessOperationsInterviewOverdueAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessOperationsInterviewReminderAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessPresentationHiringRequestGeneratedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessReceptionConfirmedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessSentToOperationsInterviewAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyProcessStageStalledAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifyReceptionConfirmedAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateNotificationCoordinatorService | `NotifySiblingCandidatesFrozenAsync` | SPECIAL | `Task` | âœ“ |
-| ICandidateProcessAppService | `CancelScheduleAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateProcessAppService | `ChangeStageAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateProcessAppService | `CompleteHiringAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateProcessAppService | `ConfirmPresentationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ICandidateProcessAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | âœ“ |
-| ICandidateProcessAppService | `CreateFromFormAsync` | CREATE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | âœ“ |
-| ICandidateProcessAppService | `ExecuteInterviewerActionAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateProcessAppService | `GetByCandidateAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateProcessListItemDTO>>>` | âœ“ |
-| ICandidateProcessAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | âœ“ |
-| ICandidateProcessAppService | `GetByRequestPositionAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateProcessVacancyDetailDTO>>` | âœ“ |
-| ICandidateProcessAppService | `GetByStageAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateProcessListItemDTO>>>` | âœ“ |
-| ICandidateProcessAppService | `GetByWorkPositionAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateProcessWorkPositionDetailDTO>>` | âœ“ |
-| ICandidateProcessAppService | `GetEmployeeInterviewerQueueAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateInterviewerQueueDTO>>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `GetHiringDocumentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateHiringDocumentListItemDTO>>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `GetInterviewerQueueAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateInterviewerQueueDTO>>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `GetInterviewerViewAsync` | GET_LIST | `Task<ApiResponseDTO<List<InterviewerApplicationViewDTO>>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `GetInterviewResponseAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateInterviewResponseDTO>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `GetKpisAsync` | GET_LIST | `Task<ApiResponseDTO<CandidateProcessKpisDTO>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `GetRecruitmentAgendaAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateRecruitmentAgendaItemDTO>>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `GetRecruitmentInterviewBoardAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateRecruitmentInterviewBoardDTO>>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `GetTimelineByVacancyAsync` | GET_LIST | `Task<ApiResponseDTO<List<VacancyCandidateTimelineDTO>>>` | âœ“ |
-| ICandidateProcessAppService | `GetTrayAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateProcessListItemDTO>>>` | âš  Get sin ByXxx/All |
-| ICandidateProcessAppService | `ProcessDirectHiringAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateProcessAppService | `ProcessHiringAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateProcessAppService | `ReconfirmPresentationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ICandidateProcessAppService | `RegisterDecisionAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateProcessAppService | `RemoveHiringDocumentFileAsync` | DELETE | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | âœ“ |
-| ICandidateProcessAppService | `ScheduleAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateProcessAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | âœ“ |
-| ICandidateProcessAppService | `UpdateFromFormAsync` | UPDATE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | âœ“ |
-| ICandidateProcessAppService | `UploadHiringDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | âœ“ |
-| ICandidateProcessAppService | `ValidateHiringDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | âœ“ |
-| ICandidateWorkExperienceAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CandidateWorkExperienceItemDTO>>` | âœ“ |
-| ICandidateWorkExperienceAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICandidateWorkExperienceAppService | `GetByCandidateAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateWorkExperienceItemDTO>>>` | âœ“ |
-| ICandidateWorkExperienceAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CandidateWorkExperienceItemDTO>>` | âœ“ |
-| IChecklistOptionCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ChecklistOptionCatalogListItemDTO>>` | âœ“ |
-| IChecklistOptionCatalogAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IChecklistOptionCatalogAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChecklistOptionCatalogListItemDTO>>>` | âœ“ |
-| IChecklistOptionCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ChecklistOptionCatalogListItemDTO>>` | âœ“ |
-| IEmployeeBankDataAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeBankDataAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeBankDataDTO[]>>` | âœ“ |
-| IEmployeeBankDataAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeBankDataDTO[]>>` | âœ“ |
-| IEmployeeBankDataAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeBankDataDTO>>` | âœ“ |
-| IEmployeeBankDataAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeBankDataDTO>>` | âœ“ |
-| IEmployeeBankDataAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeBankDataDTO>>` | âœ“ |
-| IEmployeeBeneficiaryAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeBeneficiaryAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO[]>>` | âœ“ |
-| IEmployeeBeneficiaryAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO[]>>` | âœ“ |
-| IEmployeeBeneficiaryAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO>>` | âœ“ |
-| IEmployeeBeneficiaryAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO>>` | âœ“ |
-| IEmployeeBeneficiaryAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO>>` | âœ“ |
-| IEmployeeBirthdayAppService | `EmployeeBirthdayAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeBirthdayDTO>>>` | âš  naming no CRUD estandar |
-| IEmployeeClinicalDataAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EmployeeClinicalDataDTO>>` | âœ“ |
-| IEmployeeClinicalDataAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeClinicalDataAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeClinicalDataDTO[]>>` | âœ“ |
-| IEmployeeClinicalDataAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeClinicalDataDTO>>` | âœ“ |
-| IEmployeeClinicalDataAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeClinicalDataDTO>>` | âœ“ |
-| IEmployeeDocumentAppService | `GetDocumentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateHiringDocumentListItemDTO>>>` | âš  Get sin ByXxx/All |
-| IEmployeeDocumentAppService | `NotifyDocumentsUploadedAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeDocumentAppService | `RejectDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | âœ“ |
-| IEmployeeDocumentAppService | `RemoveDocumentFileAsync` | DELETE | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | âœ“ |
-| IEmployeeDocumentAppService | `ReorderDocumentsAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IEmployeeDocumentAppService | `UploadDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | âœ“ |
-| IEmployeeDocumentAppService | `ValidateDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | âœ“ |
-| IEmployeeEmergencyContactAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EmployeeEmergencyContact>>` | âœ“ |
-| IEmployeeEmergencyContactAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeEmergencyContactAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeEmergencyContactAddOrEditDTO>>` | âœ“ |
-| IEmployeeEmergencyContactAppService | `GetEmployeeContactsAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeEmergencyContactDTO>>>` | âš  Get sin ByXxx/All |
-| IEmployeeEmergencyContactAppService | `UpdateEmployeeContactAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeEmergencyContactAddOrEditDTO>>` | âœ“ |
-| IEmployeeExternalAppService | `AddAccessCustomerAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeExternalAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<EmployeeExternalListDTO>>` | âœ“ |
-| IEmployeeExternalAppService | `DeleteAccessCutomerAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeExternalAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeExternalAppService | `ExternoGetByIdAsync` | OTHER | `Task<ApiResponseDTO<EmployeeExternalDTO>>` | âš  naming no CRUD estandar |
-| IEmployeeExternalAppService | `GetExternalListAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeExternalListDTO>>>` | âœ“ |
-| IEmployeeExternalAppService | `SearchUserByEmailAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeExternalMatchDTO>>>` | âš  naming no CRUD estandar |
-| IEmployeeExternalAppService | `SearchUserByPhoneNumberAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeExternalMatchDTO>>>` | âš  naming no CRUD estandar |
-| IEmployeeExternalAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeExternalListDTO>>` | âœ“ |
-| IEmployeeFileAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileSummaryDTO[]>>` | âœ“ |
-| IEmployeeFileAppService | `GetBankDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFileBankDataDTO[]>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetBeneficiariesAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileBeneficiaryDTO[]>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetClinicalDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFileClinicalDataDTO[]>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetContractsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileContractDTO[]>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetEmergencyContactsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileEmergencyContactDTO[]>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetEvaluationsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileEvaluationDTO[]>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetHeaderAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFileHeaderDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetIncidentsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileIncidentDTO[]>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetPersonalDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFilePersonalDataDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileRequestsDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetVacationsAndLeavesAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileVacationsLeavesDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeFileAppService | `GetWorkPositionAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFileWorkPositionDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeInternalAppService | `ActivateEmployeeAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEmployeeInternalAppService | `AddressDataAsync` | CREATE | `Task<ApiResponseDTO<EmployeeAddressDataEditDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `BirthdayAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeBirthdayDTO>>>` | âš  naming no CRUD estandar |
-| IEmployeeInternalAppService | `CheckDuplicateEmployeeAsync` | SPECIAL | `Task<ApiResponseDTO<EmployeeDuplicateDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `CreateEmployeeAsync` | CREATE | `Task<ApiResponseDTO<Employee>>` | âœ“ |
-| IEmployeeInternalAppService | `CreateEmployeeExternal` | CREATE | `Task<ApiResponseDTO<Employee>>` | âœ“ |
-| IEmployeeInternalAppService | `DataForRecoveryPasswordAsync` | OTHER | `Task<ApiResponseDTO<EmployeeRecoveryPasswordDTO>>` | âš  naming no CRUD estandar |
-| IEmployeeInternalAppService | `EmployeeTempAsync` | OTHER | `Task<ApiResponseDTO<List<Employee>>>` | âš  naming no CRUD estandar |
-| IEmployeeInternalAppService | `GetAsyncById` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeAddOrEditDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `GetCardUserAsync` | GET_SINGLE | `Task<ApiResponseDTO<UserCardDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeInternalAppService | `GetDossierAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeDossierDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeInternalAppService | `GetLaboralDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeLaboralDataEditDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeInternalAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeDTO>>>` | âœ“ |
-| IEmployeeInternalAppService | `GetPrincipalDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeePrincipalDataEditDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeInternalAppService | `GetUnifiedProfileAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeUnifiedProfileEditDTO>>` | âš  Get sin ByXxx/All |
-| IEmployeeInternalAppService | `OnValidateStateAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IEmployeeInternalAppService | `PersonalDataAsync` | OTHER | `Task<ApiResponseDTO<EmployeePersonalDataEditDTO>>` | âš  naming no CRUD estandar |
-| IEmployeeInternalAppService | `PhotoPath` | OTHER | `Task<ApiResponseDTO<ImgPathFileCommonDTO>>` | âš  naming no CRUD estandar |
-| IEmployeeInternalAppService | `UpdateAddressDataAync` | UPDATE | `Task<ApiResponseDTO<EmployeeAddressDataEditDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `UpdateImgageAsync` | UPDATE | `Task<ApiResponseDTO<ImgPathFileCommonDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `UpdateLaboralDataAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeLaboralDataEditDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `UpdatePersonalDataAsync` | UPDATE | `Task<ApiResponseDTO<EmployeePersonalDataEditDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `UpdatePrincipalDataAsync` | UPDATE | `Task<ApiResponseDTO<EmployeePrincipalDataEditDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `UpdateUnifiedProfileAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeUnifiedProfileEditDTO>>` | âœ“ |
-| IEmployeeInternalAppService | `ValidarAdminAsisAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IEmployeeInternalAppService | `ValidarRoleAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IEmployeeInternalAppService | `ValidarSolicitudesAbiertas` | OTHER | `Task<ApiResponseDTO<EmployeeOpenRequestsDTO>>` | âš  naming no CRUD estandar |
-| IEmployeeOnboardingChecklistAppService | `GetByEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeOnboardingChecklistItemDTO>>>` | âœ“ |
-| IEmployeeOnboardingChecklistAppService | `InitializeChecklistAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeOnboardingChecklistItemDTO>>>` | âš  naming no CRUD estandar |
-| IEmployeeOnboardingChecklistAppService | `InitializeChecklistForRoleAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeOnboardingChecklistItemDTO>>>` | âš  naming no CRUD estandar |
-| IEmployeeOnboardingChecklistAppService | `UpdateOnboardingChecklistAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeOnboardingChecklistItemDTO>>` | âœ“ |
-| IHrActionPolicyService | `CanManageStructuralHr` | OTHER | `bool` | âš  naming no CRUD estandar |
-| IHrActionPolicyService | `CanViewConfidentialHrData` | OTHER | `bool` | âš  naming no CRUD estandar |
-| IHrActionPolicyService | `EnsureCanManageStructuralHr` | OTHER | `void` | âš  naming no CRUD estandar |
-| IHrActionPolicyService | `FilterAllowedRecipientRoles` | OTHER | `IEnumerable<ApplicationRoleEnum>` | âš  naming no CRUD estandar |
-| IHrActionPolicyService | `ResolveCurrentUserRole` | OTHER | `ApplicationRoleEnum?` | âš  naming no CRUD estandar |
-| IHrActionPolicyService | `ResolveWorkPositionRoleAsync` | OTHER | `Task<ApplicationRoleEnum?>` | âš  naming no CRUD estandar |
-| IInterviewerMatrixAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<InterviewerMatrixItemDTO>>` | âœ“ |
-| IInterviewerMatrixAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IInterviewerMatrixAppService | `GetBoardByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<InterviewerMatrixBoardDTO>>` | âœ“ |
-| IInterviewerMatrixAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<InterviewerMatrixItemDTO>>>` | âœ“ |
-| IInterviewerMatrixAppService | `GetEligibleInterviewersByRequestPositionAsync` | GET_LIST | `Task<ApiResponseDTO<List<EligibleInterviewerOptionDTO>>>` | âœ“ |
-| IInterviewerMatrixAppService | `ResolveInterviewerRoleAsync` | OTHER | `Task<ApiResponseDTO<ApplicationRoleEnum?>>` | âš  naming no CRUD estandar |
-| IInterviewerMatrixAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InterviewerMatrixItemDTO>>` | âœ“ |
-| IJobDescriptionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<JobDescriptionDTO>>` | âœ“ |
-| IJobDescriptionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IJobDescriptionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<JobDescriptionDTO[]>>` | âœ“ |
-| IJobDescriptionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<JobDescriptionAddOrEditDTO>>` | âœ“ |
-| IJobDescriptionAppService | `GetByWorkPositionIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<JobDescriptionDTO>>` | âœ“ |
-| IJobDescriptionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<JobDescriptionDTO>>` | âœ“ |
-| IMultiChannelAlertService | `SendAlertAsync` | SPECIAL | `Task` | âœ“ |
-| IPersonProviderSupportAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PersonProviderSupport>>` | âœ“ |
-| IPersonProviderSupportAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ProviderSupportListDTO>>>` | âœ“ |
-| IPersonProviderSupportAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProviderSupportAddOrEditDTO>>` | âœ“ |
-| IPersonProviderSupportAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PersonProviderSupport>>` | âœ“ |
-| IReclutamientoIntegrationService | `GetEmployeeOpenRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeOpenRequestsDTO>>` | âš  Get sin ByXxx/All |
-| IReclutamientoQueryService | `GetRequestsGlobalPendingAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<ListSolicitudesClienteDTO>>>` | âš  Get sin ByXxx/All |
-| IReclutamientoQueryService | `RequestsByCustomerAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<ListSolicitudesClienteDTO>>>` | âš  naming no CRUD estandar |
-| IRecruitmentSourceCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<RecruitmentSourceCatalogListItemDTO>>` | âœ“ |
-| IRecruitmentSourceCatalogAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRecruitmentSourceCatalogAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<RecruitmentSourceCatalogListItemDTO>>>` | âœ“ |
-| IRecruitmentSourceCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RecruitmentSourceCatalogListItemDTO>>` | âœ“ |
-| IRecruitmentSourceCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RecruitmentSourceCatalogListItemDTO>>` | âœ“ |
-| IRecurringTaskGeneratorService | `GenerateInstancesForAllCustomersAsync` | SPECIAL | `Task` | âœ“ |
-| IRequestDismissalDiscountAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RequestDismissalDiscountDTO>>` | âœ“ |
-| IRequestDismissalDiscountAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRequestDismissalDiscountAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestDismissalDiscountDTO>>` | âœ“ |
-| IRequestDismissalDiscountAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RequestDismissalDiscountDTO>>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RequestEmployeeRegister>>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `CompleteDraftAltaAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `ConcludeAdministrativelyAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IRequestEmployeeRegisterAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `ExportHiringFormatPdfAsync` | SPECIAL | `Task<FileResult>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `ExportMergedHiringPdfAsync` | SPECIAL | `Task<FileResult>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `ExportRequestToExcelAsync` | SPECIAL | `Task<FileResult>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `GetBasicInfoAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestEmployeeRegisterBasicInfoDTO>>` | âš  Get sin ByXxx/All |
-| IRequestEmployeeRegisterAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestEmployeeRegisterGetByIdDTO>>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `GetEmployeeRegisterAsync` | GET_SINGLE | `Task<ApiResponseDTO<GetRequestEmployeeRegisterDTO>>` | âš  Get sin ByXxx/All |
-| IRequestEmployeeRegisterAppService | `GetListRequestEmployeeRegisterAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `OnSendEmailAltaSistemasAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IRequestEmployeeRegisterAppService | `OnSolicitudAltaAsync` | OTHER | `Task<ApiResponseDTO<RequestEmployeeRegister>>` | âš  naming no CRUD estandar |
-| IRequestEmployeeRegisterAppService | `ReactivateAndMigrateEmployeeAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IRequestEmployeeRegisterAppService | `ResendSolicitudAltaEmailAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IRequestEmployeeRegisterAppService | `SearchEmployeeDuplicatesAsync` | OTHER | `Task<ApiResponseDTO<List<DuplicateEmployeeMatchDTO>>>` | âš  naming no CRUD estandar |
-| IRequestEmployeeRegisterAppService | `SendMergedHiringPdfAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RequestEmployeeRegister>>` | âœ“ |
-| IRequestEmployeeRegisterAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRequestPositionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RequestPositionDTO>>` | âœ“ |
-| IRequestPositionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRequestPositionAppService | `DeleteCascadeAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IRequestPositionAppService | `ExportToExcelAsync` | SPECIAL | `Task<FileResult>` | âœ“ |
-| IRequestPositionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestPositionAddOrEditDTO>>` | âœ“ |
-| IRequestPositionAppService | `GetDeleteImpactAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestPositionDeleteImpactDTO>>` | âš  Get sin ByXxx/All |
-| IRequestPositionAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<SolicitudesVacanteListDTO>>>` | âœ“ |
-| IRequestPositionAppService | `GetPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<SolicitudesVacanteListDTO>>>` | âš  Get sin ByXxx/All |
-| IRequestPositionAppService | `OnGetRequestPositionCandidate` | OTHER | `RequestPosition` | âš  naming no CRUD estandar |
-| IRequestPositionAppService | `OnGetWorkPosition` | OTHER | `WorkPosition` | âš  naming no CRUD estandar |
-| IRequestPositionAppService | `OnSolicitudVacanteAsync` | OTHER | `Task<ApiResponseDTO<RequestPosition>>` | âš  naming no CRUD estandar |
-| IRequestPositionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RequestPositionDTO>>` | âœ“ |
-| IRequestSalaryModificationAppService | `ExportToExcelAsync` | SPECIAL | `Task<FileResult>` | âœ“ |
-| IRequestSalaryModificationAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestSalaryModificationDTO>>` | âœ“ |
-| IRequestSalaryModificationAppService | `GetDataForModificacionSalarioAsync` | GET_SINGLE | `Task<ApiResponseDTO<GetDataForModificacionSalarioDTO>>` | âš  Get sin ByXxx/All |
-| IRequestSalaryModificationAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<RequestSalaryModificationListDTO>>>` | âœ“ |
-| IRequestSalaryModificationAppService | `GetStatusAsync` | GET_LIST | `Task<ApiResponseDTO<StatusRequestSalaryModificationDTO>>` | âš  Get sin ByXxx/All |
-| IRequestSalaryModificationAppService | `OnSolicitudModificacionSalarialAsync` | OTHER | `Task<ApiResponseDTO<RequestSalaryModification>>` | âš  naming no CRUD estandar |
-| IRequestSalaryModificationAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RequestSalaryModificationDTO>>` | âœ“ |
-| ISanctionTypeAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SanctionTypeDetailDTO>>` | âœ“ |
-| ISanctionTypeAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISanctionTypeAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<SanctionTypeListDTO[]>>` | âœ“ |
-| ISanctionTypeAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SanctionTypeDetailDTO>>` | âœ“ |
-| ISanctionTypeAppService | `ToggleActiveAsync` | SPECIAL | `Task<ApiResponseDTO<SanctionTypeDetailDTO>>` | âœ“ |
-| ISanctionTypeAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<SanctionTypeDetailDTO>>` | âœ“ |
-| ISolicitudBajaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RequestDismissal>>` | âœ“ |
-| ISolicitudBajaAppService | `AttachEvaluationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ISolicitudBajaAppService | `AttachIncidentAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ISolicitudBajaAppService | `AuthorizeDismissalAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISolicitudBajaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISolicitudBajaAppService | `ExportRequestToExcelAsync` | SPECIAL | `Task<FileResult>` | âœ“ |
-| ISolicitudBajaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestDismissalDTO>>` | âœ“ |
-| ISolicitudBajaAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<RequestDismissalListDTO>>>` | âœ“ |
-| ISolicitudBajaAppService | `GetRequestDismissal` | GET_SINGLE | `ApiResponseDTO<SolicitudBajaEmailDTO>` | âš  Get sin ByXxx/All |
-| ISolicitudBajaAppService | `GetRequestDismissalSendRequestDTOAsync` | GET_LIST | `Task<ApiResponseDTO<List<RequestDismissalSendRequestDTO>>>` | âš  Get sin ByXxx/All |
-| ISolicitudBajaAppService | `OnSendEmailRequestDismissalAsync` | OTHER | `Task<ApiResponseDTO<RequestDismissalSendRequestDTO>>` | âš  naming no CRUD estandar |
-| ISolicitudBajaAppService | `OnSolicitudBajaAsync` | OTHER | `Task<ApiResponseDTO<RequestDismissal>>` | âš  naming no CRUD estandar |
-| ISolicitudBajaAppService | `PutRequestDismissalAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ISolicitudBajaAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskInstanceAppService | `AddCommentAsync` | CREATE | `Task<ApiResponseDTO<TaskCommentDTO>>` | âœ“ |
-| ITaskInstanceAppService | `CompleteAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskInstanceAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TaskInstanceDTO>>` | âœ“ |
-| ITaskInstanceAppService | `GetForUserByDateAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<TaskInstanceDTO>>>` | âœ“ |
-| ITaskInstanceAppService | `ReopenAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskTemplateAppService | `AddItemToTemplateAsync` | CREATE | `Task<ApiResponseDTO<TaskTemplateItemDTO>>` | âœ“ |
-| ITaskTemplateAppService | `CreateTemplateAsync` | CREATE | `Task<ApiResponseDTO<TaskTemplateDTO>>` | âœ“ |
-| ITaskTemplateAppService | `DeleteItemAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskTemplateAppService | `DeleteTemplateAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskTemplateAppService | `GetAllTemplatesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<TaskTemplateDTO>>>` | âœ“ |
-| ITaskTemplateAppService | `GetCustomerConfigAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerTaskItemConfigDTO>>` | âš  Get sin ByXxx/All |
-| ITaskTemplateAppService | `GetItemsByTemplateIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<TaskTemplateItemDTO>>>` | âœ“ |
-| ITaskTemplateAppService | `GetTemplateByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TaskTemplateDTO>>` | âœ“ |
-| ITaskTemplateAppService | `ReorderTemplateItemsAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ITaskTemplateAppService | `UpdateCustomerConfigAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskTemplateAppService | `UpdateItemInTemplateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskTemplateAppService | `UpdateTemplateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IWorkPositionAppService | `ActivateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IWorkPositionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<WorkPositionDTO>>` | âœ“ |
-| IWorkPositionAppService | `AssignEmployeeAsync` | SPECIAL | `Task<ApiResponseDTO<WorkPositionDTO>>` | âœ“ |
-| IWorkPositionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IWorkPositionAppService | `GetAllGeneralAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IWorkPositionAppService | `GetAsyncAll` | GET_LIST | `Task<ApiResponseDTO<List<WorkPositionListDTO>>>` | âœ“ |
-| IWorkPositionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<WorkPositionRequestAddOrEditDTO>>` | âœ“ |
-| IWorkPositionAppService | `GetForEditAsync` | GET_SINGLE | `Task<ApiResponseDTO<WorkPositionAddOrEditDTO>>` | âš  Get sin ByXxx/All |
-| IWorkPositionAppService | `GetHoursAsync` | GET_LIST | `Task<ApiResponseDTO<WorkPositionHoursDTO>>` | âš  Get sin ByXxx/All |
-| IWorkPositionAppService | `UnassignEmployeeAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IWorkPositionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<WorkPositionDTO>>` | âœ“ |
-| IWorkPositionOrgChartAppService | `GetTreeAsync` | GET_LIST | `Task<ApiResponseDTO<List<RoleOrgChartNodeDTO>>>` | âš  Get sin ByXxx/All |
-| IWorkPositionOrgChartAppService | `ReassignAsync` | SPECIAL | `Task<ApiResponseDTO<WorkPositionReassignResponse>>` | âœ“ |
+| ICandidateAppService | `ArchiveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateAppService | `CheckDuplicateCandidateAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateDuplicateCheckResultDTO>>` | ✓ |
+| ICandidateAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CandidateDetailDTO>>` | ✓ |
+| ICandidateAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateAppService | `EnsureCandidateFromFormerEmployeeAsync` | OTHER | `Task<ApiResponseDTO<FormerEmployeeCandidateResultDTO>>` | ⚠ naming no CRUD estandar |
+| ICandidateAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateDetailDTO>>` | ✓ |
+| ICandidateAppService | `GetDeleteImpactAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateDeleteImpactDTO>>` | ⚠ Get sin ByXxx/All |
+| ICandidateAppService | `GetFormerEmployeesAsync` | GET_LIST | `Task<ApiResponseDTO<List<FormerEmployeeTalentPoolItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICandidateAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateListItemDTO>>>` | ✓ |
+| ICandidateAppService | `SearchByPhoneAsync` | OTHER | `Task<ApiResponseDTO<CandidateListItemDTO>>` | ⚠ naming no CRUD estandar |
+| ICandidateAppService | `UnarchiveAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ICandidateAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CandidateDetailDTO>>` | ✓ |
+| ICandidateAutomationService | `ExecuteDailyMonitoringAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyApplicationCreatedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyApplicationSentToOperationsInterviewAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyApplicationStageStalledAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyInterviewCancelledAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyInterviewDecisionRevertedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyInterviewFeedbackSubmittedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyInterviewScheduledAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyOperationsInterviewAgendaPendingAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyOperationsInterviewEscalatedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyOperationsInterviewOverdueAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyOperationsInterviewReminderAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessCreatedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessInterviewCancelledAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessInterviewDecisionRevertedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessInterviewFeedbackSubmittedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessInterviewScheduledAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessOperationsInterviewAgendaPendingAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessOperationsInterviewEscalatedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessOperationsInterviewOverdueAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessOperationsInterviewReminderAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessPresentationHiringRequestGeneratedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessReceptionConfirmedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessSentToOperationsInterviewAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyProcessStageStalledAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifyReceptionConfirmedAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateNotificationCoordinatorService | `NotifySiblingCandidatesFrozenAsync` | SPECIAL | `Task` | ✓ |
+| ICandidateProcessAppService | `CancelScheduleAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateProcessAppService | `ChangeStageAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateProcessAppService | `CompleteHiringAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateProcessAppService | `ConfirmPresentationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ICandidateProcessAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | ✓ |
+| ICandidateProcessAppService | `CreateFromFormAsync` | CREATE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | ✓ |
+| ICandidateProcessAppService | `ExecuteInterviewerActionAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateProcessAppService | `GetByCandidateAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateProcessListItemDTO>>>` | ✓ |
+| ICandidateProcessAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | ✓ |
+| ICandidateProcessAppService | `GetByRequestPositionAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateProcessVacancyDetailDTO>>` | ✓ |
+| ICandidateProcessAppService | `GetByStageAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateProcessListItemDTO>>>` | ✓ |
+| ICandidateProcessAppService | `GetByWorkPositionAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateProcessWorkPositionDetailDTO>>` | ✓ |
+| ICandidateProcessAppService | `GetEmployeeInterviewerQueueAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateInterviewerQueueDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `GetHiringDocumentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateHiringDocumentListItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `GetInterviewerQueueAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateInterviewerQueueDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `GetInterviewerViewAsync` | GET_LIST | `Task<ApiResponseDTO<List<InterviewerApplicationViewDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `GetInterviewResponseAsync` | GET_SINGLE | `Task<ApiResponseDTO<CandidateInterviewResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `GetKpisAsync` | GET_LIST | `Task<ApiResponseDTO<CandidateProcessKpisDTO>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `GetRecruitmentAgendaAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateRecruitmentAgendaItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `GetRecruitmentInterviewBoardAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateRecruitmentInterviewBoardDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `GetTimelineByVacancyAsync` | GET_LIST | `Task<ApiResponseDTO<List<VacancyCandidateTimelineDTO>>>` | ✓ |
+| ICandidateProcessAppService | `GetTrayAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateProcessListItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| ICandidateProcessAppService | `ProcessDirectHiringAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateProcessAppService | `ProcessHiringAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateProcessAppService | `ReconfirmPresentationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ICandidateProcessAppService | `RegisterDecisionAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateProcessAppService | `RemoveHiringDocumentFileAsync` | DELETE | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | ✓ |
+| ICandidateProcessAppService | `ScheduleAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateProcessAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | ✓ |
+| ICandidateProcessAppService | `UpdateFromFormAsync` | UPDATE | `Task<ApiResponseDTO<CandidateProcessDetailDTO>>` | ✓ |
+| ICandidateProcessAppService | `UploadHiringDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | ✓ |
+| ICandidateProcessAppService | `ValidateHiringDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | ✓ |
+| ICandidateWorkExperienceAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<CandidateWorkExperienceItemDTO>>` | ✓ |
+| ICandidateWorkExperienceAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICandidateWorkExperienceAppService | `GetByCandidateAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateWorkExperienceItemDTO>>>` | ✓ |
+| ICandidateWorkExperienceAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CandidateWorkExperienceItemDTO>>` | ✓ |
+| IChecklistOptionCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<ChecklistOptionCatalogListItemDTO>>` | ✓ |
+| IChecklistOptionCatalogAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IChecklistOptionCatalogAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChecklistOptionCatalogListItemDTO>>>` | ✓ |
+| IChecklistOptionCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<ChecklistOptionCatalogListItemDTO>>` | ✓ |
+| IEmployeeBankDataAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeBankDataAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeBankDataDTO[]>>` | ✓ |
+| IEmployeeBankDataAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeBankDataDTO[]>>` | ✓ |
+| IEmployeeBankDataAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeBankDataDTO>>` | ✓ |
+| IEmployeeBankDataAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeBankDataDTO>>` | ✓ |
+| IEmployeeBankDataAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeBankDataDTO>>` | ✓ |
+| IEmployeeBeneficiaryAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeBeneficiaryAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO[]>>` | ✓ |
+| IEmployeeBeneficiaryAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO[]>>` | ✓ |
+| IEmployeeBeneficiaryAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO>>` | ✓ |
+| IEmployeeBeneficiaryAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO>>` | ✓ |
+| IEmployeeBeneficiaryAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeBeneficiaryDTO>>` | ✓ |
+| IEmployeeBirthdayAppService | `EmployeeBirthdayAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeBirthdayDTO>>>` | ⚠ naming no CRUD estandar |
+| IEmployeeClinicalDataAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EmployeeClinicalDataDTO>>` | ✓ |
+| IEmployeeClinicalDataAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeClinicalDataAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeClinicalDataDTO[]>>` | ✓ |
+| IEmployeeClinicalDataAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeClinicalDataDTO>>` | ✓ |
+| IEmployeeClinicalDataAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeClinicalDataDTO>>` | ✓ |
+| IEmployeeDocumentAppService | `GetDocumentsAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateHiringDocumentListItemDTO>>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeDocumentAppService | `NotifyDocumentsUploadedAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeDocumentAppService | `RejectDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | ✓ |
+| IEmployeeDocumentAppService | `RemoveDocumentFileAsync` | DELETE | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | ✓ |
+| IEmployeeDocumentAppService | `ReorderDocumentsAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IEmployeeDocumentAppService | `UploadDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | ✓ |
+| IEmployeeDocumentAppService | `ValidateDocumentAsync` | SPECIAL | `Task<ApiResponseDTO<CandidateHiringDocumentListItemDTO>>` | ✓ |
+| IEmployeeEmergencyContactAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EmployeeEmergencyContact>>` | ✓ |
+| IEmployeeEmergencyContactAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeEmergencyContactAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeEmergencyContactAddOrEditDTO>>` | ✓ |
+| IEmployeeEmergencyContactAppService | `GetEmployeeContactsAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeEmergencyContactDTO>>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeEmergencyContactAppService | `UpdateEmployeeContactAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeEmergencyContactAddOrEditDTO>>` | ✓ |
+| IEmployeeExternalAppService | `AddAccessCustomerAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeExternalAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<EmployeeExternalListDTO>>` | ✓ |
+| IEmployeeExternalAppService | `DeleteAccessCutomerAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeExternalAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeExternalAppService | `ExternoGetByIdAsync` | OTHER | `Task<ApiResponseDTO<EmployeeExternalDTO>>` | ⚠ naming no CRUD estandar |
+| IEmployeeExternalAppService | `GetExternalListAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeExternalListDTO>>>` | ✓ |
+| IEmployeeExternalAppService | `SearchUserByEmailAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeExternalMatchDTO>>>` | ⚠ naming no CRUD estandar |
+| IEmployeeExternalAppService | `SearchUserByPhoneNumberAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeExternalMatchDTO>>>` | ⚠ naming no CRUD estandar |
+| IEmployeeExternalAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeExternalListDTO>>` | ✓ |
+| IEmployeeFileAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileSummaryDTO[]>>` | ✓ |
+| IEmployeeFileAppService | `GetBankDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFileBankDataDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetBeneficiariesAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileBeneficiaryDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetClinicalDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFileClinicalDataDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetContractsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileContractDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetEmergencyContactsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileEmergencyContactDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetEvaluationsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileEvaluationDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetHeaderAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFileHeaderDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetIncidentsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileIncidentDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetPersonalDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFilePersonalDataDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileRequestsDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetVacationsAndLeavesAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeFileVacationsLeavesDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeFileAppService | `GetWorkPositionAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeFileWorkPositionDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeInternalAppService | `ActivateEmployeeAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEmployeeInternalAppService | `AddressDataAsync` | CREATE | `Task<ApiResponseDTO<EmployeeAddressDataEditDTO>>` | ✓ |
+| IEmployeeInternalAppService | `BirthdayAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeBirthdayDTO>>>` | ⚠ naming no CRUD estandar |
+| IEmployeeInternalAppService | `CheckDuplicateEmployeeAsync` | SPECIAL | `Task<ApiResponseDTO<EmployeeDuplicateDTO>>` | ✓ |
+| IEmployeeInternalAppService | `CreateEmployeeAsync` | CREATE | `Task<ApiResponseDTO<Employee>>` | ✓ |
+| IEmployeeInternalAppService | `CreateEmployeeExternal` | CREATE | `Task<ApiResponseDTO<Employee>>` | ✓ |
+| IEmployeeInternalAppService | `DataForRecoveryPasswordAsync` | OTHER | `Task<ApiResponseDTO<EmployeeRecoveryPasswordDTO>>` | ⚠ naming no CRUD estandar |
+| IEmployeeInternalAppService | `EmployeeTempAsync` | OTHER | `Task<ApiResponseDTO<List<Employee>>>` | ⚠ naming no CRUD estandar |
+| IEmployeeInternalAppService | `GetAsyncById` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeAddOrEditDTO>>` | ✓ |
+| IEmployeeInternalAppService | `GetCardUserAsync` | GET_SINGLE | `Task<ApiResponseDTO<UserCardDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeInternalAppService | `GetDossierAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeDossierDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeInternalAppService | `GetLaboralDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeLaboralDataEditDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeInternalAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeDTO>>>` | ✓ |
+| IEmployeeInternalAppService | `GetPrincipalDataAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeePrincipalDataEditDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeInternalAppService | `GetUnifiedProfileAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmployeeUnifiedProfileEditDTO>>` | ⚠ Get sin ByXxx/All |
+| IEmployeeInternalAppService | `OnValidateStateAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IEmployeeInternalAppService | `PersonalDataAsync` | OTHER | `Task<ApiResponseDTO<EmployeePersonalDataEditDTO>>` | ⚠ naming no CRUD estandar |
+| IEmployeeInternalAppService | `PhotoPath` | OTHER | `Task<ApiResponseDTO<ImgPathFileCommonDTO>>` | ⚠ naming no CRUD estandar |
+| IEmployeeInternalAppService | `UpdateAddressDataAync` | UPDATE | `Task<ApiResponseDTO<EmployeeAddressDataEditDTO>>` | ✓ |
+| IEmployeeInternalAppService | `UpdateImgageAsync` | UPDATE | `Task<ApiResponseDTO<ImgPathFileCommonDTO>>` | ✓ |
+| IEmployeeInternalAppService | `UpdateLaboralDataAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeLaboralDataEditDTO>>` | ✓ |
+| IEmployeeInternalAppService | `UpdatePersonalDataAsync` | UPDATE | `Task<ApiResponseDTO<EmployeePersonalDataEditDTO>>` | ✓ |
+| IEmployeeInternalAppService | `UpdatePrincipalDataAsync` | UPDATE | `Task<ApiResponseDTO<EmployeePrincipalDataEditDTO>>` | ✓ |
+| IEmployeeInternalAppService | `UpdateUnifiedProfileAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeUnifiedProfileEditDTO>>` | ✓ |
+| IEmployeeInternalAppService | `ValidarAdminAsisAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IEmployeeInternalAppService | `ValidarRoleAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IEmployeeInternalAppService | `ValidarSolicitudesAbiertas` | OTHER | `Task<ApiResponseDTO<EmployeeOpenRequestsDTO>>` | ⚠ naming no CRUD estandar |
+| IEmployeeOnboardingChecklistAppService | `GetByEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<List<EmployeeOnboardingChecklistItemDTO>>>` | ✓ |
+| IEmployeeOnboardingChecklistAppService | `InitializeChecklistAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeOnboardingChecklistItemDTO>>>` | ⚠ naming no CRUD estandar |
+| IEmployeeOnboardingChecklistAppService | `InitializeChecklistForRoleAsync` | OTHER | `Task<ApiResponseDTO<List<EmployeeOnboardingChecklistItemDTO>>>` | ⚠ naming no CRUD estandar |
+| IEmployeeOnboardingChecklistAppService | `UpdateOnboardingChecklistAsync` | UPDATE | `Task<ApiResponseDTO<EmployeeOnboardingChecklistItemDTO>>` | ✓ |
+| IHrActionPolicyService | `CanManageStructuralHr` | OTHER | `bool` | ⚠ naming no CRUD estandar |
+| IHrActionPolicyService | `CanViewConfidentialHrData` | OTHER | `bool` | ⚠ naming no CRUD estandar |
+| IHrActionPolicyService | `EnsureCanManageStructuralHr` | OTHER | `void` | ⚠ naming no CRUD estandar |
+| IHrActionPolicyService | `FilterAllowedRecipientRoles` | OTHER | `IEnumerable<ApplicationRoleEnum>` | ⚠ naming no CRUD estandar |
+| IHrActionPolicyService | `ResolveCurrentUserRole` | OTHER | `ApplicationRoleEnum?` | ⚠ naming no CRUD estandar |
+| IHrActionPolicyService | `ResolveWorkPositionRoleAsync` | OTHER | `Task<ApplicationRoleEnum?>` | ⚠ naming no CRUD estandar |
+| IInterviewerMatrixAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<InterviewerMatrixItemDTO>>` | ✓ |
+| IInterviewerMatrixAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IInterviewerMatrixAppService | `GetBoardByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<InterviewerMatrixBoardDTO>>` | ✓ |
+| IInterviewerMatrixAppService | `GetByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<InterviewerMatrixItemDTO>>>` | ✓ |
+| IInterviewerMatrixAppService | `GetEligibleInterviewersByRequestPositionAsync` | GET_LIST | `Task<ApiResponseDTO<List<EligibleInterviewerOptionDTO>>>` | ✓ |
+| IInterviewerMatrixAppService | `ResolveInterviewerRoleAsync` | OTHER | `Task<ApiResponseDTO<ApplicationRoleEnum?>>` | ⚠ naming no CRUD estandar |
+| IInterviewerMatrixAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<InterviewerMatrixItemDTO>>` | ✓ |
+| IJobDescriptionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<JobDescriptionDTO>>` | ✓ |
+| IJobDescriptionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IJobDescriptionAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<JobDescriptionDTO[]>>` | ✓ |
+| IJobDescriptionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<JobDescriptionAddOrEditDTO>>` | ✓ |
+| IJobDescriptionAppService | `GetByWorkPositionIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<JobDescriptionDTO>>` | ✓ |
+| IJobDescriptionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<JobDescriptionDTO>>` | ✓ |
+| IMultiChannelAlertService | `SendAlertAsync` | SPECIAL | `Task` | ✓ |
+| IPersonProviderSupportAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PersonProviderSupport>>` | ✓ |
+| IPersonProviderSupportAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<ProviderSupportListDTO>>>` | ✓ |
+| IPersonProviderSupportAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProviderSupportAddOrEditDTO>>` | ✓ |
+| IPersonProviderSupportAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PersonProviderSupport>>` | ✓ |
+| IReclutamientoIntegrationService | `GetEmployeeOpenRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<EmployeeOpenRequestsDTO>>` | ⚠ Get sin ByXxx/All |
+| IReclutamientoQueryService | `GetRequestsGlobalPendingAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<ListSolicitudesClienteDTO>>>` | ⚠ Get sin ByXxx/All |
+| IReclutamientoQueryService | `RequestsByCustomerAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<ListSolicitudesClienteDTO>>>` | ⚠ naming no CRUD estandar |
+| IRecruitmentSourceCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<RecruitmentSourceCatalogListItemDTO>>` | ✓ |
+| IRecruitmentSourceCatalogAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRecruitmentSourceCatalogAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<RecruitmentSourceCatalogListItemDTO>>>` | ✓ |
+| IRecruitmentSourceCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RecruitmentSourceCatalogListItemDTO>>` | ✓ |
+| IRecruitmentSourceCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RecruitmentSourceCatalogListItemDTO>>` | ✓ |
+| IRecurringTaskGeneratorService | `GenerateInstancesForAllCustomersAsync` | SPECIAL | `Task` | ✓ |
+| IRequestDismissalDiscountAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RequestDismissalDiscountDTO>>` | ✓ |
+| IRequestDismissalDiscountAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRequestDismissalDiscountAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestDismissalDiscountDTO>>` | ✓ |
+| IRequestDismissalDiscountAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RequestDismissalDiscountDTO>>` | ✓ |
+| IRequestEmployeeRegisterAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RequestEmployeeRegister>>` | ✓ |
+| IRequestEmployeeRegisterAppService | `CompleteDraftAltaAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRequestEmployeeRegisterAppService | `ConcludeAdministrativelyAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IRequestEmployeeRegisterAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRequestEmployeeRegisterAppService | `ExportHiringFormatPdfAsync` | SPECIAL | `Task<FileResult>` | ✓ |
+| IRequestEmployeeRegisterAppService | `ExportMergedHiringPdfAsync` | SPECIAL | `Task<FileResult>` | ✓ |
+| IRequestEmployeeRegisterAppService | `ExportRequestToExcelAsync` | SPECIAL | `Task<FileResult>` | ✓ |
+| IRequestEmployeeRegisterAppService | `GetBasicInfoAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestEmployeeRegisterBasicInfoDTO>>` | ⚠ Get sin ByXxx/All |
+| IRequestEmployeeRegisterAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestEmployeeRegisterGetByIdDTO>>` | ✓ |
+| IRequestEmployeeRegisterAppService | `GetEmployeeRegisterAsync` | GET_SINGLE | `Task<ApiResponseDTO<GetRequestEmployeeRegisterDTO>>` | ⚠ Get sin ByXxx/All |
+| IRequestEmployeeRegisterAppService | `GetListRequestEmployeeRegisterAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IRequestEmployeeRegisterAppService | `OnSendEmailAltaSistemasAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IRequestEmployeeRegisterAppService | `OnSolicitudAltaAsync` | OTHER | `Task<ApiResponseDTO<RequestEmployeeRegister>>` | ⚠ naming no CRUD estandar |
+| IRequestEmployeeRegisterAppService | `ReactivateAndMigrateEmployeeAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IRequestEmployeeRegisterAppService | `ResendSolicitudAltaEmailAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IRequestEmployeeRegisterAppService | `SearchEmployeeDuplicatesAsync` | OTHER | `Task<ApiResponseDTO<List<DuplicateEmployeeMatchDTO>>>` | ⚠ naming no CRUD estandar |
+| IRequestEmployeeRegisterAppService | `SendMergedHiringPdfAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRequestEmployeeRegisterAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RequestEmployeeRegister>>` | ✓ |
+| IRequestEmployeeRegisterAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRequestPositionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RequestPositionDTO>>` | ✓ |
+| IRequestPositionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRequestPositionAppService | `DeleteCascadeAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IRequestPositionAppService | `ExportToExcelAsync` | SPECIAL | `Task<FileResult>` | ✓ |
+| IRequestPositionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestPositionAddOrEditDTO>>` | ✓ |
+| IRequestPositionAppService | `GetDeleteImpactAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestPositionDeleteImpactDTO>>` | ⚠ Get sin ByXxx/All |
+| IRequestPositionAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<SolicitudesVacanteListDTO>>>` | ✓ |
+| IRequestPositionAppService | `GetPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<SolicitudesVacanteListDTO>>>` | ⚠ Get sin ByXxx/All |
+| IRequestPositionAppService | `OnGetRequestPositionCandidate` | OTHER | `RequestPosition` | ⚠ naming no CRUD estandar |
+| IRequestPositionAppService | `OnGetWorkPosition` | OTHER | `WorkPosition` | ⚠ naming no CRUD estandar |
+| IRequestPositionAppService | `OnSolicitudVacanteAsync` | OTHER | `Task<ApiResponseDTO<RequestPosition>>` | ⚠ naming no CRUD estandar |
+| IRequestPositionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RequestPositionDTO>>` | ✓ |
+| IRequestSalaryModificationAppService | `ExportToExcelAsync` | SPECIAL | `Task<FileResult>` | ✓ |
+| IRequestSalaryModificationAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestSalaryModificationDTO>>` | ✓ |
+| IRequestSalaryModificationAppService | `GetDataForModificacionSalarioAsync` | GET_SINGLE | `Task<ApiResponseDTO<GetDataForModificacionSalarioDTO>>` | ⚠ Get sin ByXxx/All |
+| IRequestSalaryModificationAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<RequestSalaryModificationListDTO>>>` | ✓ |
+| IRequestSalaryModificationAppService | `GetStatusAsync` | GET_LIST | `Task<ApiResponseDTO<StatusRequestSalaryModificationDTO>>` | ⚠ Get sin ByXxx/All |
+| IRequestSalaryModificationAppService | `OnSolicitudModificacionSalarialAsync` | OTHER | `Task<ApiResponseDTO<RequestSalaryModification>>` | ⚠ naming no CRUD estandar |
+| IRequestSalaryModificationAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<RequestSalaryModificationDTO>>` | ✓ |
+| ISanctionTypeAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SanctionTypeDetailDTO>>` | ✓ |
+| ISanctionTypeAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISanctionTypeAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<SanctionTypeListDTO[]>>` | ✓ |
+| ISanctionTypeAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SanctionTypeDetailDTO>>` | ✓ |
+| ISanctionTypeAppService | `ToggleActiveAsync` | SPECIAL | `Task<ApiResponseDTO<SanctionTypeDetailDTO>>` | ✓ |
+| ISanctionTypeAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<SanctionTypeDetailDTO>>` | ✓ |
+| ISolicitudBajaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<RequestDismissal>>` | ✓ |
+| ISolicitudBajaAppService | `AttachEvaluationAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ISolicitudBajaAppService | `AttachIncidentAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ISolicitudBajaAppService | `AuthorizeDismissalAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISolicitudBajaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISolicitudBajaAppService | `ExportRequestToExcelAsync` | SPECIAL | `Task<FileResult>` | ✓ |
+| ISolicitudBajaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<RequestDismissalDTO>>` | ✓ |
+| ISolicitudBajaAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<RequestDismissalListDTO>>>` | ✓ |
+| ISolicitudBajaAppService | `GetRequestDismissal` | GET_SINGLE | `ApiResponseDTO<SolicitudBajaEmailDTO>` | ⚠ Get sin ByXxx/All |
+| ISolicitudBajaAppService | `GetRequestDismissalSendRequestDTOAsync` | GET_LIST | `Task<ApiResponseDTO<List<RequestDismissalSendRequestDTO>>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudBajaAppService | `OnSendEmailRequestDismissalAsync` | OTHER | `Task<ApiResponseDTO<RequestDismissalSendRequestDTO>>` | ⚠ naming no CRUD estandar |
+| ISolicitudBajaAppService | `OnSolicitudBajaAsync` | OTHER | `Task<ApiResponseDTO<RequestDismissal>>` | ⚠ naming no CRUD estandar |
+| ISolicitudBajaAppService | `PutRequestDismissalAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| ISolicitudBajaAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskInstanceAppService | `AddCommentAsync` | CREATE | `Task<ApiResponseDTO<TaskCommentDTO>>` | ✓ |
+| ITaskInstanceAppService | `CompleteAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskInstanceAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TaskInstanceDTO>>` | ✓ |
+| ITaskInstanceAppService | `GetForUserByDateAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<TaskInstanceDTO>>>` | ✓ |
+| ITaskInstanceAppService | `ReopenAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskTemplateAppService | `AddItemToTemplateAsync` | CREATE | `Task<ApiResponseDTO<TaskTemplateItemDTO>>` | ✓ |
+| ITaskTemplateAppService | `CreateTemplateAsync` | CREATE | `Task<ApiResponseDTO<TaskTemplateDTO>>` | ✓ |
+| ITaskTemplateAppService | `DeleteItemAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskTemplateAppService | `DeleteTemplateAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskTemplateAppService | `GetAllTemplatesAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<TaskTemplateDTO>>>` | ✓ |
+| ITaskTemplateAppService | `GetCustomerConfigAsync` | GET_SINGLE | `Task<ApiResponseDTO<CustomerTaskItemConfigDTO>>` | ⚠ Get sin ByXxx/All |
+| ITaskTemplateAppService | `GetItemsByTemplateIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IEnumerable<TaskTemplateItemDTO>>>` | ✓ |
+| ITaskTemplateAppService | `GetTemplateByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TaskTemplateDTO>>` | ✓ |
+| ITaskTemplateAppService | `ReorderTemplateItemsAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ITaskTemplateAppService | `UpdateCustomerConfigAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskTemplateAppService | `UpdateItemInTemplateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskTemplateAppService | `UpdateTemplateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IWorkPositionAppService | `ActivateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IWorkPositionAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<WorkPositionDTO>>` | ✓ |
+| IWorkPositionAppService | `AssignEmployeeAsync` | SPECIAL | `Task<ApiResponseDTO<WorkPositionDTO>>` | ✓ |
+| IWorkPositionAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IWorkPositionAppService | `GetAllGeneralAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| IWorkPositionAppService | `GetAsyncAll` | GET_LIST | `Task<ApiResponseDTO<List<WorkPositionListDTO>>>` | ✓ |
+| IWorkPositionAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<WorkPositionRequestAddOrEditDTO>>` | ✓ |
+| IWorkPositionAppService | `GetForEditAsync` | GET_SINGLE | `Task<ApiResponseDTO<WorkPositionAddOrEditDTO>>` | ⚠ Get sin ByXxx/All |
+| IWorkPositionAppService | `GetHoursAsync` | GET_LIST | `Task<ApiResponseDTO<WorkPositionHoursDTO>>` | ⚠ Get sin ByXxx/All |
+| IWorkPositionAppService | `UnassignEmployeeAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IWorkPositionAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<WorkPositionDTO>>` | ✓ |
+| IWorkPositionOrgChartAppService | `GetTreeAsync` | GET_LIST | `Task<ApiResponseDTO<List<RoleOrgChartNodeDTO>>>` | ⚠ Get sin ByXxx/All |
+| IWorkPositionOrgChartAppService | `ReassignAsync` | SPECIAL | `Task<ApiResponseDTO<WorkPositionReassignResponse>>` | ✓ |
 
 ### Endpoints
 
@@ -3651,156 +3651,156 @@ Metodos: 150 | Endpoints HTTP: 126
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IApprovalRuleService | `GetApprovableUserIdsAsync` | GET_LIST | `Task<List<string>>` | âš  Get sin ByXxx/All |
-| IApprovalRuleService | `GetApproverRolesForRequesterAsync` | GET_LIST | `Task<List<string>>` | âš  Get sin ByXxx/All |
-| IAprobacionPermisoService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAprobacionPermisoService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAprobacionPermisoService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAprobacionPermisoService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<LeaveRequestDTO[]>>` | âœ“ |
-| IAprobacionPermisoService | `GetDetailByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<LeaveRequestDetailDTO>>` | âœ“ |
-| IAprobacionPermisoService | `GetHistoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<LeaveRequestDTO[]>>` | âš  Get sin ByXxx/All |
-| IAprobacionPermisoService | `GetHistorySummaryAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IAprobacionPermisoService | `GetOverlappingRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IAprobacionPermisoService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAprobacionVacacionesService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAprobacionVacacionesService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAprobacionVacacionesService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAprobacionVacacionesService | `DeleteBalanceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAprobacionVacacionesService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<VacationRequestDTO[]>>` | âœ“ |
-| IAprobacionVacacionesService | `GetAllBalancesForEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<VacationBalanceDTO>>>` | âœ“ |
-| IAprobacionVacacionesService | `GetAvailableYearsForEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<List<YearOptionDTO>>>` | âš  Get sin ByXxx/All |
-| IAprobacionVacacionesService | `GetBalanceAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationBalanceDTO>>` | âš  Get sin ByXxx/All |
-| IAprobacionVacacionesService | `GetBalanceByYearAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationBalanceDTO>>` | âœ“ |
-| IAprobacionVacacionesService | `GetHistoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationHistoryItemDTO[]>>` | âš  Get sin ByXxx/All |
-| IAprobacionVacacionesService | `GetOverlappingRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IAprobacionVacacionesService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IChekadorEmpleadosAppService | `AprobarAnomaliaAsync` | OTHER | `Task<ApiResponseDTO<RegistroChecadorDTO>>` | âš  naming no CRUD estandar |
-| IChekadorEmpleadosAppService | `CrearSedeAsync` | OTHER | `Task<ApiResponseDTO<SedeChecadorDTO>>` | âš  naming no CRUD estandar |
-| IChekadorEmpleadosAppService | `GetSedesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SedeChecadorDTO>>>` | âš  Get sin ByXxx/All |
-| IChekadorEmpleadosAppService | `MisRegistrosAsync` | OTHER | `Task<ApiResponseDTO<List<RegistroChecadorDTO>>>` | âš  naming no CRUD estandar |
-| IChekadorEmpleadosAppService | `PorTenantAsync` | OTHER | `Task<ApiResponseDTO<List<RegistroChecadorDTO>>>` | âš  naming no CRUD estandar |
-| IChekadorEmpleadosAppService | `RechazarAnomaliaAsync` | OTHER | `Task<ApiResponseDTO<RegistroChecadorDTO>>` | âš  naming no CRUD estandar |
-| IChekadorEmpleadosAppService | `RegistrarAsync` | OTHER | `Task<ApiResponseDTO<RegistroChecadorDTO>>` | âš  naming no CRUD estandar |
-| IChekadorEmpleadosAppService | `ResumenHoyAsync` | SPECIAL | `Task<ApiResponseDTO<ResumenAsistenciaDTO>>` | âœ“ |
-| IConfiguracionNominaAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ConfiguracionNominaDTO>>` | âœ“ |
-| IConfiguracionNominaAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<ConfiguracionNominaDTO>>` | âœ“ |
-| IEvidenciaNominaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EvidenciaNominaDTO>>` | âœ“ |
-| IEvidenciaNominaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IEvidenciaNominaAppService | `GetByNominaAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvidenciaNominaDTO[]>>` | âœ“ |
-| IHrNotificationCoordinatorService | `SendNewRequestNotificationToApproversAsync` | SPECIAL | `Task` | âœ“ |
-| IHrNotificationCoordinatorService | `SendRequestApprovedNotificationToEmployeeAsync` | SPECIAL | `Task` | âœ“ |
-| IHrNotificationCoordinatorService | `SendRequestCreatedNotificationToEmployeeAsync` | SPECIAL | `Task` | âœ“ |
-| IHrNotificationCoordinatorService | `SendRequestDeletedNotificationToEmployeeAsync` | SPECIAL | `Task` | âœ“ |
-| IHrNotificationCoordinatorService | `SendRequestRejectedNotificationToEmployeeAsync` | SPECIAL | `Task` | âœ“ |
-| IHrNotificationCoordinatorService | `SendRequestUpdatedNotificationToEmployeeAsync` | SPECIAL | `Task` | âœ“ |
-| IIncidenciaNominaAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<IncidenciaNominaDTO>>` | âœ“ |
-| IIncidenciaNominaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IIncidenciaNominaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IncidenciaNominaDTO[]>>` | âœ“ |
-| IIncidenciaNominaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidenciaNominaDTO>>` | âœ“ |
-| IIncidenciaNominaAppService | `GetHojaIncidenciasAsync` | GET_LIST | `Task<ApiResponseDTO<HojaIncidenciasDTO>>` | âš  Get sin ByXxx/All |
-| IIncidenciaNominaAppService | `GuardarHojaIncidenciasAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IIncidenciaNominaAppService | `SincronizarPermisosAsync` | OTHER | `Task<ApiResponseDTO<IncidenciaNominaDTO[]>>` | âš  naming no CRUD estandar |
-| IIncidenciaNominaAppService | `SincronizarVacacionesAsync` | OTHER | `Task<ApiResponseDTO<IncidenciaNominaDTO[]>>` | âš  naming no CRUD estandar |
-| IIncidenciaNominaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<IncidenciaNominaDTO>>` | âœ“ |
-| ILeaveRequestService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<LeaveRequestAddOrEditDTO>>` | âœ“ |
-| ILeaveRequestService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ILeaveRequestService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<LeaveRequestAddOrEditDTO>>` | âœ“ |
-| ILeaveRequestService | `GetDetailByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<LeaveRequestDetailDTO>>` | âœ“ |
-| ILeaveRequestService | `GetMyRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<LeaveRequestMyDTO[]>>` | âš  Get sin ByXxx/All |
-| ILeaveRequestService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<LeaveRequestDTO>>` | âœ“ |
-| IManualTemplateService | `ActualizarAsync` | OTHER | `Task<ApiResponseDTO<ManualTemplateSimpleDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `ActualizarDiagramaAsync` | OTHER | `Task<ApiResponseDTO<ManualDiagramSimpleDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `ActualizarPasoAsync` | OTHER | `Task<ApiResponseDTO<ManualPasoDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `AgregarAdjuntoAsync` | OTHER | `Task<ApiResponseDTO<ManualAdjuntoSimpleDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `AgregarEnlacePasoAsync` | OTHER | `Task<ApiResponseDTO<ManualPasoEnlaceDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `AgregarPasoAsync` | OTHER | `Task<ApiResponseDTO<ManualPasoDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `AgregarVersionAsync` | OTHER | `Task<ApiResponseDTO<ManualVersionSimpleDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `CrearAsync` | OTHER | `Task<ApiResponseDTO<ManualTemplateSimpleDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `CrearDiagramaAsync` | OTHER | `Task<ApiResponseDTO<ManualDiagramSimpleDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `EliminarAdjuntoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `EliminarAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `EliminarDiagramaAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `EliminarEnlacePasoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `EliminarImagenPasoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `EliminarPasoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `EliminarVersionAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `ObtenerAccesiblesAsync` | OTHER | `Task<ApiResponseDTO<ManualTemplateSimpleDTO[]>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `ObtenerDiagramaAsync` | OTHER | `Task<ApiResponseDTO<ManualDiagramSimpleDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `ObtenerPorIdAsync` | OTHER | `Task<ApiResponseDTO<ManualTemplateDetalleDTO>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `ReordenarPasosAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IManualTemplateService | `SubirImagenPasoAsync` | OTHER | `Task<ApiResponseDTO<ManualPasoImagenDTO>>` | âš  naming no CRUD estandar |
-| ImssCalculatorService | `Calcular` | OTHER | `decimal` | âš  naming no CRUD estandar |
-| INominaDetalleAppService | `GenerarReciboPdfAsync` | OTHER | `Task<ApiResponseDTO<byte[]>>` | âš  naming no CRUD estandar |
-| INominaDetalleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<NominaDetalleDTO>>` | âœ“ |
-| INominaDetalleAppService | `GetByNominaAsync` | GET_SINGLE | `Task<ApiResponseDTO<NominaDetalleDTO[]>>` | âœ“ |
-| INominaDetalleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<NominaDetalleDTO>>` | âœ“ |
-| INominaEncabezadoAppService | `AprobarAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | âš  naming no CRUD estandar |
-| INominaEncabezadoAppService | `CerrarAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | âš  naming no CRUD estandar |
-| INominaEncabezadoAppService | `EnviarRevisionAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | âš  naming no CRUD estandar |
-| INominaEncabezadoAppService | `ExportarExcelAsync` | SPECIAL | `Task<ApiResponseDTO<byte[]>>` | âœ“ |
-| INominaEncabezadoAppService | `GenerarAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | âš  naming no CRUD estandar |
-| INominaEncabezadoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<NominaEncabezadoDTO[]>>` | âœ“ |
-| INominaEncabezadoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | âœ“ |
-| INominaEncabezadoAppService | `GetResumenAsync` | GET_SINGLE | `Task<ApiResponseDTO<NominaResumenDTO>>` | âš  Get sin ByXxx/All |
-| INominaEncabezadoAppService | `MarcarPagadaAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | âš  naming no CRUD estandar |
-| IPastVacationsAppService | `RegisterPastVacationAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPerformanceEvaluationAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<EvaluationResultDTO>>` | âœ“ |
-| IPerformanceEvaluationAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPerformanceEvaluationAppService | `GetHistoryForClientAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvaluationHistoryForCustomerDTO[]>>` | âš  Get sin ByXxx/All |
-| IPerformanceEvaluationAppService | `GetHistoryForEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvaluationHistoryItemDTO[]>>` | âš  Get sin ByXxx/All |
-| IPerformanceEvaluationAppService | `GetResultByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvaluationResultDTO>>` | âœ“ |
-| IPerformanceEvaluationAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EvaluationResultDTO>>` | âœ“ |
-| IPeriodoNominaAppService | `AddDiaNoHabilAsync` | CREATE | `Task<ApiResponseDTO<DiasNoHabilesDTO>>` | âœ“ |
-| IPeriodoNominaAppService | `AutoCrearPeriodosAsync` | OTHER | `Task<ApiResponseDTO<int>>` | âš  naming no CRUD estandar |
-| IPeriodoNominaAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<PeriodoNominaDTO>>` | âœ“ |
-| IPeriodoNominaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPeriodoNominaAppService | `DeleteDiaNoHabilAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPeriodoNominaAppService | `GetByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<PeriodoNominaDTO[]>>` | âœ“ |
-| IPeriodoNominaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PeriodoNominaDTO>>` | âœ“ |
-| IPeriodoNominaAppService | `GetDiasNoHabilesAsync` | GET_LIST | `Task<ApiResponseDTO<DiasNoHabilesDTO[]>>` | âš  Get sin ByXxx/All |
-| IPeriodoNominaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PeriodoNominaDTO>>` | âœ“ |
-| IPrestamoEmpleadoAppService | `AutorizarAsync` | OTHER | `Task<ApiResponseDTO<PrestamoEmpleadoDTO>>` | âš  naming no CRUD estandar |
-| IPrestamoEmpleadoAppService | `CancelarAsync` | SPECIAL | `Task<ApiResponseDTO<PrestamoEmpleadoDTO>>` | âœ“ |
-| IPrestamoEmpleadoAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<PrestamoEmpleadoDTO>>` | âœ“ |
-| IPrestamoEmpleadoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPrestamoEmpleadoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PrestamoEmpleadoDTO[]>>` | âœ“ |
-| IPrestamoEmpleadoAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<PrestamoEmpleadoDTO[]>>` | âœ“ |
-| IPrestamoEmpleadoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PrestamoEmpleadoDTO>>` | âœ“ |
-| IPrestamoEmpleadoAppService | `GetHistorialPagosAsync` | GET_LIST | `Task<ApiResponseDTO<PagoPrestamoDTO[]>>` | âš  Get sin ByXxx/All |
-| ISolicitudVacacionesService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<VacationRequestDTO>>` | âœ“ |
-| ISolicitudVacacionesService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISolicitudVacacionesService | `GetAvailableVacationYearsAsync` | GET_LIST | `Task<ApiResponseDTO<List<YearOptionDTO>>>` | âš  Get sin ByXxx/All |
-| ISolicitudVacacionesService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationRequestDTO>>` | âœ“ |
-| ISolicitudVacacionesService | `GetCalendarEventsAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CalendarEventDTO>>>` | âš  Get sin ByXxx/All |
-| ISolicitudVacacionesService | `GetDetailByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationRequestDetailDTO>>` | âœ“ |
-| ISolicitudVacacionesService | `GetMyRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<VacationRequestMyDTO[]>>` | âš  Get sin ByXxx/All |
-| ISolicitudVacacionesService | `GetMyVacationBalanceAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationBalanceDTO>>` | âš  Get sin ByXxx/All |
-| ISolicitudVacacionesService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<VacationRequestDTO>>` | âœ“ |
-| IsrCalculatorService | `Calcular` | OTHER | `decimal` | âš  naming no CRUD estandar |
-| ITemplateEvaluationAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<EvaluationTemplateSummaryDTO>>` | âœ“ |
-| ITemplateEvaluationAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITemplateEvaluationAppService | `GetAllByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvaluationTemplateSummaryDTO[]>>` | âœ“ |
-| ITemplateEvaluationAppService | `GetForEditByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SaveEvaluationTemplateRequestDTO>>` | âœ“ |
-| ITemplateEvaluationAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EvaluationTemplateSummaryDTO>>` | âœ“ |
-| ITiempoExtraAppService | `AddEvidenceAsync` | CREATE | `Task<ApiResponseDTO<EvidenciaNominaDTO>>` | âœ“ |
-| ITiempoExtraAppService | `AprobarAsync` | OTHER | `Task<ApiResponseDTO<TiempoExtraDTO>>` | âš  naming no CRUD estandar |
-| ITiempoExtraAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<TiempoExtraDTO>>` | âœ“ |
-| ITiempoExtraAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITiempoExtraAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<TiempoExtraDTO[]>>` | âœ“ |
-| ITiempoExtraAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TiempoExtraDTO>>` | âœ“ |
-| ITiempoExtraAppService | `RechazarAsync` | OTHER | `Task<ApiResponseDTO<TiempoExtraDTO>>` | âš  naming no CRUD estandar |
-| ITiempoExtraAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<TiempoExtraDTO>>` | âœ“ |
-| IVacationBalanceAdminService | `GetVacationBalancesForCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<VacationBalanceAdminViewDTO>>>` | âš  Get sin ByXxx/All |
-| NominaCalculatorService | `Calcular` | OTHER | `NominaCalculationResult` | âš  naming no CRUD estandar |
-| NominaDraftRecalculationService | `RecalculateForEmployeeAsync` | SPECIAL | `Task` | âœ“ |
-| NominaDraftRecalculationService | `RecalculateHeaderAsync` | SPECIAL | `Task` | âœ“ |
-| PeriodoNominaHelperService | `CalcularDiasHabiles` | OTHER | `int` | âš  naming no CRUD estandar |
-| VacationHelperService | `DecrementUsedVacationDays` | OTHER | `Task` | âš  naming no CRUD estandar |
-| VacationHelperService | `GetBalanceRealTimeAsync` | GET_SINGLE | `Task<VacationBalanceDTO>` | âš  Get sin ByXxx/All |
-| VacationHelperService | `GetOrCreateVacationBalance` | GET_SINGLE | `Task<VacationBalance>` | âš  Get sin ByXxx/All |
-| VacationHelperService | `ProcessVacationRequestApproval` | SPECIAL | `Task` | âœ“ |
-| VacationHelperService | `ProcessVacationRequestDeletion` | SPECIAL | `Task` | âœ“ |
-| VacationHelperService | `RegisterPastVacationAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
+| IApprovalRuleService | `GetApprovableUserIdsAsync` | GET_LIST | `Task<List<string>>` | ⚠ Get sin ByXxx/All |
+| IApprovalRuleService | `GetApproverRolesForRequesterAsync` | GET_LIST | `Task<List<string>>` | ⚠ Get sin ByXxx/All |
+| IAprobacionPermisoService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAprobacionPermisoService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAprobacionPermisoService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAprobacionPermisoService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<LeaveRequestDTO[]>>` | ✓ |
+| IAprobacionPermisoService | `GetDetailByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<LeaveRequestDetailDTO>>` | ✓ |
+| IAprobacionPermisoService | `GetHistoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<LeaveRequestDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IAprobacionPermisoService | `GetHistorySummaryAsync` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IAprobacionPermisoService | `GetOverlappingRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IAprobacionPermisoService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAprobacionVacacionesService | `ApproveAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAprobacionVacacionesService | `CancelAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAprobacionVacacionesService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAprobacionVacacionesService | `DeleteBalanceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAprobacionVacacionesService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<VacationRequestDTO[]>>` | ✓ |
+| IAprobacionVacacionesService | `GetAllBalancesForEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<VacationBalanceDTO>>>` | ✓ |
+| IAprobacionVacacionesService | `GetAvailableYearsForEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<List<YearOptionDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAprobacionVacacionesService | `GetBalanceAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationBalanceDTO>>` | ⚠ Get sin ByXxx/All |
+| IAprobacionVacacionesService | `GetBalanceByYearAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationBalanceDTO>>` | ✓ |
+| IAprobacionVacacionesService | `GetHistoryAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationHistoryItemDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IAprobacionVacacionesService | `GetOverlappingRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IAprobacionVacacionesService | `RejectAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IChekadorEmpleadosAppService | `AprobarAnomaliaAsync` | OTHER | `Task<ApiResponseDTO<RegistroChecadorDTO>>` | ⚠ naming no CRUD estandar |
+| IChekadorEmpleadosAppService | `CrearSedeAsync` | OTHER | `Task<ApiResponseDTO<SedeChecadorDTO>>` | ⚠ naming no CRUD estandar |
+| IChekadorEmpleadosAppService | `GetSedesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SedeChecadorDTO>>>` | ⚠ Get sin ByXxx/All |
+| IChekadorEmpleadosAppService | `MisRegistrosAsync` | OTHER | `Task<ApiResponseDTO<List<RegistroChecadorDTO>>>` | ⚠ naming no CRUD estandar |
+| IChekadorEmpleadosAppService | `PorTenantAsync` | OTHER | `Task<ApiResponseDTO<List<RegistroChecadorDTO>>>` | ⚠ naming no CRUD estandar |
+| IChekadorEmpleadosAppService | `RechazarAnomaliaAsync` | OTHER | `Task<ApiResponseDTO<RegistroChecadorDTO>>` | ⚠ naming no CRUD estandar |
+| IChekadorEmpleadosAppService | `RegistrarAsync` | OTHER | `Task<ApiResponseDTO<RegistroChecadorDTO>>` | ⚠ naming no CRUD estandar |
+| IChekadorEmpleadosAppService | `ResumenHoyAsync` | SPECIAL | `Task<ApiResponseDTO<ResumenAsistenciaDTO>>` | ✓ |
+| IConfiguracionNominaAppService | `GetByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ConfiguracionNominaDTO>>` | ✓ |
+| IConfiguracionNominaAppService | `UpsertAsync` | UPDATE | `Task<ApiResponseDTO<ConfiguracionNominaDTO>>` | ✓ |
+| IEvidenciaNominaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EvidenciaNominaDTO>>` | ✓ |
+| IEvidenciaNominaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IEvidenciaNominaAppService | `GetByNominaAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvidenciaNominaDTO[]>>` | ✓ |
+| IHrNotificationCoordinatorService | `SendNewRequestNotificationToApproversAsync` | SPECIAL | `Task` | ✓ |
+| IHrNotificationCoordinatorService | `SendRequestApprovedNotificationToEmployeeAsync` | SPECIAL | `Task` | ✓ |
+| IHrNotificationCoordinatorService | `SendRequestCreatedNotificationToEmployeeAsync` | SPECIAL | `Task` | ✓ |
+| IHrNotificationCoordinatorService | `SendRequestDeletedNotificationToEmployeeAsync` | SPECIAL | `Task` | ✓ |
+| IHrNotificationCoordinatorService | `SendRequestRejectedNotificationToEmployeeAsync` | SPECIAL | `Task` | ✓ |
+| IHrNotificationCoordinatorService | `SendRequestUpdatedNotificationToEmployeeAsync` | SPECIAL | `Task` | ✓ |
+| IIncidenciaNominaAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<IncidenciaNominaDTO>>` | ✓ |
+| IIncidenciaNominaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IIncidenciaNominaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<IncidenciaNominaDTO[]>>` | ✓ |
+| IIncidenciaNominaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<IncidenciaNominaDTO>>` | ✓ |
+| IIncidenciaNominaAppService | `GetHojaIncidenciasAsync` | GET_LIST | `Task<ApiResponseDTO<HojaIncidenciasDTO>>` | ⚠ Get sin ByXxx/All |
+| IIncidenciaNominaAppService | `GuardarHojaIncidenciasAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IIncidenciaNominaAppService | `SincronizarPermisosAsync` | OTHER | `Task<ApiResponseDTO<IncidenciaNominaDTO[]>>` | ⚠ naming no CRUD estandar |
+| IIncidenciaNominaAppService | `SincronizarVacacionesAsync` | OTHER | `Task<ApiResponseDTO<IncidenciaNominaDTO[]>>` | ⚠ naming no CRUD estandar |
+| IIncidenciaNominaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<IncidenciaNominaDTO>>` | ✓ |
+| ILeaveRequestService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<LeaveRequestAddOrEditDTO>>` | ✓ |
+| ILeaveRequestService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ILeaveRequestService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<LeaveRequestAddOrEditDTO>>` | ✓ |
+| ILeaveRequestService | `GetDetailByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<LeaveRequestDetailDTO>>` | ✓ |
+| ILeaveRequestService | `GetMyRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<LeaveRequestMyDTO[]>>` | ⚠ Get sin ByXxx/All |
+| ILeaveRequestService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<LeaveRequestDTO>>` | ✓ |
+| IManualTemplateService | `ActualizarAsync` | OTHER | `Task<ApiResponseDTO<ManualTemplateSimpleDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `ActualizarDiagramaAsync` | OTHER | `Task<ApiResponseDTO<ManualDiagramSimpleDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `ActualizarPasoAsync` | OTHER | `Task<ApiResponseDTO<ManualPasoDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `AgregarAdjuntoAsync` | OTHER | `Task<ApiResponseDTO<ManualAdjuntoSimpleDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `AgregarEnlacePasoAsync` | OTHER | `Task<ApiResponseDTO<ManualPasoEnlaceDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `AgregarPasoAsync` | OTHER | `Task<ApiResponseDTO<ManualPasoDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `AgregarVersionAsync` | OTHER | `Task<ApiResponseDTO<ManualVersionSimpleDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `CrearAsync` | OTHER | `Task<ApiResponseDTO<ManualTemplateSimpleDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `CrearDiagramaAsync` | OTHER | `Task<ApiResponseDTO<ManualDiagramSimpleDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `EliminarAdjuntoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `EliminarAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `EliminarDiagramaAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `EliminarEnlacePasoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `EliminarImagenPasoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `EliminarPasoAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `EliminarVersionAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `ObtenerAccesiblesAsync` | OTHER | `Task<ApiResponseDTO<ManualTemplateSimpleDTO[]>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `ObtenerDiagramaAsync` | OTHER | `Task<ApiResponseDTO<ManualDiagramSimpleDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `ObtenerPorIdAsync` | OTHER | `Task<ApiResponseDTO<ManualTemplateDetalleDTO>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `ReordenarPasosAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IManualTemplateService | `SubirImagenPasoAsync` | OTHER | `Task<ApiResponseDTO<ManualPasoImagenDTO>>` | ⚠ naming no CRUD estandar |
+| ImssCalculatorService | `Calcular` | OTHER | `decimal` | ⚠ naming no CRUD estandar |
+| INominaDetalleAppService | `GenerarReciboPdfAsync` | OTHER | `Task<ApiResponseDTO<byte[]>>` | ⚠ naming no CRUD estandar |
+| INominaDetalleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<NominaDetalleDTO>>` | ✓ |
+| INominaDetalleAppService | `GetByNominaAsync` | GET_SINGLE | `Task<ApiResponseDTO<NominaDetalleDTO[]>>` | ✓ |
+| INominaDetalleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<NominaDetalleDTO>>` | ✓ |
+| INominaEncabezadoAppService | `AprobarAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | ⚠ naming no CRUD estandar |
+| INominaEncabezadoAppService | `CerrarAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | ⚠ naming no CRUD estandar |
+| INominaEncabezadoAppService | `EnviarRevisionAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | ⚠ naming no CRUD estandar |
+| INominaEncabezadoAppService | `ExportarExcelAsync` | SPECIAL | `Task<ApiResponseDTO<byte[]>>` | ✓ |
+| INominaEncabezadoAppService | `GenerarAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | ⚠ naming no CRUD estandar |
+| INominaEncabezadoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<NominaEncabezadoDTO[]>>` | ✓ |
+| INominaEncabezadoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | ✓ |
+| INominaEncabezadoAppService | `GetResumenAsync` | GET_SINGLE | `Task<ApiResponseDTO<NominaResumenDTO>>` | ⚠ Get sin ByXxx/All |
+| INominaEncabezadoAppService | `MarcarPagadaAsync` | OTHER | `Task<ApiResponseDTO<NominaEncabezadoDTO>>` | ⚠ naming no CRUD estandar |
+| IPastVacationsAppService | `RegisterPastVacationAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPerformanceEvaluationAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<EvaluationResultDTO>>` | ✓ |
+| IPerformanceEvaluationAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPerformanceEvaluationAppService | `GetHistoryForClientAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvaluationHistoryForCustomerDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IPerformanceEvaluationAppService | `GetHistoryForEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvaluationHistoryItemDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IPerformanceEvaluationAppService | `GetResultByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvaluationResultDTO>>` | ✓ |
+| IPerformanceEvaluationAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EvaluationResultDTO>>` | ✓ |
+| IPeriodoNominaAppService | `AddDiaNoHabilAsync` | CREATE | `Task<ApiResponseDTO<DiasNoHabilesDTO>>` | ✓ |
+| IPeriodoNominaAppService | `AutoCrearPeriodosAsync` | OTHER | `Task<ApiResponseDTO<int>>` | ⚠ naming no CRUD estandar |
+| IPeriodoNominaAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<PeriodoNominaDTO>>` | ✓ |
+| IPeriodoNominaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPeriodoNominaAppService | `DeleteDiaNoHabilAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPeriodoNominaAppService | `GetByCustomerAsync` | GET_SINGLE | `Task<ApiResponseDTO<PeriodoNominaDTO[]>>` | ✓ |
+| IPeriodoNominaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PeriodoNominaDTO>>` | ✓ |
+| IPeriodoNominaAppService | `GetDiasNoHabilesAsync` | GET_LIST | `Task<ApiResponseDTO<DiasNoHabilesDTO[]>>` | ⚠ Get sin ByXxx/All |
+| IPeriodoNominaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PeriodoNominaDTO>>` | ✓ |
+| IPrestamoEmpleadoAppService | `AutorizarAsync` | OTHER | `Task<ApiResponseDTO<PrestamoEmpleadoDTO>>` | ⚠ naming no CRUD estandar |
+| IPrestamoEmpleadoAppService | `CancelarAsync` | SPECIAL | `Task<ApiResponseDTO<PrestamoEmpleadoDTO>>` | ✓ |
+| IPrestamoEmpleadoAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<PrestamoEmpleadoDTO>>` | ✓ |
+| IPrestamoEmpleadoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPrestamoEmpleadoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PrestamoEmpleadoDTO[]>>` | ✓ |
+| IPrestamoEmpleadoAppService | `GetByEmployeeAsync` | GET_SINGLE | `Task<ApiResponseDTO<PrestamoEmpleadoDTO[]>>` | ✓ |
+| IPrestamoEmpleadoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PrestamoEmpleadoDTO>>` | ✓ |
+| IPrestamoEmpleadoAppService | `GetHistorialPagosAsync` | GET_LIST | `Task<ApiResponseDTO<PagoPrestamoDTO[]>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudVacacionesService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<VacationRequestDTO>>` | ✓ |
+| ISolicitudVacacionesService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISolicitudVacacionesService | `GetAvailableVacationYearsAsync` | GET_LIST | `Task<ApiResponseDTO<List<YearOptionDTO>>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudVacacionesService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationRequestDTO>>` | ✓ |
+| ISolicitudVacacionesService | `GetCalendarEventsAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<CalendarEventDTO>>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudVacacionesService | `GetDetailByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationRequestDetailDTO>>` | ✓ |
+| ISolicitudVacacionesService | `GetMyRequestsAsync` | GET_LIST | `Task<ApiResponseDTO<VacationRequestMyDTO[]>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudVacacionesService | `GetMyVacationBalanceAsync` | GET_SINGLE | `Task<ApiResponseDTO<VacationBalanceDTO>>` | ⚠ Get sin ByXxx/All |
+| ISolicitudVacacionesService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<VacationRequestDTO>>` | ✓ |
+| IsrCalculatorService | `Calcular` | OTHER | `decimal` | ⚠ naming no CRUD estandar |
+| ITemplateEvaluationAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<EvaluationTemplateSummaryDTO>>` | ✓ |
+| ITemplateEvaluationAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITemplateEvaluationAppService | `GetAllByCustomerIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EvaluationTemplateSummaryDTO[]>>` | ✓ |
+| ITemplateEvaluationAppService | `GetForEditByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<SaveEvaluationTemplateRequestDTO>>` | ✓ |
+| ITemplateEvaluationAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EvaluationTemplateSummaryDTO>>` | ✓ |
+| ITiempoExtraAppService | `AddEvidenceAsync` | CREATE | `Task<ApiResponseDTO<EvidenciaNominaDTO>>` | ✓ |
+| ITiempoExtraAppService | `AprobarAsync` | OTHER | `Task<ApiResponseDTO<TiempoExtraDTO>>` | ⚠ naming no CRUD estandar |
+| ITiempoExtraAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<TiempoExtraDTO>>` | ✓ |
+| ITiempoExtraAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITiempoExtraAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<TiempoExtraDTO[]>>` | ✓ |
+| ITiempoExtraAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TiempoExtraDTO>>` | ✓ |
+| ITiempoExtraAppService | `RechazarAsync` | OTHER | `Task<ApiResponseDTO<TiempoExtraDTO>>` | ⚠ naming no CRUD estandar |
+| ITiempoExtraAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<TiempoExtraDTO>>` | ✓ |
+| IVacationBalanceAdminService | `GetVacationBalancesForCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<VacationBalanceAdminViewDTO>>>` | ⚠ Get sin ByXxx/All |
+| NominaCalculatorService | `Calcular` | OTHER | `NominaCalculationResult` | ⚠ naming no CRUD estandar |
+| NominaDraftRecalculationService | `RecalculateForEmployeeAsync` | SPECIAL | `Task` | ✓ |
+| NominaDraftRecalculationService | `RecalculateHeaderAsync` | SPECIAL | `Task` | ✓ |
+| PeriodoNominaHelperService | `CalcularDiasHabiles` | OTHER | `int` | ⚠ naming no CRUD estandar |
+| VacationHelperService | `DecrementUsedVacationDays` | OTHER | `Task` | ⚠ naming no CRUD estandar |
+| VacationHelperService | `GetBalanceRealTimeAsync` | GET_SINGLE | `Task<VacationBalanceDTO>` | ⚠ Get sin ByXxx/All |
+| VacationHelperService | `GetOrCreateVacationBalance` | GET_SINGLE | `Task<VacationBalance>` | ⚠ Get sin ByXxx/All |
+| VacationHelperService | `ProcessVacationRequestApproval` | SPECIAL | `Task` | ✓ |
+| VacationHelperService | `ProcessVacationRequestDeletion` | SPECIAL | `Task` | ✓ |
+| VacationHelperService | `RegisterPastVacationAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
 
 ### Endpoints
 
@@ -3961,129 +3961,129 @@ Metodos: 123 | Endpoints HTTP: 67
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IAddressAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AddressAddOrEditDTO>>` | âœ“ |
-| IBankAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BankDTO>>` | âœ“ |
-| IBankAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IBankAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BankDTO[]>>` | âœ“ |
-| IBankAppService | `GetAllPagedAsync` | GET_LIST | `Task<ApiResponseDTO<BankDTO[]>>` | âœ“ |
-| IBankAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BankAddOrEditDTO>>` | âœ“ |
-| IBankAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<BankDTO>>` | âœ“ |
-| ICatalogAssetAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ICatalogAssetAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICatalogAssetAppService | `FirstOrDefaultAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| ICatalogAssetAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ICatalogAssetAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| ICategoryAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CategoryDTO>>` | âœ“ |
-| ICategoryAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ICategoryAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<CategoryDTO[]>>` | âœ“ |
-| ICategoryAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CategoryDTO>>` | âœ“ |
-| ICategoryAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CategoryDTO>>` | âœ“ |
-| IDocumentCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<DocumentCatalogDetailDTO>>` | âœ“ |
-| IDocumentCatalogAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IDocumentCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<DocumentCatalogDetailDTO>>` | âœ“ |
-| IDocumentCatalogAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<DocumentCatalogListItemDTO>>>` | âœ“ |
-| IDocumentCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<DocumentCatalogDetailDTO>>` | âœ“ |
-| IDocumentCatalogAppService | `UpdateOrderAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IDocumentCatalogAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<DocumentCatalogDetailDTO>>` | âœ“ |
-| IEmailDataAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EmailDataDTO>>` | âœ“ |
-| IEmailDataAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmailDataDTO>>` | âœ“ |
-| IEmailDataAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<EmailDataDTO>>>` | âš  naming no CRUD estandar |
-| IEmailDataAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmailDataDTO>>` | âœ“ |
-| IGenerateFolioService | `OnGenerateDocumentBuilding` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateDocumentLegalRecord` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateFolioLegal` | OTHER | `string` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateFolioOC` | OTHER | `string` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateFolioProfession` | OTHER | `string` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateFolioPurchaseOrder` | OTHER | `string` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateFolioPurchaseRequest` | OTHER | `string` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateFolioSC` | OTHER | `string` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateFolioTicketMessage` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateFormat` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IGenerateFolioService | `OnGenerateManualsAndProcesses` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IMeasurementUnitAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeasurementUnitsAddOrEditDTO>>` | âœ“ |
-| IMeasurementUnitAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMeasurementUnitAppService | `GetAsyncAll` | GET_SINGLE | `Task<ApiResponseDTO<MeasurementUnitsDTO[]>>` | âœ“ |
-| IMeasurementUnitAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeasurementUnitsDTO>>` | âœ“ |
-| IMeasurementUnitAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeasurementUnitsAddOrEditDTO>>` | âœ“ |
-| IMetodoDePagoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MetodoDePago>>` | âœ“ |
-| IMetodoDePagoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IMetodoDePagoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<MetodoPagoDTO>>>` | âœ“ |
-| IMetodoDePagoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MetodoPagoDTO>>` | âœ“ |
-| IMetodoDePagoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MetodoDePago>>` | âœ“ |
-| IPaymentMethodAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PaymentMethodDTO>>` | âœ“ |
-| IPaymentMethodAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IPaymentMethodAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PaymentMethodDTO[]>>` | âœ“ |
-| IPaymentMethodAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PaymentMethodDTO>>` | âœ“ |
-| IPaymentMethodAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PaymentMethodDTO>>` | âœ“ |
-| IResponsablesClienteAppService | `DataSmtpEmailAdminDTOAsync` | OTHER | `Task<DataSmtpEmailDTO>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `DataSmtpEmailSupervisorOpDTOAsync` | OTHER | `Task<DataSmtpEmailDTO>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `GetByRoleAsync` | GET_LIST | `Task<ApiResponseDTO<List<ApplicationUserGetInfoDTO>>>` | âœ“ |
-| IResponsablesClienteAppService | `GetSuggestedCalendarInviteesAsync` | GET_LIST | `Task<ApiResponseDTO<List<ApplicationUserGetInfoDTO>>>` | âš  Get sin ByXxx/All |
-| IResponsablesClienteAppService | `OnGetAdministradorAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetAlmacenistaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetAsistenteAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetBellBoyAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetChoferAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetCobranzaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetComiteAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetComiteVigilanciaAsync` | OTHER | `Task<List<string>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetConciergeAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetCondominoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetContadorAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetCoordinacionJuridicoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetDireccionGeneralAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetEntrenadorGimnasioAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetGerenteAtencionAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetGerenteMantenimientoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetGerenteOperacionesAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetJardineriaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetJardineriaInternaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetJefeMantenimientoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetJefeSeguridadInternaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetLegalAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetLimpiezaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetLudotecariaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetMasterConciergeAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetMensajeriaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetMonitoristaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetPaqueteriaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetPhonmeNumberCustomer` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetProveedorAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetRecepcionistaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetReclutamientoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetRecursosHumanosAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetSeguridadAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetSeguridadInternaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetSistemasAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetSistemasGeneralAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetSnackBarAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetSuperUsuarioAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetSupervisionOperativaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetSupervisorObraAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| IResponsablesClienteAppService | `OnGetTecnicoMantenimientoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | âš  naming no CRUD estandar |
-| ITelefonosEmergenciaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SystemLuxuryApp.ConfiguracionSistema.Catalogs.Entities.TelefonosEmergencia>>` | âœ“ |
-| ITelefonosEmergenciaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<SystemLuxuryApp.ConfiguracionSistema.Catalogs.Entities.TelefonosEmergencia>>` | âœ“ |
-| ITelefonosEmergenciaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<TelefonosEmergenciaDTO>>>` | âœ“ |
-| ITelefonosEmergenciaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TelefonosEmergenciaDTO>>` | âœ“ |
-| ITelefonosEmergenciaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<SystemLuxuryApp.ConfiguracionSistema.Catalogs.Entities.TelefonosEmergencia>>` | âœ“ |
-| IToolAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Tool>>` | âœ“ |
-| IToolAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<Tool>>` | âœ“ |
-| IToolAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IToolAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ToolDTO>>` | âœ“ |
-| IToolAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Tool>>` | âœ“ |
-| IUsoCFDIAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<UsoCFDI>>` | âœ“ |
-| IUsoCFDIAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IUsoCFDIAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<UseCfdiDTO[]>>` | âœ“ |
-| IUsoCFDIAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<UseCfdiDTO>>` | âœ“ |
-| IUsoCFDIAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<UsoCFDI>>` | âœ“ |
-| IWorkPositionScheduleAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<WorkPositionScheduleDetailDTO>>` | âœ“ |
-| IWorkPositionScheduleAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IWorkPositionScheduleAppService | `DeleteWithReplacementAsync` | DELETE | `Task<ApiResponseDTO<WorkPositionScheduleDeleteWithReplacementResultDTO>>` | âœ“ |
-| IWorkPositionScheduleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<WorkPositionScheduleDetailDTO>>` | âœ“ |
-| IWorkPositionScheduleAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<WorkPositionScheduleListItemDTO>>>` | âœ“ |
-| IWorkPositionScheduleAppService | `GetUsageCountAsync` | GET_SINGLE | `Task<ApiResponseDTO<WorkPositionScheduleUsageCountDTO>>` | âš  Get sin ByXxx/All |
-| IWorkPositionScheduleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<WorkPositionScheduleDetailDTO>>` | âœ“ |
-| IWorkPositionScheduleAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<WorkPositionScheduleDetailDTO>>` | âœ“ |
+| IAddressAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<AddressAddOrEditDTO>>` | ✓ |
+| IBankAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<BankDTO>>` | ✓ |
+| IBankAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IBankAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<BankDTO[]>>` | ✓ |
+| IBankAppService | `GetAllPagedAsync` | GET_LIST | `Task<ApiResponseDTO<BankDTO[]>>` | ✓ |
+| IBankAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<BankAddOrEditDTO>>` | ✓ |
+| IBankAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<BankDTO>>` | ✓ |
+| ICatalogAssetAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| ICatalogAssetAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICatalogAssetAppService | `FirstOrDefaultAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| ICatalogAssetAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<object>>` | ✓ |
+| ICatalogAssetAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<object>>` | ✓ |
+| ICategoryAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<CategoryDTO>>` | ✓ |
+| ICategoryAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ICategoryAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<CategoryDTO[]>>` | ✓ |
+| ICategoryAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<CategoryDTO>>` | ✓ |
+| ICategoryAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<CategoryDTO>>` | ✓ |
+| IDocumentCatalogAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<DocumentCatalogDetailDTO>>` | ✓ |
+| IDocumentCatalogAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IDocumentCatalogAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<DocumentCatalogDetailDTO>>` | ✓ |
+| IDocumentCatalogAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<DocumentCatalogListItemDTO>>>` | ✓ |
+| IDocumentCatalogAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<DocumentCatalogDetailDTO>>` | ✓ |
+| IDocumentCatalogAppService | `UpdateOrderAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IDocumentCatalogAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<DocumentCatalogDetailDTO>>` | ✓ |
+| IEmailDataAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<EmailDataDTO>>` | ✓ |
+| IEmailDataAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<EmailDataDTO>>` | ✓ |
+| IEmailDataAppService | `ListAsync` | OTHER | `Task<ApiResponseDTO<List<EmailDataDTO>>>` | ⚠ naming no CRUD estandar |
+| IEmailDataAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<EmailDataDTO>>` | ✓ |
+| IGenerateFolioService | `OnGenerateDocumentBuilding` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateDocumentLegalRecord` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateFolioLegal` | OTHER | `string` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateFolioOC` | OTHER | `string` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateFolioProfession` | OTHER | `string` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateFolioPurchaseOrder` | OTHER | `string` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateFolioPurchaseRequest` | OTHER | `string` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateFolioSC` | OTHER | `string` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateFolioTicketMessage` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateFormat` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IGenerateFolioService | `OnGenerateManualsAndProcesses` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IMeasurementUnitAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MeasurementUnitsAddOrEditDTO>>` | ✓ |
+| IMeasurementUnitAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMeasurementUnitAppService | `GetAsyncAll` | GET_SINGLE | `Task<ApiResponseDTO<MeasurementUnitsDTO[]>>` | ✓ |
+| IMeasurementUnitAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MeasurementUnitsDTO>>` | ✓ |
+| IMeasurementUnitAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MeasurementUnitsAddOrEditDTO>>` | ✓ |
+| IMetodoDePagoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<MetodoDePago>>` | ✓ |
+| IMetodoDePagoAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IMetodoDePagoAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<MetodoPagoDTO>>>` | ✓ |
+| IMetodoDePagoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<MetodoPagoDTO>>` | ✓ |
+| IMetodoDePagoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<MetodoDePago>>` | ✓ |
+| IPaymentMethodAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PaymentMethodDTO>>` | ✓ |
+| IPaymentMethodAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IPaymentMethodAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<PaymentMethodDTO[]>>` | ✓ |
+| IPaymentMethodAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PaymentMethodDTO>>` | ✓ |
+| IPaymentMethodAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PaymentMethodDTO>>` | ✓ |
+| IResponsablesClienteAppService | `DataSmtpEmailAdminDTOAsync` | OTHER | `Task<DataSmtpEmailDTO>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `DataSmtpEmailSupervisorOpDTOAsync` | OTHER | `Task<DataSmtpEmailDTO>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `GetByRoleAsync` | GET_LIST | `Task<ApiResponseDTO<List<ApplicationUserGetInfoDTO>>>` | ✓ |
+| IResponsablesClienteAppService | `GetSuggestedCalendarInviteesAsync` | GET_LIST | `Task<ApiResponseDTO<List<ApplicationUserGetInfoDTO>>>` | ⚠ Get sin ByXxx/All |
+| IResponsablesClienteAppService | `OnGetAdministradorAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetAlmacenistaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetAsistenteAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetBellBoyAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetChoferAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetCobranzaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetComiteAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetComiteVigilanciaAsync` | OTHER | `Task<List<string>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetConciergeAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetCondominoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetContadorAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetCoordinacionJuridicoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetDireccionGeneralAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetEntrenadorGimnasioAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetGerenteAtencionAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetGerenteMantenimientoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetGerenteOperacionesAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetJardineriaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetJardineriaInternaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetJefeMantenimientoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetJefeSeguridadInternaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetLegalAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetLimpiezaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetLudotecariaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetMasterConciergeAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetMensajeriaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetMonitoristaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetPaqueteriaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetPhonmeNumberCustomer` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetProveedorAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetRecepcionistaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetReclutamientoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetRecursosHumanosAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetSeguridadAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetSeguridadInternaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetSistemasAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetSistemasGeneralAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetSnackBarAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetSuperUsuarioAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetSupervisionOperativaAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetSupervisorObraAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| IResponsablesClienteAppService | `OnGetTecnicoMantenimientoAsync` | OTHER | `Task<List<ApplicationUserGetInfoDTO>>` | ⚠ naming no CRUD estandar |
+| ITelefonosEmergenciaAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<SystemLuxuryApp.ConfiguracionSistema.Catalogs.Entities.TelefonosEmergencia>>` | ✓ |
+| ITelefonosEmergenciaAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<SystemLuxuryApp.ConfiguracionSistema.Catalogs.Entities.TelefonosEmergencia>>` | ✓ |
+| ITelefonosEmergenciaAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<TelefonosEmergenciaDTO>>>` | ✓ |
+| ITelefonosEmergenciaAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<TelefonosEmergenciaDTO>>` | ✓ |
+| ITelefonosEmergenciaAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<SystemLuxuryApp.ConfiguracionSistema.Catalogs.Entities.TelefonosEmergencia>>` | ✓ |
+| IToolAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Tool>>` | ✓ |
+| IToolAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<Tool>>` | ✓ |
+| IToolAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IToolAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ToolDTO>>` | ✓ |
+| IToolAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Tool>>` | ✓ |
+| IUsoCFDIAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<UsoCFDI>>` | ✓ |
+| IUsoCFDIAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IUsoCFDIAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<UseCfdiDTO[]>>` | ✓ |
+| IUsoCFDIAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<UseCfdiDTO>>` | ✓ |
+| IUsoCFDIAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<UsoCFDI>>` | ✓ |
+| IWorkPositionScheduleAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<WorkPositionScheduleDetailDTO>>` | ✓ |
+| IWorkPositionScheduleAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IWorkPositionScheduleAppService | `DeleteWithReplacementAsync` | DELETE | `Task<ApiResponseDTO<WorkPositionScheduleDeleteWithReplacementResultDTO>>` | ✓ |
+| IWorkPositionScheduleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<WorkPositionScheduleDetailDTO>>` | ✓ |
+| IWorkPositionScheduleAppService | `GetListAsync` | GET_LIST | `Task<ApiResponseDTO<List<WorkPositionScheduleListItemDTO>>>` | ✓ |
+| IWorkPositionScheduleAppService | `GetUsageCountAsync` | GET_SINGLE | `Task<ApiResponseDTO<WorkPositionScheduleUsageCountDTO>>` | ⚠ Get sin ByXxx/All |
+| IWorkPositionScheduleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<WorkPositionScheduleDetailDTO>>` | ✓ |
+| IWorkPositionScheduleAppService | `UpdateStatusAsync` | UPDATE | `Task<ApiResponseDTO<WorkPositionScheduleDetailDTO>>` | ✓ |
 
 ### Endpoints
 
@@ -4180,79 +4180,79 @@ Metodos: 73 | Endpoints HTTP: 65
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IOrdenCompraAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompra>>` | âœ“ |
-| IOrdenCompraAppService | `AddFueraFondeoAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompra>>` | âœ“ |
-| IOrdenCompraAppService | `AddProgressiveAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompra>>` | âœ“ |
-| IOrdenCompraAppService | `CotizacionesRelacionadasAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAppService | `CreateFromInvoicesAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOrdenCompraAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOrdenCompraAppService | `FondeoAsync` | OTHER | `Task<ApiResponseDTO<FondeoCaratulaDTO>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAppService | `GenerarOrdenCompraFijosAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<OrdenesCompraDTO[]>>` | âœ“ |
-| IOrdenCompraAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraIndividualDTO>>` | âœ“ |
-| IOrdenCompraAppService | `GetForEdit` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | âš  Get sin ByXxx/All |
-| IOrdenCompraAppService | `GetForLinkManagerAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<OrdenCompraLinkManagerDTO>>>` | âš  Get sin ByXxx/All |
-| IOrdenCompraAppService | `GetOrdenCompraPdf` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraPdfDTO>>` | âš  Get sin ByXxx/All |
-| IOrdenCompraAppService | `GetSolicitudPagoPdf` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudPagoPdfResponseDTO>>` | âš  Get sin ByXxx/All |
-| IOrdenCompraAppService | `GetUnlinkedOrdersAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<UnlinkedOrderDTO>>>` | âš  Get sin ByXxx/All |
-| IOrdenCompraAppService | `LinkOrderToRequestAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAppService | `OrdenCompraPendientesAsync` | OTHER | `Task<ApiResponseDTO<List<PresupuestoCuentaDTO>>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAppService | `OrdenesCompraGastosFijosAsync` | OTHER | `Task<ApiResponseDTO<List<OrdenesCompraDTO>>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAppService | `RemoveFueraFondeoAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOrdenCompraAppService | `UnlinkSolicitud` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompra>>` | âœ“ |
-| IOrdenCompraAppService | `ValidarOrdenesCompraMismoFolioSolicituCompraAsync` | OTHER | `Task<ApiResponseDTO<decimal>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAuthAppService | `AutorizarAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAuthAppService | `DesautorizarAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IOrdenCompraAuthAppService | `NoAutorizadaAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IOrdenCompraComprobantePagoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompraComprobantePago>>` | âœ“ |
-| IOrdenCompraComprobantePagoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOrdenCompraDatosPagoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraDatosPagoDTO>>` | âœ“ |
-| IOrdenCompraDatosPagoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompraDatosPago>>` | âœ“ |
-| IOrdenCompraDetalleAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompraDetalle>>` | âœ“ |
-| IOrdenCompraDetalleAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOrdenCompraDetalleAppService | `GetAllTotalAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IOrdenCompraDetalleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraDetalle>>` | âœ“ |
-| IOrdenCompraDetalleAppService | `GetListProductoToOrder` | GET_LIST | `Task<ApiResponseDTO<ListProductoToOrderPagedListDTO>>` | âœ“ |
-| IOrdenCompraDetalleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompraDetalle>>` | âœ“ |
-| IOrdenCompraPresupuestoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PurchaseOrderBudgetDTO>>` | âœ“ |
-| IOrdenCompraPresupuestoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOrdenCompraPresupuestoAppService | `GetAllForOrdenCompraAsync` | GET_LIST | `Task<ApiResponseDTO<List<PurchaseOrderBudgetDTO>>>` | âœ“ |
-| IOrdenCompraPresupuestoAppService | `GetAllForPurchaseOrderBudgetTotalAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | âœ“ |
-| IOrdenCompraPresupuestoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseOrderBudgetDTO>>` | âœ“ |
-| IOrdenCompraPresupuestoAppService | `GetByIdForEditAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseOrderBudgetAddOrEditDTO>>` | âœ“ |
-| IOrdenCompraPresupuestoAppService | `GetByIdSimpleAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseOrderBudget>>` | âœ“ |
-| IOrdenCompraPresupuestoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PurchaseOrderBudgetDTO>>` | âœ“ |
-| IOrdenCompraStatusAppService | `AddInvoiceAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompraFactura>>` | âœ“ |
-| IOrdenCompraStatusAppService | `DeleteInvoiceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IOrdenCompraStatusAppService | `GetByOrdenCompraIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraStatus>>` | âœ“ |
-| IOrdenCompraStatusAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompraStatus>>` | âœ“ |
-| IOrdenCompraStatusAppService | `UpdateInvoiceFileAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompraFactura>>` | âœ“ |
-| IOrdenCompraStatusAppService | `UpdateInvoiceTypeAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IProviderAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Provider>>` | âœ“ |
-| IProviderAppService | `AutorizarAsync` | OTHER | `Task<ApiResponseDTO<Provider>>` | âš  naming no CRUD estandar |
-| IProviderAppService | `BuscarCoincidenciaAsync` | OTHER | `Task<ApiResponseDTO<ProviderCoincidenciaDTO[]>>` | âš  naming no CRUD estandar |
-| IProviderAppService | `BuscarPorCategoriaAsync` | OTHER | `Task<ApiResponseDTO<List<ProviderIndexDTO>>>` | âš  naming no CRUD estandar |
-| IProviderAppService | `BuscarProveedorAsync` | OTHER | `Task<ApiResponseDTO<List<BusquedaProveedorDTO>>>` | âš  naming no CRUD estandar |
-| IProviderAppService | `ChangeStateAsync` | UPDATE | `Task<ApiResponseDTO<Provider>>` | âœ“ |
-| IProviderAppService | `CoincidenciasAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | âš  naming no CRUD estandar |
-| IProviderAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<Provider>>` | âœ“ |
-| IProviderAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProviderDTO>>` | âœ“ |
-| IProviderAppService | `GetListBusquedaProveedorDTOAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<BusquedaProveedorDTO>>>` | âœ“ |
-| IProviderAppService | `GetProviderSelectItemAsync` | GET_SINGLE | `Task<ApiResponseDTO<SelectItemDTO<Guid>>>` | âš  Get sin ByXxx/All |
-| IProviderAppService | `ListProviderIndexDTOAsync` | OTHER | `Task<ApiResponseDTO<List<ProviderIndexDTO>>>` | âš  naming no CRUD estandar |
-| IProviderAppService | `MigrateProvidersToCustomersAsync` | SPECIAL | `Task<ApiResponseDTO<string>>` | âœ“ |
-| IProviderAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Provider>>` | âœ“ |
-| IProviderAppService | `ValidarRfcAsync` | OTHER | `Task<ApiResponseDTO<List<ValidarRfcDTO>>>` | âš  naming no CRUD estandar |
-| IQualificationProviderAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<QualificationProvider>>` | âœ“ |
-| IQualificationProviderAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IQualificationProviderAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<QualificationProviderDTO>>>` | âœ“ |
-| IQualificationProviderAppService | `GetUserProviderAsync` | GET_SINGLE | `Task<ApiResponseDTO<QualificationProviderDTO>>` | âš  Get sin ByXxx/All |
-| IQualificationProviderAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<QualificationProvider>>` | âœ“ |
-| ITotalesOrdenCompraDetallleService | `ImporteTotal` | SPECIAL | `decimal` | âœ“ |
-| ITotalesOrdenCompraDetallleService | `IvaTotal` | OTHER | `decimal` | âš  naming no CRUD estandar |
-| ITotalesOrdenCompraDetallleService | `RetencionIsrTotal` | OTHER | `decimal` | âš  naming no CRUD estandar |
-| ITotalesOrdenCompraDetallleService | `RetencionIvaTotal` | OTHER | `decimal` | âš  naming no CRUD estandar |
+| IOrdenCompraAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompra>>` | ✓ |
+| IOrdenCompraAppService | `AddFueraFondeoAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompra>>` | ✓ |
+| IOrdenCompraAppService | `AddProgressiveAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompra>>` | ✓ |
+| IOrdenCompraAppService | `CotizacionesRelacionadasAsync` | OTHER | `Task<ApiResponseDTO<List<object>>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAppService | `CreateFromInvoicesAsync` | CREATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOrdenCompraAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOrdenCompraAppService | `FondeoAsync` | OTHER | `Task<ApiResponseDTO<FondeoCaratulaDTO>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAppService | `GenerarOrdenCompraFijosAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<OrdenesCompraDTO[]>>` | ✓ |
+| IOrdenCompraAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraIndividualDTO>>` | ✓ |
+| IOrdenCompraAppService | `GetForEdit` | GET_SINGLE | `Task<ApiResponseDTO<object>>` | ⚠ Get sin ByXxx/All |
+| IOrdenCompraAppService | `GetForLinkManagerAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<OrdenCompraLinkManagerDTO>>>` | ⚠ Get sin ByXxx/All |
+| IOrdenCompraAppService | `GetOrdenCompraPdf` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraPdfDTO>>` | ⚠ Get sin ByXxx/All |
+| IOrdenCompraAppService | `GetSolicitudPagoPdf` | GET_SINGLE | `Task<ApiResponseDTO<SolicitudPagoPdfResponseDTO>>` | ⚠ Get sin ByXxx/All |
+| IOrdenCompraAppService | `GetUnlinkedOrdersAsync` | GET_LIST | `Task<ApiResponseDTO<IEnumerable<UnlinkedOrderDTO>>>` | ⚠ Get sin ByXxx/All |
+| IOrdenCompraAppService | `LinkOrderToRequestAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAppService | `OrdenCompraPendientesAsync` | OTHER | `Task<ApiResponseDTO<List<PresupuestoCuentaDTO>>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAppService | `OrdenesCompraGastosFijosAsync` | OTHER | `Task<ApiResponseDTO<List<OrdenesCompraDTO>>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAppService | `RemoveFueraFondeoAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOrdenCompraAppService | `UnlinkSolicitud` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompra>>` | ✓ |
+| IOrdenCompraAppService | `ValidarOrdenesCompraMismoFolioSolicituCompraAsync` | OTHER | `Task<ApiResponseDTO<decimal>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAuthAppService | `AutorizarAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAuthAppService | `DesautorizarAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraAuthAppService | `NoAutorizadaAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IOrdenCompraComprobantePagoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompraComprobantePago>>` | ✓ |
+| IOrdenCompraComprobantePagoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOrdenCompraDatosPagoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraDatosPagoDTO>>` | ✓ |
+| IOrdenCompraDatosPagoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompraDatosPago>>` | ✓ |
+| IOrdenCompraDetalleAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompraDetalle>>` | ✓ |
+| IOrdenCompraDetalleAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOrdenCompraDetalleAppService | `GetAllTotalAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IOrdenCompraDetalleAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraDetalle>>` | ✓ |
+| IOrdenCompraDetalleAppService | `GetListProductoToOrder` | GET_LIST | `Task<ApiResponseDTO<ListProductoToOrderPagedListDTO>>` | ✓ |
+| IOrdenCompraDetalleAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompraDetalle>>` | ✓ |
+| IOrdenCompraPresupuestoAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<PurchaseOrderBudgetDTO>>` | ✓ |
+| IOrdenCompraPresupuestoAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOrdenCompraPresupuestoAppService | `GetAllForOrdenCompraAsync` | GET_LIST | `Task<ApiResponseDTO<List<PurchaseOrderBudgetDTO>>>` | ✓ |
+| IOrdenCompraPresupuestoAppService | `GetAllForPurchaseOrderBudgetTotalAsync` | GET_LIST | `Task<ApiResponseDTO<List<object>>>` | ✓ |
+| IOrdenCompraPresupuestoAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseOrderBudgetDTO>>` | ✓ |
+| IOrdenCompraPresupuestoAppService | `GetByIdForEditAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseOrderBudgetAddOrEditDTO>>` | ✓ |
+| IOrdenCompraPresupuestoAppService | `GetByIdSimpleAsync` | GET_SINGLE | `Task<ApiResponseDTO<PurchaseOrderBudget>>` | ✓ |
+| IOrdenCompraPresupuestoAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<PurchaseOrderBudgetDTO>>` | ✓ |
+| IOrdenCompraStatusAppService | `AddInvoiceAsync` | CREATE | `Task<ApiResponseDTO<OrdenCompraFactura>>` | ✓ |
+| IOrdenCompraStatusAppService | `DeleteInvoiceAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IOrdenCompraStatusAppService | `GetByOrdenCompraIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<OrdenCompraStatus>>` | ✓ |
+| IOrdenCompraStatusAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompraStatus>>` | ✓ |
+| IOrdenCompraStatusAppService | `UpdateInvoiceFileAsync` | UPDATE | `Task<ApiResponseDTO<OrdenCompraFactura>>` | ✓ |
+| IOrdenCompraStatusAppService | `UpdateInvoiceTypeAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IProviderAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<Provider>>` | ✓ |
+| IProviderAppService | `AutorizarAsync` | OTHER | `Task<ApiResponseDTO<Provider>>` | ⚠ naming no CRUD estandar |
+| IProviderAppService | `BuscarCoincidenciaAsync` | OTHER | `Task<ApiResponseDTO<ProviderCoincidenciaDTO[]>>` | ⚠ naming no CRUD estandar |
+| IProviderAppService | `BuscarPorCategoriaAsync` | OTHER | `Task<ApiResponseDTO<List<ProviderIndexDTO>>>` | ⚠ naming no CRUD estandar |
+| IProviderAppService | `BuscarProveedorAsync` | OTHER | `Task<ApiResponseDTO<List<BusquedaProveedorDTO>>>` | ⚠ naming no CRUD estandar |
+| IProviderAppService | `ChangeStateAsync` | UPDATE | `Task<ApiResponseDTO<Provider>>` | ✓ |
+| IProviderAppService | `CoincidenciasAsync` | OTHER | `Task<ApiResponseDTO<IEnumerable<object>>>` | ⚠ naming no CRUD estandar |
+| IProviderAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<Provider>>` | ✓ |
+| IProviderAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<ProviderDTO>>` | ✓ |
+| IProviderAppService | `GetListBusquedaProveedorDTOAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<BusquedaProveedorDTO>>>` | ✓ |
+| IProviderAppService | `GetProviderSelectItemAsync` | GET_SINGLE | `Task<ApiResponseDTO<SelectItemDTO<Guid>>>` | ⚠ Get sin ByXxx/All |
+| IProviderAppService | `ListProviderIndexDTOAsync` | OTHER | `Task<ApiResponseDTO<List<ProviderIndexDTO>>>` | ⚠ naming no CRUD estandar |
+| IProviderAppService | `MigrateProvidersToCustomersAsync` | SPECIAL | `Task<ApiResponseDTO<string>>` | ✓ |
+| IProviderAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<Provider>>` | ✓ |
+| IProviderAppService | `ValidarRfcAsync` | OTHER | `Task<ApiResponseDTO<List<ValidarRfcDTO>>>` | ⚠ naming no CRUD estandar |
+| IQualificationProviderAppService | `AddAsync` | CREATE | `Task<ApiResponseDTO<QualificationProvider>>` | ✓ |
+| IQualificationProviderAppService | `DeleteByIdAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IQualificationProviderAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<QualificationProviderDTO>>>` | ✓ |
+| IQualificationProviderAppService | `GetUserProviderAsync` | GET_SINGLE | `Task<ApiResponseDTO<QualificationProviderDTO>>` | ⚠ Get sin ByXxx/All |
+| IQualificationProviderAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<QualificationProvider>>` | ✓ |
+| ITotalesOrdenCompraDetallleService | `ImporteTotal` | SPECIAL | `decimal` | ✓ |
+| ITotalesOrdenCompraDetallleService | `IvaTotal` | OTHER | `decimal` | ⚠ naming no CRUD estandar |
+| ITotalesOrdenCompraDetallleService | `RetencionIsrTotal` | OTHER | `decimal` | ⚠ naming no CRUD estandar |
+| ITotalesOrdenCompraDetallleService | `RetencionIvaTotal` | OTHER | `decimal` | ⚠ naming no CRUD estandar |
 
 ### Endpoints
 
@@ -4362,178 +4362,178 @@ Metodos: 172 | Endpoints HTTP: 135
 
 | Servicio | Metodo | Categoria | Retorno | Observaciones |
 |---|---|---|---|---|
-| IAiAssistantService | `AnalyzeAccountingReportAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IAiAssistantService | `AnalyzeComparativeChartAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IAiAssistantService | `AnalyzeContabilidadOnlineReportAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IAiAssistantService | `AnalyzeImageAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IAiAssistantService | `AnalyzeJobDescriptionAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IAiAssistantService | `ConsultDocumentAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IAiAssistantService | `ExplainContabilidadOnlineReportAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IAiAssistantService | `GenerateAnnouncementDraftAsync` | SPECIAL | `Task<string>` | âœ“ |
-| IAiAssistantService | `GenerateBudgetAuditAsync` | SPECIAL | `Task<string>` | âœ“ |
-| IAiAssistantService | `GenerateBudgetForecastAsync` | SPECIAL | `Task<string>` | âœ“ |
-| IAiAssistantService | `GenerateDashboardSummaryAsync` | SPECIAL | `Task<string>` | âœ“ |
-| IAiAssistantService | `GenerateFinancialSummaryAsync` | SPECIAL | `Task<string>` | âœ“ |
-| IAiAssistantService | `GenerateImageAsync` | SPECIAL | `Task<Stream>` | âœ“ |
-| IAiAssistantService | `GenerateJobDescriptionAsync` | SPECIAL | `Task<string>` | âœ“ |
-| IAiAssistantService | `GenerateOfficialAnnouncementAsync` | SPECIAL | `Task<OperationsLuxuryApp.Announcements.DTOs.OfficialAnnouncementDraftDTO>` | âœ“ |
-| IAiAssistantService | `TestProfileAsync` | OTHER | `Task<string>` | âš  naming no CRUD estandar |
-| IAiChatAppService | `GetSessionHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChatMessageDTO>>>` | âš  Get sin ByXxx/All |
-| IAiChatAppService | `GetUserSessionsAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChatSessionDTO>>>` | âš  Get sin ByXxx/All |
-| IAiChatAppService | `SendMessageAsync` | SPECIAL | `Task<ApiResponseDTO<string>>` | âœ“ |
-| IAiChatAppService | `StartNewSessionAsync` | OTHER | `Task<ApiResponseDTO<ChatSessionDTO>>` | âš  naming no CRUD estandar |
-| IAiKnowledgeBaseAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<Guid>>` | âœ“ |
-| IAiKnowledgeBaseAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAiKnowledgeBaseAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<AiKnowledgeBaseDTO>>>` | âœ“ |
-| IAiKnowledgeBaseAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AiKnowledgeBaseDTO>>` | âœ“ |
-| IAiKnowledgeBaseAppService | `GetModulesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âš  Get sin ByXxx/All |
-| IAiKnowledgeBaseAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| IAppImplementationEmailService | `SendMissingEmployeeDataReportAsync` | SPECIAL | `Task` | âœ“ |
-| IAuditEntryAppService | `GetHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<AuditEntryDTO>>>` | âš  Get sin ByXxx/All |
-| IBrevoEmailLogService | `GetEmailLogsAsync` | GET_LIST | `Task<ApiResponseDTO<BrevoPagedResultDTO>>` | âš  Get sin ByXxx/All |
-| IBudgetProposalRealTimeService | `SendUpdateAsync` | SPECIAL | `Task` | âœ“ |
-| IDatabaseBackupService | `CreateConfigAsync` | CREATE | `Task<ApiResponseDTO<DatabaseBackupConfigDTO>>` | âœ“ |
-| IDatabaseBackupService | `DeleteConfigAsync` | DELETE | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IDatabaseBackupService | `ExecuteBackupNowAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | âœ“ |
-| IDatabaseBackupService | `GetAvailableDatabasesAsync` | GET_LIST | `Task<ApiResponseDTO<List<string>>>` | âš  Get sin ByXxx/All |
-| IDatabaseBackupService | `GetBackupHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<DatabaseBackupSummaryDTO>>>` | âš  Get sin ByXxx/All |
-| IDatabaseBackupService | `GetConfigAsync` | GET_SINGLE | `Task<ApiResponseDTO<DatabaseBackupConfigDTO>>` | âš  Get sin ByXxx/All |
-| IDatabaseBackupService | `GetConfigsAsync` | GET_LIST | `Task<ApiResponseDTO<List<DatabaseBackupConfigDTO>>>` | âš  Get sin ByXxx/All |
-| IDatabaseBackupService | `TestOneDriveConnectionAsync` | OTHER | `Task<ApiResponseDTO<object>>` | âš  naming no CRUD estandar |
-| IDatabaseBackupService | `UpdateConfigAsync` | UPDATE | `Task<ApiResponseDTO<DatabaseBackupConfigDTO>>` | âœ“ |
-| IElevenLabsAppService | `GetSettingsAsync` | GET_LIST | `Task<ApiResponseDTO<ElevenLabsSettingsDTO>>` | âš  Get sin ByXxx/All |
-| IElevenLabsAppService | `GetSubscriptionStatusAsync` | GET_LIST | `Task<ApiResponseDTO<SubscriptionStatusDTO>>` | âš  Get sin ByXxx/All |
-| IElevenLabsAppService | `GetVoicesAsync` | GET_LIST | `Task<ApiResponseDTO<List<VoiceInfoDTO>>>` | âš  Get sin ByXxx/All |
-| IElevenLabsAppService | `SaveSettingsAsync` | UPDATE | `Task<ApiResponseDTO<ElevenLabsSettingsDTO>>` | âœ“ |
-| IElevenLabsAppService | `TextToSpeechAsync` | OTHER | `Task<ApiResponseDTO<TextToSpeechResponseDTO>>` | âš  naming no CRUD estandar |
-| IEmailMessageAppService | `SendEmailMesageRequestAsync` | SPECIAL | `Task` | âœ“ |
-| IEmailMessageAppService | `SendReportPendingTicketGroupAsync` | SPECIAL | `Task` | âœ“ |
-| ILogService | `DeleteAllLogsAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ILogService | `DeleteOldLogsAsync` | DELETE | `Task<ApiResponseDTO<int>>` | âœ“ |
-| ILogService | `GetLogsAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<LogEntryDTO>>>` | âš  Get sin ByXxx/All |
-| IMeetingEmailService | `SendPendingItemsAsync` | SPECIAL | `Task` | âœ“ |
-| INotificationUserAppService | `CreateNotificationAsync` | CREATE | `Task<ApiResponseDTO<NotificationUser>>` | âœ“ |
-| INotificationUserAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| INotificationUserAppService | `DeleteOldNotificationsAsync` | DELETE | `Task<ApiResponseDTO<int>>` | âœ“ |
-| INotificationUserAppService | `DeleteRangeAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| INotificationUserAppService | `GetUnreadCountAsync` | GET_SINGLE | `Task<ApiResponseDTO<int>>` | âš  Get sin ByXxx/All |
-| INotificationUserAppService | `GetUserNotificationsAsync` | GET_LIST | `Task<ApiResponseDTO<List<NotificationUserDTO>>>` | âš  Get sin ByXxx/All |
-| INotificationUserAppService | `GetUsersAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âš  Get sin ByXxx/All |
-| INotificationUserAppService | `MarkAsReadAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| IOneDriveGraphService | `DeleteOldFilesAsync` | DELETE | `Task` | âœ“ |
-| IOneDriveGraphService | `TestConnectionAsync` | OTHER | `Task<bool>` | âš  naming no CRUD estandar |
-| IOneDriveGraphService | `UploadFileAsync` | SPECIAL | `Task<string>` | âœ“ |
-| IProjectedExpenseRealTimeService | `SendUpdateAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendAltaSistemasEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendCandidateApplicationCreatedEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendCandidateInterviewDecisionEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendCandidateInterviewTrackingEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendCandidateReceptionConfirmedEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendCandidateSentToInterviewEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendCredencialesAccesoEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendModificacionSalarioEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendSolicitudAltaEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendSolicitudBajaEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IRecruitmentEmailService | `SendSolicitudVacanteEmailAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskEmailService | `SendContractsPoliciesExpirationAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskEmailService | `SendLegalReportAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskEmailService | `SendLegalTicketReportToCustomerAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskEmailService | `SendPendingTicketGroupReportAsync` | SPECIAL | `Task` | âœ“ |
-| IScheduledTaskEmailService | `SendVacanciesReportAsync` | SPECIAL | `Task` | âœ“ |
-| ISelectItemAppService | `ApplicationUserForCustomerIdAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âš  naming no CRUD estandar |
-| ISelectItemAppService | `FundingPeriodAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âš  naming no CRUD estandar |
-| ISelectItemAppService | `GetRolesForAnnouncementsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âš  Get sin ByXxx/All |
-| ISelectItemAppService | `SelectItemAccountForCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemAddCuentaCedulaPresupuestalAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemAdministracionMinutaAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemAlmacenesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemAnioOrdenServiceAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<int>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemApplicationRolesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemApplicationRolesToAdministratorAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemApplicationRolesToProviderAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemApplicationUserAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemApplicationUserProviderAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemAspelCustomerEmpresaAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemBankAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemCandidatesAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateSelectItemDTO>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemCategoriesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemComiteMinutaAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemCustomerInspectionsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemCustomersAccesoAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemCustomersActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemCustomersActiveNameShortAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemCustomersAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemCustomersInactiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemDocumentCatalogAsync` | GET_LIST | `Task<ApiResponseDTO<List<DocumentCatalogSelectItemDTO>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemEmployeeActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemEmployeeByUserIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemEmployeesActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemEquipoCalendarioMaestroAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemEquipoClasificacionAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemEvaluationTemplateAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemInspectionReviewsCatalogAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemInstalacionesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemLegalMatterAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemLegalMatterCategoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemMachineriesActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemMachineriesGetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemMeasurementUnitsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemMedidorCategoriaAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemModuleAppAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemNombreCortoAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemOnboardingChecklistOptionsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemOperationsInterviewersByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemOperationsInterviewersByRequestPositionAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemOwnerAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemParticipantAdministrationAsync` | GET_LIST | `Task<ApiResponseDTO<List<MeetingParticipantAdministracionDTO>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemPaymentMethodAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemPersonAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemPersonEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemProductsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemProfessionsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemPropertyAccountsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemProvidersAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemRecruitmentSourcesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemRequestPositionsPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemResidentesEdificioAsync` | GET_LIST | `Task<ApiResponseDTO<List<ResidentesEdificioDTO>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemResponsableSistemasAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemRolesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemRolesByRoleTypeAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemRolForDocumentAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemSelectForAddTicketAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemSupervisionAsync` | GET_LIST | `Task<ApiResponseDTO<List<LabelDTO>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemTaskGroupCategoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemTicketGroupListAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemToolAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemUseCFDIAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemVacantesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectItemWayToPayAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `SelectRichItemProductsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | âœ“ |
-| ISelectItemAppService | `UserFromCustomerAsync` | OTHER | `Task<ApiResponseDTO<List<UserCustomerDTO>>>` | âš  naming no CRUD estandar |
-| ISendEmailAppService | `EstadosFinancierosCondominosAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ISendEmailAppService | `OperationReportAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ISendEmailAppService | `PresentacionFinalComiteAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | âš  naming no CRUD estandar |
-| ISendEmailAppService | `SendExecutivePendingReportAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISendEmailAppService | `SendMeetingAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISendEmailAppService | `SendTestMailAsync` | SPECIAL | `Task<ApiResponseDTO<SendTestMailResultDTO>>` | âœ“ |
-| ISendEmailAppService | `TestEmailAsync` | OTHER | `Task<ApiResponseDTO<string>>` | âš  naming no CRUD estandar |
-| ISendEmailAppService | `TestSendEmail` | OTHER | `Task<ApiResponseDTO<string>>` | âš  naming no CRUD estandar |
-| ISendSignalRService | `GetConnectedUserIds` | GET_LIST | `ApiResponseDTO<List<string>>` | âš  Get sin ByXxx/All |
-| ISendSignalRService | `SendBudgetProposalItemUpdateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISendSignalRService | `SendDTOUserAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISendSignalRService | `SendGoogleCalendarEventUpdateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISendSignalRService | `SendNativeCollectionUpdateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISendSignalRService | `SendPanicAlertAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISendSignalRService | `SendProjectedExpenseUpdateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ISendSignalRService | `SenDTOMultipleUsersAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | âœ“ |
-| ITaskLegalWhatsAppService | `NotifyNewTicketAsync` | SPECIAL | `Task` | âœ“ |
-| ITaskLegalWhatsAppService | `NotifyStatusUpdateAsync` | SPECIAL | `Task` | âœ“ |
-| ITaskWorkPlanEmailService | `SendWeeklyWorkPlanAsync` | SPECIAL | `Task` | âœ“ |
-| IUserActivityHistoryAppService | `GetHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<UserActivityHistoryDTO>>>` | âš  Get sin ByXxx/All |
-| IUserActivityService | `LogActivityAsync` | OTHER | `Task` | âš  naming no CRUD estandar |
-| SelectItemAppService | `ListRoleAdmin` | OTHER | `List<ApplicationRolesDTO>` | âš  naming no CRUD estandar |
+| IAiAssistantService | `AnalyzeAccountingReportAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IAiAssistantService | `AnalyzeComparativeChartAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IAiAssistantService | `AnalyzeContabilidadOnlineReportAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IAiAssistantService | `AnalyzeImageAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IAiAssistantService | `AnalyzeJobDescriptionAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IAiAssistantService | `ConsultDocumentAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IAiAssistantService | `ExplainContabilidadOnlineReportAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IAiAssistantService | `GenerateAnnouncementDraftAsync` | SPECIAL | `Task<string>` | ✓ |
+| IAiAssistantService | `GenerateBudgetAuditAsync` | SPECIAL | `Task<string>` | ✓ |
+| IAiAssistantService | `GenerateBudgetForecastAsync` | SPECIAL | `Task<string>` | ✓ |
+| IAiAssistantService | `GenerateDashboardSummaryAsync` | SPECIAL | `Task<string>` | ✓ |
+| IAiAssistantService | `GenerateFinancialSummaryAsync` | SPECIAL | `Task<string>` | ✓ |
+| IAiAssistantService | `GenerateImageAsync` | SPECIAL | `Task<Stream>` | ✓ |
+| IAiAssistantService | `GenerateJobDescriptionAsync` | SPECIAL | `Task<string>` | ✓ |
+| IAiAssistantService | `GenerateOfficialAnnouncementAsync` | SPECIAL | `Task<OperationsLuxuryApp.Announcements.DTOs.OfficialAnnouncementDraftDTO>` | ✓ |
+| IAiAssistantService | `TestProfileAsync` | OTHER | `Task<string>` | ⚠ naming no CRUD estandar |
+| IAiChatAppService | `GetSessionHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChatMessageDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAiChatAppService | `GetUserSessionsAsync` | GET_LIST | `Task<ApiResponseDTO<List<ChatSessionDTO>>>` | ⚠ Get sin ByXxx/All |
+| IAiChatAppService | `SendMessageAsync` | SPECIAL | `Task<ApiResponseDTO<string>>` | ✓ |
+| IAiChatAppService | `StartNewSessionAsync` | OTHER | `Task<ApiResponseDTO<ChatSessionDTO>>` | ⚠ naming no CRUD estandar |
+| IAiKnowledgeBaseAppService | `CreateAsync` | CREATE | `Task<ApiResponseDTO<Guid>>` | ✓ |
+| IAiKnowledgeBaseAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAiKnowledgeBaseAppService | `GetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<AiKnowledgeBaseDTO>>>` | ✓ |
+| IAiKnowledgeBaseAppService | `GetByIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<AiKnowledgeBaseDTO>>` | ✓ |
+| IAiKnowledgeBaseAppService | `GetModulesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ⚠ Get sin ByXxx/All |
+| IAiKnowledgeBaseAppService | `UpdateAsync` | UPDATE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| IAppImplementationEmailService | `SendMissingEmployeeDataReportAsync` | SPECIAL | `Task` | ✓ |
+| IAuditEntryAppService | `GetHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<AuditEntryDTO>>>` | ⚠ Get sin ByXxx/All |
+| IBrevoEmailLogService | `GetEmailLogsAsync` | GET_LIST | `Task<ApiResponseDTO<BrevoPagedResultDTO>>` | ⚠ Get sin ByXxx/All |
+| IBudgetProposalRealTimeService | `SendUpdateAsync` | SPECIAL | `Task` | ✓ |
+| IDatabaseBackupService | `CreateConfigAsync` | CREATE | `Task<ApiResponseDTO<DatabaseBackupConfigDTO>>` | ✓ |
+| IDatabaseBackupService | `DeleteConfigAsync` | DELETE | `Task<ApiResponseDTO<object>>` | ✓ |
+| IDatabaseBackupService | `ExecuteBackupNowAsync` | SPECIAL | `Task<ApiResponseDTO<object>>` | ✓ |
+| IDatabaseBackupService | `GetAvailableDatabasesAsync` | GET_LIST | `Task<ApiResponseDTO<List<string>>>` | ⚠ Get sin ByXxx/All |
+| IDatabaseBackupService | `GetBackupHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<DatabaseBackupSummaryDTO>>>` | ⚠ Get sin ByXxx/All |
+| IDatabaseBackupService | `GetConfigAsync` | GET_SINGLE | `Task<ApiResponseDTO<DatabaseBackupConfigDTO>>` | ⚠ Get sin ByXxx/All |
+| IDatabaseBackupService | `GetConfigsAsync` | GET_LIST | `Task<ApiResponseDTO<List<DatabaseBackupConfigDTO>>>` | ⚠ Get sin ByXxx/All |
+| IDatabaseBackupService | `TestOneDriveConnectionAsync` | OTHER | `Task<ApiResponseDTO<object>>` | ⚠ naming no CRUD estandar |
+| IDatabaseBackupService | `UpdateConfigAsync` | UPDATE | `Task<ApiResponseDTO<DatabaseBackupConfigDTO>>` | ✓ |
+| IElevenLabsAppService | `GetSettingsAsync` | GET_LIST | `Task<ApiResponseDTO<ElevenLabsSettingsDTO>>` | ⚠ Get sin ByXxx/All |
+| IElevenLabsAppService | `GetSubscriptionStatusAsync` | GET_LIST | `Task<ApiResponseDTO<SubscriptionStatusDTO>>` | ⚠ Get sin ByXxx/All |
+| IElevenLabsAppService | `GetVoicesAsync` | GET_LIST | `Task<ApiResponseDTO<List<VoiceInfoDTO>>>` | ⚠ Get sin ByXxx/All |
+| IElevenLabsAppService | `SaveSettingsAsync` | UPDATE | `Task<ApiResponseDTO<ElevenLabsSettingsDTO>>` | ✓ |
+| IElevenLabsAppService | `TextToSpeechAsync` | OTHER | `Task<ApiResponseDTO<TextToSpeechResponseDTO>>` | ⚠ naming no CRUD estandar |
+| IEmailMessageAppService | `SendEmailMesageRequestAsync` | SPECIAL | `Task` | ✓ |
+| IEmailMessageAppService | `SendReportPendingTicketGroupAsync` | SPECIAL | `Task` | ✓ |
+| ILogService | `DeleteAllLogsAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ILogService | `DeleteOldLogsAsync` | DELETE | `Task<ApiResponseDTO<int>>` | ✓ |
+| ILogService | `GetLogsAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<LogEntryDTO>>>` | ⚠ Get sin ByXxx/All |
+| IMeetingEmailService | `SendPendingItemsAsync` | SPECIAL | `Task` | ✓ |
+| INotificationUserAppService | `CreateNotificationAsync` | CREATE | `Task<ApiResponseDTO<NotificationUser>>` | ✓ |
+| INotificationUserAppService | `DeleteAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| INotificationUserAppService | `DeleteOldNotificationsAsync` | DELETE | `Task<ApiResponseDTO<int>>` | ✓ |
+| INotificationUserAppService | `DeleteRangeAsync` | DELETE | `Task<ApiResponseDTO<bool>>` | ✓ |
+| INotificationUserAppService | `GetUnreadCountAsync` | GET_SINGLE | `Task<ApiResponseDTO<int>>` | ⚠ Get sin ByXxx/All |
+| INotificationUserAppService | `GetUserNotificationsAsync` | GET_LIST | `Task<ApiResponseDTO<List<NotificationUserDTO>>>` | ⚠ Get sin ByXxx/All |
+| INotificationUserAppService | `GetUsersAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ⚠ Get sin ByXxx/All |
+| INotificationUserAppService | `MarkAsReadAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| IOneDriveGraphService | `DeleteOldFilesAsync` | DELETE | `Task` | ✓ |
+| IOneDriveGraphService | `TestConnectionAsync` | OTHER | `Task<bool>` | ⚠ naming no CRUD estandar |
+| IOneDriveGraphService | `UploadFileAsync` | SPECIAL | `Task<string>` | ✓ |
+| IProjectedExpenseRealTimeService | `SendUpdateAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendAltaSistemasEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendCandidateApplicationCreatedEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendCandidateInterviewDecisionEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendCandidateInterviewTrackingEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendCandidateReceptionConfirmedEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendCandidateSentToInterviewEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendCredencialesAccesoEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendModificacionSalarioEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendSolicitudAltaEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendSolicitudBajaEmailAsync` | SPECIAL | `Task` | ✓ |
+| IRecruitmentEmailService | `SendSolicitudVacanteEmailAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskEmailService | `SendContractsPoliciesExpirationAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskEmailService | `SendLegalReportAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskEmailService | `SendLegalTicketReportToCustomerAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskEmailService | `SendPendingTicketGroupReportAsync` | SPECIAL | `Task` | ✓ |
+| IScheduledTaskEmailService | `SendVacanciesReportAsync` | SPECIAL | `Task` | ✓ |
+| ISelectItemAppService | `ApplicationUserForCustomerIdAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ⚠ naming no CRUD estandar |
+| ISelectItemAppService | `FundingPeriodAsync` | OTHER | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ⚠ naming no CRUD estandar |
+| ISelectItemAppService | `GetRolesForAnnouncementsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ⚠ Get sin ByXxx/All |
+| ISelectItemAppService | `SelectItemAccountForCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemAddCuentaCedulaPresupuestalAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemAdministracionMinutaAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemAlmacenesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemAnioOrdenServiceAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<int>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemApplicationRolesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemApplicationRolesToAdministratorAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemApplicationRolesToProviderAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemApplicationUserAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemApplicationUserProviderAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemAspelCustomerEmpresaAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemBankAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemCandidatesAsync` | GET_LIST | `Task<ApiResponseDTO<List<CandidateSelectItemDTO>>>` | ✓ |
+| ISelectItemAppService | `SelectItemCategoriesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemComiteMinutaAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemCustomerInspectionsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemCustomersAccesoAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemCustomersActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemCustomersActiveNameShortAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemCustomersAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemCustomersInactiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemDocumentCatalogAsync` | GET_LIST | `Task<ApiResponseDTO<List<DocumentCatalogSelectItemDTO>>>` | ✓ |
+| ISelectItemAppService | `SelectItemEmployeeActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemEmployeeByUserIdAsync` | GET_SINGLE | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemEmployeesActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemEquipoCalendarioMaestroAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemEquipoClasificacionAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemEvaluationTemplateAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemInspectionReviewsCatalogAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemInstalacionesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemLegalMatterAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemLegalMatterCategoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemMachineriesActiveAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemMachineriesGetAllAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemMeasurementUnitsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemMedidorCategoriaAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemModuleAppAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemNombreCortoAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemOnboardingChecklistOptionsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemOperationsInterviewersByCustomerAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemOperationsInterviewersByRequestPositionAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemOwnerAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemParticipantAdministrationAsync` | GET_LIST | `Task<ApiResponseDTO<List<MeetingParticipantAdministracionDTO>>>` | ✓ |
+| ISelectItemAppService | `SelectItemPaymentMethodAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemPersonAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemPersonEmployeeAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemProductsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemProfessionsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemPropertyAccountsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemPropertyAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemProvidersAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemRecruitmentSourcesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemRequestPositionsPendingAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemResidentesEdificioAsync` | GET_LIST | `Task<ApiResponseDTO<List<ResidentesEdificioDTO>>>` | ✓ |
+| ISelectItemAppService | `SelectItemResponsableSistemasAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemRolesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemRolesByRoleTypeAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemRolForDocumentAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemSelectForAddTicketAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<string>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemSupervisionAsync` | GET_LIST | `Task<ApiResponseDTO<List<LabelDTO>>>` | ✓ |
+| ISelectItemAppService | `SelectItemTaskGroupCategoryAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemTicketGroupListAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemToolAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemUseCFDIAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemVacantesAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectItemWayToPayAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `SelectRichItemProductsAsync` | GET_LIST | `Task<ApiResponseDTO<List<SelectItemDTO<Guid>>>>` | ✓ |
+| ISelectItemAppService | `UserFromCustomerAsync` | OTHER | `Task<ApiResponseDTO<List<UserCustomerDTO>>>` | ⚠ naming no CRUD estandar |
+| ISendEmailAppService | `EstadosFinancierosCondominosAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ISendEmailAppService | `OperationReportAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ISendEmailAppService | `PresentacionFinalComiteAsync` | OTHER | `Task<ApiResponseDTO<bool>>` | ⚠ naming no CRUD estandar |
+| ISendEmailAppService | `SendExecutivePendingReportAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISendEmailAppService | `SendMeetingAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISendEmailAppService | `SendTestMailAsync` | SPECIAL | `Task<ApiResponseDTO<SendTestMailResultDTO>>` | ✓ |
+| ISendEmailAppService | `TestEmailAsync` | OTHER | `Task<ApiResponseDTO<string>>` | ⚠ naming no CRUD estandar |
+| ISendEmailAppService | `TestSendEmail` | OTHER | `Task<ApiResponseDTO<string>>` | ⚠ naming no CRUD estandar |
+| ISendSignalRService | `GetConnectedUserIds` | GET_LIST | `ApiResponseDTO<List<string>>` | ⚠ Get sin ByXxx/All |
+| ISendSignalRService | `SendBudgetProposalItemUpdateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISendSignalRService | `SendDTOUserAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISendSignalRService | `SendGoogleCalendarEventUpdateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISendSignalRService | `SendNativeCollectionUpdateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISendSignalRService | `SendPanicAlertAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISendSignalRService | `SendProjectedExpenseUpdateAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ISendSignalRService | `SenDTOMultipleUsersAsync` | SPECIAL | `Task<ApiResponseDTO<bool>>` | ✓ |
+| ITaskLegalWhatsAppService | `NotifyNewTicketAsync` | SPECIAL | `Task` | ✓ |
+| ITaskLegalWhatsAppService | `NotifyStatusUpdateAsync` | SPECIAL | `Task` | ✓ |
+| ITaskWorkPlanEmailService | `SendWeeklyWorkPlanAsync` | SPECIAL | `Task` | ✓ |
+| IUserActivityHistoryAppService | `GetHistoryAsync` | GET_LIST | `Task<ApiResponseDTO<PagedResultDTO<UserActivityHistoryDTO>>>` | ⚠ Get sin ByXxx/All |
+| IUserActivityService | `LogActivityAsync` | OTHER | `Task` | ⚠ naming no CRUD estandar |
+| SelectItemAppService | `ListRoleAdmin` | OTHER | `List<ApplicationRolesDTO>` | ⚠ naming no CRUD estandar |
 
 ### Endpoints
 

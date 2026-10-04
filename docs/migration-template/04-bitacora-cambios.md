@@ -6792,23 +6792,23 @@ auditarlos con el mismo rigor antes de actuar sobre ellos.
 
 ---
 
-## 2026-09-16 � Correcci�n visual: Bootstrap Tooltips (Minia) y arreglos de inputs
+## 2026-09-16 — Corrección visual: Bootstrap Tooltips (Minia) y arreglos de inputs
 
 **Autor:** Antigravity (Gemini).
 
 **Alcance:** 
-1. Implementaci�n de los tooltips de validaci�n nativos de Bootstrap (estilo Minia) para todos los Custom Inputs desktop.
+1. Implementación de los tooltips de validación nativos de Bootstrap (estilo Minia) para todos los Custom Inputs desktop.
 
 **Trabajo realizado:**
-- **Validation Tooltips:** En ase-input-signal.ts se a�adi� position-relative al contenedor .field-content. En alidation-errors-custom-input.ts se cambi� el texto rojo por <div class="invalid-tooltip d-block">, activando el dise�o nativo de Bootstrap Tooltip flotante.
+- **Validation Tooltips:** En base-input-signal.ts se añadió position-relative al contenedor .field-content. En validation-errors-custom-input.ts se cambió el texto rojo por <div class="invalid-tooltip d-block">, activando el diseño nativo de Bootstrap Tooltip flotante.
 - **Fuga de estilos 
 
-**Archivos de c�digo tocados:**
+**Archivos de código tocados:**
 
 **Resultado:** 
-- Los tooltips de error emulan a Minia, el borde rojo y el icono aparecen en campos de error y los inputs de b�squeda recuperaron su layout.
+- Los tooltips de error emulan a Minia, el borde rojo y el icono aparecen en campos de error y los inputs de búsqueda recuperaron su layout.
 
-**Pr�ximos pasos:**
+**Próximos pasos:**
 - Continuar auditando el roadmap restante.
 
 ---

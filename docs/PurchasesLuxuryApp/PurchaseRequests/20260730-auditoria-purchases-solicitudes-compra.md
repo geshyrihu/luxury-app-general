@@ -183,7 +183,7 @@ Se reviso:
 
 **Impacto**
 
-- una falla intermedia puede dejar archivos huÃ©rfanos o estado parcial
+- una falla intermedia puede dejar archivos huérfanos o estado parcial
 - el modulo combina persistencia local, filesystem, ASPEL, IA y eventos
 
 **Recomendacion**

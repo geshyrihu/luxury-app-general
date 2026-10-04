@@ -171,7 +171,7 @@ Se reviso:
 - `create-orden-compra-wizard.ts`
   usa `providerControl`, `selectedProductControl`, `selectedAccountForAutocomplete`,
   `itemsSignal`, `uploadedFiles` y `fundingId` como estado critico externo
-- el `submit` final del wizard arma payload desde varios orÃ­genes separados en
+- el `submit` final del wizard arma payload desde varios orígenes separados en
   `create-orden-compra-wizard.ts`
 
 **Impacto**

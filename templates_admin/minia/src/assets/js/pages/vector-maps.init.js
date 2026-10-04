@@ -103,7 +103,7 @@ File: Vector Maps init Js File
 				name : 'Singapore'
 			}, {
 				latLng : [0.33, 6.73],
-				name : 'SÃ£o TomÃ© and PrÃ­ncipe'
+				name : 'São Tomé and Príncipe'
 			}]
     });
     

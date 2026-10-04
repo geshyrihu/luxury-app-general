@@ -66,15 +66,15 @@ Exp√≥n los Endpoints HTTP del simulador bas√°ndote en los requerimientos del arc
 ---
 
 ## ?? FASE 04: Parches de Arquitectura y QA (Consistencia)
-**Objetivo:** Sellar las brechas de vulnerabilidad encontradas en el an·lisis Punta a Punta (Mock Aspel).
+**Objetivo:** Sellar las brechas de vulnerabilidad encontradas en el an√°lisis Punta a Punta (Mock Aspel).
 
-### Prompt de EjecuciÛn (Copiar y pegar al Agente CLI)
+### Prompt de Ejecuci√≥n (Copiar y pegar al Agente CLI)
 ``text
-Implementa los siguientes parches de QA en el mÛdulo de Minimal APIs de MockAspel:
+Implementa los siguientes parches de QA en el m√≥dulo de Minimal APIs de MockAspel:
 
-1. **Control de Duplicidad (409 Conflict):** En POST /Polizas, antes de hacer el Add, revisa si ya existe una pÛliza con la misma llave compuesta (IntEmpresa + Ejercicio + Periodo + Tipo_Poli + Num_Poliz). Si existe, retorna Results.Conflict("La pÛliza ya existe").
-2. **ValidaciÛn de Cuentas (400 Bad Request):** En POST /Polizas, extrae todos los Num_Cta del arreglo de Partidas y haz una consulta a MockCuentas para verificar que todas existan y sean de Tipo == "D". Si falta alguna o es 'A', retorna Results.BadRequest("Cuenta inv·lida o no es de Detalle").
-3. **SimulaciÛn de Cierre de Mes (403 Forbidden):** Hardcodea una lÛgica sencilla: Si el Ejercicio y Periodo de la pÛliza enviada corresponden a un mes anterior al mes en curso (ej. si hoy es agosto, e intentan meter una de junio), retorna Results.Forbid() con mensaje "El periodo contable ya est· cerrado".
-4. **Efecto Secundario (Saldos):** Crea una funciÛn interna que, al guardar la pÛliza exitosamente, busque el MockSaldo del Num_Cta y le sume el monto a CargoXX o AbonoXX (dependiendo del mes y de si fue D o H), para que el GET /Query/Saldos responda con data fresca.
-5. Al terminar, actualiza el archivo docs/plans/mock-aspel-execution-report.md bajo el tÌtulo "Reporte Fase 04" indicando que los parches de QA fueron aplicados.
+1. **Control de Duplicidad (409 Conflict):** En POST /Polizas, antes de hacer el Add, revisa si ya existe una p√≥liza con la misma llave compuesta (IntEmpresa + Ejercicio + Periodo + Tipo_Poli + Num_Poliz). Si existe, retorna Results.Conflict("La p√≥liza ya existe").
+2. **Validaci√≥n de Cuentas (400 Bad Request):** En POST /Polizas, extrae todos los Num_Cta del arreglo de Partidas y haz una consulta a MockCuentas para verificar que todas existan y sean de Tipo == "D". Si falta alguna o es 'A', retorna Results.BadRequest("Cuenta inv√°lida o no es de Detalle").
+3. **Simulaci√≥n de Cierre de Mes (403 Forbidden):** Hardcodea una l√≥gica sencilla: Si el Ejercicio y Periodo de la p√≥liza enviada corresponden a un mes anterior al mes en curso (ej. si hoy es agosto, e intentan meter una de junio), retorna Results.Forbid() con mensaje "El periodo contable ya est√° cerrado".
+4. **Efecto Secundario (Saldos):** Crea una funci√≥n interna que, al guardar la p√≥liza exitosamente, busque el MockSaldo del Num_Cta y le sume el monto a CargoXX o AbonoXX (dependiendo del mes y de si fue D o H), para que el GET /Query/Saldos responda con data fresca.
+5. Al terminar, actualiza el archivo docs/plans/mock-aspel-execution-report.md bajo el t√≠tulo "Reporte Fase 04" indicando que los parches de QA fueron aplicados.
 ``

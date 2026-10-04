@@ -633,9 +633,9 @@ M LuxuryApp.Application/Infrastructure/MockAspel/Extensions/MockAspelServiceColl
 
 **Total:** 4 archivos modificados. Ninguno movido, ninguno borrado. Nada comprometido a git — todo en working tree listo para revisión.
 
-## 2026-09-03 � Fase 8: Root Cleanup
+## 2026-09-03 — Fase 8: Root Cleanup
 
-**Alcance:** Limpieza de la ra�z de pi/LuxuryApp.Application/ para que s�lo contenga las carpetas permitidas (Infrastructure/, Modules/, Shared/), GlobalUsings.cs, los archivos de proyecto (*.csproj, *.sln, *.csproj.user) y los artefactos de build (in/, obj/, Properties/).
+**Alcance:** Limpieza de la raíz de api/LuxuryApp.Application/ para que sólo contenga las carpetas permitidas (Infrastructure/, Modules/, Shared/), GlobalUsings.cs, los archivos de proyecto (*.csproj, *.sln, *.csproj.user) y los artefactos de build (bin/, obj/, Properties/).
 
 ### Reubicaciones ejecutadas
 
@@ -646,48 +646,48 @@ M LuxuryApp.Application/Infrastructure/MockAspel/Extensions/MockAspelServiceColl
 | ApplicationEndPointsMarker.cs | Infrastructure/EndPoints/ | ApplicationEndPointsMarker.cs |
 | Seeds/ | Infrastructure/Data/Seeds/ | FinancialReportSeed.cs.disabled, IdentitySeed.cs |
 | Identity/ | Modules/AuthLuxuryApp/Infrastructure/Identity/ | IdentityErrorDescriberEs.cs |
-| Endpoints/IEndPointsModule.cs | Infrastructure/EndPoints/ | IEndPointsModule.cs (contrato global t�cnico; no pertenece a ning�n m�dulo) |
+| Endpoints/IEndPointsModule.cs | Infrastructure/EndPoints/ | IEndPointsModule.cs (contrato global técnico; no pertenece a ningún módulo) |
 
-**Total:** 11 archivos reubicados en 6 movimientos. La carpeta ra�z Endpoints/ se elimin� tras quedar vac�a.
+**Total:** 11 archivos reubicados en 6 movimientos. La carpeta raíz Endpoints/ se eliminó tras quedar vacía.
 
-### Decisi�n sobre Endpoints/IEndPointsModule.cs
+### Decisión sobre Endpoints/IEndPointsModule.cs
 
-El orquestador sugiri� distribuir archivos hacia m�dulos o hacia Infrastructure/EndPoints/. La carpeta ra�z Endpoints/ no conten�a endpoints verticales (CatalogEndpoints.cs, etc.) � s�lo conten�a la interfaz IEndPointsModule, que es el contrato t�cnico global que todo m�dulo implementa para registrarse en el escaneo por reflexi�n (MapAllEndPoints()). Por tanto se reubic� como artefacto t�cnico global en Infrastructure/EndPoints/, junto a ApplicationEndPointsMarker.cs.
+El orquestador sugirió distribuir archivos hacia módulos o hacia Infrastructure/EndPoints/. La carpeta raíz Endpoints/ no contenía endpoints verticales (CatalogEndpoints.cs, etc.) y solo contenía la interfaz IEndPointsModule, que es el contrato técnico global que todo módulo implementa para registrarse en el escaneo por reflexión (MapAllEndPoints()). Por tanto se reubicó como artefacto técnico global en Infrastructure/EndPoints/, junto a ApplicationEndPointsMarker.cs.
 
 ### Reglas respetadas
 
-- **Namespaces intactos:** ning�n archivo .cs fue modificado; la l�nea 
-amespace LuxuryApp.Application.{Filters,Hubs,Identity,EndPoints}; se conserv� en cada archivo reubicado.
-- **GlobalUsings.cs intacto:** sigue exportando global using LuxuryApp.Application.EndPoints;. Al moverse IEndPointsModule.cs a Infrastructure/EndPoints/, su namespace (LuxuryApp.Application.EndPoints) no cambi�, por lo que el global using sigue resolviendo el s�mbolo sin ajustes.
+- **Namespaces intactos:** ningún archivo .cs fue modificado; la línea 
+namespace LuxuryApp.Application.{Filters,Hubs,Identity,EndPoints}; se conservó en cada archivo reubicado.
+- **GlobalUsings.cs intacto:** sigue exportando global using LuxuryApp.Application.EndPoints;. Al moverse IEndPointsModule.cs a Infrastructure/EndPoints/, su namespace (LuxuryApp.Application.EndPoints) no cambió, por lo que el global using sigue resolviendo el símbolo sin ajustes.
 - **ApplicationDbContext.OnModelCreating:** la doble llamada ApplyConfigurationsFromAssembly documentada en Fase 2 sigue siendo necesaria porque las IEntityTypeConfiguration<T> siguen en Infrastructure.Data.
 
-### Desviaci�n: git mv no aplicable
+### Desviación: git mv no aplicable
 
-D:\repos\luxuryapp-api **no es un repositorio git** (no existe .git/ en la ra�z ni en ning�n padre; git rev-parse --show-toplevel falla). El orquestador especific� git mv como obligatorio, pero ese comando no aplica a un working tree sin repo. Se sustituy� por Move-Item de PowerShell, que produce un resultado equivalente en disco (mismo path final, mismo contenido, mismos timestamps de archivo conservados). **El estado final en disco es id�ntico al que habr�a producido git mv**; �nicamente el historial git no se ve afectado porque no hay historial git que preservar. Antes de commitear en el repo real (cuando sea inicializado), se recomienda ejecutar exactamente los mismos mv que aqu� se documentan para mantener git log --follow consistente.
+D:\repos\luxuryapp-api **no es un repositorio git** (no existe .git/ en la raíz ni en ningún padre; git rev-parse --show-toplevel falla). El orquestador especificó git mv como obligatorio, pero ese comando no aplica a un working tree sin repo. Se sustituyó por Move-Item de PowerShell, que produce un resultado equivalente en disco (mismo path final, mismo contenido, mismos timestamps de archivo conservados). **El estado final en disco es idéntico al que habría producido git mv**; únicamente el historial git no se ve afectado porque no hay historial git que preservar. Antes de commitear en el repo real (cuando sea inicializado), se recomienda ejecutar exactamente los mismos mv que aquí se documentan para mantener git log --follow consistente.
 
-### Validaci�n
+### Validación
 
 - dotnet build api/LuxuryApp.Application/LuxuryApp.Application.csproj --nologo: **0 errores**, 160 advertencias pre-existentes no relacionadas con los movimientos (todas CS8632, CS9113, CS0168, CS4014, CS0618 en archivos no tocados por esta fase).
-- Ra�z de pi/LuxuryApp.Application/: s�lo Infrastructure/, Modules/, Shared/, Properties/, in/, obj/, GlobalUsings.cs, LuxuryApp.Application.csproj, LuxuryApp.Application.csproj.user, LuxuryApp.Application.sln. Cumple el criterio de la fase.
+- Raíz de api/LuxuryApp.Application/: sólo Infrastructure/, Modules/, Shared/, Properties/, bin/, obj/, GlobalUsings.cs, LuxuryApp.Application.csproj, LuxuryApp.Application.csproj.user, LuxuryApp.Application.sln. Cumple el criterio de la fase.
 
 ### Trabajo pendiente para fases futuras
 
-- Renombrar namespaces de los archivos movidos (actualmente LuxuryApp.Application.Filters, .Hubs, .Identity, .EndPoints, .Data.Seeds) para que reflejen su nueva ubicaci�n f�sica. Esto debe hacerse en una fase dedicada porque cualquier using que hoy coincida con la ruta plana debe actualizarse simult�neamente.
-- Revisar si existen archivos .disabled (LogUserActivityAttribute.cs.disabled, FinancialReportSeed.cs.disabled) que deban activarse, eliminarse o mantenerse � siguen en su nueva ubicaci�n tal cual.
+- Renombrar namespaces de los archivos movidos (actualmente LuxuryApp.Application.Filters, .Hubs, .Identity, .EndPoints, .Data.Seeds) para que reflejen su nueva ubicación física. Esto debe hacerse en una fase dedicada porque cualquier using que hoy coincida con la ruta plana debe actualizarse simultáneamente.
+- Revisar si existen archivos .disabled (LogUserActivityAttribute.cs.disabled, FinancialReportSeed.cs.disabled) que deban activarse, eliminarse o mantenerse — siguen en su nueva ubicación tal cual.
 
-## 2026-09-03 � Sincronizacion de namespaces globales (Shared/Infrastructure)
+## 2026-09-03 — Sincronizacion de namespaces globales (Shared/Infrastructure)
 
-**Alcance:** Reescritura masiva de namespaces de los archivos .cs que viven en pi/LuxuryApp.Application/Shared/ y pi/LuxuryApp.Application/Infrastructure/ para que coincidan con la ruta fisica, bajo el prefijo LuxuryApp.Application.. Los namespaces de los modulos de negocio (Modules/*/) NO fueron tocados: siguen usando la politica plana por tipo de pieza (ver ackend-namespaces.md �3).
+**Alcance:** Reescritura masiva de namespaces de los archivos .cs que viven en api/LuxuryApp.Application/Shared/ y api/LuxuryApp.Application/Infrastructure/ para que coincidan con la ruta fisica, bajo el prefijo LuxuryApp.Application.. Los namespaces de los modulos de negocio (Modules/*/) NO fueron tocados: siguen usando la politica plana por tipo de pieza (ver backend-namespaces.md §3).
 
-**Motivacion (politica dual):** Hasta hoy, Shared/ usaba LuxuryApp.Shared.* e Infrastructure/ usaba LuxuryApp.Infrastructure.* (sufijos planos que ignoraban la ruta). Esto obligaba a recordar prefijos magicos y rompia la simetria con el resto del proyecto, que ya estaba bajo LuxuryApp.Application.*. Ademas, LuxuryApp.Shared.* colisionaba conceptualmente con cualquier proyecto LuxuryApp.Shared.csproj externo. Tras aprobacion explicita del Tech Lead (decision registrada en este log y formalizada en ackend-namespaces.md �1-�2), se migra a namespaces path-based **unicamente** para Shared/ e Infrastructure/. Los modulos mantienen su politica plana por estabilidad ante migraciones verticales.
+**Motivacion (politica dual):** Hasta hoy, Shared/ usaba LuxuryApp.Shared.* e Infrastructure/ usaba LuxuryApp.Infrastructure.* (sufijos planos que ignoraban la ruta). Esto obligaba a recordar prefijos magicos y rompia la simetria con el resto del proyecto, que ya estaba bajo LuxuryApp.Application.*. Ademas, LuxuryApp.Shared.* colisionaba conceptualmente con cualquier proyecto LuxuryApp.Shared.csproj externo. Tras aprobacion explicita del Tech Lead (decision registrada en este log y formalizada en backend-namespaces.md §1-§2), se migra a namespaces path-based **unicamente** para Shared/ e Infrastructure/. Los modulos mantienen su politica plana por estabilidad ante migraciones verticales.
 
 ### Transformaciones aplicadas
 
-#### Shared/ � LuxuryApp.Shared.<sub> -> LuxuryApp.Application.Shared.<sub>
+#### Shared/ → LuxuryApp.Shared.<sub> -> LuxuryApp.Application.Shared.<sub>
 
 Sub-jerarquias reescritas: Constants, Enums, DTOs, DTOs.CobranzaOnline, Design, Extensions, Utils, Settings, Services, Services.Notifications, Services.Utils, Services.CobranzaOnline, Events, Time.
 
-#### Infrastructure/ � multiples prefijos -> LuxuryApp.Application.Infrastructure.<sub>
+#### Infrastructure/ → multiples prefijos -> LuxuryApp.Application.Infrastructure.<sub>
 
 - LuxuryApp.Infrastructure.Data* (incluye Data.Interfaces, Data.Migrations, Data.Seeds) -> LuxuryApp.Application.Infrastructure.Data.*
 - LuxuryApp.Infrastructure.Vault.* (Abstractions, Data, DTOs, Entities, Migrations, Registration, Repositories, Security, Seeds, Services) -> LuxuryApp.Application.Infrastructure.Vault.*
@@ -703,14 +703,14 @@ Ademas, LuxuryApp.Application.Hubs (residuo legacy en Infrastructure/Hubs/Notifi
 
 ### Archivos modificados
 
-- **855 archivos .cs** reescritos via Replace() en PowerShell con lectura/escritura UTF-8 sin BOM ([System.Text.UTF8Encoding]::new(False)) para preservar codificacion y finales de linea. Encoding y caracteres especiales validados intactos (acentos, e�es, simbolos) en una muestra de 30 archivos (e.g. VacationCalculator, HydrantType, CandidateNotificationCoordinatorService).
+- **855 archivos .cs** reescritos via Replace() en PowerShell con lectura/escritura UTF-8 sin BOM ([System.Text.UTF8Encoding]::new(False)) para preservar codificacion y finales de linea. Encoding y caracteres especiales validados intactos (acentos, eñes, simbolos) en una muestra de 30 archivos (e.g. VacationCalculator, HydrantType, CandidateNotificationCoordinatorService).
 - **2 archivos .cshtml** actualizados manualmente: @using LuxuryApp.Shared.Design -> @using LuxuryApp.Application.Shared.Design en ExecutivePendingReportEmail.cshtml y RecruitmentCandidateSentToInterviewEmail.cshtml. Razor NO consume <Using Include> del .csproj, asi que estas directivas @using literales tenian que actualizarse a mano.
 - **GlobalUsings.cs** (raiz de Application): 3 lineas modificadas (LuxuryApp.Shared.DTOs/Enums/Services -> LuxuryApp.Application.Shared.*).
 - **LuxuryApp.Application.csproj**: bloque <Using Include="..." /> actualizado. Reemplazos globales de LuxuryApp.Shared.* -> LuxuryApp.Application.Shared.*, LuxuryApp.Infrastructure.Vault.* -> LuxuryApp.Application.Infrastructure.Vault.*, LuxuryApp.Providers.* -> LuxuryApp.Application.Infrastructure.Providers.*, LuxuryApp.Modules.Configuration.Filters -> LuxuryApp.Application.Infrastructure.Filters, LuxuryApp.Application.Hubs -> LuxuryApp.Application.Infrastructure.Hubs. Ademas, se agregaron <Using Include> que faltaban y que el orquestador no solicito explicitamente pero eran necesarios para que el build siguiera funcionando sin modificacion de archivos de modulos:
   - <Using Include="LuxuryApp.Application.Infrastructure.MockAspel" />
   - <Using Include="LuxuryApp.Application.Infrastructure.Logs" />
   - <Using Include="LuxuryApp.Application.Infrastructure.Providers" />
-- **conventions/backend/backend-namespaces.md**: REESTRUCTURADO. Se introduce la politica dual explicita (�1 tabla resumen; �2 path-based para Shared/Infrastructure; �3 plano por tipo de pieza para Modules, sin cambios). Se actualiza la fecha de revision y se documenta el criterio de desempate por dominio destino (�4). Los archivos de modulos NO fueron tocados, por lo que sus namespaces planos siguen siendo validos.
+- **conventions/backend/backend-namespaces.md**: REESTRUCTURADO. Se introduce la politica dual explicita (§1 tabla resumen; §2 path-based para Shared/Infrastructure; §3 plano por tipo de pieza para Modules, sin cambios). Se actualiza la fecha de revision y se documenta el criterio de desempate por dominio destino (§4). Los archivos de modulos NO fueron tocados, por lo que sus namespaces planos siguen siendo validos.
 
 ### Verificacion
 
@@ -728,9 +728,9 @@ Ademas, LuxuryApp.Application.Hubs (residuo legacy en Infrastructure/Hubs/Notifi
 - Los archivos de migraciones EF (Infrastructure/Data/Migrations/*.cs) ahora usan el namespace path-based LuxuryApp.Application.Infrastructure.Data.Migrations (antes LuxuryApp.Infrastructure.Data.Migrations). Entity Framework resuelve la migracion por convencion del nombre de la clase (Partial + namespace), asi que el cambio no deberia afectar dotnet ef migrations. Confirmar antes del primer migrate en ambiente real.
 - Hay archivos en Shared/Services/Utils/ con namespace LuxuryApp.Application.Shared.Services.Utils. Si en el futuro se decide aplanar, se requeriria una mini-fase adicional.
 - Los modulos de negocio (Modules/*/) conservan namespaces planos por tipo de pieza. Si en algun momento se decide migrarlos a path-based, sera una fase dedicada con un orquestador explicito y aprobacion previa (la politica plana actual es estable y NO requiere cambio).
-- Cualquier archivo nuevo que se cree en Shared/ o Infrastructure/ debe seguir la nueva politica path-based (ver ackend-namespaces.md �2).
+- Cualquier archivo nuevo que se cree en Shared/ o Infrastructure/ debe seguir la nueva politica path-based (ver backend-namespaces.md §2).
 
-## 2026-09-03 � Remedacion de consumidores downstream (Api + Tests)
+## 2026-09-03 — Remedacion de consumidores downstream (Api + Tests)
 
 **Alcance:** Tras la sincronizacion de namespaces globales (Fase anterior), los proyectos LuxuryApp.Api y LuxuryApp.Tests quedaron con errores de compilacion porque sus <Using Include="..." /> y directivas using literales en archivos .cs y .cshtml seguian apuntando a los namespaces pre-Fase (e.g. LuxuryApp.Shared.Enums, LuxuryApp.Infrastructure.Hubs, LuxuryApp.Infrastructure.Data). El archivo logs.txt capturado por la sesion reportaba **450 errores activos** distribuidos entre los dos proyectos.
 
@@ -738,13 +738,13 @@ Ademas, LuxuryApp.Application.Hubs (residuo legacy en Infrastructure/Hubs/Notifi
 
 #### 1. <Using Include="..." /> en csprojs (referencias globales implicitas)
 
-- **pi/LuxuryApp.Tests/LuxuryApp.Tests.csproj**: 6 entradas actualizadas.
+- **api/LuxuryApp.Tests/LuxuryApp.Tests.csproj**: 6 entradas actualizadas.
   - LuxuryApp.Shared.Enums -> LuxuryApp.Application.Shared.Enums
   - LuxuryApp.Shared.DTOs -> LuxuryApp.Application.Shared.DTOs
   - LuxuryApp.Application.Hubs -> LuxuryApp.Application.Infrastructure.Hubs (con espacio inicial que el archivo tenia:  "LuxuryApp.Application.Hubs" ->  "LuxuryApp.Application.Infrastructure.Hubs")
   - LuxuryApp.Infrastructure.Data -> LuxuryApp.Application.Infrastructure.Data
   - LuxuryApp.Infrastructure.Data.Entities -> LuxuryApp.Application.Infrastructure.Data.Entities
-- **pi/LuxuryApp.Api/LuxuryApp.Api.csproj**: 10 entradas actualizadas (longest-prefix-first ordering aplicado via script PowerShell para evitar colisiones: LuxuryApp.Infrastructure.Data.Entities antes que LuxuryApp.Infrastructure.Data, etc.).
+- **api/LuxuryApp.Api/LuxuryApp.Api.csproj**: 10 entradas actualizadas (longest-prefix-first ordering aplicado via script PowerShell para evitar colisiones: LuxuryApp.Infrastructure.Data.Entities antes que LuxuryApp.Infrastructure.Data, etc.).
   - LuxuryApp.Application.Hubs -> LuxuryApp.Application.Infrastructure.Hubs
   - LuxuryApp.Shared.DTOs/Enums/Extensions/Constants -> LuxuryApp.Application.Shared.*
   - LuxuryApp.Infrastructure (sin sub) -> LuxuryApp.Application.Infrastructure
@@ -752,28 +752,28 @@ Ademas, LuxuryApp.Application.Hubs (residuo legacy en Infrastructure/Hubs/Notifi
 
 #### 2. Directivas using literales en archivos .cs
 
-**pi/LuxuryApp.Tests/**: 58 archivos .cs con directivas using LuxuryApp.Shared... o using LuxuryApp.Infrastructure... reescritas via script PowerShell (mismas reglas de orden longest-prefix-first que en LuxuryApp.Application/). Encoding UTF-8 sin BOM preservado en cada archivo.
+**api/LuxuryApp.Tests/**: 58 archivos .cs con directivas using LuxuryApp.Shared... o using LuxuryApp.Infrastructure... reescritas via script PowerShell (mismas reglas de orden longest-prefix-first que en LuxuryApp.Application/). Encoding UTF-8 sin BOM preservado en cada archivo.
 
-**pi/LuxuryApp.Api/**: 8 archivos .cs con directivas explicitas actualizadas manualmente:
+**api/LuxuryApp.Api/**: 8 archivos .cs con directivas explicitas actualizadas manualmente:
 - ServiceExtensions/OptionsServiceExtensions.cs: using LuxuryApp.Shared.Settings; -> using LuxuryApp.Application.Shared.Settings;
 - ServiceExtensions/IdentityServiceExtensions.cs: using LuxuryApp.Infrastructure.Identity; -> using LuxuryApp.Application.Infrastructure.Identity;
 - Middleware/LogUserNameMiddleware.cs: using LuxuryApp.Shared.Services; -> using LuxuryApp.Application.Shared.Services;
 - (Resto automatico via script sweep.)
 
-Ademas, **pi/LuxuryApp.Api/Program.cs:324** tenia una referencia completamente calificada que necesito correccion quirurgica:
-- Antes: wait LuxuryApp.Application.Infrastructure.Seeds.IdentitySeed.SeedSuperUserAsync(...);
-- Despues: wait LuxuryApp.Application.Infrastructure.Data.Seeds.IdentitySeed.SeedSuperUserAsync(...);
+Ademas, **api/LuxuryApp.Api/Program.cs:324** tenia una referencia completamente calificada que necesito correccion quirurgica:
+- Antes: await LuxuryApp.Application.Infrastructure.Seeds.IdentitySeed.SeedSuperUserAsync(...);
+- Despues: await LuxuryApp.Application.Infrastructure.Data.Seeds.IdentitySeed.SeedSuperUserAsync(...);
 
 (Esto se debio a que en la Fase 9 colapse LuxuryApp.Infrastructure.Seeds bajo LuxuryApp.Application.Infrastructure.Data.Seeds al mover los archivos a Infrastructure/Data/Seeds/, pero olvide buscar referencias explicitas fuera del proyecto Application.)
 
 #### 3. Razor views (.cshtml)
 
-**pi/LuxuryApp.Api/Infrastructure/Email/Templates/Shared/_EmailLayout.cshtml**: 2 directivas @using actualizadas (Razor NO consume <Using Include> del csproj, asi que estas son siempre literales):
+**api/LuxuryApp.Api/Infrastructure/Email/Templates/Shared/_EmailLayout.cshtml**: 2 directivas @using actualizadas (Razor NO consume <Using Include> del csproj, asi que estas son siempre literales):
 - @using LuxuryApp.Shared.Design -> @using LuxuryApp.Application.Shared.Design
 - @using LuxuryApp.Shared.Services -> @using LuxuryApp.Application.Shared.Services
 Ademas, se actualizo un comentario en el cuerpo del archivo: LuxuryApp.Shared.Design.EmailDesignTokens -> LuxuryApp.Application.Shared.Design.EmailDesignTokens.
 
-**pi/LuxuryApp.Api/Templates/_template-*.cs**: 6 archivos de scaffolding con directivas using LuxuryApp.Shared... o LuxuryApp.Infrastructure... fueron reescritas por consistencia, aunque estos archivos estan excluidos de la compilacion (<Compile Remove="Templates\**" /> en el csproj). Mantenerlos sincronizados evita confusion cuando se copien a un modulo real.
+**api/LuxuryApp.Api/Templates/_template-*.cs**: 6 archivos de scaffolding con directivas using LuxuryApp.Shared... o LuxuryApp.Infrastructure... fueron reescritas por consistencia, aunque estos archivos estan excluidos de la compilacion (<Compile Remove="Templates\**" /> en el csproj). Mantenerlos sincronizados evita confusion cuando se copien a un modulo real.
 
 ### Verificacion
 

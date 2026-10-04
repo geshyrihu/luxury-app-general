@@ -614,7 +614,7 @@ persistió (mismo statement, distinto `newName`).
 **Diagnóstico (Claude, verificado contra la BD real vía consulta que corrió el usuario en SSMS):**
 
 1. **Causa raíz del error 15248:** el nombre físico real de la columna en SQL Server es
-   `Fecha de ActualizaciÃ³n` (mojibake — doble codificación UTF-8/CP1252 de la "ó"), confirmado con
+   `Fecha de Actualización` (mojibake — doble codificación UTF-8/CP1252 de la "ó"), confirmado con
    `SELECT name FROM sys.columns WHERE object_id = OBJECT_ID('dbo.Diagrams')` (collation de la BD:
    `Modern_Spanish_CI_AS`). El literal en el código C# (`Fecha de Actualización`, con "ó" real)
    nunca coincidió con la columna física — por eso `sp_rename` no podía resolver el objeto sin
@@ -644,7 +644,7 @@ Diagrams, así que el snapshot no necesitaba cambios):
   UpdatedAt` (backfill) → `AlterColumn` a `NOT NULL` — mismo patrón seguro que Batch B original.
 - **La columna de Diagrams se resuelve por SQL dinámico** (`sys.columns` + `LIKE
   N'Fecha de Actualizaci%'` + `sp_rename` vía variable), en vez de hardcodear el byte corrupto
-  `Ã³` como literal C#. Motivo: `scripts/scan-mojibake.mjs` (gate de `pre-push`, corre sobre `api/`)
+  `ó` como literal C#. Motivo: `scripts/scan-mojibake.mjs` (gate de `pre-push`, corre sobre `api/`)
   marca ese literal como mojibake y `fix-mojibake.mjs` lo "corregiría" de vuelta a `ó`, rompiendo la
   migración otra vez. Confirmado con `node scripts/scan-mojibake.mjs api`: el archivo `.cs` corregido
   da 0 coincidencias.

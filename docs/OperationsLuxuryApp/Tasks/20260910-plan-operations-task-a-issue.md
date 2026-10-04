@@ -171,4 +171,4 @@ Carpetas en `appsweb/angular/src/app/modules/operations-luxuryapp/`:
 | **2026-09-10** | **Fase 1** | *Pendiente de ejecución* | ⏳ PENDIENTE | - |
 | **2026-09-10** | **Fase 2** | *Pendiente de ejecución* | ⏳ PENDIENTE | - |
 | **2026-09-10** | **Fase 3** | *Pendiente de ejecución* | ⏳ PENDIENTE | - |
-| **2026-09-10** | **Fase 4** | *Pendiente de ejecuci�n* | ? PENDIENTE | - |
+| **2026-09-10** | **Fase 4** | *Pendiente de ejecución* | ? PENDIENTE | - |

@@ -18,7 +18,7 @@ aprobaciones, conciliacion y compatibilidades externas temporales.
 
 Ademas, el estado documental del modulo no es totalmente plano:
 
-- existe un plan historico de rediseÃ±o financiero
+- existe un plan historico de rediseño financiero
 - existe un plan mas vigente de separacion y frontera
 - existe documentacion maestra backend y frontend
 - existen matrices de frontera ya auditadas
@@ -196,7 +196,7 @@ ni los patrones visuales del proyecto.
 
 ---
 
-## Fase 5. Contratos, documentaciÃ³n y gobernanza
+## Fase 5. Contratos, documentación y gobernanza
 
 **Objetivo**
 

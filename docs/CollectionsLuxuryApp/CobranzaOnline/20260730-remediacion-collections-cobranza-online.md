@@ -36,7 +36,7 @@ vigente para una remediacion formal por fases.
 - [ ] corregir `inspection` para que no arranque fijo en abril
 - [ ] validar politica unica de fecha default entre `dashboard`, `inspection`,
       `analysis` y `reporte-financiero`
-- [ ] corregir literal visible `HistÃºrico`
+- [ ] corregir literal visible `Histúrico`
 
 **Criterio de paso**
 

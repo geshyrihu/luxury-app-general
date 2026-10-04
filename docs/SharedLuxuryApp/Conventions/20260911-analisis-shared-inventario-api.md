@@ -4303,9 +4303,9 @@ Metodos: 932 | Endpoints HTTP: 421 | DTO/ViewModels: 241 | Repositorios: 0
 | `TaskGroupMemberAppService` | `GetAvailableParticipantsAsync` | GET_LIST | Guid customerId, Guid TaskGroupId | Task<ApiResponseDTO<List<SelectItemDTO<string>>>> | [WARN] Get sin criterio explicito | `OperationsLuxuryApp\Task\WorkGroupMembers\Services\TaskGroupMemberAppService.cs` |
 | `TaskGroupMemberAppService` | `GetExistingParticipantsAsync` | GET_LIST | Guid TaskGroupId | Task<ApiResponseDTO<List<WorkGroupMembersDTO>>> | [WARN] Get sin criterio explicito | `OperationsLuxuryApp\Task\WorkGroupMembers\Services\TaskGroupMemberAppService.cs` |
 | `TaskGroupMemberAppService` | `UpdateAsync` | UPDATE | Guid id, WorkGroupMembersAddOrEditDTO DTO | Task<ApiResponseDTO<bool>> | [OK] | `OperationsLuxuryApp\Task\WorkGroupMembers\Services\TaskGroupMemberAppService.cs` |
-| `TaskJustificationAppService` | `ApproveAsync` | SPECIAL | Guid id) => ResolveAsync(id, TaskJustificationState.Aprobada, "JustificaciÃ³n aprobada correctamente." | Task<ApiResponseDTO<TaskJustificationDTO>> | [OK] | `OperationsLuxuryApp\Task\TaskJustifications\Services\TaskJustificationAppService.cs` |
+| `TaskJustificationAppService` | `ApproveAsync` | SPECIAL | Guid id) => ResolveAsync(id, TaskJustificationState.Aprobada, "Justificación aprobada correctamente." | Task<ApiResponseDTO<TaskJustificationDTO>> | [OK] | `OperationsLuxuryApp\Task\TaskJustifications\Services\TaskJustificationAppService.cs` |
 | `TaskJustificationAppService` | `GetByTaskIdAsync` | GET_SINGLE | Guid tasksId | Task<ApiResponseDTO<List<TaskJustificationDTO>>> | [OK] | `OperationsLuxuryApp\Task\TaskJustifications\Services\TaskJustificationAppService.cs` |
-| `TaskJustificationAppService` | `RejectAsync` | SPECIAL | Guid id) => ResolveAsync(id, TaskJustificationState.Rechazada, "JustificaciÃ³n rechazada correctamente." | Task<ApiResponseDTO<TaskJustificationDTO>> | [OK] | `OperationsLuxuryApp\Task\TaskJustifications\Services\TaskJustificationAppService.cs` |
+| `TaskJustificationAppService` | `RejectAsync` | SPECIAL | Guid id) => ResolveAsync(id, TaskJustificationState.Rechazada, "Justificación rechazada correctamente." | Task<ApiResponseDTO<TaskJustificationDTO>> | [OK] | `OperationsLuxuryApp\Task\TaskJustifications\Services\TaskJustificationAppService.cs` |
 | `TaskJustificationAppService` | `RequestAsync` | OTHER | TaskJustificationRequestDTO dto | Task<ApiResponseDTO<TaskJustificationDTO>> | [WARN] naming no estandar | `OperationsLuxuryApp\Task\TaskJustifications\Services\TaskJustificationAppService.cs` |
 | `TaskLegalAppService` | `AddAsync` | CREATE | LegalMatterAddDTO DTO | Task<ApiResponseDTO<object>> | [OK] | `OperationsLuxuryApp\Task\TaskLegal\Services\TaskLegalAppService.cs` |
 | `TaskLegalAppService` | `CategoryAsync` | OTHER | Guid id | Task<ApiResponseDTO<LegalMatterCategoryAddOrEditDTO>> | [WARN] naming no estandar | `OperationsLuxuryApp\Task\TaskLegal\Services\TaskLegalAppService.cs` |
@@ -7783,7 +7783,7 @@ Metodos: 344 | Endpoints HTTP: 135 | DTO/ViewModels: 41 | Repositorios: 0
 2. Definir una convencion unica para `Create`/`Add`, `Delete`/`DeleteById`, singular/plural y el uso obligatorio de `Async`.
 3. Alinear handler, verbo y ruta: GET sin id para listas, GET con id para detalle, POST para alta/acciones y PUT/PATCH para cambios.
 4. Separar acciones de negocio de CRUD y documentar explicitamente su recurso, id y verbo HTTP.
-5. Incorporar validaciones automÃ¡ticas en CI para detectar rutas duplicadas, verbos inconsistentes y nombres fuera del estÃ¡ndar.
+5. Incorporar validaciones automáticas en CI para detectar rutas duplicadas, verbos inconsistentes y nombres fuera del estándar.
 
 ## Anexo: Metodos OTHER
 

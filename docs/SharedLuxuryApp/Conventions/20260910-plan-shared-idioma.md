@@ -1,48 +1,48 @@
-# ?? Plan de EstandarizaciÛn de Idioma (Spanglish ? English)
+# ?? Plan de Estandarizaci√≥n de Idioma (Spanglish ? English)
 
 **Fecha:** 10 de septiembre de 2026
-**Estado:** ? Pendiente de EjecuciÛn
-**Contexto:** El cÛdigo base actual sufre de deuda tÈcnica por mezcla de idiomas (Spanglish) en sus entidades (ej. Medidor conviviendo con Provider). Dado que la API tiene exclusividad absoluta sobre la base de datos (no hay reportes externos ni otros sistemas acoplados a nivel SQL), el riesgo de renombrar tablas es mÌnimo.
+**Estado:** ? Pendiente de Ejecuci√≥n
+**Contexto:** El c√≥digo base actual sufre de deuda t√©cnica por mezcla de idiomas (Spanglish) en sus entidades (ej. Medidor conviviendo con Provider). Dado que la API tiene exclusividad absoluta sobre la base de datos (no hay reportes externos ni otros sistemas acoplados a nivel SQL), el riesgo de renombrar tablas es m√≠nimo.
 
-## ?? Objetivo ArquitectÛnico
-1. **CÛdigo y Base de Datos:** 100% InglÈs (Entidades, DbSets, Tablas, Columnas, Rutas de API, DTOs).
-2. **Interfaz de Usuario (Angular):** 100% EspaÒol (Labels, Botones, Textos visibles al usuario final).
+## ?? Objetivo Arquitect√≥nico
+1. **C√≥digo y Base de Datos:** 100% Ingl√©s (Entidades, DbSets, Tablas, Columnas, Rutas de API, DTOs).
+2. **Interfaz de Usuario (Angular):** 100% Espa√±ol (Labels, Botones, Textos visibles al usuario final).
 
 ---
 
-## ??? Fases de EjecuciÛn
+## ??? Fases de Ejecuci√≥n
 
 ### ?? FASE 1: Descubrimiento y Diccionario (Ubiquitous Language)
-Antes de tocar una sola lÌnea de cÛdigo, necesitamos un mapa exacto para evitar inconsistencias.
-- [ ] 1.1 Listar todas las entidades, carpetas de dominio y tablas actuales que estÈn en espaÒol.
-- [ ] 1.2 Crear un glosario oficial de traducciÛn validado por negocio (Ej. Piscina ? Pool, Medidor ? Meter, JuntaMensual ? MonthlyMeeting, ComiteVigilancia ? VigilanceCommittee).
+Antes de tocar una sola l√≠nea de c√≥digo, necesitamos un mapa exacto para evitar inconsistencias.
+- [ ] 1.1 Listar todas las entidades, carpetas de dominio y tablas actuales que est√°n en espa√±ol.
+- [ ] 1.2 Crear un glosario oficial de traducci√≥n validado por negocio (Ej. Piscina ? Pool, Medidor ? Meter, JuntaMensual ? MonthlyMeeting, ComiteVigilancia ? VigilanceCommittee).
 - [ ] 1.3 Almacenar este diccionario en conventions/UBIQUITOUS_LANGUAGE.md para que sirva como fuente de verdad en el futuro.
 
-### ??? FASE 2: RefactorizaciÛn Estructural (Backend C#)
-Utilizando herramientas de refactorizaciÛn simbÛlica (IDE Rename) para que las referencias se actualicen solas.
+### ??? FASE 2: Refactorizaci√≥n Estructural (Backend C#)
+Utilizando herramientas de refactorizaci√≥n simb√≥lica (IDE Rename) para que las referencias se actualicen solas.
 - [ ] 2.1 Renombrar las clases de Entidad (Ej. Piscina ? Pool).
-- [ ] 2.2 Renombrar los archivos fÌsicos para que coincidan con la clase (Regla R2).
-- [ ] 2.3 Actualizar los atributos [Table] a su versiÛn plural en inglÈs (Ej. [Table("Pools")]).
+- [ ] 2.2 Renombrar los archivos f√≠sicos para que coincidan con la clase (Regla R2).
+- [ ] 2.3 Actualizar los atributos [Table] a su versi√≥n plural en ingl√©s (Ej. [Table("Pools")]).
 - [ ] 2.4 Renombrar las propiedades DbSet en ApplicationDbContext.cs.
 - [ ] 2.5 Traducir DTOs, Servicios (PiscinaAppService ? PoolAppService) y Endpoints (/api/piscinas ? /api/pools).
 
-### ??? FASE 3: MigraciÛn de Base de Datos (EF Core)
-Dado que el dominio est· limpio, le pasamos la estafeta al ORM.
-- [ ] 3.1 Compilar la soluciÛn (0 errores).
+### ??? FASE 3: Migraci√≥n de Base de Datos (EF Core)
+Dado que el dominio est√° limpio, le pasamos la estafeta al ORM.
+- [ ] 3.1 Compilar la soluci√≥n (0 errores).
 - [ ] 3.2 Ejecutar dotnet ef migrations add TranslateDatabaseToEnglish.
-- [ ] 3.3 Revisar el archivo de migraciÛn generado para asegurar que EF Core detectÛ los cambios como RenameTable y RenameColumn (y no como un destructivo DropTable + CreateTable).
-- [ ] 3.4 Aplicar la migraciÛn a la base de datos local y de desarrollo (dotnet ef database update).
+- [ ] 3.3 Revisar el archivo de migraci√≥n generado para asegurar que EF Core detecte los cambios como RenameTable y RenameColumn (y no como un destructivo DropTable + CreateTable).
+- [ ] 3.4 Aplicar la migraci√≥n a la base de datos local y de desarrollo (dotnet ef database update).
 
-### ?? FASE 4: AlineaciÛn del Cliente (Frontend Angular)
+### ?? FASE 4: Alineaci√≥n del Cliente (Frontend Angular)
 Adaptar el cliente al nuevo idioma del servidor sin cambiar la experiencia del usuario.
-- [ ] 4.1 Actualizar las rutas HTTP en los *service.ts de Angular para apuntar a los nuevos endpoints en inglÈs.
+- [ ] 4.1 Actualizar las rutas HTTP en los *service.ts de Angular para apuntar a los nuevos endpoints en ingl√©s.
 - [ ] 4.2 Traducir las interfaces/modelos de TypeScript (piscina.model.ts ? pool.model.ts).
-- [ ] 4.3 Asegurarse de que las etiquetas HTML visuales (<label>, <h1>) se mantengan en espaÒol para el usuario final.
+- [ ] 4.3 Asegurarse de que las etiquetas HTML visuales (<label>, <h1>) se mantengan en espa√±ol para el usuario final.
 
 ---
 
 ## ??? Reglas de Seguridad durante el proceso
-* **Aislamiento:** Esta refactorizaciÛn se har· en una rama exclusiva (
-efactor/english-standardization).
-* **Pruebas:** Tras la Fase 3, se deben correr todos los unit tests (que tambiÈn deber·n ser traducidos en su nomenclatura).
+* **Aislamiento:** Esta refactorizaci√≥n se har√° en una rama exclusiva (
+refactor/english-standardization).
+* **Pruebas:** Tras la Fase 3, se deben correr todos los unit tests (que tambi√©n deber√°n ser traducidos en su nomenclatura).
 * **QA:** Invocaremos el protocolo qa-punta-a-punta antes de hacer el merge a la rama principal.

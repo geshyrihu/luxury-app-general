@@ -236,7 +236,7 @@ Se reviso:
 - `cobranza-online-dashboard.html`
   usa `$any($event.target).value`
 - `cobranza-online-inspection.ts`
-  muestra el literal `HistÃºrico`
+  muestra el literal `Histúrico`
 
 **Impacto**
 
@@ -281,7 +281,7 @@ Se reviso:
 
 - [ ] corregir `inspection` para que no arranque fijo en abril
 - [ ] validar criterio unico de fecha default entre dashboard, inspection, analysis y reporte financiero
-- [ ] corregir literal visible `HistÃºrico`
+- [ ] corregir literal visible `Histúrico`
 
 ### Fase 2. Endurecimiento de sync backend
 

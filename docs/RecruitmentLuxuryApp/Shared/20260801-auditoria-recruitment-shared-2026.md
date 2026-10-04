@@ -272,7 +272,7 @@ Comentarios de un servicio `EmployeeAddOrEditService` que ya no existe, en `empl
 
 205 ocurrencias en 55 archivos de `recursos-humanos.luxuryapp/expediente-del-empleado/`. Ejemplos: "Pestaóas" (Pestañas), "Telófono" (Teléfono), "condiciones clónicas" (clínicas), "Documentacin". Además, ~30 lugares usan el carácter literal `'é'` como valor de reemplazo (`?? 'é'`) donde se esperaba "N/A" — parece un find/replace fallido de un placeholder — y `employee-bank-data-list.html:39,93,96` muestran literal `"??"` (probablemente un emoji roto). Viola la regla crítica de encoding de CONVENTIONS.md §6.1; correr `node scripts/scan-mojibake.mjs client/angular` para confirmar cobertura completa antes de mergear cualquier fix.
 
-También detectado en backend: comentarios/summary con mojibake (`Ã³`, `Ã­`) en `EmployeesEndpoints.cs`/`EmployeeExternalEndpoints.cs` y en `DependencyInjection.Authorization.cs` (box-drawing corrupto en comentarios, ya reportado en audit 2026-08-19, M22).
+También detectado en backend: comentarios/summary con mojibake (`ó`, `í`) en `EmployeesEndpoints.cs`/`EmployeeExternalEndpoints.cs` y en `DependencyInjection.Authorization.cs` (box-drawing corrupto en comentarios, ya reportado en audit 2026-08-19, M22).
 
 ### 3.13 🟢 Bajo — Duplicación de fuentes de verdad ya reportada en audit 2026-08-19 (referencia, no repetición)
 

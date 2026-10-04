@@ -170,7 +170,7 @@ option = {
                 }
             },
             axisLabel: {
-                formatter: '{value} Ã‚Â°C'
+                formatter: '{value} °C'
             }
         }
     ],

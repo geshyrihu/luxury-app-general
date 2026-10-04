@@ -1488,7 +1488,7 @@ Archivos transformados: **7**
 +  </ng-template>
 +</app-table>
  
- <!--📲INICIO: Componente adaptado para versión mívil -->
+ <!--📲INICIO: Componente adaptado para versión móvil -->
 ```
 
 ### TypeScript: src/app/modules/system.luxuryapp/configuracion-sistema/knowledge-base/ai-knowledge-base-list.ts

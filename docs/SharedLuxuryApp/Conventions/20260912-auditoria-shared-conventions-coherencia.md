@@ -34,16 +34,16 @@
 **Ubicación:** 10+ líneas en `CONVENTIONS.md`
 
 ```
-Línea 10: Â§5.9.1, Ãºnico, Ã­ndices
-Línea 37: auditorÃ­a
-Línea 41: mÃ³dulo
-Línea 47: AuditorÃ­a
-Línea 48: crÃ­tico
+Línea 10: §5.9.1, único, índices
+Línea 37: auditoría
+Línea 41: módulo
+Línea 47: Auditoría
+Línea 48: crítico
 ```
 
 **Verificación:**
 ```bash
-grep -n "Â§\|Ã\|ðŸ" conventions/CONVENTIONS.md | wc -l
+grep -n "§\|Ã\|ðŸ" conventions/CONVENTIONS.md | wc -l
 # Resultado: 50+ líneas con mojibabe
 ```
 

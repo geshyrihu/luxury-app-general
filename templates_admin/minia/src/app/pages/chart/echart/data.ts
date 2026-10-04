@@ -84,7 +84,7 @@ const lineBarChart: EChartsOption = {
             interval: 5,
             axisLine: { lineStyle: { color: "#858d98" } },
             splitLine: { lineStyle: { color: "rgba(133, 141, 152, 0.1)" } },
-            axisLabel: { formatter: "{value} Ã‚Â°C" },
+            axisLabel: { formatter: "{value} °C" },
         },
     ],
     series: [
