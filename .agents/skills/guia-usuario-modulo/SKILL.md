@@ -85,8 +85,11 @@ Pedirle explícitamente que use evidencia de repositorio (lectura de código
 real con cita de archivo y línea), no una descripción libre — así el diagrama
 queda con el mismo nivel de verificación que el resto de la guía.
 
-Guardar el HTML generado junto al resto de la documentación frontend del
-módulo (misma carpeta `docs/` del documento 6) y enlazarlo desde la guía.
+Guardar el HTML generado junto al resto de la documentación del módulo
+(misma carpeta `docs/[ModuleLuxuryApp]/[Submodulo]/` del documento 6, NUNCA
+dentro de `appsweb/angular/`) y enlazarlo desde la guía. Si se exporta a
+PNG/SVG/WebM para versionar, el archivo va plano en esa misma carpeta, sin
+subcarpeta `diagrams/` (ver `CONVENTIONS.md` §6ter 4️⃣).
 
 ### 4. Explorar la UI real con playwright-cli (obligatorio)
 
@@ -124,9 +127,10 @@ capturas reales, permisos en términos de negocio, estados (tabla), errores
 comunes, FAQ, limitaciones conocidas, y enlace a los otros 6 documentos
 técnicos (no duplicar su contenido).
 
-Guardar en `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/guia-usuario.md`.
-Si el archivo ya existe, actualizarlo — nunca crear `guia-usuario-v2.md` ni
-variantes (misma regla que los otros 6 documentos).
+Guardar en `docs/[ModuleLuxuryApp]/[Submodulo]/guia-usuario.md` — **nunca**
+dentro de `appsweb/angular/`, aunque el módulo sea frontend. Si el archivo ya
+existe, actualizarlo — nunca crear `guia-usuario-v2.md` ni variantes (misma
+regla que los otros 7 documentos).
 
 ### 6. Auto-revisión antes de entregar
 

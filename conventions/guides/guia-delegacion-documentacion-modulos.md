@@ -2,27 +2,28 @@
 
 **Propósito:** Instrucciones CLARAS para otro agente (no Claude Code) para replicar el piloto exitoso de Candidates a otros módulos.
 
-**Fuente piloto:** Reclutamiento > Candidates (auditoría 2026-08-10)  
+**Fuente piloto:** Reclutamiento > Candidates (auditoría 2026-08-10)
 **Módulos destino:** Nomina, Mantenimiento, Cobranza, Operaciones, etc.
+**Última revisión:** 2026-10-05 (corrección de ubicación — ningún documento vive dentro de `api/` ni `appsweb/angular/`; actualizado de 6 a 8 documentos)
 
 ---
 
 ## 📋 Qué Debe Hacer el Agente
 
-El agente debe crear **EXACTAMENTE 6 documentos** por módulo (puede hacerse en PARALELO):
+El agente debe crear **EXACTAMENTE 8 documentos** por módulo (puede hacerse en PARALELO), **TODOS dentro de `docs/[ModuleLuxuryApp]/[Submodulo]/`**:
+
+> 🔴 **REGLA CRÍTICA (2026-10-05):** ningún documento vive dentro de `api/` ni de `appsweb/angular/`, en ningún caso. Esos dos árboles son solo código. Toda la documentación, sin excepción, vive en `docs/`.
 
 ```
-BACKEND:
-  1. api/LuxuryApp.Application/Moduls/[ModuleLuxuryApp]/README.md
-  2. api/LuxuryApp.Application/Moduls/[ModuleLuxuryApp]/Docs/documentacion-[modulo].md
-
-FRONTEND:
-  3. client/angular/src/app/apps/[modulo].luxuryapp/docs/README.md
-  4. client/angular/src/app/apps/[modulo].luxuryapp/docs/setup.md
-  5. client/angular/src/app/apps/[modulo].luxuryapp/docs/decisiones.md
-
-AUDITORÍA:
-  6. docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-auditoria-[modulo]-[submodulo].md
+docs/[ModuleLuxuryApp]/[Submodulo]/
+  1. README.md                      (Nivel 1 — antes backend)
+  2. documentacion-[modulo].md      (Nivel 2 — antes backend)
+  3. operativo.md                   (antes frontend)
+  4. setup.md                       (antes frontend)
+  5. decisiones.md                  (antes frontend)
+  6. guia-usuario.md                (Nivel 3 — negocio, skill guia-usuario-modulo)
+  7. YYYYMMDD-auditoria-[modulo]-[submodulo].md
+  8. bitacora.md                    (🆕 desde el primer cambio de código real)
 ```
 
 ---
@@ -38,9 +39,12 @@ AUDITORÍA:
 
 **Contexto:**
 - Piloto: conventions/audit/ejemplo-auditoria-candidates.md
-- Templates: 
+- Templates:
   - conventions/audit/audit-prompt-comprehensive.md (cómo auditar)
-  - conventions/operations/module-documentation-instructions.md (CONVENTIONS.md §4.5)
+  - conventions/operations/module-documentation-instructions.md (CONVENTIONS.md §4.7)
+
+**REGLA CRÍTICA:** TODOS los documentos van en `docs/[ModuleLuxuryApp]/[Submodulo]/`.
+Ninguno dentro de `api/` ni `appsweb/angular/`. Estructura plana, sin subcarpetas.
 
 **FASE 1: Auditoría Real (4h)**
 
@@ -49,7 +53,7 @@ Ejecutar auditoría exhaustiva de [MODULO_NAME]:
 1. Leer conventions/audit/audit-prompt-comprehensive.md (contexto)
 
 2. Analizar backend:
-   - Entidades: api/LuxuryApp.Application/Moduls/[ModuleLuxuryApp]/*/
+   - Entidades: api/LuxuryApp.Application/Modules/[ModuleLuxuryApp]/*/
    - Endpoints: buscar [Authorize], validaciones, transiciones
    - DTOs: validaciones presentes/faltantes
    - Servicios: lógica de negocio, pre-requisitos
@@ -58,17 +62,17 @@ Ejecutar auditoría exhaustiva de [MODULO_NAME]:
    - Matriz de permisos (endpoint × rol × autorización)
    - Validaciones front vs back
    - Errores de lógica (6 tipos de ejemplo-auditoria-candidates.md)
-   - Flujos end-to-end (con diagramas ASCII)
+   - Flujos end-to-end (con diagramas ASCII o Archify)
 
 4. Crear: docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-auditoria-[modulo]-[submodulo].md
    - Usar estructura de 20260810-auditoria-reclutamiento-candidatos.md
    - Incluir: Hallazgos reales (no teóricos), plan remediation
 
-**FASE 2: Documentos Backend (2h)**
+**FASE 2: Documentos Nivel 1 y 2 — contenido backend (2h)**
 
-Crear 2 archivos backend según CONVENTIONS.md §4.5:
+Crear 2 archivos (contenido backend, ubicación centralizada en docs/) según CONVENTIONS.md §4.7:
 
-1. api/.../[ModuleLuxuryApp]/README.md (Nivel 1)
+1. docs/[ModuleLuxuryApp]/[Submodulo]/README.md (Nivel 1)
    - Propósito funcional (2-3 párrafos)
    - Endpoints principales (tabla)
    - Actores y responsabilidades
@@ -78,28 +82,28 @@ Crear 2 archivos backend según CONVENTIONS.md §4.5:
    - Validaciones principales
    - Permisos & seguridad
    - Referencias a CONVENTIONS.md
-   - (Ver ejemplo: api/.../Candidates/README.md)
+   - (Ver ejemplo: docs/RecruitmentLuxuryApp/Candidates/README.md)
 
-2. api/.../[ModuleLuxuryApp]/Docs/documentacion-[modulo].md (Nivel 2)
+2. docs/[ModuleLuxuryApp]/[Submodulo]/documentacion-[modulo].md (Nivel 2)
    - Resumen ejecutivo
    - Visión funcional
    - Arquitectura técnica (modelo de datos, enums, pipeline si aplica)
    - Endpoints documentados (3-5 principales con body/respuesta)
-   - Flujos del sistema (diagramas ASCII)
+   - Flujos del sistema (diagramas ASCII o Archify)
    - Entidades & propiedades
    - Servicios & métodos clave (tabla)
    - Reglas de negocio en código
    - Base de datos (índices, relaciones)
    - Performance & caching
    - Checklist de validación
-   - Historial de cambios
-   - (Ver ejemplo: api/.../Candidates/Docs/documentacion-candidates.md)
+   - Historial de cambios (referenciar bitacora.md, no duplicar)
+   - (Ver ejemplo: docs/RecruitmentLuxuryApp/Candidates/documentacion-candidates.md)
 
-**FASE 3: Documentos Frontend (2h)**
+**FASE 3: Documentos Nivel 3 — contenido frontend (2h)**
 
-Crear 3 archivos frontend según estructura piloto:
+Crear 3 archivos (contenido frontend, ubicación centralizada en docs/):
 
-1. client/angular/src/app/apps/[modulo].luxuryapp/docs/README.md (Operativo)
+1. docs/[ModuleLuxuryApp]/[Submodulo]/operativo.md
    - Propósito del módulo
    - Rutas y URLs (tabla con localhost URLs)
    - Estructura de carpetas
@@ -110,9 +114,9 @@ Crear 3 archivos frontend según estructura piloto:
    - Estados/enums importantes
    - Smoke test (happy path completo)
    - Debugging tips
-   - (Ver ejemplo: .../candidates/docs/README.md)
+   - (Ver ejemplo: docs/RecruitmentLuxuryApp/Candidates/operativo.md)
 
-2. client/angular/src/app/apps/[modulo].luxuryapp/docs/setup.md (Onboarding)
+2. docs/[ModuleLuxuryApp]/[Submodulo]/setup.md (Onboarding)
    - Para: Dev nuevo
    - Tiempo: 30 minutos
    - Pre-requisitos
@@ -123,9 +127,9 @@ Crear 3 archivos frontend según estructura piloto:
    - Debugging flowchart
    - 4 common mistakes
    - Git workflow
-   - (Ver ejemplo: .../candidates/docs/setup.md)
+   - (Ver ejemplo: docs/RecruitmentLuxuryApp/Candidates/setup.md)
 
-3. client/angular/src/app/apps/[modulo].luxuryapp/docs/decisiones.md (Matriz)
+3. docs/[ModuleLuxuryApp]/[Submodulo]/decisiones.md (Matriz)
    - Para: Dev diario
    - Matriz: ¿Es visual? ¿Es lógica? ¿Dónde va?
    - 4-5 ejemplos concretos
@@ -134,35 +138,57 @@ Crear 3 archivos frontend según estructura piloto:
    - Commands rápidos
    - Example flow completo
    - ¿Cuándo preguntar? (al tech lead)
-   - (Ver ejemplo: .../candidates/docs/decisiones.md)
+   - (Ver ejemplo: docs/RecruitmentLuxuryApp/Candidates/decisiones.md)
 
-**FASE 4: Actualizar Memoria (15 min)**
+**FASE 4: Guía de Usuario — Nivel 3 negocio (usar skill dedicada)**
 
-1. Crear archivo memoria: memory/audit-[modulo]-20260810.md
+Invocar la skill `guia-usuario-modulo` (.agents/skills/guia-usuario-modulo/SKILL.md).
+No escribir a mano: combina lectura real de código, diagrama Archify con evidencia,
+y exploración real de UI con playwright-cli (obligatoria).
+
+Resultado: docs/[ModuleLuxuryApp]/[Submodulo]/guia-usuario.md
+
+**FASE 5: Iniciar Bitácora (si el módulo ya tiene cambios de código en curso)**
+
+Si el módulo ya tiene código ejecutándose/modificándose (no solo documentación):
+
+Crear docs/[ModuleLuxuryApp]/[Submodulo]/bitacora.md con la primera entrada,
+siguiendo la plantilla de CONVENTIONS.md §4.9. Si el módulo es puramente de
+documentación (sin cambios de código todavía), este archivo se crea después,
+en el momento en que se toque el primer archivo de código.
+
+**FASE 6: Actualizar Memoria (15 min)**
+
+1. Crear archivo memoria: memory/audit-[modulo]-YYYYMMDD.md
    - name: audit-[modulo]
    - description: [resumen del módulo auditoría]
    - Incluir: Hallazgos principales, RNs verificadas, plan remediation
-   
-2. Agregar línea a C:\Users\geshyrihu\.claude\projects\d--repos-luxuryapp-api\memory\MEMORY.md:
+
+2. Agregar línea al índice de memoria del usuario:
    ```
-   - [Auditoría [Modulo] completada](audit-[modulo]-20260810.md) — X hallazgos, Y RNs auditadas, plan remediación (2026-08-10)
+   - [Auditoría [Modulo] completada](audit-[modulo]-YYYYMMDD.md) — X hallazgos, Y RNs auditadas, plan remediación (YYYY-MM-DD)
    ```
 
 **ENTREGABLES:**
 
-✅ 1 archivo auditoría (docs/[ModuleLuxuryApp]/[Submodulo]/)
-✅ 2 archivos backend (api/.../[Modulo]/README.md + Docs/documentacion-[modulo].md)
-✅ 3 archivos frontend (client/angular/.../docs/{README, setup, decisiones}.md)
+✅ 1 archivo auditoría
+✅ 2 archivos Nivel 1/2 (contenido backend)
+✅ 3 archivos Nivel operativo/setup/decisiones (contenido frontend)
+✅ 1 guía de usuario (Nivel 3, vía skill guia-usuario-modulo)
+✅ 1 bitácora (si el módulo tiene código en ejecución)
 ✅ 1 memoria (si hay hallazgos críticos)
+
+**TODOS en:** `docs/[ModuleLuxuryApp]/[Submodulo]/` — ninguno en `api/` ni `appsweb/angular/`.
 
 **Referencia de Tamaños:**
 
 - Auditoría: 400-600 líneas
-- Backend README: 300-400 líneas
-- Backend Documentación: 500-700 líneas
-- Frontend README: 300-400 líneas
-- Frontend Setup: 300-400 líneas
-- Frontend Decisiones: 250-350 líneas
+- README (Nivel 1): 300-400 líneas
+- Documentación técnica (Nivel 2): 500-700 líneas
+- Operativo: 300-400 líneas
+- Setup: 300-400 líneas
+- Decisiones: 250-350 líneas
+- Guía de Usuario: 200-400 líneas (generada por skill, no estimar a mano)
 
 **Total: ~2,000-2,500 líneas de documentación por módulo**
 
@@ -170,31 +196,37 @@ Crear 3 archivos frontend según estructura piloto:
 
 **Criterios de Éxito:**
 
+- [ ] Todos los documentos están dentro de `docs/[ModuleLuxuryApp]/[Submodulo]/` — ninguno en `api/` ni `appsweb/angular/`
 - [ ] Auditoría identifica 3+ hallazgos reales (con línea de código)
 - [ ] Matriz de permisos tiene ≥5 endpoints × ≥3 roles
-- [ ] Documentación backend referencia CONVENTIONS.md §4.5
-- [ ] Documentación frontend tiene diagramas ASCII
+- [ ] Documentación referencia CONVENTIONS.md §4.7
+- [ ] Documentación de componentes tiene diagramas ASCII o Archify
 - [ ] Setup.md tiene flowchart de debugging
 - [ ] Decisiones.md tiene ≥4 ejemplos concretos
+- [ ] Guía de usuario generada con skill `guia-usuario-modulo` (no escrita a mano)
+- [ ] Si el módulo tiene código en ejecución, bitacora.md existe con ≥1 entrada
 - [ ] Todos archivos tienen "Última revisión: YYYYMMDD"
-- [ ] Referencias cruzadas entre archivos (README → setup → decisiones → architecture)
+- [ ] Referencias cruzadas entre archivos (README → setup → decisiones → guia-usuario)
 ```
 
 ---
 
 ## 📞 Si el Agente No Sabe Algo
 
-**Si pregunta:** "¿Cómo se ve una buena auditoría?"  
+**Si pregunta:** "¿Cómo se ve una buena auditoría?"
 **Responde:** "Ve conventions/audit/ejemplo-auditoria-candidates.md - línea por línea es modelo"
 
-**Si pregunta:** "¿Qué busco en el código?"  
+**Si pregunta:** "¿Qué busco en el código?"
 **Responde:** "Ve conventions/audit/audit-prompt-comprehensive.md Sección E - lista los 6 tipos de errores"
 
-**Si pregunta:** "¿Qué documentación ya existe?"  
-**Responde:** "Verifica Glob: `docs/[ModuleLuxuryApp]/[Submodulo]/` y `api/.../[Modulo]/README.md`"
+**Si pregunta:** "¿Qué documentación ya existe?"
+**Responde:** "Verifica Glob: `docs/[ModuleLuxuryApp]/[Submodulo]/` — ahí viven los 8 documentos, no en api/ ni appsweb/angular/"
 
-**Si pregunta:** "¿Parecido a Candidates?"  
+**Si pregunta:** "¿Parecido a Candidates?"
 **Responde:** "SÍ - usa 20260810-auditoria-reclutamiento-candidatos.md como template de estructura/formato"
+
+**Si pregunta:** "¿Por qué ya no van en api/ o appsweb/angular?"
+**Responde:** "Regla CONVENTIONS.md §4.2/§4.7/§6ter (2026-10-05): esos dos árboles son solo código ejecutable; TODA documentación centralizada en docs/"
 
 ---
 
@@ -219,12 +251,17 @@ Crear 3 archivos frontend según estructura piloto:
 ## 🔗 Plantillas & Referencia
 
 **Archivos PLANTILLA (copiar estructura):**
-- Auditoría: `docs/[ModuleLuxuryApp]/[Submodulo]/20260810-auditoria-reclutamiento-candidatos.md`
-- Backend README: `api/.../Candidates/README.md`
-- Backend Técnica: `api/.../Candidates/Docs/documentacion-candidates.md`
-- Frontend README: `client/angular/.../candidates/docs/README.md`
-- Frontend Setup: `client/angular/.../candidates/docs/setup.md`
-- Frontend Decisiones: `client/angular/.../candidates/docs/decisiones.md`
+- Auditoría: `docs/RecruitmentLuxuryApp/Candidates/20260813-auditoria-reclutamiento-candidatos.md`
+- README (Nivel 1): `docs/RecruitmentLuxuryApp/Candidates/README.md`
+- Documentación técnica (Nivel 2): `docs/RecruitmentLuxuryApp/Candidates/documentacion-candidates.md`
+- Operativo: `docs/RecruitmentLuxuryApp/Candidates/operativo.md`
+- Setup: `docs/RecruitmentLuxuryApp/Candidates/setup.md`
+- Decisiones: `docs/RecruitmentLuxuryApp/Candidates/decisiones.md`
+
+**Nota (2026-10-05):** los pilotos de Candidates arriba (README, documentacion,
+operativo, setup, decisiones) aún no existen en esta ubicación corregida —
+se crean al documentar ese módulo con esta guía. No copiar de versiones
+antiguas que pudieran existir en `api/` o `appsweb/angular/`.
 
 **Guías de auditoría:**
 - `conventions/audit/audit-prompt-comprehensive.md` — Template completo
@@ -232,9 +269,9 @@ Crear 3 archivos frontend según estructura piloto:
 - `conventions/audit/ejemplo-auditoria-candidates.md` — Ejemplo real paso a paso
 
 **CONVENTIONS.md:**
-- §4.5 (Documentación, Remediación y Migración)
-- §5.2 (Backend dominio)
-- §5.8 (Auditoría)
+- §4.7 (Documentación de Módulo Existente — 8 documentos obligatorios)
+- §4.9 (Bitácora de Cambios)
+- §6ter (Estructura y Ubicación de Documentos en docs/)
 
 ---
 
@@ -281,11 +318,10 @@ Después que agente cree documentación, **VERIFICAR:**
 
 ```
 ESTRUCTURA:
-  [ ] ¿Existen 6 archivos?
-  [ ] ¿README backend está en api/.../[Modulo]/README.md?
-  [ ] ¿Documentación técnica está en api/.../Modulo/Docs/?
-  [ ] ¿Frontend docs están en client/angular/.../[modulo]/docs/?
-  [ ] ¿Auditoría está en docs/[ModuleLuxuryApp]/[Submodulo]/?
+  [ ] ¿Existen 8 archivos, todos en docs/[ModuleLuxuryApp]/[Submodulo]/?
+  [ ] ¿CERO documentos dentro de api/?
+  [ ] ¿CERO documentos dentro de appsweb/angular/?
+  [ ] ¿Sin subcarpetas adicionales dentro de [Submodulo]/?
 
 CONTENIDO AUDITORÍA:
   [ ] ¿Hay matriz de RNs (Nivel 1-4)?
@@ -293,15 +329,17 @@ CONTENIDO AUDITORÍA:
   [ ] ¿Hay ≥3 hallazgos reales (no teóricos)?
   [ ] ¿Hay línea de código para cada hallazgo?
   [ ] ¿Hay plan de remediación prioritarizado?
-  [ ] ¿Hay diagramas ASCII de flujos?
+  [ ] ¿Hay diagramas ASCII o Archify de flujos?
 
 CONTENIDO DOCUMENTACIÓN:
-  [ ] ¿Referencia a CONVENTIONS.md §4.5?
+  [ ] ¿Referencia a CONVENTIONS.md §4.7?
   [ ] ¿Tabla de endpoints con autorización?
   [ ] ¿Tabla de validaciones?
   [ ] ¿Modelo de datos documentado?
   [ ] ¿Setup.md tiene checklist de debugging?
   [ ] ¿Decisiones.md tiene ≥4 ejemplos?
+  [ ] ¿Guía de usuario viene de la skill `guia-usuario-modulo` (no escrita a mano)?
+  [ ] ¿Bitácora existe si el módulo tiene código en ejecución?
 
 CALIDAD:
   [ ] ¿No hay COPY-PASTE ciego de Candidates?
@@ -315,4 +353,3 @@ CALIDAD:
 **Usa esta guía para delegar a otro agente la documentación de cualquier módulo.**
 
 **Tiempo esperado:** 8-10 horas por módulo (puede ser ≤4 horas si agente es eficiente)
-

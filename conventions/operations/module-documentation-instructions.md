@@ -1,6 +1,6 @@
 # Module Documentation Instructions
 
-**Ultima revision:** 2026-07-30
+**Ultima revision:** 2026-10-05 (corrección de ubicación: ningún documento vive dentro de `api/` ni `appsweb/angular/`; agregado documento 8 — Bitácora)
 
 ## Proposito
 
@@ -13,13 +13,17 @@ convenciones y no debe crearse de forma arbitraria o duplicada.
 - Si existe, actualizarla antes de crear una nueva.
 - Si la documentacion tecnica no existe y es necesaria, seguir estructura oficial.
 - Si la ubicacion no esta clara, proponerla y esperar aprobacion.
+- 🔴 **REGLA CRÍTICA (2026-10-05):** ningún documento vive dentro de `api/` ni de
+  `appsweb/angular/`, en ningún caso. Esos dos árboles son solo código ejecutable.
+  Toda documentación de módulo vive en `docs/[ModuleLuxuryApp]/[Submodulo]/`
+  (estructura plana, ver `CONVENTIONS.md` §6ter).
 
 ## Niveles oficiales
 
 ### Nivel 1: README del modulo
 
 - ubicacion base:
-  - `api/LuxuryApp.Application/Modules/[ModuloLuxuryApp]/README.md`
+  - `docs/[ModuleLuxuryApp]/[Submodulo]/README.md`
 - obligatorio cuando el modulo tenga backend propio documentable
 - debe resumir:
   - proposito funcional
@@ -32,7 +36,7 @@ convenciones y no debe crearse de forma arbitraria o duplicada.
 ### Nivel 2: documentacion tecnica del modulo
 
 - ubicacion base:
-  - `api/LuxuryApp.Application/Modules/[ModuloLuxuryApp]/Docs/documentacion-[modulo].md`
+  - `docs/[ModuleLuxuryApp]/[Submodulo]/documentacion-[modulo].md`
 - se crea o actualiza cuando el modulo es critico, complejo o tiene reglas de
   negocio sensibles
 - debe cubrir como minimo:
@@ -52,7 +56,7 @@ convenciones y no debe crearse de forma arbitraria o duplicada.
 ### Nivel 3: guia de usuario del modulo
 
 - ubicacion base:
-  - `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/guia-usuario.md`
+  - `docs/[ModuleLuxuryApp]/[Submodulo]/guia-usuario.md`
 - obligatorio siempre que el modulo tenga UI consumible por un usuario de negocio
 - unico nivel orientado a usuario final, no a developer
 - generado con la skill `guia-usuario-modulo`; contenido minimo detallado abajo
@@ -63,12 +67,17 @@ convenciones y no debe crearse de forma arbitraria o duplicada.
 
 - frontend y backend del mismo modulo deben documentarse de forma coordinada; no
   se permite documentar uno ignorando al otro cuando ambos existen en alcance
+  (aunque ambos describan su propio lado, el documento vive en el mismo lugar
+  centralizado — no se separa físicamente backend de frontend)
 - si ya existe un README o documento tecnico, se actualiza ese archivo en lugar
   de crear variantes como `README-v2`, `documentacion-final` o equivalentes
 - la documentacion local del modulo no puede describir rutas o arquitectura
   legacy como si fueran vigentes; si lo hace, debe reportarse como hallazgo
 - cuando cambian endpoints, actores, dependencias, reglas de negocio o
   arquitectura, la documentacion del modulo debe revisarse
+- desde que se **ejecuta el primer cambio de código real** sobre el módulo,
+  debe existir y mantenerse `bitacora.md` (ver documento 8 abajo y
+  `CONVENTIONS.md` §4.9) — no es opcional ni se posterga
 
 ## Criterios de creacion y actualizacion
 
@@ -94,11 +103,13 @@ convenciones y no debe crearse de forma arbitraria o duplicada.
 
 ## Documentos obligatorios por módulo y su contenido mínimo
 
-Son **7 documentos**, todos obligatorios, sin excepciones opcionales. El orden de lectura para developers está en `CONVENTIONS.md` §4.7.
+Son **8 documentos**, todos obligatorios, sin excepciones opcionales. El orden de lectura para developers está en `CONVENTIONS.md` §4.7.
 
-### Backend
+> 🔴 **Todos viven en `docs/[ModuleLuxuryApp]/[Submodulo]/`** (estructura plana, sin subcarpetas adicionales). Ninguno vive dentro de `api/` ni `appsweb/angular/`.
 
-**1. README del módulo (Nivel 1)** — `api/LuxuryApp.Application/Modules/[ModuleLuxuryApp]/README.md`
+### Backend (contenido; ubicación centralizada en `docs/`)
+
+**1. README del módulo (Nivel 1)** — `docs/[ModuleLuxuryApp]/[Submodulo]/README.md`
 
 - Propósito funcional (2-3 párrafos)
 - Endpoints principales (tabla)
@@ -110,23 +121,23 @@ Son **7 documentos**, todos obligatorios, sin excepciones opcionales. El orden d
 - Permisos y seguridad
 - Referencias a CONVENTIONS.md
 
-**2. Documentación técnica (Nivel 2)** — `api/LuxuryApp.Application/Modules/[ModuleLuxuryApp]/Docs/documentacion-[modulo].md`
+**2. Documentación técnica (Nivel 2)** — `docs/[ModuleLuxuryApp]/[Submodulo]/documentacion-[modulo].md`
 
 - Resumen ejecutivo y visión funcional
 - Arquitectura técnica (modelo de datos, enums, pipeline si aplica)
 - Endpoints documentados (3-5 principales con body/respuesta)
-- Flujos del sistema (diagramas ASCII)
+- Flujos del sistema (diagramas ASCII, o Archify si aplica)
 - Entidades y propiedades (tabla)
 - Servicios y métodos clave
 - Reglas de Negocio en código
 - Base de datos (índices, relaciones, constraints)
 - Performance y caching
 - Checklist de validación
-- Historial de cambios
+- Historial de cambios (referencia a `bitacora.md`, no duplicar entradas)
 
-### Frontend
+### Frontend (contenido; ubicación centralizada en `docs/`)
 
-**3. Operativo** — `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/operativo.md`
+**3. Operativo** — `docs/[ModuleLuxuryApp]/[Submodulo]/operativo.md`
 
 - Propósito del módulo
 - Rutas y URLs (tabla con URLs de localhost)
@@ -139,7 +150,7 @@ Son **7 documentos**, todos obligatorios, sin excepciones opcionales. El orden d
 - Smoke test (happy path completo)
 - Debugging tips (2-3 casos comunes)
 
-**4. Setup (onboarding)** — `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/setup.md`
+**4. Setup (onboarding)** — `docs/[ModuleLuxuryApp]/[Submodulo]/setup.md`
 
 - Para: developer nuevo. Tiempo: 30 minutos
 - Pre-requisitos
@@ -151,7 +162,7 @@ Son **7 documentos**, todos obligatorios, sin excepciones opcionales. El orden d
 - 4 errores comunes (con correcciones)
 - Git workflow
 
-**5. Decisiones (matriz)** — `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/decisiones.md`
+**5. Decisiones (matriz)** — `docs/[ModuleLuxuryApp]/[Submodulo]/decisiones.md`
 
 - Para: developer diario
 - Matriz "¿Dónde pongo la feature X?" (diagrama ASCII de decisiones)
@@ -162,10 +173,11 @@ Son **7 documentos**, todos obligatorios, sin excepciones opcionales. El orden d
 - Ejemplo de flujo completo (paso a paso)
 - ¿Cuándo preguntar al Tech Lead?
 
-**6. Guía de Usuario (Nivel 3)** — `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/guia-usuario.md`
+**6. Guía de Usuario (Nivel 3)** — `docs/[ModuleLuxuryApp]/[Submodulo]/guia-usuario.md`
 
-- **Único de los 7 orientado a usuario final/negocio/soporte** — los otros 6 asumen lector técnico (developer). Español, sin jerga de código.
+- **Único de los 8 orientado a usuario final/negocio/soporte** — los otros asumen lector técnico (developer). Español, sin jerga de código.
 - Generado con la skill `guia-usuario-modulo` (`.agents/skills/guia-usuario-modulo/SKILL.md`), que combina: lectura real del código (backend + frontend), un diagrama generado con la skill `archify` sourced del código real (con cita de archivo/línea), y una exploración real de la UI con `playwright-cli` — **obligatoria**, usando las credenciales genéricas de dev `admin`/`Hwtc00--` como fallback cuando el módulo no indique otras.
+- El diagrama Archify (si se exporta) se guarda como archivo plano junto a este documento en `docs/[ModuleLuxuryApp]/[Submodulo]/`, nunca dentro de `appsweb/angular/`.
 - Contenido mínimo:
   - Resumen (qué hace el módulo, en 1 párrafo sin jerga)
   - Para qué sirve / qué problema resuelve
@@ -180,7 +192,7 @@ Son **7 documentos**, todos obligatorios, sin excepciones opcionales. El orden d
   - Errores comunes y qué hacer
   - Preguntas frecuentes
   - Limitaciones conocidas
-  - Archivos relevantes para desarrolladores (enlace a los otros 6 documentos, no duplicar su contenido)
+  - Archivos relevantes para desarrolladores (enlace a los otros 7 documentos, no duplicar su contenido)
 - **Disciplina obligatoria:** nunca inventar comportamiento. Todo lo que no se pueda verificar leyendo el código o navegando la UI real se marca explícitamente `PENDIENTE: confirmar con el equipo` — no se rellena con una suposición razonable.
 
 ### Auditoría
@@ -195,3 +207,14 @@ Son **7 documentos**, todos obligatorios, sin excepciones opcionales. El orden d
 - Diagramas de flujo (ASCII)
 - Checklist de validación
 - Plan de remediación priorizado
+
+### Bitácora 🆕 (2026-10-05)
+
+**8. Bitácora de cambios** — `docs/[ModuleLuxuryApp]/[Submodulo]/bitacora.md`
+
+- Registro cronológico, append-only, de **cambios reales ejecutados** (no de planes ni intenciones).
+- Se crea desde el primer cambio de código real sobre el módulo/submódulo.
+- Una entrada por sesión/fase de trabajo, nunca por archivo individual.
+- Contenido mínimo por entrada: fecha, resumen de una línea, fase/plan relacionado, ejecutado por, cambios aplicados (backend/frontend/migraciones), desviaciones del plan original, pruebas ejecutadas, pendientes/deuda generada.
+- Ver plantilla completa y disparador exacto en `CONVENTIONS.md` §4.9.
+- No duplica el Plan (dice qué se hizo, no qué se va a hacer) ni la Auditoría (es continua, no puntual).

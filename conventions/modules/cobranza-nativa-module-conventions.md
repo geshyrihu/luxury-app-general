@@ -4,6 +4,15 @@
 **Estado:** Vigente
 **Deriva de:** [CONVENTIONS.md](../CONVENTIONS.md)
 
+> ⚠️ **PENDIENTE DE MIGRACIÓN (2026-10-05):** `CONVENTIONS.md` §4.2/§4.7/§6ter
+> establece que ningún documento vive dentro de `api/` ni `appsweb/angular/` —
+> todo debe vivir en `docs/[ModuleLuxuryApp]/[Submodulo]/`. Los links de este
+> archivo hacia `api/.../Docs/` y `appsweb/angular/.../docs/` abajo apuntan a
+> **ubicaciones legacy que aún no se han migrado** (archivos reales, no rotos).
+> No usar esas rutas como plantilla para módulos nuevos — ver la regla vigente
+> en `CONVENTIONS.md`. Este módulo se corrige cuando se ejecute la migración
+> de documentación legacy pendiente de aprobación.
+
 ## Proposito
 
 Definir la guia rectora especifica de `CobranzaNativa` para cualquier agente o

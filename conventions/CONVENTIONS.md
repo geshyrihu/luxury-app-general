@@ -38,11 +38,15 @@ Cuando haya dudas, esta es la jerarquía obligatoria:
    - Incluye guias operativas de auditoria en `./audit/` (framework de auditoría exhaustiva)
 4. Documentos de módulo y reportes centralizados en `docs/`:
    - Estructura física estricta en `docs/`: `docs/[ModuleLuxuryApp]/[Submodulo]/` (Estructura PLANA sin subcarpetas adicionales).
-   - Backend Nivel 1: `api/LuxuryApp.Application/Modules/[ModuleLuxuryApp]/README.md` (Nivel 1)
-   - Backend Nivel 2: `api/LuxuryApp.Application/Modules/[ModuleLuxuryApp]/Docs/documentacion-[modulo].md` (Nivel 2)
-   - Frontend: `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/operativo.md` (Operativo)
-   - Frontend: `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/setup.md` (Onboarding)
-   - Frontend: `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/decisiones.md` (Matriz de decisiones)
+   - 🔴 **REGLA CRÍTICA (2026-10-05): NINGÚN documento vive dentro de `api/` ni de `appsweb/angular/`, en ningún caso.** Esos dos árboles son solo código ejecutable; toda documentación —sin excepción— vive en `docs/`.
+   - Nivel 1 (README del módulo): `docs/[ModuleLuxuryApp]/[Submodulo]/README.md`
+   - Nivel 2 (Documentación técnica): `docs/[ModuleLuxuryApp]/[Submodulo]/documentacion-[modulo].md`
+   - Operativo: `docs/[ModuleLuxuryApp]/[Submodulo]/operativo.md`
+   - Setup (onboarding): `docs/[ModuleLuxuryApp]/[Submodulo]/setup.md`
+   - Decisiones (matriz): `docs/[ModuleLuxuryApp]/[Submodulo]/decisiones.md`
+   - Guía de Usuario (Nivel 3, negocio): `docs/[ModuleLuxuryApp]/[Submodulo]/guia-usuario.md`
+   - Bitácora de cambios (🆕 2026-10-05): `docs/[ModuleLuxuryApp]/[Submodulo]/bitacora.md` — ver §4.9
+   - Diagramas Archify (exportados): archivo plano `docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-diagrama-[descripcion].{svg,png,webm}` (sin subcarpeta `diagrams/`, respeta la regla de estructura plana)
    - Auditorías y Reportes en `docs/`: `docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-[tipo]-[modulo]-[submodulo].md`
 5. Documentacion tecnica de apoyo y reglas en este directorio `conventions/`
 6. Componentes visuales como `conventions-viewer`
@@ -387,19 +391,24 @@ docs/[ModuleLuxuryApp]/[Submodulo]/
 
 **Nota:** Cuando un módulo backend/frontend ya existe y necesita documentarse de forma coherente.
 
-**7 documentos obligatorios, sin excepciones opcionales.** Ubicación, contenido mínimo de cada uno y reglas de actualización: [Module Documentation Instructions](./operations/module-documentation-instructions.md).
+**8 documentos obligatorios, sin excepciones opcionales.** Ubicación, contenido mínimo de cada uno y reglas de actualización: [Module Documentation Instructions](./operations/module-documentation-instructions.md).
+
+> 🔴 **REGLA CRÍTICA (2026-10-05):** todos viven en `docs/[ModuleLuxuryApp]/[Submodulo]/` — ninguno dentro de `api/` ni `appsweb/angular/`. Esos repos son solo código; cero documentación.
 
 | # | Documento | Ubicación |
 |---|-----------|-----------|
-| 1 | README del módulo (Nivel 1) | `api/LuxuryApp.Application/Modules/[ModuleLuxuryApp]/README.md` |
-| 2 | Documentación técnica (Nivel 2) | `api/LuxuryApp.Application/Modules/[ModuleLuxuryApp]/Docs/documentacion-[modulo].md` |
-| 3 | Operativo (frontend) | `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/operativo.md` |
-| 4 | Setup / onboarding (frontend) | `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/setup.md` |
-| 5 | Decisiones (frontend) | `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/decisiones.md` |
-| 6 | Guía de Usuario (Nivel 3, orientada a negocio) | `appsweb/angular/src/app/modules/[modulo].luxuryapp/docs/guia-usuario.md` |
+| 1 | README del módulo (Nivel 1) | `docs/[ModuleLuxuryApp]/[Submodulo]/README.md` |
+| 2 | Documentación técnica (Nivel 2) | `docs/[ModuleLuxuryApp]/[Submodulo]/documentacion-[modulo].md` |
+| 3 | Operativo | `docs/[ModuleLuxuryApp]/[Submodulo]/operativo.md` |
+| 4 | Setup / onboarding | `docs/[ModuleLuxuryApp]/[Submodulo]/setup.md` |
+| 5 | Decisiones (matriz) | `docs/[ModuleLuxuryApp]/[Submodulo]/decisiones.md` |
+| 6 | Guía de Usuario (Nivel 3, orientada a negocio) | `docs/[ModuleLuxuryApp]/[Submodulo]/guia-usuario.md` |
 | 7 | Auditoría ejecutada | `docs/[ModuleLuxuryApp]/[Submodulo]/YYYYMMDD-auditoria-[modulo]-[submodulo].md` |
+| 8 🆕 | Bitácora de cambios (ver §4.9) | `docs/[ModuleLuxuryApp]/[Submodulo]/bitacora.md` |
 
-**Documento 6 (Guía de Usuario):** única pieza orientada a usuario final/negocio/soporte, no a desarrolladores — los otros 6 asumen lector técnico. Se genera con la skill [guia-usuario-modulo](../.agents/skills/guia-usuario-modulo/SKILL.md), que combina lectura de código real, diagrama [Archify](../.agents/skills/archify/SKILL.md) con evidencia de fuente, y exploración de UI real con `playwright-cli` (obligatoria, credenciales genéricas `admin`/`Hwtc00--` como fallback de dev). Nunca inventa comportamiento: lo no verificable se marca `PENDIENTE: confirmar con el equipo`.
+**Documento 6 (Guía de Usuario):** única pieza orientada a usuario final/negocio/soporte, no a desarrolladores — los otros asumen lector técnico. Se genera con la skill [guia-usuario-modulo](../.agents/skills/guia-usuario-modulo/SKILL.md), que combina lectura de código real, diagrama [Archify](../.agents/skills/archify/SKILL.md) con evidencia de fuente, y exploración de UI real con `playwright-cli` (obligatoria, credenciales genéricas `admin`/`Hwtc00--` como fallback de dev). Nunca inventa comportamiento: lo no verificable se marca `PENDIENTE: confirmar con el equipo`. El diagrama Archify exportado (si se versiona) se guarda como archivo plano junto a los demás, nunca dentro de `appsweb/angular/`.
+
+**Documento 8 (Bitácora):** única pieza con una entrada por cambio real ejecutado contra el módulo (no por plan, no por intención). Ver §4.9 para contenido mínimo y disparador.
 
 **Orden de lectura obligatorio para developers:**
 
@@ -416,7 +425,7 @@ docs/[ModuleLuxuryApp]/[Submodulo]/
 
 - [Ejemplo Completo: Reclutamiento/Candidates](../docs/RecruitmentLuxuryApp/Candidates/20260813-auditoria-reclutamiento-candidatos.md)
 - [Guía de Delegación a Otros Agentes](./guides/guia-delegacion-documentacion-modulos.md)
-- Pilotos frontend (`operativo.md`, `setup.md`, `decisiones.md` de Candidates): **aún no existen** en `appsweb/angular/.../recruitment.luxuryapp/candidates/`; se crearán al documentar ese módulo.
+- Pilotos (`operativo.md`, `setup.md`, `decisiones.md` de Candidates): **aún no existen**; se crearán en `docs/RecruitmentLuxuryApp/Candidates/` al documentar ese módulo.
 
 ### 4.8 Ejecución y Delegación Estratégica (Agentes CLI)
 
@@ -425,6 +434,44 @@ docs/[ModuleLuxuryApp]/[Submodulo]/
 1. `CONVENTIONS.md`
 2. [Workflow por Tipo de Tarea](./core/workflow-por-tipo-de-tarea.md)
 3. [Delegacion Estrategica](../.agents/skills/delegacion-estrategica/SKILL.md) — **Lectura obligatoria para usar Aider, KiloCode, OpenHands u OmniRoute**.
+
+### 4.9 Bitácora de Cambios por Módulo/Submódulo 🆕 (2026-10-05)
+
+> 🔴 **REGLA CRÍTICA:** desde el momento en que se **empieza a ejecutar código** sobre un módulo o submódulo (no al planear, no al discutir — al tocar el primer archivo de código), debe existir y mantenerse actualizado un documento de bitácora.
+
+**Qué es:** un registro cronológico de **todo cambio real aplicado** (no de intenciones, no de planes) a un módulo o submódulo — entidades modificadas, migraciones aplicadas, endpoints agregados/retirados, archivos eliminados, decisiones tomadas durante la ejecución que no estaban en el plan original.
+
+**Ubicación:** `docs/[ModuleLuxuryApp]/[Submodulo]/bitacora.md`
+
+**Disparador (cuándo se crea/actualiza):**
+- Se crea la primera vez que un agente o developer ejecuta el primer cambio de código real sobre el módulo/submódulo (no antes — documentos de planeación como `YYYYMMDD-plan-...md` no cuentan como ejecución).
+- Se actualiza con **una entrada por sesión de trabajo** (no por archivo individual) — agrupar cambios de la misma sesión/fase en una sola entrada fechada.
+- Nunca se reemplaza ni se reinicia: es append-only (se agrega al final, nunca se borra historial salvo error de la propia bitácora).
+
+**Contenido mínimo por entrada:**
+
+```markdown
+## YYYY-MM-DD — [Resumen de una línea de la sesión/fase]
+
+**Fase/Plan relacionado:** (link a `docs/.../YYYYMMDD-plan-...md` si aplica, o "N/A — hotfix")
+**Ejecutado por:** (agente/developer)
+
+**Cambios aplicados:**
+- Backend: [archivo/entidad/migración específica]
+- Frontend: [componente/ruta específica]
+- Migraciones EF: [nombre de migración, aplicada en dev/staging/prod]
+
+**Desviaciones del plan original:** (si las hubo, y por qué)
+**Pruebas ejecutadas:** (qué se corrió, resultado — build, suite, manual)
+**Pendientes / deuda generada:** (si quedó algo a medias, con justificación)
+```
+
+**Relación con otros documentos:**
+- No duplica el **Plan** (`YYYYMMDD-plan-...md`) — el plan dice qué se va a hacer; la bitácora dice qué se hizo realmente y cuándo.
+- No duplica la **Auditoría** (`YYYYMMDD-auditoria-...md`) — la auditoría es una evaluación puntual; la bitácora es continua y cronológica.
+- Si el módulo tiene documento de **Decisiones** (`decisiones.md`), la bitácora referencia decisiones ahí documentadas en vez de repetirlas — solo anota el "cuándo se ejecutó", no "por qué se decidió".
+
+**Verificación:** antes de cerrar cualquier fase de un plan (`§7 Fases` de un plan de implementación, ver `DOCUMENT-DESIGN-STANDARD.md`), el agente debe confirmar que `bitacora.md` del módulo/submódulo tiene una entrada correspondiente a esa fase.
 
 ---
 
@@ -936,33 +983,36 @@ El tipo de documento, módulo, submódulo y fecha quedan explícitos en el nombr
 ### 4️⃣ Diagramas Interactivos (Archify) — Almacenamiento y Referencia
 
 **Cuándo usar Archify (skill disponible):** Diagramas de arquitectura, workflow, secuencia, dataflow, lifecycle en:
-- Documentación técnica de módulo (§4.7 documento 5)
-- Plans de implementación (docs/plans/)
+- Documentación técnica de módulo (§4.7 documento 2)
+- Plans de implementación (`docs/plans/`)
 - Auditorías ejecutadas (Architecture Delta)
-- Guías de usuario (skill `guia-usuario-modulo` usa Archify obligatoriamente)
+- Guías de usuario (§4.7 documento 6 — skill `guia-usuario-modulo` usa Archify obligatoriamente)
+
+> 🔴 **Corrección 2026-10-05:** un solo lugar para todo diagrama, sin distinguir backend/frontend — consistente con la regla de §4.2/§4.7 de que ningún documento vive dentro de `api/` ni `appsweb/angular/`. Y sin subcarpeta `diagrams/`: respeta la misma estructura plana del resto de `docs/[Modulo]/[Submodulo]/`.
 
 **Dónde se guardan:**
 
 | Tipo | Almacenamiento primario | Almacenamiento secundario (opcional) | Referencia en MD |
 |---|---|---|---|
 | **HTML interactivo** | Artifact de Claude.ai (página privada/readonly) | N/A | Link: `[Diagrama arquitectura](https://claude.ai/artifacts/xxx)` |
-| **PNG/SVG/WebP** (exportado) | `docs/[Modulo]/[Submodulo]/diagrams/` | N/A | Embed: `![Diagrama](./diagrams/arquitectura-modulo.svg)` |
-| **WebM** (animación, si aplica) | `docs/[Modulo]/[Submodulo]/diagrams/` | N/A | Link: `[Ver animación](./diagrams/flujo-datos.webm)` |
+| **PNG/SVG/WebP** (exportado) | `docs/[Modulo]/[Submodulo]/` (archivo plano) | N/A | Embed: `![Diagrama](./YYYYMMDD-arquitectura-modulo.svg)` |
+| **WebM** (animación, si aplica) | `docs/[Modulo]/[Submodulo]/` (archivo plano) | N/A | Link: `[Ver animación](./YYYYMMDD-flujo-datos.webm)` |
 
-**Patrón de nombres (si se exporta a repo):**
+**Patrón de nombres (si se exporta a repo — SIN subcarpeta):**
 ```
-docs/[ModuleLuxuryApp]/[Submodulo]/diagrams/
-├── YYYYMMDD-arquitectura-[descripcion].svg
-├── YYYYMMDD-flujo-[descripcion].png
-└── YYYYMMDD-secuencia-[descripcion].webm
+docs/[ModuleLuxuryApp]/[Submodulo]/
+├── YYYYMMDD-diagrama-arquitectura-[descripcion].svg
+├── YYYYMMDD-diagrama-flujo-[descripcion].png
+└── YYYYMMDD-diagrama-secuencia-[descripcion].webm
 ```
 
 **Reglas:**
 - ✅ Publicar diagrama Archify como artifact (primario) — siempre
 - ✅ Exportar a PNG/SVG/WebM **solo si** se requiere versionamiento en git (ejemplo: antes de retire, para auditoría histórica)
-- ✅ Si exportas, crea carpeta `diagrams/` en el submódulo (al mismo nivel que documentos `.md`)
-- ❌ NO crear subcarpetas adicionales fuera de `diagrams/`
+- ✅ Si exportas, el archivo va **plano** dentro de `docs/[Modulo]/[Submodulo]/`, junto a los demás `.md` — mismo nivel, sin carpeta propia
+- ❌ NO crear carpeta `diagrams/` ni ninguna otra subcarpeta
 - ❌ NO versionar JSON/HTML raw de Archify — solo usar exports finales (PNG/SVG/WebM)
+- ❌ NO guardar el diagrama dentro de `api/` ni `appsweb/angular/`, incluso si el diagrama describe código de uno de esos dos lados
 
 **Ejemplo en documento MD:**
 ```markdown
@@ -970,7 +1020,7 @@ docs/[ModuleLuxuryApp]/[Submodulo]/diagrams/
 
 [Diagrama interactivo - Ver en Claude Artifacts](https://claude.ai/artifacts/xxx)
 
-![Diagrama estático (referencia)](./diagrams/20260929-arquitectura-inspections.svg)
+![Diagrama estático (referencia)](./20260929-diagrama-arquitectura-inspections.svg)
 ```
 
 ---
