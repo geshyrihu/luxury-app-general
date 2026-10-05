@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "D:\\repos\\luxuryapp-api\\.archify\\workflow-cfdi-download-20261005-043240\\candidate.json",
+    "sha256": "2a712b08431aeeb6cf7edcaf9222dd5784036eb07913394e4123e001d893812b",
+    "bytes": 7140
+  },
+  "artifact": {
+    "path": "D:\\repos\\luxuryapp-api\\docs\\AccountingLuxuryApp\\CfdiDownload\\20261005-diagrama-accounting-cfdi-download.html",
+    "sha256": "f24023e48319718cee4d83daaaa2460bbce2981a768f574eb7b2a255d96c7802",
+    "bytes": 765214
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "D:\\repos\\luxuryapp-api\\docs\\AccountingLuxuryApp\\CfdiDownload\\20261005-diagrama-accounting-cfdi-download.finalize.json",
+    "summaryReceipt": "D:\\repos\\luxuryapp-api\\docs\\AccountingLuxuryApp\\CfdiDownload\\20261005-diagrama-accounting-cfdi-download.finalize-summary.json",
+    "browserCheckReceipt": "D:\\repos\\luxuryapp-api\\docs\\AccountingLuxuryApp\\CfdiDownload\\20261005-diagrama-accounting-cfdi-download.browser-check.json"
+  },
+  "update": {
+    "status": "unavailable",
+    "installedVersion": null,
+    "availableVersion": null,
+    "releaseNotes": null,
+    "checkedAt": null,
+    "source": null,
+    "noticeRequired": false,
+    "noticeText": null,
+    "reason": "invalid-local-release"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 16358,
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "routesOverSuggestedBends": 2,
+      "routesOverSuggestedStretch": 1
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [],
+      "detours": [
+        {
+          "relationship": {
+            "id": "carga-valida",
+            "from": "carga_firma_ui",
+            "to": "valida_firma_be",
+            "label": "sube .cer/.key + contraseña",
+            "collectionIndex": 0,
+            "artifactIndex": 1
+          },
+          "bends": 3,
+          "stretch": 2.244
+        },
+        {
+          "relationship": {
+            "id": "reconcilia-efos",
+            "from": "reconcilia_be",
+            "to": "efos_catalogo",
+            "label": "cruza RFC emisor",
+            "collectionIndex": 4,
+            "artifactIndex": 5
+          },
+          "bends": 3,
+          "stretch": 1.103
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "carga_firma_ui → valida_firma_be needs 3 bends: move node carga_firma_ui or valida_firma_be so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "reconcilia_be → efos_catalogo needs 3 bends: move node reconcilia_be or efos_catalogo so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

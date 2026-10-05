@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "52ec3100-b1e3-4dfd-9661-aa7bdcecbece",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "D:\\repos\\luxuryapp-api\\.archify\\workflow-cfdi-download-20261005-043240\\candidate.json",
+  "output": "D:\\repos\\luxuryapp-api\\docs\\AccountingLuxuryApp\\CfdiDownload\\20261005-diagrama-accounting-cfdi-download.html",
+  "specification": {
+    "sha256": "2a712b08431aeeb6cf7edcaf9222dd5784036eb07913394e4123e001d893812b",
+    "bytes": 7140
+  },
+  "artifact": {
+    "sha256": "f24023e48319718cee4d83daaaa2460bbce2981a768f574eb7b2a255d96c7802",
+    "bytes": 765214
+  }
+}

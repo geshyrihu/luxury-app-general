@@ -1,0 +1,16 @@
+# Protocolo de Auditoría Punta a Punta (QA & Arquitectura)
+**Módulo:** Presupuesto Propuesta
+
+A continuación se presenta el análisis de brechas de seguridad, concurrencia, máquinas de estado y validaciones espejo, según el protocolo destructivo.
+
+## Matriz de Análisis de Brechas (Gap Analysis)
+
+| Proceso / Entidad | Vulnerabilidad Encontrada | Causa Raíz | Solución Propuesta (Código/Patrón) |
+| :--- | :--- | :--- | :--- |
+| **BudgetProposal (TotalAmount)** | **Race Condition (Concurrencia) al Editar Montos**<br>Si dos usuarios editan distintas partidas casi al mismo tiempo (vía SignalR), el cálculo en memoria de `TotalAmount` en `UpdateProposalItemAsync` sobreescribirá el total de forma incorrecta, perdiendo la suma de una de las modificaciones. | `BudgetProposalService.cs` realiza el `Sum()` en memoria cargando todos los items en la misma transacción donde actualiza, sin bloqueos ni tokens de concurrencia (`RowVersion`). | Usar el método atómico `RecalculateProposalTotalsFromDatabaseAsync(item.BudgetProposalId)` después de hacer el `SaveChangesAsync()` del item, tal como se hace en `AddAccountsToProposalAsync`. |
+| **BudgetProposalItem (Eliminación)** | **Validación Espejo Incompleta en UI (`canDeleteItem`)**<br>El botón de eliminar (🗑️) podría mostrarse en el frontend pero fallar con error 400 en el backend si los meses están en 0 pero el `currentAmount` es diferente de 0. | El frontend valida `this.months.every(...) === 0`, pero omite validar `item.currentAmount === 0`. El backend sí valida `if (hasActivity \|\| item.CurrentAmount != 0)`. | Actualizar `canDeleteItem` en `presupuesto-propuesta.ts` para que incluya `&& item.currentAmount === 0` en el retorno. |
+| **BudgetProposal (Creación Múltiple)** | **Duplicidad y Race Condition al Crear Propuesta**<br>Si se hace doble clic o hay peticiones concurrentes para crear la propuesta, EF podría lanzar `DbUpdateException`. Aunque se captura y se retorna la propuesta existente, esto genera ruido en BD y logs. | No hay un lock distribuido (ej. Redis Lock) o validación atómica en `CreateProposalAsync` previa a la inserción en BD; depende de la restricción de base de datos para fallar. | Mantener el manejo actual (compensación), pero idealmente deshabilitar el botón de creación en UI tras el primer clic (bloqueo preventivo). |
+| **State Machine (Estados de Propuesta)** | **Correcta Protección de Transiciones de Estado**<br>Se verificó que el backend protege adecuadamente las modificaciones, adiciones, y eliminaciones validando `if (proposal.Status != ProposalStatus.Draft)`. | N/A - Implementado correctamente en `BudgetProposalService.cs`. | N/A (Aprobado). |
+| **Integridad Relacional (Cascades & Orphans)** | **Manejo Seguro y Explícito de Cascada en Eliminación**<br>La eliminación de un `BudgetProposalItem` maneja correctamente la cascada hacia `BudgetProposalFiles` y `BudgetProposalItemHistory` en una transacción única, asegurando la consistencia relacional. | N/A - Implementado correctamente mediante transacción y limpieza física de archivos. | N/A (Aprobado). |
+
+> **Nota:** Según la instrucción de la skill `qa-punta-a-punta`, **NO SE IMPLEMENTARÁN LAS SOLUCIONES** hasta obtener la aprobación explícita del usuario.

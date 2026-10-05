@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T04:52:37.145Z",
+  "generatedAt": "2026-10-05T00:18:11.814Z",
   "mode": "NO-REGRESIÓN (falla si empeora)",
   "tool": "axe-core / @axe-core/playwright",
   "config": "a11y-targets.json",
@@ -26,8 +26,8 @@
       "requested": "http://localhost:4200/login",
       "landedUrl": "http://localhost:4200/auth/login",
       "violations": 0,
-      "passes": 22,
-      "incomplete": 3,
+      "passes": 14,
+      "incomplete": 0,
       "violationsDetail": []
     }
   ],
