@@ -314,3 +314,5 @@ Requisitos para marcar fase cerrada:
 - `conventions/ui/ui-usage-catalog.md`
 - `appsweb/angular/BITACORA-REFACTOR-DESKTOP-MOBILE.md`
 - `appsweb/angular/src/app/shared/ui`
+-   P r o m p t s   d e   o r q u e s t a c i ó n   c r e a d o s   e n   \ p r o m p t s / a g e n t e 1 - b u i l d - y - c o n t r a t o s . m d \ ,   \ p r o m p t s / a g e n t e 2 - p a y l o a d s - t r a c k i n g . m d \   y   \ p r o m p t s / a g e n t e 3 - p d f - e s p e c i a l e s . m d \ .  
+ 
