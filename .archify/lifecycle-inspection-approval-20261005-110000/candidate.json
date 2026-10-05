@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "Ciclo de vida del acta de inspección",
+    "subtitle": "InspectionApproval.Status — Inspections, LuxuryApp API",
+    "output": "lifecycle-inspection-approval.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/geshyrihu/luxuryapp-api.git",
+      "provider": "github",
+      "revision": "c885e4f0ce0dd292732d01a3e9372c1f43b41eba"
+    }
+  },
+  "lanes": [
+    { "id": "main", "label": "Flujo principal del acta" },
+    { "id": "review", "label": "Devolución del revisor" },
+    { "id": "recovery", "label": "Reapertura auditada" },
+    { "id": "terminal", "label": "Anexo posterior" }
+  ],
+  "states": [
+    { "id": "draft", "type": "start", "label": "Borrador", "sublabel": "sin folio", "lane": "main", "col": 0, "step": "01", "tag": "RN-INS-051", "sources": [ { "path": "LuxuryApp.Application/Modules/OperationsLuxuryApp/Inspections/Services/InspectionApprovalAppService.cs", "line": 42, "end_line": 52, "label": "SubmitAsync crea Approval" } ] },
+    { "id": "pending", "type": "waiting", "label": "En revisión", "sublabel": "esperando Administrador", "lane": "main", "col": 1, "step": "02", "tag": "ENV", "sources": [ { "path": "LuxuryApp.Application/Modules/OperationsLuxuryApp/Inspections/Services/InspectionApprovalAppService.cs", "line": 29, "end_line": 65, "label": "SubmitAsync" } ] },
+    { "id": "approved", "type": "success", "label": "Aprobada", "sublabel": "folio + firma", "lane": "main", "col": 2, "step": "03", "tag": "FIR", "sources": [ { "path": "LuxuryApp.Application/Modules/OperationsLuxuryApp/Inspections/Services/InspectionApprovalAppService.cs", "line": 94, "end_line": 127, "label": "SignAsync" } ] },
+    { "id": "returned", "type": "neutral", "label": "Devuelta", "sublabel": "motivo obligatorio", "lane": "review", "col": 1, "tag": "REV", "sources": [ { "path": "LuxuryApp.Application/Modules/OperationsLuxuryApp/Inspections/Services/InspectionApprovalAppService.cs", "line": 67, "end_line": 92, "label": "ReturnAsync" } ] },
+    { "id": "reopened", "type": "active", "label": "Reabierta", "sublabel": "nueva versión", "lane": "recovery", "col": 2, "tag": "REA", "sources": [ { "path": "LuxuryApp.Application/Modules/OperationsLuxuryApp/Inspections/Services/InspectionApprovalAppService.cs", "line": 129, "end_line": 162, "label": "ReopenAsync" } ] },
+    { "id": "annex", "type": "external", "label": "Anexo", "sublabel": "nueva ejecución ligada", "lane": "terminal", "col": 3, "tag": "ANX", "sources": [ { "path": "LuxuryApp.Application/Modules/OperationsLuxuryApp/Inspections/Services/InspectionApprovalAppService.cs", "line": 164, "end_line": 228, "label": "CreateAnnexAsync" } ] }
+  ],
+  "transitions": [
+    { "from": "draft", "to": "pending", "label": "Enviar a revisión (ENV)", "labelDy": -16 },
+    { "from": "pending", "to": "approved", "label": "Firmar y cerrar (FIR)", "labelDy": 16 },
+    { "from": "pending", "to": "returned", "label": "Devolver (REV)", "variant": "security" },
+    { "from": "returned", "to": "pending", "label": "Reenviar (ENV)" },
+    { "from": "approved", "to": "reopened", "label": "Reabrir (REA)", "variant": "security" },
+    { "from": "reopened", "to": "pending", "label": "Reenviar (ENV)" },
+    { "from": "approved", "to": "annex", "label": "Crear anexo (ANX)" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Nivel 2 — verificado en UI real (2026-10-05)", "items": [
+      "Borrador → En revisión → Aprobada ejecutado end-to-end con playwright-cli, folio real generado: INS-20261005-0001",
+      "Botón 'Confirmar' de Devolver queda deshabilitado sin motivo (RN-INS-053, RN-INS-062)",
+      "Tras firmar aparecen 'Reabrir' y 'Crear anexo'; tras reabrir, Enviar vuelve a habilitarse"
+    ] },
+    { "dot": "amber", "title": "Nivel 3 — permisos (InspectionPermissionPolicy.cs)", "items": [
+      "Deny-by-default: rol ausente del mapa no tiene ninguna acción (líneas 106-107)",
+      "Administrador firma/revisa pero NO envía (ENV excluido, línea 60); TecnicoMantenimiento envía pero no firma",
+      "La UI de revisión no oculta botones por rol (comentario explícito en revision-actas-inspeccion.ts:33-35): toda la autorización vive en backend"
+    ] },
+    { "dot": "rose", "title": "Hallazgo 🟥 — RN-INS-072 no se cumple como se describe", "items": [
+      "Se firmó y cerró un acta con 18 equipos sin registrar un solo hallazgo ni excepción — el sistema lo permitió",
+      "Causa: EvaluationState nace en 'Evaluated' al crear el snapshot, antes de que el inspector revise nada",
+      "RN-INS-020/021 (CRUD de recorridos, Nivel 3 original) tampoco llaman InspectionPermissionPolicy — solo [Authorize] genérico"
+    ] }
+  ]
+}

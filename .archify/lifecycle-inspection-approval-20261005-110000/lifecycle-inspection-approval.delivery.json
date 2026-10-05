@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "1fd2f0a8-734f-4e91-801f-2d6761694a22",
+  "status": "current",
+  "command": "deliver",
+  "type": "lifecycle",
+  "input": "D:\\repos\\luxuryapp-api\\.archify\\lifecycle-inspection-approval-20261005-110000\\candidate.json",
+  "output": "D:\\repos\\luxuryapp-api\\.archify\\lifecycle-inspection-approval-20261005-110000\\lifecycle-inspection-approval.html",
+  "specification": {
+    "sha256": "7178ea8b56feae66cf799cb69d74c9a29eba54cf2217760c3758ab8cf6a1fb84",
+    "bytes": 4763
+  },
+  "artifact": {
+    "sha256": "8a7e22fc4705df1b44c8f91a7aa3095955d7f621c35cf23e30aaa3949f00a4d0",
+    "bytes": 762092
+  }
+}

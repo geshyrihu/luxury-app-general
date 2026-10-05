@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "lifecycle",
+  "quality": "showcase",
+  "specification": {
+    "path": "D:\\repos\\luxuryapp-api\\.archify\\lifecycle-inspection-approval-20261005-110000\\candidate.json",
+    "sha256": "7178ea8b56feae66cf799cb69d74c9a29eba54cf2217760c3758ab8cf6a1fb84",
+    "bytes": 4763
+  },
+  "artifact": {
+    "path": "D:\\repos\\luxuryapp-api\\.archify\\lifecycle-inspection-approval-20261005-110000\\lifecycle-inspection-approval.html",
+    "sha256": "8a7e22fc4705df1b44c8f91a7aa3095955d7f621c35cf23e30aaa3949f00a4d0",
+    "bytes": 762092
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "D:\\repos\\luxuryapp-api\\.archify\\lifecycle-inspection-approval-20261005-110000\\lifecycle-inspection-approval.finalize.json",
+    "summaryReceipt": "D:\\repos\\luxuryapp-api\\.archify\\lifecycle-inspection-approval-20261005-110000\\lifecycle-inspection-approval.finalize-summary.json",
+    "browserCheckReceipt": "D:\\repos\\luxuryapp-api\\.archify\\lifecycle-inspection-approval-20261005-110000\\lifecycle-inspection-approval.browser-check.json"
+  },
+  "update": {
+    "status": "unavailable",
+    "installedVersion": null,
+    "availableVersion": null,
+    "releaseNotes": null,
+    "checkedAt": null,
+    "source": null,
+    "noticeRequired": false,
+    "noticeText": null,
+    "reason": "invalid-local-release"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 11132
+}
