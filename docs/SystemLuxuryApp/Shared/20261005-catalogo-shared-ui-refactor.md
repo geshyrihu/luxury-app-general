@@ -138,7 +138,7 @@ El objetivo es consumir inputs signal oficiales y evitar inputs raw o rutas inte
 - Reconciliación Maintenance validada: 2 usos Edit mobile de meters migrados.
 - Reconciliación Accounting validada: 11 usos Edit residuales migrados y 2 descargas de Aspel audit ya integradas.
 - `npm run audit:ui` pasa.
-- Commits publicados en Angular `main`: `69fe56995`, `7fcd648e0` y `76f291de2`.
+- Commits publicados en Angular `main`: `69fe56995`, `7fcd648e0`, `76f291de2` y `7954a03be`.
 
 ### Estado medible
 
@@ -186,7 +186,7 @@ Los `51` son implementaciones legacy dentro de `shared/ui`. Los `435` son usos l
 |---|---|---:|---:|---:|---|---|
 | 0 | Inventario, contratos y riesgos | 435 usos | 435 auditados | 0 | Agente auditor | ✅ Cerrada |
 | 1 | `add`, `save`, `edit`, `item` simples | 65 usos de bajo riesgo iniciales | 271 Edit | Por recalcular | Orquestador + agentes | 🔄 En curso |
-| 2 | `download`, `tracking` y acciones simples | 53 usos | 10 descargas | 43 | Agente delegado + orquestador | 🔄 En curso |
+| 2 | `download`, `tracking` y acciones simples | 53 usos | 18 descargas | 35 | Agente delegado + orquestador | 🔄 En curso |
 | 3 | `delete`, `confirm`, `send-email`, `active-desactive` | 221 alto riesgo | 0 | 221 | Orquestador + revisión | ⛔ Bloqueada por contrato |
 | 4 | PDF y componentes con API especial | Por medir | 0 | Por medir | Orquestador | ⏳ Pendiente |
 | 5 | Catálogos/demo y limpieza de exports | 9 usos Edit auditados | 0 migrados | 9 excepciones intencionales | Agente delegado | ✅ Auditada |
