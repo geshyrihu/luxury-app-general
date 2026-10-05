@@ -286,6 +286,32 @@ No se asignan fechas de calendario; secuencia y tamaño relativo ordenan depende
 
 **Criterio de paso:** flujo Inspector→Administrador funciona; rol distinto recibe denegación si matriz lo marca así; acta firmada no cambia al modificar inventario; anexo preserva acta original.
 
+#### 📤 Reporte — Fase 3 (2026-10-04)
+- **Qué se hizo:**
+  1. Se crearon las entidades `InspectionApproval` (acta 1:1 con la ejecución: folio, estado, versión, actores y fechas de envío/revisión/firma/reapertura, `IsAnnex`/`AnnexOfApprovalId`) e `InspectionApprovalEvent` (bitácora auditable por transición). Enums `InspectionApprovalStatus` (`Draft`/`PendingReview`/`Returned`/`Approved`/`Reopened`) y `InspectionApprovalAction` en `Shared/Enums`.
+  2. Se implementó `InspectionApprovalAppService` (`IInspectionApprovalAppService`): `SubmitAsync` (ENV), `ReturnAsync` (REV, motivo obligatorio), `SignAsync` (FIR: genera folio único, registra usuario/rol autenticados, cierra e inmutabiliza la ejecución), `ReopenAsync` (REA, motivo obligatorio, incrementa versión y `AdministrativeModificationCount`) y `CreateAnnexAsync` (ANX: crea una ejecución nueva con los equipos del cliente que no estaban en la cobertura original, ligada al acta previa).
+  3. Folio acordado por el Tech Lead: `INS-{yyyyMMdd}-{NNNN}`, secuencia diaria global generada por backend. Se extendió `IGenerateFolioService` con `GenerateNextInspectionFolioAsync`, siguiendo el patrón existente de folios.
+  4. Inmutabilidad: `AddFindingAsync`/`SetExceptionAsync` ya rechazaban ejecuciones cerradas; al firmar se marca `IsClosed=true`/`Status=Completed`, y la reapertura los revierte de forma auditada. Se agregó `EnsureCoverageComplete` (RN-INS-072) para no firmar si una excepción de cobertura quedó sin motivo.
+  5. Se expusieron los endpoints `api/inspection-approval` (get, submit, return, sign, reopen, annex) y el listado `api/inspection-baseline/executions/{customerId}`. Todos autenticados y aislados por `CustomerId`.
+  6. RBAC: se corrigió la matriz y `InspectionPermissionPolicy`. Se detectó que en la matriz los roles de campo ya tenían `ENV` ✓ pero la política lo omitía, y que `TecnicoMantenimiento`/`MttoNocturno` lo tenían denegado; por decisión del usuario se les otorgó `ENV`. Se alineó la política para que coordinación/gerencia (`GerenteMantenimiento`, `SupervisionOperativa`, `Administrador`, `GerenteOperaciones`, `GerenteAtencion`, `JefeMantenimiento`) no tengan `ENV` (solo revisan/firman), reflejando la matriz.
+  7. UI Angular: nueva pantalla `Revisión de actas` (`/inspections/approval`) con listado responsive de ejecuciones, detalle del acta, cobertura congelada, bitácora de eventos y acciones (enviar, devolver, firmar, reabrir, crear anexo) con tooltips únicos y estados como chips accesibles. Se agregó tarjeta en el hub y constantes de endpoints.
+- **Archivos tocados:** entidades/configuraciones nuevas en `Infrastructure/Data/Entities/OperationsLuxuryApp/Inspections/` y `Configurations/OperationsLuxuryApp/`; migración `20261004205433_AddInspectionApprovals`; `ApplicationDbContext`; DTOs nuevos; `InspectionApprovalAppService.cs`, `IInspectionApprovalAppService.cs`, `InspectionApprovalEndpoints.cs`, `InspectionPermissionPolicy.cs`, `InspectionBaselineAppService.cs`/interfaz, `GenerateFolioService.cs`/interfaz, DI; pruebas `InspectionApprovalAppServiceTests.cs`; frontend `inspection-approval/*`, `inspection.model.ts`, `mantenimiento.endpoints.ts`, `inspection.routing.ts`, `route-paths.ts`, `inspection-modules.ts`; matriz RBAC.
+- **Resultado de las verificaciones/checklist de la fase:** `dotnet build LuxuryApp.Application` 0 errores; `dotnet test --filter FullyQualifiedName~Inspection` 22/22 correctas (incluye submit, devolución con motivo, firma con folio y auditoría, secuencia diaria, denegación por rol, reapertura versionada, bloqueo post-cierre, anexo y aislamiento multi-cliente). `ng build --configuration development` completo (templates validados). La migración solo agrega tablas/índices y es reversible.
+- **Bloqueos o dudas:** La migración `20261004205433_AddInspectionApprovals` fue **aplicada** en dev (2026-10-04). Antes de promoción, correr el flujo de `data-migration-protocol.md` (preflight de folio duplicado no aplica porque el folio se genera al firmar; verificar tablas/índices creados). QA browser del flujo completo pendiente de credenciales gestionadas localmente.
+
+#### 🔎 QA browser — Fase 3 (2026-10-04, cliente AVIVIA 58, rol SuperUsuario)
+Flujo verificado de punta a punta en UI real (API `:7070`, Angular `:4200`): iniciar levantamiento → cobertura congelada (672 equipos) → enviar a revisión → devolver con motivo → reenviar → **firmar** (folio `INS-20261004-0001`) → **reabrir** (v2) con bitácora y auditoría de usuario/rol autenticados. Screenshots desktop y móvil capturados.
+
+Defectos encontrados y corregidos:
+1. **POST `/api/inspection-baseline` → 500 `String or binary data would be truncated . column 'Brand'`.** El snapshot limitaba campos copiados del `Equipment` (que es `nvarchar(max)`). Se removió `MaxLength` de `EquipmentName/Brand/Model/SerialNumber/LocalCode/Location` y se agregó la migración aditiva **`20261004232039_WidenInspectionSnapshotColumns`** (aplicada).
+2. **Número raw de enum en columna CATEGORÍA** de la cobertura (viola regla de enums): se agregó `InventoryCategoryDisplayName` (`GetDisplayName`) al `InspectionExecutionSnapshotDTO` y se consume en la UI.
+3. **Lista mostraba ejecuciones legadas** con `InspectionType` no definido (0) y sin snapshots ("Sin clasificar", 0 equipos): filtro afinado a `InitialBaseline`/`MajorPeriodic`.
+4. **UI móvil no usable**: la tabla se desbordaba y la acción "Abrir acta" no era visible. Se reescribió la pantalla con layout responsive: tablas `lux-table` en desktop y listas `ili-list-item`/tarjetas apiladas en móvil, con paginación en los listados.
+5. **R3 aplicado**: validación server-side de que cada criterio pertenezca a la categoría del equipo en `AddOrUpdateCondominiumAssetAsync` (se omite si el equipo no tiene categoría, para no romper legados), más pruebas.
+
+Observaciones: el build global de Angular falla por errores **ajenos** de trabajo concurrente (`announcement-admin-list` → `platformS` no declarado; `propiedades-list-desktop` → `tableRows`), no relacionados con Inspecciones. El componente de actas compila (`tsc` limpio y bundle de desarrollo previo correcto).
+
+
 ### Fase 4 — Inspección Mayor periódica, comparación y exportación (M/L)
 
 - Configurar periodicidad por cliente con contrato único UI/API/job.
@@ -376,7 +402,7 @@ Se conservan los cuatro KPIs de FASE 0. La revisión post implementación compar
 Este plan queda listo para aprobación formal cuando:
 
 1. El usuario marque `✓`, `—` o `C` para cada rol/acción de la matriz asociada.
-2. Se resuelva el formato de folio y los valores finales de condición/severidad/recomendación.
+2. Formato de folio **resuelto** (2026-10-04): `INS-{yyyyMMdd}-{NNNN}` (secuencia diaria). Valores de condición/severidad/recomendación cerrados en Fase 2.
 3. El Tech Lead apruebe la secuencia, reglas y análisis de migración.
 
 Hasta entonces, no iniciar cambios de código ni migraciones.

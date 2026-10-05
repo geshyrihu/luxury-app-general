@@ -59,8 +59,8 @@ Las 42 filas corresponden a los roles sincronizados por `CreateRoles()`; nombres
 | Contador | Staff | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | |
 | Cobranza | Staff | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | |
 | JefeMantenimiento | Staff | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | |
-| TecnicoMantenimiento | Staff | — | — | — | ✓ | ✓ | — | ✓ | ✓ | — | — | — | — | — | — | — | — | — | Ejecuta trabajo de campo: captura hallazgos y evidencia. |
-| MttoNocturno | Staff | — | — | — | ✓ | — | — | ✓ | ✓ | — | — | — | — | — | — | — | — | — | Ejecuta trabajo de campo: captura hallazgos y evidencia. |
+| TecnicoMantenimiento | Staff | — | — | — | ✓ | ✓ | — | ✓ | ✓ | ✓ | — | — | — | — | — | — | — | — | Ejecuta trabajo de campo: captura hallazgos, evidencia y envía a revisión. |
+| MttoNocturno | Staff | — | — | — | ✓ | — | — | ✓ | ✓ | ✓ | — | — | — | — | — | — | — | — | Ejecuta trabajo de campo: captura hallazgos, evidencia y envía a revisión. |
 | Almacenista | Staff | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | |
 | SupervisorObra | Staff | — | — | — | — | ✓ | ✓ | ✓ | ✓ | ✓ | — | — | — | — | — | — | — | — | |
 | Recepcionista | Staff | — | — | — | — | ✓ | ✓ | ✓ | ✓ | ✓ | — | — | — | — | — | — | — | — | |
@@ -93,6 +93,7 @@ Las 42 filas corresponden a los roles sincronizados por `CreateRoles()`; nombres
 | REV | `Administrador` revisa y puede devolver al inspector antes de firmar. |
 | Matriz 2026-10-04 | 27 de 42 roles marcados por el Tech Lead según captura de pantalla (`✓`/`—`): `SuperUsuario`, `Direccion`, `GerenteMantenimiento`, `SupervisionOperativa`, `Administrador`, `GerenteOperaciones`, `GerenteAtencion`, `JefeMantenimiento`, `TecnicoMantenimiento`, `MttoNocturno`, `Almacenista`, `SupervisorObra`, `Recepcionista`, `MasterConcierge`, `Concierge`, `JefeSeguridadInterna`, `SeguridadInterna`, `Monitorista`, `Sistemas`, `EntrenadorGimnasio`, `Ludotecaria`, `Paqueteria`, `Chofer`, `BellBoy`, `SnackBar`, `Salvavidas`, `JardineriaInterna`. |
 | Demás celdas | `Legal`, `CoordinacionLegal`, `RecursosHumanos`, `Reclutamiento`, `SistemasGeneral`, `Mensajeria`, `Asistente`, `Contador`, `Cobranza`, `Comite`, `Condomino`, `Jardineria`, `Limpieza`, `Seguridad`, `Proveedor` siguen pendientes de marcado por Tech Lead/usuario responsable. |
+| ENV (2026-10-04) | Se otorgó `ENV` a `TecnicoMantenimiento` y `MttoNocturno` para cerrar el flujo Inspector→Administrador (capturan y envían). Los roles de campo (`SupervisorObra`, `Recepcionista`, `MasterConcierge`, `Concierge`, `JefeSeguridadInterna`, `SeguridadInterna`, `Monitorista`, `Sistemas`, `EntrenadorGimnasio`, `Ludotecaria`, `Paqueteria`, `Chofer`, `BellBoy`, `SnackBar`, `Salvavidas`, `JardineriaInterna`) ya tenían `ENV` ✓. Coordinación y gerencia (`GerenteMantenimiento`, `SupervisionOperativa`, `Administrador`, `GerenteOperaciones`, `GerenteAtencion`, `JefeMantenimiento`) conservan `ENV` — según matriz; revisan/firman, no envían. `InspectionPermissionPolicy` refleja esto. |
 
 ## Fuente de roles
 
