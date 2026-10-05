@@ -138,7 +138,7 @@ El objetivo es consumir inputs signal oficiales y evitar inputs raw o rutas inte
 - Reconciliación Maintenance validada: 2 usos Edit mobile de meters migrados.
 - Reconciliación Accounting validada: 11 usos Edit residuales migrados y 2 descargas de Aspel audit ya integradas.
 - `npm run audit:ui` pasa.
-- Commit publicado: `69fe56995` (`refactor(ui): migrate legacy action buttons`).
+- Commits publicados en Angular `main`: `69fe56995`, `7fcd648e0` y `76f291de2`.
 
 ### Estado medible
 
@@ -185,11 +185,11 @@ Los `51` son implementaciones legacy dentro de `shared/ui`. Los `435` son usos l
 | Fase | Alcance | Total inicial | Hecho | Pendiente | Responsable | Estado |
 |---|---|---:|---:|---:|---|---|
 | 0 | Inventario, contratos y riesgos | 435 usos | 435 auditados | 0 | Agente auditor | ✅ Cerrada |
-| 1 | `add`, `save`, `edit`, `item` simples | 65 usos de bajo riesgo iniciales | 270 Edit | Por recalcular | Orquestador + agentes | 🔄 En curso |
-| 2 | `download`, `tracking` y acciones simples | 53 usos | 6 descargas | 47 | Agente delegado + orquestador | 🔄 En curso |
+| 1 | `add`, `save`, `edit`, `item` simples | 65 usos de bajo riesgo iniciales | 271 Edit | Por recalcular | Orquestador + agentes | 🔄 En curso |
+| 2 | `download`, `tracking` y acciones simples | 53 usos | 10 descargas | 43 | Agente delegado + orquestador | 🔄 En curso |
 | 3 | `delete`, `confirm`, `send-email`, `active-desactive` | 221 alto riesgo | 0 | 221 | Orquestador + revisión | ⛔ Bloqueada por contrato |
 | 4 | PDF y componentes con API especial | Por medir | 0 | Por medir | Orquestador | ⏳ Pendiente |
-| 5 | Catálogos/demo y limpieza de exports | Por medir | 0 | Por medir | Agente delegado | ⏳ Pendiente |
+| 5 | Catálogos/demo y limpieza de exports | 9 usos Edit auditados | 0 migrados | 9 excepciones intencionales | Agente delegado | ✅ Auditada |
 | 6 | Build, pruebas y QA de producción | Global | Auditoría UI | Build pendiente | Orquestador | ⏳ Pendiente |
 
 ### Fase 0: inventario y contratos
@@ -226,7 +226,7 @@ No permitido:
 - Tocar archivos modificados concurrentemente.
 - Borrar definiciones legacy antes de vaciar consumidores.
 
-Avance actual: 270 consumidores Edit migrados y validados. Deuda pendiente: 1 template Operations con `(click)`, 9 usos de catalog/demo Admin, 1 snippet sin evento en conventions viewer y 8 botones Management mobile que conservan API Web. Accounting mantiene solo residuos en código muerto/comentado o acciones sin `(clicked)`.
+Avance actual: 271 consumidores Edit migrados y validados. Deuda pendiente: 9 usos de catalog/demo Admin conservados como showcase, 1 snippet sin evento en conventions viewer y 8 botones Management mobile que conservan API Web. Accounting mantiene solo residuos en código muerto/comentado o acciones sin `(clicked)`.
 
 ### Fase 2: acciones simples adicionales
 
@@ -270,6 +270,7 @@ Tratar separadamente `view-pdf`, `send-email`, `active-desactive`, `customClick`
 ### Fase 5: catálogo y limpieza
 
 - Migrar ejemplos de `catalog-component-ui` después de producción.
+- Auditoría Fase 5 completada: los 9 Edit restantes son showcases intencionales de APIs legacy; no migrar parcialmente.
 - Actualizar `ui-dictionary.ts` y documentación.
 - Eliminar exports/archivos legacy solo con cero consumidores verificado.
 - Mantener specs o reemplazarlas por cobertura equivalente.
@@ -295,11 +296,9 @@ Requisitos para marcar fase cerrada:
 
 ## Siguiente trabajo inmediato
 
-1. Cerrar excepciones documentadas de Fase 1 sin tocar contratos sensibles.
-2. Continuar Fase 2 con descargas seguras; mantener `tracking` fuera hasta definir payload.
-3. Auditar catálogo/demo Admin y separar ejemplos de consumidores productivos.
-4. Diseñar contrato de confirmación antes de Fase 3.
-5. Ejecutar Fase 6 únicamente cuando el build deje de estar bloqueado.
+1. Continuar Fase 2 con descargas seguras; mantener `tracking` fuera hasta definir payload.
+2. Diseñar contrato de confirmación antes de Fase 3.
+3. Ejecutar Fase 6 únicamente cuando el build deje de estar bloqueado.
 
 ## Verificaciones utilizadas
 
