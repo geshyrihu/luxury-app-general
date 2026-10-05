@@ -143,7 +143,7 @@ Ver detalle en:
 - **Naming**: `[entity]-[purpose].component.ts` (kebab-case)
 - **Estándar**: Standalone + `OnPush` + `signal()`/`computed()`/`effect()`
 - **Imports**: Alias `@[modulo].luxuryapp/...` (nunca rutas físicas `src/app/...`)
-- **UI base**: Consumir `shared/ui` primero
+- **UI base**: Consumir `shared/ui` primero, usando la API pública adaptativa o las primitivas agnósticas; no importar implementaciones internas `web/` o `mobile/` si existe wrapper oficial.
 - **Servicios**: Inyectar de catálogo compartido (`core/services/`) — no crear locales si ya existe. Ver [Angular Services Catalog](./frontend/angular-services-catalog.md) (70+ servicios: ApiResponseService, PaginationStore, CustomToastService, DialogHandlerService, StorageService, AuthService, EnumSelectService, DateService, FormHelper, GlobalErrorService, etc.)
 - **Documentos clave**:
   - [Frontend Feature Structure](./frontend/frontend-feature-structure.md) — estructura carpetas
@@ -184,7 +184,7 @@ Ver detalle en:
 
 ### 7️⃣ ESTILOS / TOKENS / ICONOS
 - **Tokens**: Solo `var(--ds-*)`, `var(--primary-*)`, `var(--surface-*)` — **NUNCA hardcodear** `#hex`, `px`, `rem`
-- **Iconos**: Catálogo `AppIcon` → `<app-icon [icon]="AppIcon.X" />` (referencia tipada)
+- **Iconos**: Catálogo `AppIcon` → `<lux-icon [icon]="AppIcon.X" />` (referencia tipada)
 - **Responsive**: Desktop/Mobile separados
 - **Documentos clave**:
   - [Design Tokens Rule](./ui/design-tokens-rule.md) — tokens obligatorios, prefijos permitidos
@@ -491,7 +491,7 @@ docs/[ModuleLuxuryApp]/[Submodulo]/
 - [Decision Tree Components](./decision-tree-components.md) — Árbol de decisión para crear/ubicar componentes UI
 
 
-- **Iconos:** `<app-icon>` es el estándar web; `<ili-icon>` el de móvil (solo en `shared/ui/mobile/**`); `<lx-icon>` es el wrapper adaptativo. Los valores salen del catálogo `AppIcon` y `pi pi-` directo está prohibido. Regla completa: [Icon Usage Rule](./ui/icon-usage-rule.md) y [app-icon Usage](./ui/app-icon-usage.md); severidad en la tabla de §6.1 (fila 9).
+- **Iconos:** `<lux-icon>` es la API pública agnóstica; `<ili-icon>` queda restringido a `shared/ui/mobile/**`; `lx-icon` fue retirado por estar sin usos reales. Los valores salen del catálogo `AppIcon` y `pi pi-` directo está prohibido. Regla completa: [Icon Usage Rule](./ui/icon-usage-rule.md) y [app-icon Usage](./ui/app-icon-usage.md); severidad en la tabla de §6.1 (fila 9).
 
 
 ## 5.6 Styles
@@ -767,7 +767,7 @@ Este apartado **no repite** el detalle de las reglas: cada una vive completa (co
 | 6 | DisplayName en español | 🔴 CRÍTICA | Todo enum con `[Display(Name="...")]` y listados con `GetDisplayName()`, nunca `ToString()`. | 🔶 greps manuales | [Enum Display Name](./backend/enum-display-name-extension.md) |
 | 7 | Textos sin mojibake | 🔴 CRÍTICA | `node scripts/scan-mojibake.mjs <ruta>` debe dar 0 antes de mergear (`npm run audit:encoding`). | ✅ CI, solo `appsweb/angular` (api, docs y conventions sin gate) | [Encoding Rules](./operations/encoding-rules.md) |
 | 8 | Tokens CSS, nunca hardcoding | 🔴 CRÍTICA | Todo valor visual vía `var(--ds-*)`, `var(--primary-*)`, `var(--surface-*)`. | ✅ CI `audit:tokens`, alcance `src/styles` + `shared/ui`; `modules/**` solo se reporta | [Design Tokens Rule](./ui/design-tokens-rule.md) |
-| 9 | Iconos vía catálogo | 🔴 CRÍTICA | `<app-icon [icon]="AppIcon.X" />`; un nombre inexistente no falla, no dibuja. Gate: `npm run audit:icon-names`. | ✅ CI `audit:icon-names` | [Icon Usage Rule](./ui/icon-usage-rule.md) |
+| 9 | Iconos vía catálogo | 🔴 CRÍTICA | `<lux-icon [icon]="AppIcon.X" />`; un nombre inexistente no falla, no dibuja. Gate: `npm run audit:icon-names`. | ✅ CI `audit:icon-names` | [Icon Usage Rule](./ui/icon-usage-rule.md) |
 | 11 | Fechas y horas | 🔴 CRÍTICA | Backend: `DateOnly`/`DateTime`/`TimeOnly` según semántica, sin `DateTime.Now`. Frontend: lectura con pipe `apiDate`, escritura con `DateService.getDateFormat()`. | ✅ ratchet en `api/` para `DateTime.Now/Today` (`dateTimeNow`); frontend 🔶 greps manuales | [Backend Rules](./backend/backend-rules.md) · [Frontend Prohibitions](./frontend/frontend-prohibitions.md) |
 | 12 | Documentos (carga, lectura, visualización) | 🔴 CRÍTICA | Nunca exponer rutas físicas; mostrar `Name`, no el UUID; usar `<iw-button-view-pdf>`; borrar el archivo al borrar la entidad. | ⬜ sin gate | [Document Read/Write](./backend/document-read-write-pattern.md) · [Document Display](./frontend/document-display-pattern.md) |
 | 13 | `[FromForm]` en multipart | 🔴 CRÍTICA | Todo endpoint con `IFormFile` lleva `[FromForm]` (sin él, HTTP 415); `.DisableAntiforgery()` solo con Bearer stateless y análisis documentado. | ✅ ratchet en `api/` (`formFileWithoutFromForm`, heurística por archivo de endpoints) | [Multipart/Antiforgery](./backend/multipart-antiforgery.md) |
@@ -932,6 +932,46 @@ El tipo de documento, módulo, submódulo y fecha quedan explícitos en el nombr
 - `docs/AdminLuxuryApp/Banks/20260729-auditoria-admin-banks.md`
 - `docs/SystemLuxuryApp/Notifications/20260812-especificacion-sistema-notificaciones.md`
 - `docs/SharedLuxuryApp/FechasHoras/20260826-auditoria-manejo-fechas-horas.md`
+
+### 4️⃣ Diagramas Interactivos (Archify) — Almacenamiento y Referencia
+
+**Cuándo usar Archify (skill disponible):** Diagramas de arquitectura, workflow, secuencia, dataflow, lifecycle en:
+- Documentación técnica de módulo (§4.7 documento 5)
+- Plans de implementación (docs/plans/)
+- Auditorías ejecutadas (Architecture Delta)
+- Guías de usuario (skill `guia-usuario-modulo` usa Archify obligatoriamente)
+
+**Dónde se guardan:**
+
+| Tipo | Almacenamiento primario | Almacenamiento secundario (opcional) | Referencia en MD |
+|---|---|---|---|
+| **HTML interactivo** | Artifact de Claude.ai (página privada/readonly) | N/A | Link: `[Diagrama arquitectura](https://claude.ai/artifacts/xxx)` |
+| **PNG/SVG/WebP** (exportado) | `docs/[Modulo]/[Submodulo]/diagrams/` | N/A | Embed: `![Diagrama](./diagrams/arquitectura-modulo.svg)` |
+| **WebM** (animación, si aplica) | `docs/[Modulo]/[Submodulo]/diagrams/` | N/A | Link: `[Ver animación](./diagrams/flujo-datos.webm)` |
+
+**Patrón de nombres (si se exporta a repo):**
+```
+docs/[ModuleLuxuryApp]/[Submodulo]/diagrams/
+├── YYYYMMDD-arquitectura-[descripcion].svg
+├── YYYYMMDD-flujo-[descripcion].png
+└── YYYYMMDD-secuencia-[descripcion].webm
+```
+
+**Reglas:**
+- ✅ Publicar diagrama Archify como artifact (primario) — siempre
+- ✅ Exportar a PNG/SVG/WebM **solo si** se requiere versionamiento en git (ejemplo: antes de retire, para auditoría histórica)
+- ✅ Si exportas, crea carpeta `diagrams/` en el submódulo (al mismo nivel que documentos `.md`)
+- ❌ NO crear subcarpetas adicionales fuera de `diagrams/`
+- ❌ NO versionar JSON/HTML raw de Archify — solo usar exports finales (PNG/SVG/WebM)
+
+**Ejemplo en documento MD:**
+```markdown
+## 🏛️ Arquitectura
+
+[Diagrama interactivo - Ver en Claude Artifacts](https://claude.ai/artifacts/xxx)
+
+![Diagrama estático (referencia)](./diagrams/20260929-arquitectura-inspections.svg)
+```
 
 ---
 
