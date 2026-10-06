@@ -29,7 +29,8 @@
   - Agente 5 (Fase 2b) — [Admin, string de documentación](./20261006-fase2b-agente5-admin-conventions-doc-fix.md)
   - Agente 6 (Fase 2b) — [Investigación de ownership, solo lectura](./20261006-fase2b-agente6-ownership-investigation.md)
 - Fase 2c (decisión tomada: crear bridge mobile de PDF, `DialogHandlerService` ya es adaptativo por plataforma): [Agente 1 — bridge mobile del visor de PDF](./20261006-fase2c-agente1-pdf-viewer-trigger-mobile.md). Ejecutado e integrado; único residual del repo tras esto: `budget-rule-list.html` (bloqueado).
-- **Gate 0 en progreso**: matriz generada automáticamente — [CSV completo (319 filas)](./20261006-gate0-matriz-componentes.csv), [resumen agregado](./20261006-gate0-matriz-componentes-resumen.md), [triage manual de violaciones de frontera](./20261006-gate0-violaciones-frontera-triage.md) (28 → 10 reales tras blanquear infra transversal). `owner`/`madurezAprobada` por componente siguen pendientes de decisión humana.
+- **Gate 0 — matriz técnica generada**: [CSV completo (319 filas)](./20261006-gate0-matriz-componentes.csv), [resumen agregado](./20261006-gate0-matriz-componentes-resumen.md), [triage de violaciones de frontera](./20261006-gate0-violaciones-frontera-triage.md) (28 → 10 reales tras blanquear infra transversal).
+- **[¿Qué tan completo está `lux-*` frente a PrimeNG?](./20261006-gate0-brecha-vs-primeng.md)** — corrección de rumbo: se abandona "ownership por componente" (no era el objetivo real); la cobertura ya iguala o supera a PrimeNG, el problema real es fragmentación (checkbox ×6, date-input ×7-8, botón sin wrapper adaptativo) y falta de catálogo navegable.
 - Prompts de Fase 0 ya ejecutados:
   - [Agente 1 — Botones](./20261006-fase0-agente1-botones.md)
   - [Agente 2 — Overlays](./20261006-fase0-agente2-overlays.md)
