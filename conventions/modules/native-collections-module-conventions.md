@@ -1,41 +1,42 @@
-# CobranzaNativa Module Conventions
+# NativeCollections Module Conventions
 
-**Ultima revision:** 2026-07-30
+**Ultima revision:** 2026-10-06 (renombrado de nomenclatura legacy española `CobranzaNativa` a la nomenclatura oficial `NativeCollections`; links corregidos tras migración de documentación a `docs/`)
 **Estado:** Vigente
 **Deriva de:** [CONVENTIONS.md](../CONVENTIONS.md)
 
-> ⚠️ **PENDIENTE DE MIGRACIÓN (2026-10-05):** `CONVENTIONS.md` §4.2/§4.7/§6ter
-> establece que ningún documento vive dentro de `api/` ni `appsweb/angular/` —
-> todo debe vivir en `docs/[ModuleLuxuryApp]/[Submodulo]/`. Los links de este
-> archivo hacia `api/.../Docs/` y `appsweb/angular/.../docs/` abajo apuntan a
-> **ubicaciones legacy que aún no se han migrado** (archivos reales, no rotos).
-> No usar esas rutas como plantilla para módulos nuevos — ver la regla vigente
-> en `CONVENTIONS.md`. Este módulo se corrige cuando se ejecute la migración
-> de documentación legacy pendiente de aprobación.
+> **Nota histórica:** este módulo se llamó `CobranzaNativa` (backend
+> `CobranzaLuxuryApp`, frontend `cobranza.luxuryapp`) hasta el rename a
+> inglés de 2026-09 (commit `b2fcb3cad` en `appsweb/angular`). Hoy es
+> `NativeCollections` dentro de `CollectionsLuxuryApp` / `collections.luxuryapp`
+> (ver CONVENTIONS.md §6bis, catálogo de módulos oficiales). Varios nombres de
+> **archivo físico** (ej. `reglas-negocio-cobranza-nativa.md`,
+> `cobranza-nativa.routing.ts`) conservan el nombre español porque no se han
+> renombrado en el código real — este documento los referencia tal cual
+> existen, no inventa rutas nuevas.
 
 ## Proposito
 
-Definir la guia rectora especifica de `CobranzaNativa` para cualquier agente o
+Definir la guia rectora especifica de `NativeCollections` para cualquier agente o
 desarrollador que implemente, audite, remedie o documente este modulo.
 
 Este documento no sustituye las convenciones globales del proyecto. Su funcion
-es aterrizarlas al dominio real de `CobranzaNativa`, indicar que carpetas y
+es aterrizarlas al dominio real de `NativeCollections`, indicar que carpetas y
 documentos gobiernan el modulo, y fijar las reglas funcionales que no deben
 romperse mientras se resuelve este sistema.
 
 ## Alcance del modulo
 
-`CobranzaNativa` pertenece al dominio maestro `CobranzaLuxuryApp` y mapea al
-dominio frontend `cobranza.luxuryapp`.
+`NativeCollections` pertenece al dominio maestro `CollectionsLuxuryApp` y mapea al
+dominio frontend `collections.luxuryapp`.
 
 Rutas base vivas del modulo:
 
 - backend:
-  [api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa](../../api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa)
+  [api/LuxuryApp.Application/Modules/CollectionsLuxuryApp/NativeCollections](../../api/LuxuryApp.Application/Modules/CollectionsLuxuryApp/NativeCollections)
 - frontend:
-  [appsweb/angular/src/app/modules/cobranza.luxuryapp/cobranza-nativa](../../appsweb/angular/src/app/modules/cobranza.luxuryapp/cobranza-nativa)
+  [appsweb/angular/src/app/modules/collections.luxuryapp/native-collections](../../appsweb/angular/src/app/modules/collections.luxuryapp/native-collections)
 
-## Orden de lectura obligatorio para trabajar en CobranzaNativa
+## Orden de lectura obligatorio para trabajar en NativeCollections
 
 ### Implementacion o remediacion backend
 
@@ -44,9 +45,9 @@ Rutas base vivas del modulo:
 3. [Backend Rules](../backend/backend-rules.md)
 4. [Backend Module Structure](../backend/backend-module-structure.md)
 5. Este documento
-6. [reglas-negocio-cobranza-nativa.md](../../api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa/Docs/reglas-negocio-cobranza-nativa.md)
-7. [documentacion-cuestionario-cobranza-nativa.md](../../api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa/Docs/documentacion-cuestionario-cobranza-nativa.md)
-8. [documentacion-logica-reportes-cobranza.md](../../api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa/Docs/documentacion-logica-reportes-cobranza.md)
+6. [reglas-negocio-cobranza-nativa.md](../../docs/CollectionsLuxuryApp/NativeCollections/reglas-negocio-cobranza-nativa.md)
+7. [documentacion-cuestionario-cobranza-nativa.md](../../docs/CollectionsLuxuryApp/NativeCollections/documentacion-cuestionario-cobranza-nativa.md)
+8. [documentacion-logica-reportes-cobranza.md](../../docs/CollectionsLuxuryApp/NativeCollections/documentacion-logica-reportes-cobranza.md)
 
 ### Implementacion o remediacion frontend
 
@@ -57,9 +58,9 @@ Rutas base vivas del modulo:
 5. [UI Mobile Rules](../ui/ui-mobile-rules.md)
 6. [Styles Rules](../styles/styles-rules.md)
 7. Este documento
-8. `COBRANZA-NATIVA-DOCUMENTACION-MAESTRA-2026-07-03.md` (no localizado actualmente)
-9. [ORGANIZACION-FRONTAL-CNATIVA-2026-07-26.md](../../appsweb/angular/src/app/modules/cobranza.luxuryapp/cobranza-nativa/docs/ORGANIZACION-FRONTAL-CNATIVA-2026-07-26.md)
-10. [02-matriz-operativa-front-cobranza-nativa.md](../../appsweb/angular/src/app/modules/cobranza.luxuryapp/cobranza-nativa/docs/02-matriz-operativa-front-cobranza-nativa.md)
+8. [COBRANZA-NATIVA-DOCUMENTACION-MAESTRA-2026-07-03.md](../../docs/CollectionsLuxuryApp/NativeCollections/COBRANZA-NATIVA-DOCUMENTACION-MAESTRA-2026-07-03.md)
+9. [ORGANIZACION-FRONTAL-CNATIVA-2026-07-26.md](../../docs/CollectionsLuxuryApp/NativeCollections/ORGANIZACION-FRONTAL-CNATIVA-2026-07-26.md)
+10. [02-matriz-operativa-front-cobranza-nativa.md](../../docs/CollectionsLuxuryApp/NativeCollections/02-matriz-operativa-front-cobranza-nativa.md)
 
 ### Auditoria de modulo
 
@@ -73,7 +74,7 @@ Rutas base vivas del modulo:
 
 ### Backend
 
-El backend de `CobranzaNativa` esta organizado por dominios internos en
+El backend de `NativeCollections` esta organizado por dominios internos en
 `Core/`, ademas de `Contracts/ExternalCompatibility/`.
 
 Dominios internos detectados:
@@ -98,9 +99,9 @@ Dominios internos detectados:
 
 Regla:
 
-- cualquier auditoria o remediacion de `CobranzaNativa` debe declarar
+- cualquier auditoria o remediacion de `NativeCollections` debe declarar
   explicitamente que subdominios toca
-- no se permite tratar `CobranzaNativa` como un modulo plano
+- no se permite tratar `NativeCollections` como un modulo plano
 
 ### Frontend
 
@@ -109,20 +110,21 @@ El frontend esta organizado principalmente en:
 - `entry/`
 - `core/`
 - `configuration/`
-- `contracts/`
+- `contracts/` (incluye `external-compatibility/` y `native/`)
 - `interfaces/`
 - `onboarding/`
+- `architecture/`
 - `docs/`
 
 La ruta de entrada principal del modulo es:
 
-- [cobranza-nativa.routing.ts](../../appsweb/angular/src/app/modules/cobranza.luxuryapp/cobranza-nativa/cobranza-nativa.routing.ts)
+- [cobranza-nativa.routing.ts](../../appsweb/angular/src/app/modules/collections.luxuryapp/native-collections/cobranza-nativa.routing.ts) — nombre de archivo físico aún no renombrado a inglés
 
-## Reglas rectoras especificas de CobranzaNativa
+## Reglas rectoras especificas de NativeCollections
 
 ### 1. Es un subsistema financiero auditable
 
-`CobranzaNativa` no debe tratarse como un CRUD comun. Cualquier cambio debe
+`NativeCollections` no debe tratarse como un CRUD comun. Cualquier cambio debe
 preservar su naturaleza de subsistema financiero con:
 
 - trazabilidad
@@ -153,7 +155,7 @@ impacto y plan aprobado.
 
 La carpeta:
 
-- [Contracts/ExternalCompatibility](../../appsweb/angular/src/app/modules/cobranza.luxuryapp/cobranza-nativa/contracts/external-compatibility)
+- [Contracts/ExternalCompatibility](../../appsweb/angular/src/app/modules/collections.luxuryapp/native-collections/contracts/external-compatibility)
 
 se considera zona de alta sensibilidad contractual.
 
@@ -187,7 +189,7 @@ Mientras no exista plan de migracion aprobado:
 
 ### 6. Mobile y desktop forman parte del diseno obligatorio del modulo
 
-La documentacion viva de `CobranzaNativa` ya declara decisiones de responsive y
+La documentacion viva de `NativeCollections` ya declara decisiones de responsive y
 separacion de vistas en casos puntuales.
 
 Reglas:
@@ -200,13 +202,10 @@ Reglas:
 
 ### 7. Documentacion del modulo ya existe y debe actualizarse antes de crear duplicados
 
-Antes de crear nueva documentacion para `CobranzaNativa`, primero validar estas
+Antes de crear nueva documentacion para `NativeCollections`, primero validar estas
 fuentes existentes:
 
-- backend:
-  [Docs](../../docs)
-- frontend:
-  [docs](../../docs)
+- [docs/CollectionsLuxuryApp/NativeCollections/](../../docs/CollectionsLuxuryApp/NativeCollections/)
 
 Si un documento esta vigente pero incompleto, se actualiza.
 Si un documento es historico o desalineado, se reporta y se deja subordinado.
@@ -237,12 +236,12 @@ Si un documento es historico o desalineado, se reporta y se deja subordinado.
 
 ## Referencias oficiales del modulo
 
-- [reglas-negocio-cobranza-nativa.md](../../api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa/Docs/reglas-negocio-cobranza-nativa.md)
-- [reglas-negocio-cobranza.md](../../api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa/Docs/reglas-negocio-cobranza.md)
-- [documentacion-cuestionario-cobranza-nativa.md](../../api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa/Docs/documentacion-cuestionario-cobranza-nativa.md)
-- [documentacion-logica-reportes-cobranza.md](../../api/LuxuryApp.Application/Modules/CobranzaLuxuryApp/CobranzaNativa/Docs/documentacion-logica-reportes-cobranza.md)
-- `COBRANZA-NATIVA-DOCUMENTACION-MAESTRA-2026-07-03.md` (no localizado actualmente)
-- [ORGANIZACION-FRONTAL-CNATIVA-2026-07-26.md](../../appsweb/angular/src/app/modules/cobranza.luxuryapp/cobranza-nativa/docs/ORGANIZACION-FRONTAL-CNATIVA-2026-07-26.md)
-- [02-matriz-operativa-front-cobranza-nativa.md](../../appsweb/angular/src/app/modules/cobranza.luxuryapp/cobranza-nativa/docs/02-matriz-operativa-front-cobranza-nativa.md)
+Todas viven en [docs/CollectionsLuxuryApp/NativeCollections/](../../docs/CollectionsLuxuryApp/NativeCollections/):
 
-
+- [reglas-negocio-cobranza-nativa.md](../../docs/CollectionsLuxuryApp/NativeCollections/reglas-negocio-cobranza-nativa.md)
+- [reglas-negocio-cobranza.md](../../docs/CollectionsLuxuryApp/NativeCollections/reglas-negocio-cobranza.md)
+- [documentacion-cuestionario-cobranza-nativa.md](../../docs/CollectionsLuxuryApp/NativeCollections/documentacion-cuestionario-cobranza-nativa.md)
+- [documentacion-logica-reportes-cobranza.md](../../docs/CollectionsLuxuryApp/NativeCollections/documentacion-logica-reportes-cobranza.md)
+- [COBRANZA-NATIVA-DOCUMENTACION-MAESTRA-2026-07-03.md](../../docs/CollectionsLuxuryApp/NativeCollections/COBRANZA-NATIVA-DOCUMENTACION-MAESTRA-2026-07-03.md)
+- [ORGANIZACION-FRONTAL-CNATIVA-2026-07-26.md](../../docs/CollectionsLuxuryApp/NativeCollections/ORGANIZACION-FRONTAL-CNATIVA-2026-07-26.md)
+- [02-matriz-operativa-front-cobranza-nativa.md](../../docs/CollectionsLuxuryApp/NativeCollections/02-matriz-operativa-front-cobranza-nativa.md)

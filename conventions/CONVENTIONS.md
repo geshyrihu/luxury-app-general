@@ -716,7 +716,7 @@ Orden de lectura detallado: **§4.6**. Diagrama del flujo completo:
 
 ## 5.10 Modulos
 
-- [CobranzaNativa Module Conventions](./modules/cobranza-nativa-module-conventions.md)
+- [NativeCollections Module Conventions](./modules/native-collections-module-conventions.md)
 - [CobranzaOnline Module Documentation](./modules/cobranza-online-module-documentation.md)
 
 ## 5.11 Ecosistema de Agentes y Skills
