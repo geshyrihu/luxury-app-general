@@ -1,4 +1,4 @@
-# Catalogo `shared/ui`: estado y refactor
+﻿# Catalogo `shared/ui`: estado y refactor
 
 **Fecha de corte:** 2026-10-05  
 **Fuente:** `appsweb/angular/src/app/shared/ui`  
@@ -23,15 +23,15 @@ Arquitectura encontrada:
 
 ```text
 shared/ui/
-├── adaptive/                 wrappers que deciden web/mobile
-├── buttons/                  base, web, mobile y variantes legacy
-├── charts/                   exports y chart base
-├── core/                     contratos/base sin plataforma
-├── image-analysis-dialog/   componente especializado
-├── inputs/                   adaptive, core, web y mobile
-├── mobile/                   implementaciones mobile
-├── primitives/               piezas agnosticas
-└── web/                      implementaciones desktop/web
+â”œâ”€â”€ adaptive/                 wrappers que deciden web/mobile
+â”œâ”€â”€ buttons/                  base, web, mobile y variantes legacy
+â”œâ”€â”€ charts/                   exports y chart base
+â”œâ”€â”€ core/                     contratos/base sin plataforma
+â”œâ”€â”€ image-analysis-dialog/   componente especializado
+â”œâ”€â”€ inputs/                   adaptive, core, web y mobile
+â”œâ”€â”€ mobile/                   implementaciones mobile
+â”œâ”€â”€ primitives/               piezas agnosticas
+â””â”€â”€ web/                      implementaciones desktop/web
 ```
 
 Regla objetivo existente en convenciones:
@@ -134,9 +134,9 @@ El objetivo es consumir inputs signal oficiales y evitar inputs raw o rutas inte
 - Lote delegado Collections validado: 21 usos Edit migrados en 20 archivos nuevos; `aspel-collections-haus` ya estaba migrado y excluido.
 - Lote delegado Auth validado: 2 usos Edit migrados en 4 archivos.
 - Lote delegado Public validado: 1 uso Edit migrado en 2 archivos.
-- Lote delegado Management validado: 13 usos Edit migrados en 12 archivos; 8 usos dentro de templates mobile conservan `ButtonWeb` por compatibilidad y quedan como deuda técnica.
-- Reconciliación Maintenance validada: 2 usos Edit mobile de meters migrados.
-- Reconciliación Accounting validada: 11 usos Edit residuales migrados y 2 descargas de Aspel audit ya integradas.
+- Lote delegado Management validado: 13 usos Edit migrados en 12 archivos; 8 usos dentro de templates mobile conservan `ButtonWeb` por compatibilidad y quedan como deuda tÃ©cnica.
+- ReconciliaciÃ³n Maintenance validada: 2 usos Edit mobile de meters migrados.
+- ReconciliaciÃ³n Accounting validada: 11 usos Edit residuales migrados y 2 descargas de Aspel audit ya integradas.
 - `npm run audit:ui` pasa.
 - Commits publicados en Angular `main`: `69fe56995`, `7fcd648e0`, `76f291de2` y `7954a03be`.
 
@@ -184,17 +184,17 @@ Los `51` son implementaciones legacy dentro de `shared/ui`. Los `435` son usos l
 
 | Fase | Alcance | Total inicial | Hecho | Pendiente | Responsable | Estado |
 |---|---|---:|---:|---:|---|---|
-| 0 | Inventario, contratos y riesgos | 435 usos | 435 auditados | 0 | Agente auditor | ✅ Cerrada |
-| 1 | `add`, `save`, `edit`, `item` simples | 65 usos de bajo riesgo iniciales | 271 Edit | Por recalcular | Orquestador + agentes | 🔄 En curso |
-| 2 | `download`, `tracking` y acciones simples | 53 usos | 18 descargas | 35 | Agente delegado + orquestador | 🔄 En curso |
-| 3 | `delete`, `confirm`, `send-email`, `active-desactive` | 221 alto riesgo | 0 | 221 | Orquestador + revisión | ⛔ Bloqueada por contrato |
-| 4 | PDF y componentes con API especial | Por medir | 0 | Por medir | Orquestador | ⏳ Pendiente |
-| 5 | Catálogos/demo y limpieza de exports | 9 usos Edit auditados | 0 migrados | 9 excepciones intencionales | Agente delegado | ✅ Auditada |
-| 6 | Build, pruebas y QA de producción | Global | Auditoría UI | Build pendiente | Orquestador | ⏳ Pendiente |
+| 0 | Inventario, contratos y riesgos | 435 usos | 435 auditados | 0 | Agente auditor | âœ… Cerrada |
+| 1 | `add`, `save`, `edit`, `item` simples | 65 usos de bajo riesgo iniciales | 271 Edit | Por recalcular | Orquestador + agentes | ðŸ”„ En curso |
+| 2 | `download`, `tracking` y acciones simples | 53 usos | 18 descargas | 35 | Agente delegado + orquestador | ðŸ”„ En curso |
+| 3 | `delete`, `confirm`, `send-email`, `active-desactive` | 221 alto riesgo | 0 | 221 | Orquestador + revisiÃ³n | â›” Bloqueada por contrato |
+| 4 | PDF y componentes con API especial | Por medir | 0 | Por medir | Orquestador | â³ Pendiente |
+| 5 | CatÃ¡logos/demo y limpieza de exports | 9 usos Edit auditados | 0 migrados | 9 excepciones intencionales | Agente delegado | âœ… Auditada |
+| 6 | Build, pruebas y QA de producciÃ³n | Global | AuditorÃ­a UI | Build pendiente | Orquestador | â³ Pendiente |
 
 ### Fase 0: inventario y contratos
 
-**Estado: ✅ cerrada.** Auditoría delegada en modo solo lectura.
+**Estado: âœ… cerrada.** AuditorÃ­a delegada en modo solo lectura.
 
 Resultados:
 
@@ -206,11 +206,11 @@ Resultados:
 - Riesgo alto: 221 usos.
 - Riesgo medio: 149 usos.
 - Riesgo bajo: 65 usos.
-- `ButtonWeb` no soporta confirmación genérica actualmente.
+- `ButtonWeb` no soporta confirmaciÃ³n genÃ©rica actualmente.
 
-### Fase 1: migración mecánica de bajo riesgo
+### Fase 1: migraciÃ³n mecÃ¡nica de bajo riesgo
 
-**Estado: 🔄 en curso. Responsable: orquestador.**
+**Estado: ðŸ”„ en curso. Responsable: orquestador.**
 
 Permitido:
 
@@ -222,11 +222,11 @@ Permitido:
 No permitido:
 
 - Migrar `delete` a click directo.
-- Cambiar eventos `confirmed` por `clicked` sin confirmación equivalente.
+- Cambiar eventos `confirmed` por `clicked` sin confirmaciÃ³n equivalente.
 - Tocar archivos modificados concurrentemente.
 - Borrar definiciones legacy antes de vaciar consumidores.
 
-Avance actual: 271 consumidores Edit migrados y validados. Deuda pendiente: 9 usos de catalog/demo Admin conservados como showcase, 1 snippet sin evento en conventions viewer y 8 botones Management mobile que conservan API Web. Accounting mantiene solo residuos en código muerto/comentado o acciones sin `(clicked)`.
+Avance actual: 271 consumidores Edit migrados y validados. Deuda pendiente: 9 usos de catalog/demo Admin conservados como showcase, 1 snippet sin evento en conventions viewer y 8 botones Management mobile que conservan API Web. Accounting mantiene solo residuos en cÃ³digo muerto/comentado o acciones sin `(clicked)`.
 
 ### Fase 2: acciones simples adicionales
 
@@ -247,35 +247,35 @@ Exclusiones registradas:
 
 Migrar `download` y `tracking` solo cuando el uso sea click directo y no dependa de propiedades especiales. Antes de cada lote:
 
-1. Medir usos por módulo.
+1. Medir usos por mÃ³dulo.
 2. Separar desktop/mobile.
 3. Revisar inputs y eventos.
 4. Migrar lote de maximo 5-10 consumidores.
 5. Ejecutar `npm run audit:ui` y pruebas focalizadas.
 
-### Fase 3: confirmación y acciones sensibles
+### Fase 3: confirmaciÃ³n y acciones sensibles
 
 No iniciar reemplazo masivo hasta definir contrato. Opciones a evaluar:
 
-- Extender `ButtonWeb` con confirmación explícita y evento `confirmed`.
-- Crear wrapper semántico de confirmación reutilizable.
-- Mantener componentes legacy de confirmación como compatibilidad temporal.
+- Extender `ButtonWeb` con confirmaciÃ³n explÃ­cita y evento `confirmed`.
+- Crear wrapper semÃ¡ntico de confirmaciÃ³n reutilizable.
+- Mantener componentes legacy de confirmaciÃ³n como compatibilidad temporal.
 
-Puerta obligatoria: prueba de comportamiento que confirme que cancelar no ejecuta acción destructiva.
+Puerta obligatoria: prueba de comportamiento que confirme que cancelar no ejecuta acciÃ³n destructiva.
 
 ### Fase 4: componentes especiales
 
-Tratar separadamente `view-pdf`, `send-email`, `active-desactive`, `customClick`, acciones con `state` y componentes que reciben nombre de archivo, URL o configuración propia. No aplicar reemplazo mecánico.
+Tratar separadamente `view-pdf`, `send-email`, `active-desactive`, `customClick`, acciones con `state` y componentes que reciben nombre de archivo, URL o configuraciÃ³n propia. No aplicar reemplazo mecÃ¡nico.
 
-### Fase 5: catálogo y limpieza
+### Fase 5: catÃ¡logo y limpieza
 
-- Migrar ejemplos de `catalog-component-ui` después de producción.
-- Auditoría Fase 5 completada: los 9 Edit restantes son showcases intencionales de APIs legacy; no migrar parcialmente.
-- Actualizar `ui-dictionary.ts` y documentación.
+- Migrar ejemplos de `catalog-component-ui` despuÃ©s de producciÃ³n.
+- AuditorÃ­a Fase 5 completada: los 9 Edit restantes son showcases intencionales de APIs legacy; no migrar parcialmente.
+- Actualizar `ui-dictionary.ts` y documentaciÃ³n.
 - Eliminar exports/archivos legacy solo con cero consumidores verificado.
 - Mantener specs o reemplazarlas por cobertura equivalente.
 
-### Fase 6: puerta de producción
+### Fase 6: puerta de producciÃ³n
 
 Requisitos para marcar fase cerrada:
 
@@ -286,19 +286,19 @@ Requisitos para marcar fase cerrada:
 - `git diff --check` pasa.
 - Cambios concurrentes quedan fuera del commit.
 
-### Protocolo de delegación
+### Protocolo de delegaciÃ³n
 
 - Un agente por fase; no dos agentes editan mismo archivo.
 - Agentes exploradores devuelven rutas, conteos y riesgos; no editan.
 - Agentes constructores reciben lote cerrado y no hacen commits globales.
 - Cada fase termina con evidencia en esta tabla antes de abrir siguiente fase.
-- Si build o auditoría falla, se pausa migración y se registra causa aquí.
+- Si build o auditorÃ­a falla, se pausa migraciÃ³n y se registra causa aquÃ­.
 
 ## Siguiente trabajo inmediato
 
 1. Continuar Fase 2 con descargas seguras; mantener `tracking` fuera hasta definir payload.
-2. Diseñar contrato de confirmación antes de Fase 3.
-3. Ejecutar Fase 6 únicamente cuando el build deje de estar bloqueado.
+2. DiseÃ±ar contrato de confirmaciÃ³n antes de Fase 3.
+3. Ejecutar Fase 6 Ãºnicamente cuando el build deje de estar bloqueado.
 
 ## Verificaciones utilizadas
 
@@ -314,5 +314,13 @@ Requisitos para marcar fase cerrada:
 - `conventions/ui/ui-usage-catalog.md`
 - `appsweb/angular/BITACORA-REFACTOR-DESKTOP-MOBILE.md`
 - `appsweb/angular/src/app/shared/ui`
--   P r o m p t s   d e   o r q u e s t a c i � n   c r e a d o s   e n   \ p r o m p t s / a g e n t e 1 - b u i l d - y - c o n t r a t o s . m d \ ,   \ p r o m p t s / a g e n t e 2 - p a y l o a d s - t r a c k i n g . m d \   y   \ p r o m p t s / a g e n t e 3 - p d f - e s p e c i a l e s . m d \ .  
+-   P r o m p t s   d e   o r q u e s t a c i ó n   c r e a d o s   e n   \ p r o m p t s / a g e n t e 1 - b u i l d - y - c o n t r a t o s . m d \ ,   \ p r o m p t s / a g e n t e 2 - p a y l o a d s - t r a c k i n g . m d \   y   \ p r o m p t s / a g e n t e 3 - p d f - e s p e c i a l e s . m d \ . 
  
+ 
+
+### Actualización: Cierre Fase 3 y Preparación Fase 4
+- **Fase 3 Completada**: Los 4 agentes externos (A, B, C, D) finalizaron exitosamente la migración masiva de botones Tier 1 y Tier 2 (incluyendo delete, confirm, send-email) en todos los módulos (operations, ecruitment, maintenance, management, ccounting, dmin, legal, human-resources, purchases, collections).
+- Se validaron todos los módulos con 
+pm run audit:ui y 
+pm run build sin regresiones en las fronteras de arquitectura y trasladando las confirmaciones a ConfirmService y SwalService.
+- **Fase 4 (En curso)**: Se han generado 4 nuevos prompts (prompts/agente{A,B,C,D}-fase4-residuals.md) para que los agentes externos liquiden en paralelo la deuda técnica restante: ctive-desactive, código muerto (// CODIGO MUERTO), huecos de coverage en ConfirmService (specs) y actualización de Bitácoras.
