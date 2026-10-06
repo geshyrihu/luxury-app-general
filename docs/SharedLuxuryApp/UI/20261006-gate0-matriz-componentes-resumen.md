@@ -31,8 +31,8 @@ Reglas: `revisar-dependencia-core` si importa `@core/` o un módulo de negocio d
 
 | Madurez tentativa | Cantidad |
 |---|---:|
-| sin-consumidores | 172 |
-| candidato-stable | 110 |
+| sin-consumidores | 165 |
+| candidato-stable | 117 |
 | experimental | 27 |
 | revisar-dependencia-core | 10 |
 
@@ -53,7 +53,7 @@ Reglas: `revisar-dependencia-core` si importa `@core/` o un módulo de negocio d
 
 ## Sin consumidores en modules/core (candidatos a revisar: ¿app-specific, deprecated, o falso negativo del grep?)
 
-Total: 177. Antes de reclasificar cualquiera como `deprecated`, verificar manualmente (el grep solo indexa imports `import { X } from "@ui/...""; un re-export, un alias distinto o un uso solo dentro de shared/ui no cuenta como cero consumidores reales).
+Total: 170. Antes de reclasificar cualquiera como `deprecated`, verificar manualmente (el grep solo indexa imports `import { X } from "@ui/...""; un re-export, un alias distinto o un uso solo dentro de shared/ui no cuenta como cero consumidores reales).
 
 | Path | Clase | Selector |
 |---|---|---|
@@ -87,14 +87,7 @@ Total: 177. Antes de reclasificar cualquiera como `deprecated`, verificar manual
 | `shared/ui/inputs/web/custom-input-mask-signal.ts` | `CustomInputMaskSignal` | `web-custom-input-mask-signal` |
 | `shared/ui/inputs/web/custom-input-month-signal.ts` | `CustomInputMonth` | `web-custom-input-month` |
 | `shared/ui/inputs/web/custom-input-url-signal.ts` | `CustomInputUrl` | `web-custom-input-url` |
-| `shared/ui/inputs/adaptive/input-check/input-check.ts` | `InputCheck` | `custom-input-check-signal` |
-| `shared/ui/inputs/adaptive/input-currency/input-currency.ts` | `InputCurrency` | `custom-input-currency-signal` |
-| `shared/ui/inputs/adaptive/input-date/input-date.ts` | `InputDate` | `custom-input-date-signal` |
 | `shared/ui/inputs/adaptive/input-month/input-month.ts` | `InputMonth` | `custom-input-month` |
-| `shared/ui/inputs/adaptive/input-multiselect/input-multiselect.ts` | `InputMultiselect` | `custom-input-multiselect-signal` |
-| `shared/ui/inputs/adaptive/input-password/input-password.ts` | `InputPassword` | `custom-input-password-signal` |
-| `shared/ui/inputs/adaptive/input-search/input-search.ts` | `InputSearch` | `custom-search-input-signal` |
-| `shared/ui/inputs/adaptive/input-time/input-time.ts` | `InputTime` | `custom-input-time-signal` |
 | `shared/ui/inputs/adaptive/input-upload-pdf/input-upload-pdf.ts` | `InputUploadPdf` | `lux-custom-input-upload-pdf-signal` |
 | `shared/ui/inputs/adaptive/input-url/input-url.ts` | `InputUrl` | `custom-input-url` |
 | `shared/ui/inputs/mobile/ion-input-autocomplete.ts` | `IonInputAutocomplete` | `ion-input-autocomplete` |
@@ -117,8 +110,15 @@ Total: 177. Antes de reclasificar cualquiera como `deprecated`, verificar manual
 | `shared/ui/inputs/web/input-datepicker/input-datepicker.ts` | `WebInputDatepicker` | `web-input-datepicker` |
 | `shared/ui/inputs/web/input-date-time/input-date-time.ts` | `WebInputDateTime` | `web-input-date-time` |
 | `shared/ui/inputs/web/input-email/input-email.ts` | `WebInputEmail` | `web-input-email` |
+| `shared/ui/inputs/web/input-file/input-file.ts` | `WebInputFile` | `web-input-file` |
+| `shared/ui/inputs/web/input-img/input-img.ts` | `WebInputImg` | `web-input-img` |
+| `shared/ui/inputs/web/input-mask/input-mask.ts` | `WebInputMask` | `web-input-mask` |
+| `shared/ui/inputs/web/input-month/input-month.ts` | `WebInputMonth` | `web-input-month` |
+| `shared/ui/inputs/web/input-multiselect/input-multiselect.ts` | `WebInputMultiselect` | `web-input-multiselect` |
+| `shared/ui/inputs/web/input-number/input-number.ts` | `WebInputNumber` | `web-input-number` |
+| `shared/ui/inputs/web/input-password/input-password.ts` | `WebInputPassword` | `web-input-password` |
 
-_(117 filas más en el CSV completo)_
+_(110 filas más en el CSV completo)_
 
 ## Con consumidores pero sin spec (27)
 
