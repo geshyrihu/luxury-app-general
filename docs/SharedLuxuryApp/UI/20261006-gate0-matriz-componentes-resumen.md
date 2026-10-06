@@ -31,42 +31,24 @@ Reglas: `revisar-dependencia-core` si importa `@core/` o un módulo de negocio d
 
 | Madurez tentativa | Cantidad |
 |---|---:|
-| sin-consumidores | 161 |
-| candidato-stable | 103 |
-| revisar-dependencia-core | 28 |
+| sin-consumidores | 172 |
+| candidato-stable | 110 |
 | experimental | 27 |
+| revisar-dependencia-core | 10 |
 
 ## Violaciones de frontera (importan @core/ o negocio directo)
 
 | Path | Clase |
 |---|---|
-| `shared/ui/adaptive/debug-console/debug-console.ts` | `LxDebugConsole` |
 | `shared/ui/ai-chat-widget/ai-chat-widget.ts` | `AiChatWidget` |
 | `shared/ui/image-analysis-dialog/image-analysis-dialog.ts` | `ImageAnalysisDialogComponent` |
-| `shared/ui/inputs/web/custom-input-autocomplete-multiple-signal.ts` | `CustomInputAutoMultiple` |
-| `shared/ui/inputs/web/custom-input-img-signal.ts` | `CustomInputImg` |
 | `shared/ui/inputs/web/custom-input-phone-prefix.ts` | `CustomInputPhonePrefix` |
-| `shared/ui/inputs/web/custom-input-select-button-signal.ts` | `CustomInputSelectButton` |
-| `shared/ui/inputs/adaptive/input-multiselect/input-multiselect.ts` | `InputMultiselect` |
-| `shared/ui/inputs/adaptive/input-select/input-select.ts` | `InputSelect` |
-| `shared/ui/inputs/mobile/ion-input-img.ts` | `IonInputImg` |
 | `shared/ui/inputs/web/custom-input-upload-pdf-signal.ts` | `SubirPdf` |
-| `shared/ui/inputs/web/input-multiselect/input-multiselect.ts` | `WebInputMultiselect` |
 | `shared/ui/inputs/web/input-phone-prefix/input-phone-prefix.ts` | `WebInputPhonePrefix` |
-| `shared/ui/inputs/web/input-select/input-select.ts` | `WebInputSelect` |
-| `shared/ui/mobile/file-upload/file-upload.ts` | `IliFileUpload` |
-| `shared/ui/web/toast/toast.ts` | `AppToast` |
-| `shared/ui/web/breadcrumbs/breadcrumbs.ts` | `Breadcrumbs` |
 | `shared/ui/web/title-solicitud-pago-pdf/cabecera-solicitud-pago-pdf.ts` | `CabeceraSolicitudPagoPdf` |
-| `shared/ui/web/rango-calendario-mes-anio/calendar-range.ts` | `CalendarRange` |
-| `shared/ui/web/file-upload/file-upload.ts` | `FileUpload` |
 | `shared/ui/web/header-customer/haeder-customer.ts` | `HeaderCustomer` |
-| `shared/ui/web/lux-table-caption/lux-table-caption.ts` | `LuxTableCaption` |
-| `shared/ui/web/menubar/menubar.ts` | `Menubar` |
-| `shared/ui/web/mesanio/mesanio.ts` | `Mesanio` |
 | `shared/ui/web/title-page-report/page-title-report.ts` | `PageTitleReport` |
 | `shared/ui/web/pdf-viewer-modal/pdf-viewer-modal.ts` | `PdfViewerModal` |
-| `shared/ui/web/rango-calendario-yyyymmdd/rango-calendario-yyyymmdd.ts` | `RangoCalendarioyyyymmdd` |
 | `shared/ui/web/report-header/report-header.ts` | `ReportHeader` |
 
 ## Sin consumidores en modules/core (candidatos a revisar: ¿app-specific, deprecated, o falso negativo del grep?)
