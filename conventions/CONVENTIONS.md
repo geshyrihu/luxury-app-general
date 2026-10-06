@@ -197,7 +197,7 @@ Ver detalle en:
 
 ### 8️⃣ CREAR MÓDULO NUEVO (End-to-End)
 - **Fase 0 OBLIGATORIA**: Business Rules Discovery **antes** de cualquier plan
-- **6 documentos obligatorios** por módulo: lista y ubicaciones en §4.7; contenido mínimo en Module Documentation Instructions
+- **8 documentos obligatorios** por módulo: lista y ubicaciones en §4.7; contenido mínimo en Module Documentation Instructions
 - **Estructura docs**: `docs/[Modulo]/[Submodulo]/YYYYMMDD-[tipo]-[modulo]-[submodulo].md` (plana, §6ter)
 - **Documentos clave**:
   - [Business Rules Discovery Phase 0](./operations/business-rules-discovery-phase-0.md) — **lectura obligatoria antes de planear**
@@ -334,6 +334,7 @@ es espejo operativo. Si hay desalineación, gana §4. Al cambiar §4 se re-sincr
 8. Documento del modulo si existe
 9. [Agent Task Catalog](./operations/agent-task-catalog.md)
 10. [Audit Agent Instructions](./operations/audit-agent-instructions.md) — guia operativa de ejecucion
+10bis. [Reglas de Negocio de Módulo](../.agents/skills/reglas-negocio-modulo/SKILL.md) — skill que extrae y clasifica las RN (4 niveles) de un módulo ya existente leyendo código real; contraparte retrospectiva de Business Rules Discovery Phase 0, alimenta la matriz RN de la auditoría
 
 **Entregables de Auditoría:**
 
@@ -353,7 +354,7 @@ es espejo operativo. Si hay desalineación, gana §4. Al cambiar §4 se re-sincr
 9. Si la tarea es crear plan: [Plan Creation Protocol](./operations/plan-creation-protocol.md)
 10. Si la tarea es crear guia: [Guides Creation Protocol](./operations/guides-creation-protocol.md)
 11. Si la tarea es documentar modulo existente: [Module Documentation Instructions](./operations/module-documentation-instructions.md)
-    - Los **6 documentos obligatorios por módulo**, su ubicación y contenido: ver §4.7.
+    - Los **8 documentos obligatorios por módulo**, su ubicación y contenido: ver §4.7.
 
 ### 4.6 Creacion de Modulo Nuevo
 
@@ -730,6 +731,7 @@ Los agentes deben apoyarse en estos recursos en lugar de usar guías obsoletas:
 - [Angular Developer](../.agents/skills/angular-developer/SKILL.md) — Guía especializada para desarrollo frontend.
 - [Archify](../.agents/skills/archify/SKILL.md) — Diagramas interactivos (arquitectura/workflow/secuencia/dataflow/lifecycle) como HTML autocontenido, con evidencia de código real (commit + rango de líneas) cuando el diagrama describe un módulo existente. Usar para documentación técnica de módulos (§4.7), Architecture Delta en auditorías/PRs, y diagramas de planes de migración.
 - [Guía de Usuario de Módulo](../.agents/skills/guia-usuario-modulo/SKILL.md) — Genera el documento 6 de §4.7 (Guía de Usuario, orientada a negocio): lee el código real, genera diagrama con Archify, explora la UI real con `playwright-cli` (obligatorio) y escribe una guía funcional en español. Nunca inventa — lo no verificable se marca `PENDIENTE`.
+- [Reglas de Negocio de Módulo](../.agents/skills/reglas-negocio-modulo/SKILL.md) — Para módulos ya existentes: extrae las RN realmente implementadas (lee AppServices, entidades, validators, endpoints, formularios), las clasifica en los 4 niveles jerárquicos (§5.8) con numeración `RN-[MOD]-NNN`, verifica en vivo con `playwright-cli` y diagrama con Archify. Contraparte retrospectiva de [FASE 0: Business Rules Discovery](./operations/business-rules-discovery-phase-0.md) (esa es para módulos nuevos, antes de programar).
 - [Guide Agent Instructions](./guides/guide-agent-instructions.md) — Instrucciones para agentes de documentación
 - [Guía Delegación Documentación Módulos](./guides/guia-delegacion-documentacion-modulos.md) — Protocolo de delegación a agentes CLI
 
@@ -1048,9 +1050,9 @@ docs/[ModuleLuxuryApp]/[Submodulo]/
 Estos documentos contienen conocimiento valioso y se consideran apoyo oficial
 mientras su contenido se consolida en la nueva estructura:
 
-- [arquitectura-shared-ui.md](../appsweb/angular/src/app/shared/ui/arquitectura-shared-ui.md)
-- [estandar-hoja-estilos.md](../appsweb/angular/src/styles/estandar-hoja-estilos.md)
-- [DESIGN.md](../appsweb/angular/src/styles/DESIGN.md)
+- [arquitectura-shared-ui.md](../docs/AngularLuxuryApp/SharedUi/arquitectura-shared-ui.md)
+- [estandar-hoja-estilos.md](../docs/AngularLuxuryApp/Styles/estandar-hoja-estilos.md)
+- [DESIGN.md](../docs/AngularLuxuryApp/Styles/DESIGN.md)
 
 No deben duplicarse. Deben absorberse, resumirse o referenciarse desde los
 documentos especializados correspondientes.
